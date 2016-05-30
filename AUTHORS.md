@@ -1,7 +1,7 @@
 ####Corporate Copyright Statements
 -----
 
-Copyright (c) 2015-present TyphonRT Inc. [@typhonrt](https://github.com/typhonrt)
+Copyright (c) 2016-present TyphonRT Inc. [@typhonrt](https://github.com/typhonrt)
 
 ####Contributors
 -----
