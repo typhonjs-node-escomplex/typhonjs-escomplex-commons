@@ -12,12 +12,13 @@ import safeArray            from './safeArray.js';
  * @param {string|Array}   operators -
  * @param {string|Array}   operands -
  * @param {string|Array}   ignoreKeys -
- * @param {string}         newScope -
+ * @param {boolean}         newScope -
  * @param {object}         dependencies -
  *
- * @returns {{lloc: *, cyclomatic: *, operators: Array, operands: Array, ignoreKeys: Array, newScope: *, dependencies: *}}
+ * @returns {{lloc: number, cyclomatic: number, operators: Array, operands: Array, ignoreKeys: Array, newScope: boolean, dependencies: undefined}}
  */
-export default function(lloc, cyclomatic, operators, operands, ignoreKeys, newScope, dependencies)
+export default function(lloc = 0, cyclomatic = 0, operators = undefined, operands = undefined,
+ ignoreKeys = undefined, newScope = false, dependencies = undefined)
 {
    return {
       lloc,
