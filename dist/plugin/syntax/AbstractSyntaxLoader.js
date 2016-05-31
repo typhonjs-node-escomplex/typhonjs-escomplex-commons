@@ -28,12 +28,13 @@ var AbstractSyntaxLoader = function () {
       value: function onLoadSyntax(ev) {
          var syntaxes = {};
 
+         // for (const name of Object.getOwnPropertyNames(Object.getPrototypeOf(this)))
          var _iteratorNormalCompletion = true;
          var _didIteratorError = false;
          var _iteratorError = undefined;
 
          try {
-            for (var _iterator = Object.getOwnPropertyNames(Object.getPrototypeOf(this))[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            for (var _iterator = s_GET_ALL_PROPERTY_NAMES(Object.getPrototypeOf(this))[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
                var name = _step.value;
 
                // Skip constructor & onLoadSyntax methods.
@@ -66,4 +67,20 @@ var AbstractSyntaxLoader = function () {
 }();
 
 exports.default = AbstractSyntaxLoader;
+
+
+var s_GET_ALL_PROPERTY_NAMES = function s_GET_ALL_PROPERTY_NAMES(obj) {
+   var props = [];
+
+   do {
+      Object.getOwnPropertyNames(obj).forEach(function (prop) {
+         if (props.indexOf(prop) === -1) {
+            props.push(prop);
+         }
+      });
+      obj = Object.getPrototypeOf(obj);
+   } while (typeof obj !== 'undefined' || obj !== null);
+
+   return props;
+};
 module.exports = exports['default'];
