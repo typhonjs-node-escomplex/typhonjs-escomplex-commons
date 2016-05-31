@@ -3,11 +3,11 @@
 /**
  * Provides safe array creation from a given input.
  *
- * @param {*}  thing
+ * @param {*}  value - A value to potentially convert into a safe array.
  *
  * @returns {Array}
  */
-export default function(thing)
+export default function(value)
 {
-   return typeof thing === 'undefined' || thing === null ? [] : Array.isArray(thing) ? thing : [thing];
+   return typeof value === 'undefined' || value === null ? [] : Array.isArray(value) ? value : [value];
 }

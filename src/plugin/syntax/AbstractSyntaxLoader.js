@@ -14,7 +14,7 @@ export default class AbstractSyntaxLoader
    {
       const syntaxes = {};
 
-      for (let name of Object.getOwnPropertyNames(Object.getPrototypeOf(this)))
+      for (const name of Object.getOwnPropertyNames(Object.getPrototypeOf(this)))
       {
          // Skip constructor & onLoadSyntax methods.
          if (!(this[name] instanceof Function) || name === 'constructor' || name === 'onLoadSyntax') { continue; }
