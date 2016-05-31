@@ -8,7 +8,7 @@
  *
  * @returns {string}
  */
-export default function(object, defaultName)
+export default function(object, defaultName = '')
 {
    if (object !== null && typeof object === 'object' && typeof object.name === 'string' && object.name !== '')
    {

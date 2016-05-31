@@ -7,13 +7,13 @@ import safeArray            from './safeArray.js';
 /**
  * Provides a helper method to format core traits for escomplex processing.
  *
- * @param {number}         lloc - Logical lines of code
- * @param {number}         cyclomatic -
- * @param {string|Array}   operators -
- * @param {string|Array}   operands -
- * @param {string|Array}   ignoreKeys -
- * @param {boolean}         newScope -
- * @param {object}         dependencies -
+ * @param {function|number}         lloc - Logical lines of code
+ * @param {function|number}         cyclomatic -
+ * @param {function|string|Array}   operators -
+ * @param {function|string|Array}   operands -
+ * @param {function|string|Array}   ignoreKeys -
+ * @param {function|boolean}        newScope -
+ * @param {function|object}         dependencies -
  *
  * @returns {{lloc: number, cyclomatic: number, operators: Array, operands: Array, ignoreKeys: Array, newScope: boolean, dependencies: undefined}}
  */
