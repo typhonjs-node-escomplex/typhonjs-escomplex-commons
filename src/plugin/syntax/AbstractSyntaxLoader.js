@@ -14,7 +14,8 @@ export default class AbstractSyntaxLoader
    {
       const syntaxes = {};
 
-      for (const name of Object.getOwnPropertyNames(Object.getPrototypeOf(this)))
+      // for (const name of Object.getOwnPropertyNames(Object.getPrototypeOf(this)))
+      for (const name of s_GET_ALL_PROPERTY_NAMES(Object.getPrototypeOf(this)))
       {
          // Skip constructor & onLoadSyntax methods.
          if (!(this[name] instanceof Function) || name === 'constructor' || name === 'onLoadSyntax') { continue; }
@@ -25,3 +26,16 @@ export default class AbstractSyntaxLoader
       ev.data.syntaxes = syntaxes;
    }
 }
+
+const s_GET_ALL_PROPERTY_NAMES = (obj) =>
+{
+   const props = [];
+
+   do
+   {
+      Object.getOwnPropertyNames(obj).forEach((prop) => { if (props.indexOf(prop) === -1) { props.push(prop); } });
+      obj = Object.getPrototypeOf(obj);
+   } while (typeof obj !== 'undefined' || obj !== null);
+
+   return props;
+};
