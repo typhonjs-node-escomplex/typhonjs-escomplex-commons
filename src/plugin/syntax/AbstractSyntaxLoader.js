@@ -2,6 +2,8 @@
 
 /**
  * Provides the base implementation for all syntax loader plugins which automatically associates member methods
+ * to syntax definitions invoking the method with escomplex settings and assigning the result to the same name as
+ * the method.
  */
 export default class AbstractSyntaxLoader
 {
@@ -16,8 +18,8 @@ export default class AbstractSyntaxLoader
 
       for (const name of s_GET_ALL_PROPERTY_NAMES(Object.getPrototypeOf(this)))
       {
-         // Skip constructor & onLoadSyntax methods.
-         if (!(this[name] instanceof Function) || name === 'constructor' || name === 'onLoadSyntax') { continue; }
+         // Skip constructor method.
+         if (!(this[name] instanceof Function) || name === 'constructor') { continue; }
 
          syntaxes[name] = this[name](ev.data.settings);
       }
@@ -26,6 +28,12 @@ export default class AbstractSyntaxLoader
    }
 }
 
+/**
+ * Walks an objects inheritance tree collecting property names stopping before `AbstractSyntaxLoader` is reached.
+ *
+ * @param {object}   obj - object to walks.
+ * @returns {Array}
+ */
 const s_GET_ALL_PROPERTY_NAMES = (obj) =>
 {
    const props = [];
@@ -34,7 +42,7 @@ const s_GET_ALL_PROPERTY_NAMES = (obj) =>
    {
       Object.getOwnPropertyNames(obj).forEach((prop) => { if (props.indexOf(prop) === -1) { props.push(prop); } });
       obj = Object.getPrototypeOf(obj);
-   } while (typeof obj !== 'undefined' && obj !== null);
+   } while (typeof obj !== 'undefined' && obj !== null && !(obj === AbstractSyntaxLoader.prototype));
 
    return props;
 };

@@ -2,6 +2,8 @@
 
 /**
  * Provides the base implementation for all syntax loader plugins which automatically associates member methods
+ * to syntax definitions invoking the method with escomplex settings and assigning the result to the same name as
+ * the method.
  */
 
 Object.defineProperty(exports, "__esModule", {
@@ -36,8 +38,8 @@ var AbstractSyntaxLoader = function () {
             for (var _iterator = s_GET_ALL_PROPERTY_NAMES(Object.getPrototypeOf(this))[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
                var name = _step.value;
 
-               // Skip constructor & onLoadSyntax methods.
-               if (!(this[name] instanceof Function) || name === 'constructor' || name === 'onLoadSyntax') {
+               // Skip constructor method.
+               if (!(this[name] instanceof Function) || name === 'constructor') {
                   continue;
                }
 
@@ -65,9 +67,15 @@ var AbstractSyntaxLoader = function () {
    return AbstractSyntaxLoader;
 }();
 
+/**
+ * Walks an objects inheritance tree collecting property names stopping before `AbstractSyntaxLoader` is reached.
+ *
+ * @param {object}   obj - object to walks.
+ * @returns {Array}
+ */
+
+
 exports.default = AbstractSyntaxLoader;
-
-
 var s_GET_ALL_PROPERTY_NAMES = function s_GET_ALL_PROPERTY_NAMES(obj) {
    var props = [];
 
@@ -78,7 +86,7 @@ var s_GET_ALL_PROPERTY_NAMES = function s_GET_ALL_PROPERTY_NAMES(obj) {
          }
       });
       obj = Object.getPrototypeOf(obj);
-   } while (typeof obj !== 'undefined' && obj !== null);
+   } while (typeof obj !== 'undefined' && obj !== null && !(obj === AbstractSyntaxLoader.prototype));
 
    return props;
 };
