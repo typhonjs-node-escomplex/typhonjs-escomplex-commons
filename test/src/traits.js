@@ -2,13 +2,13 @@
 
 import { assert }          from 'chai';
 
-import actualise           from '../../src/actualise.js';
-import actualiseOperands   from '../../src/actualiseOperands.js';
-import actualiseOperators  from '../../src/actualiseOperators.js';
+import actualise           from '../../src/traits/actualise.js';
+import actualiseOperands   from '../../src/traits/actualiseOperands.js';
+import actualiseOperators  from '../../src/traits/actualiseOperators.js';
 
-const actualisePath = '../../dist/actualise';
-const actualiseOperandsPath = '../../dist/actualiseOperands';
-const actualiseOperatorsPath = '../../dist/actualiseOperators';
+const actualisePath = '../../dist/traits/actualise';
+const actualiseOperandsPath = '../../dist/traits/actualiseOperands';
+const actualiseOperatorsPath = '../../dist/traits/actualiseOperators';
 
 suite('traits:', () =>
 {
