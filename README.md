@@ -1,2 +1,2 @@
 # escomplex-core-commons
-Provides core traits generation utilities
+Provides core common utilities for escomplex-core and plugins.
