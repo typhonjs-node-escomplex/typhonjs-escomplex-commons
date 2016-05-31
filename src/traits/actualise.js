@@ -18,7 +18,7 @@ import safeArray            from './safeArray.js';
  * @returns {{lloc: number, cyclomatic: number, operators: Array, operands: Array, ignoreKeys: Array, newScope: boolean, dependencies: undefined}}
  */
 export default function(lloc = 0, cyclomatic = 0, operators = undefined, operands = undefined,
- ignoreKeys = undefined, newScope = false, dependencies = undefined)
+ ignoreKeys = undefined, newScope = undefined, dependencies = undefined)
 {
    return {
       lloc,
