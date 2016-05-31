@@ -14,7 +14,6 @@ export default class AbstractSyntaxLoader
    {
       const syntaxes = {};
 
-      // for (const name of Object.getOwnPropertyNames(Object.getPrototypeOf(this)))
       for (const name of s_GET_ALL_PROPERTY_NAMES(Object.getPrototypeOf(this)))
       {
          // Skip constructor & onLoadSyntax methods.
@@ -35,7 +34,7 @@ const s_GET_ALL_PROPERTY_NAMES = (obj) =>
    {
       Object.getOwnPropertyNames(obj).forEach((prop) => { if (props.indexOf(prop) === -1) { props.push(prop); } });
       obj = Object.getPrototypeOf(obj);
-   } while (typeof obj !== 'undefined' || obj !== null);
+   } while (typeof obj !== 'undefined' && obj !== null);
 
    return props;
 };

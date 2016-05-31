@@ -28,7 +28,6 @@ var AbstractSyntaxLoader = function () {
       value: function onLoadSyntax(ev) {
          var syntaxes = {};
 
-         // for (const name of Object.getOwnPropertyNames(Object.getPrototypeOf(this)))
          var _iteratorNormalCompletion = true;
          var _didIteratorError = false;
          var _iteratorError = undefined;
@@ -79,7 +78,7 @@ var s_GET_ALL_PROPERTY_NAMES = function s_GET_ALL_PROPERTY_NAMES(obj) {
          }
       });
       obj = Object.getPrototypeOf(obj);
-   } while (typeof obj !== 'undefined' || obj !== null);
+   } while (typeof obj !== 'undefined' && obj !== null);
 
    return props;
 };
