@@ -10,7 +10,7 @@ exports.default = function () {
   var operators = arguments.length <= 2 || arguments[2] === undefined ? undefined : arguments[2];
   var operands = arguments.length <= 3 || arguments[3] === undefined ? undefined : arguments[3];
   var ignoreKeys = arguments.length <= 4 || arguments[4] === undefined ? undefined : arguments[4];
-  var newScope = arguments.length <= 5 || arguments[5] === undefined ? false : arguments[5];
+  var newScope = arguments.length <= 5 || arguments[5] === undefined ? undefined : arguments[5];
   var dependencies = arguments.length <= 6 || arguments[6] === undefined ? undefined : arguments[6];
 
   return {
