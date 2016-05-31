@@ -1,8 +1,8 @@
 {
-  "name": "escomplex-core-traits",
+  "name": "escomplex-core-commons",
   "version": "2.0.0",
-  "homepage": "https://github.com/typhonjs-node-escomplex/escomplex-core-traits/",
-  "description": "Provides core traits generation utilities for escomplex.",
+  "homepage": "https://github.com/typhonjs-node-escomplex/escomplex-core-commons/",
+  "description": "Provides core common utilities for escomplex-core and plugins.",
   "license": "MPL-2.0",
   "main": "./dist",
   "author": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/typhonjs-node-escomplex/escomplex-core-traits.git"
+    "url": "https://github.com/typhonjs-node-escomplex/escomplex-core-commons.git"
   },
   "maintainers": [
     {
@@ -43,6 +43,6 @@
   ],
   "directories": {},
   "bugs": {
-    "url": "https://github.com/typhonjs-node-escomplex/escomplex-core-traits/issues"
+    "url": "https://github.com/typhonjs-node-escomplex/escomplex-core-commons/issues"
   }
 }
