@@ -4,6 +4,7 @@
   "homepage": "https://github.com/typhonjs-node-escomplex/escomplex-core-commons/",
   "description": "Provides core common utilities for escomplex-core and plugins.",
   "license": "MPL-2.0",
+  "main": "./dist",
   "author": {
     "name": "Mike Leahy"
   },
