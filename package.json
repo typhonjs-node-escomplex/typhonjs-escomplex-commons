@@ -19,9 +19,8 @@
     }
   ],
   "devDependencies": {
-    "babel-plugin-add-module-exports": "^0.2.0",
     "typhonjs-config-eslint": "^0.4.0",
-    "typhonjs-npm-build-test": "^0.1.0"
+    "typhonjs-npm-build-test": "^0.2.0"
   },
   "scripts": {
     "build": "babel-node ./node_modules/typhonjs-npm-scripts-build-babel/scripts/build.js",
