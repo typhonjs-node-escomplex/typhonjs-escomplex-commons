@@ -1,10 +1,9 @@
 {
   "name": "escomplex-core-commons",
-  "version": "2.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/typhonjs-node-escomplex/escomplex-core-commons/",
   "description": "Provides core common utilities for escomplex-core and plugins.",
   "license": "MPL-2.0",
-  "main": "./dist",
   "author": {
     "name": "Mike Leahy"
   },
@@ -15,12 +14,13 @@
   "maintainers": [
     {
       "name": "Mike Leahy",
-      "email": "support@typhonjs.io"
+      "email": "support@typhonjs.io",
+      "url": "https://github.com/typhonrt"
     }
   ],
   "devDependencies": {
     "typhonjs-config-eslint": "^0.4.0",
-    "typhonjs-npm-build-test": "^0.2.0"
+    "typhonjs-npm-build-test": "^0.3.0"
   },
   "scripts": {
     "build": "babel-node ./node_modules/typhonjs-npm-scripts-build-babel/scripts/build.js",
@@ -31,8 +31,9 @@
     "test-coverage": "babel-node ./node_modules/typhonjs-npm-scripts-test-mocha/scripts/mocha-istanbul.js"
   },
   "keywords": [
+    "typhonjs",
     "escomplex",
-    "core",
+    "commons",
     "traits"
   ],
   "files": [

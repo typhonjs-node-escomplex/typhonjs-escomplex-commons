@@ -8,23 +8,19 @@
 export default class AbstractSyntaxLoader
 {
    /**
-    * Loads all member methods including from child classes that are not `constructor` or `onLoadSyntax`.
+    * Loads all member methods including from child classes that are not `constructor` or `onConfigure`.
     *
     * @param {object}   ev - escomplex plugin event data.
     */
    onLoadSyntax(ev)
    {
-      const syntaxes = {};
-
       for (const name of s_GET_ALL_PROPERTY_NAMES(Object.getPrototypeOf(this)))
       {
          // Skip constructor method.
-         if (!(this[name] instanceof Function) || name === 'constructor') { continue; }
+         if (!(this[name] instanceof Function) || name === 'constructor' || name === 'onConfigure') { continue; }
 
-         syntaxes[name] = this[name](ev.data.settings);
+         ev.data.syntaxes[name] = this[name](ev.data.settings);
       }
-
-      ev.data.syntaxes = syntaxes;
    }
 }
 

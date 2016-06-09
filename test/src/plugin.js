@@ -12,6 +12,7 @@ class Parent extends AbstractSyntaxLoader
 
 class Child extends Parent
 {
+   onConfigure() { return {}; } // This is ignored by AbstractSyntaxLoader.
    ChildThree() { return {}; }
    ChildFour() { return {}; }
 }
@@ -27,8 +28,10 @@ suite('plugin:', () =>
 
       test('verify child / parent syntax loading', () =>
       {
-         const event = { data: { settings: {} } };
+         const event = { data: { settings: {}, syntaxes: {} } };
          instance.onLoadSyntax(event);
+
+         assert.isUndefined(event.data.syntaxes['onConfigure']);
 
          assert.isObject(event.data.syntaxes['ChildThree']);
          assert.isObject(event.data.syntaxes['ChildFour']);

@@ -23,13 +23,11 @@ var AbstractSyntaxLoader = function () {
       key: 'onLoadSyntax',
 
       /**
-       * Loads all member methods including from child classes that are not `constructor` or `onLoadSyntax`.
+       * Loads all member methods including from child classes that are not `constructor` or `onConfigure`.
        *
        * @param {object}   ev - escomplex plugin event data.
        */
       value: function onLoadSyntax(ev) {
-         var syntaxes = {};
-
          var _iteratorNormalCompletion = true;
          var _didIteratorError = false;
          var _iteratorError = undefined;
@@ -39,11 +37,11 @@ var AbstractSyntaxLoader = function () {
                var name = _step.value;
 
                // Skip constructor method.
-               if (!(this[name] instanceof Function) || name === 'constructor') {
+               if (!(this[name] instanceof Function) || name === 'constructor' || name === 'onConfigure') {
                   continue;
                }
 
-               syntaxes[name] = this[name](ev.data.settings);
+               ev.data.syntaxes[name] = this[name](ev.data.settings);
             }
          } catch (err) {
             _didIteratorError = true;
@@ -59,8 +57,6 @@ var AbstractSyntaxLoader = function () {
                }
             }
          }
-
-         ev.data.syntaxes = syntaxes;
       }
    }]);
 
