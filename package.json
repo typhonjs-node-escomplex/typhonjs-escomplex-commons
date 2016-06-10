@@ -1,15 +1,15 @@
 {
-  "name": "escomplex-core-commons",
+  "name": "typhonjs-escomplex-commons",
   "version": "0.0.1",
-  "homepage": "https://github.com/typhonjs-node-escomplex/escomplex-core-commons/",
-  "description": "Provides core common utilities for escomplex-core and plugins.",
+  "homepage": "https://github.com/typhonjs-node-escomplex/typhonjs-escomplex-commons/",
+  "description": "Provides core common utilities for typhonjs-escomplex modules and plugins.",
   "license": "MPL-2.0",
   "author": {
     "name": "Mike Leahy"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/typhonjs-node-escomplex/escomplex-core-commons.git"
+    "url": "https://github.com/typhonjs-node-escomplex/typhonjs-escomplex-commons.git"
   },
   "maintainers": [
     {
@@ -43,6 +43,6 @@
   ],
   "directories": {},
   "bugs": {
-    "url": "https://github.com/typhonjs-node-escomplex/escomplex-core-commons/issues"
+    "url": "https://github.com/typhonjs-node-escomplex/typhonjs-escomplex-commons/issues"
   }
 }
