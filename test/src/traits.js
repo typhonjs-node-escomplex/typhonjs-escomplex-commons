@@ -6,81 +6,8 @@ import actualise           from '../../src/traits/actualise.js';
 import actualiseOperands   from '../../src/traits/actualiseOperands.js';
 import actualiseOperators  from '../../src/traits/actualiseOperators.js';
 
-const actualisePath = '../../dist/traits/actualise';
-const actualiseOperandsPath = '../../dist/traits/actualiseOperands';
-const actualiseOperatorsPath = '../../dist/traits/actualiseOperators';
-
 suite('traits:', () =>
 {
-   suite('require actualise:', () =>
-   {
-      let requireActualise;
-
-      setup(() => { requireActualise = require(actualisePath); });
-      teardown(() => { requireActualise = undefined; });
-
-      test('require does not throw', () =>
-      {
-         assert.doesNotThrow(() => { require(actualisePath); });
-      });
-
-      test('actualise function is exported', () =>
-      {
-         assert.isFunction(requireActualise);
-      });
-
-      test('actualise does not throw', () =>
-      {
-         assert.doesNotThrow(() => { requireActualise(); });
-      });
-   });
-
-   suite('require actualiseOperands:', () =>
-   {
-      let requireActualiseOperands;
-
-      setup(() => { requireActualiseOperands = require(actualiseOperandsPath); });
-      teardown(() => { requireActualiseOperands = undefined; });
-
-      test('actualiseOperands function is exported', () =>
-      {
-         assert.isFunction(requireActualiseOperands);
-      });
-
-      test('actualiseOperands throws when identifiers is object', () =>
-      {
-         assert.throws(() => { requireActualiseOperands({}); });
-      });
-
-      test('actualiseOperands does not throw when identifiers is array', () =>
-      {
-         assert.doesNotThrow(() => { requireActualiseOperands([]); });
-      });
-   });
-
-   suite('require actualiseOperators:', () =>
-   {
-      let requireActualiseOperators;
-
-      setup(() => { requireActualiseOperators = require(actualiseOperatorsPath); });
-      teardown(() => { requireActualiseOperators = undefined; });
-
-      test('actualiseOperators function is exported', () =>
-      {
-         assert.isFunction(requireActualiseOperators);
-      });
-
-      test('actualiseOperators throws when properties is object', () =>
-      {
-         assert.throws(() => { requireActualiseOperators({}); });
-      });
-
-      test('actualiseOperators does not throw when properties is array', () =>
-      {
-         assert.doesNotThrow(() => { requireActualiseOperators([]); });
-      });
-   });
-
    suite('actualise:', () =>
    {
       suite('string arguments:', () =>
