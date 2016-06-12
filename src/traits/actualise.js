@@ -8,12 +8,12 @@ import safeArray            from './safeArray.js';
  * Provides a helper method to format core traits for escomplex processing.
  *
  * @param {function|number}         lloc - Logical lines of code
- * @param {function|number}         cyclomatic -
- * @param {function|string|Array}   operators -
- * @param {function|string|Array}   operands -
- * @param {function|string|Array}   ignoreKeys -
- * @param {function|boolean}        newScope -
- * @param {function|object}         dependencies -
+ * @param {function|number}         cyclomatic - The number of linearly independent paths through source code.
+ * @param {function|string|Array}   operators - An operator carries out an action.
+ * @param {function|string|Array}   operands - An operand participates in such an action (operator).
+ * @param {function|string|Array}   ignoreKeys - Provides a list of AST node children keys to skip traversal.
+ * @param {function|boolean}        newScope - Creates a new class / function scope for report generation.
+ * @param {function|object}         dependencies - An import / require dependency.
  *
  * @returns {{lloc: number, cyclomatic: number, operators: Array, operands: Array, ignoreKeys: Array, newScope: boolean, dependencies: undefined}}
  */
