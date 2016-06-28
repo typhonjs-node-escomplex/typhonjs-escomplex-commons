@@ -5,18 +5,18 @@ import { assert }          from 'chai';
 import Trait               from '../../../src/module/traits/Trait.js';
 import TraitHalstead       from '../../../src/module/traits/TraitHalstead.js';
 
-import actualise           from '../../../src/module/traits/actualise.js';
-import actualiseHalstead   from '../../../src/module/traits/actualiseHalstead.js';
+import actualize           from '../../../src/module/traits/actualize.js';
+import actualizeHalstead   from '../../../src/module/traits/actualizeHalstead.js';
 
 suite('traits:', () =>
 {
-   suite('actualise:', () =>
+   suite('actualize:', () =>
    {
       suite('string arguments:', () =>
       {
          let result;
 
-         setup(() => { result = actualise('koda', 'basanda', 'bosoya', 'umahasha', 'tikki', 'ottobo', 'boshatta'); });
+         setup(() => { result = actualize('koda', 'basanda', 'bosoya', 'umahasha', 'tikki', 'ottobo', 'boshatta'); });
          teardown(() => { result = undefined; });
 
          test('result was object', () =>
@@ -86,7 +86,7 @@ suite('traits:', () =>
       {
          let result;
 
-         setup(() => { result = actualise('1', '2', ['3'], ['4'], ['5'], '6', '7'); });
+         setup(() => { result = actualize('1', '2', ['3'], ['4'], ['5'], '6', '7'); });
          teardown(() => { result = undefined; });
 
          test('lloc was correct', () =>
@@ -121,7 +121,7 @@ suite('traits:', () =>
       {
          let result;
 
-         setup(() => { result = actualise(); });
+         setup(() => { result = actualize(); });
 
          teardown(() => { result = undefined; });
 
@@ -133,13 +133,13 @@ suite('traits:', () =>
       });
    });
 
-   suite('actualiseHalstead:', () =>
+   suite('actualizeHalstead:', () =>
    {
       suite('no identifiers:', () =>
       {
          let result;
 
-         setup(() => { result = actualiseHalstead([]); });
+         setup(() => { result = actualizeHalstead([]); });
          teardown(() => { result = undefined; });
 
          test('result was array', () =>
@@ -157,7 +157,7 @@ suite('traits:', () =>
       {
          let result;
 
-         setup(() => { result = actualiseHalstead(['foo']); });
+         setup(() => { result = actualizeHalstead(['foo']); });
          teardown(() => { result = undefined; });
 
          test('result contained one item', () =>
@@ -176,7 +176,7 @@ suite('traits:', () =>
       {
          let result;
 
-         setup(() => { result = actualiseHalstead(['bar', 'baz']); });
+         setup(() => { result = actualizeHalstead(['bar', 'baz']); });
          teardown(() => { result = undefined; });
 
          test('result contained two items', () =>

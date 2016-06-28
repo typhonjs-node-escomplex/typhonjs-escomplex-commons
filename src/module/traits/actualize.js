@@ -1,6 +1,6 @@
 'use strict';
 
-import actualiseHalstead   from './actualiseHalstead.js';
+import actualizeHalstead   from './actualizeHalstead.js';
 import safeArray           from './safeArray.js';
 
 import Trait               from './Trait.js';
@@ -24,8 +24,8 @@ export default function(lloc = 0, cyclomatic = 0, operators = undefined, operand
    return {
       lloc: new Trait(lloc),
       cyclomatic: new Trait(cyclomatic),
-      operators: actualiseHalstead(safeArray(operators)),
-      operands: actualiseHalstead(safeArray(operands)),
+      operators: actualizeHalstead(safeArray(operators)),
+      operands: actualizeHalstead(safeArray(operands)),
       ignoreKeys: new Trait(safeArray(ignoreKeys)),
       newScope: new Trait(newScope),
       dependencies: new Trait(dependencies)
