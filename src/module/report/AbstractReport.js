@@ -10,7 +10,7 @@ export default class AbstractReport
     * If given assigns the method report to an internal variable. This is used by `ClassReport` and `ModuleReport`
     * which stores a `MethodReport` respectively in `this.aggregate`.
     *
-    * @param {MethodReport}   methodReport -
+    * @param {MethodReport}   methodReport - A MethodReport to associate with this report.
     */
    constructor(methodReport)
    {
@@ -35,12 +35,19 @@ export default class AbstractReport
    }
 
    /**
-    * Returns the associated `MethodReport` or this.
+    * Returns the associated `MethodReport` or `this`. Both ClassReport and ModuleReport have an `aggregate`
+    * MethodReport.
     *
     * @returns {MethodReport}
     */
    get methodReport() { return typeof this._methodReport !== 'undefined' ? this._methodReport : this; }
 
+   /**
+    * Increments the associated MethodReport Halstead for distinct names including aliasing any built-in property names.
+    *
+    * @param {string}   metric - A Halstead metric name.
+    * @param {string}   identifier - A Halstead identifier name.
+    */
    incrementDistinctHalsteadItems(metric, identifier)
    {
       if (this.hasOwnProperty(identifier))
@@ -57,6 +64,12 @@ export default class AbstractReport
       }
    }
 
+   /**
+    * Increments the associated MethodReport Halstead items including distinct and total counts.
+    *
+    * @param {string}   metric - A Halstead metric name.
+    * @param {string}   identifier - A Halstead identifier name.
+    */
    incrementHalsteadItems(metric, identifier)
    {
       this.incrementDistinctHalsteadItems(metric, identifier);
@@ -65,16 +78,35 @@ export default class AbstractReport
       this.incrementHalsteadMetric(metric, 'total');
    }
 
+   /**
+    * Increments the associated MethodReport Halstead metric type.
+    *
+    * @param {string}   metric - A Halstead metric name.
+    * @param {string}   type - A Halstead metric type.
+    */
    incrementHalsteadMetric(metric, type)
    {
       this.methodReport.halstead[metric][type] += 1;
    }
 
+   /**
+    * Increments the associated MethodReport parameter count.
+    *
+    * @param {number}   count - Value to increase params by.
+    */
    incrementParams(count)
    {
       this.methodReport.params += count;
    }
 
+   /**
+    * Returns true if a given metric / identifier is not found in the associated MethodReport.
+    *
+    * @param {string}   metric - A Halstead metric name.
+    * @param {string}   identifier - A Halstead identifier name.
+    *
+    * @returns {boolean}
+    */
    isHalsteadMetricDistinct(metric, identifier)
    {
       return !this.methodReport.halstead[metric].identifiers.includes(identifier);

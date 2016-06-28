@@ -10,7 +10,7 @@ import MethodReport     from './MethodReport.js';
 export default class ModuleReport extends AbstractReport
 {
    /**
-    * Initializes the report
+    * Initializes the report.
     *
     * @param {number}   lineStart - Start line of file / module.
     * @param {number}   lineEnd - End line of file / module.
@@ -20,22 +20,17 @@ export default class ModuleReport extends AbstractReport
       super(new MethodReport('', lineStart, lineEnd, 0));
 
       /**
-       * Stores the aggregate function data.
-       * @type {{}}
+       * Stores the aggregate MethodReport for the module.
+       * @type {MethodReport}
        */
       this.aggregate = this._methodReport;
 
       /**
-       * Stores all class data.
+       * Stores all ClassReport data for the module.
        * @type {Array}
+       * @link {ClassReport}
        */
       this.classes = [];
-
-      /**
-       * Stores all module method data.
-       * @type {Array}
-       */
-      this.methods = [];
 
       /**
        * Stores all parsed dependencies.
@@ -44,24 +39,38 @@ export default class ModuleReport extends AbstractReport
       this.dependencies = [];
 
       /**
-       * Stores the maintainability index for a report
+       * Stores the maintainability index for a report.
        * @type {number}
        */
       this.maintainability = 171;
 
       /**
+       * Stores all module MethodReport data found outside of any ES6 classes.
+       * @type {Array}
+       * @link {MethodReport}
+       */
+      this.methods = [];
+
+      /**
        * Stores the current class report scope stack.
        * @type {Array}
+       * @link {ClassReport}
        */
       this._scopeStackClass = [];
 
       /**
-       * Stores the current function report scope stack.
+       * Stores the current method report scope stack.
        * @type {Array}
+       * @link {MethodReport}
        */
       this._scopeStackMethod = [];
    }
 
+   /**
+    * Potentially adds given dependencies for tracking.
+    *
+    * @param {object|Array}   dependencies - Dependencies to add.
+    */
    addDependencies(dependencies)
    {
       if (typeof dependencies === 'object' || Array.isArray(dependencies))
@@ -71,7 +80,7 @@ export default class ModuleReport extends AbstractReport
    }
 
    /**
-    * Creates a report scope when a class or function is entered.
+    * Creates a report scope when a class or method is entered.
     *
     * @param {string}   type - Type of report to create.
     * @param {string}   name - Name of the function.
@@ -94,6 +103,7 @@ export default class ModuleReport extends AbstractReport
             break;
 
          case 'method':
+         {
             report = new MethodReport(name, lineStart, lineEnd, params);
 
             // If an existing class report / scope exists also push the function to the class report.
@@ -111,6 +121,7 @@ export default class ModuleReport extends AbstractReport
             this._scopeStackMethod.push(report);
 
             break;
+         }
 
          default:
             throw new Error('createScope error: Unknown scope type.');
@@ -134,16 +145,33 @@ export default class ModuleReport extends AbstractReport
       return this;
    }
 
+   /**
+    * Returns the current class report.
+    *
+    * @returns {ClassReport}
+    */
    getCurrentClassReport()
    {
       return this._scopeStackClass.length > 0 ? this._scopeStackClass[this._scopeStackClass.length - 1] : void 0;
    }
 
+   /**
+    * Returns the current method report.
+    *
+    * @returns {MethodReport}
+    */
    getCurrentMethodReport()
    {
       return this._scopeStackMethod.length > 0 ? this._scopeStackMethod[this._scopeStackMethod.length - 1] : void 0;
    }
 
+   /**
+    * Increments the Halstead `metric` for the given `identifier` for the ModuleReport and any current class or method
+    * report being tracked.
+    *
+    * @param {string}   metric - A Halstead metric name.
+    * @param {string}   identifier - A Halstead identifier name.
+    */
    halsteadItemEncountered(metric, identifier)
    {
       const currentClassReport = this.getCurrentClassReport();
@@ -156,6 +184,11 @@ export default class ModuleReport extends AbstractReport
       if (currentMethodReport) { currentMethodReport.incrementHalsteadItems(metric, identifier); }
    }
 
+   /**
+    * Increments the cyclomatic metric for the ModuleReport and any current class or method report being tracked.
+    *
+    * @param {number}   amount - Amount to increment.
+    */
    incrementCyclomatic(amount)
    {
       const currentClassReport = this.getCurrentClassReport();
@@ -167,6 +200,12 @@ export default class ModuleReport extends AbstractReport
       if (currentMethodReport) { currentMethodReport.cyclomatic += amount; }
    }
 
+   /**
+    * Increments the logical SLOC (source lines of code) metric for the ModuleReport and any current class or method
+    * report being tracked.
+    *
+    * @param {number}   amount - Amount to increment.
+    */
    incrementLogicalSloc(amount)
    {
       const currentClassReport = this.getCurrentClassReport();

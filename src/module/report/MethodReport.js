@@ -9,7 +9,7 @@ import HalsteadData     from './HalsteadData.js';
 export default class MethodReport extends AbstractReport
 {
    /**
-    * Provides default array and indices for summing maintainability metrics.
+    * Provides a default array and indices for summing maintainability metrics.
     *
     * @returns {{sums: number[], indices: {cyclomatic: number, effort: number, loc: number, params: number}}}
     */
@@ -31,6 +31,36 @@ export default class MethodReport extends AbstractReport
       super();
 
       /**
+       * The cyclomatic complexity of the method.
+       * @type {number}
+       */
+      this.cyclomatic = 1;
+
+      /**
+       * The cyclomatic density of the method.
+       * @type {number}
+       */
+      this.cyclomaticDensity = 0;
+
+      /**
+       * Stores the Halstead data instance.
+       * @type {HalsteadData}
+       */
+      this.halstead = new HalsteadData();
+
+      /**
+       * Stores the end line for the method.
+       * @type {Object}
+       */
+      this.lineEnd = lineEnd;
+
+      /**
+       * Stores the start line for the method.
+       * @type {Object}
+       */
+      this.lineStart = lineStart;
+
+      /**
        * The name of the method.
        * @type {string}
        */
@@ -43,41 +73,17 @@ export default class MethodReport extends AbstractReport
       this.params = params;
 
       /**
-       * Stores the start line for the method.
-       * @type {Object}
-       */
-      this.lineStart = lineStart;
-
-      /**
-       * Stores the end line for the method.
-       * @type {Object}
-       */
-      this.lineEnd = lineEnd;
-
-      /**
        * The source lines of code for the method.
        * @type {{logical: number, physical: number}}
        */
       this.sloc = { logical: 0, physical: lineEnd - lineStart + 1 };
-
-      /**
-       * The cyclomatic complexity of the method.
-       * @type {number}
-       */
-      this.cyclomatic = 1;
-
-      /**
-       * Stores the Halstead data instance.
-       * @type {HalsteadData}
-       */
-      this.halstead = new HalsteadData();
    }
 
    /**
-    * Provides a convenience
+    * Provides a convenience method to increment metric sums given an object hash of indices.
     *
-    * @param {Array}    sums -
-    * @param {object}   indices -
+    * @param {Array}    sums - Running sums for metric calculation.
+    * @param {object}   indices - Indices into the sums array for specific metrics.
     */
    sumMetrics(sums = [], indices)
    {
@@ -105,6 +111,10 @@ export default class MethodReport extends AbstractReport
    }
 }
 
+/**
+ * Defines the default maintainability metrics supported by `sumMetrics`.
+ * @type {{cyclomatic: number, effort: number, loc: number, params: number}}
+ */
 const s_INDICES_MAINTAINABILITY =
 {
    cyclomatic: 0,
