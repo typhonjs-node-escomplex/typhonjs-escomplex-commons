@@ -9,7 +9,7 @@ import MethodReport     from './MethodReport.js';
 export default class ClassReport extends AbstractReport
 {
    /**
-    * Initializes function report.
+    * Initializes class report.
     *
     * @param {string}   name - Name of the function.
     * @param {number}   lineStart - Start line of function.
@@ -21,9 +21,39 @@ export default class ClassReport extends AbstractReport
 
       /**
        * Stores the aggregate method data.
-       * @type {{}}
+       * @type {MethodReport}
        */
       this.aggregate = this._methodReport;
+
+      /**
+       * The cyclomatic complexity of the class.
+       * @type {number}
+       */
+      this.cyclomatic = 1;
+
+      /**
+       * The cyclomatic density of the class.
+       * @type {number}
+       */
+      this.cyclomaticDensity = 0;
+
+      /**
+       * Stores the end line for the class.
+       * @type {number}
+       */
+      this.lineEnd = lineEnd;
+
+      /**
+       * Stores the start line for the class.
+       * @type {number}
+       */
+      this.lineStart = lineStart;
+
+      /**
+       * Stores all method data.
+       * @type {Array<MethodReport>}
+       */
+      this.methods = [];
 
       /**
        * The name of the function.
@@ -32,33 +62,9 @@ export default class ClassReport extends AbstractReport
       this.name = name;
 
       /**
-       * Stores the start line for the function.
-       * @type {Object}
-       */
-      this.lineStart = lineStart;
-
-      /**
-       * Stores the end line for the function.
-       * @type {Object}
-       */
-      this.lineEnd = lineEnd;
-
-      /**
-       * Stores all method data.
-       * @type {Array}
-       */
-      this.methods = [];
-
-      /**
        * The source lines of code for the function.
        * @type {{logical: number, physical: number}}
        */
       this.sloc = { logical: 0, physical: lineEnd - lineStart + 1 };
-
-      /**
-       * The cyclomatic complexity of the class.
-       * @type {number}
-       */
-      this.cyclomatic = 1;
    }
 }

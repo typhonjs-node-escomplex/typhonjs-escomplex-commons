@@ -56,13 +56,13 @@ export default class HalsteadData
       /**
        * In general an operand participates in actions associated with operators. A distinct and total count is provided
        * with all identifiers.
-       * @type {{distinct: number, total: number, identifiers: Array}}
+       * @type {{distinct: number, total: number, identifiers: Array<string>}}
        */
       this.operands = { distinct: 0, total: 0, identifiers: [] };
 
       /**
        * In general an operator carries out an action. A distinct and total count is provided with all identifiers.
-       * @type {{distinct: number, total: number, identifiers: Array}}
+       * @type {{distinct: number, total: number, identifiers: Array<string>}}
        */
       this.operators = { distinct: 0, total: 0, identifiers: [] };
    }

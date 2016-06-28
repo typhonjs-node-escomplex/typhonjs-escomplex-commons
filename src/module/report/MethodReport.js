@@ -50,13 +50,13 @@ export default class MethodReport extends AbstractReport
 
       /**
        * Stores the end line for the method.
-       * @type {Object}
+       * @type {number}
        */
       this.lineEnd = lineEnd;
 
       /**
        * Stores the start line for the method.
-       * @type {Object}
+       * @type {number}
        */
       this.lineStart = lineStart;
 

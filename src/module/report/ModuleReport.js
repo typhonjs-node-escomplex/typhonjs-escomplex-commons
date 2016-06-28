@@ -27,8 +27,7 @@ export default class ModuleReport extends AbstractReport
 
       /**
        * Stores all ClassReport data for the module.
-       * @type {Array}
-       * @link {ClassReport}
+       * @type {Array<ClassReport>}
        */
       this.classes = [];
 
@@ -46,22 +45,19 @@ export default class ModuleReport extends AbstractReport
 
       /**
        * Stores all module MethodReport data found outside of any ES6 classes.
-       * @type {Array}
-       * @link {MethodReport}
+       * @type {Array<MethodReport>}
        */
       this.methods = [];
 
       /**
        * Stores the current class report scope stack.
-       * @type {Array}
-       * @link {ClassReport}
+       * @type {Array<ClassReport>}
        */
       this._scopeStackClass = [];
 
       /**
        * Stores the current method report scope stack.
-       * @type {Array}
-       * @link {MethodReport}
+       * @type {Array<MethodReport>}
        */
       this._scopeStackMethod = [];
    }
