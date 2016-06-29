@@ -79,10 +79,10 @@ export default class ModuleReport extends AbstractReport
     * Creates a report scope when a class or method is entered.
     *
     * @param {string}   type - Type of report to create.
-    * @param {string}   name - Name of the function.
-    * @param {number}   lineStart - Start line of function.
-    * @param {number}   lineEnd - End line of function.
-    * @param {number}   params - Number of parameters for function.
+    * @param {string}   name - Name of the class or method.
+    * @param {number}   lineStart - Start line of method.
+    * @param {number}   lineEnd - End line of method.
+    * @param {number}   params - Number of parameters for method.
     *
     * @return {object}
     */
@@ -102,15 +102,20 @@ export default class ModuleReport extends AbstractReport
          {
             report = new MethodReport(name, lineStart, lineEnd, params);
 
-            // If an existing class report / scope exists also push the function to the class report.
+            // Increment aggregate method report params.
+            this.incrementParams(params);
+
+            // If an existing class report / scope exists also push the method to the class report.
             const classReport = this.getCurrentClassReport();
 
             if (classReport)
             {
+               classReport.incrementParams(params);
                classReport.methods.push(report);
             }
             else
             {
+               // Add this report to the module methods as there is no current class report.
                this.methods.push(report);
             }
 

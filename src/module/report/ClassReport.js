@@ -11,9 +11,9 @@ export default class ClassReport extends AbstractReport
    /**
     * Initializes class report.
     *
-    * @param {string}   name - Name of the function.
-    * @param {number}   lineStart - Start line of function.
-    * @param {number}   lineEnd - End line of function.
+    * @param {string}   name - Name of the class.
+    * @param {number}   lineStart - Start line of class.
+    * @param {number}   lineEnd - End line of class.
     */
    constructor(name = '', lineStart = 0, lineEnd = 0)
    {
@@ -56,13 +56,13 @@ export default class ClassReport extends AbstractReport
       this.methods = [];
 
       /**
-       * The name of the function.
+       * The name of the class.
        * @type {string}
        */
       this.name = name;
 
       /**
-       * The source lines of code for the function.
+       * The source lines of code for the class.
        * @type {{logical: number, physical: number}}
        */
       this.sloc = { logical: 0, physical: lineEnd - lineStart + 1 };
