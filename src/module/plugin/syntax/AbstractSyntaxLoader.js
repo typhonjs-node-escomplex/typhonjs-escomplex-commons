@@ -16,7 +16,7 @@ export default class AbstractSyntaxLoader
    {
       for (const name of s_GET_ALL_PROPERTY_NAMES(Object.getPrototypeOf(this)))
       {
-         // Skip constructor method.
+         // Skip constructor and onConfigure method.
          if (!(this[name] instanceof Function) || name === 'constructor' || name === 'onConfigure') { continue; }
 
          ev.data.syntaxes[name] = this[name](ev.data.settings);
@@ -28,7 +28,9 @@ export default class AbstractSyntaxLoader
  * Walks an objects inheritance tree collecting property names stopping before `AbstractSyntaxLoader` is reached.
  *
  * @param {object}   obj - object to walks.
+ *
  * @returns {Array}
+ * @ignore
  */
 const s_GET_ALL_PROPERTY_NAMES = (obj) =>
 {

@@ -1,12 +1,16 @@
 'use strict';
 
-import { assert }          from 'chai';
+import 'babel-polyfill';
 
-import Trait               from '../../../src/module/traits/Trait.js';
-import TraitHalstead       from '../../../src/module/traits/TraitHalstead.js';
+import { assert }    from 'chai';
 
-import actualize           from '../../../src/module/traits/actualize.js';
-import actualizeHalstead   from '../../../src/module/traits/actualizeHalstead.js';
+import HalsteadArray from '../../../src/module/traits/HalsteadArray.js';
+import ModuleReport  from '../../../src/module/report/ModuleReport.js';
+import Trait         from '../../../src/module/traits/Trait.js';
+import TraitHalstead from '../../../src/module/traits/TraitHalstead.js';
+
+import actualize     from '../../../src/module/traits/actualize.js';
+import safeName      from '../../../src/module/traits/safeName.js';
 
 suite('traits:', () =>
 {
@@ -40,22 +44,24 @@ suite('traits:', () =>
 
          test('operators was correct', () =>
          {
-            assert.isArray(result.operators);
-            assert.lengthOf(result.operators, 1);
-            assert.instanceOf(result.operators[0], TraitHalstead);
-            assert.strictEqual(result.operators[0].type, 'object');
-            assert.strictEqual(result.operators[0].valueOf(), 'bosoya');
-            assert.strictEqual(result.operators[0].filter(), true);
+            assert.instanceOf(result.operators, HalsteadArray);
+            assert.strictEqual(result.operators.length, 1);
+            assert.strictEqual(result.operators.metric, 'operators');
+            assert.instanceOf(result.operators.get(0), TraitHalstead);
+            assert.strictEqual(result.operators.get(0).type, 'object');
+            assert.strictEqual(result.operators.get(0).valueOf(), 'bosoya');
+            assert.strictEqual(result.operators.get(0).filter(), true);
          });
 
          test('operands was correct', () =>
          {
-            assert.isArray(result.operands);
-            assert.lengthOf(result.operands, 1);
-            assert.instanceOf(result.operands[0], TraitHalstead);
-            assert.strictEqual(result.operands[0].type, 'object');
-            assert.strictEqual(result.operands[0].valueOf(), 'umahasha');
-            assert.strictEqual(result.operands[0].filter(), true);
+            assert.instanceOf(result.operands, HalsteadArray);
+            assert.strictEqual(result.operands.length, 1);
+            assert.strictEqual(result.operands.metric, 'operands');
+            assert.instanceOf(result.operands.get(0), TraitHalstead);
+            assert.strictEqual(result.operands.get(0).type, 'object');
+            assert.strictEqual(result.operands.get(0).valueOf(), 'umahasha');
+            assert.strictEqual(result.operands.get(0).filter(), true);
          });
 
          test('ignoreKeys was correct', () =>
@@ -133,23 +139,47 @@ suite('traits:', () =>
       });
    });
 
-   suite('actualizeHalstead:', () =>
+   suite('safeName:', () =>
+   {
+      suite('parsing is correct:', () =>
+      {
+         test('result with no parameters return `<anonymous>`', () =>
+         {
+            const result = safeName();
+            assert.strictEqual(result, '<anonymous>');
+         });
+
+         test('result with null data and default value', () =>
+         {
+            const result = safeName(null, 'default');
+            assert.strictEqual(result, 'default');
+         });
+
+         test('result with `object.name`', () =>
+         {
+            const result = safeName({ name: 'safe!' }, 'default');
+            assert.strictEqual(result, 'safe!');
+         });
+      });
+   });
+
+   suite('HalsteadArray:', () =>
    {
       suite('no identifiers:', () =>
       {
          let result;
 
-         setup(() => { result = actualizeHalstead([]); });
+         setup(() => { result = new HalsteadArray([], 'operators'); });
          teardown(() => { result = undefined; });
-
-         test('result was array', () =>
-         {
-            assert.isArray(result);
-         });
 
          test('result was empty', () =>
          {
-            assert.lengthOf(result, 0);
+            assert.strictEqual(result.length, 0);
+         });
+
+         test('result metric is correct', () =>
+         {
+            assert.strictEqual(result.metric, 'operators');
          });
       });
 
@@ -157,18 +187,23 @@ suite('traits:', () =>
       {
          let result;
 
-         setup(() => { result = actualizeHalstead(['foo']); });
+         setup(() => { result = new HalsteadArray(['foo'], 'operators'); });
          teardown(() => { result = undefined; });
 
          test('result contained one item', () =>
          {
-            assert.lengthOf(result, 1);
+            assert.strictEqual(result.length, 1);
+         });
+
+         test('result forEach', () =>
+         {
+            result.forEach((traitHalstead) => { assert.strictEqual(traitHalstead.valueOf(), 'foo'); });
          });
 
          test('first item was correct', () =>
          {
-            assert.instanceOf(result[0], TraitHalstead);
-            assert.strictEqual(result[0].valueOf(), 'foo');
+            assert.instanceOf(result.get(0), TraitHalstead);
+            assert.strictEqual(result.get(0).valueOf(), 'foo');
          });
       });
 
@@ -176,22 +211,62 @@ suite('traits:', () =>
       {
          let result;
 
-         setup(() => { result = actualizeHalstead(['bar', 'baz']); });
+         setup(() => { result = new HalsteadArray(['bar', 'baz'], 'operators'); });
          teardown(() => { result = undefined; });
 
          test('result contained two items', () =>
          {
-            assert.lengthOf(result, 2);
+            assert.strictEqual(result.length, 2);
          });
 
          test('first item was correct', () =>
          {
-            assert.strictEqual(result[0].valueOf(), 'bar');
+            assert.instanceOf(result.get(0), TraitHalstead);
+            assert.strictEqual(result.get(0).valueOf(), 'bar');
          });
 
          test('second item was correct', () =>
          {
-            assert.strictEqual(result[1].valueOf(), 'baz');
+            assert.instanceOf(result.get(1), TraitHalstead);
+            assert.strictEqual(result.get(1).valueOf(), 'baz');
+         });
+      });
+
+      suite('process report:', () =>
+      {
+         test('report contains correct operator identifiers', () =>
+         {
+            // Note the 3rd identifier has a filter method to skip processing.
+            const halsteadArray = new HalsteadArray(
+             ['foo', 'bar', ['baz', 'biz'], { identifier: 'ignored', filter: () => { return false; } }],
+              'operators');
+
+            const report = new ModuleReport(0, 0);
+
+            halsteadArray.process(report);
+            report.finalize();
+
+            assert.lengthOf(report.aggregate.halstead.operators.identifiers, 4);
+            assert.strictEqual(report.aggregate.halstead.operators.identifiers[0], 'foo');
+            assert.strictEqual(report.aggregate.halstead.operators.identifiers[1], 'bar');
+            assert.strictEqual(report.aggregate.halstead.operators.identifiers[2], 'baz');
+            assert.strictEqual(report.aggregate.halstead.operators.identifiers[3], 'biz');
+         });
+      });
+   });
+
+   suite('Trait:', () =>
+   {
+      suite('with function / params:', () =>
+      {
+         let result;
+
+         setup(() => { result = new Trait((value) => { return value; }); });
+         teardown(() => { result = undefined; });
+
+         test('result with function / params is correct', () =>
+         {
+            assert.strictEqual(result.valueOf('foobar'), 'foobar');
          });
       });
    });

@@ -1,9 +1,9 @@
 'use strict';
 
-import actualizeHalstead   from './actualizeHalstead.js';
-import safeArray           from './safeArray.js';
+import HalsteadArray from './HalsteadArray.js';
+import Trait         from './Trait.js';
 
-import Trait               from './Trait.js';
+import safeArray     from './safeArray.js';
 
 /**
  * Provides a helper method to format core traits for escomplex processing.
@@ -16,7 +16,7 @@ import Trait               from './Trait.js';
  * @param {function|string}         newScope - Creates a new `class` or `method` scope for report generation.
  * @param {function|object}         dependencies - An import / require dependency.
  *
- * @returns {{lloc: Trait, cyclomatic: Trait, operators: Array, operands: Array, ignoreKeys: Trait, newScope: Trait, dependencies: Trait}}
+ * @returns {{lloc: Trait, cyclomatic: Trait, operators: HalsteadArray, operands: HalsteadArray, ignoreKeys: Trait, newScope: Trait, dependencies: Trait}}
  */
 export default function(lloc = 0, cyclomatic = 0, operators = undefined, operands = undefined,
  ignoreKeys = undefined, newScope = undefined, dependencies = undefined)
@@ -24,8 +24,8 @@ export default function(lloc = 0, cyclomatic = 0, operators = undefined, operand
    return {
       lloc: new Trait(lloc),
       cyclomatic: new Trait(cyclomatic),
-      operators: actualizeHalstead(safeArray(operators)),
-      operands: actualizeHalstead(safeArray(operands)),
+      operators: new HalsteadArray(safeArray(operators), 'operators'),
+      operands: new HalsteadArray(safeArray(operands), 'operands'),
       ignoreKeys: new Trait(safeArray(ignoreKeys)),
       newScope: new Trait(newScope),
       dependencies: new Trait(dependencies)

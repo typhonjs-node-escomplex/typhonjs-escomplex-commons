@@ -85,7 +85,7 @@ export default class MethodReport extends AbstractReport
     * @param {Array}    sums - Running sums for metric calculation.
     * @param {object}   indices - Indices into the sums array for specific metrics.
     */
-   sumMetrics(sums = [], indices)
+   sumMetrics(sums, indices)
    {
       for (const key in indices)
       {
@@ -114,6 +114,7 @@ export default class MethodReport extends AbstractReport
 /**
  * Defines the default maintainability metrics supported by `sumMetrics`.
  * @type {{cyclomatic: number, effort: number, loc: number, params: number}}
+ * @ignore
  */
 const s_INDICES_MAINTAINABILITY =
 {

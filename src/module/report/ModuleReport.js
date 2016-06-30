@@ -38,6 +38,18 @@ export default class ModuleReport extends AbstractReport
       this.dependencies = [];
 
       /**
+       * Stores the end line for the module / file.
+       * @type {number}
+       */
+      this.lineEnd = lineEnd;
+
+      /**
+       * Stores the start line for the module / file.
+       * @type {number}
+       */
+      this.lineStart = lineStart;
+
+      /**
        * Stores the maintainability index for a report.
        * @type {number}
        */
@@ -125,7 +137,7 @@ export default class ModuleReport extends AbstractReport
          }
 
          default:
-            throw new Error('createScope error: Unknown scope type.');
+            throw new Error(`createScope error: Unknown scope type (${type}).`);
       }
 
       return report;
@@ -197,7 +209,7 @@ export default class ModuleReport extends AbstractReport
 
       this.aggregate.cyclomatic += amount;
 
-      if (currentClassReport) { currentClassReport.cyclomatic += amount; }
+      if (currentClassReport) { currentClassReport.aggregate.cyclomatic += amount; }
       if (currentMethodReport) { currentMethodReport.cyclomatic += amount; }
    }
 
@@ -235,6 +247,9 @@ export default class ModuleReport extends AbstractReport
          case 'method':
             this._scopeStackMethod.pop();
             return this.getCurrentMethodReport();
+
+         default:
+            throw new Error(`popScope error: Unknown scope type (${type}).`);
       }
    }
 }

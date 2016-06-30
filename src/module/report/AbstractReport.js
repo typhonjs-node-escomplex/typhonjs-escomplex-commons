@@ -43,21 +43,15 @@ export default class AbstractReport
    get methodReport() { return typeof this._methodReport !== 'undefined' ? this._methodReport : this; }
 
    /**
-    * Increments the associated MethodReport Halstead for distinct names including aliasing any built-in property names.
+    * Increments the associated MethodReport HalsteadData for distinct identifiers.
     *
     * @param {string}   metric - A Halstead metric name.
     * @param {string}   identifier - A Halstead identifier name.
     */
    incrementDistinctHalsteadItems(metric, identifier)
    {
-      if (this.hasOwnProperty(identifier))
+      if (this.isHalsteadMetricDistinct(metric, identifier))
       {
-         // Avoid clashes with built-in property names.
-         this.incrementDistinctHalsteadItems(metric, `_${identifier}`);
-      }
-      else if (this.isHalsteadMetricDistinct(metric, identifier))
-      {
-         // Record distinct Halstead metric.
          this.methodReport.halstead[metric].identifiers.push(identifier);
 
          this.incrementHalsteadMetric(metric, 'distinct');
@@ -100,7 +94,7 @@ export default class AbstractReport
    }
 
    /**
-    * Returns true if a given metric / identifier is not found in the associated MethodReport.
+    * Returns true if a given HalsteadData metric / identifier is not found in the associated MethodReport.
     *
     * @param {string}   metric - A Halstead metric name.
     * @param {string}   identifier - A Halstead identifier name.

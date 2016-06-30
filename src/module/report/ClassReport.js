@@ -26,18 +26,6 @@ export default class ClassReport extends AbstractReport
       this.aggregate = this._methodReport;
 
       /**
-       * The cyclomatic complexity of the class.
-       * @type {number}
-       */
-      this.cyclomatic = 1;
-
-      /**
-       * The cyclomatic density of the class.
-       * @type {number}
-       */
-      this.cyclomaticDensity = 0;
-
-      /**
        * Stores the end line for the class.
        * @type {number}
        */
@@ -60,11 +48,5 @@ export default class ClassReport extends AbstractReport
        * @type {string}
        */
       this.name = name;
-
-      /**
-       * The source lines of code for the class.
-       * @type {{logical: number, physical: number}}
-       */
-      this.sloc = { logical: 0, physical: lineEnd - lineStart + 1 };
    }
 }
