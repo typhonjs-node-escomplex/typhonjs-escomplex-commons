@@ -3,16 +3,16 @@
 import TraitHalstead from './TraitHalstead.js';
 
 /**
- * Provides a wrapper around an array of Halstead properties object hash which should contain which should contain an
+ * Provides a wrapper around an array of Halstead properties object hashes which should contain an
  * `identifier` field and potentially a `filter` field.
  */
 export default class HalsteadArray
 {
    /**
-    * Initializes HalsteadArray by normalizing any Halstead properties coverting them into TraitHalstead instances.
+    * Initializes HalsteadArray by normalizing any Halstead properties converting them into TraitHalstead instances.
     *
-    * @param {Array}    data - An array of Halstead properties.
-    * @param {string}   metric - The name of Halstead metric being stored.
+    * @param {Array<object|string>} data - An array of Halstead properties.
+    * @param {string}               metric - The name of Halstead metric being stored.
     */
    constructor(data, metric)
    {
