@@ -203,7 +203,7 @@ suite('traits:', () =>
          test('first item was correct', () =>
          {
             assert.instanceOf(result.get(0), TraitHalstead);
-            assert.strictEqual(result.get(0).valueOf(), 'foo');
+            assert.strictEqual(result.get(0).valueOf('unused'), 'foo');
          });
       });
 
@@ -243,7 +243,7 @@ suite('traits:', () =>
 
             const report = new ModuleReport(0, 0);
 
-            halsteadArray.process(report);
+            halsteadArray.process(report, 'unused');
             report.finalize();
 
             assert.lengthOf(report.aggregate.halstead.operators.identifiers, 4);
@@ -251,6 +251,25 @@ suite('traits:', () =>
             assert.strictEqual(report.aggregate.halstead.operators.identifiers[1], 'bar');
             assert.strictEqual(report.aggregate.halstead.operators.identifiers[2], 'baz');
             assert.strictEqual(report.aggregate.halstead.operators.identifiers[3], 'biz');
+         });
+      });
+
+      suite('valueOf:', () =>
+      {
+         test('HalsteadArray valueOf contains correct operator identifiers', () =>
+         {
+            // Note the 3rd identifier has a filter method to skip processing.
+            const halsteadArray = new HalsteadArray(
+             ['foo', 'bar', ['baz', 'biz'], { identifier: 'ignored', filter: () => { return false; } }],
+              'operators');
+
+            const result = halsteadArray.valueOf('unused');
+
+            assert.lengthOf(result, 3);
+            assert.strictEqual(result[0], 'foo');
+            assert.strictEqual(result[1], 'bar');
+            assert.strictEqual(result[2][0], 'baz');
+            assert.strictEqual(result[2][1], 'biz');
          });
       });
    });

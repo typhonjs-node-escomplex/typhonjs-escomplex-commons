@@ -32,7 +32,8 @@ export default class Trait
     * otherwise the data is returned directly. If the wrapped data is an array a mapped version is returned
     * with each entry that is a function being invoked with the given `params`.
     *
-    * @param {*}  params - Provides parameters which are forwarded onto any data stored as a function.
+    * @param {*}  params - Provides parameters which are forwarded onto any data stored as a function. Normally
+    *                      `params` should be the `current AST node, parent AST node, ... optional data`.
     *
     * @returns {*}
     */

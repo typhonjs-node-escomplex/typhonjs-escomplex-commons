@@ -56,7 +56,7 @@ export default class HalsteadArray
     *
     * @param {number}   index - Index to access.
     *
-    * @returns {*}
+    * @returns {TraitHalstead}
     */
    get(index)
    {
@@ -82,16 +82,17 @@ export default class HalsteadArray
     * is resolved and passes any associated filter test then add it to the report.
     *
     * @param {ModuleReport}   report - The ModuleReport being processed.
-    * @param {object}         node - Current AST node.
-    * @param {object}         parent - Parent AST node.
+    * @param {*}              params - Provides parameters which are forwarded onto any data stored as a function.
+    *                                  Normally `params` should be the `current AST node, parent AST node, ... optional
+    *                                  data`.
     */
-   process(report, node = undefined, parent = undefined)
+   process(report, ...params)
    {
       this._data.forEach((traitHalstead) =>
       {
-         const identifier = traitHalstead.valueOf(node, parent);
+         const identifier = traitHalstead.valueOf(...params);
 
-         if (typeof identifier !== 'undefined' && traitHalstead.filter(node, parent))
+         if (typeof identifier !== 'undefined' && traitHalstead.filter(...params))
          {
             // Handle the case when a halstead trait element is an array of identifiers.
             if (Array.isArray(identifier))
@@ -104,5 +105,22 @@ export default class HalsteadArray
             }
          }
       });
+   }
+
+   /**
+    * Returns an array of evaluated TraitHalstead data as the value of the `identifier` field of the wrapped data.
+    * Additionally the TraitHalstead filter function is invoked with the given parameters removing any values that
+    * fail the filter test.
+    *
+    * @param {*}  params - Provides parameters which are forwarded onto any data stored as a function. Normally
+    *                      `params` should be the `current AST node, parent AST node, ... optional data`.
+    *
+    * @returns {Array<*>}
+    */
+   valueOf(...params)
+   {
+      const filtered = this._data.filter((traitHalstead) => { return traitHalstead.filter(...params); });
+
+      return filtered.map((traitHalstead) => { return traitHalstead.valueOf(...params); });
    }
 }

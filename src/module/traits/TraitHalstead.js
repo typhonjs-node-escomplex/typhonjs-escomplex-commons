@@ -56,7 +56,8 @@ export default class TraitHalstead
     * is invoked with the given `params` otherwise the data is returned directly. If `filter` is not defined then
     * `true` is returned.
     *
-    * @param {*}  params - Provides parameters which are forwarded onto any data stored as a function.
+    * @param {*}  params - Provides parameters which are forwarded onto any data stored as a function. Normally
+    *                      `params` should be the `current AST node, parent AST node, ... optional data`.
     *
     * @returns {boolean}
     */
