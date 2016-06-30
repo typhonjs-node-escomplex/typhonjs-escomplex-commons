@@ -1,7 +1,7 @@
 'use strict';
 
-import AbstractReport   from './AbstractReport.js';
-import MethodReport     from './MethodReport.js';
+import AbstractReport   from './AbstractReport';
+import MethodReport     from './MethodReport';
 
 /**
  * Provides a class report.

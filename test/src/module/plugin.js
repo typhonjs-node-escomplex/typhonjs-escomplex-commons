@@ -2,7 +2,7 @@
 
 import { assert }             from 'chai';
 
-import AbstractSyntaxLoader   from '../../../src/module/plugin/syntax/AbstractSyntaxLoader.js';
+import AbstractSyntaxLoader   from '../../../src/module/plugin/syntax/AbstractSyntaxLoader';
 
 class Parent extends AbstractSyntaxLoader
 {

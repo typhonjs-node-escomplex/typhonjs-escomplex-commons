@@ -1,7 +1,7 @@
 'use strict';
 
-import AbstractReport   from './AbstractReport.js';
-import HalsteadData     from './HalsteadData.js';
+import AbstractReport   from './AbstractReport';
+import HalsteadData     from './HalsteadData';
 
 /**
  * Provides a method report.

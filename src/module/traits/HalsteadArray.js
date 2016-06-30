@@ -1,6 +1,6 @@
 'use strict';
 
-import TraitHalstead from './TraitHalstead.js';
+import TraitHalstead from './TraitHalstead';
 
 /**
  * Provides a wrapper around an array of Halstead properties object hashes which should contain an

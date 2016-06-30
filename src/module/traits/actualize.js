@@ -1,9 +1,9 @@
 'use strict';
 
-import HalsteadArray from './HalsteadArray.js';
-import Trait         from './Trait.js';
+import HalsteadArray from './HalsteadArray';
+import Trait         from './Trait';
 
-import safeArray     from './safeArray.js';
+import safeArray     from './safeArray';
 
 /**
  * Provides a helper method to format core traits for escomplex processing.

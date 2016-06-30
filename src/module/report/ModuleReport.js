@@ -1,8 +1,8 @@
 'use strict';
 
-import AbstractReport   from './AbstractReport.js';
-import ClassReport      from './ClassReport.js';
-import MethodReport     from './MethodReport.js';
+import AbstractReport   from './AbstractReport';
+import ClassReport      from './ClassReport';
+import MethodReport     from './MethodReport';
 
 /**
  * Provides the default report object which stores data pertaining to a single file / module being processed.

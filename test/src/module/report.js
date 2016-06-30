@@ -4,9 +4,9 @@ import 'babel-polyfill';
 
 import { assert }    from 'chai';
 
-import ClassReport   from '../../../src/module/report/ClassReport.js';
-import MethodReport  from '../../../src/module/report/MethodReport.js';
-import ModuleReport  from '../../../src/module/report/ModuleReport.js';
+import ClassReport   from '../../../src/module/report/ClassReport';
+import MethodReport  from '../../../src/module/report/MethodReport';
+import ModuleReport  from '../../../src/module/report/ModuleReport';
 
 suite('report:', () =>
 {

@@ -4,13 +4,13 @@ import 'babel-polyfill';
 
 import { assert }    from 'chai';
 
-import HalsteadArray from '../../../src/module/traits/HalsteadArray.js';
-import ModuleReport  from '../../../src/module/report/ModuleReport.js';
-import Trait         from '../../../src/module/traits/Trait.js';
-import TraitHalstead from '../../../src/module/traits/TraitHalstead.js';
+import HalsteadArray from '../../../src/module/traits/HalsteadArray';
+import ModuleReport  from '../../../src/module/report/ModuleReport';
+import Trait         from '../../../src/module/traits/Trait';
+import TraitHalstead from '../../../src/module/traits/TraitHalstead';
 
-import actualize     from '../../../src/module/traits/actualize.js';
-import safeName      from '../../../src/module/traits/safeName.js';
+import actualize     from '../../../src/module/traits/actualize';
+import safeName      from '../../../src/module/traits/safeName';
 
 suite('traits:', () =>
 {
