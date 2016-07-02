@@ -252,4 +252,18 @@ export default class ModuleReport extends AbstractReport
             throw new Error(`popScope error: Unknown scope type (${type}).`);
       }
    }
+
+   /**
+    * Processes all TraitHalstead identifier data.
+    *
+    * @param {ModuleReport}   metric - The Halstead metric being processed.
+    * @param {Array<string>}  identifiers - An array of Halstead identifiers.
+    */
+   processHalsteadItems(metric, identifiers)
+   {
+      identifiers.forEach((identifier) =>
+      {
+         this.halsteadItemEncountered(metric, identifier);
+      });
+   }
 }

@@ -31,6 +31,7 @@ suite('traits:', () =>
          test('lloc was correct', () =>
          {
             assert.instanceOf(result.lloc, Trait);
+            assert.strictEqual(result.lloc.metric, 'lloc');
             assert.strictEqual(result.lloc.type, 'string');
             assert.strictEqual(result.lloc.valueOf(), 'koda');
          });
@@ -38,6 +39,7 @@ suite('traits:', () =>
          test('cyclomatic was correct', () =>
          {
             assert.instanceOf(result.cyclomatic, Trait);
+            assert.strictEqual(result.cyclomatic.metric, 'cyclomatic');
             assert.strictEqual(result.cyclomatic.type, 'string');
             assert.strictEqual(result.cyclomatic.valueOf(), 'basanda');
          });
@@ -67,6 +69,7 @@ suite('traits:', () =>
          test('ignoreKeys was correct', () =>
          {
             assert.instanceOf(result.ignoreKeys, Trait);
+            assert.strictEqual(result.ignoreKeys.metric, 'ignoreKeys');
             assert.strictEqual(result.ignoreKeys.type, 'object');
             assert.isArray(result.ignoreKeys.valueOf());
             assert.lengthOf(result.ignoreKeys.valueOf(), 1);
@@ -76,6 +79,7 @@ suite('traits:', () =>
          test('newScope was correct', () =>
          {
             assert.instanceOf(result.newScope, Trait);
+            assert.strictEqual(result.newScope.metric, 'newScope');
             assert.strictEqual(result.newScope.type, 'string');
             assert.strictEqual(result.newScope.valueOf(), 'ottobo');
          });
@@ -83,6 +87,7 @@ suite('traits:', () =>
          test('dependencies was correct', () =>
          {
             assert.instanceOf(result.dependencies, Trait);
+            assert.strictEqual(result.dependencies.metric, 'dependencies');
             assert.strictEqual(result.dependencies.type, 'string');
             assert.strictEqual(result.dependencies.valueOf(), 'boshatta');
          });
@@ -169,7 +174,7 @@ suite('traits:', () =>
       {
          let result;
 
-         setup(() => { result = new HalsteadArray([], 'operators'); });
+         setup(() => { result = new HalsteadArray('operators', []); });
          teardown(() => { result = undefined; });
 
          test('result was empty', () =>
@@ -187,7 +192,7 @@ suite('traits:', () =>
       {
          let result;
 
-         setup(() => { result = new HalsteadArray(['foo'], 'operators'); });
+         setup(() => { result = new HalsteadArray('operators', ['foo']); });
          teardown(() => { result = undefined; });
 
          test('result contained one item', () =>
@@ -211,7 +216,7 @@ suite('traits:', () =>
       {
          let result;
 
-         setup(() => { result = new HalsteadArray(['bar', 'baz'], 'operators'); });
+         setup(() => { result = new HalsteadArray('operators', ['bar', 'baz']); });
          teardown(() => { result = undefined; });
 
          test('result contained two items', () =>
@@ -222,12 +227,14 @@ suite('traits:', () =>
          test('first item was correct', () =>
          {
             assert.instanceOf(result.get(0), TraitHalstead);
+            assert.strictEqual(result.get(0).metric, 'operators');
             assert.strictEqual(result.get(0).valueOf(), 'bar');
          });
 
          test('second item was correct', () =>
          {
             assert.instanceOf(result.get(1), TraitHalstead);
+            assert.strictEqual(result.get(1).metric, 'operators');
             assert.strictEqual(result.get(1).valueOf(), 'baz');
          });
       });
@@ -237,13 +244,13 @@ suite('traits:', () =>
          test('report contains correct operator identifiers', () =>
          {
             // Note the 3rd identifier has a filter method to skip processing.
-            const halsteadArray = new HalsteadArray(
-             ['foo', 'bar', ['baz', 'biz'], { identifier: 'ignored', filter: () => { return false; } }],
-              'operators');
+            const halsteadArray = new HalsteadArray('operators',
+             ['foo', 'bar', ['baz', 'biz'], { identifier: 'ignored', filter: () => { return false; } }]);
 
             const report = new ModuleReport(0, 0);
 
-            halsteadArray.process(report, 'unused');
+            report.processHalsteadItems('operators', halsteadArray.valueOf('unused'));
+
             report.finalize();
 
             assert.lengthOf(report.aggregate.halstead.operators.identifiers, 4);
@@ -259,17 +266,16 @@ suite('traits:', () =>
          test('HalsteadArray valueOf contains correct operator identifiers', () =>
          {
             // Note the 3rd identifier has a filter method to skip processing.
-            const halsteadArray = new HalsteadArray(
-             ['foo', 'bar', ['baz', 'biz'], { identifier: 'ignored', filter: () => { return false; } }],
-              'operators');
+            const halsteadArray = new HalsteadArray('operators',
+             ['foo', 'bar', ['baz', 'biz'], { identifier: 'ignored', filter: () => { return false; } }]);
 
             const result = halsteadArray.valueOf('unused');
 
-            assert.lengthOf(result, 3);
+            assert.lengthOf(result, 4);
             assert.strictEqual(result[0], 'foo');
             assert.strictEqual(result[1], 'bar');
-            assert.strictEqual(result[2][0], 'baz');
-            assert.strictEqual(result[2][1], 'biz');
+            assert.strictEqual(result[2], 'baz');
+            assert.strictEqual(result[3], 'biz');
          });
       });
    });
@@ -280,7 +286,7 @@ suite('traits:', () =>
       {
          let result;
 
-         setup(() => { result = new Trait((value) => { return value; }); });
+         setup(() => { result = new Trait('a trait', (value) => { return value; }); });
          teardown(() => { result = undefined; });
 
          test('result with function / params is correct', () =>

@@ -8,17 +8,35 @@ export default class Trait
    /**
     * Initializes trait data.
     *
-    * @param {*}  data - Data to wrap.
+    * @param {string}   metric - The name of Halstead metric being stored.
+    * @param {*}        data - Data to wrap.
     */
-   constructor(data)
+   constructor(metric, data)
    {
+      /* istanbul ignore if */
+      if (typeof metric !== 'string') { throw new TypeError('ctor error: metric is not a `string`.'); }
+
       /**
        * Stores the data to wrap.
        * @type {*}
        * @private
        */
       this._data = data;
+
+      /**
+       * Stores the Trait metric type.
+       * @type {string}
+       * @private
+       */
+      this._metric = metric;
    }
+
+   /**
+    * Returns the associated metric type.
+    *
+    * @returns {string}
+    */
+   get metric() { return this._metric; }
 
    /**
     * Returns the typeof data being wrapper.

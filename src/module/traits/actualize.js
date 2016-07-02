@@ -14,7 +14,7 @@ import safeArray     from './safeArray';
  * @param {function|string|Array}   operands - An operand participates in such an action (operator).
  * @param {function|string|Array}   ignoreKeys - Provides a list of AST node children keys to skip traversal.
  * @param {function|string}         newScope - Creates a new `class` or `method` scope for report generation.
- * @param {function|object}         dependencies - An import / require dependency.
+ * @param {function|object|Array}   dependencies - An import / require dependency.
  *
  * @returns {{lloc: Trait, cyclomatic: Trait, operators: HalsteadArray, operands: HalsteadArray, ignoreKeys: Trait, newScope: Trait, dependencies: Trait}}
  */
@@ -22,12 +22,12 @@ export default function(lloc = 0, cyclomatic = 0, operators = undefined, operand
  ignoreKeys = undefined, newScope = undefined, dependencies = undefined)
 {
    return {
-      lloc: new Trait(lloc),
-      cyclomatic: new Trait(cyclomatic),
-      operators: new HalsteadArray(safeArray(operators), 'operators'),
-      operands: new HalsteadArray(safeArray(operands), 'operands'),
-      ignoreKeys: new Trait(safeArray(ignoreKeys)),
-      newScope: new Trait(newScope),
-      dependencies: new Trait(dependencies)
+      lloc: new Trait('lloc', lloc),
+      cyclomatic: new Trait('cyclomatic', cyclomatic),
+      operators: new HalsteadArray('operators', safeArray(operators)),
+      operands: new HalsteadArray('operands', safeArray(operands)),
+      ignoreKeys: new Trait('ignoreKeys', safeArray(ignoreKeys)),
+      newScope: new Trait('newScope', newScope),
+      dependencies: new Trait('dependencies', dependencies)
    };
 }

@@ -9,10 +9,14 @@ export default class TraitHalstead
    /**
     * Initializes the Halstead trait.
     *
+    * @param {string}   metric - The name of Halstead metric being stored.
     * @param {object}   data - The data field to be wrapped.
     */
-   constructor(data)
+   constructor(metric, data)
    {
+      /* istanbul ignore if */
+      if (typeof metric !== 'string') { throw new TypeError('ctor error: metric is not a `string`.'); }
+
       /* istanbul ignore if */
       if (typeof data !== 'object') { throw new TypeError('ctor error: data is not an `object`.'); }
 
@@ -49,6 +53,13 @@ export default class TraitHalstead
        * @private
        */
       this._data = data;
+
+      /**
+       * Stores the Halstead metric type.
+       * @type {string}
+       * @private
+       */
+      this._metric = metric;
    }
 
    /**
@@ -67,6 +78,13 @@ export default class TraitHalstead
    }
 
    /**
+    * Returns the associated metric type.
+    *
+    * @returns {string}
+    */
+   get metric() { return this._metric; }
+
+   /**
     * Returns the typeof data being wrapper.
     *
     * @returns {string}
@@ -79,7 +97,7 @@ export default class TraitHalstead
     *
     * @param {*}  params - Provides parameters which are forwarded onto any data stored as a function.
     *
-    * @returns {*}
+    * @returns {string|Array<string>}
     */
    valueOf(...params)
    {

@@ -11,16 +11,16 @@ export default class HalsteadArray
    /**
     * Initializes HalsteadArray by normalizing any Halstead properties converting them into TraitHalstead instances.
     *
-    * @param {Array<object|string>} data - An array of Halstead properties.
     * @param {string}               metric - The name of Halstead metric being stored.
+    * @param {Array<object|string>} data - An array of Halstead properties.
     */
-   constructor(data, metric)
+   constructor(metric, data)
    {
       /* istanbul ignore if */
-      if (!Array.isArray(data)) { throw new TypeError('ctor error: data is not an `Array`.'); }
+      if (typeof metric !== 'string') { throw new TypeError('ctor error: metric is not a `string`.'); }
 
       /* istanbul ignore if */
-      if (typeof metric !== 'string') { throw new TypeError('ctor error: metric is not a `string`.'); }
+      if (!Array.isArray(data)) { throw new TypeError('ctor error: data is not an `Array`.'); }
 
       /**
        * Stores an array of normalized Halstead property data to an object hash that has an `identifier` entry.
@@ -29,8 +29,8 @@ export default class HalsteadArray
        */
       this._data = data.map((property) =>
       {
-         return property && typeof property.identifier !== 'undefined' ? new TraitHalstead(property) :
-          new TraitHalstead({ identifier: property });
+         return property && typeof property.identifier !== 'undefined' ? new TraitHalstead(metric, property) :
+          new TraitHalstead(metric, { identifier: property });
       });
 
       /**
@@ -71,41 +71,11 @@ export default class HalsteadArray
    get length() { return this._data.length; }
 
    /**
-    * Returns the associated metric label.
+    * Returns the associated metric type.
     *
     * @returns {string}
     */
    get metric() { return this._metric; }
-
-   /**
-    * Processes all TraitHalstead data with the given report and current / parent AST nodes. If an Halstead identifier
-    * is resolved and passes any associated filter test then add it to the report.
-    *
-    * @param {ModuleReport}   report - The ModuleReport being processed.
-    * @param {*}              params - Provides parameters which are forwarded onto any data stored as a function.
-    *                                  Normally `params` should be the `current AST node, parent AST node, ... optional
-    *                                  data`.
-    */
-   process(report, ...params)
-   {
-      this._data.forEach((traitHalstead) =>
-      {
-         const identifier = traitHalstead.valueOf(...params);
-
-         if (typeof identifier !== 'undefined' && traitHalstead.filter(...params))
-         {
-            // Handle the case when a halstead trait element is an array of identifiers.
-            if (Array.isArray(identifier))
-            {
-               identifier.forEach((element) => { report.halsteadItemEncountered(this.metric, element); });
-            }
-            else
-            {
-               report.halsteadItemEncountered(this.metric, identifier);
-            }
-         }
-      });
-   }
 
    /**
     * Returns an array of evaluated TraitHalstead data as the value of the `identifier` field of the wrapped data.
@@ -115,12 +85,16 @@ export default class HalsteadArray
     * @param {*}  params - Provides parameters which are forwarded onto any data stored as a function. Normally
     *                      `params` should be the `current AST node, parent AST node, ... optional data`.
     *
-    * @returns {Array<*>}
+    * @returns {Array<string>}
     */
    valueOf(...params)
    {
-      const filtered = this._data.filter((traitHalstead) => { return traitHalstead.filter(...params); });
+      const filtered = this._data.filter((traitHalstead) =>
+      {
+         return typeof traitHalstead.valueOf(...params) !== 'undefined' && traitHalstead.filter(...params);
+      });
 
-      return filtered.map((traitHalstead) => { return traitHalstead.valueOf(...params); });
+      // Map all TraitHalstead data and flatten any array of identifiers returned from `valueOf`.
+      return [].concat.apply([], filtered.map((traitHalstead) => { return traitHalstead.valueOf(...params); }));
    }
 }
