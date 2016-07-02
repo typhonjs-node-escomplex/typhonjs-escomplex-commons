@@ -95,6 +95,6 @@ export default class HalsteadArray
       });
 
       // Map all TraitHalstead data and flatten any array of identifiers returned from `valueOf`.
-      return [].concat.apply([], filtered.map((traitHalstead) => { return traitHalstead.valueOf(...params); }));
+      return [].concat(...filtered.map((traitHalstead) => { return traitHalstead.valueOf(...params); }));
    }
 }
