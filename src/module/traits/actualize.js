@@ -1,5 +1,3 @@
-'use strict';
-
 import HalsteadArray from './HalsteadArray';
 import Trait         from './Trait';
 

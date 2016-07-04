@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Provides a wrapper around a data object hash which should contain an `identifier` field and potentially a `filter`
  * field which is a function. The identifier can be a function or string or an array of functions / strings.

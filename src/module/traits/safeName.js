@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Provides a utility method that defers to `object.name` if it exists or fallback to `defaultName` or `anonymous`.
  *

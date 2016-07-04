@@ -1,5 +1,3 @@
-'use strict';
-
 import AbstractReport   from './AbstractReport';
 import ClassReport      from './ClassReport';
 import MethodReport     from './MethodReport';
@@ -38,6 +36,12 @@ export default class ModuleReport extends AbstractReport
       this.dependencies = [];
 
       /**
+       * Stores the file path of the module / file. The file path is only defined as supplied when processing projects.
+       * @type {string}
+       */
+      this.filePath = undefined;
+
+      /**
        * Stores the end line for the module / file.
        * @type {number}
        */
@@ -53,7 +57,7 @@ export default class ModuleReport extends AbstractReport
        * Stores the maintainability index for a report.
        * @type {number}
        */
-      this.maintainability = 171;
+      this.maintainability = 0;
 
       /**
        * Stores all module MethodReport data found outside of any ES6 classes.
@@ -72,6 +76,21 @@ export default class ModuleReport extends AbstractReport
        * @type {Array<MethodReport>}
        */
       this._scopeStackMethod = [];
+
+      /**
+       * Stores the active source path of the module / file. This path is respective of how the file is referenced in
+       * the source code itself. `srcPath` is only defined as supplied when processing projects.
+       * @type {string}
+       */
+      this.srcPath = undefined;
+
+      /**
+       * Stores the active source path alias of the module / file. This path is respective of how the file is
+       * referenced in the source code itself when aliased including NPM and JSPM modules which provide a `main` entry.
+       * `srcPathAlias` is only defined as supplied when processing projects.
+       * @type {string}
+       */
+      this.srcPathAlias = undefined;
    }
 
    /**
@@ -152,6 +171,9 @@ export default class ModuleReport extends AbstractReport
    {
       super.finalize();
 
+      this.classes.forEach((report) => { report.finalize(); });
+      this.methods.forEach((report) => { report.finalize(); });
+
       delete this._scopeStackClass;
       delete this._scopeStackMethod;
 
@@ -176,6 +198,17 @@ export default class ModuleReport extends AbstractReport
    getCurrentMethodReport()
    {
       return this._scopeStackMethod.length > 0 ? this._scopeStackMethod[this._scopeStackMethod.length - 1] : void 0;
+   }
+
+   /**
+    * Provides a default object hash and indices for summing average / mean metrics applicable to
+    * ProjectResult via `sumMetrics`.
+    *
+    * @returns {{cyclomatic: number, effort: number, loc: number, maintainability: number, params: number}}
+    */
+   static getProjectMetricSums()
+   {
+      return { cyclomatic: 0, effort: 0, loc: 0, maintainability: 0, params: 0 };
    }
 
    /**
@@ -231,6 +264,35 @@ export default class ModuleReport extends AbstractReport
    }
 
    /**
+    * Deserializes a JSON object representing a ModuleReport.
+    *
+    * @param {object}   object - A JSON object of a ModuleReport that was previously serialized.
+    *
+    * @returns {ModuleReport}
+    */
+   static parse(object)
+   {
+      if (typeof object !== 'object') { throw new TypeError('parse error: `object` is not an `object`.'); }
+
+      const report = Object.assign(new ModuleReport(), object);
+
+      // Must explicitly assign `aggregate` to `report._methodReport` and re-assign data.
+      report.aggregate = Object.assign(report._methodReport, object.aggregate);
+
+      if (report.classes.length > 0)
+      {
+         report.classes = report.classes.map((report) => { return ClassReport.parse(report); });
+      }
+
+      if (report.methods.length > 0)
+      {
+         report.methods = report.methods.map((report) => { return MethodReport.parse(report); });
+      }
+
+      return report;
+   }
+
+   /**
     * Pops a report scope.
     *
     * @param {string} type - The report scope `class` or `method` to pop off the given stack.
@@ -265,5 +327,13 @@ export default class ModuleReport extends AbstractReport
       {
          this.halsteadItemEncountered(metric, identifier);
       });
+   }
+
+   sumMetrics(sums = {})
+   {
+      /* istanbul ignore if */
+      if (typeof sums !== 'object') { throw new TypeError('sumMetrics error: sums is not an `object`.'); }
+
+      for (const key in sums) { sums[key] = this[key] ? sums[key] + this[key] : 0; }
    }
 }

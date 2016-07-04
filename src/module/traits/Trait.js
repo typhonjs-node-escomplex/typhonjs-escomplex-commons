@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Provides a wrapper around a data field which may be an array, function or other primitive value.
  */

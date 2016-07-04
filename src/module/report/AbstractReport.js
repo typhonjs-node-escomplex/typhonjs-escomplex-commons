@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Provides several helper methods to work with method oriented data stored as `this.aggregate` in `ClassReport` /
  * `ModuleReport` and directly in `MethodReport`.

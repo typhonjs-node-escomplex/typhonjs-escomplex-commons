@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Provides safe array creation from a given input.
  *

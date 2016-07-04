@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Provides all Halstead metric data / parameters.
  * @see https://en.wikipedia.org/wiki/Halstead_complexity_measures
@@ -69,9 +67,21 @@ export default class HalsteadData
 
    /**
     * Resets the state of all Halstead data metrics without removing any operand or operator data.
+    *
+    * @param {boolean}  clearIdentifiers - Clears operands / operators; default: false.
+    *
+    * @returns {HalsteadData}
     */
-   reset()
+   reset(clearIdentifiers = false)
    {
-      this.bugs = this.difficulty = this.effort = this.length = this.time = this.vocabulary = this.volume = 0;
+      Object.keys(this).forEach((key) => { if (typeof this[key] === 'number') { this[key] = 0; } });
+
+      if (clearIdentifiers)
+      {
+         this.operands = { distinct: 0, total: 0, identifiers: [] };
+         this.operators = { distinct: 0, total: 0, identifiers: [] };
+      }
+
+      return this;
    }
 }

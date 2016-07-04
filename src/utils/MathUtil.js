@@ -1,12 +1,13 @@
 export default class MathUtil
 {
    /**
-    * Compacts a 2D matrix that provides only indices which have a value that matches the given `testValue`.
+    * Compacts a 2D matrix testing entries against a testValue with a default value of `1` for inclusion. The resulting
+    * compacted list has an array per row with entries that correspond to the column index that passed the test.
     *
-    * @param {Array<Array<number>>} matrix - A matrix to compact.
-    * @param {*} testValue - A value to test each entry for equality; default: `1`.
+    * @param {Array<Array<number>>} matrix - A matrix to compact / compress.
+    * @param {*}                    testValue - A value to test strict equality to include entry for compaction.
     *
-    * @returns {Array<Array<number>>} - The compacted form of the input matrix.
+    * @returns {Array<Array<number>>}
     */
    static compactMatrix(matrix, testValue = 1)
    {
@@ -31,7 +32,7 @@ export default class MathUtil
     *
     * @return {Array<Array<number>>}
     */
-   static create2DArray(length, value)
+   static create2DArray(length = 0, value = 0)
    {
       const array = new Array(length);
 
@@ -48,7 +49,7 @@ export default class MathUtil
    /**
     * Returns the median value from the given array after sorting numerically.
     *
-    * @param {Array<number>}  values - An array of numbers to find the median value.
+    * @param {Array<number>}  values -
     *
     * @returns {number}
     */

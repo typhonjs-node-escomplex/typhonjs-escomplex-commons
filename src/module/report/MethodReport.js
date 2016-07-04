@@ -1,5 +1,3 @@
-'use strict';
-
 import AbstractReport   from './AbstractReport';
 import HalsteadData     from './HalsteadData';
 
@@ -8,16 +6,6 @@ import HalsteadData     from './HalsteadData';
  */
 export default class MethodReport extends AbstractReport
 {
-   /**
-    * Provides a default array and indices for summing maintainability metrics.
-    *
-    * @returns {{sums: number[], indices: {cyclomatic: number, effort: number, loc: number, params: number}}}
-    */
-   static getMaintainabilityMetrics()
-   {
-      return { sums: [0, 0, 0, 0], indices: s_INDICES_MAINTAINABILITY };
-   }
-
    /**
     * Initializes method report.
     *
@@ -77,6 +65,42 @@ export default class MethodReport extends AbstractReport
        * @type {{logical: number, physical: number}}
        */
       this.sloc = { logical: 0, physical: lineEnd - lineStart + 1 };
+   }
+
+   /**
+    * Cleans up any house keeping member variables.
+    *
+    * @returns {MethodReport}
+    */
+   finalize()
+   {
+      super.finalize();
+
+      return this;
+   }
+
+   /**
+    * Provides a default array and indices for summing maintainability metrics.
+    *
+    * @returns {{sums: number[], indices: {cyclomatic: number, effort: number, loc: number, params: number}}}
+    */
+   static getMaintainabilityMetrics()
+   {
+      return { sums: [0, 0, 0, 0], indices: s_INDICES_MAINTAINABILITY };
+   }
+
+   /**
+    * Deserializes a JSON object representing a MethodReport.
+    *
+    * @param {object}   object - A JSON object of a MethodReport that was previously serialized.
+    *
+    * @returns {MethodReport}
+    */
+   static parse(object)
+   {
+      if (typeof object !== 'object') { throw new TypeError('parse error: `object` is not an `object`.'); }
+
+      return Object.assign(new MethodReport(), object);
    }
 
    /**

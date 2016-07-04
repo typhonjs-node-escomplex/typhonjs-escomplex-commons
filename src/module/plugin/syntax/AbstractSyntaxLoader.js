@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Provides the base implementation for all syntax loader plugins which automatically associates member methods
  * to syntax definitions invoking the method with escomplex settings and assigning the result to the same name as
