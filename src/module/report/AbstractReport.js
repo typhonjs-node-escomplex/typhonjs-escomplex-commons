@@ -101,6 +101,6 @@ export default class AbstractReport
     */
    isHalsteadMetricDistinct(metric, identifier)
    {
-      return !this.methodReport.halstead[metric].identifiers.includes(identifier);
+      return this.methodReport.halstead[metric].identifiers.indexOf(identifier) === -1;
    }
 }

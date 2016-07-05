@@ -1,7 +1,3 @@
-'use strict';
-
-import 'babel-polyfill';
-
 import { assert }    from 'chai';
 
 import HalsteadArray from '../../../src/module/traits/HalsteadArray';
@@ -49,6 +45,7 @@ suite('traits:', () =>
             assert.instanceOf(result.operators, HalsteadArray);
             assert.strictEqual(result.operators.length, 1);
             assert.strictEqual(result.operators.metric, 'operators');
+            assert.strictEqual(result.operators.type, 'object');
             assert.instanceOf(result.operators.get(0), TraitHalstead);
             assert.strictEqual(result.operators.get(0).type, 'object');
             assert.strictEqual(result.operators.get(0).valueOf(), 'bosoya');
@@ -60,6 +57,7 @@ suite('traits:', () =>
             assert.instanceOf(result.operands, HalsteadArray);
             assert.strictEqual(result.operands.length, 1);
             assert.strictEqual(result.operands.metric, 'operands');
+            assert.strictEqual(result.operands.type, 'object');
             assert.instanceOf(result.operands.get(0), TraitHalstead);
             assert.strictEqual(result.operands.get(0).type, 'object');
             assert.strictEqual(result.operands.get(0).valueOf(), 'umahasha');

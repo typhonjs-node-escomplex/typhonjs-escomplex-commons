@@ -1,3 +1,6 @@
+/**
+ * Provides common math utilities.
+ */
 export default class MathUtil
 {
    /**
@@ -47,9 +50,10 @@ export default class MathUtil
    }
 
    /**
-    * Returns the median value from the given array after sorting numerically.
+    * Returns the median / middle value from the given array after sorting numerically. If values length is odd the
+    * middle value in the array is returned otherwise if even two middle values are summed then divided by 2.
     *
-    * @param {Array<number>}  values -
+    * @param {Array<number>}  values - An Array of numerical values.
     *
     * @returns {number}
     */

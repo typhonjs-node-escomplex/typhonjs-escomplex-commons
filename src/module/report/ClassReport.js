@@ -71,6 +71,7 @@ export default class ClassReport extends AbstractReport
     */
    static parse(object)
    {
+      /* istanbul ignore if */
       if (typeof object !== 'object') { throw new TypeError('parse error: `object` is not an `object`.'); }
 
       const report = Object.assign(new ClassReport(), object);

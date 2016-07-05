@@ -1,5 +1,3 @@
-'use strict';
-
 import { assert }             from 'chai';
 
 import AbstractSyntaxLoader   from '../../../src/module/plugin/syntax/AbstractSyntaxLoader';

@@ -76,6 +76,13 @@ export default class HalsteadArray
    get metric() { return this._metric; }
 
    /**
+    * Returns the typeof data being wrapped.
+    *
+    * @returns {string}
+    */
+   get type() { return typeof this._data; }
+
+   /**
     * Returns an array of evaluated TraitHalstead data as the value of the `identifier` field of the wrapped data.
     * Additionally the TraitHalstead filter function is invoked with the given parameters removing any values that
     * fail the filter test.

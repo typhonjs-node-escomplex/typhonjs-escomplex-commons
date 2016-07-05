@@ -83,7 +83,7 @@ export default class TraitHalstead
    get metric() { return this._metric; }
 
    /**
-    * Returns the typeof data being wrapper.
+    * Returns the typeof data being wrapped.
     *
     * @returns {string}
     */

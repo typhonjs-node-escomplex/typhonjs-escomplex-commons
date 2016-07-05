@@ -11,11 +11,20 @@ export default class ModuleReport extends AbstractReport
     * Initializes the report.
     *
     * @param {number}   lineStart - Start line of file / module.
+    *
     * @param {number}   lineEnd - End line of file / module.
+    *
+    * @param {object}   settings - An object hash of the settings used in generating this report via ESComplexModule.
     */
-   constructor(lineStart, lineEnd)
+   constructor(lineStart, lineEnd, settings = {})
    {
       super(new MethodReport('', lineStart, lineEnd, 0));
+
+      /**
+       * Stores the settings used to generate the module report.
+       * @type {object}
+       */
+      this.settings = typeof settings === 'object' ? settings : {};
 
       /**
        * Stores the aggregate MethodReport for the module.
@@ -30,10 +39,22 @@ export default class ModuleReport extends AbstractReport
       this.classes = [];
 
       /**
+       * Measures the average method cyclomatic complexity of the module / file.
+       * @type {number}
+       */
+      this.cyclomatic = 0;
+
+      /**
        * Stores all parsed dependencies.
        * @type {Array}
        */
       this.dependencies = [];
+
+      /**
+       * Measures the average method maintenance effort of the module / file.
+       * @type {number}
+       */
+      this.effort = 0;
 
       /**
        * Stores the file path of the module / file. The file path is only defined as supplied when processing projects.
@@ -54,7 +75,13 @@ export default class ModuleReport extends AbstractReport
       this.lineStart = lineStart;
 
       /**
-       * Stores the maintainability index for a report.
+       * Measures the average method logical SLOC (source lines of code) for the module / file.
+       * @type {number}
+       */
+      this.loc = 0;
+
+      /**
+       * Measures the average method maintainability index for the module / file.
        * @type {number}
        */
       this.maintainability = 0;
@@ -64,6 +91,12 @@ export default class ModuleReport extends AbstractReport
        * @type {Array<MethodReport>}
        */
       this.methods = [];
+
+      /**
+       * Measures the average number of method parameters for the module / file.
+       * @type {number}
+       */
+      this.params = 0;
 
       /**
        * Stores the current class report scope stack.
@@ -201,14 +234,13 @@ export default class ModuleReport extends AbstractReport
    }
 
    /**
-    * Provides a default object hash and indices for summing average / mean metrics applicable to
-    * ProjectResult via `sumMetrics`.
+    * Provides a default array and indices for summing maintainability metrics via `sumMetrics`.
     *
-    * @returns {{cyclomatic: number, effort: number, loc: number, maintainability: number, params: number}}
+    * @returns {{sums: number[], indices: {cyclomatic: number, effort: number, loc: number, maintainability: number, params: number}}}
     */
-   static getProjectMetricSums()
+   static getMaintainabilityMetrics()
    {
-      return { cyclomatic: 0, effort: 0, loc: 0, maintainability: 0, params: 0 };
+      return { sums: [0, 0, 0, 0, 0], indices: s_INDICES_MAINTAINABILITY };
    }
 
    /**
@@ -272,6 +304,7 @@ export default class ModuleReport extends AbstractReport
     */
    static parse(object)
    {
+      /* istanbul ignore if */
       if (typeof object !== 'object') { throw new TypeError('parse error: `object` is not an `object`.'); }
 
       const report = Object.assign(new ModuleReport(), object);
@@ -329,11 +362,34 @@ export default class ModuleReport extends AbstractReport
       });
    }
 
-   sumMetrics(sums = {})
+   /**
+    * Provides a convenience method to increment metric sums given an object hash of indices.
+    *
+    * @param {Array<number>}  sums - Running sums for metric calculation.
+    * @param {object}         indices - Indices into the sums array for specific metrics.
+    */
+   sumMetrics(sums, indices = {})
    {
       /* istanbul ignore if */
-      if (typeof sums !== 'object') { throw new TypeError('sumMetrics error: sums is not an `object`.'); }
+      if (!Array.isArray(sums)) { throw new TypeError('sumMetrics error: `sums` is not an `array`.'); }
 
-      for (const key in sums) { sums[key] = this[key] ? sums[key] + this[key] : 0; }
+      /* istanbul ignore if */
+      if (typeof indices !== 'object') { throw new TypeError('sumMetrics error: `indices` is not an `object`.'); }
+
+      for (const key in indices) { sums[indices[key]] += typeof this[key] === 'number' ? this[key] : 0; }
    }
 }
+
+/**
+ * Defines the default maintainability metrics supported by `sumMetrics`.
+ * @type {{cyclomatic: number, effort: number, loc: number, maintainability: number, params: number}}
+ * @ignore
+ */
+const s_INDICES_MAINTAINABILITY =
+{
+   cyclomatic: 0,
+   effort: 1,
+   loc: 2,
+   maintainability: 3,
+   params: 4
+};

@@ -98,6 +98,7 @@ export default class MethodReport extends AbstractReport
     */
    static parse(object)
    {
+      /* istanbul ignore if */
       if (typeof object !== 'object') { throw new TypeError('parse error: `object` is not an `object`.'); }
 
       return Object.assign(new MethodReport(), object);
@@ -106,11 +107,17 @@ export default class MethodReport extends AbstractReport
    /**
     * Provides a convenience method to increment metric sums given an object hash of indices.
     *
-    * @param {Array}    sums - Running sums for metric calculation.
-    * @param {object}   indices - Indices into the sums array for specific metrics.
+    * @param {Array<number>}  sums - Running sums for metric calculation.
+    * @param {object}         indices - Indices into the sums array for specific metrics.
     */
    sumMetrics(sums, indices)
    {
+      /* istanbul ignore if */
+      if (!Array.isArray(sums)) { throw new TypeError('sumMetrics error: `sums` is not an `array`.'); }
+
+      /* istanbul ignore if */
+      if (typeof indices !== 'object') { throw new TypeError('sumMetrics error: `indices` is not an `object`.'); }
+
       for (const key in indices)
       {
          switch (key)
