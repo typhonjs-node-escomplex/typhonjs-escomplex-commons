@@ -154,6 +154,9 @@ export default class ProjectResult
    {
       let result = '';
 
+      /* istanbul ignore if */
+      if (!Array.isArray(this.adjacencyList)) { return result; }
+
       this.reports.forEach((report, index) =>
       {
          result += `${index}:\t${report.srcPath}\n`;
@@ -178,6 +181,9 @@ export default class ProjectResult
    toStringVisibility()
    {
       let result = '';
+
+      /* istanbul ignore if */
+      if (!Array.isArray(this.visibilityList)) { return result; }
 
       this.reports.forEach((report, index) =>
       {
