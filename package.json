@@ -1,6 +1,6 @@
 {
   "name": "typhonjs-escomplex-commons",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "homepage": "https://github.com/typhonjs-node-escomplex/typhonjs-escomplex-commons/",
   "description": "Provides core common utilities for typhonjs-escomplex modules and plugins.",
   "license": "MPL-2.0",
