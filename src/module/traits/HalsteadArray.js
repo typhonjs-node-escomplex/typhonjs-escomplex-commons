@@ -1,7 +1,7 @@
 import TraitHalstead from './TraitHalstead';
 
 /**
- * Provides a wrapper around an array of Halstead properties object hashes which should contain an
+ * Provides a wrapper around an array of Halstead property object hashes which should contain an
  * `identifier` field and potentially a `filter` field.
  */
 export default class HalsteadArray

@@ -2,7 +2,9 @@ import AbstractReport   from './AbstractReport';
 import MethodReport     from './MethodReport';
 
 /**
- * Provides a class report.
+ * Provides the class report object which stores data pertaining to a single ES6 class.
+ *
+ * Methods that are stored as MethodReports in the `methods` member variable.
  */
 export default class ClassReport extends AbstractReport
 {

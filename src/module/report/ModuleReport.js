@@ -3,7 +3,12 @@ import ClassReport      from './ClassReport';
 import MethodReport     from './MethodReport';
 
 /**
- * Provides the default report object which stores data pertaining to a single file / module being processed.
+ * Provides the module report object which stores data pertaining to a single file / module being processed.
+ *
+ * All ES Module classes are stored in the `classes` member variable as ClassReports. Methods that are not part of a
+ * class are stored as MethodReports in the `methods` member variable.
+ *
+ * Various helper methods found in ModuleReport and AbstractReport help increment associated data during collection.
  */
 export default class ModuleReport extends AbstractReport
 {

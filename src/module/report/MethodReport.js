@@ -2,7 +2,9 @@ import AbstractReport   from './AbstractReport';
 import HalsteadData     from './HalsteadData';
 
 /**
- * Provides a method report.
+ * Provides the method report object which stores data pertaining to a single method / function.
+ *
+ *
  */
 export default class MethodReport extends AbstractReport
 {

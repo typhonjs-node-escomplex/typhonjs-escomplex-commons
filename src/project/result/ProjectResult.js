@@ -3,6 +3,12 @@ import StringUtil    from  '../../utils/StringUtil';
 
 /**
  * Provides the default project report object which stores data pertaining to all modules / files contained.
+ *
+ * All module / file reports are stored in the `reports` member variable as ModuleReports.
+ *
+ * Various helper methods found in ModuleReport and AbstractReport help increment associated data during collection.
+ *
+ *
  */
 export default class ProjectResult
 {
