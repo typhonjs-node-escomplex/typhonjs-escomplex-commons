@@ -1,3 +1,5 @@
+import ObjectUtil from './ObjectUtil';
+
 /**
  * Provides common math utilities.
  */
@@ -5,23 +7,26 @@ export default class MathUtil
 {
    /**
     * Compacts a 2D matrix testing entries against a testValue with a default value of `1` for inclusion. The resulting
-    * compacted list has an array per row with entries that correspond to the column index that passed the test.
+    * compacted array only has object hash entries for rows that contain column entries that pass the test. Each entry
+    * has a `row` entry as a number corresponding to a row index and a `cols` entry which is an array of numbers
+    * representing all column indexes that pass the test. This works well for large sparse matrices.
     *
     * @param {Array<Array<number>>} matrix - A matrix to compact / compress.
     * @param {*}                    testValue - A value to test strict equality to include entry for compaction.
     *
-    * @returns {Array<Array<number>>}
+    * @returns {Array<{row: number, cols: Array<number>}>}
     */
    static compactMatrix(matrix, testValue = 1)
    {
       const compacted = [];
 
-      matrix.forEach((row) =>
+      matrix.forEach((rowEntry, row) =>
       {
-         const rowArray = [];
-         compacted.push(rowArray);
+         const cols = [];
 
-         row.forEach((entry, entryIndex) => { if (entry === testValue) { rowArray.push(entryIndex); } });
+         rowEntry.forEach((colEntry, colIndex) => { if (colEntry === testValue) { cols.push(colIndex); } });
+
+         if (cols.length > 0) { compacted.push({ row, cols }); }
       });
 
       return compacted;
@@ -79,5 +84,32 @@ export default class MathUtil
    static getPercent(value, limit)
    {
       return limit === 0 ? 0 : (value / limit) * 100;
+   }
+
+   /**
+    * Performs a naive depth traversal of an object / array. The data structure _must not_ have circular references.
+    * The result of the `toFixed` method is invoked for each leaf or array entry modifying any floating point number
+    * in place.
+    *
+    * @param {object}   data - An object or array.
+    *
+    * @returns {*}
+    */
+   static toFixedTraverse(data)
+   {
+      return ObjectUtil.depthTraverse(data, MathUtil.toFixed);
+   }
+
+   /**
+    * Converts floating point numbers to a fixed decimal length of 3. This saves space and avoids precision
+    * issues with serializing / deserializing.
+    *
+    * @param {*}  val - Any value; only floats are processed.
+    *
+    * @returns {*}
+    */
+   static toFixed(val)
+   {
+      return typeof val === 'number' && !Number.isInteger(val) ? Math.round(val * 1000) / 1000 : val;
    }
 }

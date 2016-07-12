@@ -1,5 +1,8 @@
-import ModuleReport  from  '../../module/report/ModuleReport';
-import StringUtil    from  '../../utils/StringUtil';
+import ProjectFormatter from  './ProjectFormatter';
+
+import ModuleReport     from  '../../module/report/ModuleReport';
+import MathUtil         from  '../../utils/MathUtil';
+import StringUtil       from  '../../utils/StringUtil';
 
 /**
  * Provides the default project report object which stores data pertaining to all modules / files contained.
@@ -7,8 +10,6 @@ import StringUtil    from  '../../utils/StringUtil';
  * All module / file reports are stored in the `reports` member variable as ModuleReports.
  *
  * Various helper methods found in ModuleReport and AbstractReport help increment associated data during collection.
- *
- *
  */
 export default class ProjectResult
 {
@@ -125,7 +126,7 @@ export default class ProjectResult
          this.reports.forEach((report) => { report.finalize(); });
       }
 
-      return this;
+      return MathUtil.toFixedTraverse(this);
    }
 
    /**
@@ -151,6 +152,19 @@ export default class ProjectResult
    }
 
    /**
+    * Formats this ProjectResult given the type.
+    *
+    * @param {string}   type - The type of formatter to use. Options include: `'json', 'json-minimal', 'markdown',
+    *                          'text', 'text-minimal', 'text-modules', 'xml', 'xml-checkstyle'`.
+    *
+    * @returns {string}
+    */
+   toFormat(type)
+   {
+      return ProjectFormatter.format(this, type);
+   }
+
+   /**
     * Returns a string representing the adjacency relationships by printing out the report index followed by
     * dependent ModuleReport indices / `srcPaths`.
     *
@@ -163,13 +177,13 @@ export default class ProjectResult
       /* istanbul ignore if */
       if (!Array.isArray(this.adjacencyList)) { return result; }
 
-      this.reports.forEach((report, index) =>
+      this.adjacencyList.forEach((entry) =>
       {
-         result += `${index}:\t${report.srcPath}\n`;
+         result += `${entry.row}:\t${this.reports[entry.row].srcPath}\n`;
 
-         this.adjacencyList[index].forEach((reportIndex) =>
+         entry.cols.forEach((colIndex) =>
          {
-            result += `\t${reportIndex}:\t${this.reports[reportIndex].srcPath}\n`;
+            result += `\t${colIndex}:\t${this.reports[colIndex].srcPath}\n`;
          });
 
          result += '\n';
@@ -179,7 +193,7 @@ export default class ProjectResult
    }
 
    /**
-    * Returns a string representing the visibilty relationships by printing out the report index followed by
+    * Returns a string representing the visibility relationships by printing out the report index followed by
     * indirect reverse dependency ModuleReport indices / `srcPaths`.
     *
     * @returns {string}
@@ -191,13 +205,13 @@ export default class ProjectResult
       /* istanbul ignore if */
       if (!Array.isArray(this.visibilityList)) { return result; }
 
-      this.reports.forEach((report, index) =>
+      this.visibilityList.forEach((entry) =>
       {
-         result += `${index}:\t${report.srcPath}\n`;
+         result += `${entry.row}:\t${this.reports[entry.row].srcPath}\n`;
 
-         this.visibilityList[index].forEach((reportIndex) =>
+         entry.cols.forEach((colIndex) =>
          {
-            result += `\t${reportIndex}:\t${this.reports[reportIndex].srcPath}\n`;
+            result += `\t${colIndex}:\t${this.reports[colIndex].srcPath}\n`;
          });
 
          result += '\n';

@@ -31,8 +31,11 @@ suite('result:', () =>
             result = new ProjectResult([report, report2, report3]);
 
             // Fake the adjacency / visibility lists; a depends on b / b depends on a / c depends on a & b
-            result.adjacencyList = [[1], [0], [0, 1]];
-            result.visibilityList = [[2], [0], [0, 1, 2]];
+            //result.adjacencyList = [[1], [0], [0, 1]];
+            //result.visibilityList = [[2], [0], [0, 1, 2]];
+
+            result.adjacencyList = [{ row: 0, cols: [1] }, { row: 1, cols: [0] }, { row: 2, cols: [0, 1] }];
+            result.visibilityList = [{ row: 0, cols: [2] }, { row: 1, cols: [0] }, { row: 2, cols: [0, 1, 2] }];
          });
 
          teardown(() => { result = undefined; });
@@ -111,7 +114,7 @@ suite('result:', () =>
 
          test('deserialize JSON object should be sufficiently fast', function()
          {
-            this.timeout(50);
+            this.timeout(75);
             ProjectResult.parse(resultFixture);
          });
       });

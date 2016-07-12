@@ -2,6 +2,8 @@ import AbstractReport   from './AbstractReport';
 import ClassReport      from './ClassReport';
 import MethodReport     from './MethodReport';
 
+import MathUtil         from  '../../utils/MathUtil';
+
 /**
  * Provides the module report object which stores data pertaining to a single file / module being processed.
  *
@@ -215,7 +217,7 @@ export default class ModuleReport extends AbstractReport
       delete this._scopeStackClass;
       delete this._scopeStackMethod;
 
-      return this;
+      return MathUtil.toFixedTraverse(this);
    }
 
    /**
@@ -356,7 +358,7 @@ export default class ModuleReport extends AbstractReport
    /**
     * Processes all TraitHalstead identifier data.
     *
-    * @param {ModuleReport}   metric - The Halstead metric being processed.
+    * @param {string}         metric - The Halstead metric being processed.
     * @param {Array<string>}  identifiers - An array of Halstead identifiers.
     */
    processHalsteadItems(metric, identifiers)
