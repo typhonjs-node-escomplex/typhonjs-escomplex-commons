@@ -1,3 +1,5 @@
+import fs            from 'fs-extra';
+
 import { assert }    from 'chai';
 
 import ModuleReport  from '../../../src/module/report/ModuleReport';
@@ -105,14 +107,39 @@ suite('result:', () =>
          });
       });
 
+      suite('toFormat (large_project):', () =>
+      {
+         // Generate original test data - empty dir.
+         // fs.emptyDirSync('./test/fixture/files/large-project');
+
+         const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large_project');
+
+         const projectResult = ProjectResult.parse(largeProjectJSON);
+
+         ProjectResult.getFormatTypes().forEach((formatType) =>
+         {
+            test(`formatType: ${formatType}`, () =>
+            {
+               const output = projectResult.toFormat(formatType);
+
+               // Generate original test data.
+               // fs.writeFileSync(`./test/fixture/files/large-project/result-${formatType}.txt`, output, 'utf8');
+
+               const original = fs.readFileSync(`./test/fixture/files/large-project/result-${formatType}.txt`, 'utf8');
+
+               assert.strictEqual(output, original);
+            });
+         });
+      });
+
       suite('large project parsing performance', () =>
       {
-         const resultFixture = require('../../fixture/large_project');
+         const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large_project');
 
          test('deserialize JSON object should be sufficiently fast', function()
          {
             this.timeout(75);
-            ProjectResult.parse(resultFixture);
+            ProjectResult.parse(largeProjectJSON);
          });
       });
    });

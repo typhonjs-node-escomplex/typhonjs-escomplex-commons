@@ -1,0 +1,82 @@
+./src/ESComplexProject.js: 110.612
+./src/index.js: 171
+./src/Plugins.js: 121.725
+./test/fixture/testImportNPMAlias.js: 171
+./test/fixture/testRequireNPMAlias.js: 160.237
+typhonjs-escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js: 122.136
+  <anonymous> (33): 4
+  <anonymous> (39): 2
+typhonjs-escomplex-commons/src/module/report/AbstractReport.js: 148.376
+typhonjs-escomplex-commons/src/module/report/ClassReport.js: 127.096
+typhonjs-escomplex-commons/src/module/report/HalsteadData.js: 110.635
+typhonjs-escomplex-commons/src/module/report/MethodReport.js: 112.359
+typhonjs-escomplex-commons/src/module/report/ModuleReport.js: 118.216
+typhonjs-escomplex-commons/src/module/traits/actualize.js: 111.799
+  <anonymous> (19): 1
+typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js: 141.777
+typhonjs-escomplex-commons/src/module/traits/safeArray.js: 148.682
+  <anonymous> (8): 4
+typhonjs-escomplex-commons/src/module/traits/safeName.js: 119.451
+  <anonymous> (9): 7
+typhonjs-escomplex-commons/src/module/traits/Trait.js: 138.638
+typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js: 125.893
+typhonjs-escomplex-commons/src/project/result/formats/formatJSON.js: 158.726
+  <anonymous> (8): 1
+typhonjs-escomplex-commons/src/project/result/formats/formatJSONExpanded.js: 157.718
+  <anonymous> (8): 1
+typhonjs-escomplex-commons/src/project/result/formats/formatMarkdown.js: 144.18
+  <anonymous> (8): 1
+  <anonymous> (10): 1
+  formatMethod (23): 1
+  formatMethods (47): 1
+  <anonymous> (49): 1
+  formatModule (59): 1
+  formatProject (81): 1
+typhonjs-escomplex-commons/src/project/result/formats/formatText.js: 144.241
+  <anonymous> (8): 1
+  <anonymous> (10): 1
+  formatMethod (23): 1
+  formatMethods (47): 1
+  <anonymous> (49): 1
+  formatModule (59): 1
+  formatProject (81): 1
+typhonjs-escomplex-commons/src/project/result/formats/formatTextMinimal.js: 150.755
+  <anonymous> (8): 1
+  <anonymous> (10): 1
+  formatModule (20): 1
+  formatMethod (35): 1
+  formatMethods (49): 1
+  <anonymous> (51): 1
+typhonjs-escomplex-commons/src/project/result/formats/formatTextModules.js: 157.421
+  <anonymous> (8): 1
+  <anonymous> (10): 1
+typhonjs-escomplex-commons/src/project/result/formats/formatXML.js: 139.71
+  <anonymous> (11): 1
+  <anonymous> (17): 1
+  formatAggregate (28): 1
+  formatMethod (48): 1
+  formatModule (70): 2
+  formatCyclomaticComplexity (94): 1
+  formatCyclomaticDensity (107): 1
+  formatHalsteadComplexity (120): 1
+  formatHalsteadMetrics (134): 1
+  formatParameterComplexity (152): 1
+  formatSlocComplexity (164): 1
+  formatSlocMetrics (177): 1
+typhonjs-escomplex-commons/src/project/result/formats/formatXMLCheckstyle.js: 130.699
+  <anonymous> (23): 1
+  <anonymous> (26): 1
+  assignSeverity (36): 1
+  <anonymous> (40): 3
+  formatMethod (60): 1
+  formatModule (88): 2
+typhonjs-escomplex-commons/src/project/result/ProjectFormatter.js: 105.3
+typhonjs-escomplex-commons/src/project/result/ProjectResult.js: 128.113
+typhonjs-escomplex-commons/src/utils/MathUtil.js: 128.142
+typhonjs-escomplex-commons/src/utils/ObjectUtil.js: 107.184
+  _depthTraverse (38): 5
+typhonjs-escomplex-commons/src/utils/StringUtil.js: 155.215
+typhonjs-escomplex-commons/src/utils/XMLUtil.js: 147.775
+typhonjs-escomplex-module/src/ESComplexModule.js: 126.029
+typhonjs-escomplex-module/src/index.js: 171
+typhonjs-escomplex-module/src/Plugins.js: 122.046

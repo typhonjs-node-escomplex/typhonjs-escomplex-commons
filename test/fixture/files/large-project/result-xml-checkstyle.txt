@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<checkstyle>
+  <file name="./src/ESComplexProject.js">
+  </file>
+  <file name="./src/index.js">
+  </file>
+  <file name="./src/Plugins.js">
+  </file>
+  <file name="./test/fixture/testImportNPMAlias.js">
+  </file>
+  <file name="./test/fixture/testRequireNPMAlias.js">
+  </file>
+  <file name="typhonjs-escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js">
+     <error
+        lineStart="33"
+        lineEnd="44"
+        severity="info"
+        message="Cyclomatic: 4,
+        Halstead: 11.7
+        | Effort: 2064.101
+        | Volume: 176.419
+        | Vocabulary: 23"
+        source="&lt;anonymous&gt;"
+     />
+     <error
+        lineStart="39"
+        lineEnd="39"
+        severity="info"
+        message="Cyclomatic: 2,
+        Halstead: 4
+        | Effort: 199.316
+        | Volume: 49.829
+        | Vocabulary: 10"
+        source="&lt;anonymous&gt;"
+     />
+  </file>
+  <file name="typhonjs-escomplex-commons/src/module/report/AbstractReport.js">
+  </file>
+  <file name="typhonjs-escomplex-commons/src/module/report/ClassReport.js">
+  </file>
+  <file name="typhonjs-escomplex-commons/src/module/report/HalsteadData.js">
+  </file>
+  <file name="typhonjs-escomplex-commons/src/module/report/MethodReport.js">
+  </file>
+  <file name="typhonjs-escomplex-commons/src/module/report/ModuleReport.js">
+  </file>
+  <file name="typhonjs-escomplex-commons/src/module/traits/actualize.js">
+     <error
+        lineStart="19"
+        lineEnd="31"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 5.921
+        | Effort: 1737.459
+        | Volume: 293.438
+        | Vocabulary: 24"
+        source="&lt;anonymous&gt;"
+     />
+  </file>
+  <file name="typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js">
+  </file>
+  <file name="typhonjs-escomplex-commons/src/module/traits/safeArray.js">
+     <error
+        lineStart="8"
+        lineEnd="11"
+        severity="info"
+        message="Cyclomatic: 4,
+        Halstead: 8
+        | Effort: 621.674
+        | Volume: 77.709
+        | Vocabulary: 13"
+        source="&lt;anonymous&gt;"
+     />
+  </file>
+  <file name="typhonjs-escomplex-commons/src/module/traits/safeName.js">
+     <error
+        lineStart="9"
+        lineEnd="19"
+        severity="info"
+        message="Cyclomatic: 7,
+        Halstead: 9.188
+        | Effort: 1507.571
+        | Volume: 164.089
+        | Vocabulary: 15"
+        source="&lt;anonymous&gt;"
+     />
+  </file>
+  <file name="typhonjs-escomplex-commons/src/module/traits/Trait.js">
+  </file>
+  <file name="typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js">
+  </file>
+  <file name="typhonjs-escomplex-commons/src/project/result/formats/formatJSON.js">
+     <error
+        lineStart="8"
+        lineEnd="11"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 2
+        | Effort: 36.189
+        | Volume: 18.095
+        | Vocabulary: 6"
+        source="&lt;anonymous&gt;"
+     />
+  </file>
+  <file name="typhonjs-escomplex-commons/src/project/result/formats/formatJSONExpanded.js">
+     <error
+        lineStart="8"
+        lineEnd="11"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 1.8
+        | Effort: 48.6
+        | Volume: 27
+        | Vocabulary: 8"
+        source="&lt;anonymous&gt;"
+     />
+  </file>
+  <file name="typhonjs-escomplex-commons/src/project/result/formats/formatMarkdown.js">
+     <error
+        lineStart="8"
+        lineEnd="14"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 3
+        | Effort: 108
+        | Volume: 36
+        | Vocabulary: 8"
+        source="&lt;anonymous&gt;"
+     />
+     <error
+        lineStart="10"
+        lineEnd="13"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 1.5
+        | Effort: 31.02
+        | Volume: 20.68
+        | Vocabulary: 6"
+        source="&lt;anonymous&gt;"
+     />
+     <error
+        lineStart="23"
+        lineEnd="38"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 3.273
+        | Effort: 1295.733
+        | Volume: 395.918
+        | Vocabulary: 37"
+        source="formatMethod"
+     />
+     <error
+        lineStart="47"
+        lineEnd="50"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 2.667
+        | Effort: 59.89
+        | Volume: 22.459
+        | Vocabulary: 7"
+        source="formatMethods"
+     />
+     <error
+        lineStart="49"
+        lineEnd="49"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 1.5
+        | Effort: 31.02
+        | Volume: 20.68
+        | Vocabulary: 6"
+        source="&lt;anonymous&gt;"
+     />
+     <error
+        lineStart="59"
+        lineEnd="72"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 3.259
+        | Effort: 1049.556
+        | Volume: 322.023
+        | Vocabulary: 31"
+        source="formatModule"
+     />
+     <error
+        lineStart="81"
+        lineEnd="94"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 3.13
+        | Effort: 714.474
+        | Volume: 228.235
+        | Vocabulary: 27"
+        source="formatProject"
+     />
+  </file>
+  <file name="typhonjs-escomplex-commons/src/project/result/formats/formatText.js">
+     <error
+        lineStart="8"
+        lineEnd="14"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 3
+        | Effort: 108
+        | Volume: 36
+        | Vocabulary: 8"
+        source="&lt;anonymous&gt;"
+     />
+     <error
+        lineStart="10"
+        lineEnd="13"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 1.5
+        | Effort: 31.02
+        | Volume: 20.68
+        | Vocabulary: 6"
+        source="&lt;anonymous&gt;"
+     />
+     <error
+        lineStart="23"
+        lineEnd="38"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 3.517
+        | Effort: 1259.707
+        | Volume: 358.152
+        | Vocabulary: 33"
+        source="formatMethod"
+     />
+     <error
+        lineStart="47"
+        lineEnd="50"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 2.667
+        | Effort: 59.89
+        | Volume: 22.459
+        | Vocabulary: 7"
+        source="formatMethods"
+     />
+     <error
+        lineStart="49"
+        lineEnd="49"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 1.5
+        | Effort: 31.02
+        | Volume: 20.68
+        | Vocabulary: 6"
+        source="&lt;anonymous&gt;"
+     />
+     <error
+        lineStart="59"
+        lineEnd="72"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 3.308
+        | Effort: 1038.751
+        | Volume: 314.041
+        | Vocabulary: 30"
+        source="formatModule"
+     />
+     <error
+        lineStart="81"
+        lineEnd="93"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 3.182
+        | Effort: 702.929
+        | Volume: 220.921
+        | Vocabulary: 26"
+        source="formatProject"
+     />
+  </file>
+  <file name="typhonjs-escomplex-commons/src/project/result/formats/formatTextMinimal.js">
+     <error
+        lineStart="8"
+        lineEnd="11"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 2.5
+        | Effort: 75
+        | Volume: 30
+        | Vocabulary: 8"
+        source="&lt;anonymous&gt;"
+     />
+     <error
+        lineStart="10"
+        lineEnd="10"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 1.5
+        | Effort: 31.02
+        | Volume: 20.68
+        | Vocabulary: 6"
+        source="&lt;anonymous&gt;"
+     />
+     <error
+        lineStart="20"
+        lineEnd="26"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 2.75
+        | Effort: 187.314
+        | Volume: 68.114
+        | Vocabulary: 12"
+        source="formatModule"
+     />
+     <error
+        lineStart="35"
+        lineEnd="40"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 2.667
+        | Effort: 187.489
+        | Volume: 70.308
+        | Vocabulary: 13"
+        source="formatMethod"
+     />
+     <error
+        lineStart="49"
+        lineEnd="52"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 2.667
+        | Effort: 59.89
+        | Volume: 22.459
+        | Vocabulary: 7"
+        source="formatMethods"
+     />
+     <error
+        lineStart="51"
+        lineEnd="51"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 1.5
+        | Effort: 31.02
+        | Volume: 20.68
+        | Vocabulary: 6"
+        source="&lt;anonymous&gt;"
+     />
+  </file>
+  <file name="typhonjs-escomplex-commons/src/project/result/formats/formatTextModules.js">
+     <error
+        lineStart="8"
+        lineEnd="11"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 2.5
+        | Effort: 75
+        | Volume: 30
+        | Vocabulary: 8"
+        source="&lt;anonymous&gt;"
+     />
+     <error
+        lineStart="10"
+        lineEnd="10"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 1.5
+        | Effort: 31.02
+        | Volume: 20.68
+        | Vocabulary: 6"
+        source="&lt;anonymous&gt;"
+     />
+  </file>
+  <file name="typhonjs-escomplex-commons/src/project/result/formats/formatXML.js">
+     <error
+        lineStart="11"
+        lineEnd="18"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 4.529
+        | Effort: 726.851
+        | Volume: 160.474
+        | Vocabulary: 24"
+        source="&lt;anonymous&gt;"
+     />
+     <error
+        lineStart="17"
+        lineEnd="17"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 1.5
+        | Effort: 31.02
+        | Volume: 20.68
+        | Vocabulary: 6"
+        source="&lt;anonymous&gt;"
+     />
+     <error
+        lineStart="28"
+        lineEnd="38"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 4.895
+        | Effort: 1181.984
+        | Volume: 241.481
+        | Vocabulary: 25"
+        source="formatAggregate"
+     />
+     <error
+        lineStart="48"
+        lineEnd="60"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 4.645
+        | Effort: 1887.503
+        | Volume: 406.337
+        | Vocabulary: 37"
+        source="formatMethod"
+     />
+     <error
+        lineStart="70"
+        lineEnd="84"
+        severity="info"
+        message="Cyclomatic: 2,
+        Halstead: 9.625
+        | Effort: 3455.854
+        | Volume: 359.05
+        | Vocabulary: 35"
+        source="formatModule"
+     />
+     <error
+        lineStart="94"
+        lineEnd="97"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 2
+        | Effort: 69.738
+        | Volume: 34.869
+        | Vocabulary: 9"
+        source="formatCyclomaticComplexity"
+     />
+     <error
+        lineStart="107"
+        lineEnd="110"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 2
+        | Effort: 69.738
+        | Volume: 34.869
+        | Vocabulary: 9"
+        source="formatCyclomaticDensity"
+     />
+     <error
+        lineStart="120"
+        lineEnd="124"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 2
+        | Effort: 129.059
+        | Volume: 64.529
+        | Vocabulary: 12"
+        source="formatHalsteadComplexity"
+     />
+     <error
+        lineStart="134"
+        lineEnd="143"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 5.368
+        | Effort: 1918.466
+        | Volume: 357.361
+        | Vocabulary: 23"
+        source="formatHalsteadMetrics"
+     />
+     <error
+        lineStart="152"
+        lineEnd="155"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 2
+        | Effort: 69.738
+        | Volume: 34.869
+        | Vocabulary: 9"
+        source="formatParameterComplexity"
+     />
+     <error
+        lineStart="164"
+        lineEnd="168"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 2
+        | Effort: 129.059
+        | Volume: 64.529
+        | Vocabulary: 12"
+        source="formatSlocComplexity"
+     />
+     <error
+        lineStart="177"
+        lineEnd="181"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 3.556
+        | Effort: 315.771
+        | Volume: 88.811
+        | Vocabulary: 13"
+        source="formatSlocMetrics"
+     />
+  </file>
+  <file name="typhonjs-escomplex-commons/src/project/result/formats/formatXMLCheckstyle.js">
+     <error
+        lineStart="23"
+        lineEnd="27"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 3
+        | Effort: 257.855
+        | Volume: 85.952
+        | Vocabulary: 15"
+        source="&lt;anonymous&gt;"
+     />
+     <error
+        lineStart="26"
+        lineEnd="26"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 2.25
+        | Effort: 56.849
+        | Volume: 25.266
+        | Vocabulary: 7"
+        source="&lt;anonymous&gt;"
+     />
+     <error
+        lineStart="36"
+        lineEnd="50"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 4.2
+        | Effort: 203.415
+        | Volume: 48.432
+        | Vocabulary: 11"
+        source="assignSeverity"
+     />
+     <error
+        lineStart="40"
+        lineEnd="47"
+        severity="info"
+        message="Cyclomatic: 3,
+        Halstead: 4.444
+        | Effort: 490.726
+        | Volume: 110.413
+        | Vocabulary: 14"
+        source="&lt;anonymous&gt;"
+     />
+     <error
+        lineStart="60"
+        lineEnd="78"
+        severity="info"
+        message="Cyclomatic: 1,
+        Halstead: 4.737
+        | Effort: 2353.302
+        | Volume: 496.808
+        | Vocabulary: 44"
+        source="formatMethod"
+     />
+     <error
+        lineStart="88"
+        lineEnd="100"
+        severity="info"
+        message="Cyclomatic: 2,
+        Halstead: 8.611
+        | Effort: 2152.627
+        | Volume: 249.982
+        | Vocabulary: 28"
+        source="formatModule"
+     />
+  </file>
+  <file name="typhonjs-escomplex-commons/src/project/result/ProjectFormatter.js">
+  </file>
+  <file name="typhonjs-escomplex-commons/src/project/result/ProjectResult.js">
+  </file>
+  <file name="typhonjs-escomplex-commons/src/utils/MathUtil.js">
+  </file>
+  <file name="typhonjs-escomplex-commons/src/utils/ObjectUtil.js">
+     <error
+        lineStart="38"
+        lineEnd="54"
+        severity="error"
+        message="Cyclomatic: 5,
+        Halstead: 21.636
+        | Effort: 6430.474
+        | Volume: 297.207
+        | Vocabulary: 25"
+        source="_depthTraverse"
+     />
+  </file>
+  <file name="typhonjs-escomplex-commons/src/utils/StringUtil.js">
+  </file>
+  <file name="typhonjs-escomplex-commons/src/utils/XMLUtil.js">
+  </file>
+  <file name="typhonjs-escomplex-module/src/ESComplexModule.js">
+  </file>
+  <file name="typhonjs-escomplex-module/src/index.js">
+  </file>
+  <file name="typhonjs-escomplex-module/src/Plugins.js">
+  </file>
+</checkstyle>
