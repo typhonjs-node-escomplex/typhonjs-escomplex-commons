@@ -116,16 +116,20 @@ suite('result:', () =>
 
          const projectResult = ProjectResult.parse(largeProjectJSON);
 
-         ProjectResult.getFormatTypes().forEach((formatType) =>
+         const extensions = ProjectResult.getFormatFileExtensions();
+
+         ProjectResult.getFormatTypes().forEach((formatType, index) =>
          {
             test(`formatType: ${formatType}`, () =>
             {
                const output = projectResult.toFormat(formatType);
 
                // Generate original test data.
-               // fs.writeFileSync(`./test/fixture/files/large-project/result-${formatType}.txt`, output, 'utf8');
+               // fs.writeFileSync(
+               //  `./test/fixture/files/large-project/result-${formatType}.${extensions[index]}`, output, 'utf8');
 
-               const original = fs.readFileSync(`./test/fixture/files/large-project/result-${formatType}.txt`, 'utf8');
+               const original = fs.readFileSync(
+                `./test/fixture/files/large-project/result-${formatType}.${extensions[index]}`, 'utf8');
 
                assert.strictEqual(output, original);
             });
