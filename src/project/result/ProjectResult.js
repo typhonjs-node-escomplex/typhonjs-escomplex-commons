@@ -107,6 +107,16 @@ export default class ProjectResult
    }
 
    /**
+    * Returns the supported format types.
+    *
+    * @returns {string[]}
+    */
+   static getFormatTypes()
+   {
+      return ProjectFormatter.getTypes();
+   }
+
+   /**
     * Finalizes the ProjectResult. If `settings.serializeReports` is false output just `filePath`, `srcPath` &
     * `srcPathAlias` entries of reports.
     *

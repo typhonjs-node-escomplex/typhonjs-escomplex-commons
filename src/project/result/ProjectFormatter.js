@@ -25,14 +25,17 @@ export default class ProjectFormatter
    /**
     * Formats a given ProjectResult via the formatter of the requested type.
     *
-    * @param {ProjectResult}  result - The type of formatter to return.
+    * @param {ProjectResult}  result - A ProjectResult to format.
     * @param {string}         type - The type of formatter to return.
     *
     * @returns {string}
     */
    static format(result, type)
    {
+      /* istanbul ignore if */
       if (typeof result !== 'object') { throw new TypeError(`format error: result is not an 'object'.`); }
+
+      /* istanbul ignore if */
       if (typeof type !== 'string') { throw new TypeError(`format error: type is not a 'string'.`); }
 
       switch (type)
