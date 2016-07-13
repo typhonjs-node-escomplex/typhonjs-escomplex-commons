@@ -13,6 +13,16 @@ import formatXMLCheckstyle from './formats/formatXMLCheckstyle';
 export default class ProjectFormatter
 {
    /**
+    * Returns the supported format file extension types.
+    *
+    * @returns {string[]}
+    */
+   static getFileExtensions()
+   {
+      return ['json', 'json', 'md', 'txt', 'txt', 'txt', 'xml', 'xml'];
+   }
+
+   /**
     * Returns the format types supported.
     *
     * @returns {string[]}

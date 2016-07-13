@@ -107,6 +107,16 @@ export default class ProjectResult
    }
 
    /**
+    * Returns the supported format file extension types.
+    *
+    * @returns {string[]}
+    */
+   static getFormatFileExtensions()
+   {
+      return ProjectFormatter.getFileExtensions();
+   }
+
+   /**
     * Returns the supported format types.
     *
     * @returns {string[]}
