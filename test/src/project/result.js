@@ -107,14 +107,14 @@ suite('result:', () =>
          });
       });
 
-      suite('toFormat (large_project):', () =>
+      suite('toFormat (large-project/results):', () =>
       {
          // Generate original test data - empty dir.
          // fs.emptyDirSync('./test/fixture/files/large-project');
 
-         const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large_project');
+         const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/results');
 
-         const projectResult = ProjectResult.parse(largeProjectJSON);
+         const projectResult = ProjectResult.parse(largeProjectJSON).finalize();
 
          const extensions = ProjectResult.getFormatFileExtensions();
 
@@ -136,9 +136,35 @@ suite('result:', () =>
          });
       });
 
+      suite('toFormat (large-project/results-no-reports):', () =>
+      {
+         const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/results-no-reports');
+
+         const projectResult = ProjectResult.parse(largeProjectJSON).finalize();
+
+         const extensions = ProjectResult.getFormatFileExtensions();
+
+         ProjectResult.getFormatTypes().forEach((formatType, index) =>
+         {
+            test(`formatType: ${formatType}`, () =>
+            {
+               const output = projectResult.toFormat(formatType);
+
+               // Generate original test data.
+               // fs.writeFileSync(
+               //  `./test/fixture/files/large-project/results-no-reports-${formatType}.${extensions[index]}`, output, 'utf8');
+
+               const original = fs.readFileSync(
+                `./test/fixture/files/large-project/results-no-reports-${formatType}.${extensions[index]}`, 'utf8');
+
+               assert.strictEqual(output, original);
+            });
+         });
+      });
+
       suite('large project parsing performance', () =>
       {
-         const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large_project');
+         const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/results');
 
          test('deserialize JSON object should be sufficiently fast', function()
          {

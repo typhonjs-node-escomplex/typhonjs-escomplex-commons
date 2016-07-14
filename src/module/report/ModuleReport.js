@@ -23,7 +23,7 @@ export default class ModuleReport extends AbstractReport
     *
     * @param {object}   settings - An object hash of the settings used in generating this report via ESComplexModule.
     */
-   constructor(lineStart, lineEnd, settings = {})
+   constructor(lineStart = 0, lineEnd = 0, settings = {})
    {
       super(new MethodReport('', lineStart, lineEnd, 0));
 
@@ -251,6 +251,26 @@ export default class ModuleReport extends AbstractReport
    }
 
    /**
+    * Returns the setting indexed by the given key.
+    *
+    * @param {string}   key - A key used to store the setting parameter.
+    * @param {*}        defaultValue - A default value to return if no setting for the given key is currently stored.
+    *
+    * @returns {*}
+    */
+   getSetting(key, defaultValue = undefined)
+   {
+      /* istanbul ignore if */
+      if (typeof key !== 'string' || key === '')
+      {
+         throw new TypeError(`getSetting error: 'key' is not a 'string' or is empty.`);
+      }
+
+      return typeof this.settings === 'object' && typeof this.settings[key] !== 'undefined' ? this.settings[key] :
+       defaultValue;
+   }
+
+   /**
     * Increments the Halstead `metric` for the given `identifier` for the ModuleReport and any current class or method
     * report being tracked.
     *
@@ -312,7 +332,7 @@ export default class ModuleReport extends AbstractReport
    static parse(object)
    {
       /* istanbul ignore if */
-      if (typeof object !== 'object') { throw new TypeError('parse error: `object` is not an `object`.'); }
+      if (typeof object !== 'object') { throw new TypeError(`parse error: 'object' is not an 'object'.`); }
 
       const report = Object.assign(new ModuleReport(), object);
 
@@ -321,12 +341,12 @@ export default class ModuleReport extends AbstractReport
 
       if (report.classes.length > 0)
       {
-         report.classes = report.classes.map((report) => { return ClassReport.parse(report); });
+         report.classes = report.classes.map((classReport) => { return ClassReport.parse(classReport); });
       }
 
       if (report.methods.length > 0)
       {
-         report.methods = report.methods.map((report) => { return MethodReport.parse(report); });
+         report.methods = report.methods.map((methodReport) => { return MethodReport.parse(methodReport); });
       }
 
       return report;
@@ -367,6 +387,32 @@ export default class ModuleReport extends AbstractReport
       {
          this.halsteadItemEncountered(metric, identifier);
       });
+   }
+
+
+   /**
+    * Sets the setting indexed by the given key and returns true if successful.
+    *
+    * @param {string}   key - A key used to store the setting parameter.
+    * @param {*}        value - A value to set to `this.settings[key]`.
+    *
+    * @returns {boolean}
+    */
+   setSetting(key, value)
+   {
+      /* istanbul ignore if */
+      if (typeof key !== 'string' || key === '')
+      {
+         throw new TypeError(`setSetting error: 'key' is not a 'string' or is empty.`);
+      }
+
+      if (this.settings === 'object')
+      {
+         this.settings[key] = value;
+         return true;
+      }
+
+      return false;
    }
 
    /**

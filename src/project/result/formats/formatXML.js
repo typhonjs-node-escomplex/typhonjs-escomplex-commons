@@ -10,11 +10,15 @@ import XMLUtil    from '../../../utils/XMLUtil';
  */
 export default function(result)
 {
+   const reportsAvailable = result.getSetting('serializeReports', false);
+
    const header = `xmlns="" xml:lang="en" first-order-density="${result.firstOrderDensity}`
     + `" change-cost="${result.changeCost}" core-size="${result.coreSize}"`;
 
-   return XMLUtil.createElementWithAttributes(0, 'project', header, true,
-    result.reports.reduce((formatted, report) => { return `${formatted}${formatModule(4, report)}`; }, ''));
+   return XMLUtil.createElementWithAttributes(0, 'project', header, true, result.reports.reduce((formatted, report) =>
+   {
+      return `${formatted}${formatModule(3, report, reportsAvailable)}`;
+   }, ''));
 }
 
 /**
@@ -64,23 +68,31 @@ function formatMethod(indentation, methodReport)
  *
  * @param {number}         indentation - Current indentation amount.
  * @param {ModuleReport}   report - A module report.
+ * @param {boolean}        reportsAvailable - Indicates that the report metric data is available.
  *
  * @returns {string}
  */
-function formatModule(indentation, report)
+function formatModule(indentation, report, reportsAvailable)
 {
    const nextIndentation = StringUtil.incrementIndent(indentation);
 
-   let methods = '';
-
-   for (let cntr = 0; cntr < report.methods.length; cntr++)
+   if (reportsAvailable)
    {
-      methods += formatMethod(nextIndentation, report.methods[cntr]);
-   }
+      let methods = '';
 
-   return XMLUtil.createElementWithAttributes(indentation, 'module', `srcPath="${report.srcPath}"`, true,
-    XMLUtil.createElement(nextIndentation, 'maintainability', false, report.maintainability)
-     + formatAggregate(nextIndentation, report.aggregate) + methods);
+      for (let cntr = 0; cntr < report.methods.length; cntr++)
+      {
+         methods += formatMethod(nextIndentation, report.methods[cntr]);
+      }
+
+      return XMLUtil.createElementWithAttributes(indentation, 'module', `srcPath="${report.srcPath}"`, true,
+       XMLUtil.createElement(nextIndentation, 'maintainability', false, report.maintainability)
+        + formatAggregate(nextIndentation, report.aggregate) + methods);
+   }
+   else
+   {
+      return XMLUtil.createEmptyElementWithAttributes(indentation, 'module', `srcPath="${report.srcPath}"`);
+   }
 }
 
 /**

@@ -7,16 +7,20 @@
  */
 export default function(result)
 {
+   const reportsAvailable = result.getSetting('serializeReports', false);
+
+   const newLine = reportsAvailable ? '\n\n' : '\n';
+
    return result.reports.reduce((formatted, report) =>
    {
-      return `${formatted}${formatModule(report)}\n\n`;
+      return `${formatted}${formatModule(report, reportsAvailable)}${newLine}`;
    }, formatProject(result));
 }
 
 /**
  * Formats a method report.
  *
- * @param {MethodReport}  methodReport - A method report.
+ * @param {MethodReport}   methodReport - A method report.
  *
  * @returns {string}
  */
@@ -52,23 +56,31 @@ function formatMethods(methodReports)
 /**
  * Formats a module report.
  *
- * @param {ModuleReport}  report - A module report.
+ * @param {ModuleReport}   report - A module report.
+ * @param {boolean}        reportsAvailable - Indicates that the report metric data is available.
  *
  * @returns {string}
  */
-function formatModule(report)
+function formatModule(report, reportsAvailable)
 {
-   return [
-      report.srcPath, '\n\n',
-      '  Physical LOC: ', report.aggregate.sloc.physical, '\n',
-      '  Logical LOC: ', report.aggregate.sloc.logical, '\n',
-      '  Mean parameter count: ', report.params, '\n',
-      '  Cyclomatic complexity: ', report.aggregate.cyclomatic, '\n',
-      '  Cyclomatic complexity density: ', report.aggregate.cyclomaticDensity, '%\n',
-      '  Maintainability index: ', report.maintainability, '\n',
-      '  Dependency count: ', report.dependencies.length,
-      formatMethods(report.methods)
-   ].join('');
+   if (reportsAvailable)
+   {
+      return [
+         report.srcPath, '\n\n',
+         '  Physical LOC: ', report.aggregate.sloc.physical, '\n',
+         '  Logical LOC: ', report.aggregate.sloc.logical, '\n',
+         '  Mean parameter count: ', report.params, '\n',
+         '  Cyclomatic complexity: ', report.aggregate.cyclomatic, '\n',
+         '  Cyclomatic complexity density: ', report.aggregate.cyclomaticDensity, '%\n',
+         '  Maintainability index: ', report.maintainability, '\n',
+         '  Dependency count: ', report.dependencies.length,
+         formatMethods(report.methods)
+      ].join('');
+   }
+   else
+   {
+      return `${report.srcPath}`;
+   }
 }
 
 /**

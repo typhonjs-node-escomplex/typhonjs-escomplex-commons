@@ -59,7 +59,7 @@ export default class ClassReport extends AbstractReport
    {
       super.finalize();
 
-      this.methods.forEach((report) => { report.finalize(); });
+      this.methods.forEach((methodReport) => { methodReport.finalize(); });
 
       return this;
    }
@@ -74,18 +74,18 @@ export default class ClassReport extends AbstractReport
    static parse(object)
    {
       /* istanbul ignore if */
-      if (typeof object !== 'object') { throw new TypeError('parse error: `object` is not an `object`.'); }
+      if (typeof object !== 'object') { throw new TypeError(`parse error: 'object' is not an 'object'.`); }
 
-      const report = Object.assign(new ClassReport(), object);
+      const classReport = Object.assign(new ClassReport(), object);
 
-      // Must explicitly assign `aggregate` to `report._methodReport` and re-assign data.
-      report.aggregate = Object.assign(report._methodReport, object.aggregate);
+      // Must explicitly assign `aggregate` to `classReport._methodReport` and re-assign data.
+      classReport.aggregate = Object.assign(classReport._methodReport, object.aggregate);
 
-      if (report.methods.length > 0)
+      if (classReport.methods.length > 0)
       {
-         report.methods = report.methods.map((report) => { return MethodReport.parse(report); });
+         classReport.methods = classReport.methods.map((methodReport) => { return MethodReport.parse(methodReport); });
       }
 
-      return report;
+      return classReport;
    }
 }

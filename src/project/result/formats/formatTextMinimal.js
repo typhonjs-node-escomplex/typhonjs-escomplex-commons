@@ -7,28 +7,41 @@
  */
 export default function(result)
 {
-   return result.reports.reduce((formatted, report) => { return `${formatted}${formatModule(report)}\n`; }, '');
+   const reportsAvailable = result.getSetting('serializeReports', false);
+
+   return result.reports.reduce((formatted, report) =>
+   {
+      return `${formatted}${formatModule(report, reportsAvailable)}\n`;
+   }, '');
 }
 
 /**
  * Formats a module report.
  *
- * @param {ModuleReport}  report - A module report.
+ * @param {ModuleReport}   report - A module report.
+ * @param {boolean}        reportsAvailable - Indicates that the report metric data is available.
  *
  * @returns {string}
  */
-function formatModule(report)
+function formatModule(report, reportsAvailable)
 {
-   return [
-      report.srcPath, ': ', report.maintainability,
-      formatMethods(report.methods)
-   ].join('');
+   if (reportsAvailable)
+   {
+      return [
+         report.srcPath, ': ', report.maintainability,
+         formatMethods(report.methods)
+      ].join('');
+   }
+   else
+   {
+      return `${report.srcPath}`;
+   }
 }
 
 /**
  * Formats a method report.
  *
- * @param {MethodReport}  methodReport - A method report.
+ * @param {MethodReport}   methodReport - A method report.
  *
  * @returns {string}
  */

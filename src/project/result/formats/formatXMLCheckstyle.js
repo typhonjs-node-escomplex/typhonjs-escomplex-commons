@@ -22,8 +22,13 @@ const s_SEVERITY_LEVELS = ['info', 'warning', 'error'];
  */
 export default function(result)
 {
+   const reportsAvailable = result.getSetting('serializeReports', false);
+
    return XMLUtil.createXMLDefinition() + XMLUtil.createElement(0, 'checkstyle', true,
-    result.reports.reduce((formatted, report) => { return formatted + formatModule(2, report); }, ''));
+    result.reports.reduce((formatted, report) =>
+    {
+       return formatted + formatModule(3, report, reportsAvailable);
+    }, ''));
 }
 
 /**
@@ -82,19 +87,27 @@ function formatMethod(indentation, methodReport)
  *
  * @param {number}         indentation - Current indentation amount.
  * @param {ModuleReport}   report - A module report.
+ * @param {boolean}        reportsAvailable - Indicates that the report metric data is available.
  *
  * @returns {string}
  */
-function formatModule(indentation, report)
+function formatModule(indentation, report, reportsAvailable)
 {
    const nextIndentation = StringUtil.incrementIndent(indentation);
 
-   let methods = '';
-
-   for (let cntr = 0; cntr < report.methods.length; cntr++)
+   if (reportsAvailable)
    {
-      methods += formatMethod(nextIndentation, report.methods[cntr]);
-   }
+      let methods = '';
 
-   return XMLUtil.createElementWithAttributes(indentation, 'file', `name="${report.srcPath}"`, true, methods);
+      for (let cntr = 0; cntr < report.methods.length; cntr++)
+      {
+         methods += formatMethod(nextIndentation, report.methods[cntr]);
+      }
+
+      return XMLUtil.createElementWithAttributes(indentation, 'file', `name="${report.srcPath}"`, true, methods);
+   }
+   else
+   {
+      return XMLUtil.createEmptyElementWithAttributes(indentation, 'file', `name="${report.srcPath}"`);
+   }
 }

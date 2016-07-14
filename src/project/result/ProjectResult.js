@@ -21,13 +21,13 @@ export default class ProjectResult
     * @param {object}               settings - An object hash of the settings used in generating this report via
     *                                          ESComplexProject.
     */
-   constructor(moduleReports, settings = {})
+   constructor(moduleReports = void 0, settings = { serializeReports: true })
    {
       /**
        * Stores the settings used to generate the project report.
        * @type {object}
        */
-      this.settings = typeof settings === 'object' ? settings : {};
+      this.settings = typeof settings === 'object' ? settings : { serializeReports: true };
 
       /**
        * Stores a compacted form of the adjacency matrix. Each row index corresponds to the same report index.
@@ -107,6 +107,38 @@ export default class ProjectResult
    }
 
    /**
+    * Finalizes the ProjectResult. If `settings.serializeReports` is false output just `filePath`, `srcPath` &
+    * `srcPathAlias` entries of reports.
+    *
+    * @param {boolean}  serializeReports - (Optional) Allows overriding of ModuleReport serialization;
+    *                                      default: undefined.
+    *
+    * @returns {ProjectResult}
+    */
+   finalize(serializeReports = void 0)
+   {
+      let serialize = this.getSetting('serializeReports');
+
+      // Allow an override opportunity.
+      if (typeof serializeReports === 'boolean') { serialize = serializeReports; }
+
+      if (serialize)
+      {
+         this.reports.forEach((report) => { report.finalize(); });
+      }
+      else
+      {
+         this.reports = this.reports.map((report) =>
+         {
+            return { filePath: report.filePath, srcPath: report.srcPath, srcPathAlias: report.srcPathAlias };
+         });
+      }
+
+      return MathUtil.toFixedTraverse(this);
+   }
+
+
+   /**
     * Returns the supported format file extension types.
     *
     * @returns {string[]}
@@ -127,26 +159,23 @@ export default class ProjectResult
    }
 
    /**
-    * Finalizes the ProjectResult. If `settings.serializeReports` is false output just `filePath`, `srcPath` &
-    * `srcPathAlias` entries of reports.
+    * Returns the setting indexed by the given key.
     *
-    * @returns {ProjectResult}
+    * @param {string}   key - A key used to store the setting parameter.
+    * @param {*}        defaultValue - A default value to return if no setting for the given key is currently stored.
+    *
+    * @returns {*}
     */
-   finalize()
+   getSetting(key, defaultValue = undefined)
    {
-      if (typeof this.settings.serializeReports === 'boolean' && !this.settings.serializeReports)
+      /* istanbul ignore if */
+      if (typeof key !== 'string' || key === '')
       {
-         this.reports = this.reports.map((report) =>
-         {
-            return { filePath: report.filePath, srcPath: report.srcPath, srcPathAlias: report.srcPathAlias };
-         });
-      }
-      else
-      {
-         this.reports.forEach((report) => { report.finalize(); });
+         throw new TypeError(`getSetting error: 'key' is not a 'string' or is empty.`);
       }
 
-      return MathUtil.toFixedTraverse(this);
+      return typeof this.settings === 'object' && typeof this.settings[key] !== 'undefined' ? this.settings[key] :
+       defaultValue;
    }
 
    /**
@@ -159,7 +188,7 @@ export default class ProjectResult
    static parse(object)
    {
       /* istanbul ignore if */
-      if (typeof object !== 'object') { throw new TypeError('parse error: `object` is not an `object`.'); }
+      if (typeof object !== 'object') { throw new TypeError(`parse error: 'object' is not an 'object'.`); }
 
       const result = Object.assign(new ProjectResult(), object);
 
@@ -169,6 +198,31 @@ export default class ProjectResult
       }
 
       return result;
+   }
+
+   /**
+    * Sets the setting indexed by the given key and returns true if successful.
+    *
+    * @param {string}   key - A key used to store the setting parameter.
+    * @param {*}        value - A value to set to `this.settings[key]`.
+    *
+    * @returns {boolean}
+    */
+   setSetting(key, value)
+   {
+      /* istanbul ignore if */
+      if (typeof key !== 'string' || key === '')
+      {
+         throw new TypeError(`setSetting error: 'key' is not a 'string' or is empty.`);
+      }
+
+      if (this.settings === 'object')
+      {
+         this.settings[key] = value;
+         return true;
+      }
+
+      return false;
    }
 
    /**

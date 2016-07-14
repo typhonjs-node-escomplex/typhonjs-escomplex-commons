@@ -101,7 +101,7 @@ export default class MethodReport extends AbstractReport
    static parse(object)
    {
       /* istanbul ignore if */
-      if (typeof object !== 'object') { throw new TypeError('parse error: `object` is not an `object`.'); }
+      if (typeof object !== 'object') { throw new TypeError(`parse error: 'object' is not an 'object'.`); }
 
       return Object.assign(new MethodReport(), object);
    }
