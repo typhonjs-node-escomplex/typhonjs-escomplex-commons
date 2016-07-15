@@ -1,8 +1,9 @@
-import { assert }    from 'chai';
+import fs               from 'fs-extra';
+import { assert }       from 'chai';
 
-import ClassReport   from '../../../src/module/report/ClassReport';
-import MethodReport  from '../../../src/module/report/MethodReport';
-import ModuleReport  from '../../../src/module/report/ModuleReport';
+import ClassReport      from '../../../src/module/report/ClassReport';
+import MethodReport     from '../../../src/module/report/MethodReport';
+import ModuleReport     from '../../../src/module/report/ModuleReport';
 
 suite('report:', () =>
 {
@@ -193,6 +194,28 @@ suite('report:', () =>
             assert.strictEqual(sums[indices.loc], 60);
             assert.strictEqual(sums[indices.maintainability], 80);
             assert.strictEqual(sums[indices.params], 100);
+         });
+      });
+
+      suite('toFormat (large-module/report):', () =>
+      {
+         const largeModuleJSON = require('typhonjs-escomplex-test-data/files/large-module/report/report');
+
+         const moduleReport = ModuleReport.parse(largeModuleJSON).finalize();
+
+         const extensions = ModuleReport.getFormatFileExtensions();
+
+         ModuleReport.getFormatTypes().forEach((formatType, index) =>
+         {
+            test(`formatType: ${formatType}`, () =>
+            {
+               const output = moduleReport.toFormat(formatType);
+
+               const original = fs.readFileSync(
+                `./test/fixture/files/large-module/report-${formatType}.${extensions[index]}`, 'utf8');
+
+               assert.strictEqual(output, original);
+            });
          });
       });
    });

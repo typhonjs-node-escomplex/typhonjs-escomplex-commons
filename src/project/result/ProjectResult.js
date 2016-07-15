@@ -1,4 +1,4 @@
-import ProjectFormatter from  './ProjectFormatter';
+import TransformFormat  from  '../../transform/TransformFormat';
 
 import ModuleReport     from  '../../module/report/ModuleReport';
 import MathUtil         from  '../../utils/MathUtil';
@@ -137,7 +137,6 @@ export default class ProjectResult
       return MathUtil.toFixedTraverse(this);
    }
 
-
    /**
     * Returns the supported format file extension types.
     *
@@ -145,7 +144,7 @@ export default class ProjectResult
     */
    static getFormatFileExtensions()
    {
-      return ProjectFormatter.getFileExtensions();
+      return TransformFormat.getFileExtensions();
    }
 
    /**
@@ -155,7 +154,7 @@ export default class ProjectResult
     */
    static getFormatTypes()
    {
-      return ProjectFormatter.getTypes();
+      return TransformFormat.getTypes();
    }
 
    /**
@@ -235,7 +234,7 @@ export default class ProjectResult
     */
    toFormat(type)
    {
-      return ProjectFormatter.format(this, type);
+      return TransformFormat.format(this, type);
    }
 
    /**

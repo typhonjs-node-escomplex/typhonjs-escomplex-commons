@@ -1,9 +1,9 @@
-import fs            from 'fs-extra';
+import fs               from 'fs-extra';
 
-import { assert }    from 'chai';
+import { assert }       from 'chai';
 
-import ModuleReport  from '../../../src/module/report/ModuleReport';
-import ProjectResult from '../../../src/project/result/ProjectResult';
+import ModuleReport     from '../../../src/module/report/ModuleReport';
+import ProjectResult    from '../../../src/project/result/ProjectResult';
 
 suite('result:', () =>
 {
@@ -109,10 +109,7 @@ suite('result:', () =>
 
       suite('toFormat (large-project/results):', () =>
       {
-         // Generate original test data - empty dir.
-         // fs.emptyDirSync('./test/fixture/files/large-project');
-
-         const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/results');
+         const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/results/results');
 
          const projectResult = ProjectResult.parse(largeProjectJSON).finalize();
 
@@ -123,10 +120,6 @@ suite('result:', () =>
             test(`formatType: ${formatType}`, () =>
             {
                const output = projectResult.toFormat(formatType);
-
-               // Generate original test data.
-               // fs.writeFileSync(
-               //  `./test/fixture/files/large-project/result-${formatType}.${extensions[index]}`, output, 'utf8');
 
                const original = fs.readFileSync(
                 `./test/fixture/files/large-project/result-${formatType}.${extensions[index]}`, 'utf8');
@@ -138,7 +131,7 @@ suite('result:', () =>
 
       suite('toFormat (large-project/results-no-reports):', () =>
       {
-         const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/results-no-reports');
+         const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/results/results-no-reports');
 
          const projectResult = ProjectResult.parse(largeProjectJSON).finalize();
 
@@ -150,10 +143,6 @@ suite('result:', () =>
             {
                const output = projectResult.toFormat(formatType);
 
-               // Generate original test data.
-               // fs.writeFileSync(
-               //  `./test/fixture/files/large-project/results-no-reports-${formatType}.${extensions[index]}`, output, 'utf8');
-
                const original = fs.readFileSync(
                 `./test/fixture/files/large-project/results-no-reports-${formatType}.${extensions[index]}`, 'utf8');
 
@@ -164,7 +153,7 @@ suite('result:', () =>
 
       suite('large project parsing performance', () =>
       {
-         const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/results');
+         const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/results/results');
 
          test('deserialize JSON object should be sufficiently fast', function()
          {

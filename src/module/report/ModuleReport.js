@@ -3,6 +3,7 @@ import ClassReport      from './ClassReport';
 import MethodReport     from './MethodReport';
 
 import MathUtil         from  '../../utils/MathUtil';
+import TransformFormat  from  '../../transform/TransformFormat';
 
 /**
  * Provides the module report object which stores data pertaining to a single file / module being processed.
@@ -241,6 +242,26 @@ export default class ModuleReport extends AbstractReport
    }
 
    /**
+    * Returns the supported format file extension types.
+    *
+    * @returns {string[]}
+    */
+   static getFormatFileExtensions()
+   {
+      return TransformFormat.getFileExtensions();
+   }
+
+   /**
+    * Returns the supported format types.
+    *
+    * @returns {string[]}
+    */
+   static getFormatTypes()
+   {
+      return TransformFormat.getTypes();
+   }
+
+   /**
     * Provides a default array and indices for summing maintainability metrics via `sumMetrics`.
     *
     * @returns {{sums: number[], indices: {cyclomatic: number, effort: number, loc: number, maintainability: number, params: number}}}
@@ -389,7 +410,6 @@ export default class ModuleReport extends AbstractReport
       });
    }
 
-
    /**
     * Sets the setting indexed by the given key and returns true if successful.
     *
@@ -430,6 +450,19 @@ export default class ModuleReport extends AbstractReport
       if (typeof indices !== 'object') { throw new TypeError('sumMetrics error: `indices` is not an `object`.'); }
 
       for (const key in indices) { sums[indices[key]] += typeof this[key] === 'number' ? this[key] : 0; }
+   }
+
+   /**
+    * Formats this ModuleReport given the type.
+    *
+    * @param {string}   type - The type of formatter to use. Options include: `'json', 'json-minimal', 'markdown',
+    *                          'text', 'text-minimal', 'text-modules', 'xml', 'xml-checkstyle'`.
+    *
+    * @returns {string}
+    */
+   toFormat(type)
+   {
+      return TransformFormat.format(this, type);
    }
 }
 
