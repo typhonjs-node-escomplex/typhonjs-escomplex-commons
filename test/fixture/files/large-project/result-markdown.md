@@ -25,7 +25,6 @@
 * Logical LOC: 0
 * Mean parameter count: 0
 * Cyclomatic complexity: 1
-* Cyclomatic complexity density: %
 * Maintainability index: 171
 * Dependency count: 2
 
@@ -45,7 +44,6 @@
 * Logical LOC: 0
 * Mean parameter count: 0
 * Cyclomatic complexity: 1
-* Cyclomatic complexity density: %
 * Maintainability index: 171
 * Dependency count: 1
 
@@ -863,7 +861,6 @@
 * Logical LOC: 0
 * Mean parameter count: 0
 * Cyclomatic complexity: 1
-* Cyclomatic complexity density: %
 * Maintainability index: 171
 * Dependency count: 1
 

@@ -2,6 +2,8 @@ import { assert }             from 'chai';
 
 import AbstractSyntaxLoader   from '../../../src/module/plugin/syntax/AbstractSyntaxLoader';
 
+import * as testconfig        from '../testconfig';
+
 class Parent extends AbstractSyntaxLoader
 {
    ParentOne() { return {}; }
@@ -15,26 +17,29 @@ class Child extends Parent
    ChildFour() { return {}; }
 }
 
-suite('plugin:', () =>
+if (testconfig.modules['modulePlugin'])
 {
-   /**
-    * Verifies that AbstractSyntaxLoader can find all child / parent inheritance methods
-    */
-   suite('syntax (AbstractSyntaxLoader):', () =>
+   suite('plugin:', () =>
    {
-      const instance = new Child();
-
-      test('verify child / parent syntax loading', () =>
+      /**
+       * Verifies that AbstractSyntaxLoader can find all child / parent inheritance methods
+       */
+      suite('syntax (AbstractSyntaxLoader):', () =>
       {
-         const event = { data: { settings: {}, syntaxes: {} } };
-         instance.onLoadSyntax(event);
+         const instance = new Child();
 
-         assert.isUndefined(event.data.syntaxes['onConfigure']);
+         test('verify child / parent syntax loading', () =>
+         {
+            const event = { data: { settings: {}, syntaxes: {} } };
+            instance.onLoadSyntax(event);
 
-         assert.isObject(event.data.syntaxes['ChildThree']);
-         assert.isObject(event.data.syntaxes['ChildFour']);
-         assert.isObject(event.data.syntaxes['ParentOne']);
-         assert.isObject(event.data.syntaxes['ParentTwo']);
+            assert.isUndefined(event.data.syntaxes['onConfigure']);
+
+            assert.isObject(event.data.syntaxes['ChildThree']);
+            assert.isObject(event.data.syntaxes['ChildFour']);
+            assert.isObject(event.data.syntaxes['ParentOne']);
+            assert.isObject(event.data.syntaxes['ParentTwo']);
+         });
       });
    });
-});
+}

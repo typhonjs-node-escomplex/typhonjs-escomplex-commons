@@ -8,56 +8,128 @@ import TransformFormat  from '../../../src/transform/TransformFormat';
 // Uncomment to generate matching format test data.
 // generateFormatData();
 
-suite('transform:', () =>
+import * as testconfig  from '../testconfig';
+
+if (testconfig.modules['transformFormat'])
 {
-   suite('TransformFormat:', () =>
+   suite('transform:', () =>
    {
-      suite('forEach / formatReport (large-module/report):', () =>
+      suite('TransformFormat:', () =>
       {
-         const largeModuleJSON = require('typhonjs-escomplex-test-data/files/large-module/report/report');
-
-         const moduleReport = ModuleReport.parse(largeModuleJSON).finalize();
-
-         TransformFormat.forEach((format, formatType) =>
+         suite('forEach / formatReport (large-module/report):', () =>
          {
-            test(`formatType: ${formatType}`, () =>
+            const largeModuleJSON = require('typhonjs-escomplex-test-data/files/large-module/report/report');
+
+            const moduleReport = ModuleReport.parse(largeModuleJSON).finalize();
+
+            TransformFormat.forEach((format, formatType) =>
             {
-               const output = format.formatReport(moduleReport);
+               test(`formatType: ${formatType}`, () =>
+               {
+                  const output = format.formatReport(moduleReport);
 
-               const original = fs.readFileSync(
-                `./test/fixture/files/large-module/report-${formatType}.${format.extension}`, 'utf8');
+                  const original = fs.readFileSync(
+                   `./test/fixture/files/large-module/report-${formatType}.${format.extension}`, 'utf8');
 
-               assert.strictEqual(output, original);
+                  assert.strictEqual(output, original);
+               });
+            });
+         });
+
+         suite('forEach / formatResult (large-module/report):', () =>
+         {
+            const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/results/results-no-reports');
+
+            const projectResult = ProjectResult.parse(largeProjectJSON).finalize();
+
+            TransformFormat.forEach((format, formatType) =>
+            {
+               test(`formatType: ${formatType}`, () =>
+               {
+                  const output = format.formatResult(projectResult);
+
+                  const original = fs.readFileSync(
+                   `./test/fixture/files/large-project/results-no-reports-${formatType}.${format.extension}`, 'utf8');
+
+                  assert.strictEqual(output, original);
+               });
             });
          });
       });
 
-      suite('forEach / formatResult (large-module/report):', () =>
+      suite('ModuleReport:', () =>
       {
-         const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/results/results-no-reports');
-
-         const projectResult = ProjectResult.parse(largeProjectJSON).finalize();
-
-         TransformFormat.forEach((format, formatType) =>
+         suite('toFormat (large-module/report):', () =>
          {
-            test(`formatType: ${formatType}`, () =>
+            const largeModuleJSON = require('typhonjs-escomplex-test-data/files/large-module/report/report');
+
+            const moduleReport = ModuleReport.parse(largeModuleJSON).finalize();
+
+            const extensions = ModuleReport.getFormatFileExtensions();
+
+            ModuleReport.getFormatTypes().forEach((formatType, index) =>
             {
-               const output = format.formatResult(projectResult);
+               test(`formatType: ${formatType}`, () =>
+               {
+                  const output = moduleReport.toFormat(formatType);
 
-               // Generate original test data.
-               // fs.writeFileSync(
-               //  `./test/fixture/files/large-project/results-no-reports-${formatType}.${format.extension}`, output, 'utf8');
+                  const original = fs.readFileSync(
+                   `./test/fixture/files/large-module/report-${formatType}.${extensions[index]}`, 'utf8');
 
-               const original = fs.readFileSync(
-                `./test/fixture/files/large-project/results-no-reports-${formatType}.${format.extension}`, 'utf8');
+                  assert.strictEqual(output, original);
+               });
+            });
+         });
+      });
 
-               assert.strictEqual(output, original);
+      suite('ProjectResult:', () =>
+      {
+         suite('toFormat (large-project/results):', () =>
+         {
+            const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/results/results');
+
+            const projectResult = ProjectResult.parse(largeProjectJSON).finalize();
+
+            const extensions = ProjectResult.getFormatFileExtensions();
+
+            ProjectResult.getFormatTypes().forEach((formatType, index) =>
+            {
+               test(`formatType: ${formatType}`, () =>
+               {
+                  const output = projectResult.toFormat(formatType);
+
+                  const original = fs.readFileSync(
+                   `./test/fixture/files/large-project/result-${formatType}.${extensions[index]}`, 'utf8');
+
+                  assert.strictEqual(output, original);
+               });
+            });
+         });
+
+         suite('toFormat (large-project/results-no-reports):', () =>
+         {
+            const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/results/results-no-reports');
+
+            const projectResult = ProjectResult.parse(largeProjectJSON).finalize();
+
+            const extensions = ProjectResult.getFormatFileExtensions();
+
+            ProjectResult.getFormatTypes().forEach((formatType, index) =>
+            {
+               test(`formatType: ${formatType}`, () =>
+               {
+                  const output = projectResult.toFormat(formatType);
+
+                  const original = fs.readFileSync(
+                   `./test/fixture/files/large-project/results-no-reports-${formatType}.${extensions[index]}`, 'utf8');
+
+                  assert.strictEqual(output, original);
+               });
             });
          });
       });
    });
-});
-
+}
 /**
  * Generates the original module report / project result test data.
  */

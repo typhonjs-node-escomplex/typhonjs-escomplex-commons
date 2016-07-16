@@ -1,3 +1,7 @@
+import StringUtil from '../../utils/StringUtil';
+
+const s_SAFE = StringUtil.safeStringsObject;
+
 /**
  * Provides a format transform for ESComplex ModuleReport / ProjectResult instances converting them to plain text.
  */
@@ -63,19 +67,20 @@ export default class FormatText
     */
    _formatMethod(methodReport)
    {
-      return [
-         '  Function: ', methodReport.name, '\n',
-         '    Line start: ', methodReport.lineStart, '\n',
-         '    Line end: ', methodReport.lineEnd, '\n',
-         '    Physical LOC: ', methodReport.sloc.physical, '\n',
-         '    Logical LOC: ', methodReport.sloc.logical, '\n',
-         '    Parameter count: ', methodReport.params, '\n',
-         '    Cyclomatic complexity: ', methodReport.cyclomatic, '\n',
-         '    Cyclomatic complexity density: ', methodReport.cyclomaticDensity, '%\n',
-         '    Halstead difficulty: ', methodReport.halstead.difficulty, '\n',
-         '    Halstead volume: ', methodReport.halstead.volume, '\n',
-         '    Halstead effort: ', methodReport.halstead.effort
-      ].join('');
+      return s_SAFE(methodReport,
+         '\n',
+         ['  Function: ',                          'name'],
+         ['    Line start: ',                      'lineStart'],
+         ['    Line end: ',                        'lineEnd'],
+         ['    Physical LOC: ',                    'sloc.physical'],
+         ['    Logical LOC: ',                     'sloc.logical'],
+         ['    Parameter count: ',                 'params'],
+         ['    Cyclomatic complexity: ',           'cyclomatic'],
+         ['    Cyclomatic complexity density: ',   'cyclomaticDensity', 1, '%'],
+         ['    Halstead difficulty: ',             'halstead.difficulty'],
+         ['    Halstead volume: ',                 'halstead.volume'],
+         ['    Halstead effort: ',                 'halstead.effort', 0]
+      );
    }
 
    /**
@@ -87,7 +92,7 @@ export default class FormatText
     */
    _formatMethods(methodReports)
    {
-      return methodReports.reduce((formatted, r) => { return `${formatted}\n\n${this._formatMethod(r)}`; }, '');
+      return methodReports.reduce((formatted, r) => { return `${formatted}\n${this._formatMethod(r)}`; }, '');
    }
 
    /**
@@ -102,17 +107,17 @@ export default class FormatText
    {
       if (reportsAvailable)
       {
-         return [
-            report.srcPath, '\n\n',
-            '  Physical LOC: ', report.aggregate.sloc.physical, '\n',
-            '  Logical LOC: ', report.aggregate.sloc.logical, '\n',
-            '  Mean parameter count: ', report.params, '\n',
-            '  Cyclomatic complexity: ', report.aggregate.cyclomatic, '\n',
-            '  Cyclomatic complexity density: ', report.aggregate.cyclomaticDensity, '%\n',
-            '  Maintainability index: ', report.maintainability, '\n',
-            '  Dependency count: ', report.dependencies.length,
+         return s_SAFE(report,
+            ['', 'srcPath', 2],
+            ['  Physical LOC: ',                   'aggregate.sloc.physical'],
+            ['  Logical LOC: ',                    'aggregate.sloc.logical'],
+            ['  Mean parameter count: ',           'params'],
+            ['  Cyclomatic complexity: ',          'aggregate.cyclomatic'],
+            ['  Cyclomatic complexity density: ',  'aggregate.cyclomaticDensity', 1, '%'],
+            ['  Maintainability index: ',          'maintainability'],
+            ['  Dependency count: ',               'dependencies.length', 0],
             this._formatMethods(report.methods)
-         ].join('');
+         );
       }
       else
       {
@@ -129,15 +134,15 @@ export default class FormatText
     */
    _formatProject(result)
    {
-      return [
-         'Mean per-function logical LOC: ', result.loc, '\n',
-         'Mean per-function parameter count: ', result.params, '\n',
-         'Mean per-function cyclomatic complexity: ', result.cyclomatic, '\n',
-         'Mean per-function Halstead effort: ', result.effort, '\n',
-         'Mean per-module maintainability index: ', result.maintainability, '\n',
-         'First-order density: ', result.firstOrderDensity, '%\n',
-         'Change cost: ', result.changeCost, '%\n',
-         'Core size: ', result.coreSize, '%\n\n'
-      ].join('');
+      return s_SAFE(result,
+         ['Mean per-function logical LOC: ',             'loc'],
+         ['Mean per-function parameter count: ',         'params'],
+         ['Mean per-function cyclomatic complexity: ',   'cyclomatic'],
+         ['Mean per-function Halstead effort: ',         'effort'],
+         ['Mean per-module maintainability index: ',     'maintainability'],
+         ['First-order density: ',                       'firstOrderDensity', 1, '%'],
+         ['Change cost: ',                               'changeCost', 1, '%'],
+         ['Core size: ',                                 'coreSize', 2, '%']
+      );
    }
 }

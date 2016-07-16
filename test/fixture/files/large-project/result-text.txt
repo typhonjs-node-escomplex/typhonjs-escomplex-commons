@@ -23,7 +23,6 @@ Core size: 26.471%
   Logical LOC: 0
   Mean parameter count: 0
   Cyclomatic complexity: 1
-  Cyclomatic complexity density: %
   Maintainability index: 171
   Dependency count: 2
 
@@ -43,7 +42,6 @@ Core size: 26.471%
   Logical LOC: 0
   Mean parameter count: 0
   Cyclomatic complexity: 1
-  Cyclomatic complexity density: %
   Maintainability index: 171
   Dependency count: 1
 
@@ -909,7 +907,6 @@ typhonjs-escomplex-module/src/index.js
   Logical LOC: 0
   Mean parameter count: 0
   Cyclomatic complexity: 1
-  Cyclomatic complexity density: %
   Maintainability index: 171
   Dependency count: 1
 

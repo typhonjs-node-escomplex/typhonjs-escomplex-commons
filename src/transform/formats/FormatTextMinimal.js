@@ -1,3 +1,7 @@
+import StringUtil from '../../utils/StringUtil';
+
+const s_SAFE = StringUtil.safeStringsObject;
+
 /**
  * Provides a format transform for ESComplex ModuleReport / ProjectResult instances converting them to plain text with
  * minimal metrics.
@@ -65,10 +69,11 @@ export default class FormatTextMinimal
    {
       if (reportsAvailable)
       {
-         return [
-            report.srcPath, ': ', report.maintainability,
+         return s_SAFE(report,
+            ['',     'srcPath', 0],
+            [': ',   'maintainability', 0],
             this._formatMethods(report.methods)
-         ].join('');
+         );
       }
       else
       {
@@ -85,9 +90,11 @@ export default class FormatTextMinimal
     */
    _formatMethod(methodReport)
    {
-      return [
-         '  ', methodReport.name, ' (', methodReport.lineStart, '): ', methodReport.cyclomatic
-      ].join('');
+      return s_SAFE(methodReport,
+       ['  ',  'name', 0],
+       [' (',  'lineStart', 0, '): '],
+       ['',    'cyclomatic', 0]
+      );
    }
 
    /**
