@@ -7,24 +7,30 @@ export default class FormatJSON
     * Formats a module report as a JSON string.
     *
     * @param {ModuleReport}   report - A module report.
+    * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
+    * @property {number}      spacing - (Optional) An integer defining the JSON output spacing.
     *
     * @returns {string}
     */
-   formatReport(report)
+   formatReport(report, options = {})
    {
-      return JSON.stringify(report);
+      return typeof options === 'object' && Number.isInteger(options.spacing) ?
+       JSON.stringify(report, undefined, options.spacing) : JSON.stringify(report);
    }
 
    /**
     * Formats a project result as a JSON string.
     *
     * @param {ProjectResult}  result - A project result.
+    * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
+    * @property {number}      spacing - (Optional) An integer defining the JSON output spacing.
     *
     * @returns {string}
     */
-   formatResult(result)
+   formatResult(result, options = {})
    {
-      return JSON.stringify(result);
+      return typeof options === 'object' && Number.isInteger(options.spacing) ?
+       JSON.stringify(result, undefined, options.spacing) : JSON.stringify(result);
    }
 
    /**
