@@ -68,11 +68,11 @@ export default class TransformFormat
     * @param {function} callback - A callback function.
     * @param {object}   thisArg - (Optional) this context.
     */
-   static forEachExt(extension, callback, thisArg)
+   static forEachExt(extension, callback, thisArg = undefined)
    {
       for (const format of s_FORMATTERS.values())
       {
-         if (format.extension === extension) { callback.call(format, thisArg); }
+         if (format.extension === extension) { callback.call(thisArg, format); }
       }
    }
 
