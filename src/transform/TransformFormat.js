@@ -81,11 +81,11 @@ export default class TransformFormat
     *
     * @param {ModuleReport|ProjectResult} resultOrReport - A ModuleReport or ProjectResult to format.
     * @param {string}                     type - The type of formatter to return.
-    * @param {*}                          values - (Optional) One or more optional parameters to pass to the formatter.
+    * @param {*}                          options - (Optional) One or more optional parameters to pass to the formatter.
     *
     * @returns {string}
     */
-   static format(resultOrReport, type, ...values)
+   static format(resultOrReport, type, options = {})
    {
       if (!(resultOrReport instanceof ModuleReport || resultOrReport instanceof ProjectResult))
       {
@@ -101,12 +101,12 @@ export default class TransformFormat
 
       if (resultOrReport instanceof ModuleReport)
       {
-         return formatter.formatReport(resultOrReport, ...values);
+         return formatter.formatReport(resultOrReport, options);
       }
 
       if (resultOrReport instanceof ProjectResult)
       {
-         return formatter.formatResult(resultOrReport, ...values);
+         return formatter.formatResult(resultOrReport, options);
       }
    }
 
