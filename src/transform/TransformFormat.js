@@ -72,7 +72,7 @@ export default class TransformFormat
    {
       for (const format of s_FORMATTERS.values())
       {
-         if (format.extension === extension) { callback.call(thisArg, format); }
+         if (format.extension === extension) { callback.call(thisArg, format, format.type); }
       }
    }
 
