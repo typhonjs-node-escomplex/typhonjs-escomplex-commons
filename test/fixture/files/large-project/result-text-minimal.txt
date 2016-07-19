@@ -1,82 +1,719 @@
-./src/ESComplexProject.js: 110.612
-./src/index.js: 171
-./src/Plugins.js: 121.725
-./test/fixture/testImportNPMAlias.js: 171
-./test/fixture/testRequireNPMAlias.js: 160.237
-typhonjs-escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js: 122.136
-  <anonymous> (33): 4
-  <anonymous> (39): 2
-typhonjs-escomplex-commons/src/module/report/AbstractReport.js: 148.376
-typhonjs-escomplex-commons/src/module/report/ClassReport.js: 127.096
-typhonjs-escomplex-commons/src/module/report/HalsteadData.js: 110.635
-typhonjs-escomplex-commons/src/module/report/MethodReport.js: 112.359
-typhonjs-escomplex-commons/src/module/report/ModuleReport.js: 118.216
-typhonjs-escomplex-commons/src/module/traits/actualize.js: 111.799
-  <anonymous> (19): 1
-typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js: 141.777
-typhonjs-escomplex-commons/src/module/traits/safeArray.js: 148.682
-  <anonymous> (8): 4
-typhonjs-escomplex-commons/src/module/traits/safeName.js: 119.451
-  <anonymous> (9): 7
-typhonjs-escomplex-commons/src/module/traits/Trait.js: 138.638
-typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js: 125.893
-typhonjs-escomplex-commons/src/project/result/formats/formatJSON.js: 158.726
-  <anonymous> (8): 1
-typhonjs-escomplex-commons/src/project/result/formats/formatJSONExpanded.js: 157.718
-  <anonymous> (8): 1
-typhonjs-escomplex-commons/src/project/result/formats/formatMarkdown.js: 144.18
-  <anonymous> (8): 1
-  <anonymous> (10): 1
-  formatMethod (23): 1
-  formatMethods (47): 1
-  <anonymous> (49): 1
-  formatModule (59): 1
-  formatProject (81): 1
-typhonjs-escomplex-commons/src/project/result/formats/formatText.js: 144.241
-  <anonymous> (8): 1
-  <anonymous> (10): 1
-  formatMethod (23): 1
-  formatMethods (47): 1
-  <anonymous> (49): 1
-  formatModule (59): 1
-  formatProject (81): 1
-typhonjs-escomplex-commons/src/project/result/formats/formatTextMinimal.js: 150.755
-  <anonymous> (8): 1
-  <anonymous> (10): 1
-  formatModule (20): 1
-  formatMethod (35): 1
-  formatMethods (49): 1
-  <anonymous> (51): 1
-typhonjs-escomplex-commons/src/project/result/formats/formatTextModules.js: 157.421
-  <anonymous> (8): 1
-  <anonymous> (10): 1
-typhonjs-escomplex-commons/src/project/result/formats/formatXML.js: 139.71
-  <anonymous> (11): 1
-  <anonymous> (17): 1
-  formatAggregate (28): 1
-  formatMethod (48): 1
-  formatModule (70): 2
-  formatCyclomaticComplexity (94): 1
-  formatCyclomaticDensity (107): 1
-  formatHalsteadComplexity (120): 1
-  formatHalsteadMetrics (134): 1
-  formatParameterComplexity (152): 1
-  formatSlocComplexity (164): 1
-  formatSlocMetrics (177): 1
-typhonjs-escomplex-commons/src/project/result/formats/formatXMLCheckstyle.js: 130.699
-  <anonymous> (23): 1
-  <anonymous> (26): 1
-  assignSeverity (36): 1
-  <anonymous> (40): 3
-  formatMethod (60): 1
-  formatModule (88): 2
-typhonjs-escomplex-commons/src/project/result/ProjectFormatter.js: 105.3
-typhonjs-escomplex-commons/src/project/result/ProjectResult.js: 128.113
-typhonjs-escomplex-commons/src/utils/MathUtil.js: 128.142
-typhonjs-escomplex-commons/src/utils/ObjectUtil.js: 107.184
-  _depthTraverse (38): 5
-typhonjs-escomplex-commons/src/utils/StringUtil.js: 155.215
-typhonjs-escomplex-commons/src/utils/XMLUtil.js: 147.775
-typhonjs-escomplex-module/src/ESComplexModule.js: 126.029
-typhonjs-escomplex-module/src/index.js: 171
-typhonjs-escomplex-module/src/Plugins.js: 122.046
+Module:
+   filePath: ./src/ESComplexProject.js
+   srcPath: ./src/ESComplexProject.js
+   maintainability: 110.612
+   Class: ESComplexProject (11)
+      maintainability: 110.612
+      Class method: constructor (44)
+         cyclomatic: 8
+         halstead.bugs: 0.168
+      Class method: analyze (115)
+         cyclomatic: 4
+         halstead.bugs: 0.137
+      Class method: <anonymous> (126)
+         cyclomatic: 3
+         halstead.bugs: 0.114
+      Class method: processResults (174)
+         cyclomatic: 5
+         halstead.bugs: 0.14
+      Class method: analyzeAsync (215)
+         cyclomatic: 1
+         halstead.bugs: 0.007
+      Class method: <anonymous> (217)
+         cyclomatic: 1
+         halstead.bugs: 0.017
+      Class method: processResultsAsync (232)
+         cyclomatic: 1
+         halstead.bugs: 0.007
+      Class method: <anonymous> (234)
+         cyclomatic: 1
+         halstead.bugs: 0.017
+
+Module:
+   filePath: ./src/index.js
+   srcPath: ./src/index.js
+   maintainability: 171
+
+Module:
+   filePath: ./src/Plugins.js
+   srcPath: ./src/Plugins.js
+   maintainability: 121.725
+   Class: Plugins (12)
+      maintainability: 121.725
+      Class method: constructor (23)
+         cyclomatic: 3
+         halstead.bugs: 0.041
+      Class method: onConfigure (47)
+         cyclomatic: 4
+         halstead.bugs: 0.09
+      Class method: onProjectStart (70)
+         cyclomatic: 1
+         halstead.bugs: 0.017
+      Class method: onProjectEnd (83)
+         cyclomatic: 2
+         halstead.bugs: 0.04
+
+Module:
+   filePath: ./test/fixture/testImportNPMAlias.js
+   srcPath: ./test/fixture/testImportNPMAlias.js
+   maintainability: 171
+
+Module:
+   filePath: ./test/fixture/testRequireNPMAlias.js
+   srcPath: ./test/fixture/testRequireNPMAlias.js
+   maintainability: 160.237
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js
+   srcPath: typhonjs-escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js
+   maintainability: 122.136
+   Module method: <anonymous> (33)
+      cyclomatic: 4
+      halstead.bugs: 0.059
+   Module method: <anonymous> (39)
+      cyclomatic: 2
+      halstead.bugs: 0.017
+   Class: AbstractSyntaxLoader (6)
+      maintainability: 118.601
+      Class method: onLoadSyntax (13)
+         cyclomatic: 4
+         halstead.bugs: 0.066
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/module/report/AbstractReport.js
+   srcPath: typhonjs-escomplex-commons/src/module/report/AbstractReport.js
+   maintainability: 148.376
+   Class: AbstractReport (5)
+      maintainability: 148.376
+      Class method: constructor (13)
+         cyclomatic: 1
+         halstead.bugs: 0.005
+      Class method: finalize (28)
+         cyclomatic: 1
+         halstead.bugs: 0.005
+      Class method: methodReport (41)
+         cyclomatic: 2
+         halstead.bugs: 0.012
+      Class method: incrementDistinctHalsteadItems (49)
+         cyclomatic: 2
+         halstead.bugs: 0.035
+      Class method: incrementHalsteadItems (65)
+         cyclomatic: 1
+         halstead.bugs: 0.014
+      Class method: incrementHalsteadMetric (79)
+         cyclomatic: 1
+         halstead.bugs: 0.013
+      Class method: incrementParams (89)
+         cyclomatic: 1
+         halstead.bugs: 0.007
+      Class method: isHalsteadMetricDistinct (102)
+         cyclomatic: 1
+         halstead.bugs: 0.023
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/module/report/ClassReport.js
+   srcPath: typhonjs-escomplex-commons/src/module/report/ClassReport.js
+   maintainability: 127.096
+   Class: ClassReport (9)
+      maintainability: 127.096
+      Class method: constructor (18)
+         cyclomatic: 1
+         halstead.bugs: 0.055
+      Class method: finalize (58)
+         cyclomatic: 1
+         halstead.bugs: 0.014
+      Class method: <anonymous> (62)
+         cyclomatic: 1
+         halstead.bugs: 0.003
+      Class method: parse (74)
+         cyclomatic: 3
+         halstead.bugs: 0.086
+      Class method: <anonymous> (86)
+         cyclomatic: 1
+         halstead.bugs: 0.006
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/module/report/HalsteadData.js
+   srcPath: typhonjs-escomplex-commons/src/module/report/HalsteadData.js
+   maintainability: 110.635
+   Class: HalsteadData (5)
+      maintainability: 110.635
+      Class method: constructor (10)
+         cyclomatic: 1
+         halstead.bugs: 0.089
+      Class method: reset (75)
+         cyclomatic: 2
+         halstead.bugs: 0.063
+      Class method: <anonymous> (77)
+         cyclomatic: 2
+         halstead.bugs: 0.014
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/module/report/MethodReport.js
+   srcPath: typhonjs-escomplex-commons/src/module/report/MethodReport.js
+   maintainability: 112.359
+   Class: MethodReport (9)
+      maintainability: 112.359
+      Class method: constructor (19)
+         cyclomatic: 1
+         halstead.bugs: 0.093
+      Class method: finalize (77)
+         cyclomatic: 1
+         halstead.bugs: 0.005
+      Class method: getMaintainabilityMetrics (89)
+         cyclomatic: 1
+         halstead.bugs: 0.012
+      Class method: parse (101)
+         cyclomatic: 2
+         halstead.bugs: 0.023
+      Class method: sumMetrics (115)
+         cyclomatic: 7
+         halstead.bugs: 0.136
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/module/report/ModuleReport.js
+   srcPath: typhonjs-escomplex-commons/src/module/report/ModuleReport.js
+   maintainability: 118.216
+   Class: ModuleReport (15)
+      maintainability: 118.216
+      Class method: constructor (26)
+         cyclomatic: 2
+         halstead.bugs: 0.178
+      Class method: addDependencies (141)
+         cyclomatic: 3
+         halstead.bugs: 0.028
+      Class method: createScope (160)
+         cyclomatic: 4
+         halstead.bugs: 0.171
+      Class method: finalize (210)
+         cyclomatic: 1
+         halstead.bugs: 0.042
+      Class method: <anonymous> (214)
+         cyclomatic: 1
+         halstead.bugs: 0.003
+      Class method: <anonymous> (215)
+         cyclomatic: 1
+         halstead.bugs: 0.003
+      Class method: getCurrentClassReport (228)
+         cyclomatic: 2
+         halstead.bugs: 0.025
+      Class method: getCurrentMethodReport (238)
+         cyclomatic: 2
+         halstead.bugs: 0.025
+      Class method: getMaintainabilityMetrics (248)
+         cyclomatic: 1
+         halstead.bugs: 0.013
+      Class method: halsteadItemEncountered (260)
+         cyclomatic: 3
+         halstead.bugs: 0.047
+      Class method: incrementCyclomatic (277)
+         cyclomatic: 3
+         halstead.bugs: 0.048
+      Class method: incrementLogicalSloc (294)
+         cyclomatic: 3
+         halstead.bugs: 0.057
+      Class method: parse (312)
+         cyclomatic: 4
+         halstead.bugs: 0.117
+      Class method: <anonymous> (324)
+         cyclomatic: 1
+         halstead.bugs: 0.006
+      Class method: <anonymous> (329)
+         cyclomatic: 1
+         halstead.bugs: 0.006
+      Class method: popScope (341)
+         cyclomatic: 3
+         halstead.bugs: 0.052
+      Class method: processHalsteadItems (364)
+         cyclomatic: 1
+         halstead.bugs: 0.006
+      Class method: <anonymous> (366)
+         cyclomatic: 1
+         halstead.bugs: 0.006
+      Class method: sumMetrics (378)
+         cyclomatic: 4
+         halstead.bugs: 0.069
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/module/traits/actualize.js
+   srcPath: typhonjs-escomplex-commons/src/module/traits/actualize.js
+   maintainability: 111.799
+   Module method: <anonymous> (19)
+      cyclomatic: 1
+      halstead.bugs: 0.098
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js
+   srcPath: typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js
+   maintainability: 141.777
+   Class: HalsteadArray (7)
+      maintainability: 141.777
+      Class method: constructor (15)
+         cyclomatic: 3
+         halstead.bugs: 0.054
+      Class method: <anonymous> (28)
+         cyclomatic: 3
+         halstead.bugs: 0.028
+      Class method: forEach (47)
+         cyclomatic: 1
+         halstead.bugs: 0.007
+      Class method: get (59)
+         cyclomatic: 1
+         halstead.bugs: 0.005
+      Class method: length (69)
+         cyclomatic: 1
+         halstead.bugs: 0.005
+      Class method: metric (76)
+         cyclomatic: 1
+         halstead.bugs: 0.003
+      Class method: type (83)
+         cyclomatic: 1
+         halstead.bugs: 0.004
+      Class method: valueOf (95)
+         cyclomatic: 1
+         halstead.bugs: 0.031
+      Class method: <anonymous> (97)
+         cyclomatic: 2
+         halstead.bugs: 0.022
+      Class method: <anonymous> (103)
+         cyclomatic: 1
+         halstead.bugs: 0.007
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/module/traits/safeArray.js
+   srcPath: typhonjs-escomplex-commons/src/module/traits/safeArray.js
+   maintainability: 148.682
+   Module method: <anonymous> (8)
+      cyclomatic: 4
+      halstead.bugs: 0.026
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/module/traits/safeName.js
+   srcPath: typhonjs-escomplex-commons/src/module/traits/safeName.js
+   maintainability: 119.451
+   Module method: <anonymous> (9)
+      cyclomatic: 7
+      halstead.bugs: 0.055
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/module/traits/Trait.js
+   srcPath: typhonjs-escomplex-commons/src/module/traits/Trait.js
+   maintainability: 138.638
+   Class: Trait (4)
+      maintainability: 138.638
+      Class method: constructor (12)
+         cyclomatic: 2
+         halstead.bugs: 0.027
+      Class method: metric (37)
+         cyclomatic: 1
+         halstead.bugs: 0.003
+      Class method: type (44)
+         cyclomatic: 1
+         halstead.bugs: 0.004
+      Class method: valueOf (56)
+         cyclomatic: 3
+         halstead.bugs: 0.048
+      Class method: <anonymous> (60)
+         cyclomatic: 2
+         halstead.bugs: 0.013
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js
+   srcPath: typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js
+   maintainability: 125.893
+   Class: TraitHalstead (5)
+      maintainability: 125.893
+      Class method: constructor (13)
+         cyclomatic: 8
+         halstead.bugs: 0.134
+      Class method: <anonymous> (24)
+         cyclomatic: 3
+         halstead.bugs: 0.021
+      Class method: filter (73)
+         cyclomatic: 2
+         halstead.bugs: 0.027
+      Class method: metric (83)
+         cyclomatic: 1
+         halstead.bugs: 0.003
+      Class method: type (90)
+         cyclomatic: 1
+         halstead.bugs: 0.004
+      Class method: valueOf (100)
+         cyclomatic: 4
+         halstead.bugs: 0.087
+      Class method: <anonymous> (104)
+         cyclomatic: 3
+         halstead.bugs: 0.033
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatJSON.js
+   srcPath: typhonjs-escomplex-commons/src/project/result/formats/formatJSON.js
+   maintainability: 158.726
+   Module method: <anonymous> (8)
+      cyclomatic: 1
+      halstead.bugs: 0.006
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatJSONExpanded.js
+   srcPath: typhonjs-escomplex-commons/src/project/result/formats/formatJSONExpanded.js
+   maintainability: 157.718
+   Module method: <anonymous> (8)
+      cyclomatic: 1
+      halstead.bugs: 0.009
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatMarkdown.js
+   srcPath: typhonjs-escomplex-commons/src/project/result/formats/formatMarkdown.js
+   maintainability: 144.18
+   Module method: <anonymous> (8)
+      cyclomatic: 1
+      halstead.bugs: 0.012
+   Module method: <anonymous> (10)
+      cyclomatic: 1
+      halstead.bugs: 0.007
+   Module method: formatMethod (23)
+      cyclomatic: 1
+      halstead.bugs: 0.132
+   Module method: formatMethods (47)
+      cyclomatic: 1
+      halstead.bugs: 0.007
+   Module method: <anonymous> (49)
+      cyclomatic: 1
+      halstead.bugs: 0.007
+   Module method: formatModule (59)
+      cyclomatic: 1
+      halstead.bugs: 0.107
+   Module method: formatProject (81)
+      cyclomatic: 1
+      halstead.bugs: 0.076
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatText.js
+   srcPath: typhonjs-escomplex-commons/src/project/result/formats/formatText.js
+   maintainability: 144.241
+   Module method: <anonymous> (8)
+      cyclomatic: 1
+      halstead.bugs: 0.012
+   Module method: <anonymous> (10)
+      cyclomatic: 1
+      halstead.bugs: 0.007
+   Module method: formatMethod (23)
+      cyclomatic: 1
+      halstead.bugs: 0.119
+   Module method: formatMethods (47)
+      cyclomatic: 1
+      halstead.bugs: 0.007
+   Module method: <anonymous> (49)
+      cyclomatic: 1
+      halstead.bugs: 0.007
+   Module method: formatModule (59)
+      cyclomatic: 1
+      halstead.bugs: 0.105
+   Module method: formatProject (81)
+      cyclomatic: 1
+      halstead.bugs: 0.074
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatTextMinimal.js
+   srcPath: typhonjs-escomplex-commons/src/project/result/formats/formatTextMinimal.js
+   maintainability: 150.755
+   Module method: <anonymous> (8)
+      cyclomatic: 1
+      halstead.bugs: 0.01
+   Module method: <anonymous> (10)
+      cyclomatic: 1
+      halstead.bugs: 0.007
+   Module method: formatModule (20)
+      cyclomatic: 1
+      halstead.bugs: 0.023
+   Module method: formatMethod (35)
+      cyclomatic: 1
+      halstead.bugs: 0.023
+   Module method: formatMethods (49)
+      cyclomatic: 1
+      halstead.bugs: 0.007
+   Module method: <anonymous> (51)
+      cyclomatic: 1
+      halstead.bugs: 0.007
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatTextModules.js
+   srcPath: typhonjs-escomplex-commons/src/project/result/formats/formatTextModules.js
+   maintainability: 157.421
+   Module method: <anonymous> (8)
+      cyclomatic: 1
+      halstead.bugs: 0.01
+   Module method: <anonymous> (10)
+      cyclomatic: 1
+      halstead.bugs: 0.007
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatXML.js
+   srcPath: typhonjs-escomplex-commons/src/project/result/formats/formatXML.js
+   maintainability: 139.71
+   Module method: <anonymous> (11)
+      cyclomatic: 1
+      halstead.bugs: 0.053
+   Module method: <anonymous> (17)
+      cyclomatic: 1
+      halstead.bugs: 0.007
+   Module method: formatAggregate (28)
+      cyclomatic: 1
+      halstead.bugs: 0.08
+   Module method: formatMethod (48)
+      cyclomatic: 1
+      halstead.bugs: 0.135
+   Module method: formatModule (70)
+      cyclomatic: 2
+      halstead.bugs: 0.12
+   Module method: formatCyclomaticComplexity (94)
+      cyclomatic: 1
+      halstead.bugs: 0.012
+   Module method: formatCyclomaticDensity (107)
+      cyclomatic: 1
+      halstead.bugs: 0.012
+   Module method: formatHalsteadComplexity (120)
+      cyclomatic: 1
+      halstead.bugs: 0.022
+   Module method: formatHalsteadMetrics (134)
+      cyclomatic: 1
+      halstead.bugs: 0.119
+   Module method: formatParameterComplexity (152)
+      cyclomatic: 1
+      halstead.bugs: 0.012
+   Module method: formatSlocComplexity (164)
+      cyclomatic: 1
+      halstead.bugs: 0.022
+   Module method: formatSlocMetrics (177)
+      cyclomatic: 1
+      halstead.bugs: 0.03
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatXMLCheckstyle.js
+   srcPath: typhonjs-escomplex-commons/src/project/result/formats/formatXMLCheckstyle.js
+   maintainability: 130.699
+   Module method: <anonymous> (23)
+      cyclomatic: 1
+      halstead.bugs: 0.029
+   Module method: <anonymous> (26)
+      cyclomatic: 1
+      halstead.bugs: 0.008
+   Module method: assignSeverity (36)
+      cyclomatic: 1
+      halstead.bugs: 0.016
+   Module method: <anonymous> (40)
+      cyclomatic: 3
+      halstead.bugs: 0.037
+   Module method: formatMethod (60)
+      cyclomatic: 1
+      halstead.bugs: 0.166
+   Module method: formatModule (88)
+      cyclomatic: 2
+      halstead.bugs: 0.083
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/project/result/ProjectFormatter.js
+   srcPath: typhonjs-escomplex-commons/src/project/result/ProjectFormatter.js
+   maintainability: 105.3
+   Class: ProjectFormatter (13)
+      maintainability: 105.3
+      Class method: getTypes (20)
+         cyclomatic: 1
+         halstead.bugs: 0.011
+      Class method: format (33)
+         cyclomatic: 11
+         halstead.bugs: 0.133
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/project/result/ProjectResult.js
+   srcPath: typhonjs-escomplex-commons/src/project/result/ProjectResult.js
+   maintainability: 128.113
+   Class: ProjectResult (14)
+      maintainability: 128.113
+      Class method: constructor (24)
+         cyclomatic: 3
+         halstead.bugs: 0.13
+      Class method: <anonymous> (97)
+         cyclomatic: 1
+         halstead.bugs: 0.013
+      Class method: finalize (115)
+         cyclomatic: 3
+         halstead.bugs: 0.059
+      Class method: <anonymous> (119)
+         cyclomatic: 1
+         halstead.bugs: 0.018
+      Class method: <anonymous> (126)
+         cyclomatic: 1
+         halstead.bugs: 0.003
+      Class method: parse (139)
+         cyclomatic: 3
+         halstead.bugs: 0.063
+      Class method: <anonymous> (148)
+         cyclomatic: 1
+         halstead.bugs: 0.006
+      Class method: toFormat (162)
+         cyclomatic: 1
+         halstead.bugs: 0.007
+      Class method: toStringAdjacency (173)
+         cyclomatic: 2
+         halstead.bugs: 0.031
+      Class method: <anonymous> (180)
+         cyclomatic: 1
+         halstead.bugs: 0.035
+      Class method: <anonymous> (184)
+         cyclomatic: 1
+         halstead.bugs: 0.016
+      Class method: toStringVisibility (201)
+         cyclomatic: 2
+         halstead.bugs: 0.031
+      Class method: <anonymous> (208)
+         cyclomatic: 1
+         halstead.bugs: 0.035
+      Class method: <anonymous> (212)
+         cyclomatic: 1
+         halstead.bugs: 0.016
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/utils/MathUtil.js
+   srcPath: typhonjs-escomplex-commons/src/utils/MathUtil.js
+   maintainability: 128.142
+   Class: MathUtil (6)
+      maintainability: 128.142
+      Class method: compactMatrix (19)
+         cyclomatic: 1
+         halstead.bugs: 0.017
+      Class method: <anonymous> (23)
+         cyclomatic: 2
+         halstead.bugs: 0.035
+      Class method: <anonymous> (27)
+         cyclomatic: 2
+         halstead.bugs: 0.012
+      Class method: create2DArray (43)
+         cyclomatic: 4
+         halstead.bugs: 0.076
+      Class method: getMedian (65)
+         cyclomatic: 2
+         halstead.bugs: 0.053
+      Class method: <anonymous> (68)
+         cyclomatic: 1
+         halstead.bugs: 0.004
+      Class method: getPercent (84)
+         cyclomatic: 2
+         halstead.bugs: 0.014
+      Class method: toFixedTraverse (98)
+         cyclomatic: 1
+         halstead.bugs: 0.01
+      Class method: toFixed (111)
+         cyclomatic: 3
+         halstead.bugs: 0.033
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+   srcPath: typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+   maintainability: 107.184
+   Module method: _depthTraverse (38)
+      cyclomatic: 5
+      halstead.bugs: 0.099
+   Class: ObjectUtil (4)
+      maintainability: 123.06
+      Class method: depthTraverse (15)
+         cyclomatic: 3
+         halstead.bugs: 0.033
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/utils/StringUtil.js
+   srcPath: typhonjs-escomplex-commons/src/utils/StringUtil.js
+   maintainability: 155.215
+   Class: StringUtil (4)
+      maintainability: 155.215
+      Class method: compare (14)
+         cyclomatic: 1
+         halstead.bugs: 0.013
+      Class method: incrementIndent (27)
+         cyclomatic: 1
+         halstead.bugs: 0.005
+      Class method: indent (40)
+         cyclomatic: 1
+         halstead.bugs: 0.018
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-commons/src/utils/XMLUtil.js
+   srcPath: typhonjs-escomplex-commons/src/utils/XMLUtil.js
+   maintainability: 147.775
+   Class: XMLUtil (6)
+      maintainability: 147.775
+      Class method: createElement (18)
+         cyclomatic: 1
+         halstead.bugs: 0.015
+      Class method: createElementWithAttributes (34)
+         cyclomatic: 1
+         halstead.bugs: 0.02
+      Class method: createElementWithTags (50)
+         cyclomatic: 3
+         halstead.bugs: 0.044
+      Class method: createEmptyElementWithAttributes (66)
+         cyclomatic: 1
+         halstead.bugs: 0.047
+      Class method: createXMLDefinition (79)
+         cyclomatic: 1
+         halstead.bugs: 0.001
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-module/src/ESComplexModule.js
+   srcPath: typhonjs-escomplex-module/src/ESComplexModule.js
+   maintainability: 126.029
+   Class: ESComplexModule (8)
+      maintainability: 126.029
+      Class method: constructor (19)
+         cyclomatic: 2
+         halstead.bugs: 0.023
+      Class method: analyze (40)
+         cyclomatic: 4
+         halstead.bugs: 0.145
+      Class method: <anonymous> (59)
+         cyclomatic: 1
+         halstead.bugs: 0.013
+      Class method: <anonymous> (60)
+         cyclomatic: 1
+         halstead.bugs: 0.013
+      Class method: analyzeAsync (78)
+         cyclomatic: 1
+         halstead.bugs: 0.007
+      Class method: <anonymous> (80)
+         cyclomatic: 1
+         halstead.bugs: 0.017
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-module/src/index.js
+   srcPath: typhonjs-escomplex-module/src/index.js
+   srcPathAlias: typhonjs-escomplex-module
+   maintainability: 171
+
+Module:
+   filePath: ./node_modules/typhonjs-escomplex-module/src/Plugins.js
+   srcPath: typhonjs-escomplex-module/src/Plugins.js
+   maintainability: 122.046
+   Class: Plugins (16)
+      maintainability: 122.046
+      Class method: constructor (27)
+         cyclomatic: 3
+         halstead.bugs: 0.053
+      Class method: onConfigure (52)
+         cyclomatic: 2
+         halstead.bugs: 0.044
+      Class method: onEnterNode (68)
+         cyclomatic: 2
+         halstead.bugs: 0.047
+      Class method: onExitNode (81)
+         cyclomatic: 1
+         halstead.bugs: 0.021
+      Class method: onLoadSyntax (94)
+         cyclomatic: 2
+         halstead.bugs: 0.044
+      Class method: onModuleStart (111)
+         cyclomatic: 1
+         halstead.bugs: 0.061
+      Class method: onModuleEnd (125)
+         cyclomatic: 1
+         halstead.bugs: 0.016
+

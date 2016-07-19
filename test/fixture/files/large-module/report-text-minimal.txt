@@ -1,0 +1,112 @@
+Module:
+   maintainability: 105.333
+   Module method: <anonymous> (984)
+      cyclomatic: 2
+      halstead.bugs: 0.08
+   Module method: <anonymous> (1007)
+      cyclomatic: 10
+      halstead.bugs: 0.187
+   Module method: <anonymous> (1041)
+      cyclomatic: 5
+      halstead.bugs: 0.252
+   Module method: <anonymous> (1086)
+      cyclomatic: 3
+      halstead.bugs: 0.092
+   Module method: <anonymous> (1105)
+      cyclomatic: 4
+      halstead.bugs: 0.144
+   Class: Collection (90)
+      maintainability: 106.722
+      Class method: constructor (105)
+         cyclomatic: 11
+         halstead.bugs: 0.205
+      Class method: add (175)
+         cyclomatic: 1
+         halstead.bugs: 0.023
+      Class method: at (190)
+         cyclomatic: 2
+         halstead.bugs: 0.018
+      Class method: clone (203)
+         cyclomatic: 1
+         halstead.bugs: 0.021
+      Class method: create (241)
+         cyclomatic: 4
+         halstead.bugs: 0.098
+      Class method: <anonymous> (253)
+         cyclomatic: 3
+         halstead.bugs: 0.027
+      Class method: fetch (298)
+         cyclomatic: 1
+         halstead.bugs: 0.052
+      Class method: <anonymous> (303)
+         cyclomatic: 3
+         halstead.bugs: 0.064
+      Class method: findWhere (328)
+         cyclomatic: 1
+         halstead.bugs: 0.007
+      Class method: get (345)
+         cyclomatic: 6
+         halstead.bugs: 0.077
+      Class method: has (362)
+         cyclomatic: 1
+         halstead.bugs: 0.013
+      Class method: initialize (373)
+         cyclomatic: 1
+         halstead.bugs: 0
+      Class method: modelId (406)
+         cyclomatic: 2
+         halstead.bugs: 0.049
+      Class method: parse (435)
+         cyclomatic: 1
+         halstead.bugs: 0.002
+      Class method: pluck (461)
+         cyclomatic: 1
+         halstead.bugs: 0.006
+      Class method: pop (474)
+         cyclomatic: 1
+         halstead.bugs: 0.025
+      Class method: _prepareModel (488)
+         cyclomatic: 5
+         halstead.bugs: 0.125
+      Class method: push (520)
+         cyclomatic: 1
+         halstead.bugs: 0.023
+      Class method: remove (537)
+         cyclomatic: 5
+         halstead.bugs: 0.119
+      Class method: _reset (557)
+         cyclomatic: 1
+         halstead.bugs: 0.016
+      Class method: reset (597)
+         cyclomatic: 4
+         halstead.bugs: 0.123
+      Class method: set (637)
+         cyclomatic: 45
+         halstead.bugs: 1.413
+      Class method: <anonymous> (749)
+         cyclomatic: 1
+         halstead.bugs: 0.007
+      Class method: shift (815)
+         cyclomatic: 1
+         halstead.bugs: 0.018
+      Class method: slice (828)
+         cyclomatic: 1
+         halstead.bugs: 0.014
+      Class method: sort (843)
+         cyclomatic: 6
+         halstead.bugs: 0.126
+      Class method: sync (875)
+         cyclomatic: 1
+         halstead.bugs: 0.021
+      Class method: toJSON (900)
+         cyclomatic: 1
+         halstead.bugs: 0.007
+      Class method: <anonymous> (902)
+         cyclomatic: 1
+         halstead.bugs: 0.006
+      Class method: unshift (914)
+         cyclomatic: 1
+         halstead.bugs: 0.021
+      Class method: where (941)
+         cyclomatic: 2
+         halstead.bugs: 0.012

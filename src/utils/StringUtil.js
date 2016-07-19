@@ -76,8 +76,11 @@ export default class StringUtil
     *
     * @param {object}         object - An object to access entry data.
     *
-    * @param {Array<Array>}   array - An array of arrays with each entry composed of entries to forward onto
-    *                                 `safeStringObject`. The indexes correspond to the following:
+    * @param {string|Array<string|number>}  entries -
+    *                                  Multiple arrays or strings. If the entry is not an array it will simply
+    *                                  be appended. If the entry is an array then entries in this array correspond
+    *                                  to the following parameters which are forwarded onto `safeStringObject`.
+    *                                  The indexes correspond to the following:
     * ```
     * [0] (string) - The string to prepend.
     * [1] (string) - The accessor string describing the lookup operation.
@@ -87,17 +90,17 @@ export default class StringUtil
     *
     * @returns {string}
     */
-   static safeStringsObject(object, ...array)
+   static safeStringsObject(object, ...entries)
    {
       if (typeof object !== 'object') { return ''; }
 
       const output = [];
 
-      for (let cntr = 0; cntr < array.length; cntr++)
+      for (let cntr = 0; cntr < entries.length; cntr++)
       {
-         const entry = array[cntr];
+         const entry = entries[cntr];
 
-         // Process array entry otherwise simply append `entry` to output.
+         // Process an array entry otherwise simply append `entry` to output if it is a string.
          if (Array.isArray(entry))
          {
             switch (entry.length)
@@ -119,7 +122,7 @@ export default class StringUtil
                    `safeStringsObject error: entry at '${cntr}' has the wrong length '${entry.length}'.`);
             }
          }
-         else
+         else if (typeof entry === 'string')
          {
             output.push(entry);
          }

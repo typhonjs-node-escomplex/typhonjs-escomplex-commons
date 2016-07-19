@@ -10,6 +10,7 @@ import * as testconfig  from '../testconfig';
 // Uncomment to generate matching format test data.
 // generateFormatData();
 
+//*
 if (testconfig.modules['transformFormat'])
 {
    suite('transform:', () =>
@@ -130,7 +131,7 @@ if (testconfig.modules['transformFormat'])
       });
    });
 }
-
+//*/
 
 /**
  * Generates the original module report / project result test data.

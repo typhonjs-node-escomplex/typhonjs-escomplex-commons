@@ -7,6 +7,7 @@ export default class FormatJSON
     * Formats a module report as a JSON string.
     *
     * @param {ModuleReport}   report - A module report.
+    *
     * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
     * @property {number}      spacing - (Optional) An integer defining the JSON output spacing.
     *

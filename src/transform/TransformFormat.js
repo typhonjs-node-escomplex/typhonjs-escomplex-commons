@@ -1,12 +1,14 @@
 import ModuleReport           from '../module/report/ModuleReport';
 import ProjectResult          from '../project/result/ProjectResult';
 
-import FormatJSON             from './formats/FormatJSON';
-import FormatJSONCheckstyle   from './formats/FormatJSONCheckstyle';
-import FormatMarkdown         from './formats/FormatMarkdown';
-import FormatText             from './formats/FormatText';
-import FormatTextMinimal      from './formats/FormatTextMinimal';
-import FormatTextModules      from './formats/FormatTextModules';
+import FormatJSON             from './formats/json/FormatJSON';
+import FormatJSONCheckstyle   from './formats/json/FormatJSONCheckstyle';
+import FormatJSONMinimal      from './formats/json/FormatJSONMinimal';
+import FormatJSONModules      from './formats/json/FormatJSONModules';
+import FormatMarkdown         from './formats/markdown/FormatMarkdown';
+import FormatText             from './formats/text/FormatText';
+import FormatTextMinimal      from './formats/text/FormatTextMinimal';
+import FormatTextModules      from './formats/text/FormatTextModules';
 
 /**
  * Stores all transform formats.
@@ -179,6 +181,8 @@ export default class TransformFormat
  */
 TransformFormat.addFormat(new FormatJSON());
 TransformFormat.addFormat(new FormatJSONCheckstyle());
+TransformFormat.addFormat(new FormatJSONMinimal());
+TransformFormat.addFormat(new FormatJSONModules());
 TransformFormat.addFormat(new FormatMarkdown());
 TransformFormat.addFormat(new FormatText());
 TransformFormat.addFormat(new FormatTextMinimal());

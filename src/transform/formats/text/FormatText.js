@@ -1,4 +1,4 @@
-import StringUtil from '../../utils/StringUtil';
+import StringUtil from '../../../utils/StringUtil';
 
 const s_SAFE = StringUtil.safeStringsObject;
 
