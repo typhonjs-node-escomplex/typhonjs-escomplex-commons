@@ -54,10 +54,11 @@ export default class StringUtil
     * @param {string}   accessor - A string describing the entries to access.
     * @param {number}   newLine - (Optional) A number of new line characters to append; default: `1`.
     * @param {string}   appendString - (Optional) A string to potentially append; default: `''`;
+    * @param {function} tagFunction - (Optional) A template tag function to apply; default: `void 0`;
     *
     * @returns {string}
     */
-   static safeStringObject(string, object, accessor, newLine = 1, appendString = '')
+   static safeStringObject(string, object, accessor, newLine = 1, appendString = '', tagFunction = void 0)
    {
       const value = ObjectUtil.safeAccess(object, accessor);
 
@@ -68,7 +69,8 @@ export default class StringUtil
       // Create the ending new line result if it is not the default of `1`.
       if (newLine === 0 || newLine > 1) { end = new Array(newLine + 1).join('\n'); }
 
-      return `${string}${value}${appendString}${end}`;
+      return typeof tagFunction === 'function' ? tagFunction`${string}${value}${appendString}${end}` :
+       `${string}${value}${appendString}${end}`;
    }
 
    /**
@@ -76,7 +78,7 @@ export default class StringUtil
     *
     * @param {object}         object - An object to access entry data.
     *
-    * @param {string|Array<string|number>}  entries -
+    * @param {string|Array<string|number|function>}  entries -
     *                                  Multiple arrays or strings. If the entry is not an array it will simply
     *                                  be appended. If the entry is an array then entries in this array correspond
     *                                  to the following parameters which are forwarded onto `safeStringObject`.
@@ -86,6 +88,7 @@ export default class StringUtil
     * [1] (string) - The accessor string describing the lookup operation.
     * [2] (number) - (Optional) The number of newlines characters to append.
     * [3] (string) - (Optional) A string to append to the end.
+    * [4] (function) - (Optional) A template tag function to apply.
     * ```
     *
     * @returns {string}
@@ -117,6 +120,10 @@ export default class StringUtil
                   output.push(StringUtil.safeStringObject(entry[0], object, entry[1], entry[2], entry[3]));
                   break;
 
+               case 5:
+                  output.push(StringUtil.safeStringObject(entry[0], object, entry[1], entry[2], entry[3], entry[4]));
+                  break;
+
                default:
                   throw new Error(
                    `safeStringsObject error: entry at '${cntr}' has the wrong length '${entry.length}'.`);
@@ -129,5 +136,21 @@ export default class StringUtil
       }
 
       return output.join('');
+   }
+
+   /**
+    * Provides a tagged template method to escape HTML elements.
+    *
+    * @param {Array<string>}  literal - Literal components of template string.
+    * @param {Array<*>}       values - Values to substitute.
+    *
+    * @returns {string}
+    */
+   static tagEscapeHTML(literal, ...values)
+   {
+      return values.reduce((previous, value, index) =>
+      {
+         return previous + String(value).replace('<', '&lt;').replace('>', '&gt;') + literal[index + 1];
+      }, literal[0]);
    }
 }

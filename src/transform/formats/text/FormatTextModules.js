@@ -1,10 +1,16 @@
 import StringUtil from '../../../utils/StringUtil';
 
 /**
- * Provides a format transform for ESComplex ProjectResult instances converting them to plain text with just modules.
+ * Provides a format transform for ModuleReport / ProjectResult instances converting them to plain text with just
+ * modules.
  */
 export default class FormatTextModules
 {
+   constructor(header = s_DEFAULT_HEADER)
+   {
+      this._header = header;
+   }
+
    /**
     * Formats a module report as plain text just including `filePath`, `srcPath`, `srcPathAlias` if defined. Please
     * note that this only works for ModuleReports defined in a ProjectResult.
@@ -15,12 +21,7 @@ export default class FormatTextModules
     */
    formatReport(report)
    {
-      return StringUtil.safeStringsObject(report,
-         'Module:\n',
-         ['filePath: ', 'filePath'],
-         ['srcPath: ', 'srcPath'],
-         ['srcPathAlias: ', 'srcPathAlias']
-      );
+      return StringUtil.safeStringsObject(report, ...this._header.moduleReport);
    }
 
    /**
@@ -34,14 +35,7 @@ export default class FormatTextModules
    {
       return result.reports.reduce((formatted, moduleReport) =>
       {
-         const entry = StringUtil.safeStringsObject(moduleReport,
-            'Module:\n',
-            ['filePath: ', 'filePath'],
-            ['srcPath: ', 'srcPath'],
-            ['srcPathAlias: ', 'srcPathAlias']
-         );
-
-         return `${formatted}${entry}\n`;
+         return `${formatted}${StringUtil.safeStringsObject(moduleReport, ...this._header.moduleReport)}\n`;
       }, '');
    }
 
@@ -75,3 +69,20 @@ export default class FormatTextModules
       return 'modules';
    }
 }
+
+// Module private ---------------------------------------------------------------------------------------------------
+
+/**
+ *
+ * @type {{moduleReport: *[]}}
+ */
+const s_DEFAULT_HEADER =
+{
+   moduleReport:
+   [
+      'Module:\n',
+      ['filePath: ', 'filePath'],
+      ['srcPath: ', 'srcPath'],
+      ['srcPathAlias: ', 'srcPathAlias']
+   ]
+};

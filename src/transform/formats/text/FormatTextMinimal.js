@@ -1,23 +1,16 @@
 import StringUtil from '../../../utils/StringUtil';
 
 /**
- * Defines the default keys to include in a minimal text representation of module / project results.
- * @type {{classReport: string, methodReport: string, moduleReport: string}}
- * @ignore
- */
-const s_DEFAULT_KEYS =
-{
-   classReport: ['maintainability'],
-   methodReport: ['cyclomatic', 'halstead.difficulty'],
-   moduleReport: ['maintainability']
-};
-
-/**
  * Provides a format transform for ESComplex ModuleReport / ProjectResult instances converting them to plain text with
  * minimal metrics.
  */
 export default class FormatTextMinimal
 {
+   constructor(headers = s_DEFAULT_HEADERS)
+   {
+      this._headers = headers;
+   }
+
    /**
     * Formats a module report as minimal / plain text.
     *
@@ -103,10 +96,9 @@ export default class FormatTextMinimal
    _formatClass(classReport, options, prepend = '')
    {
       return StringUtil.safeStringsObject(classReport,
-         ['Class: ', 'name', 0],
-         [' (', 'lineStart', 0, ')'],
+         ...this._headers.classReport,
          this._formatEntries(classReport, options.classReport, `${prepend}   `),
-         this._formatMethods(classReport.methods, options, `${prepend}   `, 'Class ')
+         this._formatMethods(classReport.methods, options, `${prepend}   `, false)
       );
    }
 
@@ -134,7 +126,7 @@ export default class FormatTextMinimal
    /**
     * Formats a class report.
     *
-    * @param {object}         report - A class report.
+    * @param {object}         report - A class / method report.
     *
     * @param {Array<string>}  entries - (Optional) One or more optional entries to format.
     *
@@ -149,7 +141,8 @@ export default class FormatTextMinimal
       return entries.reduce((formatted, entry) =>
       {
          return typeof entry === 'string' ?
-          `${formatted}\n${StringUtil.safeStringObject(`${prepend}${entry}: `, report, entry, 0)}` : formatted;
+          `${formatted}\n${StringUtil.safeStringObject(`${prepend}${this._headers.entryPrepend}${entry}: `,
+           report, entry, 0)}` : formatted;
       }, '');
    }
 
@@ -163,13 +156,14 @@ export default class FormatTextMinimal
     *
     * @param {string}         prepend - (Optional) A string to prepend; default: `''`.
     *
+    * @param {boolean}        isModule - (Optional) Indicates module scope; default: `true`.
+    *
     * @returns {string}
     */
-   _formatMethod(methodReport, options, prepend = '')
+   _formatMethod(methodReport, options, prepend = '', isModule = true)
    {
       return StringUtil.safeStringsObject(methodReport,
-         ['method: ', 'name', 0],
-         [' (', 'lineStart', 0, ')'],
+         ...(isModule ? this._headers.moduleMethod : this._headers.classMethod),
          this._formatEntries(methodReport, options.methodReport, `${prepend}   `)
       );
    }
@@ -184,15 +178,15 @@ export default class FormatTextMinimal
     *
     * @param {string}               prepend - (Optional) A string to prepend; default: `''`.
     *
-    * @param {string}               methodType - (Optional) The type of method to prepend; default: `''`.
+    * @param {boolean}              isModule - (Optional) Indicates module scope; default: `true`.
     *
     * @returns {string}
     */
-   _formatMethods(methodReports, options, prepend = '', methodType = '')
+   _formatMethods(methodReports, options, prepend = '', isModule = true)
    {
       return methodReports.reduce((formatted, r) =>
       {
-         return `${formatted}\n${prepend}${methodType}${this._formatMethod(r, options, prepend)}`;
+         return `${formatted}\n${prepend}${this._formatMethod(r, options, prepend, isModule)}`;
       }, '');
    }
 
@@ -215,23 +209,64 @@ export default class FormatTextMinimal
       if (reportsAvailable)
       {
          return StringUtil.safeStringsObject(report,
-            'Module:',
-            ['\n   filePath: ', 'filePath', 0],
-            ['\n   srcPath: ', 'srcPath', 0],
-            ['\n   srcPathAlias: ', 'srcPathAlias', 0],
+            ...this._headers.moduleReport,
             this._formatEntries(report, options.moduleReport, '   '),
-            this._formatMethods(report.methods, options, '   ', 'Module '),
+            this._formatMethods(report.methods, options, '   ', true),
             this._formatClasses(report.classes, options, '   ')
          );
       }
       else
       {
-         return StringUtil.safeStringsObject(report,
-            'Module:',
-            ['\n   filePath: ', 'filePath', 0],
-            ['\n   srcPath: ', 'srcPath', 0],
-            ['\n   srcPathAlias: ', 'srcPathAlias', 0]
-         );
+         return StringUtil.safeStringsObject(report, ...this._headers.moduleReport);
       }
    }
 }
+
+// Module private ---------------------------------------------------------------------------------------------------
+
+/**
+ * Defines the default keys to include in a minimal text representation of module / project results.
+ * @type {{classReport: string[], methodReport: string[], moduleReport: string[]}}
+ * @ignore
+ */
+const s_DEFAULT_KEYS =
+{
+   classReport: ['maintainability'],
+   methodReport: ['cyclomatic', 'halstead.difficulty'],
+   moduleReport: ['maintainability']
+};
+
+/**
+ * Defines the default headers as text which are inserted via spread into `StringUtil.safeStringsObject`.
+ * @type {{classMethod: *[], classReport: *[], moduleMethod: *[], moduleReport: *[]}}
+ */
+const s_DEFAULT_HEADERS =
+{
+   classMethod:
+   [
+      ['Class method: ', 'name', 0],
+      [' (', 'lineStart', 0, ')']
+   ],
+
+   classReport:
+   [
+      ['Class: ', 'name', 0],
+      [' (', 'lineStart', 0, ')']
+   ],
+
+   entryPrepend: '',
+
+   moduleMethod:
+   [
+      ['Module method: ', 'name', 0],
+      [' (', 'lineStart', 0, ')']
+   ],
+
+   moduleReport:
+   [
+      'Module:',
+      ['\n   filePath: ', 'filePath', 0],
+      ['\n   srcPath: ', 'srcPath', 0],
+      ['\n   srcPathAlias: ', 'srcPathAlias', 0]
+   ]
+};

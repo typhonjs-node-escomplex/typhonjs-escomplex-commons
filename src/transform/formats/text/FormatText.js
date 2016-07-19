@@ -1,7 +1,5 @@
 import StringUtil from '../../../utils/StringUtil';
 
-const s_SAFE = StringUtil.safeStringsObject;
-
 /**
  * Provides a format transform for ESComplex ModuleReport / ProjectResult instances converting them to plain text.
  */
@@ -77,7 +75,7 @@ export default class FormatText
     */
    _formatMethod(methodReport)
    {
-      return s_SAFE(methodReport,
+      return StringUtil.safeStringsObject(methodReport,
          '\n',
          ['  Function: ',                          'name'],
          ['    Line start: ',                      'lineStart'],
@@ -117,8 +115,8 @@ export default class FormatText
    {
       if (reportsAvailable)
       {
-         return s_SAFE(report,
-            ['', 'srcPath', 2],
+         return StringUtil.safeStringsObject(report,
+            ['',                                   'srcPath', 2],
             ['  Physical LOC: ',                   'aggregate.sloc.physical'],
             ['  Logical LOC: ',                    'aggregate.sloc.logical'],
             ['  Mean parameter count: ',           'params'],
@@ -144,7 +142,7 @@ export default class FormatText
     */
    _formatProject(result)
    {
-      return s_SAFE(result,
+      return StringUtil.safeStringsObject(result,
          ['Mean per-function logical LOC: ',             'loc'],
          ['Mean per-function parameter count: ',         'params'],
          ['Mean per-function cyclomatic complexity: ',   'cyclomatic'],

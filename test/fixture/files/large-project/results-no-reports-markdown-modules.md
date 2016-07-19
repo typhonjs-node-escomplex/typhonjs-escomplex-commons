@@ -1,0 +1,137 @@
+* Module:
+   * filePath: `./src/ESComplexProject.js`
+   * srcPath: `./src/ESComplexProject.js`
+
+* Module:
+   * filePath: `./src/index.js`
+   * srcPath: `./src/index.js`
+
+* Module:
+   * filePath: `./src/Plugins.js`
+   * srcPath: `./src/Plugins.js`
+
+* Module:
+   * filePath: `./test/fixture/testImportNPMAlias.js`
+   * srcPath: `./test/fixture/testImportNPMAlias.js`
+
+* Module:
+   * filePath: `./test/fixture/testRequireNPMAlias.js`
+   * srcPath: `./test/fixture/testRequireNPMAlias.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js`
+   * srcPath: `typhonjs-escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
+   * srcPath: `typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/report/ClassReport.js`
+   * srcPath: `typhonjs-escomplex-commons/src/module/report/ClassReport.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
+   * srcPath: `typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/report/MethodReport.js`
+   * srcPath: `typhonjs-escomplex-commons/src/module/report/MethodReport.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
+   * srcPath: `typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/traits/actualize.js`
+   * srcPath: `typhonjs-escomplex-commons/src/module/traits/actualize.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js`
+   * srcPath: `typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/traits/safeArray.js`
+   * srcPath: `typhonjs-escomplex-commons/src/module/traits/safeArray.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/traits/safeName.js`
+   * srcPath: `typhonjs-escomplex-commons/src/module/traits/safeName.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/traits/Trait.js`
+   * srcPath: `typhonjs-escomplex-commons/src/module/traits/Trait.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js`
+   * srcPath: `typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatJSON.js`
+   * srcPath: `typhonjs-escomplex-commons/src/project/result/formats/formatJSON.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatJSONExpanded.js`
+   * srcPath: `typhonjs-escomplex-commons/src/project/result/formats/formatJSONExpanded.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatMarkdown.js`
+   * srcPath: `typhonjs-escomplex-commons/src/project/result/formats/formatMarkdown.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatText.js`
+   * srcPath: `typhonjs-escomplex-commons/src/project/result/formats/formatText.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatTextMinimal.js`
+   * srcPath: `typhonjs-escomplex-commons/src/project/result/formats/formatTextMinimal.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatTextModules.js`
+   * srcPath: `typhonjs-escomplex-commons/src/project/result/formats/formatTextModules.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatXML.js`
+   * srcPath: `typhonjs-escomplex-commons/src/project/result/formats/formatXML.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatXMLCheckstyle.js`
+   * srcPath: `typhonjs-escomplex-commons/src/project/result/formats/formatXMLCheckstyle.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/project/result/ProjectFormatter.js`
+   * srcPath: `typhonjs-escomplex-commons/src/project/result/ProjectFormatter.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
+   * srcPath: `typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/utils/MathUtil.js`
+   * srcPath: `typhonjs-escomplex-commons/src/utils/MathUtil.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+   * srcPath: `typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/utils/StringUtil.js`
+   * srcPath: `typhonjs-escomplex-commons/src/utils/StringUtil.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/utils/XMLUtil.js`
+   * srcPath: `typhonjs-escomplex-commons/src/utils/XMLUtil.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-module/src/ESComplexModule.js`
+   * srcPath: `typhonjs-escomplex-module/src/ESComplexModule.js`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-module/src/index.js`
+   * srcPath: `typhonjs-escomplex-module/src/index.js`
+   * srcPathAlias: `typhonjs-escomplex-module`
+
+* Module:
+   * filePath: `./node_modules/typhonjs-escomplex-module/src/Plugins.js`
+   * srcPath: `typhonjs-escomplex-module/src/Plugins.js`
+
