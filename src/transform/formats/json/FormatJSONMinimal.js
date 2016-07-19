@@ -161,11 +161,6 @@ export default class FormatJSONMinimal
             {
                const entryValue = ObjectUtil.safeAccess(methodReport, methodEntry);
                if (entryValue) { entry[methodEntry] = entryValue; }
-
-               //if (typeof methodEntry === 'string' && methodReport[methodEntry])
-               //{
-               //   entry[methodEntry] = methodReport[methodEntry];
-               //}
             });
          }
 
@@ -205,11 +200,6 @@ export default class FormatJSONMinimal
             {
                const entryValue = ObjectUtil.safeAccess(report, moduleEntry);
                if (entryValue) { output[moduleEntry] = entryValue; }
-
-               //if (typeof moduleEntry === 'string' && report[moduleEntry])
-               //{
-               //   output[moduleEntry] = report[moduleEntry];
-               //}
             });
          }
 
