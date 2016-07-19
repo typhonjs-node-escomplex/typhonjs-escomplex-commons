@@ -252,6 +252,16 @@ export default class ModuleReport extends AbstractReport
    }
 
    /**
+    * Returns the supported format names.
+    *
+    * @returns {string[]}
+    */
+   static getFormatNames()
+   {
+      return TransformFormat.getNames();
+   }
+
+   /**
     * Returns the supported format types.
     *
     * @returns {string[]}
@@ -455,14 +465,15 @@ export default class ModuleReport extends AbstractReport
    /**
     * Formats this ModuleReport given the type.
     *
-    * @param {string}   type - The type of formatter to use. Options include: `'json', 'json-minimal', 'markdown',
-    *                          'text', 'text-minimal', 'text-modules', 'xml', 'xml-checkstyle'`.
+    * @param {string}   name - The name of formatter to use.
+    *
+    * @param {object}   options - (Optional) One or more optional parameters to pass to the formatter.
     *
     * @returns {string}
     */
-   toFormat(type)
+   toFormat(name, options = undefined)
    {
-      return TransformFormat.format(this, type);
+      return TransformFormat.format(this, name, options);
    }
 }
 

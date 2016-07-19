@@ -50,6 +50,16 @@ export default class FormatMarkdown
    }
 
    /**
+    * Gets the format name.
+    *
+    * @returns {string}
+    */
+   get name()
+   {
+      return 'markdown';
+   }
+
+   /**
     * Gets the format type.
     *
     * @returns {string}

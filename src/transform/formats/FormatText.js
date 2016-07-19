@@ -49,6 +49,16 @@ export default class FormatText
    }
 
    /**
+    * Gets the format name.
+    *
+    * @returns {string}
+    */
+   get name()
+   {
+      return 'text';
+   }
+
+   /**
     * Gets the format type.
     *
     * @returns {string}

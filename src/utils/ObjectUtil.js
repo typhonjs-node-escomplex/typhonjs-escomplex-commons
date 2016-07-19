@@ -22,6 +22,36 @@ export default class ObjectUtil
 
       return _depthTraverse(data, func);
    }
+
+   /**
+    * Provides a way to safely access an objects data / entries given an accessor string which describes the
+    * entries to walk. To access deeper entries into the object format the accessor string with `.` between entries
+    * to walk.
+    *
+    * @param {object}   object - An object to access entry data.
+    * @param {string}   accessor - A string describing the entries to access.
+    * @param {*}        defaultValue - (Optional) A default value to return if an entry for accessor is not found.
+    *
+    * @returns {*}
+    */
+   static safeAccess(object, accessor, defaultValue = undefined)
+   {
+      if (typeof object !== 'object') { return defaultValue; }
+      if (typeof accessor !== 'string') { return defaultValue; }
+
+      const access = accessor.split('.');
+
+      // Walk through the given object by the accessor indexes.
+      for (let cntr = 0; cntr < access.length; cntr++)
+      {
+         // If the next level of object access is undefined or null then return the empty string.
+         if (typeof object[access[cntr]] === 'undefined' || object[access[cntr]] === null) { return defaultValue; }
+
+         object = object[access[cntr]];
+      }
+
+      return object;
+   }
 }
 
 // Module private ---------------------------------------------------------------------------------------------------

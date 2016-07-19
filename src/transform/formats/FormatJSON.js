@@ -44,6 +44,16 @@ export default class FormatJSON
    }
 
    /**
+    * Gets the format name.
+    *
+    * @returns {string}
+    */
+   get name()
+   {
+      return 'json';
+   }
+
+   /**
     * Gets the format type.
     *
     * @returns {string}

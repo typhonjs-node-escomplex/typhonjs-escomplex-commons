@@ -48,13 +48,23 @@ export default class FormatTextMinimal
    }
 
    /**
+    * Gets the format name.
+    *
+    * @returns {string}
+    */
+   get name()
+   {
+      return 'text-minimal';
+   }
+
+   /**
     * Gets the format type.
     *
     * @returns {string}
     */
    get type()
    {
-      return 'text-minimal';
+      return 'minimal';
    }
 
    /**

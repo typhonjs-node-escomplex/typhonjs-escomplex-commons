@@ -1,3 +1,5 @@
+import ObjectUtil from './ObjectUtil';
+
 /**
  * Provides common string utilities.
  */
@@ -42,29 +44,49 @@ export default class StringUtil
       return (new Array(indentation + 1)).join(' ') + string;
    }
 
+   /**
+    * Provides a way to output a given string value with concatenated data from safely accessing an objects data /
+    * entries given an accessor string which describes the entries to walk. To access deeper entries into the object
+    * format the accessor string with `.` between entries to walk.
+    *
+    * @param {string}   string - A string to prepend to the object data received.
+    * @param {object}   object - An object to access entry data.
+    * @param {string}   accessor - A string describing the entries to access.
+    * @param {number}   newLine - (Optional) A number of new line characters to append; default: `1`.
+    * @param {string}   appendString - (Optional) A string to potentially append; default: `''`;
+    *
+    * @returns {string}
+    */
    static safeStringObject(string, object, accessor, newLine = 1, appendString = '')
    {
-      if (typeof object !== 'object') { return ''; }
+      const value = ObjectUtil.safeAccess(object, accessor);
 
-      const access = accessor.split('.');
-
-      // Walk through the given object by the accessor indexes.
-      for (let cntr = 0; cntr < access.length; cntr++)
-      {
-         // If the next level of object access is undefined or null then return the empty string.
-         if (typeof object[access[cntr]] === 'undefined' || object[access[cntr]] === null) { return ''; }
-
-         object = object[access[cntr]];
-      }
+      if (typeof value === 'undefined') { return ''; }
 
       let end = '\n';
 
       // Create the ending new line result if it is not the default of `1`.
       if (newLine === 0 || newLine > 1) { end = new Array(newLine + 1).join('\n'); }
 
-      return `${string}${object}${appendString}${end}`;
+      return `${string}${value}${appendString}${end}`;
    }
 
+   /**
+    * Provides a convenience method producing a block of safeStringObject results.
+    *
+    * @param {object}         object - An object to access entry data.
+    *
+    * @param {Array<Array>}   array - An array of arrays with each entry composed of entries to forward onto
+    *                                 `safeStringObject`. The indexes correspond to the following:
+    * ```
+    * [0] (string) - The string to prepend.
+    * [1] (string) - The accessor string describing the lookup operation.
+    * [2] (number) - (Optional) The number of newlines characters to append.
+    * [3] (string) - (Optional) A string to append to the end.
+    * ```
+    *
+    * @returns {string}
+    */
    static safeStringsObject(object, ...array)
    {
       if (typeof object !== 'object') { return ''; }

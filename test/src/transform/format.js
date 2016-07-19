@@ -5,10 +5,10 @@ import ModuleReport     from '../../../src/module/report/ModuleReport';
 import ProjectResult    from '../../../src/project/result/ProjectResult';
 import TransformFormat  from '../../../src/transform/TransformFormat';
 
+import * as testconfig  from '../testconfig';
+
 // Uncomment to generate matching format test data.
 // generateFormatData();
-
-import * as testconfig  from '../testconfig';
 
 if (testconfig.modules['transformFormat'])
 {
@@ -22,14 +22,14 @@ if (testconfig.modules['transformFormat'])
 
             const moduleReport = ModuleReport.parse(largeModuleJSON).finalize();
 
-            TransformFormat.forEach((format, formatType) =>
+            TransformFormat.forEach((format, formatName) =>
             {
-               test(`formatType: ${formatType}`, () =>
+               test(`formatName: ${formatName}`, () =>
                {
                   const output = format.formatReport(moduleReport);
 
                   const original = fs.readFileSync(
-                   `./test/fixture/files/large-module/report-${formatType}.${format.extension}`, 'utf8');
+                   `./test/fixture/files/large-module/report-${formatName}.${format.extension}`, 'utf8');
 
                   assert.strictEqual(output, original);
                });
@@ -42,14 +42,14 @@ if (testconfig.modules['transformFormat'])
 
             const projectResult = ProjectResult.parse(largeProjectJSON).finalize();
 
-            TransformFormat.forEach((format, formatType) =>
+            TransformFormat.forEach((format, formatName) =>
             {
-               test(`formatType: ${formatType}`, () =>
+               test(`formatName: ${formatName}`, () =>
                {
                   const output = format.formatResult(projectResult);
 
                   const original = fs.readFileSync(
-                   `./test/fixture/files/large-project/results-no-reports-${formatType}.${format.extension}`, 'utf8');
+                   `./test/fixture/files/large-project/results-no-reports-${formatName}.${format.extension}`, 'utf8');
 
                   assert.strictEqual(output, original);
                });
@@ -67,14 +67,14 @@ if (testconfig.modules['transformFormat'])
 
             const extensions = ModuleReport.getFormatFileExtensions();
 
-            ModuleReport.getFormatTypes().forEach((formatType, index) =>
+            ModuleReport.getFormatNames().forEach((formatName, index) =>
             {
-               test(`formatType: ${formatType}`, () =>
+               test(`formatName: ${formatName}`, () =>
                {
-                  const output = moduleReport.toFormat(formatType);
+                  const output = moduleReport.toFormat(formatName);
 
                   const original = fs.readFileSync(
-                   `./test/fixture/files/large-module/report-${formatType}.${extensions[index]}`, 'utf8');
+                   `./test/fixture/files/large-module/report-${formatName}.${extensions[index]}`, 'utf8');
 
                   assert.strictEqual(output, original);
                });
@@ -92,14 +92,14 @@ if (testconfig.modules['transformFormat'])
 
             const extensions = ProjectResult.getFormatFileExtensions();
 
-            ProjectResult.getFormatTypes().forEach((formatType, index) =>
+            ProjectResult.getFormatNames().forEach((formatName, index) =>
             {
-               test(`formatType: ${formatType}`, () =>
+               test(`formatName: ${formatName}`, () =>
                {
-                  const output = projectResult.toFormat(formatType);
+                  const output = projectResult.toFormat(formatName);
 
                   const original = fs.readFileSync(
-                   `./test/fixture/files/large-project/result-${formatType}.${extensions[index]}`, 'utf8');
+                   `./test/fixture/files/large-project/result-${formatName}.${extensions[index]}`, 'utf8');
 
                   assert.strictEqual(output, original);
                });
@@ -114,14 +114,14 @@ if (testconfig.modules['transformFormat'])
 
             const extensions = ProjectResult.getFormatFileExtensions();
 
-            ProjectResult.getFormatTypes().forEach((formatType, index) =>
+            ProjectResult.getFormatNames().forEach((formatName, index) =>
             {
-               test(`formatType: ${formatType}`, () =>
+               test(`formatName: ${formatName}`, () =>
                {
-                  const output = projectResult.toFormat(formatType);
+                  const output = projectResult.toFormat(formatName);
 
                   const original = fs.readFileSync(
-                   `./test/fixture/files/large-project/results-no-reports-${formatType}.${extensions[index]}`, 'utf8');
+                   `./test/fixture/files/large-project/results-no-reports-${formatName}.${extensions[index]}`, 'utf8');
 
                   assert.strictEqual(output, original);
                });
@@ -130,6 +130,8 @@ if (testconfig.modules['transformFormat'])
       });
    });
 }
+
+
 /**
  * Generates the original module report / project result test data.
  */
@@ -143,50 +145,46 @@ function generateFormatData()
    // Generate project result formatted test data.
 
    const largeModuleJSON = require('typhonjs-escomplex-test-data/files/large-module/report/report');
-
    const moduleReport = ModuleReport.parse(largeModuleJSON).finalize();
 
-   TransformFormat.forEach((format, formatType) =>
+   TransformFormat.forEach((format, formatName) =>
    {
-      test(`formatType: ${formatType}`, () =>
+      test(`formatName: ${formatName}`, () =>
       {
          const output = format.formatReport(moduleReport);
 
          fs.writeFileSync(
-          `./test/fixture/files/large-module/report-${formatType}.${format.extension}`, output, 'utf8');
+          `./test/fixture/files/large-module/report-${formatName}.${format.extension}`, output, 'utf8');
       });
    });
 
    // Generate module report formatted test data.
 
-   let largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/results/results');
+   const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/results/results');
+   const projectResult = ProjectResult.parse(largeProjectJSON).finalize();
 
-   let projectResult = ProjectResult.parse(largeProjectJSON).finalize();
-
-   TransformFormat.forEach((format, formatType) =>
+   TransformFormat.forEach((format, formatName) =>
    {
-      test(`formatType: ${formatType}`, () =>
+      test(`formatName: ${formatName}`, () =>
       {
          const output = format.formatResult(projectResult);
 
          fs.writeFileSync(
-          `./test/fixture/files/large-project/result-${formatType}.${format.extension}`, output, 'utf8');
+          `./test/fixture/files/large-project/result-${formatName}.${format.extension}`, output, 'utf8');
       });
    });
 
+   const largeProjectJSON2 = require('typhonjs-escomplex-test-data/files/large-project/results/results-no-reports');
+   const projectResult2 = ProjectResult.parse(largeProjectJSON2).finalize();
 
-   largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/results/results-no-reports');
-
-   projectResult = ProjectResult.parse(largeProjectJSON).finalize();
-
-   TransformFormat.forEach((format, formatType) =>
+   TransformFormat.forEach((format, formatName) =>
    {
-      test(`formatType: ${formatType}`, () =>
+      test(`formatName: ${formatName}`, () =>
       {
-         const output = format.formatResult(projectResult);
+         const output = format.formatResult(projectResult2);
 
          fs.writeFileSync(
-          `./test/fixture/files/large-project/results-no-reports-${formatType}.${format.extension}`, output, 'utf8');
+          `./test/fixture/files/large-project/results-no-reports-${formatName}.${format.extension}`, output, 'utf8');
       });
    });
 }

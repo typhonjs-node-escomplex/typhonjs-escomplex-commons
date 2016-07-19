@@ -1,12 +1,12 @@
-import ModuleReport        from '../module/report/ModuleReport';
-import ProjectResult       from '../project/result/ProjectResult';
+import ModuleReport           from '../module/report/ModuleReport';
+import ProjectResult          from '../project/result/ProjectResult';
 
-import FormatJSON          from './formats/FormatJSON';
-import FormatMarkdown      from './formats/FormatMarkdown';
-import FormatText          from './formats/FormatText';
-import FormatTextMinimal   from './formats/FormatTextMinimal';
-import FormatTextModules   from './formats/FormatTextModules';
-import FormatXMLCheckstyle from './formats/FormatXMLCheckstyle';
+import FormatJSON             from './formats/FormatJSON';
+import FormatJSONCheckstyle   from './formats/FormatJSONCheckstyle';
+import FormatMarkdown         from './formats/FormatMarkdown';
+import FormatText             from './formats/FormatText';
+import FormatTextMinimal      from './formats/FormatTextMinimal';
+import FormatTextModules      from './formats/FormatTextModules';
 
 /**
  * Stores all transform formats.
@@ -31,6 +31,11 @@ export default class TransformFormat
          throw new TypeError(`addFormat error: 'format.extension' is not a 'string'.`);
       }
 
+      if (typeof format.name !== 'string')
+      {
+         throw new TypeError(`addFormat error: 'format.name' is not a 'string'.`);
+      }
+
       if (typeof format.type !== 'string')
       {
          throw new TypeError(`addFormat error: 'format.type' is not a 'string'.`);
@@ -46,7 +51,7 @@ export default class TransformFormat
          throw new TypeError(`addFormat error: 'format.formatResult' is not a 'function'.`);
       }
 
-      s_FORMATTERS.set(format.type, format);
+      s_FORMATTERS.set(format.name, format);
    }
 
    /**
@@ -72,7 +77,23 @@ export default class TransformFormat
    {
       for (const format of s_FORMATTERS.values())
       {
-         if (format.extension === extension) { callback.call(thisArg, format, format.type); }
+         if (format.extension === extension) { callback.call(thisArg, format, format.name); }
+      }
+   }
+
+   /**
+    * Provides a `forEach` variation that invokes the callback if the given type matches that of a stored
+    * formatter.
+    *
+    * @param {string}   type - A format type.
+    * @param {function} callback - A callback function.
+    * @param {object}   thisArg - (Optional) this context.
+    */
+   static forEachType(type, callback, thisArg = undefined)
+   {
+      for (const format of s_FORMATTERS.values())
+      {
+         if (format.type === type) { callback.call(thisArg, format, format.name); }
       }
    }
 
@@ -80,23 +101,25 @@ export default class TransformFormat
     * Formats a given ModuleReport or ProjectResult via the formatter of the requested type.
     *
     * @param {ModuleReport|ProjectResult} resultOrReport - A ModuleReport or ProjectResult to format.
-    * @param {string}                     type - The type of formatter to return.
-    * @param {*}                          options - (Optional) One or more optional parameters to pass to the formatter.
+    *
+    * @param {string}                     name - The name of formatter to invoke.
+    *
+    * @param {object}                     options - (Optional) One or more optional parameters to pass to the formatter.
     *
     * @returns {string}
     */
-   static format(resultOrReport, type, options = {})
+   static format(resultOrReport, name, options = undefined)
    {
       if (!(resultOrReport instanceof ModuleReport || resultOrReport instanceof ProjectResult))
       {
          throw new TypeError(`format error: 'resultOrReport' is not a 'ModuleReport' or a 'ProjectResult'.`);
       }
 
-      const formatter = s_FORMATTERS.get(type);
+      const formatter = s_FORMATTERS.get(name);
 
       if (typeof formatter === 'undefined')
       {
-         throw new Error(`format error: unknown formatter type '${type}'.`);
+         throw new Error(`format error: unknown formatter name '${name}'.`);
       }
 
       if (resultOrReport instanceof ModuleReport)
@@ -121,13 +144,23 @@ export default class TransformFormat
    }
 
    /**
+    * Returns the format names supported.
+    *
+    * @returns {string[]}
+    */
+   static getNames()
+   {
+      return Array.from(s_FORMATTERS.keys());
+   }
+
+   /**
     * Returns the format types supported.
     *
     * @returns {string[]}
     */
    static getTypes()
    {
-      return Array.from(s_FORMATTERS.keys());
+      return Array.from(s_FORMATTERS.values()).map((format) => { return format.type; });
    }
 
    /**
@@ -145,8 +178,8 @@ export default class TransformFormat
  * Load all integrated format transforms.
  */
 TransformFormat.addFormat(new FormatJSON());
+TransformFormat.addFormat(new FormatJSONCheckstyle());
 TransformFormat.addFormat(new FormatMarkdown());
 TransformFormat.addFormat(new FormatText());
 TransformFormat.addFormat(new FormatTextMinimal());
 TransformFormat.addFormat(new FormatTextModules());
-TransformFormat.addFormat(new FormatXMLCheckstyle());
