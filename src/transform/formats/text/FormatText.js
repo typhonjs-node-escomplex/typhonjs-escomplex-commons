@@ -1,10 +1,15 @@
 import StringUtil from '../../../utils/StringUtil';
 
 /**
- * Provides a format transform for ESComplex ModuleReport / ProjectResult instances converting them to plain text.
+ * Provides a format transform for ModuleReport / ProjectResult instances converting them to plain text.
  */
 export default class FormatText
 {
+   constructor(headers = s_DEFAULT_HEADERS)
+   {
+      this._headers = headers;
+   }
+
    /**
     * Formats a module report as a JSON string.
     *
@@ -75,20 +80,7 @@ export default class FormatText
     */
    _formatMethod(methodReport)
    {
-      return StringUtil.safeStringsObject(methodReport,
-         '\n',
-         ['  Function: ',                          'name'],
-         ['    Line start: ',                      'lineStart'],
-         ['    Line end: ',                        'lineEnd'],
-         ['    Physical LOC: ',                    'sloc.physical'],
-         ['    Logical LOC: ',                     'sloc.logical'],
-         ['    Parameter count: ',                 'params'],
-         ['    Cyclomatic complexity: ',           'cyclomatic'],
-         ['    Cyclomatic complexity density: ',   'cyclomaticDensity', 1, '%'],
-         ['    Halstead difficulty: ',             'halstead.difficulty'],
-         ['    Halstead volume: ',                 'halstead.volume'],
-         ['    Halstead effort: ',                 'halstead.effort', 0]
-      );
+      return StringUtil.safeStringsObject(methodReport, ...this._headers.moduleMethod);
    }
 
    /**
@@ -106,51 +98,92 @@ export default class FormatText
    /**
     * Formats a module report.
     *
-    * @param {ModuleReport}   report - A module report.
+    * @param {ModuleReport}   moduleReport - A module report.
     * @param {boolean}        reportsAvailable - Indicates that the report metric data is available.
     *
     * @returns {string}
     */
-   _formatModule(report, reportsAvailable)
+   _formatModule(moduleReport, reportsAvailable)
    {
       if (reportsAvailable)
       {
-         return StringUtil.safeStringsObject(report,
-            ['',                                   'srcPath', 2],
-            ['  Physical LOC: ',                   'aggregate.sloc.physical'],
-            ['  Logical LOC: ',                    'aggregate.sloc.logical'],
-            ['  Mean parameter count: ',           'params'],
-            ['  Cyclomatic complexity: ',          'aggregate.cyclomatic'],
-            ['  Cyclomatic complexity density: ',  'aggregate.cyclomaticDensity', 1, '%'],
-            ['  Maintainability index: ',          'maintainability'],
-            ['  Dependency count: ',               'dependencies.length', 0],
-            this._formatMethods(report.methods)
+         return StringUtil.safeStringsObject(moduleReport,
+            ...this._headers.moduleReport,
+            this._formatMethods(moduleReport.methods)
          );
       }
       else
       {
-         return `${report.srcPath}`;
+         return `${moduleReport.srcPath}`;
       }
    }
 
    /**
     * Formats a project result.
     *
-    * @param {ProjectResult}  result - A project result.
+    * @param {ProjectResult}  projectResult - A project result.
     *
     * @returns {string}
     */
-   _formatProject(result)
+   _formatProject(projectResult)
    {
-      return StringUtil.safeStringsObject(result,
-         ['Mean per-function logical LOC: ',             'loc'],
-         ['Mean per-function parameter count: ',         'params'],
-         ['Mean per-function cyclomatic complexity: ',   'cyclomatic'],
-         ['Mean per-function Halstead effort: ',         'effort'],
-         ['Mean per-module maintainability index: ',     'maintainability'],
-         ['First-order density: ',                       'firstOrderDensity', 1, '%'],
-         ['Change cost: ',                               'changeCost', 1, '%'],
-         ['Core size: ',                                 'coreSize', 2, '%']
-      );
+      return StringUtil.safeStringsObject(projectResult, ...this._headers.projectResult);
    }
 }
+
+// Module private ---------------------------------------------------------------------------------------------------
+
+/**
+ * Defines the default headers as text which are inserted via spread into `StringUtil.safeStringsObject`.
+ * @type {{classMethod: *[], classReport: *[], moduleMethod: *[], moduleReport: *[]}}
+ */
+const s_DEFAULT_HEADERS =
+{
+   classMethod:
+   [
+   ],
+
+   classReport:
+   [
+   ],
+
+   moduleMethod:
+   [
+      '\n',
+      ['  Function: ',                          'name'],
+      ['    Line start: ',                      'lineStart'],
+      ['    Line end: ',                        'lineEnd'],
+      ['    Physical LOC: ',                    'sloc.physical'],
+      ['    Logical LOC: ',                     'sloc.logical'],
+      ['    Parameter count: ',                 'params'],
+      ['    Cyclomatic complexity: ',           'cyclomatic'],
+      ['    Cyclomatic complexity density: ',   'cyclomaticDensity', 1, '%'],
+      ['    Halstead difficulty: ',             'halstead.difficulty'],
+      ['    Halstead volume: ',                 'halstead.volume'],
+      ['    Halstead effort: ',                 'halstead.effort', 0]
+   ],
+
+   moduleReport:
+   [
+      ['',                                   'srcPath', 2],
+      ['  Physical LOC: ',                   'aggregate.sloc.physical'],
+      ['  Logical LOC: ',                    'aggregate.sloc.logical'],
+      ['  Mean parameter count: ',           'params'],
+      ['  Cyclomatic complexity: ',          'aggregate.cyclomatic'],
+      ['  Cyclomatic complexity density: ',  'aggregate.cyclomaticDensity', 1, '%'],
+      ['  Maintainability index: ',          'maintainability'],
+      ['  Dependency count: ',               'dependencies.length', 0]
+   ],
+
+   projectResult:
+   [
+      ['Mean per-function logical LOC: ',             'loc'],
+      ['Mean per-function parameter count: ',         'params'],
+      ['Mean per-function cyclomatic complexity: ',   'cyclomatic'],
+      ['Mean per-function Halstead effort: ',         'effort'],
+      ['Mean per-module maintainability index: ',     'maintainability'],
+      ['First-order density: ',                       'firstOrderDensity', 1, '%'],
+      ['Change cost: ',                               'changeCost', 1, '%'],
+      ['Core size: ',                                 'coreSize', 2, '%']
+   ]
+};

@@ -1,4 +1,4 @@
-* Module:
+* Module 1:
    * maintainability: 105.333
    * Module method: **&lt;anonymous&gt;** (984)
       * cyclomatic: 2

@@ -65,9 +65,14 @@ const s_MARKDOWN_HEADERS =
 
    moduleReport:
    [
-      '* Module:',
+      ['* Module ', '___modulecntrplus1___', 0, ':'],
       ['\n   * filePath: `', 'filePath', 0, '`'],
       ['\n   * srcPath: `', 'srcPath', 0, '`'],
       ['\n   * srcPathAlias: `', 'srcPathAlias', 0, '`']
+   ],
+
+   projectReport:
+   [
+      '* Project:'
    ]
 };

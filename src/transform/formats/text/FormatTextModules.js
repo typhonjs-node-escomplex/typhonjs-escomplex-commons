@@ -21,7 +21,23 @@ export default class FormatTextModules
     */
    formatReport(report)
    {
-      return StringUtil.safeStringsObject(report, ...this._header.moduleReport);
+      let output = '';
+
+      // Add / remove a temporary entries for the current module index.
+      try
+      {
+         report.___modulecntr___ = 0;
+         report.___modulecntrplus1___ = 1;
+
+         output = StringUtil.safeStringsObject(report, ...this._header.moduleReport);
+      }
+      finally
+      {
+         delete report.___modulecntr___;
+         delete report.___modulecntrplus1___;
+      }
+
+      return output;
    }
 
    /**
@@ -33,9 +49,25 @@ export default class FormatTextModules
     */
    formatResult(result)
    {
-      return result.reports.reduce((formatted, moduleReport) =>
+      return result.reports.reduce((formatted, moduleReport, index) =>
       {
-         return `${formatted}${StringUtil.safeStringsObject(moduleReport, ...this._header.moduleReport)}\n`;
+         let current = '';
+
+         // Add / remove a temporary entries for the current module index.
+         try
+         {
+            moduleReport.___modulecntr___ = index;
+            moduleReport.___modulecntrplus1___ = index + 1;
+
+            current = `${formatted}${StringUtil.safeStringsObject(moduleReport, ...this._header.moduleReport)}\n`;
+         }
+         finally
+         {
+            delete moduleReport.___modulecntr___;
+            delete moduleReport.___modulecntrplus1___;
+         }
+
+         return current;
       }, '');
    }
 
@@ -80,7 +112,7 @@ const s_DEFAULT_HEADER =
 {
    moduleReport:
    [
-      'Module:\n',
+      ['Module ', '___modulecntrplus1___', 1, ':'],
       ['filePath: ', 'filePath'],
       ['srcPath: ', 'srcPath'],
       ['srcPathAlias: ', 'srcPathAlias']

@@ -25,7 +25,23 @@ export default class FormatTextMinimal
     */
    formatReport(report, options = s_DEFAULT_KEYS)
    {
-      return this._formatModule(report, true, options);
+      let output = '';
+
+      // Add / remove a temporary entries for the current module index.
+      try
+      {
+         report.___modulecntr___ = 0;
+         report.___modulecntrplus1___ = 1;
+
+         output = this._formatModule(report, true, options);
+      }
+      finally
+      {
+         delete report.___modulecntr___;
+         delete report.___modulecntrplus1___;
+      }
+
+      return output;
    }
 
    /**
@@ -44,10 +60,26 @@ export default class FormatTextMinimal
    {
       const reportsAvailable = result.getSetting('serializeReports', false);
 
-      return result.reports.reduce((formatted, report) =>
+      return result.reports.reduce((formatted, moduleReport, index) =>
       {
-         return `${formatted}${this._formatModule(report, reportsAvailable, options)}\n\n`;
-      }, '');
+         let current = '';
+
+         // Add / remove a temporary entries for the current module index.
+         try
+         {
+            moduleReport.___modulecntr___ = index;
+            moduleReport.___modulecntrplus1___ = index + 1;
+
+            current = `${formatted}${this._formatModule(moduleReport, reportsAvailable, options)}\n\n`;
+         }
+         finally
+         {
+            delete moduleReport.___modulecntr___;
+            delete moduleReport.___modulecntrplus1___;
+         }
+
+         return current;
+      }, `${this._formatProject(result, options)}\n\n`);
    }
 
    /**
@@ -193,7 +225,7 @@ export default class FormatTextMinimal
    /**
     * Formats a module report.
     *
-    * @param {ModuleReport}   report - A module report.
+    * @param {ModuleReport}   moduleReport - A module report.
     *
     * @param {boolean}        reportsAvailable - Indicates that the report metric data is available.
     *
@@ -204,21 +236,29 @@ export default class FormatTextMinimal
     *
     * @returns {string}
     */
-   _formatModule(report, reportsAvailable, options)
+   _formatModule(moduleReport, reportsAvailable, options)
    {
       if (reportsAvailable)
       {
-         return StringUtil.safeStringsObject(report,
+         return StringUtil.safeStringsObject(moduleReport,
             ...this._headers.moduleReport,
-            this._formatEntries(report, options.moduleReport, '   '),
-            this._formatMethods(report.methods, options, '   ', true),
-            this._formatClasses(report.classes, options, '   ')
+            this._formatEntries(moduleReport, options.moduleReport, '   '),
+            this._formatMethods(moduleReport.methods, options, '   ', true),
+            this._formatClasses(moduleReport.classes, options, '   ')
          );
       }
       else
       {
-         return StringUtil.safeStringsObject(report, ...this._headers.moduleReport);
+         return StringUtil.safeStringsObject(moduleReport, ...this._headers.moduleReport);
       }
+   }
+
+   _formatProject(projectReport, options)
+   {
+      return StringUtil.safeStringsObject(projectReport,
+         ...this._headers.projectReport,
+         this._formatEntries(projectReport, options.projectReport, '   ')
+      );
    }
 }
 
@@ -233,7 +273,8 @@ const s_DEFAULT_KEYS =
 {
    classReport: ['maintainability'],
    methodReport: ['cyclomatic', 'halstead.difficulty'],
-   moduleReport: ['maintainability']
+   moduleReport: ['maintainability'],
+   projectReport: ['maintainability']
 };
 
 /**
@@ -264,9 +305,14 @@ const s_DEFAULT_HEADERS =
 
    moduleReport:
    [
-      'Module:',
+      ['Module ', '___modulecntrplus1___', 0, ':'],
       ['\n   filePath: ', 'filePath', 0],
       ['\n   srcPath: ', 'srcPath', 0],
       ['\n   srcPathAlias: ', 'srcPathAlias', 0]
+   ],
+
+   projectReport:
+   [
+      'Project:'
    ]
 };
