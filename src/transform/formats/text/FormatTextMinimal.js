@@ -8,7 +8,7 @@ import StringUtil from '../../../utils/StringUtil';
 const s_DEFAULT_KEYS =
 {
    classReport: ['maintainability'],
-   methodReport: ['cyclomatic', 'halstead.bugs'],
+   methodReport: ['cyclomatic', 'halstead.difficulty'],
    moduleReport: ['maintainability']
 };
 

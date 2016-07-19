@@ -6,28 +6,28 @@ Module:
       maintainability: 110.612
       Class method: constructor (44)
          cyclomatic: 8
-         halstead.bugs: 0.168
+         halstead.difficulty: 7.385
       Class method: analyze (115)
          cyclomatic: 4
-         halstead.bugs: 0.137
+         halstead.difficulty: 13.333
       Class method: <anonymous> (126)
          cyclomatic: 3
-         halstead.bugs: 0.114
+         halstead.difficulty: 14.912
       Class method: processResults (174)
          cyclomatic: 5
-         halstead.bugs: 0.14
+         halstead.difficulty: 15.75
       Class method: analyzeAsync (215)
          cyclomatic: 1
-         halstead.bugs: 0.007
+         halstead.difficulty: 2
       Class method: <anonymous> (217)
          cyclomatic: 1
-         halstead.bugs: 0.017
+         halstead.difficulty: 2.143
       Class method: processResultsAsync (232)
          cyclomatic: 1
-         halstead.bugs: 0.007
+         halstead.difficulty: 2
       Class method: <anonymous> (234)
          cyclomatic: 1
-         halstead.bugs: 0.017
+         halstead.difficulty: 2.143
 
 Module:
    filePath: ./src/index.js
@@ -42,16 +42,16 @@ Module:
       maintainability: 121.725
       Class method: constructor (23)
          cyclomatic: 3
-         halstead.bugs: 0.041
+         halstead.difficulty: 8.938
       Class method: onConfigure (47)
          cyclomatic: 4
-         halstead.bugs: 0.09
+         halstead.difficulty: 12.571
       Class method: onProjectStart (70)
          cyclomatic: 1
-         halstead.bugs: 0.017
+         halstead.difficulty: 2.357
       Class method: onProjectEnd (83)
          cyclomatic: 2
-         halstead.bugs: 0.04
+         halstead.difficulty: 7.2
 
 Module:
    filePath: ./test/fixture/testImportNPMAlias.js
@@ -69,15 +69,15 @@ Module:
    maintainability: 122.136
    Module method: <anonymous> (33)
       cyclomatic: 4
-      halstead.bugs: 0.059
+      halstead.difficulty: 11.7
    Module method: <anonymous> (39)
       cyclomatic: 2
-      halstead.bugs: 0.017
+      halstead.difficulty: 4
    Class: AbstractSyntaxLoader (6)
       maintainability: 118.601
       Class method: onLoadSyntax (13)
          cyclomatic: 4
-         halstead.bugs: 0.066
+         halstead.difficulty: 10.083
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/module/report/AbstractReport.js
@@ -87,28 +87,28 @@ Module:
       maintainability: 148.376
       Class method: constructor (13)
          cyclomatic: 1
-         halstead.bugs: 0.005
+         halstead.difficulty: 1.333
       Class method: finalize (28)
          cyclomatic: 1
-         halstead.bugs: 0.005
+         halstead.difficulty: 2.25
       Class method: methodReport (41)
          cyclomatic: 2
-         halstead.bugs: 0.012
+         halstead.difficulty: 5
       Class method: incrementDistinctHalsteadItems (49)
          cyclomatic: 2
-         halstead.bugs: 0.035
+         halstead.difficulty: 2.55
       Class method: incrementHalsteadItems (65)
          cyclomatic: 1
-         halstead.bugs: 0.014
+         halstead.difficulty: 1.667
       Class method: incrementHalsteadMetric (79)
          cyclomatic: 1
-         halstead.bugs: 0.013
+         halstead.difficulty: 1.333
       Class method: incrementParams (89)
          cyclomatic: 1
-         halstead.bugs: 0.007
+         halstead.difficulty: 1.25
       Class method: isHalsteadMetricDistinct (102)
          cyclomatic: 1
-         halstead.bugs: 0.023
+         halstead.difficulty: 3.125
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/module/report/ClassReport.js
@@ -118,19 +118,19 @@ Module:
       maintainability: 127.096
       Class method: constructor (18)
          cyclomatic: 1
-         halstead.bugs: 0.055
+         halstead.difficulty: 6.136
       Class method: finalize (58)
          cyclomatic: 1
-         halstead.bugs: 0.014
+         halstead.difficulty: 2.4
       Class method: <anonymous> (62)
          cyclomatic: 1
-         halstead.bugs: 0.003
+         halstead.difficulty: 1.5
       Class method: parse (74)
          cyclomatic: 3
-         halstead.bugs: 0.086
+         halstead.difficulty: 12
       Class method: <anonymous> (86)
          cyclomatic: 1
-         halstead.bugs: 0.006
+         halstead.difficulty: 2
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/module/report/HalsteadData.js
@@ -140,13 +140,13 @@ Module:
       maintainability: 110.635
       Class method: constructor (10)
          cyclomatic: 1
-         halstead.bugs: 0.089
+         halstead.difficulty: 6.25
       Class method: reset (75)
          cyclomatic: 2
-         halstead.bugs: 0.063
+         halstead.difficulty: 8.25
       Class method: <anonymous> (77)
          cyclomatic: 2
-         halstead.bugs: 0.014
+         halstead.difficulty: 4.375
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/module/report/MethodReport.js
@@ -156,19 +156,19 @@ Module:
       maintainability: 112.359
       Class method: constructor (19)
          cyclomatic: 1
-         halstead.bugs: 0.093
+         halstead.difficulty: 9.5
       Class method: finalize (77)
          cyclomatic: 1
-         halstead.bugs: 0.005
+         halstead.difficulty: 1.5
       Class method: getMaintainabilityMetrics (89)
          cyclomatic: 1
-         halstead.bugs: 0.012
+         halstead.difficulty: 3.5
       Class method: parse (101)
          cyclomatic: 2
-         halstead.bugs: 0.023
+         halstead.difficulty: 5.143
       Class method: sumMetrics (115)
          cyclomatic: 7
-         halstead.bugs: 0.136
+         halstead.difficulty: 14
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/module/report/ModuleReport.js
@@ -178,61 +178,61 @@ Module:
       maintainability: 118.216
       Class method: constructor (26)
          cyclomatic: 2
-         halstead.bugs: 0.178
+         halstead.difficulty: 10.44
       Class method: addDependencies (141)
          cyclomatic: 3
-         halstead.bugs: 0.028
+         halstead.difficulty: 7
       Class method: createScope (160)
          cyclomatic: 4
-         halstead.bugs: 0.171
+         halstead.difficulty: 17.208
       Class method: finalize (210)
          cyclomatic: 1
-         halstead.bugs: 0.042
+         halstead.difficulty: 3.75
       Class method: <anonymous> (214)
          cyclomatic: 1
-         halstead.bugs: 0.003
+         halstead.difficulty: 1.5
       Class method: <anonymous> (215)
          cyclomatic: 1
-         halstead.bugs: 0.003
+         halstead.difficulty: 1.5
       Class method: getCurrentClassReport (228)
          cyclomatic: 2
-         halstead.bugs: 0.025
+         halstead.difficulty: 6.6
       Class method: getCurrentMethodReport (238)
          cyclomatic: 2
-         halstead.bugs: 0.025
+         halstead.difficulty: 6.6
       Class method: getMaintainabilityMetrics (248)
          cyclomatic: 1
-         halstead.bugs: 0.013
+         halstead.difficulty: 4
       Class method: halsteadItemEncountered (260)
          cyclomatic: 3
-         halstead.bugs: 0.047
+         halstead.difficulty: 6.875
       Class method: incrementCyclomatic (277)
          cyclomatic: 3
-         halstead.bugs: 0.048
+         halstead.difficulty: 7.5
       Class method: incrementLogicalSloc (294)
          cyclomatic: 3
-         halstead.bugs: 0.057
+         halstead.difficulty: 7.667
       Class method: parse (312)
          cyclomatic: 4
-         halstead.bugs: 0.117
+         halstead.difficulty: 14.8
       Class method: <anonymous> (324)
          cyclomatic: 1
-         halstead.bugs: 0.006
+         halstead.difficulty: 2
       Class method: <anonymous> (329)
          cyclomatic: 1
-         halstead.bugs: 0.006
+         halstead.difficulty: 2
       Class method: popScope (341)
          cyclomatic: 3
-         halstead.bugs: 0.052
+         halstead.difficulty: 6
       Class method: processHalsteadItems (364)
          cyclomatic: 1
-         halstead.bugs: 0.006
+         halstead.difficulty: 2
       Class method: <anonymous> (366)
          cyclomatic: 1
-         halstead.bugs: 0.006
+         halstead.difficulty: 1.25
       Class method: sumMetrics (378)
          cyclomatic: 4
-         halstead.bugs: 0.069
+         halstead.difficulty: 12.833
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/module/traits/actualize.js
@@ -240,7 +240,7 @@ Module:
    maintainability: 111.799
    Module method: <anonymous> (19)
       cyclomatic: 1
-      halstead.bugs: 0.098
+      halstead.difficulty: 5.921
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js
@@ -250,34 +250,34 @@ Module:
       maintainability: 141.777
       Class method: constructor (15)
          cyclomatic: 3
-         halstead.bugs: 0.054
+         halstead.difficulty: 7.5
       Class method: <anonymous> (28)
          cyclomatic: 3
-         halstead.bugs: 0.028
+         halstead.difficulty: 10.8
       Class method: forEach (47)
          cyclomatic: 1
-         halstead.bugs: 0.007
+         halstead.difficulty: 1.25
       Class method: get (59)
          cyclomatic: 1
-         halstead.bugs: 0.005
+         halstead.difficulty: 1.333
       Class method: length (69)
          cyclomatic: 1
-         halstead.bugs: 0.005
+         halstead.difficulty: 1
       Class method: metric (76)
          cyclomatic: 1
-         halstead.bugs: 0.003
+         halstead.difficulty: 1
       Class method: type (83)
          cyclomatic: 1
-         halstead.bugs: 0.004
+         halstead.difficulty: 1.5
       Class method: valueOf (95)
          cyclomatic: 1
-         halstead.bugs: 0.031
+         halstead.difficulty: 5.143
       Class method: <anonymous> (97)
          cyclomatic: 2
-         halstead.bugs: 0.022
+         halstead.difficulty: 5.6
       Class method: <anonymous> (103)
          cyclomatic: 1
-         halstead.bugs: 0.007
+         halstead.difficulty: 2.667
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/module/traits/safeArray.js
@@ -285,7 +285,7 @@ Module:
    maintainability: 148.682
    Module method: <anonymous> (8)
       cyclomatic: 4
-      halstead.bugs: 0.026
+      halstead.difficulty: 8
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/module/traits/safeName.js
@@ -293,7 +293,7 @@ Module:
    maintainability: 119.451
    Module method: <anonymous> (9)
       cyclomatic: 7
-      halstead.bugs: 0.055
+      halstead.difficulty: 9.188
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/module/traits/Trait.js
@@ -303,19 +303,19 @@ Module:
       maintainability: 138.638
       Class method: constructor (12)
          cyclomatic: 2
-         halstead.bugs: 0.027
+         halstead.difficulty: 5.25
       Class method: metric (37)
          cyclomatic: 1
-         halstead.bugs: 0.003
+         halstead.difficulty: 1
       Class method: type (44)
          cyclomatic: 1
-         halstead.bugs: 0.004
+         halstead.difficulty: 1.5
       Class method: valueOf (56)
          cyclomatic: 3
-         halstead.bugs: 0.048
+         halstead.difficulty: 11.429
       Class method: <anonymous> (60)
          cyclomatic: 2
-         halstead.bugs: 0.013
+         halstead.difficulty: 6
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js
@@ -325,25 +325,25 @@ Module:
       maintainability: 125.893
       Class method: constructor (13)
          cyclomatic: 8
-         halstead.bugs: 0.134
+         halstead.difficulty: 11.289
       Class method: <anonymous> (24)
          cyclomatic: 3
-         halstead.bugs: 0.021
+         halstead.difficulty: 4.286
       Class method: filter (73)
          cyclomatic: 2
-         halstead.bugs: 0.027
+         halstead.difficulty: 6.667
       Class method: metric (83)
          cyclomatic: 1
-         halstead.bugs: 0.003
+         halstead.difficulty: 1
       Class method: type (90)
          cyclomatic: 1
-         halstead.bugs: 0.004
+         halstead.difficulty: 1.5
       Class method: valueOf (100)
          cyclomatic: 4
-         halstead.bugs: 0.087
+         halstead.difficulty: 14.727
       Class method: <anonymous> (104)
          cyclomatic: 3
-         halstead.bugs: 0.033
+         halstead.difficulty: 9
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatJSON.js
@@ -351,7 +351,7 @@ Module:
    maintainability: 158.726
    Module method: <anonymous> (8)
       cyclomatic: 1
-      halstead.bugs: 0.006
+      halstead.difficulty: 2
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatJSONExpanded.js
@@ -359,7 +359,7 @@ Module:
    maintainability: 157.718
    Module method: <anonymous> (8)
       cyclomatic: 1
-      halstead.bugs: 0.009
+      halstead.difficulty: 1.8
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatMarkdown.js
@@ -367,25 +367,25 @@ Module:
    maintainability: 144.18
    Module method: <anonymous> (8)
       cyclomatic: 1
-      halstead.bugs: 0.012
+      halstead.difficulty: 3
    Module method: <anonymous> (10)
       cyclomatic: 1
-      halstead.bugs: 0.007
+      halstead.difficulty: 1.5
    Module method: formatMethod (23)
       cyclomatic: 1
-      halstead.bugs: 0.132
+      halstead.difficulty: 3.273
    Module method: formatMethods (47)
       cyclomatic: 1
-      halstead.bugs: 0.007
+      halstead.difficulty: 2.667
    Module method: <anonymous> (49)
       cyclomatic: 1
-      halstead.bugs: 0.007
+      halstead.difficulty: 1.5
    Module method: formatModule (59)
       cyclomatic: 1
-      halstead.bugs: 0.107
+      halstead.difficulty: 3.259
    Module method: formatProject (81)
       cyclomatic: 1
-      halstead.bugs: 0.076
+      halstead.difficulty: 3.13
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatText.js
@@ -393,25 +393,25 @@ Module:
    maintainability: 144.241
    Module method: <anonymous> (8)
       cyclomatic: 1
-      halstead.bugs: 0.012
+      halstead.difficulty: 3
    Module method: <anonymous> (10)
       cyclomatic: 1
-      halstead.bugs: 0.007
+      halstead.difficulty: 1.5
    Module method: formatMethod (23)
       cyclomatic: 1
-      halstead.bugs: 0.119
+      halstead.difficulty: 3.517
    Module method: formatMethods (47)
       cyclomatic: 1
-      halstead.bugs: 0.007
+      halstead.difficulty: 2.667
    Module method: <anonymous> (49)
       cyclomatic: 1
-      halstead.bugs: 0.007
+      halstead.difficulty: 1.5
    Module method: formatModule (59)
       cyclomatic: 1
-      halstead.bugs: 0.105
+      halstead.difficulty: 3.308
    Module method: formatProject (81)
       cyclomatic: 1
-      halstead.bugs: 0.074
+      halstead.difficulty: 3.182
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatTextMinimal.js
@@ -419,22 +419,22 @@ Module:
    maintainability: 150.755
    Module method: <anonymous> (8)
       cyclomatic: 1
-      halstead.bugs: 0.01
+      halstead.difficulty: 2.5
    Module method: <anonymous> (10)
       cyclomatic: 1
-      halstead.bugs: 0.007
+      halstead.difficulty: 1.5
    Module method: formatModule (20)
       cyclomatic: 1
-      halstead.bugs: 0.023
+      halstead.difficulty: 2.75
    Module method: formatMethod (35)
       cyclomatic: 1
-      halstead.bugs: 0.023
+      halstead.difficulty: 2.667
    Module method: formatMethods (49)
       cyclomatic: 1
-      halstead.bugs: 0.007
+      halstead.difficulty: 2.667
    Module method: <anonymous> (51)
       cyclomatic: 1
-      halstead.bugs: 0.007
+      halstead.difficulty: 1.5
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatTextModules.js
@@ -442,10 +442,10 @@ Module:
    maintainability: 157.421
    Module method: <anonymous> (8)
       cyclomatic: 1
-      halstead.bugs: 0.01
+      halstead.difficulty: 2.5
    Module method: <anonymous> (10)
       cyclomatic: 1
-      halstead.bugs: 0.007
+      halstead.difficulty: 1.5
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatXML.js
@@ -453,40 +453,40 @@ Module:
    maintainability: 139.71
    Module method: <anonymous> (11)
       cyclomatic: 1
-      halstead.bugs: 0.053
+      halstead.difficulty: 4.529
    Module method: <anonymous> (17)
       cyclomatic: 1
-      halstead.bugs: 0.007
+      halstead.difficulty: 1.5
    Module method: formatAggregate (28)
       cyclomatic: 1
-      halstead.bugs: 0.08
+      halstead.difficulty: 4.895
    Module method: formatMethod (48)
       cyclomatic: 1
-      halstead.bugs: 0.135
+      halstead.difficulty: 4.645
    Module method: formatModule (70)
       cyclomatic: 2
-      halstead.bugs: 0.12
+      halstead.difficulty: 9.625
    Module method: formatCyclomaticComplexity (94)
       cyclomatic: 1
-      halstead.bugs: 0.012
+      halstead.difficulty: 2
    Module method: formatCyclomaticDensity (107)
       cyclomatic: 1
-      halstead.bugs: 0.012
+      halstead.difficulty: 2
    Module method: formatHalsteadComplexity (120)
       cyclomatic: 1
-      halstead.bugs: 0.022
+      halstead.difficulty: 2
    Module method: formatHalsteadMetrics (134)
       cyclomatic: 1
-      halstead.bugs: 0.119
+      halstead.difficulty: 5.368
    Module method: formatParameterComplexity (152)
       cyclomatic: 1
-      halstead.bugs: 0.012
+      halstead.difficulty: 2
    Module method: formatSlocComplexity (164)
       cyclomatic: 1
-      halstead.bugs: 0.022
+      halstead.difficulty: 2
    Module method: formatSlocMetrics (177)
       cyclomatic: 1
-      halstead.bugs: 0.03
+      halstead.difficulty: 3.556
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatXMLCheckstyle.js
@@ -494,22 +494,22 @@ Module:
    maintainability: 130.699
    Module method: <anonymous> (23)
       cyclomatic: 1
-      halstead.bugs: 0.029
+      halstead.difficulty: 3
    Module method: <anonymous> (26)
       cyclomatic: 1
-      halstead.bugs: 0.008
+      halstead.difficulty: 2.25
    Module method: assignSeverity (36)
       cyclomatic: 1
-      halstead.bugs: 0.016
+      halstead.difficulty: 4.2
    Module method: <anonymous> (40)
       cyclomatic: 3
-      halstead.bugs: 0.037
+      halstead.difficulty: 4.444
    Module method: formatMethod (60)
       cyclomatic: 1
-      halstead.bugs: 0.166
+      halstead.difficulty: 4.737
    Module method: formatModule (88)
       cyclomatic: 2
-      halstead.bugs: 0.083
+      halstead.difficulty: 8.611
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/project/result/ProjectFormatter.js
@@ -519,10 +519,10 @@ Module:
       maintainability: 105.3
       Class method: getTypes (20)
          cyclomatic: 1
-         halstead.bugs: 0.011
+         halstead.difficulty: 1
       Class method: format (33)
          cyclomatic: 11
-         halstead.bugs: 0.133
+         halstead.difficulty: 7.5
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/project/result/ProjectResult.js
@@ -532,46 +532,46 @@ Module:
       maintainability: 128.113
       Class method: constructor (24)
          cyclomatic: 3
-         halstead.bugs: 0.13
+         halstead.difficulty: 9.9
       Class method: <anonymous> (97)
          cyclomatic: 1
-         halstead.bugs: 0.013
+         halstead.difficulty: 2.4
       Class method: finalize (115)
          cyclomatic: 3
-         halstead.bugs: 0.059
+         halstead.difficulty: 11
       Class method: <anonymous> (119)
          cyclomatic: 1
-         halstead.bugs: 0.018
+         halstead.difficulty: 5
       Class method: <anonymous> (126)
          cyclomatic: 1
-         halstead.bugs: 0.003
+         halstead.difficulty: 1.5
       Class method: parse (139)
          cyclomatic: 3
-         halstead.bugs: 0.063
+         halstead.difficulty: 10
       Class method: <anonymous> (148)
          cyclomatic: 1
-         halstead.bugs: 0.006
+         halstead.difficulty: 2
       Class method: toFormat (162)
          cyclomatic: 1
-         halstead.bugs: 0.007
+         halstead.difficulty: 1.875
       Class method: toStringAdjacency (173)
          cyclomatic: 2
-         halstead.bugs: 0.031
+         halstead.difficulty: 6.286
       Class method: <anonymous> (180)
          cyclomatic: 1
-         halstead.bugs: 0.035
+         halstead.difficulty: 2.909
       Class method: <anonymous> (184)
          cyclomatic: 1
-         halstead.bugs: 0.016
+         halstead.difficulty: 1.25
       Class method: toStringVisibility (201)
          cyclomatic: 2
-         halstead.bugs: 0.031
+         halstead.difficulty: 6.286
       Class method: <anonymous> (208)
          cyclomatic: 1
-         halstead.bugs: 0.035
+         halstead.difficulty: 2.909
       Class method: <anonymous> (212)
          cyclomatic: 1
-         halstead.bugs: 0.016
+         halstead.difficulty: 1.25
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/utils/MathUtil.js
@@ -581,31 +581,31 @@ Module:
       maintainability: 128.142
       Class method: compactMatrix (19)
          cyclomatic: 1
-         halstead.bugs: 0.017
+         halstead.difficulty: 4.9
       Class method: <anonymous> (23)
          cyclomatic: 2
-         halstead.bugs: 0.035
+         halstead.difficulty: 7.875
       Class method: <anonymous> (27)
          cyclomatic: 2
-         halstead.bugs: 0.012
+         halstead.difficulty: 2.8
       Class method: create2DArray (43)
          cyclomatic: 4
-         halstead.bugs: 0.076
+         halstead.difficulty: 17.438
       Class method: getMedian (65)
          cyclomatic: 2
-         halstead.bugs: 0.053
+         halstead.difficulty: 18.9
       Class method: <anonymous> (68)
          cyclomatic: 1
-         halstead.bugs: 0.004
+         halstead.difficulty: 2
       Class method: getPercent (84)
          cyclomatic: 2
-         halstead.bugs: 0.014
+         halstead.difficulty: 5
       Class method: toFixedTraverse (98)
          cyclomatic: 1
-         halstead.bugs: 0.01
+         halstead.difficulty: 1.8
       Class method: toFixed (111)
          cyclomatic: 3
-         halstead.bugs: 0.033
+         halstead.difficulty: 8.571
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/utils/ObjectUtil.js
@@ -613,12 +613,12 @@ Module:
    maintainability: 107.184
    Module method: _depthTraverse (38)
       cyclomatic: 5
-      halstead.bugs: 0.099
+      halstead.difficulty: 21.636
    Class: ObjectUtil (4)
       maintainability: 123.06
       Class method: depthTraverse (15)
          cyclomatic: 3
-         halstead.bugs: 0.033
+         halstead.difficulty: 5.688
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/utils/StringUtil.js
@@ -628,13 +628,13 @@ Module:
       maintainability: 155.215
       Class method: compare (14)
          cyclomatic: 1
-         halstead.bugs: 0.013
+         halstead.difficulty: 2.625
       Class method: incrementIndent (27)
          cyclomatic: 1
-         halstead.bugs: 0.005
+         halstead.difficulty: 1.667
       Class method: indent (40)
          cyclomatic: 1
-         halstead.bugs: 0.018
+         halstead.difficulty: 3.214
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-commons/src/utils/XMLUtil.js
@@ -644,19 +644,19 @@ Module:
       maintainability: 147.775
       Class method: createElement (18)
          cyclomatic: 1
-         halstead.bugs: 0.015
+         halstead.difficulty: 2.75
       Class method: createElementWithAttributes (34)
          cyclomatic: 1
-         halstead.bugs: 0.02
+         halstead.difficulty: 2.625
       Class method: createElementWithTags (50)
          cyclomatic: 3
-         halstead.bugs: 0.044
+         halstead.difficulty: 4.423
       Class method: createEmptyElementWithAttributes (66)
          cyclomatic: 1
-         halstead.bugs: 0.047
+         halstead.difficulty: 6.9
       Class method: createXMLDefinition (79)
          cyclomatic: 1
-         halstead.bugs: 0.001
+         halstead.difficulty: 0.5
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-module/src/ESComplexModule.js
@@ -666,22 +666,22 @@ Module:
       maintainability: 126.029
       Class method: constructor (19)
          cyclomatic: 2
-         halstead.bugs: 0.023
+         halstead.difficulty: 5.143
       Class method: analyze (40)
          cyclomatic: 4
-         halstead.bugs: 0.145
+         halstead.difficulty: 13.045
       Class method: <anonymous> (59)
          cyclomatic: 1
-         halstead.bugs: 0.013
+         halstead.difficulty: 2
       Class method: <anonymous> (60)
          cyclomatic: 1
-         halstead.bugs: 0.013
+         halstead.difficulty: 2
       Class method: analyzeAsync (78)
          cyclomatic: 1
-         halstead.bugs: 0.007
+         halstead.difficulty: 2
       Class method: <anonymous> (80)
          cyclomatic: 1
-         halstead.bugs: 0.017
+         halstead.difficulty: 2.143
 
 Module:
    filePath: ./node_modules/typhonjs-escomplex-module/src/index.js
@@ -697,23 +697,23 @@ Module:
       maintainability: 122.046
       Class method: constructor (27)
          cyclomatic: 3
-         halstead.bugs: 0.053
+         halstead.difficulty: 10.389
       Class method: onConfigure (52)
          cyclomatic: 2
-         halstead.bugs: 0.044
+         halstead.difficulty: 7.2
       Class method: onEnterNode (68)
          cyclomatic: 2
-         halstead.bugs: 0.047
+         halstead.difficulty: 7.5
       Class method: onExitNode (81)
          cyclomatic: 1
-         halstead.bugs: 0.021
+         halstead.difficulty: 2.625
       Class method: onLoadSyntax (94)
          cyclomatic: 2
-         halstead.bugs: 0.044
+         halstead.difficulty: 7.2
       Class method: onModuleStart (111)
          cyclomatic: 1
-         halstead.bugs: 0.061
+         halstead.difficulty: 7
       Class method: onModuleEnd (125)
          cyclomatic: 1
-         halstead.bugs: 0.016
+         halstead.difficulty: 3
 
