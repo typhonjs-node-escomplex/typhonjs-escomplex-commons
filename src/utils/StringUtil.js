@@ -95,6 +95,11 @@ export default class StringUtil
     */
    static safeStringsObject(object, ...entries)
    {
+      return StringUtil.safeStringsPrependObject('', object, ...entries);
+   }
+
+   static safeStringsPrependObject(prepend, object, ...entries)
+   {
       if (typeof object !== 'object') { return ''; }
 
       const output = [];
@@ -109,29 +114,31 @@ export default class StringUtil
             switch (entry.length)
             {
                case 2:
-                  output.push(StringUtil.safeStringObject(entry[0], object, entry[1]));
+                  output.push(StringUtil.safeStringObject(`${prepend}${entry[0]}`, object, entry[1]));
                   break;
 
                case 3:
-                  output.push(StringUtil.safeStringObject(entry[0], object, entry[1], entry[2]));
+                  output.push(StringUtil.safeStringObject(`${prepend}${entry[0]}`, object, entry[1], entry[2]));
                   break;
 
                case 4:
-                  output.push(StringUtil.safeStringObject(entry[0], object, entry[1], entry[2], entry[3]));
+                  output.push(
+                   StringUtil.safeStringObject(`${prepend}${entry[0]}`, object, entry[1], entry[2], entry[3]));
                   break;
 
                case 5:
-                  output.push(StringUtil.safeStringObject(entry[0], object, entry[1], entry[2], entry[3], entry[4]));
+                  output.push(StringUtil.safeStringObject(`${prepend}${entry[0]}`,
+                   object, entry[1], entry[2], entry[3], entry[4]));
                   break;
 
                default:
                   throw new Error(
-                   `safeStringsObject error: entry at '${cntr}' has the wrong length '${entry.length}'.`);
+                   `safeStringsPrependObject error: entry at '${cntr}' has the wrong length '${entry.length}'.`);
             }
          }
          else if (typeof entry === 'string')
          {
-            output.push(entry);
+            output.push(`${prepend}${entry}`);
          }
       }
 

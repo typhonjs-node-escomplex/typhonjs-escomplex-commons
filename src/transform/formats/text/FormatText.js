@@ -1,44 +1,14 @@
-import StringUtil from '../../../utils/StringUtil';
+import AbstractFormatText from './AbstractFormatText';
 
 /**
  * Provides a format transform for ModuleReport / ProjectResult instances converting them to plain text.
  */
-export default class FormatText
+export default class FormatText extends AbstractFormatText
 {
-   constructor(headers = s_DEFAULT_HEADERS)
+   constructor(headers = {}, keys = {})
    {
-      this._headers = headers;
-   }
-
-   /**
-    * Formats a module report as a JSON string.
-    *
-    * @param {ModuleReport}   report - A module report.
-    *
-    * @returns {string}
-    */
-   formatReport()
-   {
-      return '';
-   }
-
-   /**
-    * Formats a project result as plain text.
-    *
-    * @param {ProjectResult}  result - A project result.
-    *
-    * @returns {string}
-    */
-   formatResult(result)
-   {
-      const reportsAvailable = result.getSetting('serializeReports', false);
-
-      const newLine = reportsAvailable ? '\n\n' : '\n';
-
-      return result.reports.reduce((formatted, report) =>
-      {
-         return `${formatted}${this._formatModule(report, reportsAvailable)}${newLine}`;
-      }, this._formatProject(result));
+      super(Object.assign(Object.assign({}, s_DEFAULT_HEADERS), headers),
+       Object.assign(Object.assign({}, s_DEFAULT_KEYS), keys));
    }
 
    /**
@@ -70,109 +40,50 @@ export default class FormatText
    {
       return 'text';
    }
-
-   /**
-    * Formats a method report.
-    *
-    * @param {MethodReport}   methodReport - A method report.
-    *
-    * @returns {string}
-    */
-   _formatMethod(methodReport)
-   {
-      return StringUtil.safeStringsObject(methodReport, ...this._headers.moduleMethod);
-   }
-
-   /**
-    * Formats a module reports methods array.
-    *
-    * @param {Array<MethodReport>}  methodReports - An array of MethodReport instances to format.
-    *
-    * @returns {string}
-    */
-   _formatMethods(methodReports)
-   {
-      return methodReports.reduce((formatted, r) => { return `${formatted}\n${this._formatMethod(r)}`; }, '');
-   }
-
-   /**
-    * Formats a module report.
-    *
-    * @param {ModuleReport}   moduleReport - A module report.
-    * @param {boolean}        reportsAvailable - Indicates that the report metric data is available.
-    *
-    * @returns {string}
-    */
-   _formatModule(moduleReport, reportsAvailable)
-   {
-      if (reportsAvailable)
-      {
-         return StringUtil.safeStringsObject(moduleReport,
-            ...this._headers.moduleReport,
-            this._formatMethods(moduleReport.methods)
-         );
-      }
-      else
-      {
-         return `${moduleReport.srcPath}`;
-      }
-   }
-
-   /**
-    * Formats a project result.
-    *
-    * @param {ProjectResult}  projectResult - A project result.
-    *
-    * @returns {string}
-    */
-   _formatProject(projectResult)
-   {
-      return StringUtil.safeStringsObject(projectResult, ...this._headers.projectResult);
-   }
 }
 
 // Module private ---------------------------------------------------------------------------------------------------
+
+const s_SHARED_DATA =
+[
+   ['Line start: ',                      'lineStart'],
+   ['Line end: ',                        'lineEnd'],
+   ['Physical LOC: ',                    'sloc.physical'],
+   ['Logical LOC: ',                     'sloc.logical'],
+   ['Cyclomatic complexity: ',           'cyclomatic'],
+   ['Cyclomatic complexity density: ',   'cyclomaticDensity', 1, '%'],
+   ['Halstead difficulty: ',             'halstead.difficulty'],
+   ['Halstead volume: ',                 'halstead.volume'],
+   ['Halstead effort: ',                 'halstead.effort']
+];
 
 /**
  * Defines the default headers as text which are inserted via spread into `StringUtil.safeStringsObject`.
  * @type {{classMethod: *[], classReport: *[], moduleMethod: *[], moduleReport: *[]}}
  */
-const s_DEFAULT_HEADERS =
+const s_DEFAULT_KEYS =
 {
    classMethod:
    [
+      ...s_SHARED_DATA
    ],
 
    classReport:
    [
+      ...s_SHARED_DATA
    ],
 
-   moduleMethod:
+   methodReport:
    [
-      '\n',
-      ['  Function: ',                          'name'],
-      ['    Line start: ',                      'lineStart'],
-      ['    Line end: ',                        'lineEnd'],
-      ['    Physical LOC: ',                    'sloc.physical'],
-      ['    Logical LOC: ',                     'sloc.logical'],
-      ['    Parameter count: ',                 'params'],
-      ['    Cyclomatic complexity: ',           'cyclomatic'],
-      ['    Cyclomatic complexity density: ',   'cyclomaticDensity', 1, '%'],
-      ['    Halstead difficulty: ',             'halstead.difficulty'],
-      ['    Halstead volume: ',                 'halstead.volume'],
-      ['    Halstead effort: ',                 'halstead.effort', 0]
+      ...s_SHARED_DATA,
+      ['Parameter count: ', 'params']
    ],
 
    moduleReport:
    [
-      ['',                                   'srcPath', 2],
-      ['  Physical LOC: ',                   'aggregate.sloc.physical'],
-      ['  Logical LOC: ',                    'aggregate.sloc.logical'],
-      ['  Mean parameter count: ',           'params'],
-      ['  Cyclomatic complexity: ',          'aggregate.cyclomatic'],
-      ['  Cyclomatic complexity density: ',  'aggregate.cyclomaticDensity', 1, '%'],
-      ['  Maintainability index: ',          'maintainability'],
-      ['  Dependency count: ',               'dependencies.length', 0]
+      ...s_SHARED_DATA,
+      ['Maintainability index: ', 'maintainability'],
+      ['Dependency count: ', 'dependencies.length']
    ],
 
    projectResult:
@@ -184,6 +95,47 @@ const s_DEFAULT_HEADERS =
       ['Mean per-module maintainability index: ',     'maintainability'],
       ['First-order density: ',                       'firstOrderDensity', 1, '%'],
       ['Change cost: ',                               'changeCost', 1, '%'],
-      ['Core size: ',                                 'coreSize', 2, '%']
+      ['Core size: ',                                 'coreSize', 1, '%']
+   ]
+};
+
+/**
+ * Defines the default headers as text which are inserted via spread into `StringUtil.safeStringsObject`.
+ * @type {{classMethod: *[], classReport: *[], entryPrepend: string, moduleMethod: *[], moduleReport: string[], projectResult: string[]}}
+ */
+const s_DEFAULT_HEADERS =
+{
+   classMethod:
+   [
+      '\n',
+      ['Class method: ', 'name']
+   ],
+
+   classReport:
+   [
+      '\n',
+      ['Class: ', 'name']
+   ],
+
+   entryPrepend: '',
+
+   moduleMethod:
+   [
+      '\n',
+      ['Module method: ', 'name']
+   ],
+
+   moduleReport:
+   [
+      '\n',
+      'Module: \n',
+      ['   File path: ',       'filePath'],
+      ['   Source path: ',     'srcPath'],
+      ['   Source alias: ',    'srcPathAlias']
+   ],
+
+   projectResult:
+   [
+      'Project: \n'
    ]
 };
