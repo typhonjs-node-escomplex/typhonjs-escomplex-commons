@@ -18,6 +18,11 @@ const s_DEFAULT_KEYS =
  */
 export default class FormatJSONMinimal
 {
+   constructor(keys = s_DEFAULT_KEYS)
+   {
+      this._keys = keys;
+   }
+
    /**
     * Formats a module report as a JSON string.
     *
@@ -30,12 +35,15 @@ export default class FormatJSONMinimal
     *
     * @returns {object}
     */
-   formatReport(report, options = s_DEFAULT_KEYS)
+   formatReport(report, options = {})
    {
-      const output = this._formatModule(report, true, options);
+      let localOptions = Object.assign({}, this._keys);
+      localOptions = Object.assign(localOptions, options);
 
-      return typeof options === 'object' && Number.isInteger(options.spacing) ?
-       JSON.stringify(output, undefined, options.spacing) : JSON.stringify(output);
+      const output = this._formatModule(report, true, localOptions);
+
+      return typeof localOptions === 'object' && Number.isInteger(localOptions.spacing) ?
+       JSON.stringify(output, undefined, localOptions.spacing) : JSON.stringify(output);
    }
 
    /**
@@ -50,19 +58,22 @@ export default class FormatJSONMinimal
     *
     * @returns {string}
     */
-   formatResult(result, options = s_DEFAULT_KEYS)
+   formatResult(result, options = {})
    {
+      let localOptions = Object.assign({}, this._keys);
+      localOptions = Object.assign(localOptions, options);
+
       const output = { modules: [] };
 
       const reportsAvailable = result.getSetting('serializeReports', false);
 
       result.reports.forEach((report) =>
       {
-         output.modules.push(this._formatModule(report, reportsAvailable, options));
+         output.modules.push(this._formatModule(report, reportsAvailable, localOptions));
       });
 
-      return typeof options === 'object' && Number.isInteger(options.spacing) ?
-       JSON.stringify(output, undefined, options.spacing) : JSON.stringify(output);
+      return typeof localOptions === 'object' && Number.isInteger(localOptions.spacing) ?
+       JSON.stringify(output, undefined, localOptions.spacing) : JSON.stringify(output);
    }
 
    /**

@@ -42,6 +42,11 @@ const s_DEFAULT_THRESHOLDS =
  */
 export default class FormatJSONCheckstyle
 {
+   constructor(thresholds = s_DEFAULT_THRESHOLDS)
+   {
+      this._thresholds = thresholds;
+   }
+
    /**
     * Formats a module report as JSON / checkstyle.
     *
@@ -53,13 +58,16 @@ export default class FormatJSONCheckstyle
     *
     * @returns {string}
     */
-   formatReport(report, options = s_DEFAULT_THRESHOLDS)
+   formatReport(report, options = {})
    {
+      let localOptions = Object.assign({}, this._thresholds);
+      localOptions = Object.assign(localOptions, options);
+
       const output = { version: '7.0', file: [] };
 
-      output.file.push(this._formatModule(report, true, options));
+      output.file.push(this._formatModule(report, true, localOptions));
 
-      return typeof options === 'object' && Number.isInteger(options.spacing) ?
+      return typeof localOptions === 'object' && Number.isInteger(localOptions.spacing) ?
        JSON.stringify(output, undefined, options.spacing) : JSON.stringify(output);
    }
 
@@ -74,19 +82,22 @@ export default class FormatJSONCheckstyle
     *
     * @returns {string}
     */
-   formatResult(result, options = s_DEFAULT_THRESHOLDS)
+   formatResult(result, options = {})
    {
+      let localOptions = Object.assign({}, this._thresholds);
+      localOptions = Object.assign(localOptions, options);
+
       const reportsAvailable = result.getSetting('serializeReports', false);
 
       const output = { version: '7.0', file: [] };
 
       result.reports.forEach((report) =>
       {
-         output.file.push(this._formatModule(report, reportsAvailable, options));
+         output.file.push(this._formatModule(report, reportsAvailable, localOptions));
       });
 
-      return typeof options === 'object' && Number.isInteger(options.spacing) ?
-       JSON.stringify(output, undefined, options.spacing) : JSON.stringify(output);
+      return typeof localOptions === 'object' && Number.isInteger(localOptions.spacing) ?
+       JSON.stringify(output, undefined, localOptions.spacing) : JSON.stringify(output);
    }
 
    /**
