@@ -1,16 +1,20 @@
-import ModuleReport           from '../module/report/ModuleReport';
-import ProjectResult          from '../project/result/ProjectResult';
+import ModuleReport              from '../module/report/ModuleReport';
+import ProjectResult             from '../project/result/ProjectResult';
 
-import FormatJSON             from './formats/json/FormatJSON';
-import FormatJSONCheckstyle   from './formats/json/FormatJSONCheckstyle';
-import FormatJSONMinimal      from './formats/json/FormatJSONMinimal';
-import FormatJSONModules      from './formats/json/FormatJSONModules';
-import FormatMarkdown         from './formats/markdown/FormatMarkdown';
-import FormatMarkdownMinimal  from './formats/markdown/FormatMarkdownMinimal';
-import FormatMarkdownModules  from './formats/markdown/FormatMarkdownModules';
-import FormatText             from './formats/text/FormatText';
-import FormatTextMinimal      from './formats/text/FormatTextMinimal';
-import FormatTextModules      from './formats/text/FormatTextModules';
+import FormatJSON                from './formats/json/FormatJSON';
+import FormatJSONCheckstyle      from './formats/json/FormatJSONCheckstyle';
+import FormatJSONMinimal         from './formats/json/FormatJSONMinimal';
+import FormatJSONModules         from './formats/json/FormatJSONModules';
+import FormatMarkdown            from './formats/markdown/FormatMarkdown';
+import FormatMarkdownAdjacency   from './formats/markdown/FormatMarkdownAdjacency';
+import FormatMarkdownMinimal     from './formats/markdown/FormatMarkdownMinimal';
+import FormatMarkdownModules     from './formats/markdown/FormatMarkdownModules';
+import FormatMarkdownVisibility  from './formats/markdown/FormatMarkdownVisibility';
+import FormatText                from './formats/text/FormatText';
+import FormatTextAdjacency       from './formats/text/FormatTextAdjacency';
+import FormatTextMinimal         from './formats/text/FormatTextMinimal';
+import FormatTextModules         from './formats/text/FormatTextModules';
+import FormatTextVisibility      from './formats/text/FormatTextVisibility';
 
 /**
  * Stores all transform formats.
@@ -186,8 +190,12 @@ TransformFormat.addFormat(new FormatJSONCheckstyle());
 TransformFormat.addFormat(new FormatJSONMinimal());
 TransformFormat.addFormat(new FormatJSONModules());
 TransformFormat.addFormat(new FormatMarkdown());
+TransformFormat.addFormat(new FormatMarkdownAdjacency());
 TransformFormat.addFormat(new FormatMarkdownMinimal());
 TransformFormat.addFormat(new FormatMarkdownModules());
+TransformFormat.addFormat(new FormatMarkdownVisibility());
 TransformFormat.addFormat(new FormatText());
+TransformFormat.addFormat(new FormatTextAdjacency());
 TransformFormat.addFormat(new FormatTextMinimal());
 TransformFormat.addFormat(new FormatTextModules());
+TransformFormat.addFormat(new FormatTextVisibility());

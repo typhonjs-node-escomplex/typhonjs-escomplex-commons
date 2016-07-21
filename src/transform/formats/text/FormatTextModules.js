@@ -1,5 +1,4 @@
 import AbstractFormatTest  from './AbstractFormatText';
-import StringUtil          from '../../../utils/StringUtil';
 
 /**
  * Provides a format transform for ModuleReport / ProjectResult instances converting them to plain text with just
