@@ -94,18 +94,18 @@ if (testconfig.modules['projectResult'])
                assert.isUndefined(result.reports[0].srcPathAlias);
             });
 
-            test('toStringAdjacency is correct', () =>
+            test('toFormat / text-adjacency is correct', () =>
             {
-               const testString = '0:\t./a.js\n\t1:\t./b.js\n\n1:\t./b.js\n\t0:\t./a.js\n\n2:\t./c.js\n\t0:\t./a.js\n\t1:\t./b.js\n\n';
+               const testString = '1:\t./a.js\n\t2:\t./b.js\n\n2:\t./b.js\n\t1:\t./a.js\n\n3:\t./c.js\n\t1:\t./a.js\n\t2:\t./b.js\n\n';
 
-               assert.strictEqual(result.toStringAdjacency(), testString);
+               assert.strictEqual(result.toFormat('text-adjacency'), testString);
             });
 
-            test('toStringVisibility is correct', () =>
+            test('toFormat / text-visibility is correct', () =>
             {
-               const testString = '0:\t./a.js\n\t2:\t./c.js\n\n1:\t./b.js\n\t0:\t./a.js\n\n2:\t./c.js\n\t0:\t./a.js\n\t1:\t./b.js\n\t2:\t./c.js\n\n';
+               const testString = '1:\t./a.js\n\t3:\t./c.js\n\n2:\t./b.js\n\t1:\t./a.js\n\n3:\t./c.js\n\t1:\t./a.js\n\t2:\t./b.js\n\t3:\t./c.js\n\n';
 
-               assert.strictEqual(result.toStringVisibility(), testString);
+               assert.strictEqual(result.toFormat('text-visibility'), testString);
             });
          });
 
