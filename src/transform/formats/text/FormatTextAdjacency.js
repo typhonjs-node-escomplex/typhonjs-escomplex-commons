@@ -1,9 +1,9 @@
-import AbstractMatrixText  from './AbstractMatrixText';
+import AbstractTextMatrix  from './AbstractTextMatrix';
 
 /**
  * Provides a format transform for ModuleReport / ProjectResult instances converting a matrix list into plain text.
  */
-export default class FormatTextAdjacency extends AbstractMatrixText
+export default class FormatTextAdjacency extends AbstractTextMatrix
 {
    constructor(headers = {}, keys = {})
    {

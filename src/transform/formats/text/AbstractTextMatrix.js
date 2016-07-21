@@ -1,9 +1,9 @@
 import ObjectUtil from '../../../utils/ObjectUtil';
 
 /**
- * Provides the base text format transform for ModuleReport / ProjectResult instances.
+ * Provides the base text format transform for ProjectResult matrix list entries.
  */
-export default class AbstractMatrixText
+export default class AbstractTextMatrix
 {
    constructor(headers = {}, keys = {})
    {
@@ -53,7 +53,16 @@ export default class AbstractMatrixText
     * Returns a string representing the adjacency relationships by printing out the report index followed by
     * dependent ModuleReport indices / `srcPaths`.
     *
+    * @param {ProjectResult}                          result - A project result instance containing the matrix list.
+    *
+    * @param {Array<{row: number, cols: number[]}>}   matrixList - The matrix list to be serialized.
+    *
+    * @param {object}                                 options - (Optional) An object hash of options.
+    * @propert {boolean}                              zeroIndex - If true module report indexes are zero indexed.
+    * @propert {boolean}                              matrixFilePath - If true the module `filePath` is serialized.
+    *
     * @returns {string}
+    * @private
     */
    _formatMatrixList(result, matrixList, options)
    {
@@ -67,8 +76,11 @@ export default class AbstractMatrixText
          output += `${this._headers.entryPrepend}${entry.row + plus1}:\t${ObjectUtil.safeAccess(
           result.reports[entry.row], path)}\n`;
 
-         entry.cols.forEach((colIndex) => { output += `\t${this._headers.entryPrepend}${colIndex + plus1}:\t${
-          ObjectUtil.safeAccess(result.reports[colIndex], path)}\n`; });
+         entry.cols.forEach((colIndex) =>
+         {
+            output += `\t${this._headers.entryPrepend}${colIndex + plus1}:\t${ObjectUtil.safeAccess(
+             result.reports[colIndex], path)}\n`;
+         });
 
          output += '\n';
       });
