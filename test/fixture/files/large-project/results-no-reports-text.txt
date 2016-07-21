@@ -8,139 +8,139 @@ Project:
    Change cost: 14.965%
    Core size: 26.471%
 
-Module: 
+Module 1:
    File path: ./src/ESComplexProject.js
    Source path: ./src/ESComplexProject.js
 
-Module: 
+Module 2:
    File path: ./src/index.js
    Source path: ./src/index.js
 
-Module: 
+Module 3:
    File path: ./src/Plugins.js
    Source path: ./src/Plugins.js
 
-Module: 
+Module 4:
    File path: ./test/fixture/testImportNPMAlias.js
    Source path: ./test/fixture/testImportNPMAlias.js
 
-Module: 
+Module 5:
    File path: ./test/fixture/testRequireNPMAlias.js
    Source path: ./test/fixture/testRequireNPMAlias.js
 
-Module: 
+Module 6:
    File path: ./node_modules/typhonjs-escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js
    Source path: typhonjs-escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js
 
-Module: 
+Module 7:
    File path: ./node_modules/typhonjs-escomplex-commons/src/module/report/AbstractReport.js
    Source path: typhonjs-escomplex-commons/src/module/report/AbstractReport.js
 
-Module: 
+Module 8:
    File path: ./node_modules/typhonjs-escomplex-commons/src/module/report/ClassReport.js
    Source path: typhonjs-escomplex-commons/src/module/report/ClassReport.js
 
-Module: 
+Module 9:
    File path: ./node_modules/typhonjs-escomplex-commons/src/module/report/HalsteadData.js
    Source path: typhonjs-escomplex-commons/src/module/report/HalsteadData.js
 
-Module: 
+Module 10:
    File path: ./node_modules/typhonjs-escomplex-commons/src/module/report/MethodReport.js
    Source path: typhonjs-escomplex-commons/src/module/report/MethodReport.js
 
-Module: 
+Module 11:
    File path: ./node_modules/typhonjs-escomplex-commons/src/module/report/ModuleReport.js
    Source path: typhonjs-escomplex-commons/src/module/report/ModuleReport.js
 
-Module: 
+Module 12:
    File path: ./node_modules/typhonjs-escomplex-commons/src/module/traits/actualize.js
    Source path: typhonjs-escomplex-commons/src/module/traits/actualize.js
 
-Module: 
+Module 13:
    File path: ./node_modules/typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js
    Source path: typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js
 
-Module: 
+Module 14:
    File path: ./node_modules/typhonjs-escomplex-commons/src/module/traits/safeArray.js
    Source path: typhonjs-escomplex-commons/src/module/traits/safeArray.js
 
-Module: 
+Module 15:
    File path: ./node_modules/typhonjs-escomplex-commons/src/module/traits/safeName.js
    Source path: typhonjs-escomplex-commons/src/module/traits/safeName.js
 
-Module: 
+Module 16:
    File path: ./node_modules/typhonjs-escomplex-commons/src/module/traits/Trait.js
    Source path: typhonjs-escomplex-commons/src/module/traits/Trait.js
 
-Module: 
+Module 17:
    File path: ./node_modules/typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js
    Source path: typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js
 
-Module: 
+Module 18:
    File path: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatJSON.js
    Source path: typhonjs-escomplex-commons/src/project/result/formats/formatJSON.js
 
-Module: 
+Module 19:
    File path: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatJSONExpanded.js
    Source path: typhonjs-escomplex-commons/src/project/result/formats/formatJSONExpanded.js
 
-Module: 
+Module 20:
    File path: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatMarkdown.js
    Source path: typhonjs-escomplex-commons/src/project/result/formats/formatMarkdown.js
 
-Module: 
+Module 21:
    File path: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatText.js
    Source path: typhonjs-escomplex-commons/src/project/result/formats/formatText.js
 
-Module: 
+Module 22:
    File path: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatTextMinimal.js
    Source path: typhonjs-escomplex-commons/src/project/result/formats/formatTextMinimal.js
 
-Module: 
+Module 23:
    File path: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatTextModules.js
    Source path: typhonjs-escomplex-commons/src/project/result/formats/formatTextModules.js
 
-Module: 
+Module 24:
    File path: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatXML.js
    Source path: typhonjs-escomplex-commons/src/project/result/formats/formatXML.js
 
-Module: 
+Module 25:
    File path: ./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatXMLCheckstyle.js
    Source path: typhonjs-escomplex-commons/src/project/result/formats/formatXMLCheckstyle.js
 
-Module: 
+Module 26:
    File path: ./node_modules/typhonjs-escomplex-commons/src/project/result/ProjectFormatter.js
    Source path: typhonjs-escomplex-commons/src/project/result/ProjectFormatter.js
 
-Module: 
+Module 27:
    File path: ./node_modules/typhonjs-escomplex-commons/src/project/result/ProjectResult.js
    Source path: typhonjs-escomplex-commons/src/project/result/ProjectResult.js
 
-Module: 
+Module 28:
    File path: ./node_modules/typhonjs-escomplex-commons/src/utils/MathUtil.js
    Source path: typhonjs-escomplex-commons/src/utils/MathUtil.js
 
-Module: 
+Module 29:
    File path: ./node_modules/typhonjs-escomplex-commons/src/utils/ObjectUtil.js
    Source path: typhonjs-escomplex-commons/src/utils/ObjectUtil.js
 
-Module: 
+Module 30:
    File path: ./node_modules/typhonjs-escomplex-commons/src/utils/StringUtil.js
    Source path: typhonjs-escomplex-commons/src/utils/StringUtil.js
 
-Module: 
+Module 31:
    File path: ./node_modules/typhonjs-escomplex-commons/src/utils/XMLUtil.js
    Source path: typhonjs-escomplex-commons/src/utils/XMLUtil.js
 
-Module: 
+Module 32:
    File path: ./node_modules/typhonjs-escomplex-module/src/ESComplexModule.js
    Source path: typhonjs-escomplex-module/src/ESComplexModule.js
 
-Module: 
+Module 33:
    File path: ./node_modules/typhonjs-escomplex-module/src/index.js
    Source path: typhonjs-escomplex-module/src/index.js
    Source alias: typhonjs-escomplex-module
 
-Module: 
+Module 34:
    File path: ./node_modules/typhonjs-escomplex-module/src/Plugins.js
    Source path: typhonjs-escomplex-module/src/Plugins.js

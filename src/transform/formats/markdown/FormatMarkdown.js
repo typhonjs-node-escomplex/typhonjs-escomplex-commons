@@ -71,7 +71,7 @@ const s_DEFAULT_HEADERS =
    moduleReport:
    [
       '\n',
-      '* Module: \n',
+      ['* Module ', '___modulecntrplus1___', 1, ':'],
       ['   * File path: `',       'filePath', 1, '`'],
       ['   * Source path: `',     'srcPath', 1, '`'],
       ['   * Source alias: `',    'srcPathAlias', 1, '`']

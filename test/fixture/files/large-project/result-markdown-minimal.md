@@ -719,4 +719,3 @@
       * Class method: **onModuleEnd** (125)
          * cyclomatic: 1
          * halstead.difficulty: 3
-

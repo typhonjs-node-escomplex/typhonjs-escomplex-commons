@@ -8,7 +8,7 @@
    * Change cost: 14.965%
    * Core size: 26.471%
 
-* Module: 
+* Module 1:
    * File path: `./src/ESComplexProject.js`
    * Source path: `./src/ESComplexProject.js`
    * Line start: 1
@@ -21,7 +21,7 @@
       * Line start: 11
       * Line end: 240
       * Cyclomatic complexity: 3
-         
+      
       * Class method: **constructor**
          * Line start: 44
          * Line end: 103
@@ -118,7 +118,7 @@
          * Halstead effort: 106.776
          * Parameter count: 2
 
-* Module: 
+* Module 2:
    * File path: `./src/index.js`
    * Source path: `./src/index.js`
    * Line start: 1
@@ -127,7 +127,7 @@
    * Maintainability index: 171
    * Dependency count: 2
 
-* Module: 
+* Module 3:
    * File path: `./src/Plugins.js`
    * Source path: `./src/Plugins.js`
    * Line start: 1
@@ -140,7 +140,7 @@
       * Line start: 12
       * Line end: 88
       * Cyclomatic complexity: 2.5
-         
+      
       * Class method: **constructor**
          * Line start: 23
          * Line end: 37
@@ -189,7 +189,7 @@
          * Halstead effort: 870.68
          * Parameter count: 2
 
-* Module: 
+* Module 4:
    * File path: `./test/fixture/testImportNPMAlias.js`
    * Source path: `./test/fixture/testImportNPMAlias.js`
    * Line start: 1
@@ -198,7 +198,7 @@
    * Maintainability index: 171
    * Dependency count: 1
 
-* Module: 
+* Module 5:
    * File path: `./test/fixture/testRequireNPMAlias.js`
    * Source path: `./test/fixture/testRequireNPMAlias.js`
    * Line start: 1
@@ -207,7 +207,7 @@
    * Maintainability index: 160.237
    * Dependency count: 1
 
-* Module: 
+* Module 6:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js`
    * Source path: `typhonjs-escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js`
    * Line start: 1
@@ -244,7 +244,7 @@
       * Line start: 6
       * Line end: 23
       * Cyclomatic complexity: 4
-         
+      
       * Class method: **onLoadSyntax**
          * Line start: 13
          * Line end: 22
@@ -257,7 +257,7 @@
          * Halstead effort: 2006.954
          * Parameter count: 1
 
-* Module: 
+* Module 7:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
    * Source path: `typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
    * Line start: 1
@@ -270,7 +270,7 @@
       * Line start: 5
       * Line end: 106
       * Cyclomatic complexity: 1.25
-         
+      
       * Class method: **constructor**
          * Line start: 13
          * Line end: 21
@@ -367,7 +367,7 @@
          * Halstead effort: 219.714
          * Parameter count: 2
 
-* Module: 
+* Module 8:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/report/ClassReport.js`
    * Source path: `typhonjs-escomplex-commons/src/module/report/ClassReport.js`
    * Line start: 1
@@ -380,7 +380,7 @@
       * Line start: 9
       * Line end: 91
       * Cyclomatic complexity: 1.4
-         
+      
       * Class method: **constructor**
          * Line start: 18
          * Line end: 51
@@ -441,7 +441,7 @@
          * Halstead effort: 36.189
          * Parameter count: 1
 
-* Module: 
+* Module 9:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
    * Source path: `typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
    * Line start: 1
@@ -454,7 +454,7 @@
       * Line start: 5
       * Line end: 87
       * Cyclomatic complexity: 1.667
-         
+      
       * Class method: **constructor**
          * Line start: 10
          * Line end: 66
@@ -491,7 +491,7 @@
          * Halstead effort: 180.289
          * Parameter count: 1
 
-* Module: 
+* Module 10:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/report/MethodReport.js`
    * Source path: `typhonjs-escomplex-commons/src/module/report/MethodReport.js`
    * Line start: 1
@@ -504,7 +504,7 @@
       * Line start: 9
       * Line end: 145
       * Cyclomatic complexity: 2.4
-         
+      
       * Class method: **constructor**
          * Line start: 19
          * Line end: 70
@@ -565,7 +565,7 @@
          * Halstead effort: 5697.958
          * Parameter count: 2
 
-* Module: 
+* Module 11:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
    * Source path: `typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
    * Line start: 1
@@ -578,7 +578,7 @@
       * Line start: 15
       * Line end: 388
       * Cyclomatic complexity: 2.158
-         
+      
       * Class method: **constructor**
          * Line start: 26
          * Line end: 134
@@ -807,7 +807,7 @@
          * Halstead effort: 2654.182
          * Parameter count: 2
 
-* Module: 
+* Module 12:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/traits/actualize.js`
    * Source path: `typhonjs-escomplex-commons/src/module/traits/actualize.js`
    * Line start: 1
@@ -828,7 +828,7 @@
       * Halstead effort: 1737.459
       * Parameter count: 7
 
-* Module: 
+* Module 13:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js`
    * Source path: `typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js`
    * Line start: 1
@@ -841,7 +841,7 @@
       * Line start: 7
       * Line end: 105
       * Cyclomatic complexity: 1.5
-         
+      
       * Class method: **constructor**
          * Line start: 15
          * Line end: 40
@@ -962,7 +962,7 @@
          * Halstead effort: 59.89
          * Parameter count: 1
 
-* Module: 
+* Module 14:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/traits/safeArray.js`
    * Source path: `typhonjs-escomplex-commons/src/module/traits/safeArray.js`
    * Line start: 1
@@ -983,7 +983,7 @@
       * Halstead effort: 621.674
       * Parameter count: 1
 
-* Module: 
+* Module 15:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/traits/safeName.js`
    * Source path: `typhonjs-escomplex-commons/src/module/traits/safeName.js`
    * Line start: 1
@@ -1004,7 +1004,7 @@
       * Halstead effort: 1507.571
       * Parameter count: 2
 
-* Module: 
+* Module 16:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/traits/Trait.js`
    * Source path: `typhonjs-escomplex-commons/src/module/traits/Trait.js`
    * Line start: 1
@@ -1017,7 +1017,7 @@
       * Line start: 4
       * Line end: 65
       * Cyclomatic complexity: 1.8
-         
+      
       * Class method: **constructor**
          * Line start: 12
          * Line end: 30
@@ -1078,7 +1078,7 @@
          * Halstead effort: 228.235
          * Parameter count: 1
 
-* Module: 
+* Module 17:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js`
    * Source path: `typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js`
    * Line start: 1
@@ -1091,7 +1091,7 @@
       * Line start: 5
       * Line end: 117
       * Cyclomatic complexity: 3.143
-         
+      
       * Class method: **constructor**
          * Line start: 13
          * Line end: 61
@@ -1176,7 +1176,7 @@
          * Halstead effort: 879.05
          * Parameter count: 1
 
-* Module: 
+* Module 18:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatJSON.js`
    * Source path: `typhonjs-escomplex-commons/src/project/result/formats/formatJSON.js`
    * Line start: 1
@@ -1197,7 +1197,7 @@
       * Halstead effort: 36.189
       * Parameter count: 1
 
-* Module: 
+* Module 19:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatJSONExpanded.js`
    * Source path: `typhonjs-escomplex-commons/src/project/result/formats/formatJSONExpanded.js`
    * Line start: 1
@@ -1218,7 +1218,7 @@
       * Halstead effort: 48.6
       * Parameter count: 1
 
-* Module: 
+* Module 20:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatMarkdown.js`
    * Source path: `typhonjs-escomplex-commons/src/project/result/formats/formatMarkdown.js`
    * Line start: 1
@@ -1311,7 +1311,7 @@
       * Halstead effort: 714.474
       * Parameter count: 1
 
-* Module: 
+* Module 21:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatText.js`
    * Source path: `typhonjs-escomplex-commons/src/project/result/formats/formatText.js`
    * Line start: 1
@@ -1404,7 +1404,7 @@
       * Halstead effort: 702.929
       * Parameter count: 1
 
-* Module: 
+* Module 22:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatTextMinimal.js`
    * Source path: `typhonjs-escomplex-commons/src/project/result/formats/formatTextMinimal.js`
    * Line start: 1
@@ -1485,7 +1485,7 @@
       * Halstead effort: 31.02
       * Parameter count: 2
 
-* Module: 
+* Module 23:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatTextModules.js`
    * Source path: `typhonjs-escomplex-commons/src/project/result/formats/formatTextModules.js`
    * Line start: 1
@@ -1518,7 +1518,7 @@
       * Halstead effort: 31.02
       * Parameter count: 2
 
-* Module: 
+* Module 24:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatXML.js`
    * Source path: `typhonjs-escomplex-commons/src/project/result/formats/formatXML.js`
    * Line start: 1
@@ -1671,7 +1671,7 @@
       * Halstead effort: 315.771
       * Parameter count: 2
 
-* Module: 
+* Module 25:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/project/result/formats/formatXMLCheckstyle.js`
    * Source path: `typhonjs-escomplex-commons/src/project/result/formats/formatXMLCheckstyle.js`
    * Line start: 1
@@ -1752,7 +1752,7 @@
       * Halstead effort: 2152.627
       * Parameter count: 2
 
-* Module: 
+* Module 26:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/project/result/ProjectFormatter.js`
    * Source path: `typhonjs-escomplex-commons/src/project/result/ProjectFormatter.js`
    * Line start: 1
@@ -1765,7 +1765,7 @@
       * Line start: 13
       * Line end: 68
       * Cyclomatic complexity: 6
-         
+      
       * Class method: **getTypes**
          * Line start: 20
          * Line end: 23
@@ -1790,7 +1790,7 @@
          * Halstead effort: 2985.632
          * Parameter count: 2
 
-* Module: 
+* Module 27:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
    * Source path: `typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
    * Line start: 1
@@ -1803,7 +1803,7 @@
       * Line start: 14
       * Line end: 222
       * Cyclomatic complexity: 1.571
-         
+      
       * Class method: **constructor**
          * Line start: 24
          * Line end: 107
@@ -1972,7 +1972,7 @@
          * Halstead effort: 58.134
          * Parameter count: 1
 
-* Module: 
+* Module 28:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/utils/MathUtil.js`
    * Source path: `typhonjs-escomplex-commons/src/utils/MathUtil.js`
    * Line start: 1
@@ -1985,7 +1985,7 @@
       * Line start: 6
       * Line end: 115
       * Cyclomatic complexity: 2
-         
+      
       * Class method: **compactMatrix**
          * Line start: 19
          * Line end: 33
@@ -2094,7 +2094,7 @@
          * Halstead effort: 840.849
          * Parameter count: 1
 
-* Module: 
+* Module 29:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
    * Source path: `typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
    * Line start: 1
@@ -2119,7 +2119,7 @@
       * Line start: 4
       * Line end: 25
       * Cyclomatic complexity: 3
-         
+      
       * Class method: **depthTraverse**
          * Line start: 15
          * Line end: 24
@@ -2132,7 +2132,7 @@
          * Halstead effort: 555.511
          * Parameter count: 2
 
-* Module: 
+* Module 30:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/utils/StringUtil.js`
    * Source path: `typhonjs-escomplex-commons/src/utils/StringUtil.js`
    * Line start: 1
@@ -2145,7 +2145,7 @@
       * Line start: 4
       * Line end: 44
       * Cyclomatic complexity: 1
-         
+      
       * Class method: **compare**
          * Line start: 14
          * Line end: 17
@@ -2182,7 +2182,7 @@
          * Halstead effort: 172.846
          * Parameter count: 2
 
-* Module: 
+* Module 31:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/utils/XMLUtil.js`
    * Source path: `typhonjs-escomplex-commons/src/utils/XMLUtil.js`
    * Line start: 1
@@ -2195,7 +2195,7 @@
       * Line start: 6
       * Line end: 83
       * Cyclomatic complexity: 1.4
-         
+      
       * Class method: **createElement**
          * Line start: 18
          * Line end: 21
@@ -2256,7 +2256,7 @@
          * Halstead effort: 1
          * Parameter count: 0
 
-* Module: 
+* Module 32:
    * File path: `./node_modules/typhonjs-escomplex-module/src/ESComplexModule.js`
    * Source path: `typhonjs-escomplex-module/src/ESComplexModule.js`
    * Line start: 1
@@ -2269,7 +2269,7 @@
       * Line start: 8
       * Line end: 86
       * Cyclomatic complexity: 1.667
-         
+      
       * Class method: **constructor**
          * Line start: 19
          * Line end: 30
@@ -2342,7 +2342,7 @@
          * Halstead effort: 106.776
          * Parameter count: 2
 
-* Module: 
+* Module 33:
    * File path: `./node_modules/typhonjs-escomplex-module/src/index.js`
    * Source path: `typhonjs-escomplex-module/src/index.js`
    * Source alias: `typhonjs-escomplex-module`
@@ -2352,7 +2352,7 @@
    * Maintainability index: 171
    * Dependency count: 1
 
-* Module: 
+* Module 34:
    * File path: `./node_modules/typhonjs-escomplex-module/src/Plugins.js`
    * Source path: `typhonjs-escomplex-module/src/Plugins.js`
    * Line start: 1
@@ -2365,7 +2365,7 @@
       * Line start: 16
       * Line end: 130
       * Cyclomatic complexity: 1.714
-         
+      
       * Class method: **constructor**
          * Line start: 27
          * Line end: 42

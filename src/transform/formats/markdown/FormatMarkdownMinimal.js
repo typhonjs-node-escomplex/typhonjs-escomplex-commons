@@ -8,9 +8,9 @@ import StringUtil          from '../../../utils/StringUtil';
  */
 export default class FormatMarkdownMinimal extends FormatTextMinimal
 {
-   constructor(headers = s_MARKDOWN_HEADERS)
+   constructor(headers = {}, keys = {})
    {
-      super(headers);
+      super(Object.assign(Object.assign({}, s_DEFAULT_HEADERS), headers), keys);
    }
 
    /**
@@ -37,42 +37,42 @@ export default class FormatMarkdownMinimal extends FormatTextMinimal
 // Module private ---------------------------------------------------------------------------------------------------
 
 /**
- * Defines markdown headers as text which are inserted via spread into `StringUtil.safeStringsObject`.
+ * Defines the default headers as markdown which are inserted via spread into `StringUtil.safeStringsObject`.
  * @type {{classMethod: *[], classReport: *[], moduleMethod: *[], moduleReport: *[]}}
- * @ignore
  */
-const s_MARKDOWN_HEADERS =
+const s_DEFAULT_HEADERS =
 {
    classMethod:
    [
-      ['* Class method: **', 'name', 0, '**', StringUtil.tagEscapeHTML],
-      [' (', 'lineStart', 0, ')']
+      ['* Class method: **', 'name', 0, '', StringUtil.tagEscapeHTML],
+      ['** (', 'lineStart', 1, ')']
    ],
 
    classReport:
    [
-      ['* Class: **', 'name', 0, '**', StringUtil.tagEscapeHTML],
-      [' (', 'lineStart', 0, ')']
+      ['* Class: **', 'name', 0, '', StringUtil.tagEscapeHTML],
+      ['** (', 'lineStart', 1, ')']
    ],
 
    entryPrepend: '* ',
 
    moduleMethod:
    [
-      ['* Module method: **', 'name', 0, '**', StringUtil.tagEscapeHTML],
-      [' (', 'lineStart', 0, ')']
+      ['* Module method: **', 'name', 0, '', StringUtil.tagEscapeHTML],
+      ['** (', 'lineStart', 1, ')']
    ],
 
    moduleReport:
    [
-      ['* Module ', '___modulecntrplus1___', 0, ':'],
-      ['\n   * filePath: `', 'filePath', 0, '`'],
-      ['\n   * srcPath: `', 'srcPath', 0, '`'],
-      ['\n   * srcPathAlias: `', 'srcPathAlias', 0, '`']
+      '\n',
+      ['* Module ', '___modulecntrplus1___', 1, ':'],
+      ['   * filePath: `', 'filePath', 1, '`'],
+      ['   * srcPath: `', 'srcPath', 1, '`'],
+      ['   * srcPathAlias: `', 'srcPathAlias', 1, '`']
    ],
 
-   projectReport:
+   projectResult:
    [
-      '* Project:'
+      '* Project:\n'
    ]
 };

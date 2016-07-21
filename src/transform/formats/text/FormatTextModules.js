@@ -1,74 +1,15 @@
-import StringUtil from '../../../utils/StringUtil';
+import AbstractFormatTest  from './AbstractFormatText';
+import StringUtil          from '../../../utils/StringUtil';
 
 /**
  * Provides a format transform for ModuleReport / ProjectResult instances converting them to plain text with just
  * modules.
  */
-export default class FormatTextModules
+export default class FormatTextModules extends AbstractFormatTest
 {
-   constructor(header = s_DEFAULT_HEADER)
+   constructor(headers = {}, keys = {})
    {
-      this._header = header;
-   }
-
-   /**
-    * Formats a module report as plain text just including `filePath`, `srcPath`, `srcPathAlias` if defined. Please
-    * note that this only works for ModuleReports defined in a ProjectResult.
-    *
-    * @param {ModuleReport}   report - A module report.
-    *
-    * @returns {string}
-    */
-   formatReport(report)
-   {
-      let output = '';
-
-      // Add / remove a temporary entries for the current module index.
-      try
-      {
-         report.___modulecntr___ = 0;
-         report.___modulecntrplus1___ = 1;
-
-         output = StringUtil.safeStringsObject(report, ...this._header.moduleReport);
-      }
-      finally
-      {
-         delete report.___modulecntr___;
-         delete report.___modulecntrplus1___;
-      }
-
-      return output;
-   }
-
-   /**
-    * Formats a project result modules as plain text just including `filePath`, `srcPath`, `srcPathAlias` if defined.
-    *
-    * @param {ProjectResult}  result - A project result.
-    *
-    * @returns {string}
-    */
-   formatResult(result)
-   {
-      return result.reports.reduce((formatted, moduleReport, index) =>
-      {
-         let current = '';
-
-         // Add / remove a temporary entries for the current module index.
-         try
-         {
-            moduleReport.___modulecntr___ = index;
-            moduleReport.___modulecntrplus1___ = index + 1;
-
-            current = `${formatted}${StringUtil.safeStringsObject(moduleReport, ...this._header.moduleReport)}\n`;
-         }
-         finally
-         {
-            delete moduleReport.___modulecntr___;
-            delete moduleReport.___modulecntrplus1___;
-         }
-
-         return current;
-      }, '');
+      super(Object.assign(Object.assign({}, s_DEFAULT_HEADERS), headers), keys);
    }
 
    /**
@@ -108,13 +49,14 @@ export default class FormatTextModules
  *
  * @type {{moduleReport: *[]}}
  */
-const s_DEFAULT_HEADER =
+const s_DEFAULT_HEADERS =
 {
    moduleReport:
    [
       ['Module ', '___modulecntrplus1___', 1, ':'],
       ['filePath: ', 'filePath'],
       ['srcPath: ', 'srcPath'],
-      ['srcPathAlias: ', 'srcPathAlias']
+      ['srcPathAlias: ', 'srcPathAlias'],
+      '\n'
    ]
 };

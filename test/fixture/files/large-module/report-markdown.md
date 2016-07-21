@@ -1,5 +1,4 @@
-
-* Module: 
+* Module 1:
    * Line start: 1
    * Line end: 1120
    * Cyclomatic complexity: 3.889
@@ -70,7 +69,7 @@
       * Line start: 90
       * Line end: 945
       * Cyclomatic complexity: 3.742
-         
+      
       * Class method: **constructor**
          * Line start: 105
          * Line end: 145

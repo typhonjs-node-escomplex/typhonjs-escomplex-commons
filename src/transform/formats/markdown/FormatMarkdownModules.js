@@ -1,13 +1,13 @@
-import FormatTextModules   from '../text/FormatTextModules';
+import AbstractFormatText  from '../text/AbstractFormatText';
 
 /**
  * Provides a format transform for ModuleReport / ProjectResult instances converting them to markdown with just modules.
  */
-export default class FormatMarkdownModules extends FormatTextModules
+export default class FormatMarkdownModules extends AbstractFormatText
 {
-   constructor(headers = s_MARKDOWN_HEADERS)
+   constructor(headers = {}, keys = {})
    {
-      super(headers);
+      super(Object.assign(Object.assign({}, s_DEFAULT_HEADERS), headers), keys);
    }
 
    /**
@@ -29,6 +29,16 @@ export default class FormatMarkdownModules extends FormatTextModules
    {
       return 'markdown-modules';
    }
+
+   /**
+    * Gets the format type.
+    *
+    * @returns {string}
+    */
+   get type()
+   {
+      return 'modules';
+   }
 }
 
 // Module private ---------------------------------------------------------------------------------------------------
@@ -38,13 +48,14 @@ export default class FormatMarkdownModules extends FormatTextModules
  * @type {{classMethod: *[], classReport: *[], moduleMethod: *[], moduleReport: *[]}}
  * @ignore
  */
-const s_MARKDOWN_HEADERS =
+const s_DEFAULT_HEADERS =
 {
    moduleReport:
    [
       ['* Module ', '___modulecntrplus1___', 1, ':'],
       ['   * filePath: `', 'filePath', 1, '`'],
       ['   * srcPath: `', 'srcPath', 1, '`'],
-      ['   * srcPathAlias: `', 'srcPathAlias', 1, '`']
+      ['   * srcPathAlias: `', 'srcPathAlias', 1, '`'],
+      '\n'
    ]
 };

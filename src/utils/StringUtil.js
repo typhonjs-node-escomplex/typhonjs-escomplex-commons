@@ -98,15 +98,44 @@ export default class StringUtil
       return StringUtil.safeStringsPrependObject('', object, ...entries);
    }
 
-   static safeStringsPrependObject(prepend, object, ...entries)
+   /**
+    * Provides a convenience method producing a block of safeStringObject results with the option to prepend a
+    * given string.
+    *
+    * @param {*}              origPrepend - An additional value to prepend to all results.
+    *
+    * @param {object}         object - An object to access entry data.
+    *
+    * @param {string|Array<string|number|function>}  entries -
+    *                                  Multiple arrays or strings. If the entry is not an array it will simply
+    *                                  be appended. If the entry is an array then entries in this array correspond
+    *                                  to the following parameters which are forwarded onto `safeStringObject`.
+    *                                  The indexes correspond to the following:
+    * ```
+    * [0] (string) - The string to prepend.
+    * [1] (string) - The accessor string describing the lookup operation.
+    * [2] (number) - (Optional) The number of newlines characters to append.
+    * [3] (string) - (Optional) A string to append to the end.
+    * [4] (function) - (Optional) A template tag function to apply.
+    * ```
+    *
+    * @returns {string}
+    */
+   static safeStringsPrependObject(origPrepend, object, ...entries)
    {
       if (typeof object !== 'object') { return ''; }
 
       const output = [];
 
+      let skipPrepend = false;
+
       for (let cntr = 0; cntr < entries.length; cntr++)
       {
          const entry = entries[cntr];
+
+         // Skip prepend action if last entry did not include a new line.
+         const prepend = skipPrepend ? '' : origPrepend;
+         skipPrepend = Array.isArray(entry) && typeof entry[2] === 'number' && entry[2] === 0;
 
          // Process an array entry otherwise simply append `entry` to output if it is a string.
          if (Array.isArray(entry))
@@ -136,7 +165,7 @@ export default class StringUtil
                    `safeStringsPrependObject error: entry at '${cntr}' has the wrong length '${entry.length}'.`);
             }
          }
-         else if (typeof entry === 'string')
+         else if (typeof entry === 'string' && entry !== '')
          {
             output.push(`${prepend}${entry}`);
          }

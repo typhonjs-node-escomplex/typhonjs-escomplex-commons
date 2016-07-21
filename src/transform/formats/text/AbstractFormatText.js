@@ -44,7 +44,8 @@ export default class AbstractFormatText
          delete report.___modulecntrplus1___;
       }
 
-      return output;
+      // For reports remove any existing new line at the beginning.
+      return output.replace(/^[\n]/, '');
    }
 
    /**
@@ -103,14 +104,15 @@ export default class AbstractFormatText
     */
    _formatClass(classReport, options, prepend = '')
    {
+      if (!Array.isArray(this._headers.classReport)) { return ''; }
+
       const indent = typeof options.indent === 'boolean' && !options.indent ? '' : '   ';
       const indent2 = typeof options.indent === 'boolean' && !options.indent ? '' : '      ';
 
-      return StringUtil.safeStringsPrependObject(prepend, classReport,
-         ...this._headers.classReport,
-         ...this._formatEntries(classReport, options.classReport, indent),
-         this._formatMethods(classReport.methods, options, indent2, false)
-      );
+      // Must concatenate class methods so that the initial prepend isn't displayed twice.
+      return `${StringUtil.safeStringsPrependObject(prepend, classReport, ...this._headers.classReport,
+       ...this._formatEntries(classReport, options.classReport, indent))}${this._formatMethods(
+        classReport.methods, options, indent2, false)}`;
    }
 
    /**
@@ -128,9 +130,11 @@ export default class AbstractFormatText
     */
    _formatClasses(classReports, options, prepend = '')
    {
-      return classReports.reduce((formatted, r) =>
+      if (!Array.isArray(classReports)) { return ''; }
+
+      return classReports.reduce((formatted, classReport) =>
       {
-         return `${formatted}${this._formatClass(r, options, prepend)}`;
+         return `${formatted}${this._formatClass(classReport, options, prepend)}`;
       }, '');
    }
 
@@ -149,6 +153,8 @@ export default class AbstractFormatText
    {
       if (!Array.isArray(entries)) { return ''; }
 
+      const entryPrepend = typeof this._headers.entryPrepend === 'string' ? this._headers.entryPrepend : '';
+
       const output = [];
 
       entries.forEach((entry) =>
@@ -157,11 +163,11 @@ export default class AbstractFormatText
 
          if (Array.isArray(entry))
          {
-            value = StringUtil.safeStringsPrependObject(`${prepend}${this._headers.entryPrepend}`, report, entry);
+            value = StringUtil.safeStringsPrependObject(`${prepend}${entryPrepend}`, report, entry);
          }
          else if (typeof entry === 'string')
          {
-            value = StringUtil.safeStringObject(`${prepend}${this._headers.entryPrepend}${entry}: `, report, entry, 0);
+            value = StringUtil.safeStringObject(`${prepend}${entryPrepend}${entry}: `, report, entry, 1);
          }
 
          if (typeof value === 'string' && value !== '') { output.push(value); }
@@ -186,6 +192,9 @@ export default class AbstractFormatText
     */
    _formatMethod(methodReport, options, prepend = '', isModule = true)
    {
+      // Skip processing if there are no headers.
+      if (!Array.isArray(this._headers.classMethod) || !Array.isArray(this._headers.moduleMethod)) { return ''; }
+
       const indent = typeof options.indent === 'boolean' && !options.indent ? '' : '   ';
 
       return StringUtil.safeStringsPrependObject(prepend, methodReport,
@@ -210,6 +219,8 @@ export default class AbstractFormatText
     */
    _formatMethods(methodReports, options, prepend = '', isModule = true)
    {
+      if (!Array.isArray(methodReports)) { return ''; }
+
       return methodReports.reduce((formatted, methodReport) =>
       {
          return `${formatted}${this._formatMethod(methodReport, options, prepend, isModule)}`;
@@ -232,6 +243,9 @@ export default class AbstractFormatText
     */
    _formatModule(moduleReport, reportsAvailable, options)
    {
+      // Skip processing if there are no headers.
+      if (!Array.isArray(this._headers.moduleReport)) { return ''; }
+
       const indent = typeof options.indent === 'boolean' && !options.indent ? '' : '   ';
 
       if (reportsAvailable)
@@ -251,6 +265,9 @@ export default class AbstractFormatText
 
    _formatProject(projectResult, options)
    {
+      // Skip processing if there are no headers.
+      if (!Array.isArray(this._headers.projectResult)) { return ''; }
+
       const indent = typeof options.indent === 'boolean' && !options.indent ? '' : '   ';
 
       return StringUtil.safeStringsObject(projectResult,
