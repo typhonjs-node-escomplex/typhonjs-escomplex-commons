@@ -95,7 +95,7 @@ export default class TraitHalstead
     *
     * @param {*}  params - Provides parameters which are forwarded onto any data stored as a function.
     *
-    * @returns {string|Array<string>}
+    * @returns {*|Array<*>}
     */
    valueOf(...params)
    {
@@ -103,15 +103,10 @@ export default class TraitHalstead
       {
          return this._data.identifier.map((entry) =>
          {
-            const value = typeof entry === 'function' ? entry(...params) : entry;
-
-            return typeof value !== 'string' ? JSON.stringify(value) : value;
+            return typeof entry === 'function' ? entry(...params) : entry;
          });
       }
 
-      const value = typeof this._data.identifier === 'function' ? this._data.identifier(...params) :
-       this._data.identifier;
-
-      return typeof value !== 'string' ? JSON.stringify(value) : value;
+      return typeof this._data.identifier === 'function' ? this._data.identifier(...params) : this._data.identifier;
    }
 }

@@ -42,11 +42,12 @@ export default class HalsteadArray
    /**
     * Allows custom processing of TraitHalstead data.
     *
-    * @param {function} method - A custom method to process each TraitHalstead data.
+    * @param {function} callback - A custom method to process each TraitHalstead data.
+    * @param {object}   thisArg - The this `this` scope to run callback with.
     */
-   forEach(method)
+   forEach(callback, thisArg)
    {
-      this._data.forEach(method);
+      this._data.forEach(callback, thisArg);
    }
 
    /**
@@ -99,7 +100,25 @@ export default class HalsteadArray
          return typeof traitHalstead.valueOf(...params) !== 'undefined' && traitHalstead.filter(...params);
       });
 
-      // Map all TraitHalstead data and flatten any array of identifiers returned from `valueOf`.
-      return [].concat(...filtered.map((traitHalstead) => { return traitHalstead.valueOf(...params); }));
+      // Map all TraitHalstead data and flatten any array of identifiers returned from `valueOf` and finally convert
+      // all flattened identifiers to strings as necessary.
+      return ([].concat(...filtered.map((traitHalstead) =>
+      {
+         return traitHalstead.valueOf(...params);
+      }))).map((entry) =>
+      {
+         // Convert any undefined entry to a text string. This should only be possible when a TraitHalstead defined
+         // as a function returns an array containing `undefined`; in this case there is an issue with a syntax trait
+         // definition not properly verifying data.
+
+         /* istanbul ignore if */
+         if (entry === void 0)
+         {
+            console.warn(`HalsteadArray valueOf warning: undefined TraitHalstead item entry converted to a 'string'.`);
+            entry = 'undefined';
+         }
+
+         return typeof entry !== 'string' ? JSON.stringify(entry) : entry;
+      });
    }
 }

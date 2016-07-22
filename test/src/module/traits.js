@@ -241,6 +241,67 @@ if (testconfig.modules['moduleTraits'])
             });
          });
 
+         suite('multiple identifiers / raw TraitHalstead function data (undefined data posts warning!):', () =>
+         {
+            let result;
+
+            setup(() =>
+            {
+               result = new HalsteadArray('operators',
+                [() => { return null; }, () => { return 222; }, 'foo', () => { return [undefined, true]; }]);
+            });
+
+            teardown(() => { result = undefined; });
+
+            test('result contained two items', () =>
+            {
+               assert.strictEqual(result.length, 4);
+            });
+
+            test('1st item was correct', () =>
+            {
+               assert.instanceOf(result.get(0), TraitHalstead);
+               assert.strictEqual(result.get(0).metric, 'operators');
+               assert.strictEqual(result.get(0).valueOf(), null);
+            });
+
+            test('2nd item was correct', () =>
+            {
+               assert.instanceOf(result.get(1), TraitHalstead);
+               assert.strictEqual(result.get(1).metric, 'operators');
+               assert.strictEqual(result.get(1).valueOf(), 222);
+            });
+
+            test('3rd item was correct', () =>
+            {
+               assert.instanceOf(result.get(2), TraitHalstead);
+               assert.strictEqual(result.get(2).metric, 'operators');
+               assert.strictEqual(result.get(2).valueOf(), 'foo');
+            });
+
+            test('4th item was correct', () =>
+            {
+               assert.instanceOf(result.get(3), TraitHalstead);
+               assert.strictEqual(result.get(3).metric, 'operators');
+               assert.isArray(result.get(3).valueOf());
+               assert.strictEqual(result.get(3).valueOf()[0], undefined);
+               assert.strictEqual(result.get(3).valueOf()[1], true);
+            });
+
+            test('HalsteadArray valueOf converts raw data to strings', () =>
+            {
+               const halsteadItems = result.valueOf();
+
+               assert.isArray(halsteadItems);
+               assert.lengthOf(halsteadItems, 5);
+               assert.strictEqual(halsteadItems[0], 'null');
+               assert.strictEqual(halsteadItems[1], '222');
+               assert.strictEqual(halsteadItems[2], 'foo');
+               assert.strictEqual(halsteadItems[3], 'undefined');
+               assert.strictEqual(halsteadItems[4], 'true');
+            });
+         });
+
          suite('process report:', () =>
          {
             test('report contains correct operator identifiers', () =>
@@ -278,6 +339,24 @@ if (testconfig.modules['moduleTraits'])
                assert.strictEqual(result[1], 'bar');
                assert.strictEqual(result[2], 'baz');
                assert.strictEqual(result[3], 'biz');
+            });
+
+            test('HalsteadArray valueOf contains correct operator identifiers w/ function values as strings', () =>
+            {
+               // Note the 3rd identifier has a filter method to skip processing.
+               const halsteadArray = new HalsteadArray('operators',
+                ['foo', 'bar', ['baz', 'biz'], () => { return null; }, () => { return [111, 222]; }]);
+
+               const result = halsteadArray.valueOf();
+
+               assert.lengthOf(result, 7);
+               assert.strictEqual(result[0], 'foo');
+               assert.strictEqual(result[1], 'bar');
+               assert.strictEqual(result[2], 'baz');
+               assert.strictEqual(result[3], 'biz');
+               assert.strictEqual(result[4], 'null');
+               assert.strictEqual(result[5], '111');
+               assert.strictEqual(result[6], '222');
             });
          });
       });
