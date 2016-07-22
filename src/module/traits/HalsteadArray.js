@@ -101,13 +101,10 @@ export default class HalsteadArray
       });
 
       // Map all TraitHalstead data and flatten any array of identifiers returned from `valueOf` and finally convert
-      // all flattened identifiers to strings as necessary.
-      return ([].concat(...filtered.map((traitHalstead) =>
+      // all flattened identifier entries to strings as necessary.
+      return ([].concat(...filtered.map((traitHalstead) => traitHalstead.valueOf(...params)))).map((entry) =>
       {
-         return traitHalstead.valueOf(...params);
-      }))).map((entry) =>
-      {
-         // Convert any undefined entry to a text string. This should only be possible when a TraitHalstead defined
+         // Convert any `undefined` entry to a text string. This should only occur when a TraitHalstead defined
          // as a function returns an array containing `undefined`; in this case there is an issue with a syntax trait
          // definition not properly verifying data.
 
@@ -118,6 +115,7 @@ export default class HalsteadArray
             entry = 'undefined';
          }
 
+         // Convert any entries to strings as necessary.
          return typeof entry !== 'string' ? JSON.stringify(entry) : entry;
       });
    }
