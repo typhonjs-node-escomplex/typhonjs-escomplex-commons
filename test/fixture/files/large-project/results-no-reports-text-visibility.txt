@@ -1,3 +1,4 @@
+Visibility (reverse dependents / numerical indices correspond to ProjectResult modules / reports):
 1:	./src/ESComplexProject.js
 	1:	./src/ESComplexProject.js
 	3:	./src/Plugins.js

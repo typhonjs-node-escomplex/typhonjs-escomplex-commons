@@ -93,20 +93,6 @@ if (testconfig.modules['projectResult'])
                assert.strictEqual(result.reports[0].srcPath, './a.js');
                assert.isUndefined(result.reports[0].srcPathAlias);
             });
-
-            test('toFormat / text-adjacency is correct', () =>
-            {
-               const testString = '1:\t./a.js\n\t2:\t./b.js\n\n2:\t./b.js\n\t1:\t./a.js\n\n3:\t./c.js\n\t1:\t./a.js\n\t2:\t./b.js\n\n';
-
-               assert.strictEqual(result.toFormat('text-adjacency'), testString);
-            });
-
-            test('toFormat / text-visibility is correct', () =>
-            {
-               const testString = '1:\t./a.js\n\t3:\t./c.js\n\n2:\t./b.js\n\t1:\t./a.js\n\n3:\t./c.js\n\t1:\t./a.js\n\t2:\t./b.js\n\t3:\t./c.js\n\n';
-
-               assert.strictEqual(result.toFormat('text-visibility'), testString);
-            });
          });
 
          suite('large project parsing performance', () =>

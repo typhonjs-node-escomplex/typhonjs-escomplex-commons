@@ -6,9 +6,11 @@ import StringUtil from '../../../utils/StringUtil';
  */
 export default class FormatMarkdown extends FormatText
 {
-   constructor()
+   constructor(headers = {}, keys = {}, adjacencyFormatName = 'markdown-adjacency',
+    visibilityFormatName = 'markdown-visibility')
    {
-      super(s_DEFAULT_HEADERS);
+      super(Object.assign(Object.assign({}, s_DEFAULT_HEADERS), headers), keys, adjacencyFormatName,
+       visibilityFormatName);
    }
 
    /**

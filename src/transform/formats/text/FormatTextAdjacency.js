@@ -56,10 +56,12 @@ const s_DEFAULT_KEYS =
 
 /**
  * Defines the default headers added to any output strings..
- * @type {{entryPrepend: string}}
+ * @type {{entryPrepend: string, textHeader: string}}
  * @ignore
  */
 const s_DEFAULT_HEADERS =
 {
-   entryPrepend: ''
+   entryPrepend: '',
+   entryWrapper: '',
+   textHeader: 'Adjacency (dependencies / numerical indices correspond to ProjectResult modules / reports):\n'
 };

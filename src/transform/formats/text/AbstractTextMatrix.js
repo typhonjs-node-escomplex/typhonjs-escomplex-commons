@@ -40,13 +40,37 @@ export default class AbstractTextMatrix
       const matrixList = ObjectUtil.safeAccess(result, localOptions.matrixList);
 
       /* istanbul ignore if */
-      if (!Array.isArray(matrixList) || !Array.isArray(result.reports) ||
-       typeof this._headers.entryPrepend !== 'string')
+      if (!Array.isArray(matrixList))
       {
-         return '';
+         throw new TypeError(`formatResult error: could not locate matrixList '${localOptions.matrixList}'.`);
       }
 
-      return this._formatMatrixList(result, matrixList, localOptions);
+      /* istanbul ignore if */
+      if (!Array.isArray(result.reports))
+      {
+         throw new TypeError(`formatResult error: could not locate 'result.reports'.`);
+      }
+
+      /* istanbul ignore if */
+      if (typeof this._headers.entryPrepend !== 'string')
+      {
+         throw new TypeError(`formatResult error: 'this._headers.entryPrepend' is not a 'string'.`);
+      }
+
+      /* istanbul ignore if */
+      if (typeof this._headers.entryWrapper !== 'string')
+      {
+         throw new TypeError(`formatResult error: 'this._headers.entryWrapper' is not a 'string'.`);
+      }
+
+      let output = '';
+
+      // Add any defined text header.
+      if (typeof this._headers.textHeader === 'string') { output += this._headers.textHeader; }
+
+      output += this._formatMatrixList(result, matrixList, localOptions);
+
+      return output;
    }
 
    /**
@@ -71,15 +95,18 @@ export default class AbstractTextMatrix
       const plus1 = typeof options.zeroIndex === 'boolean' && options.zeroIndex ? 0 : 1;
       const path = typeof options.matrixFilePath === 'boolean' && options.matrixFilePath ? 'filePath' : 'srcPath';
 
+      const entryPrepend = this._headers.entryPrepend;
+      const entryWrapper = this._headers.entryWrapper;
+
       matrixList.forEach((entry) =>
       {
-         output += `${this._headers.entryPrepend}${entry.row + plus1}:\t${ObjectUtil.safeAccess(
-          result.reports[entry.row], path)}\n`;
+         output += `${entryPrepend}${entry.row + plus1}:\t${entryWrapper}${ObjectUtil.safeAccess(
+          result.reports[entry.row], path)}${entryWrapper}\n`;
 
          entry.cols.forEach((colIndex) =>
          {
-            output += `\t${this._headers.entryPrepend}${colIndex + plus1}:\t${ObjectUtil.safeAccess(
-             result.reports[colIndex], path)}\n`;
+            output += `\t${entryPrepend}${colIndex + plus1}:\t${entryWrapper}${ObjectUtil.safeAccess(
+             result.reports[colIndex], path)}${entryWrapper}\n`;
          });
 
          output += '\n';

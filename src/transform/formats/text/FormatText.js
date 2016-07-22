@@ -1,14 +1,56 @@
-import AbstractFormatText from './AbstractFormatText';
+import AbstractFormatText  from './AbstractFormatText';
+import TransformFormat     from '../../TransformFormat';
 
 /**
  * Provides a format transform for ModuleReport / ProjectResult instances converting them to plain text.
  */
 export default class FormatText extends AbstractFormatText
 {
-   constructor(headers = {}, keys = {})
+   constructor(headers = {}, keys = {}, adjacencyFormatName = 'text-adjacency',
+    visibilityFormatName = 'text-visibility')
    {
       super(Object.assign(Object.assign({}, s_DEFAULT_HEADERS), headers),
        Object.assign(Object.assign({}, s_DEFAULT_KEYS), keys));
+
+      this._adjacencyFormatName = adjacencyFormatName;
+      this._visibilityFormatName = visibilityFormatName;
+   }
+
+   /**
+    * Formats a project result as plain text.
+    *
+    * @param {ProjectResult}  result - A project result.
+    *
+    * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
+    * @property {string}      classReport - An entry key found in the ClassReport to output.
+    * @property {string}      methodReport - An entry key found in the MethodReport to output.
+    * @property {string}      moduleReport - An entry key found in the ModuleReport to output.
+    *
+    * @returns {string}
+    */
+   formatResult(result, options = {})
+   {
+      let output = super.formatResult(result, options);
+
+      let localOptions = Object.assign({}, this._keys);
+      localOptions = Object.assign(localOptions, options);
+
+      const adjacency = typeof localOptions.adjacency === 'boolean' ? localOptions.adjacency : true;
+      const visibility = typeof localOptions.visibility === 'boolean' ? localOptions.visibility : true;
+
+      // Add adjacency matrix output
+      if (adjacency && TransformFormat.isFormat(this._adjacencyFormatName))
+      {
+         output += `\n\n${TransformFormat.format(result, this._adjacencyFormatName, options)}`;
+      }
+
+      // Add visibility matrix output
+      if (visibility && TransformFormat.isFormat(this._visibilityFormatName))
+      {
+         output += `\n\n${TransformFormat.format(result, this._visibilityFormatName, options)}`;
+      }
+
+      return output;
    }
 
    /**

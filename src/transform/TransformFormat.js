@@ -172,13 +172,25 @@ export default class TransformFormat
    }
 
    /**
-    * Removes a formatter from the static Map by type.
+    * Returns whether a given formatter by name is available.
     *
-    * @param {string}   type - The type of the formatter: `format.type`.
+    * @param {string}   name - The name of the formatter: `format.name`.
+    *
+    * @returns {boolean}
     */
-   static removeFormat(type)
+   static isFormat(name)
    {
-      s_FORMATTERS.delete(type);
+      return s_FORMATTERS.has(name);
+   }
+
+   /**
+    * Removes a formatter from the static Map by name.
+    *
+    * @param {string}   name - The name of the formatter: `format.name`.
+    */
+   static removeFormat(name)
+   {
+      s_FORMATTERS.delete(name);
    }
 }
 

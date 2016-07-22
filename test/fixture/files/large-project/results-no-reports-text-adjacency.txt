@@ -1,3 +1,4 @@
+Adjacency (dependencies / numerical indices correspond to ProjectResult modules / reports):
 1:	./src/ESComplexProject.js
 	3:	./src/Plugins.js
 	11:	typhonjs-escomplex-commons/src/module/report/ModuleReport.js

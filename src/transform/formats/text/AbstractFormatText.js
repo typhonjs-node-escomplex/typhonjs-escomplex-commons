@@ -12,7 +12,7 @@ export default class AbstractFormatText
    }
 
    /**
-    * Formats a module report as minimal / plain text.
+    * Formats a module report as plain text.
     *
     * @param {ModuleReport}   report - A module report.
     *
@@ -49,7 +49,7 @@ export default class AbstractFormatText
    }
 
    /**
-    * Formats a project result as minimal / plain text.
+    * Formats a project result as plain text.
     *
     * @param {ProjectResult}  result - A project result.
     *

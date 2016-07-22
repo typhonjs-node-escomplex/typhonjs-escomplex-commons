@@ -34,10 +34,13 @@ export default class FormatMarkdownVisibility extends FormatTextVisibility
 // Module private ---------------------------------------------------------------------------------------------------
 
 /**
- * Defines the default headers as text which are inserted via spread into `StringUtil.safeStringsObject`.
- * @type {{entryPrepend: string}}
+ * Defines the default headers added to any output strings..
+ * @type {{entryPrepend: string, textHeader: string}}
+ * @ignore
  */
 const s_DEFAULT_HEADERS =
 {
-   entryPrepend: '* '
+   entryPrepend: '* ',
+   entryWrapper: '`',
+   textHeader: '* Visibility (reverse dependents / numerical indices correspond to ProjectResult modules / reports):\n'
 };
