@@ -5,6 +5,19 @@ import ObjectUtil from '../../../utils/ObjectUtil';
  */
 export default class AbstractTextMatrix
 {
+   /**
+    * Initializes instance storing default headers / keys.
+    *
+    * @param {object}      headers - An object hash containing the following entries.
+    * @property {string}   entryPrepend - A string to prepend all entries.
+    * @property {string}   entryWrapper - A string to wrap output entries between.
+    * @property {string}   textHeader - A string to prepend output providing a leading header.
+    *
+    * @param {object}      keys - An object hash containing the following entries.
+    * @property {boolean}  matrixFilePath - If true the module `filePath` is serialized.
+    * @property {string}   matrixList - An entry key to lookup a given matrix list in a ProjectResult.
+    * @property {boolean}  zeroIndex - If true module report indexes are zero indexed.
+    */
    constructor(headers = {}, keys = {})
    {
       this._headers = headers;
@@ -27,8 +40,10 @@ export default class AbstractTextMatrix
     *
     * @param {ProjectResult}  result - A project result.
     *
-    * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {string}      matrixKey - An entry key found in the ProjectResult to output.
+    * @param {object}      options - (Optional) An object hash containing the following entries.
+    * @property {boolean}  matrixFilePath - If true the module `filePath` is serialized.
+    * @property {string}   matrixList - An entry key to lookup a given matrix list in a ProjectResult.
+    * @property {boolean}  zeroIndex - If true module report indexes are zero indexed.
     *
     * @returns {string}
     */
@@ -82,8 +97,8 @@ export default class AbstractTextMatrix
     * @param {Array<{row: number, cols: number[]}>}   matrixList - The matrix list to be serialized.
     *
     * @param {object}                                 options - (Optional) An object hash of options.
-    * @propert {boolean}                              zeroIndex - If true module report indexes are zero indexed.
-    * @propert {boolean}                              matrixFilePath - If true the module `filePath` is serialized.
+    * @property {boolean}                             zeroIndex - If true module report indexes are zero indexed.
+    * @property {boolean}                             matrixFilePath - If true the module `filePath` is serialized.
     *
     * @returns {string}
     * @private
@@ -101,12 +116,12 @@ export default class AbstractTextMatrix
       matrixList.forEach((entry) =>
       {
          output += `${entryPrepend}${entry.row + plus1}:\t${entryWrapper}${ObjectUtil.safeAccess(
-          result.reports[entry.row], path)}${entryWrapper}\n`;
+          result.reports[entry.row], path, 'unknown')}${entryWrapper}\n`;
 
          entry.cols.forEach((colIndex) =>
          {
             output += `\t${entryPrepend}${colIndex + plus1}:\t${entryWrapper}${ObjectUtil.safeAccess(
-             result.reports[colIndex], path)}${entryWrapper}\n`;
+             result.reports[colIndex], path, 'unknown')}${entryWrapper}\n`;
          });
 
          output += '\n';

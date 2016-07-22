@@ -5,6 +5,13 @@ import StringUtil from '../../../utils/StringUtil';
  */
 export default class AbstractFormatText
 {
+   /**
+    * Initializes instance storing default headers / keys.
+    *
+    * @param {object}   headers - An object hash of header entries formatted for `StringUtil.safeStringsObject`.
+    *
+    * @param {object}   keys - An object hash of key entries formatted for `StringUtil.safeStringsObject`.
+    */
    constructor(headers = {}, keys = {})
    {
       this._headers = headers;
@@ -101,6 +108,7 @@ export default class AbstractFormatText
     * @param {string}      prepend - (Optional) A string to prepend; default: `''`.
     *
     * @returns {string}
+    * @private
     */
    _formatClass(classReport, options, prepend = '')
    {
@@ -127,6 +135,7 @@ export default class AbstractFormatText
     * @param {string}               prepend - (Optional) A string to prepend; default: `''`.
     *
     * @returns {string}
+    * @private
     */
    _formatClasses(classReports, options, prepend = '')
    {
@@ -148,6 +157,7 @@ export default class AbstractFormatText
     * @param {string}         prepend - (Optional) A string to prepend; default: `''`.
     *
     * @returns {string}
+    * @private
     */
    _formatEntries(report, entries, prepend = '')
    {
@@ -189,6 +199,7 @@ export default class AbstractFormatText
     * @param {boolean}        isModule - (Optional) Indicates module scope; default: `true`.
     *
     * @returns {string}
+    * @private
     */
    _formatMethod(methodReport, options, prepend = '', isModule = true)
    {
@@ -216,6 +227,7 @@ export default class AbstractFormatText
     * @param {boolean}              isModule - (Optional) Indicates module scope; default: `true`.
     *
     * @returns {string}
+    * @private
     */
    _formatMethods(methodReports, options, prepend = '', isModule = true)
    {
@@ -235,11 +247,12 @@ export default class AbstractFormatText
     * @param {boolean}        reportsAvailable - Indicates that the report metric data is available.
     *
     * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {string}      classReport - An entry key found in the ClassReport to output.
-    * @property {string}      methodReport - An entry key found in the MethodReport to output.
-    * @property {string}      moduleReport - An entry key found in the ModuleReport to output.
+    * @property {string}      classReport - Entry keys found in the ClassReport to output.
+    * @property {string}      methodReport - Entry keys found in the MethodReport to output.
+    * @property {string}      moduleReport - Entry keys found in the ModuleReport to output.
     *
     * @returns {string}
+    * @private
     */
    _formatModule(moduleReport, reportsAvailable, options)
    {
@@ -263,6 +276,17 @@ export default class AbstractFormatText
       }
    }
 
+   /**
+    * Formats a project result.
+    *
+    * @param {ProjectResult}  projectResult - A project result.
+    *
+    * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
+    * @property {string}      projectResult - Entry keys found in the ProjectReport to output.
+    *
+    * @returns {string}
+    * @private
+    */
    _formatProject(projectResult, options)
    {
       // Skip processing if there are no headers.

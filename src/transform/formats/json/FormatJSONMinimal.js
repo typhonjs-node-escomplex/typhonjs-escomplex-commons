@@ -1,18 +1,6 @@
 import ObjectUtil from '../../../utils/ObjectUtil';
 
 /**
- * Defines the default keys to include in a minimal JSON representation of module / project results.
- * @type {{classReport: string[], methodReport: string[], moduleReport: string[]}}
- * @ignore
- */
-const s_DEFAULT_KEYS =
-{
-   classReport: ['maintainability'],
-   methodReport: ['cyclomatic', 'halstead.difficulty'],
-   moduleReport: ['maintainability']
-};
-
-/**
  * Provides a format transform for ESComplex ModuleReport / ProjectResult instances converting them to JSON with
  * minimal metrics.
  */
@@ -230,3 +218,17 @@ export default class FormatJSONMinimal
       return output;
    }
 }
+
+// Module private ---------------------------------------------------------------------------------------------------
+
+/**
+ * Defines the default keys to include in a minimal JSON representation of module / project results.
+ * @type {{classReport: string[], methodReport: string[], moduleReport: string[]}}
+ * @ignore
+ */
+const s_DEFAULT_KEYS =
+{
+   classReport: ['maintainability'],
+   methodReport: ['cyclomatic', 'halstead.difficulty'],
+   moduleReport: ['maintainability']
+};

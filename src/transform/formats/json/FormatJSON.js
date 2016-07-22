@@ -61,6 +61,6 @@ export default class FormatJSON
     */
    get type()
    {
-      return 'json';
+      return 'full';
    }
 }

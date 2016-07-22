@@ -56,7 +56,7 @@ const s_DEFAULT_KEYS =
 
 /**
  * Defines the default headers added to any output strings..
- * @type {{entryPrepend: string, textHeader: string}}
+ * @type {{entryPrepend: string, entryWrapper: string, textHeader: string}}
  * @ignore
  */
 const s_DEFAULT_HEADERS =

@@ -1,7 +1,7 @@
 import FormatTextAdjacency from '../text/FormatTextAdjacency';
 
 /**
- * Provides a format transform for ModuleReport / ProjectResult instances converting a matrix list into plain text.
+ * Provides a format transform for ModuleReport / ProjectResult instances converting a matrix list into markdown.
  */
 export default class FormatMarkdownAdjacency extends FormatTextAdjacency
 {
@@ -35,7 +35,7 @@ export default class FormatMarkdownAdjacency extends FormatTextAdjacency
 
 /**
  * Defines the default headers added to any output strings..
- * @type {{entryPrepend: string, textHeader: string}}
+ * @type {{entryPrepend: string, entryWrapper: string, textHeader: string}}
  * @ignore
  */
 const s_DEFAULT_HEADERS =

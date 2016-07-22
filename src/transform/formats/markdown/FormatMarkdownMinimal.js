@@ -38,7 +38,8 @@ export default class FormatMarkdownMinimal extends FormatTextMinimal
 
 /**
  * Defines the default headers as markdown which are inserted via spread into `StringUtil.safeStringsObject`.
- * @type {{classMethod: *[], classReport: *[], moduleMethod: *[], moduleReport: *[]}}
+ * @type {{classMethod: *[], classReport: *[], entryPrepend: string, moduleMethod: *[], moduleReport: *[], projectResult: string[]}}
+ * @ignore
  */
 const s_DEFAULT_HEADERS =
 {

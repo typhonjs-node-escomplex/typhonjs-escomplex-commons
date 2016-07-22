@@ -47,7 +47,7 @@ export default class FormatTextMinimal extends AbstractFormatTest
 
 /**
  * Defines the default keys to include in a minimal text representation of module / project results.
- * @type {{classReport: string[], methodReport: string[], moduleReport: string[]}}
+ * @type {{classReport: string[], methodReport: string[], moduleReport: string[], projectResult: string[]}}
  * @ignore
  */
 const s_DEFAULT_KEYS =
@@ -60,7 +60,8 @@ const s_DEFAULT_KEYS =
 
 /**
  * Defines the default headers as text which are inserted via spread into `StringUtil.safeStringsObject`.
- * @type {{classMethod: *[], classReport: *[], moduleMethod: *[], moduleReport: *[]}}
+ * @type {{classMethod: *[], classReport: *[], entryPrepend: string, moduleMethod: *[], moduleReport: *[], projectResult: string[]}}
+ * @ignore
  */
 const s_DEFAULT_HEADERS =
 {

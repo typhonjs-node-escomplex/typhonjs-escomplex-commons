@@ -80,12 +80,17 @@ export default class FormatText extends AbstractFormatText
     */
    get type()
    {
-      return 'text';
+      return 'full';
    }
 }
 
 // Module private ---------------------------------------------------------------------------------------------------
 
+/**
+ * Defines shared data between multiple categories.
+ * @type {*[]}
+ * @ignore
+ */
 const s_SHARED_DATA =
 [
    ['Line start: ',                      'lineStart'],
@@ -101,7 +106,8 @@ const s_SHARED_DATA =
 
 /**
  * Defines the default headers as text which are inserted via spread into `StringUtil.safeStringsObject`.
- * @type {{classMethod: *[], classReport: *[], moduleMethod: *[], moduleReport: *[]}}
+ * @type {{classMethod: Array, classReport: Array, methodReport: *[], moduleReport: *[], projectResult: *[]}}
+ * @ignore
  */
 const s_DEFAULT_KEYS =
 {
