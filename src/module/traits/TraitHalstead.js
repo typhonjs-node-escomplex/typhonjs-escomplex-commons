@@ -105,13 +105,13 @@ export default class TraitHalstead
          {
             const value = typeof entry === 'function' ? entry(...params) : entry;
 
-            return typeof value === 'number' ? value.toString() : value;
+            return typeof value !== 'string' ? JSON.stringify(value) : value;
          });
       }
 
       const value = typeof this._data.identifier === 'function' ? this._data.identifier(...params) :
        this._data.identifier;
 
-      return typeof value === 'number' ? value.toString() : value;
+      return typeof value !== 'string' ? JSON.stringify(value) : value;
    }
 }
