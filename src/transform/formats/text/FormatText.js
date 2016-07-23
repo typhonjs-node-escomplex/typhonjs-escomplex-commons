@@ -150,6 +150,7 @@ const s_DEFAULT_KEYS =
 /**
  * Defines the default headers as text which are inserted via spread into `StringUtil.safeStringsObject`.
  * @type {{classMethod: *[], classReport: *[], entryPrepend: string, moduleMethod: *[], moduleReport: string[], projectResult: string[]}}
+ * @ignore
  */
 const s_DEFAULT_HEADERS =
 {

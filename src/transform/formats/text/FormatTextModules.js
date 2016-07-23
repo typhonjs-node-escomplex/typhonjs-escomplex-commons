@@ -47,6 +47,7 @@ export default class FormatTextModules extends AbstractFormatTest
 /**
  * Defines markdown headers as text which are inserted via spread into `StringUtil.safeStringsObject`.
  * @type {{moduleReport: *[]}}
+ * @ignore
  */
 const s_DEFAULT_HEADERS =
 {

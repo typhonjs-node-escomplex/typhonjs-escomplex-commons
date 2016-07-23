@@ -63,6 +63,7 @@ export default class ObjectUtil
  * @param {function}       func - A callback function to process leaf values in children arrays or object members.
  *
  * @returns {*}
+ * @ignore
  * @private
  */
 function _depthTraverse(data, func)
