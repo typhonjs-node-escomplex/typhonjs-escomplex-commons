@@ -113,7 +113,7 @@ export default class ProjectResult
       {
          this.reports = this.reports.map((report) =>
          {
-            const modReport = { filePath: report.filePath, srcPath: report.srcPath, srcPathAlias: report.srcPathAlias};
+            const modReport = { filePath: report.filePath, srcPath: report.srcPath, srcPathAlias: report.srcPathAlias };
 
             // Potentially add module averages
             if (serializeAverages)

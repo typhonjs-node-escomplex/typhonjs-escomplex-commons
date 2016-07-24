@@ -208,13 +208,5 @@ if (testconfig.modules['moduleReport'])
             assert.lengthOf(report.aggregate.halstead.operands.identifiers, 0);
          });
       });
-
-      suite('MethodReport:', () =>
-      {
-         let report;
-
-         setup(() => { report = new ModuleReport(10, 100); });
-         teardown(() => { report = undefined; });
-      });
    });
 }
