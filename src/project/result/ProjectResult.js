@@ -1,5 +1,6 @@
 import TransformFormat  from  '../../transform/TransformFormat';
 
+import ModuleAverage    from  '../../module/report/averages/ModuleAverage';
 import ModuleReport     from  '../../module/report/ModuleReport';
 import MathUtil         from  '../../utils/MathUtil';
 import StringUtil       from  '../../utils/StringUtil';
@@ -53,18 +54,6 @@ export default class ProjectResult
       this.coreSize = 0;
 
       /**
-       * Measures the average method cyclomatic complexity for the project.
-       * @type {number}
-       */
-      this.cyclomatic = 0;
-
-      /**
-       * Measures the average method maintenance effort for the project.
-       * @type {number}
-       */
-      this.effort = 0;
-
-      /**
        * Measures the percentage of all possible internal dependencies that are actually realized in the project.
        * Lower is better.
        * @type {number}
@@ -72,22 +61,10 @@ export default class ProjectResult
       this.firstOrderDensity = 0;
 
       /**
-       * Measures the average method logical SLOC (source lines of code) for the project.
-       * @type {number}
+       * Stores the average module metric data.
+       * @type {ModuleAverage}
        */
-      this.loc = 0;
-
-      /**
-       * Measures the average method maintainability index for the project.
-       * @type {number}
-       */
-      this.maintainability = 0;
-
-      /**
-       * Measures the average number of method parameters for the project.
-       * @type {number}
-       */
-      this.params = 0;
+      this.moduleAverage = new ModuleAverage();
 
       /**
        * Stores all ModuleReport data for the project sorted by the module / files `srcPath`.
@@ -110,19 +87,25 @@ export default class ProjectResult
     * Finalizes the ProjectResult. If `settings.serializeReports` is false output just `filePath`, `srcPath` &
     * `srcPathAlias` entries of reports.
     *
-    * @param {boolean}  serializeReports - (Optional) Allows overriding of ModuleReport serialization;
-    *                                      default: undefined.
+    * @param {object}      options - (Optional) Allows overriding of ModuleReport serialization.
+    * @property {boolean}  serializeAverages - If serializeReports is false and serializeAverages is true then module
+    *                                          averages will also be added to a reduced project result; default: false.
+    * @property {boolean}  serializeReports - Allows overriding of ModuleReport serialization; default: true.
     *
     * @returns {ProjectResult}
     */
-   finalize(serializeReports = void 0)
+   finalize(options = {})
    {
-      let serialize = this.getSetting('serializeReports');
+      if (typeof options !== 'object') { throw new TypeError(`finalize error: 'options' is not an 'object'.`); }
+
+      let serializeReports = this.getSetting('serializeReports', true);
+      let serializeAverages = this.getSetting('serializeAverages', false);
 
       // Allow an override opportunity.
-      if (typeof serializeReports === 'boolean') { serialize = serializeReports; }
+      if (typeof options.serializeAverages === 'boolean') { serializeAverages = options.serializeAverages; }
+      if (typeof options.serializeReports === 'boolean') { serializeReports = options.serializeReports; }
 
-      if (serialize)
+      if (serializeReports)
       {
          this.reports.forEach((report) => { report.finalize(); });
       }
@@ -130,7 +113,16 @@ export default class ProjectResult
       {
          this.reports = this.reports.map((report) =>
          {
-            return { filePath: report.filePath, srcPath: report.srcPath, srcPathAlias: report.srcPathAlias };
+            const modReport = { filePath: report.filePath, srcPath: report.srcPath, srcPathAlias: report.srcPathAlias};
+
+            // Potentially add module averages
+            if (serializeAverages)
+            {
+               modReport.maintainability = report.maintainability;
+               modReport.methodAverage = report.methodAverage;
+            }
+
+            return modReport;
          });
       }
 

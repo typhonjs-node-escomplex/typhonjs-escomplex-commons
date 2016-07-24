@@ -1,4 +1,5 @@
 import AbstractReport   from './AbstractReport';
+import MethodAverage    from './averages/MethodAverage';
 import MethodReport     from './MethodReport';
 
 /**
@@ -42,6 +43,12 @@ export default class ClassReport extends AbstractReport
        * @type {Array<MethodReport>}
        */
       this.methods = [];
+
+      /**
+       * Stores the average method metric data.
+       * @type {HalsteadAverage}
+       */
+      this.methodAverage = new MethodAverage();
 
       /**
        * The name of the class.

@@ -1,5 +1,6 @@
 import AbstractReport   from './AbstractReport';
 import ClassReport      from './ClassReport';
+import MethodAverage    from './averages/MethodAverage';
 import MethodReport     from './MethodReport';
 
 import MathUtil         from  '../../utils/MathUtil';
@@ -47,22 +48,10 @@ export default class ModuleReport extends AbstractReport
       this.classes = [];
 
       /**
-       * Measures the average method cyclomatic complexity of the module / file.
-       * @type {number}
-       */
-      this.cyclomatic = 0;
-
-      /**
        * Stores all parsed dependencies.
        * @type {Array}
        */
       this.dependencies = [];
-
-      /**
-       * Measures the average method maintenance effort of the module / file.
-       * @type {number}
-       */
-      this.effort = 0;
 
       /**
        * Stores the file path of the module / file. The file path is only defined as supplied when processing projects.
@@ -83,12 +72,6 @@ export default class ModuleReport extends AbstractReport
       this.lineStart = lineStart;
 
       /**
-       * Measures the average method logical SLOC (source lines of code) for the module / file.
-       * @type {number}
-       */
-      this.loc = 0;
-
-      /**
        * Measures the average method maintainability index for the module / file.
        * @type {number}
        */
@@ -101,10 +84,10 @@ export default class ModuleReport extends AbstractReport
       this.methods = [];
 
       /**
-       * Measures the average number of method parameters for the module / file.
-       * @type {number}
+       * Stores the average method metric data.
+       * @type {MethodAverage}
        */
-      this.params = 0;
+      this.methodAverage = new MethodAverage();
 
       /**
        * Stores the current class report scope stack.
@@ -272,16 +255,6 @@ export default class ModuleReport extends AbstractReport
    }
 
    /**
-    * Provides a default array and indices for summing maintainability metrics via `sumMetrics`.
-    *
-    * @returns {{sums: number[], indices: {cyclomatic: number, effort: number, loc: number, maintainability: number, params: number}}}
-    */
-   static getMaintainabilityMetrics()
-   {
-      return { sums: [0, 0, 0, 0, 0], indices: s_INDICES_MAINTAINABILITY };
-   }
-
-   /**
     * Returns the setting indexed by the given key.
     *
     * @param {string}   key - A key used to store the setting parameter.
@@ -446,23 +419,6 @@ export default class ModuleReport extends AbstractReport
    }
 
    /**
-    * Provides a convenience method to increment metric sums given an object hash of indices.
-    *
-    * @param {Array<number>}  sums - Running sums for metric calculation.
-    * @param {object}         indices - Indices into the sums array for specific metrics.
-    */
-   sumMetrics(sums, indices = {})
-   {
-      /* istanbul ignore if */
-      if (!Array.isArray(sums)) { throw new TypeError('sumMetrics error: `sums` is not an `array`.'); }
-
-      /* istanbul ignore if */
-      if (typeof indices !== 'object') { throw new TypeError('sumMetrics error: `indices` is not an `object`.'); }
-
-      for (const key in indices) { sums[indices[key]] += typeof this[key] === 'number' ? this[key] : 0; }
-   }
-
-   /**
     * Formats this ModuleReport given the type.
     *
     * @param {string}   name - The name of formatter to use.
@@ -476,17 +432,3 @@ export default class ModuleReport extends AbstractReport
       return TransformFormat.format(this, name, options);
    }
 }
-
-/**
- * Defines the default maintainability metrics supported by `sumMetrics`.
- * @type {{cyclomatic: number, effort: number, loc: number, maintainability: number, params: number}}
- * @ignore
- */
-const s_INDICES_MAINTAINABILITY =
-{
-   cyclomatic: 0,
-   effort: 1,
-   loc: 2,
-   maintainability: 3,
-   params: 4
-};

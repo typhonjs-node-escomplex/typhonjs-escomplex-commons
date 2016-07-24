@@ -86,22 +86,29 @@ export default class FormatText extends AbstractFormatText
 
 // Module private ---------------------------------------------------------------------------------------------------
 
-/**
- * Defines shared data between multiple categories.
- * @type {*[]}
- * @ignore
- */
-const s_SHARED_DATA =
+const s_SHARED_METHOD_DATA =
 [
-   ['Line start: ',                      'lineStart'],
-   ['Line end: ',                        'lineEnd'],
-   ['Physical LOC: ',                    'sloc.physical'],
-   ['Logical LOC: ',                     'sloc.logical'],
-   ['Cyclomatic complexity: ',           'cyclomatic'],
-   ['Cyclomatic complexity density: ',   'cyclomaticDensity', 1, '%'],
-   ['Halstead difficulty: ',             'halstead.difficulty'],
-   ['Halstead volume: ',                 'halstead.volume'],
-   ['Halstead effort: ',                 'halstead.effort']
+   ['Line start: ',                          'lineStart'],
+   ['Line end: ',                            'lineEnd'],
+   ['Physical LOC: ',                        'sloc.physical'],
+   ['Logical LOC: ',                         'sloc.logical'],
+   ['Cyclomatic complexity: ',               'cyclomatic'],
+   ['Cyclomatic complexity density: ',       'cyclomaticDensity', 1, '%'],
+   ['Halstead difficulty: ',                 'halstead.difficulty'],
+   ['Halstead volume: ',                     'halstead.volume'],
+   ['Halstead effort: ',                     'halstead.effort'],
+   ['Parameter count: ',                     'params']
+];
+
+const s_SHARED_METHOD_AVERAGE_DATA =
+[
+   ['Average per-function physical LOC: ',            'methodAverage.sloc.physical'],
+   ['Average per-function logical LOC: ',             'methodAverage.sloc.logical'],
+   ['Average per-function cyclomatic complexity: ',   'methodAverage.cyclomatic'],
+   ['Average per-function cyclomatic density: ',      'methodAverage.cyclomaticDensity', 1, '%'],
+   ['Average per-function halstead difficulty: ',     'methodAverage.halstead.difficulty'],
+   ['Average per-function halstead volume: ',         'methodAverage.halstead.volume'],
+   ['Average per-function halstead effort: ',         'methodAverage.halstead.effort']
 ];
 
 /**
@@ -113,37 +120,41 @@ const s_DEFAULT_KEYS =
 {
    classMethod:
    [
-      ...s_SHARED_DATA
+      ...s_SHARED_METHOD_DATA
    ],
 
    classReport:
    [
-      ...s_SHARED_DATA
+      ['Line start: ',                 'lineStart'],
+      ['Line end: ',                   'lineEnd'],
+      ...s_SHARED_METHOD_AVERAGE_DATA
    ],
 
    methodReport:
    [
-      ...s_SHARED_DATA,
-      ['Parameter count: ', 'params']
+      ...s_SHARED_METHOD_DATA
    ],
 
    moduleReport:
    [
-      ...s_SHARED_DATA,
-      ['Maintainability index: ', 'maintainability'],
-      ['Dependency count: ', 'dependencies.length']
+      ['Total lines: ',                'lineEnd'],
+      ['Maintainability index: ',      'maintainability'],
+      ['Dependency count: ',           'dependencies.length'],
+      ...s_SHARED_METHOD_AVERAGE_DATA
    ],
 
    projectResult:
    [
-      ['Mean per-function logical LOC: ',             'loc'],
-      ['Mean per-function parameter count: ',         'params'],
-      ['Mean per-function cyclomatic complexity: ',   'cyclomatic'],
-      ['Mean per-function Halstead effort: ',         'effort'],
-      ['Mean per-module maintainability index: ',     'maintainability'],
-      ['First-order density: ',                       'firstOrderDensity', 1, '%'],
-      ['Change cost: ',                               'changeCost', 1, '%'],
-      ['Core size: ',                                 'coreSize', 1, '%']
+      ['First-order density: ',                          'firstOrderDensity', 1, '%'],
+      ['Change cost: ',                                  'changeCost', 1, '%'],
+      ['Core size: ',                                    'coreSize', 1, '%'],
+      ['Average per-module maintainability index: ',     'moduleAverage.maintainability'],
+      ['Average per-function physical LOC: ',            'moduleAverage.methodAverage.sloc.physical'],
+      ['Average per-function logical LOC: ',             'moduleAverage.methodAverage.sloc.logical'],
+      ['Average per-function parameter count: ',         'moduleAverage.methodAverage.params'],
+      ['Average per-function cyclomatic complexity: ',   'moduleAverage.methodAverage.cyclomatic'],
+      ['Average per-function halstead difficulty: ',     'moduleAverage.methodAverage.halstead.difficulty'],
+      ['Average per-function halstead effort: ',         'moduleAverage.methodAverage.halstead.effort']
    ]
 };
 

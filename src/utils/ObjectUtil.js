@@ -24,19 +24,33 @@ export default class ObjectUtil
    }
 
    /**
+    * Returns a list of accessor keys by traversing the given object.
+    *
+    * @param {object}   data - An object to traverse for accessor keys.
+    *
+    * @returns {Array}
+    */
+   static getAccessorList(data)
+   {
+      if (typeof data !== 'object') { throw new TypeError(`getAccessorList error: 'data' is not an 'object'.`); }
+
+      return _getAccessorList(data);
+   }
+
+   /**
     * Provides a way to safely access an objects data / entries given an accessor string which describes the
     * entries to walk. To access deeper entries into the object format the accessor string with `.` between entries
     * to walk.
     *
-    * @param {object}   object - An object to access entry data.
+    * @param {object}   data - An object to access entry data.
     * @param {string}   accessor - A string describing the entries to access.
     * @param {*}        defaultValue - (Optional) A default value to return if an entry for accessor is not found.
     *
     * @returns {*}
     */
-   static safeAccess(object, accessor, defaultValue = undefined)
+   static safeAccess(data, accessor, defaultValue = undefined)
    {
-      if (typeof object !== 'object') { return defaultValue; }
+      if (typeof data !== 'object') { return defaultValue; }
       if (typeof accessor !== 'string') { return defaultValue; }
 
       const access = accessor.split('.');
@@ -45,12 +59,75 @@ export default class ObjectUtil
       for (let cntr = 0; cntr < access.length; cntr++)
       {
          // If the next level of object access is undefined or null then return the empty string.
-         if (typeof object[access[cntr]] === 'undefined' || object[access[cntr]] === null) { return defaultValue; }
+         if (typeof data[access[cntr]] === 'undefined' || data[access[cntr]] === null) { return defaultValue; }
 
-         object = object[access[cntr]];
+         data = data[access[cntr]];
       }
 
-      return object;
+      return data;
+   }
+
+   /**
+    * Provides a way to safely set an objects data / entries given an accessor string which describes the
+    * entries to walk. To access deeper entries into the object format the accessor string with `.` between entries
+    * to walk.
+    *
+    * @param {object}   data - An object to access entry data.
+    * @param {string}   accessor - A string describing the entries to access.
+    * @param {*}        value - A new value to set if an entry for accessor is found.
+    * @param {string}   operation - (Optional) Operation to perform including: 'add', 'div', 'mult', 'set', 'sub';
+    *                               default (`set`).
+    *
+    * @returns {boolean} True if successful.
+    */
+   static safeSet(data, accessor, value, operation = 'set')
+   {
+      if (typeof data !== 'object') { throw new TypeError(`safeSet Error: 'data' is not an 'object'.`); }
+      if (typeof accessor !== 'string') { throw new TypeError(`safeSet Error: 'accessor' is not a 'string'.`); }
+
+      const access = accessor.split('.');
+
+      // Walk through the given object by the accessor indexes.
+      for (let cntr = 0; cntr < access.length; cntr++)
+      {
+         // If the next level of object access is undefined then create a new object entry.
+         if (typeof data[access[cntr]] === 'undefined') { data[access[cntr]] = {}; }
+
+         if (cntr === access.length - 1)
+         {
+            switch (operation)
+            {
+               case 'add':
+                  data[access[cntr]] += value;
+                  break;
+
+               case 'div':
+                  data[access[cntr]] /= value;
+                  break;
+
+               case 'mult':
+                  data[access[cntr]] *= value;
+                  break;
+
+               case 'set':
+                  data[access[cntr]] = value;
+                  break;
+
+               case 'sub':
+                  data[access[cntr]] -= value;
+                  break;
+            }
+         }
+         else
+         {
+            // Abort if the next level is null or not an object and containing a value.
+            if (data[access[cntr]] === null || typeof data[access[cntr]] !== 'object') { return false; }
+
+            data = data[access[cntr]];
+         }
+      }
+
+      return true;
    }
 }
 
@@ -82,4 +159,40 @@ function _depthTraverse(data, func)
    }
 
    return data;
+}
+
+/**
+ * Private implementation of `getAccessorList`.
+ *
+ * @param {object}   data - An object to traverse.
+ *
+ * @returns {Array}
+ * @ignore
+ * @private
+ */
+function _getAccessorList(data)
+{
+   const accessors = [];
+
+   for (const key in data)
+   {
+      if (data.hasOwnProperty(key))
+      {
+         if (typeof data[key] === 'object')
+         {
+            const childKeys = _getAccessorList(data[key]);
+
+            childKeys.forEach((childKey) =>
+            {
+               accessors.push(Array.isArray(childKey) ? `${key}.${childKey.join('.')}` : `${key}.${childKey}`);
+            });
+         }
+         else
+         {
+            accessors.push(key);
+         }
+      }
+   }
+
+   return accessors;
 }

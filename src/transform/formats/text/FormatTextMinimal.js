@@ -55,7 +55,7 @@ const s_DEFAULT_KEYS =
    classReport: ['maintainability'],
    methodReport: ['cyclomatic', 'halstead.difficulty'],
    moduleReport: ['maintainability'],
-   projectResult: ['maintainability']
+   projectResult: ['moduleAverage.maintainability']
 };
 
 /**

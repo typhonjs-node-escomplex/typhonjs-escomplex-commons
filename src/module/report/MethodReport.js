@@ -82,16 +82,6 @@ export default class MethodReport extends AbstractReport
    }
 
    /**
-    * Provides a default array and indices for summing maintainability metrics.
-    *
-    * @returns {{sums: number[], indices: {cyclomatic: number, effort: number, loc: number, params: number}}}
-    */
-   static getMaintainabilityMetrics()
-   {
-      return { sums: [0, 0, 0, 0], indices: s_INDICES_MAINTAINABILITY };
-   }
-
-   /**
     * Deserializes a JSON object representing a MethodReport.
     *
     * @param {object}   object - A JSON object of a MethodReport that was previously serialized.
@@ -105,54 +95,4 @@ export default class MethodReport extends AbstractReport
 
       return Object.assign(new MethodReport(), object);
    }
-
-   /**
-    * Provides a convenience method to increment metric sums given an object hash of indices.
-    *
-    * @param {Array<number>}  sums - Running sums for metric calculation.
-    * @param {object}         indices - Indices into the sums array for specific metrics.
-    */
-   sumMetrics(sums, indices)
-   {
-      /* istanbul ignore if */
-      if (!Array.isArray(sums)) { throw new TypeError('sumMetrics error: `sums` is not an `array`.'); }
-
-      /* istanbul ignore if */
-      if (typeof indices !== 'object') { throw new TypeError('sumMetrics error: `indices` is not an `object`.'); }
-
-      for (const key in indices)
-      {
-         switch (key)
-         {
-            case 'cyclomatic':
-               sums[indices[key]] += this.cyclomatic;
-               break;
-
-            case 'effort':
-               sums[indices[key]] += this.halstead.effort;
-               break;
-
-            case 'loc':
-               sums[indices[key]] += this.sloc.logical;
-               break;
-
-            case 'params':
-               sums[indices[key]] += this.params;
-               break;
-         }
-      }
-   }
 }
-
-/**
- * Defines the default maintainability metrics supported by `sumMetrics`.
- * @type {{cyclomatic: number, effort: number, loc: number, params: number}}
- * @ignore
- */
-const s_INDICES_MAINTAINABILITY =
-{
-   cyclomatic: 0,
-   effort: 1,
-   loc: 2,
-   params: 3
-};
