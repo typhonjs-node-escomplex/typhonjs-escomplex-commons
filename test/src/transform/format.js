@@ -149,8 +149,8 @@ function runTests()
 function generateFormatData()
 {
    // Empty formatted result / report matching test data.
-   fs.emptyDirSync('./test/fixture/files/large-module');
-   fs.emptyDirSync('./test/fixture/files/large-project');
+   //fs.emptyDirSync('./test/fixture/files/large-module');
+   //fs.emptyDirSync('./test/fixture/files/large-project');
 
    // Generate project result formatted test data.
 

@@ -1,9 +1,14 @@
 * Module 1:
-   * Line start: 1
-   * Line end: 1120
-   * Cyclomatic complexity: 3.889
+   * Total lines: 1120
    * Maintainability index: 105.333
    * Dependency count: 6
+   * Average per-function physical LOC: 15.194
+   * Average per-function logical LOC: 8.333
+   * Average per-function cyclomatic complexity: 3.889
+   * Average per-function cyclomatic density: 62.645%
+   * Average per-function halstead difficulty: 8.141
+   * Average per-function halstead volume: 291.028
+   * Average per-function halstead effort: 8658.36
    
    * Module method: **&lt;anonymous&gt;**
       * Line start: 984
@@ -68,7 +73,13 @@
    * Class: **Collection**
       * Line start: 90
       * Line end: 945
-      * Cyclomatic complexity: 3.742
+      * Average per-function physical LOC: 14.613
+      * Average per-function logical LOC: 7.613
+      * Average per-function cyclomatic complexity: 3.742
+      * Average per-function cyclomatic density: 66.639%
+      * Average per-function halstead difficulty: 7.108
+      * Average per-function halstead volume: 264.965
+      * Average per-function halstead effort: 8875.587
       
       * Class method: **constructor**
          * Line start: 105
@@ -208,6 +219,7 @@
          * Physical LOC: 3
          * Logical LOC: 0
          * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 0%
          * Halstead difficulty: 0
          * Halstead volume: 0
          * Halstead effort: 0

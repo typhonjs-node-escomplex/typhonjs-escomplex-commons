@@ -11,5 +11,6 @@ export const modules =
    projectResult: true,
    transformFormat: true,
    utilMath: true,
+   utilObject: true,
    utilString: true
 };

@@ -1,77 +1,129 @@
 * Adjacency (dependencies / numerical indices correspond to ProjectResult modules / reports):
 * 1:	`./src/ESComplexProject.js`
 	* 3:	`./src/Plugins.js`
-	* 11:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
-	* 27:	`typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
-	* 32:	`typhonjs-escomplex-module/src/ESComplexModule.js`
+	* 14:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
+	* 21:	`typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
+	* 42:	`typhonjs-escomplex-module/src/ESComplexModule.js`
 
 * 2:	`./src/index.js`
 	* 1:	`./src/ESComplexProject.js`
 
 * 4:	`./test/fixture/testImportNPMAlias.js`
-	* 33:	`typhonjs-escomplex-module/src/index.js`
+	* 43:	`typhonjs-escomplex-module/src/index.js`
 
-* 5:	`./test/fixture/testRequireNPMAlias.js`
-	* 33:	`typhonjs-escomplex-module/src/index.js`
+* 9:	`typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js`
+	* 8:	`typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js`
 
-* 8:	`typhonjs-escomplex-commons/src/module/report/ClassReport.js`
+* 10:	`typhonjs-escomplex-commons/src/module/report/averages/ModuleAverage.js`
+	* 9:	`typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js`
+
+* 11:	`typhonjs-escomplex-commons/src/module/report/ClassReport.js`
 	* 7:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
-	* 10:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
+	* 9:	`typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js`
+	* 13:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
 
-* 10:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
+* 13:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
 	* 7:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
-	* 9:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
+	* 12:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
 
-* 11:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
+* 14:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
 	* 7:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
-	* 8:	`typhonjs-escomplex-commons/src/module/report/ClassReport.js`
-	* 10:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
-	* 28:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
+	* 9:	`typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js`
+	* 11:	`typhonjs-escomplex-commons/src/module/report/ClassReport.js`
+	* 13:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
+	* 38:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
+	* 39:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
 
-* 12:	`typhonjs-escomplex-commons/src/module/traits/actualize.js`
-	* 13:	`typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js`
-	* 14:	`typhonjs-escomplex-commons/src/module/traits/safeArray.js`
-	* 16:	`typhonjs-escomplex-commons/src/module/traits/Trait.js`
+* 15:	`typhonjs-escomplex-commons/src/module/traits/actualize.js`
+	* 16:	`typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js`
+	* 17:	`typhonjs-escomplex-commons/src/module/traits/safeArray.js`
+	* 19:	`typhonjs-escomplex-commons/src/module/traits/Trait.js`
 
-* 13:	`typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js`
-	* 17:	`typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js`
+* 16:	`typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js`
+	* 20:	`typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js`
 
-* 24:	`typhonjs-escomplex-commons/src/project/result/formats/formatXML.js`
-	* 30:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
-	* 31:	`typhonjs-escomplex-commons/src/utils/XMLUtil.js`
+* 21:	`typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
+	* 10:	`typhonjs-escomplex-commons/src/module/report/averages/ModuleAverage.js`
+	* 14:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
+	* 38:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
+	* 39:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
-* 25:	`typhonjs-escomplex-commons/src/project/result/formats/formatXMLCheckstyle.js`
-	* 30:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
-	* 31:	`typhonjs-escomplex-commons/src/utils/XMLUtil.js`
+* 23:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
+	* 40:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
 
-* 26:	`typhonjs-escomplex-commons/src/project/result/ProjectFormatter.js`
-	* 18:	`typhonjs-escomplex-commons/src/project/result/formats/formatJSON.js`
-	* 19:	`typhonjs-escomplex-commons/src/project/result/formats/formatJSONExpanded.js`
-	* 20:	`typhonjs-escomplex-commons/src/project/result/formats/formatMarkdown.js`
-	* 21:	`typhonjs-escomplex-commons/src/project/result/formats/formatText.js`
-	* 22:	`typhonjs-escomplex-commons/src/project/result/formats/formatTextMinimal.js`
-	* 23:	`typhonjs-escomplex-commons/src/project/result/formats/formatTextModules.js`
-	* 24:	`typhonjs-escomplex-commons/src/project/result/formats/formatXML.js`
-	* 25:	`typhonjs-escomplex-commons/src/project/result/formats/formatXMLCheckstyle.js`
+* 24:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
+	* 40:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
 
-* 27:	`typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
-	* 11:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
-	* 26:	`typhonjs-escomplex-commons/src/project/result/ProjectFormatter.js`
-	* 28:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
-	* 30:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+* 26:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js`
+	* 33:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js`
+	* 41:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
-* 28:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
-	* 29:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+* 27:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js`
+	* 34:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js`
 
-* 31:	`typhonjs-escomplex-commons/src/utils/XMLUtil.js`
-	* 30:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+* 28:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js`
+	* 35:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js`
+	* 41:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
-* 32:	`typhonjs-escomplex-module/src/ESComplexModule.js`
-	* 34:	`typhonjs-escomplex-module/src/Plugins.js`
+* 29:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js`
+	* 31:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
 
-* 33:	`typhonjs-escomplex-module/src/index.js`
-	* 32:	`typhonjs-escomplex-module/src/ESComplexModule.js`
+* 30:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js`
+	* 37:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
 
-* 34:	`typhonjs-escomplex-module/src/Plugins.js`
-	* 11:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
+* 31:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
+	* 41:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+
+* 32:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
+	* 40:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+
+* 33:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js`
+	* 31:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
+	* 38:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
+
+* 34:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js`
+	* 32:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
+
+* 35:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js`
+	* 31:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
+
+* 36:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
+	* 31:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
+
+* 37:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
+	* 32:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
+
+* 38:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
+	* 14:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
+	* 21:	`typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
+	* 22:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
+	* 23:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
+	* 24:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
+	* 25:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js`
+	* 26:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js`
+	* 27:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js`
+	* 28:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js`
+	* 29:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js`
+	* 30:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js`
+	* 33:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js`
+	* 34:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js`
+	* 35:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js`
+	* 36:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
+	* 37:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
+
+* 39:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
+	* 40:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+
+* 41:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 40:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+
+* 42:	`typhonjs-escomplex-module/src/ESComplexModule.js`
+	* 44:	`typhonjs-escomplex-module/src/Plugins.js`
+
+* 43:	`typhonjs-escomplex-module/src/index.js`
+	* 42:	`typhonjs-escomplex-module/src/ESComplexModule.js`
+
+* 44:	`typhonjs-escomplex-module/src/Plugins.js`
+	* 14:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
 

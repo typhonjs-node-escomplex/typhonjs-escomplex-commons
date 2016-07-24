@@ -174,31 +174,6 @@ if (testconfig.modules['moduleReport'])
                assert.strictEqual(report.classes[0].methods[0].sloc.logical, 50);
             });
          });
-
-         suite('sumMetrics:', () =>
-         {
-            test('correct sum values collected', () =>
-            {
-               const report = new ModuleReport(10, 100);
-
-               report.cyclomatic = 10;
-               report.effort = 20;
-               report.loc = 30;
-               report.maintainability = 40;
-               report.params = 50;
-
-               const { sums, indices } = ModuleReport.getMaintainabilityMetrics();
-
-               report.sumMetrics(sums, indices);
-               report.sumMetrics(sums, indices);
-
-               assert.strictEqual(sums[indices.cyclomatic], 20);
-               assert.strictEqual(sums[indices.effort], 40);
-               assert.strictEqual(sums[indices.loc], 60);
-               assert.strictEqual(sums[indices.maintainability], 80);
-               assert.strictEqual(sums[indices.params], 100);
-            });
-         });
       });
 
       suite('AbstractReport:', () =>
@@ -240,39 +215,6 @@ if (testconfig.modules['moduleReport'])
 
          setup(() => { report = new ModuleReport(10, 100); });
          teardown(() => { report = undefined; });
-
-         test('MethodReport has correct static maintainability metric data', () =>
-         {
-            const { sums, indices } = MethodReport.getMaintainabilityMetrics();
-
-            assert.isArray(sums);
-            assert.isObject(indices);
-
-            assert.lengthOf(sums, 4);
-
-            assert.strictEqual(indices.cyclomatic, 0);
-            assert.strictEqual(indices.effort, 1);
-            assert.strictEqual(indices.loc, 2);
-            assert.strictEqual(indices.params, 3);
-         });
-
-         test('MethodReport sumMetrics is correct', () =>
-         {
-            const { sums, indices } = MethodReport.getMaintainabilityMetrics();
-
-            report.aggregate.cyclomatic = 10;
-            report.aggregate.halstead.effort = 20;
-            report.aggregate.sloc.logical = 30;
-            report.aggregate.params = 40;
-
-            report.aggregate.sumMetrics(sums, indices);
-            report.aggregate.sumMetrics(sums, indices);
-
-            assert.strictEqual(sums[0], 20);
-            assert.strictEqual(sums[1], 40);
-            assert.strictEqual(sums[2], 60);
-            assert.strictEqual(sums[3], 80);
-         });
       });
    });
 }
