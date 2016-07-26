@@ -86,6 +86,11 @@ export default class FormatText extends AbstractFormatText
 
 // Module private ---------------------------------------------------------------------------------------------------
 
+/**
+ * Provides shared method data.
+ * @type {*[]}
+ * @ignore
+ */
 const s_SHARED_METHOD_DATA =
 [
    ['Line start: ',                          'lineStart'],
@@ -100,6 +105,11 @@ const s_SHARED_METHOD_DATA =
    ['Parameter count: ',                     'params']
 ];
 
+/**
+ * Provides shared average method data.
+ * @type {*[]}
+ * @ignore
+ */
 const s_SHARED_METHOD_AVERAGE_DATA =
 [
    ['Average per-function physical LOC: ',            'methodAverage.sloc.physical'],
