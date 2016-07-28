@@ -1,4 +1,6 @@
 import AbstractReport   from './AbstractReport';
+import AnalyzeError     from '../../analyze/AnalyzeError';
+import AggregateReport  from './AggregateReport';
 import MethodAverage    from './averages/MethodAverage';
 import MethodReport     from './MethodReport';
 
@@ -18,13 +20,13 @@ export default class ClassReport extends AbstractReport
     */
    constructor(name = '', lineStart = 0, lineEnd = 0)
    {
-      super(new MethodReport('', lineStart, lineEnd, 0));
+      super(new AggregateReport(lineStart, lineEnd));
 
       /**
-       * Stores the aggregate method data.
-       * @type {MethodReport}
+       * Stores any analysis errors.
+       * @type {Array}
        */
-      this.aggregate = this._methodReport;
+      this.errors = [];
 
       /**
        * Stores the end line for the class.
@@ -58,17 +60,37 @@ export default class ClassReport extends AbstractReport
    }
 
    /**
-    * Cleans up any house keeping member variables.
+    * Clears all errors stored in the class report and by default any class methods.
     *
-    * @returns {ClassReport}
+    * @param {boolean}  clearChildren - (Optional) If false then class method errors are not cleared; default (true).
     */
-   finalize()
+   clearErrors(clearChildren = true)
    {
-      super.finalize();
+      this.errors = [];
 
-      this.methods.forEach((methodReport) => { methodReport.finalize(); });
+      if (clearChildren)
+      {
+         this.methods.forEach((report) => { report.clearErrors(); });
+      }
+   }
 
-      return this;
+   /**
+    * Gets all errors stored in the class report and by default any class methods.
+    *
+    * @param {boolean}  includeChildren - (Optional) If false then class method errors are not included; default (true).
+    *
+    * @returns {Array<AnalyzeError>}
+    */
+   getErrors(includeChildren = true)
+   {
+      const errors = [].concat(...this.errors);
+
+      if (includeChildren)
+      {
+         this.methods.forEach((report) => { errors.push(...report.getErrors()); });
+      }
+
+      return errors;
    }
 
    /**
@@ -85,8 +107,10 @@ export default class ClassReport extends AbstractReport
 
       const classReport = Object.assign(new ClassReport(), object);
 
-      // Must explicitly assign `aggregate` to `classReport._methodReport` and re-assign data.
-      classReport.aggregate = Object.assign(classReport._methodReport, object.aggregate);
+      if (classReport.errors.length > 0)
+      {
+         classReport.errors = classReport.errors.map((error) => { return Object.assign(new AnalyzeError(), error); });
+      }
 
       if (classReport.methods.length > 0)
       {

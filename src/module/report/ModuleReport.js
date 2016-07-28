@@ -1,4 +1,6 @@
 import AbstractReport   from './AbstractReport';
+import AggregateReport  from './AggregateReport';
+import AnalyzeError     from '../../analyze/AnalyzeError';
 import ClassReport      from './ClassReport';
 import MethodAverage    from './averages/MethodAverage';
 import MethodReport     from './MethodReport';
@@ -27,19 +29,13 @@ export default class ModuleReport extends AbstractReport
     */
    constructor(lineStart = 0, lineEnd = 0, settings = {})
    {
-      super(new MethodReport('', lineStart, lineEnd, 0));
+      super(new AggregateReport(lineStart, lineEnd));
 
       /**
        * Stores the settings used to generate the module report.
        * @type {object}
        */
       this.settings = typeof settings === 'object' ? settings : {};
-
-      /**
-       * Stores the aggregate MethodReport for the module.
-       * @type {MethodReport}
-       */
-      this.aggregate = this._methodReport;
 
       /**
        * Stores all ClassReport data for the module.
@@ -54,10 +50,16 @@ export default class ModuleReport extends AbstractReport
       this.dependencies = [];
 
       /**
+       * Stores any analysis errors.
+       * @type {Array}
+       */
+      this.errors = [];
+
+      /**
        * Stores the file path of the module / file. The file path is only defined as supplied when processing projects.
        * @type {string}
        */
-      this.filePath = undefined;
+      this.filePath = void 0;
 
       /**
        * Stores the end line for the module / file.
@@ -106,7 +108,7 @@ export default class ModuleReport extends AbstractReport
        * the source code itself. `srcPath` is only defined as supplied when processing projects.
        * @type {string}
        */
-      this.srcPath = undefined;
+      this.srcPath = void 0;
 
       /**
        * Stores the active source path alias of the module / file. This path is respective of how the file is
@@ -114,7 +116,7 @@ export default class ModuleReport extends AbstractReport
        * `srcPathAlias` is only defined as supplied when processing projects.
        * @type {string}
        */
-      this.srcPathAlias = undefined;
+      this.srcPathAlias = void 0;
    }
 
    /**
@@ -127,6 +129,23 @@ export default class ModuleReport extends AbstractReport
       if (typeof dependencies === 'object' || Array.isArray(dependencies))
       {
          this.dependencies = this.dependencies.concat(dependencies);
+      }
+   }
+
+   /**
+    * Clears all errors stored in the module report and by default any class reports and module methods.
+    *
+    * @param {boolean}  clearChildren - (Optional) If false then class and module method errors are not cleared;
+    *                                   default (true).
+    */
+   clearErrors(clearChildren = true)
+   {
+      this.errors = [];
+
+      if (clearChildren)
+      {
+         this.classes.forEach((report) => { report.clearErrors(); });
+         this.methods.forEach((report) => { report.clearErrors(); });
       }
    }
 
@@ -193,11 +212,6 @@ export default class ModuleReport extends AbstractReport
     */
    finalize()
    {
-      super.finalize();
-
-      this.classes.forEach((report) => { report.finalize(); });
-      this.methods.forEach((report) => { report.finalize(); });
-
       delete this._scopeStackClass;
       delete this._scopeStackMethod;
 
@@ -222,6 +236,27 @@ export default class ModuleReport extends AbstractReport
    getCurrentMethodReport()
    {
       return this._scopeStackMethod.length > 0 ? this._scopeStackMethod[this._scopeStackMethod.length - 1] : void 0;
+   }
+
+   /**
+    * Gets all errors stored in the module report and by default any module methods and class reports.
+    *
+    * @param {boolean}  includeChildren - (Optional) If false then class and module method errors are not included;
+    *                                     default (true).
+    *
+    * @returns {Array<AnalyzeError>}
+    */
+   getErrors(includeChildren = true)
+   {
+      const errors = [].concat(...this.errors);
+
+      if (includeChildren)
+      {
+         this.methods.forEach((report) => { errors.push(...report.getErrors()); });
+         this.classes.forEach((report) => { errors.push(...report.getErrors()); });
+      }
+
+      return errors;
    }
 
    /**
@@ -340,12 +375,14 @@ export default class ModuleReport extends AbstractReport
 
       const report = Object.assign(new ModuleReport(), object);
 
-      // Must explicitly assign `aggregate` to `report._methodReport` and re-assign data.
-      report.aggregate = Object.assign(report._methodReport, object.aggregate);
-
       if (report.classes.length > 0)
       {
          report.classes = report.classes.map((classReport) => { return ClassReport.parse(classReport); });
+      }
+
+      if (report.errors.length > 0)
+      {
+         report.errors = report.errors.map((error) => { return Object.assign(new AnalyzeError(), error); });
       }
 
       if (report.methods.length > 0)

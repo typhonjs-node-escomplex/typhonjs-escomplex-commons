@@ -55,17 +55,13 @@ if (testconfig.modules['projectResult'])
 
             test('finalize removes private data', () =>
             {
-               assert.isObject(result.reports[2]._methodReport);
                assert.isArray(result.reports[2]._scopeStackClass);
                assert.isArray(result.reports[2]._scopeStackMethod);
-               assert.isObject(result.reports[2].classes[0]._methodReport);
 
                result.finalize();
 
-               assert.isUndefined(result.reports[2]._methodReport);
                assert.isUndefined(result.reports[2]._scopeStackClass);
                assert.isUndefined(result.reports[2]._scopeStackMethod);
-               assert.isUndefined(result.reports[2].classes[0]._methodReport);
             });
 
             test('finalize w/ serializeReports === false is correct', () =>
@@ -74,7 +70,6 @@ if (testconfig.modules['projectResult'])
                report.srcPath = './a.js';
                result = new ProjectResult([report], { serializeReports: false });
 
-               assert.isObject(result.reports[0]._methodReport);
                assert.isArray(result.reports[0]._scopeStackClass);
                assert.isArray(result.reports[0]._scopeStackMethod);
 

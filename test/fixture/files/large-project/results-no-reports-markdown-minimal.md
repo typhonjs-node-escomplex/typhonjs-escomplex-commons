@@ -1,5 +1,5 @@
 * Project:
-   * moduleAverage.maintainability: 134.827
+   * moduleAverage.maintainability: 135.211
 
 * Module 1:
    * filePath: `./src/ESComplexProject.js`
@@ -22,158 +22,166 @@
    * srcPath: `./test/fixture/testRequireNPMAlias.js`
 
 * Module 6:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
+   * srcPath: `typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
+
+* Module 7:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js`
    * srcPath: `typhonjs-escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js`
 
-* Module 7:
+* Module 8:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
    * srcPath: `typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
 
-* Module 8:
+* Module 9:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
+   * srcPath: `typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
+
+* Module 10:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js`
    * srcPath: `typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js`
 
-* Module 9:
+* Module 11:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js`
    * srcPath: `typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js`
 
-* Module 10:
+* Module 12:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/report/averages/ModuleAverage.js`
    * srcPath: `typhonjs-escomplex-commons/src/module/report/averages/ModuleAverage.js`
 
-* Module 11:
+* Module 13:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/report/ClassReport.js`
    * srcPath: `typhonjs-escomplex-commons/src/module/report/ClassReport.js`
 
-* Module 12:
+* Module 14:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
    * srcPath: `typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
 
-* Module 13:
+* Module 15:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/report/MethodReport.js`
    * srcPath: `typhonjs-escomplex-commons/src/module/report/MethodReport.js`
 
-* Module 14:
+* Module 16:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
    * srcPath: `typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
 
-* Module 15:
+* Module 17:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/traits/actualize.js`
    * srcPath: `typhonjs-escomplex-commons/src/module/traits/actualize.js`
 
-* Module 16:
+* Module 18:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js`
    * srcPath: `typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js`
 
-* Module 17:
+* Module 19:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/traits/safeArray.js`
    * srcPath: `typhonjs-escomplex-commons/src/module/traits/safeArray.js`
 
-* Module 18:
+* Module 20:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/traits/safeName.js`
    * srcPath: `typhonjs-escomplex-commons/src/module/traits/safeName.js`
 
-* Module 19:
+* Module 21:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/traits/Trait.js`
    * srcPath: `typhonjs-escomplex-commons/src/module/traits/Trait.js`
 
-* Module 20:
+* Module 22:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js`
    * srcPath: `typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js`
 
-* Module 21:
+* Module 23:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
    * srcPath: `typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
 
-* Module 22:
+* Module 24:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
 
-* Module 23:
+* Module 25:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
 
-* Module 24:
+* Module 26:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
 
-* Module 25:
+* Module 27:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js`
 
-* Module 26:
+* Module 28:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js`
 
-* Module 27:
+* Module 29:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js`
 
-* Module 28:
+* Module 30:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js`
 
-* Module 29:
+* Module 31:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js`
 
-* Module 30:
+* Module 32:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js`
 
-* Module 31:
+* Module 33:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
 
-* Module 32:
+* Module 34:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
 
-* Module 33:
+* Module 35:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js`
 
-* Module 34:
+* Module 36:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js`
 
-* Module 35:
+* Module 37:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js`
 
-* Module 36:
+* Module 38:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
 
-* Module 37:
+* Module 39:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
 
-* Module 38:
+* Module 40:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/TransformFormat.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/TransformFormat.js`
 
-* Module 39:
+* Module 41:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/utils/MathUtil.js`
    * srcPath: `typhonjs-escomplex-commons/src/utils/MathUtil.js`
 
-* Module 40:
+* Module 42:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
    * srcPath: `typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
 
-* Module 41:
+* Module 43:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/utils/StringUtil.js`
    * srcPath: `typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
-* Module 42:
+* Module 44:
    * filePath: `./node_modules/typhonjs-escomplex-module/src/ESComplexModule.js`
    * srcPath: `typhonjs-escomplex-module/src/ESComplexModule.js`
 
-* Module 43:
+* Module 45:
    * filePath: `./node_modules/typhonjs-escomplex-module/src/index.js`
    * srcPath: `typhonjs-escomplex-module/src/index.js`
    * srcPathAlias: `typhonjs-escomplex-module`
 
-* Module 44:
+* Module 46:
    * filePath: `./node_modules/typhonjs-escomplex-module/src/Plugins.js`
    * srcPath: `typhonjs-escomplex-module/src/Plugins.js`

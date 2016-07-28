@@ -1,12 +1,10 @@
-import AbstractReport   from './AbstractReport';
-import HalsteadData     from './HalsteadData';
+import AggregateReport  from './AggregateReport';
+import AnalyzeError     from '../../analyze/AnalyzeError';
 
 /**
  * Provides the method report object which stores data pertaining to a single method / function.
- *
- *
  */
-export default class MethodReport extends AbstractReport
+export default class MethodReport extends AggregateReport
 {
    /**
     * Initializes method report.
@@ -18,25 +16,13 @@ export default class MethodReport extends AbstractReport
     */
    constructor(name = '', lineStart = 0, lineEnd = 0, params = 0)
    {
-      super();
+      super(lineStart, lineEnd);
 
       /**
-       * The cyclomatic complexity of the method.
-       * @type {number}
+       * Stores any analysis errors.
+       * @type {Array}
        */
-      this.cyclomatic = 1;
-
-      /**
-       * The cyclomatic density of the method.
-       * @type {number}
-       */
-      this.cyclomaticDensity = 0;
-
-      /**
-       * Stores the Halstead data instance.
-       * @type {HalsteadData}
-       */
-      this.halstead = new HalsteadData();
+      this.errors = [];
 
       /**
        * Stores the end line for the method.
@@ -57,28 +43,28 @@ export default class MethodReport extends AbstractReport
       this.name = name;
 
       /**
-       * The number of parameters for the method.
+       * The number of parameters for the method or report.
        * @type {number}
        */
       this.params = params;
-
-      /**
-       * The source lines of code for the method.
-       * @type {{logical: number, physical: number}}
-       */
-      this.sloc = { logical: 0, physical: lineEnd - lineStart + 1 };
    }
 
    /**
-    * Cleans up any house keeping member variables.
-    *
-    * @returns {MethodReport}
+    * Clears all errors stored in the method report.
     */
-   finalize()
+   clearErrors()
    {
-      super.finalize();
+      this.errors = [];
+   }
 
-      return this;
+   /**
+    * Gets all errors stored in the method report.
+    *
+    * @returns {Array<AnalyzeError>}
+    */
+   getErrors()
+   {
+      return [].concat(...this.errors);
    }
 
    /**
@@ -93,6 +79,13 @@ export default class MethodReport extends AbstractReport
       /* istanbul ignore if */
       if (typeof object !== 'object') { throw new TypeError(`parse error: 'object' is not an 'object'.`); }
 
-      return Object.assign(new MethodReport(), object);
+      const methodReport = Object.assign(new MethodReport(), object);
+
+      if (methodReport.errors.length > 0)
+      {
+         methodReport.errors = methodReport.errors.map((error) => { return Object.assign(new AnalyzeError(), error); });
+      }
+
+      return methodReport;
    }
 }

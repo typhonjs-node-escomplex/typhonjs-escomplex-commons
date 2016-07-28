@@ -42,7 +42,7 @@ function runTests()
                });
             });
 
-            suite('forEach / formatResult (large-module/report):', () =>
+            suite('forEach / formatResult (large-project/results):', () =>
             {
                const largeProjectJSON = require(
                 'typhonjs-escomplex-test-data/files/large-project/results/results-no-reports');
@@ -83,6 +83,30 @@ function runTests()
 
                      const original = fs.readFileSync(
                       `./test/fixture/files/large-module/report-${formatName}.${extensions[index]}`, 'utf8');
+
+                     assert.strictEqual(output, original);
+                  });
+               });
+            });
+
+            suite('toFormat (large-module/report-with-errors):', () =>
+            {
+               const largeModuleJSON = require(
+                'typhonjs-escomplex-test-data/files/large-module/report/report-with-errors');
+
+               const moduleReport = ModuleReport.parse(largeModuleJSON).finalize();
+
+               const extensions = ModuleReport.getFormatFileExtensions();
+
+               ModuleReport.getFormatNames().forEach((formatName, index) =>
+               {
+                  test(`formatName: ${formatName}`, () =>
+                  {
+                     const output = moduleReport.toFormat(formatName);
+
+                     const original = fs.readFileSync(
+                      `./test/fixture/files/large-module/report-with-errors-${formatName}.${extensions[index]}`,
+                       'utf8');
 
                      assert.strictEqual(output, original);
                   });
@@ -137,6 +161,30 @@ function runTests()
                   });
                });
             });
+
+            suite('toFormat (large-project/results-with-errors):', () =>
+            {
+               const largeProjectJSON = require(
+                'typhonjs-escomplex-test-data/files/large-project/results/results-with-errors');
+
+               const projectResult = ProjectResult.parse(largeProjectJSON).finalize();
+
+               const extensions = ProjectResult.getFormatFileExtensions();
+
+               ProjectResult.getFormatNames().forEach((formatName, index) =>
+               {
+                  test(`formatName: ${formatName}`, () =>
+                  {
+                     const output = projectResult.toFormat(formatName);
+
+                     const original = fs.readFileSync(
+                      `./test/fixture/files/large-project/results-with-errors-${formatName}.${extensions[index]}`,
+                       'utf8');
+
+                     assert.strictEqual(output, original);
+                  });
+               });
+            });
          });
       });
    }
@@ -149,8 +197,8 @@ function runTests()
 function generateFormatData()
 {
    // Empty formatted result / report matching test data.
-   //fs.emptyDirSync('./test/fixture/files/large-module');
-   //fs.emptyDirSync('./test/fixture/files/large-project');
+   // fs.emptyDirSync('./test/fixture/files/large-module');
+   // fs.emptyDirSync('./test/fixture/files/large-project');
 
    // Generate project result formatted test data.
 
@@ -165,6 +213,20 @@ function generateFormatData()
 
          fs.writeFileSync(
           `./test/fixture/files/large-module/report-${formatName}.${format.extension}`, output, 'utf8');
+      });
+   });
+
+   const largeModuleJSON2 = require('typhonjs-escomplex-test-data/files/large-module/report/report-with-errors');
+   const moduleReport2 = ModuleReport.parse(largeModuleJSON2).finalize();
+
+   TransformFormat.forEach((format, formatName) =>
+   {
+      test(`formatName: ${formatName}`, () =>
+      {
+         const output = format.formatReport(moduleReport2);
+
+         fs.writeFileSync(
+          `./test/fixture/files/large-module/report-with-errors-${formatName}.${format.extension}`, output, 'utf8');
       });
    });
 
@@ -195,6 +257,20 @@ function generateFormatData()
 
          fs.writeFileSync(
           `./test/fixture/files/large-project/results-no-reports-${formatName}.${format.extension}`, output, 'utf8');
+      });
+   });
+
+   const largeProjectJSON3 = require('typhonjs-escomplex-test-data/files/large-project/results/results-with-errors');
+   const projectResult3 = ProjectResult.parse(largeProjectJSON3).finalize();
+
+   TransformFormat.forEach((format, formatName) =>
+   {
+      test(`formatName: ${formatName}`, () =>
+      {
+         const output = format.formatResult(projectResult3);
+
+         fs.writeFileSync(
+          `./test/fixture/files/large-project/results-with-errors-${formatName}.${format.extension}`, output, 'utf8');
       });
    });
 }

@@ -107,11 +107,13 @@ if (testconfig.modules['moduleReport'])
                assert.throws(() => { report.popScope('unknown'); });
             });
 
-            test('finalize removes `_methodReport`', () =>
+            test('finalize removes private data', () =>
             {
-               assert.isObject(report._methodReport);
+               assert.isArray(report._scopeStackClass);
+               assert.isArray(report._scopeStackMethod);
                report.finalize();
-               assert.isNotObject(report._methodReport);
+               assert.isNotArray(report._scopeStackClass);
+               assert.isNotArray(report._scopeStackMethod);
             });
          });
 

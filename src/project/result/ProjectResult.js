@@ -37,7 +37,7 @@ export default class ProjectResult
        *
        * @type {Array<Array<number>>}
        */
-      this.adjacencyList = undefined;
+      this.adjacencyList = void 0;
 
       /**
        * Measures the average percentage of modules affected when one module / file in the project is changed.
@@ -52,6 +52,12 @@ export default class ProjectResult
        * @type {number}
        */
       this.coreSize = 0;
+
+      /**
+       * Stores any analysis errors.
+       * @type {Array}
+       */
+      this.errors = [];
 
       /**
        * Measures the percentage of all possible internal dependencies that are actually realized in the project.
@@ -80,7 +86,23 @@ export default class ProjectResult
        *
        * @type {Array<Array<number>>}
        */
-      this.visibilityList = undefined;
+      this.visibilityList = void 0;
+   }
+
+   /**
+    * Clears all errors stored in the project report and by default any module reports.
+    *
+    * @param {boolean}  clearChildren - (Optional) If false then class and module method errors are not cleared;
+    *                                   default (true).
+    */
+   clearErrors(clearChildren = true)
+   {
+      this.errors = [];
+
+      if (clearChildren)
+      {
+         this.reports.forEach((report) => { report.clearErrors(); });
+      }
    }
 
    /**
@@ -88,9 +110,10 @@ export default class ProjectResult
     * `srcPathAlias` entries of reports.
     *
     * @param {object}      options - (Optional) Allows overriding of ModuleReport serialization.
-    * @property {boolean}  serializeAverages - If serializeReports is false and serializeAverages is true then module
-    *                                          averages will also be added to a reduced project result; default: false.
     * @property {boolean}  serializeReports - Allows overriding of ModuleReport serialization; default: true.
+    * @property {boolean}  serializeReportAverages - If serializeReports is false and serializeReportAverages is true
+    *                                                then module averages will also be added to a reduced project
+    *                                                result; default: false.
     *
     * @returns {ProjectResult}
     */
@@ -99,11 +122,14 @@ export default class ProjectResult
       if (typeof options !== 'object') { throw new TypeError(`finalize error: 'options' is not an 'object'.`); }
 
       let serializeReports = this.getSetting('serializeReports', true);
-      let serializeAverages = this.getSetting('serializeAverages', false);
+      let serializeReportAverages = this.getSetting('serializeReportAverages', false);
 
       // Allow an override opportunity.
-      if (typeof options.serializeAverages === 'boolean') { serializeAverages = options.serializeAverages; }
       if (typeof options.serializeReports === 'boolean') { serializeReports = options.serializeReports; }
+      if (typeof options.serializeReportAverages === 'boolean')
+      {
+         serializeReportAverages = options.serializeReportAverages;
+      }
 
       if (serializeReports)
       {
@@ -116,7 +142,7 @@ export default class ProjectResult
             const modReport = { filePath: report.filePath, srcPath: report.srcPath, srcPathAlias: report.srcPathAlias };
 
             // Potentially add module averages
-            if (serializeAverages)
+            if (serializeReportAverages)
             {
                modReport.maintainability = report.maintainability;
                modReport.methodAverage = report.methodAverage;
@@ -127,6 +153,25 @@ export default class ProjectResult
       }
 
       return MathUtil.toFixedTraverse(this);
+   }
+
+   /**
+    * Gets all errors stored in the project report and by default any module reports.
+    *
+    * @param {boolean}  includeChildren - (Optional) If false then module errors are not included; default (true).                                     default (true).
+    *
+    * @returns {Array<AnalyzeError>}
+    */
+   getErrors(includeChildren = true)
+   {
+      const errors = [].concat(...this.errors);
+
+      if (includeChildren)
+      {
+         this.reports.forEach((report) => { errors.push(...report.getErrors()); });
+      }
+
+      return errors;
    }
 
    /**
