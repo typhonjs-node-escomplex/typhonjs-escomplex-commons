@@ -47,19 +47,4 @@ export default class AggregateReport extends AbstractReport
        */
       this.sloc = { logical: 0, physical: lineEnd - lineStart + 1 };
    }
-   //
-   ///**
-   // * Deserializes a JSON object representing an AggregateReport.
-   // *
-   // * @param {object}   object - A JSON object of an AggregateReport that was previously serialized.
-   // *
-   // * @returns {AggregateReport}
-   // */
-   //static parse(object)
-   //{
-   //   /* istanbul ignore if */
-   //   if (typeof object !== 'object') { throw new TypeError(`parse error: 'object' is not an 'object'.`); }
-   //
-   //   return Object.assign(new AggregateReport(), object);
-   //}
 }

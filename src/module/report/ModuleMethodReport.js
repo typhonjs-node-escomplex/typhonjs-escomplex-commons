@@ -13,19 +13,6 @@ export default class ModuleMethodReport extends MethodReport
     */
    get type() { return ReportType.MODULE_METHOD; }
 
-   ///**
-   // * Initializes method report.
-   // *
-   // * @param {string}   name - Name of the method.
-   // * @param {number}   lineStart - Start line of method.
-   // * @param {number}   lineEnd - End line of method.
-   // * @param {number}   params - Number of parameters for method.
-   // */
-   //constructor(name = '', lineStart = 0, lineEnd = 0, params = 0)
-   //{
-   //   super(name, lineStart, lineEnd, params);
-   //}
-
    /**
     * Deserializes a JSON object representing a ModuleMethodReport.
     *
@@ -33,8 +20,5 @@ export default class ModuleMethodReport extends MethodReport
     *
     * @returns {ModuleMethodReport}
     */
-   static parse(object)
-   {
-      return this._parse(new ModuleMethodReport(), object);
-   }
+   static parse(object) { return this._parse(new ModuleMethodReport(), object); }
 }
