@@ -107,11 +107,37 @@ if (testconfig.modules['moduleReport'])
                assert.throws(() => { report.popScope('unknown'); });
             });
 
-            test('finalize removes private data', () =>
+            test('scope stacks are not defined', () =>
             {
-               assert.isArray(report._scopeStackClass);
-               assert.isArray(report._scopeStackMethod);
+               assert.isNotArray(report._scopeStackClass);
+               assert.isNotArray(report._scopeStackMethod);
                report.finalize();
+               assert.isNotArray(report._scopeStackClass);
+               assert.isNotArray(report._scopeStackMethod);
+            });
+
+            test('class scope stack created / finalized', () =>
+            {
+               report.createScope('class', 100, 200);
+
+               assert.isArray(report._scopeStackClass);
+               assert.isNotArray(report._scopeStackMethod);
+
+               report.finalize();
+
+               assert.isNotArray(report._scopeStackClass);
+               assert.isNotArray(report._scopeStackMethod);
+            });
+
+            test('method scope stack created / finalized', () =>
+            {
+               report.createScope('method', 100, 200, 4);
+
+               assert.isNotArray(report._scopeStackClass);
+               assert.isArray(report._scopeStackMethod);
+
+               report.finalize();
+
                assert.isNotArray(report._scopeStackClass);
                assert.isNotArray(report._scopeStackMethod);
             });

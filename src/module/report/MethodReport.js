@@ -60,11 +60,26 @@ export default class MethodReport extends AggregateReport
    /**
     * Gets all errors stored in the method report.
     *
-    * @returns {Array<AnalyzeError>}
+    * @param {object}   options - (Optional)
+    * @property {boolean}  includeChildren - If false then module errors are not included; default (true).
+    * @property {boolean}  includeObject - If true then results will be an array of object hashes containing `source`
+    *                                      (the source report object of the error) and `error`
+    *                                      (an AnalyzeError instance) keys; default (false).
+    *
+    * @returns {Array<AnalyzeError|{error: AnalyzeError, source: *}>}
     */
-   getErrors()
+   getErrors(options = { includeChildren: true, includeObject: false })
    {
-      return [].concat(...this.errors);
+      /* istanbul ignore if */
+      if (typeof options !== 'object') { throw new TypeError(`getErrors error: 'options' is not an 'object'.`); }
+
+      // By default set includeChildren to true.
+      /* istanbul ignore if */
+      if (typeof options.includeChildren !== 'boolean') { options.includeChildren = true; }
+
+      // If `includeObject` is true then return an object hash with the source and error otherwise return the error.
+      return options.includeObject ? this.errors.map((entry) => { return { error: entry, source: this }; }) :
+       [].concat(...this.errors);
    }
 
    /**

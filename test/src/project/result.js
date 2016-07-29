@@ -70,8 +70,8 @@ if (testconfig.modules['projectResult'])
                report.srcPath = './a.js';
                result = new ProjectResult([report], { serializeReports: false });
 
-               assert.isArray(result.reports[0]._scopeStackClass);
-               assert.isArray(result.reports[0]._scopeStackMethod);
+               assert.isNotArray(result.reports[0]._scopeStackClass);
+               assert.isNotArray(result.reports[0]._scopeStackMethod);
 
                result.finalize();
 

@@ -77,17 +77,30 @@ export default class ClassReport extends AbstractReport
    /**
     * Gets all errors stored in the class report and by default any class methods.
     *
-    * @param {boolean}  includeChildren - (Optional) If false then class method errors are not included; default (true).
+    * @param {object}   options - (Optional)
+    * @property {boolean}  includeChildren - If false then module errors are not included; default (true).
+    * @property {boolean}  includeObject - If true then results will be an array of object hashes containing `source`
+    *                                      (the source report object of the error) and `error`
+    *                                      (an AnalyzeError instance) keys; default (false).
     *
-    * @returns {Array<AnalyzeError>}
+    * @returns {Array<AnalyzeError|{error: AnalyzeError, source: *}>}
     */
-   getErrors(includeChildren = true)
+   getErrors(options = { includeChildren: true, includeObject: false })
    {
-      const errors = [].concat(...this.errors);
+      /* istanbul ignore if */
+      if (typeof options !== 'object') { throw new TypeError(`getErrors error: 'options' is not an 'object'.`); }
 
-      if (includeChildren)
+      // By default set includeChildren to true.
+      /* istanbul ignore if */
+      if (typeof options.includeChildren !== 'boolean') { options.includeChildren = true; }
+
+      // If `includeObject` is true then return an object hash with the source and error otherwise return the error.
+      const errors = options.includeObject ? this.errors.map((entry) => { return { error: entry, source: this }; }) :
+       [].concat(...this.errors);
+
+      if (options.includeChildren)
       {
-         this.methods.forEach((report) => { errors.push(...report.getErrors()); });
+         this.methods.forEach((report) => { errors.push(...report.getErrors(options)); });
       }
 
       return errors;

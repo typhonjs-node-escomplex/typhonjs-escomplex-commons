@@ -92,16 +92,16 @@ export default class ModuleReport extends AbstractReport
       this.methodAverage = new MethodAverage();
 
       /**
-       * Stores the current class report scope stack.
+       * Stores the current class report scope stack which is lazily created in `createScope`.
        * @type {Array<ClassReport>}
        */
-      this._scopeStackClass = [];
+      this._scopeStackClass = void 0;
 
       /**
-       * Stores the current method report scope stack.
+       * Stores the current method report scope stack which is lazily created in `createScope`.
        * @type {Array<MethodReport>}
        */
-      this._scopeStackMethod = [];
+      this._scopeStackMethod = void 0;
 
       /**
        * Stores the active source path of the module / file. This path is respective of how the file is referenced in
@@ -169,7 +169,12 @@ export default class ModuleReport extends AbstractReport
          case 'class':
             report = new ClassReport(name, lineStart, lineEnd);
             this.classes.push(report);
+
+            // Lazily create class scope stack if not currently initialized.
+            if (!Array.isArray(this._scopeStackClass)) { this._scopeStackClass = []; }
+
             this._scopeStackClass.push(report);
+
             break;
 
          case 'method':
@@ -192,6 +197,9 @@ export default class ModuleReport extends AbstractReport
                // Add this report to the module methods as there is no current class report.
                this.methods.push(report);
             }
+
+            // Lazily create method scope stack if not currently initialized.
+            if (!Array.isArray(this._scopeStackMethod)) { this._scopeStackMethod = []; }
 
             this._scopeStackMethod.push(report);
 
@@ -225,6 +233,7 @@ export default class ModuleReport extends AbstractReport
     */
    getCurrentClassReport()
    {
+      if (!Array.isArray(this._scopeStackClass)) { return void 0; }
       return this._scopeStackClass.length > 0 ? this._scopeStackClass[this._scopeStackClass.length - 1] : void 0;
    }
 
@@ -235,25 +244,37 @@ export default class ModuleReport extends AbstractReport
     */
    getCurrentMethodReport()
    {
+      if (!Array.isArray(this._scopeStackMethod)) { return void 0; }
       return this._scopeStackMethod.length > 0 ? this._scopeStackMethod[this._scopeStackMethod.length - 1] : void 0;
    }
 
    /**
     * Gets all errors stored in the module report and by default any module methods and class reports.
     *
-    * @param {boolean}  includeChildren - (Optional) If false then class and module method errors are not included;
-    *                                     default (true).
+    * @property {boolean}  includeChildren - If false then module errors are not included; default (true).
+    * @property {boolean}  includeObject - If true then results will be an array of object hashes containing `source`
+    *                                      (the source report object of the error) and `error`
+    *                                      (an AnalyzeError instance) keys; default (false).
     *
-    * @returns {Array<AnalyzeError>}
+    * @returns {Array<AnalyzeError|{error: AnalyzeError, source: *}>}
     */
-   getErrors(includeChildren = true)
+   getErrors(options = { includeChildren: true, includeObject: false })
    {
-      const errors = [].concat(...this.errors);
+      /* istanbul ignore if */
+      if (typeof options !== 'object') { throw new TypeError(`getErrors error: 'options' is not an 'object'.`); }
 
-      if (includeChildren)
+      // By default set includeChildren to true.
+      /* istanbul ignore if */
+      if (typeof options.includeChildren !== 'boolean') { options.includeChildren = true; }
+
+      // If `includeObject` is true then return an object hash with the source and error otherwise return the error.
+      const errors = options.includeObject ? this.errors.map((entry) => { return { error: entry, source: this }; }) :
+       [].concat(...this.errors);
+
+      if (options.includeChildren)
       {
-         this.methods.forEach((report) => { errors.push(...report.getErrors()); });
-         this.classes.forEach((report) => { errors.push(...report.getErrors()); });
+         this.methods.forEach((report) => { errors.push(...report.getErrors(options)); });
+         this.classes.forEach((report) => { errors.push(...report.getErrors(options)); });
       }
 
       return errors;
@@ -404,11 +425,11 @@ export default class ModuleReport extends AbstractReport
       switch (type)
       {
          case 'class':
-            this._scopeStackClass.pop();
+            if (Array.isArray(this._scopeStackClass)) { this._scopeStackClass.pop(); }
             return this.getCurrentClassReport();
 
          case 'method':
-            this._scopeStackMethod.pop();
+            if (Array.isArray(this._scopeStackMethod)) { this._scopeStackMethod.pop(); }
             return this.getCurrentMethodReport();
 
          default:
