@@ -24,9 +24,9 @@ export default class AbstractFormatText
     * @param {ModuleReport}   report - A module report.
     *
     * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {string}      classReport - An entry key found in the ClassReport to output.
-    * @property {string}      methodReport - An entry key found in the MethodReport to output.
-    * @property {string}      moduleReport - An entry key found in the ModuleReport to output.
+    * @property {string}      classReport - An entry key found in the class report to output.
+    * @property {string}      methodReport - An entry key found in the method report to output.
+    * @property {string}      moduleReport - An entry key found in the module report to output.
     *
     * @returns {string}
     */
@@ -61,9 +61,9 @@ export default class AbstractFormatText
     * @param {ProjectResult}  result - A project result.
     *
     * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {string}      classReport - An entry key found in the ClassReport to output.
-    * @property {string}      methodReport - An entry key found in the MethodReport to output.
-    * @property {string}      moduleReport - An entry key found in the ModuleReport to output.
+    * @property {string}      classReport - An entry key found in the class report to output.
+    * @property {string}      methodReport - An entry key found in the method report to output.
+    * @property {string}      moduleReport - An entry key found in the module report to output.
     *
     * @returns {string}
     */
@@ -102,8 +102,8 @@ export default class AbstractFormatText
     * @param {ClassReport} classReport - A class report.
     *
     * @param {object}      options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {string}   classReport - An entry key found in the ClassReport to output.
-    * @property {string}   methodReport - An entry key found in the MethodReport to output.
+    * @property {string}   classReport - An entry key found in the class report to output.
+    * @property {string}   methodReport - An entry key found in the method report to output.
     *
     * @param {string}      prepend - (Optional) A string to prepend; default: `''`.
     *
@@ -129,8 +129,8 @@ export default class AbstractFormatText
     * @param {Array<ClassReport>}   classReports - An array of ClassReport instances to format.
     *
     * @param {object}               options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {string}            classReport - An entry key found in the ClassReport to output.
-    * @property {string}            methodReport - An entry key found in the MethodReport to output.
+    * @property {string}            classReport - An entry key found in the class report to output.
+    * @property {string}            methodReport - An entry key found in the method report to output.
     *
     * @param {string}               prepend - (Optional) A string to prepend; default: `''`.
     *
@@ -189,10 +189,10 @@ export default class AbstractFormatText
    /**
     * Formats a method report.
     *
-    * @param {MethodReport}   methodReport - A method report.
+    * @param {ClassMethodReport|ModuleMethodReport}   methodReport - A method report.
     *
     * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {string}      methodReport - An entry key found in the MethodReport to output.
+    * @property {string}      methodReport - An entry key found in the method report to output.
     *
     * @param {string}         prepend - (Optional) A string to prepend; default: `''`.
     *
@@ -217,10 +217,11 @@ export default class AbstractFormatText
    /**
     * Formats a module reports methods array.
     *
-    * @param {Array<MethodReport>}  methodReports - An array of MethodReport instances to format.
+    * @param {Array<ClassMethodReport|ClassMethodReport>}  methodReports - An array of method report instances to
+    *                                                                      format.
     *
     * @param {object}               options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {string}            methodReport - An entry key found in the MethodReport to output.
+    * @property {string}            methodReport - An entry key found in the method report to output.
     *
     * @param {string}               prepend - (Optional) A string to prepend; default: `''`.
     *
@@ -247,9 +248,9 @@ export default class AbstractFormatText
     * @param {boolean}        reportsAvailable - Indicates that the report metric data is available.
     *
     * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {string}      classReport - Entry keys found in the ClassReport to output.
-    * @property {string}      methodReport - Entry keys found in the MethodReport to output.
-    * @property {string}      moduleReport - Entry keys found in the ModuleReport to output.
+    * @property {string}      classReport - Entry keys found in the class report to output.
+    * @property {string}      methodReport - Entry keys found in the method report to output.
+    * @property {string}      moduleReport - Entry keys found in the module report to output.
     *
     * @returns {string}
     * @private

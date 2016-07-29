@@ -1,23 +1,32 @@
-import AbstractReport   from './AbstractReport';
-import AggregateReport  from './AggregateReport';
-import AnalyzeError     from '../../analyze/AnalyzeError';
-import ClassReport      from './ClassReport';
-import MethodAverage    from './averages/MethodAverage';
-import MethodReport     from './MethodReport';
+import AbstractReport      from './AbstractReport';
+import AggregateReport     from './AggregateReport';
+import AnalyzeError        from '../../analyze/AnalyzeError';
+import ClassMethodReport   from './ClassMethodReport';
+import ClassReport         from './ClassReport';
+import MethodAverage       from './averages/MethodAverage';
+import ModuleMethodReport  from './ModuleMethodReport';
 
-import MathUtil         from  '../../utils/MathUtil';
-import TransformFormat  from  '../../transform/TransformFormat';
+import MathUtil            from '../../utils/MathUtil';
+import TransformFormat     from '../../transform/TransformFormat';
+
+import ReportType          from '../../types/ReportType';
 
 /**
  * Provides the module report object which stores data pertaining to a single file / module being processed.
  *
  * All ES Module classes are stored in the `classes` member variable as ClassReports. Methods that are not part of a
- * class are stored as MethodReports in the `methods` member variable.
+ * class are stored as ModuleMethodReport instances in the `methods` member variable.
  *
  * Various helper methods found in ModuleReport and AbstractReport help increment associated data during collection.
  */
 export default class ModuleReport extends AbstractReport
 {
+   /**
+    * Returns the enum for the report type.
+    * @returns {MODULE}
+    */
+   get type() { return ReportType.MODULE; }
+
    /**
     * Initializes the report.
     *
@@ -80,8 +89,8 @@ export default class ModuleReport extends AbstractReport
       this.maintainability = 0;
 
       /**
-       * Stores all module MethodReport data found outside of any ES6 classes.
-       * @type {Array<MethodReport>}
+       * Stores all module ModuleMethodReport data found outside of any ES6 classes.
+       * @type {Array<ModuleMethodReport>}
        */
       this.methods = [];
 
@@ -99,7 +108,7 @@ export default class ModuleReport extends AbstractReport
 
       /**
        * Stores the current method report scope stack which is lazily created in `createScope`.
-       * @type {Array<MethodReport>}
+       * @type {Array<ClassMethodReport|ModuleMethodReport>}
        */
       this._scopeStackMethod = void 0;
 
@@ -179,8 +188,6 @@ export default class ModuleReport extends AbstractReport
 
          case 'method':
          {
-            report = new MethodReport(name, lineStart, lineEnd, params);
-
             // Increment aggregate method report params.
             this.incrementParams(params);
 
@@ -189,11 +196,15 @@ export default class ModuleReport extends AbstractReport
 
             if (classReport)
             {
+               report = new ClassMethodReport(name, lineStart, lineEnd, params);
+
                classReport.incrementParams(params);
                classReport.methods.push(report);
             }
             else
             {
+               report = new ModuleMethodReport(name, lineStart, lineEnd, params);
+
                // Add this report to the module methods as there is no current class report.
                this.methods.push(report);
             }
@@ -240,7 +251,7 @@ export default class ModuleReport extends AbstractReport
    /**
     * Returns the current method report.
     *
-    * @returns {MethodReport}
+    * @returns {ClassMethodReport|ModuleMethodReport}
     */
    getCurrentMethodReport()
    {
@@ -251,6 +262,7 @@ export default class ModuleReport extends AbstractReport
    /**
     * Gets all errors stored in the module report and by default any module methods and class reports.
     *
+    * @param {object}   options - Optional parameters.
     * @property {boolean}  includeChildren - If false then module errors are not included; default (true).
     * @property {boolean}  includeObject - If true then results will be an array of object hashes containing `source`
     *                                      (the source report object of the error) and `error`
@@ -308,6 +320,15 @@ export default class ModuleReport extends AbstractReport
    static getFormatTypes()
    {
       return TransformFormat.getTypes();
+   }
+
+   /**
+    * Returns the name / id associated with this report.
+    * @returns {string}
+    */
+   getName()
+   {
+      return typeof this.srcPath === 'string' ? this.srcPath : '';
    }
 
    /**
@@ -398,17 +419,17 @@ export default class ModuleReport extends AbstractReport
 
       if (report.classes.length > 0)
       {
-         report.classes = report.classes.map((classReport) => { return ClassReport.parse(classReport); });
+         report.classes = report.classes.map((classReport) => ClassReport.parse(classReport));
       }
 
       if (report.errors.length > 0)
       {
-         report.errors = report.errors.map((error) => { return Object.assign(new AnalyzeError(), error); });
+         report.errors = report.errors.map((error) => AnalyzeError.parse(error));
       }
 
       if (report.methods.length > 0)
       {
-         report.methods = report.methods.map((methodReport) => { return MethodReport.parse(methodReport); });
+         report.methods = report.methods.map((methodReport) => ModuleMethodReport.parse(methodReport));
       }
 
       return report;

@@ -17,9 +17,9 @@ export default class FormatJSONMinimal
     * @param {ModuleReport}   report - A module report.
     *
     * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {string}      classReport - An entry key found in the ClassReport to output.
-    * @property {string}      methodReport - An entry key found in the MethodReport to output.
-    * @property {string}      moduleReport - An entry key found in the ModuleReport to output.
+    * @property {string}      classReport - An entry key found in the class report to output.
+    * @property {string}      methodReport - An entry key found in the method report to output.
+    * @property {string}      moduleReport - An entry key found in the module report to output.
     *
     * @returns {object}
     */
@@ -40,9 +40,9 @@ export default class FormatJSONMinimal
     * @param {ProjectResult}  result - A project result.
     *
     * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {string}      classReport - An entry key found in the ClassReport to output.
-    * @property {string}      methodReport - An entry key found in the MethodReport to output.
-    * @property {string}      moduleReport - An entry key found in the ModuleReport to output.
+    * @property {string}      classReport - An entry key found in the class report to output.
+    * @property {string}      methodReport - An entry key found in the method report to output.
+    * @property {string}      moduleReport - An entry key found in the module report to output.
     *
     * @returns {string}
     */
@@ -100,8 +100,8 @@ export default class FormatJSONMinimal
     * @param {Array<ClassReport>}   classReports - An array of ClassReport instances to format.
     *
     * @param {object}               options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {string}            classReport - An entry key found in the ClassReport to output.
-    * @property {string}            methodReport - An entry key found in the MethodReport to output.
+    * @property {string}            classReport - An entry key found in the class report to output.
+    * @property {string}            methodReport - An entry key found in the method report to output.
     *
     * @returns {Array<object>}
     */
@@ -136,10 +136,11 @@ export default class FormatJSONMinimal
    /**
     * Formats a module or class reports methods array.
     *
-    * @param {Array<MethodReport>}  methodReports - An array of MethodReport instances to format.
+    * @param {Array<ClassMethodReport|ModuleMethodReport>}  methodReports - An array of method report instances to
+    *                                                                       format.
     *
     * @param {object}               options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {string}            methodReport - An entry key found in the MethodReport to output.
+    * @property {string}            methodReport - An entry key found in the method report to output.
     *
     * @returns {Array<object>}
     */
@@ -177,9 +178,9 @@ export default class FormatJSONMinimal
     * @param {boolean}        reportsAvailable - Indicates that the report metric data is available.
     *
     * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {string}      classReport - An entry key found in the ClassReport to output.
-    * @property {string}      methodReport - An entry key found in the MethodReport to output.
-    * @property {string}      moduleReport - An entry key found in the ModuleReport to output.
+    * @property {string}      classReport - An entry key found in the class report to output.
+    * @property {string}      methodReport - An entry key found in the method report to output.
+    * @property {string}      moduleReport - An entry key found in the module report to output.
     *
     * @returns {object}
     */

@@ -1,6 +1,6 @@
 /**
  * Provides several helper methods to work with method oriented data stored as `this.aggregate` in `ClassReport` /
- * `ModuleReport` and directly in `MethodReport`.
+ * `ModuleReport` and directly in `ClassMethodReport` / `ModuleMethodReport`.
  */
 export default class AbstractReport
 {
@@ -28,7 +28,7 @@ export default class AbstractReport
    get aggregateReport() { return typeof this.aggregate !== 'undefined' ? this.aggregate : this; }
 
    /**
-    * Increments the associated MethodReport HalsteadData for distinct identifiers.
+    * Increments the associated aggregate report HalsteadData for distinct identifiers.
     *
     * @param {string}   metric - A Halstead metric name.
     * @param {string}   identifier - A Halstead identifier name.
@@ -44,7 +44,7 @@ export default class AbstractReport
    }
 
    /**
-    * Increments the associated MethodReport Halstead items including distinct and total counts.
+    * Increments the associated aggregate report Halstead items including distinct and total counts.
     *
     * @param {string}   metric - A Halstead metric name.
     * @param {string}   identifier - A Halstead identifier name.
@@ -58,7 +58,7 @@ export default class AbstractReport
    }
 
    /**
-    * Increments the associated MethodReport Halstead metric type.
+    * Increments the associated aggregate report Halstead metric type.
     *
     * @param {string}   metric - A Halstead metric name.
     * @param {string}   type - A Halstead metric type.
@@ -69,7 +69,7 @@ export default class AbstractReport
    }
 
    /**
-    * Increments the associated MethodReport parameter count.
+    * Increments the associated aggregate report parameter count.
     *
     * @param {number}   count - Value to increase params by.
     */
@@ -79,7 +79,7 @@ export default class AbstractReport
    }
 
    /**
-    * Returns true if a given HalsteadData metric / identifier is not found in the associated MethodReport.
+    * Returns true if a given HalsteadData metric / identifier is not found in the associated aggregate report.
     *
     * @param {string}   metric - A Halstead metric name.
     * @param {string}   identifier - A Halstead identifier name.

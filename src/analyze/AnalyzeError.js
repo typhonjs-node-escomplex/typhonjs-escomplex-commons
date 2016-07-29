@@ -1,7 +1,4 @@
-import ClassReport   from '../module/report/ClassReport';
-import MethodReport  from '../module/report/MethodReport';
-import ModuleReport  from '../module/report/ModuleReport';
-import ProjectResult from '../project/result/ProjectResult';
+import ReportType    from '../types/ReportType';
 
 /**
  * Provides a wrapper for analysis errors stored in the `errors` array for each report type.
@@ -11,12 +8,12 @@ export default class AnalyzeError
    /**
     * Initializes an instance.
     *
-    * @param {string}                                                severity - Provides the severity level.
-    * @param {string}                                                message - Provides the error message.
-    * @param {ClassReport|MethodReport|ModuleReport|ProjectResult}   sourceReport - The source of the error.
-    * @param {ClassReport|MethodReport|ModuleReport|ProjectResult}   parentReport - Provides the parent report object.
+    * @param {string}   severity - Provides the severity level.
+    * @param {string}   message - Provides the error message.
+    * @param {ClassMethodReport|ClassReport|ModuleMethodReport|ModuleReport|ProjectResult} sourceReport -
+    *                   The source report of the error.
     */
-   constructor(severity = '<unknown>', message = '', sourceReport = void 0, parentReport = void 0)
+   constructor(severity = '<unknown>', message = '', sourceReport = void 0)
    {
       /**
        * Provides the line number where the error starts.
@@ -45,13 +42,33 @@ export default class AnalyzeError
       /**
        * Attempt to find the `name` then try `srcPath` for modules.
        */
-      this.name = s_GET_NAME(sourceReport);
+      this.name = typeof sourceReport === 'object' ? sourceReport.getName() : '';
 
       /**
-       * Provides a typeo of report where the error is found.
+       * Provides a type of report where the error is found.
        * @type {string}
        */
-      this.type = s_GET_TYPE(sourceReport, parentReport);
+      this.type = typeof sourceReport === 'object' ? sourceReport.type : void 0;
+   }
+
+   /**
+    * Deserializes a JSON object representing a AnalyzeError.
+    *
+    * @param {object}   object - A JSON object of a AnalyzeError that was previously serialized.
+    *
+    * @returns {AnalyzeError}
+    */
+   static parse(object)
+   {
+      /* istanbul ignore if */
+      if (typeof object !== 'object') { throw new TypeError(`parse error: 'object' is not an 'object'.`); }
+
+      const error = Object.assign(new AnalyzeError(), object);
+
+      // Deserialize the associated enum type.
+      error.type = ReportType.enumValueOf(object.type.name);
+
+      return error;
    }
 
    /**
@@ -60,57 +77,7 @@ export default class AnalyzeError
     */
    toString()
    {
-      return `${this.severity}: ${this.message} @ ${this.description} ${this.name !== '' ? `- ${this.name} ` :
+      return `${this.severity}: ${this.message} @ ${this.type.description} ${this.name !== '' ? `- ${this.name} ` :
        ''}(${this.lineStart} - ${this.lineEnd})`;
    }
-}
-
-// Module private ---------------------------------------------------------------------------------------------------
-
-/**
- * Creates a string description of the source report.
- *
- * @param {ClassReport|MethodReport|ModuleReport|ProjectResult}   sourceReport - The source of the error.
- *
- * @returns {string}
- * @ignore
- */
-function s_GET_NAME(sourceReport)
-{
-   let name = '';
-
-   if (sourceReport instanceof ClassReport) { name = sourceReport.name; }
-   if (sourceReport instanceof MethodReport) { name = sourceReport.name; }
-   if (sourceReport instanceof ModuleReport)
-   {
-      name = typeof sourceReport.srcPath === 'string' ? sourceReport.srcPath : '';
-   }
-   if (sourceReport instanceof ProjectResult) { name = ''; }
-
-   return name;
-}
-
-/**
- * Creates a string type of the source report.
- *
- * @param {ClassReport|MethodReport|ModuleReport|ProjectResult}   sourceReport - The source of the error.
- * @param {ClassReport|MethodReport|ModuleReport|ProjectResult}   parentReport - Provides the parent report object.
- *
- * @returns {string}
- * @ignore
- */
-function s_GET_TYPE(sourceReport, parentReport = void 0)
-{
-   let description = '';
-
-   if (sourceReport instanceof ClassReport) { description = 'Class'; }
-   if (sourceReport instanceof MethodReport)
-   {
-      if (parentReport instanceof ClassReport) { description = 'Class Method'; }
-      else { description = 'Module Method'; }
-   }
-   if (sourceReport instanceof ModuleReport) { description = 'Module'; }
-   if (sourceReport instanceof ProjectResult) { description = 'Project'; }
-
-   return description;
 }

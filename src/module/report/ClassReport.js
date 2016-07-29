@@ -1,16 +1,24 @@
-import AbstractReport   from './AbstractReport';
-import AnalyzeError     from '../../analyze/AnalyzeError';
-import AggregateReport  from './AggregateReport';
-import MethodAverage    from './averages/MethodAverage';
-import MethodReport     from './MethodReport';
+import AbstractReport      from './AbstractReport';
+import AnalyzeError        from '../../analyze/AnalyzeError';
+import AggregateReport     from './AggregateReport';
+import ClassMethodReport   from './ClassMethodReport';
+import MethodAverage       from './averages/MethodAverage';
+
+import ReportType          from '../../types/ReportType';
 
 /**
  * Provides the class report object which stores data pertaining to a single ES6 class.
  *
- * Methods that are stored as MethodReports in the `methods` member variable.
+ * Methods that are stored as ClassMethodReport instances in the `methods` member variable.
  */
 export default class ClassReport extends AbstractReport
 {
+   /**
+    * Returns the enum for the report type.
+    * @returns {CLASS}
+    */
+   get type() { return ReportType.CLASS; }
+
    /**
     * Initializes class report.
     *
@@ -42,7 +50,7 @@ export default class ClassReport extends AbstractReport
 
       /**
        * Stores all method data.
-       * @type {Array<MethodReport>}
+       * @type {Array<ClassMethodReport>}
        */
       this.methods = [];
 
@@ -77,7 +85,7 @@ export default class ClassReport extends AbstractReport
    /**
     * Gets all errors stored in the class report and by default any class methods.
     *
-    * @param {object}   options - (Optional)
+    * @param {object}   options - Optional parameters.
     * @property {boolean}  includeChildren - If false then module errors are not included; default (true).
     * @property {boolean}  includeObject - If true then results will be an array of object hashes containing `source`
     *                                      (the source report object of the error) and `error`
@@ -107,6 +115,15 @@ export default class ClassReport extends AbstractReport
    }
 
    /**
+    * Returns the name / id associated with this report.
+    * @returns {string}
+    */
+   getName()
+   {
+      return this.name;
+   }
+
+   /**
     * Deserializes a JSON object representing a ClassReport.
     *
     * @param {object}   object - A JSON object of a ClassReport that was previously serialized.
@@ -122,12 +139,12 @@ export default class ClassReport extends AbstractReport
 
       if (classReport.errors.length > 0)
       {
-         classReport.errors = classReport.errors.map((error) => { return Object.assign(new AnalyzeError(), error); });
+         classReport.errors = classReport.errors.map((error) => AnalyzeError.parse(error));
       }
 
       if (classReport.methods.length > 0)
       {
-         classReport.methods = classReport.methods.map((methodReport) => { return MethodReport.parse(methodReport); });
+         classReport.methods = classReport.methods.map((methodReport) => ClassMethodReport.parse(methodReport));
       }
 
       return classReport;

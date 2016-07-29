@@ -5,6 +5,8 @@ import ModuleReport     from  '../../module/report/ModuleReport';
 import MathUtil         from  '../../utils/MathUtil';
 import StringUtil       from  '../../utils/StringUtil';
 
+import ReportType       from '../../types/ReportType';
+
 /**
  * Provides the default project report object which stores data pertaining to all modules / files contained.
  *
@@ -14,6 +16,12 @@ import StringUtil       from  '../../utils/StringUtil';
  */
 export default class ProjectResult
 {
+   /**
+    * Returns the enum for the report type.
+    * @returns {PROJECT}
+    */
+   get type() { return ReportType.PROJECT; }
+
    /**
     * Initializes ProjectReport with default values.
     *
@@ -158,7 +166,7 @@ export default class ProjectResult
    /**
     * Gets all errors stored in the project report and by default any module reports.
     *
-    * @param {object}   options - (Optional)
+    * @param {object}   options - Optional parameters.
     * @property {boolean}  includeChildren - If false then module errors are not included; default (true).
     * @property {boolean}  includeObject - If true then results will be an array of object hashes containing `source`
     *                                      (the source report object of the error) and `error`
@@ -218,6 +226,15 @@ export default class ProjectResult
    }
 
    /**
+    * Returns the name / id associated with this report.
+    * @returns {string}
+    */
+   getName()
+   {
+      return '';
+   }
+
+   /**
     * Returns the setting indexed by the given key.
     *
     * @param {string}   key - A key used to store the setting parameter.
@@ -253,7 +270,7 @@ export default class ProjectResult
 
       if (result.reports.length > 0)
       {
-         result.reports = result.reports.map((report) => { return ModuleReport.parse(report); });
+         result.reports = result.reports.map((report) => ModuleReport.parse(report));
       }
 
       return result;

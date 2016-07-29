@@ -60,7 +60,7 @@ export default class MethodReport extends AggregateReport
    /**
     * Gets all errors stored in the method report.
     *
-    * @param {object}   options - (Optional)
+    * @param {object}   options - Optional parameters.
     * @property {boolean}  includeChildren - If false then module errors are not included; default (true).
     * @property {boolean}  includeObject - If true then results will be an array of object hashes containing `source`
     *                                      (the source report object of the error) and `error`
@@ -83,22 +83,34 @@ export default class MethodReport extends AggregateReport
    }
 
    /**
-    * Deserializes a JSON object representing a MethodReport.
-    *
-    * @param {object}   object - A JSON object of a MethodReport that was previously serialized.
-    *
-    * @returns {MethodReport}
+    * Returns the name / id associated with this report.
+    * @returns {string}
     */
-   static parse(object)
+   getName()
+   {
+      return this.name;
+   }
+
+   /**
+    * Deserializes a JSON object representing a ClassMethodReport.
+    *
+    * @param {ClassMethodReport|ModuleMethodReport}   targetObject - A target object to hydrate.
+    *
+    * @param {object}   jsonObject - A JSON object of a class or module method report that was previously serialized.
+    *
+    * @returns {ClassMethodReport|ModuleMethodReport}
+    * @protected
+    */
+   static _parse(targetObject, jsonObject)
    {
       /* istanbul ignore if */
-      if (typeof object !== 'object') { throw new TypeError(`parse error: 'object' is not an 'object'.`); }
+      if (typeof jsonObject !== 'object') { throw new TypeError(`parse error: 'jsonObject' is not an 'object'.`); }
 
-      const methodReport = Object.assign(new MethodReport(), object);
+      const methodReport = Object.assign(targetObject, jsonObject);
 
       if (methodReport.errors.length > 0)
       {
-         methodReport.errors = methodReport.errors.map((error) => { return Object.assign(new AnalyzeError(), error); });
+         methodReport.errors = methodReport.errors.map((error) => AnalyzeError.parse(error));
       }
 
       return methodReport;
