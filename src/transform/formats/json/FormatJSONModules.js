@@ -18,67 +18,22 @@ export default class FormatJSONModules
     */
    formatReport(report, options = {})
    {
+      let output;
+
       switch (report.type)
       {
          case ReportType.MODULE:
-            return this.formatModule(report, options);
+            output = this._formatModule(report);
+            break;
 
          case ReportType.PROJECT:
-            return this.formatProject(report, options);
+            output = this._formatProject(report);
+            break;
 
          default:
             console.warn(`formatReport '${this.name}' warning: unsupported report type '${report.type}'.`);
             return '';
       }
-   }
-
-   /**
-    * Formats a module report as a JSON string. Please note that the exported JSON only contains data for ModuleReport
-    * instances contained in a ProjectResult.
-    *
-    * @param {ModuleReport}   report - A module report.
-    *
-    * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {number}      spacing - (Optional) An integer defining the JSON output spacing.
-
-    * @returns {string}
-    */
-   formatModule(report, options = {})
-   {
-      const output = {};
-
-      if (report.filePath) { output.filePath = report.filePath; }
-      if (report.srcPath) { output.srcPath = report.srcPath; }
-      if (report.srcPathAlias) { output.srcPathAlias = report.srcPathAlias; }
-
-      return typeof options === 'object' && Number.isInteger(options.spacing) ?
-       JSON.stringify(output, void 0, options.spacing) : JSON.stringify(output);
-   }
-
-   /**
-    * Formats a project result modules as plain text.
-    *
-    * @param {ProjectResult}  result - A project result.
-    *
-    * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {number}      spacing - (Optional) An integer defining the JSON output spacing.
-    *
-    * @returns {string}
-    */
-   formatProject(result, options = {})
-   {
-      const output = { modules: [] };
-
-      result.reports.forEach((report) =>
-      {
-         const entry = {};
-
-         if (report.filePath) { entry.filePath = report.filePath; }
-         if (report.srcPath) { entry.srcPath = report.srcPath; }
-         if (report.srcPathAlias) { entry.srcPathAlias = report.srcPathAlias; }
-
-         output.modules.push(entry);
-      });
 
       return typeof options === 'object' && Number.isInteger(options.spacing) ?
        JSON.stringify(output, void 0, options.spacing) : JSON.stringify(output);
@@ -132,5 +87,40 @@ export default class FormatJSONModules
          default:
             return false;
       }
+   }
+
+   /**
+    * Formats a module report as a JSON string. Please note that the exported JSON only contains data for ModuleReport
+    * instances contained in a ProjectResult.
+    *
+    * @param {ModuleReport}   moduleReport - A module report.
+
+    * @returns {object}
+    */
+   _formatModule(moduleReport)
+   {
+      const output = {};
+
+      if (moduleReport.filePath) { output.filePath = moduleReport.filePath; }
+      if (moduleReport.srcPath) { output.srcPath = moduleReport.srcPath; }
+      if (moduleReport.srcPathAlias) { output.srcPathAlias = moduleReport.srcPathAlias; }
+
+      return output;
+   }
+
+   /**
+    * Formats a project report modules as a JSON string.
+    *
+    * @param {ProjectResult}  projectReport - A project report.
+    *
+    * @returns {object}
+    */
+   _formatProject(projectReport)
+   {
+      const output = { modules: [] };
+
+      projectReport.reports.forEach((moduleReport) => { output.modules.push(this._formatModule(moduleReport)); });
+
+      return output;
    }
 }
