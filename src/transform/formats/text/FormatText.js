@@ -28,9 +28,9 @@ export default class FormatText extends AbstractFormatText
     *
     * @returns {string}
     */
-   formatProject(result, options = {})
+   _formatProject(result, options = {})
    {
-      let output = super.formatProject(result, options);
+      let output = super._formatProject(result, options);
 
       let localOptions = Object.assign({}, this._keys);
       localOptions = Object.assign(localOptions, options);

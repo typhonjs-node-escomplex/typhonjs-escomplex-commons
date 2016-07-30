@@ -31,19 +31,23 @@ export default class AbstractFormatText
     */
    formatReport(report, options = {})
    {
+      let localOptions = Object.assign({}, this._keys);
+      localOptions = Object.assign(localOptions, options);
+
       switch (report.type)
       {
          case ReportType.CLASS:
+            return this._formatClass(report, localOptions);
+
          case ReportType.CLASS_METHOD:
          case ReportType.MODULE_METHOD:
-            console.warn(`formatReport warning: unsupported report type '${report.type}'.`);
-            return '';
+            return this._formatMethod(report, localOptions);
 
          case ReportType.MODULE:
-            return this.formatModule(report, options);
+            return this._formatModule(report, localOptions);
 
          case ReportType.PROJECT:
-            return this.formatProject(report, options);
+            return this._formatProject(report, localOptions);
 
          default:
             console.warn(`formatReport '${this.name}' warning: unsupported report type '${report.type}'.`);
@@ -72,84 +76,6 @@ export default class AbstractFormatText
          default:
             return false;
       }
-   }
-
-   /**
-    * Formats a module report as plain text.
-    *
-    * @param {ModuleReport}   report - A module report.
-    *
-    * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {string}      classReport - An entry key found in the class report to output.
-    * @property {string}      methodReport - An entry key found in the method report to output.
-    * @property {string}      moduleReport - An entry key found in the module report to output.
-    *
-    * @returns {string}
-    */
-   formatModule(report, options = {})
-   {
-      let localOptions = Object.assign({}, this._keys);
-      localOptions = Object.assign(localOptions, options);
-
-      let output = '';
-
-      // Add / remove a temporary entries for the current module index.
-      try
-      {
-         report.___modulecntr___ = 0;
-         report.___modulecntrplus1___ = 1;
-
-         output = this._formatModule(report, true, localOptions);
-      }
-      finally
-      {
-         delete report.___modulecntr___;
-         delete report.___modulecntrplus1___;
-      }
-
-      // For reports remove any existing new line at the beginning.
-      return output.replace(/^[\n]/, '');
-   }
-
-   /**
-    * Formats a project result as plain text.
-    *
-    * @param {ProjectResult}  result - A project result.
-    *
-    * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {string}      classReport - An entry key found in the class report to output.
-    * @property {string}      methodReport - An entry key found in the method report to output.
-    * @property {string}      moduleReport - An entry key found in the module report to output.
-    *
-    * @returns {string}
-    */
-   formatProject(result, options = {})
-   {
-      let localOptions = Object.assign({}, this._keys);
-      localOptions = Object.assign(localOptions, options);
-
-      const reportsAvailable = result.getSetting('serializeReports', false);
-
-      return result.reports.reduce((formatted, moduleReport, index) =>
-      {
-         let current = '';
-
-         // Add / remove a temporary entries for the current module index.
-         try
-         {
-            moduleReport.___modulecntr___ = index;
-            moduleReport.___modulecntrplus1___ = index + 1;
-
-            current = `${formatted}${this._formatModule(moduleReport, reportsAvailable, localOptions)}`;
-         }
-         finally
-         {
-            delete moduleReport.___modulecntr___;
-            delete moduleReport.___modulecntrplus1___;
-         }
-
-         return current;
-      }, `${this._formatProject(result, localOptions)}`);
    }
 
    /**
@@ -212,7 +138,7 @@ export default class AbstractFormatText
     *
     * @param {string}         prepend - (Optional) A string to prepend; default: `''`.
     *
-    * @returns {string}
+    * @returns {string|Array<string>}
     * @private
     */
    _formatEntries(report, entries, prepend = '')
@@ -245,7 +171,7 @@ export default class AbstractFormatText
    /**
     * Formats a method report.
     *
-    * @param {ClassMethodReport|ModuleMethodReport}   methodReport - A method report.
+    * @param {MethodReport}   methodReport - A method report.
     *
     * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
     * @property {string}      methodReport - An entry key found in the method report to output.
@@ -297,6 +223,41 @@ export default class AbstractFormatText
    }
 
    /**
+    * Formats a module report as plain text.
+    *
+    * @param {ModuleReport}   report - A module report.
+    *
+    * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
+    * @property {string}      classReport - An entry key found in the class report to output.
+    * @property {string}      methodReport - An entry key found in the method report to output.
+    * @property {string}      moduleReport - An entry key found in the module report to output.
+    *
+    * @returns {string}
+    * @private
+    */
+   _formatModule(report, options)
+   {
+      let output = '';
+
+      // Add / remove a temporary entries for the current module index.
+      try
+      {
+         report.___modulecntr___ = 0;
+         report.___modulecntrplus1___ = 1;
+
+         output = this._formatModuleReport(report, true, options);
+      }
+      finally
+      {
+         delete report.___modulecntr___;
+         delete report.___modulecntrplus1___;
+      }
+
+      // For reports remove any existing new line at the beginning.
+      return output.replace(/^[\n]/, '');
+   }
+
+   /**
     * Formats a module report.
     *
     * @param {ModuleReport}   moduleReport - A module report.
@@ -311,7 +272,7 @@ export default class AbstractFormatText
     * @returns {string}
     * @private
     */
-   _formatModule(moduleReport, reportsAvailable, options)
+   _formatModuleReport(moduleReport, reportsAvailable, options)
    {
       // Skip processing if there are no headers.
       if (!Array.isArray(this._headers.moduleReport)) { return ''; }
@@ -334,6 +295,45 @@ export default class AbstractFormatText
    }
 
    /**
+    * Formats a project result as plain text.
+    *
+    * @param {ProjectResult}  result - A project result.
+    *
+    * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
+    * @property {string}      classReport - An entry key found in the class report to output.
+    * @property {string}      methodReport - An entry key found in the method report to output.
+    * @property {string}      moduleReport - An entry key found in the module report to output.
+    *
+    * @returns {string}
+    * @protected
+    */
+   _formatProject(result, options)
+   {
+      const reportsAvailable = result.getSetting('serializeReports', false);
+
+      return result.reports.reduce((formatted, moduleReport, index) =>
+      {
+         let current = '';
+
+         // Add / remove a temporary entries for the current module index.
+         try
+         {
+            moduleReport.___modulecntr___ = index;
+            moduleReport.___modulecntrplus1___ = index + 1;
+
+            current = `${formatted}${this._formatModuleReport(moduleReport, reportsAvailable, options)}`;
+         }
+         finally
+         {
+            delete moduleReport.___modulecntr___;
+            delete moduleReport.___modulecntrplus1___;
+         }
+
+         return current;
+      }, `${this._formatProjectReport(result, options)}`);
+   }
+
+   /**
     * Formats a project result.
     *
     * @param {ProjectResult}  projectResult - A project result.
@@ -344,7 +344,7 @@ export default class AbstractFormatText
     * @returns {string}
     * @private
     */
-   _formatProject(projectResult, options)
+   _formatProjectReport(projectResult, options)
    {
       // Skip processing if there are no headers.
       if (!Array.isArray(this._headers.projectResult)) { return ''; }
