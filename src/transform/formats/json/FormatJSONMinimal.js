@@ -65,7 +65,7 @@ export default class FormatJSONMinimal
       const output = this._formatModule(report, true, localOptions);
 
       return typeof localOptions === 'object' && Number.isInteger(localOptions.spacing) ?
-       JSON.stringify(output, undefined, localOptions.spacing) : JSON.stringify(output);
+       JSON.stringify(output, void 0, localOptions.spacing) : JSON.stringify(output);
    }
 
    /**
@@ -95,7 +95,7 @@ export default class FormatJSONMinimal
       });
 
       return typeof localOptions === 'object' && Number.isInteger(localOptions.spacing) ?
-       JSON.stringify(output, undefined, localOptions.spacing) : JSON.stringify(output);
+       JSON.stringify(output, void 0, localOptions.spacing) : JSON.stringify(output);
    }
 
    /**

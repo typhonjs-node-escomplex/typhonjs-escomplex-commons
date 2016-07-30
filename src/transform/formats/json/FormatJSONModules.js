@@ -52,7 +52,7 @@ export default class FormatJSONModules
       if (report.srcPathAlias) { output.srcPathAlias = report.srcPathAlias; }
 
       return typeof options === 'object' && Number.isInteger(options.spacing) ?
-       JSON.stringify(output, undefined, options.spacing) : JSON.stringify(output);
+       JSON.stringify(output, void 0, options.spacing) : JSON.stringify(output);
    }
 
    /**
@@ -81,7 +81,7 @@ export default class FormatJSONModules
       });
 
       return typeof options === 'object' && Number.isInteger(options.spacing) ?
-       JSON.stringify(output, undefined, options.spacing) : JSON.stringify(output);
+       JSON.stringify(output, void 0, options.spacing) : JSON.stringify(output);
    }
 
    /**

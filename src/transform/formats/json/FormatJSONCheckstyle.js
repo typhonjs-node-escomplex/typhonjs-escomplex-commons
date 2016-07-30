@@ -23,9 +23,9 @@ export default class FormatJSONCheckstyle
    }
 
    /**
-    * Formats a report as a JSON string with minimal metrics.
+    * Formats a module report as JSON / checkstyle.
     *
-    * @param {ClassReport|MethodReport|ModuleReport|ProjectResult} report - A report to format.
+    * @param {ModuleReport|ProjectResult} report - A module or project report to format.
     *
     * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
     * @property {number}      spacing - (Optional) An integer defining the JSON output spacing.
@@ -34,71 +34,34 @@ export default class FormatJSONCheckstyle
     */
    formatReport(report, options = {})
    {
+      let reports, reportsAvailable;
+
       switch (report.type)
       {
          case ReportType.MODULE:
-            return this.formatModule(report, options);
+            reports = [report];
+            reportsAvailable = true;
+            break;
 
          case ReportType.PROJECT:
-            return this.formatProject(report, options);
+            reports = report.reports;
+            reportsAvailable = report.getSetting('serializeReports', false);
+            break;
 
          default:
             console.warn(`formatReport '${this.name}' warning: unsupported report type '${report.type}'.`);
             return '';
       }
-   }
 
-   /**
-    * Formats a module report as JSON / checkstyle.
-    *
-    * @param {ModuleReport}   report - A module report.
-    *
-    * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {{info: number, warning: number, error: number}} cyclomatic - A hash of name / number thresholds.
-    * @property {{info: number, warning: number, error: number}} halstead - A hash of name / number thresholds.
-    *
-    * @returns {string}
-    */
-   formatModule(report, options = {})
-   {
       let localOptions = Object.assign({}, this._thresholds);
       localOptions = Object.assign(localOptions, options);
 
       const output = { version: '7.0', file: [] };
 
-      output.file.push(this._formatModule(report, true, localOptions));
+      reports.forEach((report) => { output.file.push(this._formatModule(report, reportsAvailable, localOptions)); });
 
       return typeof localOptions === 'object' && Number.isInteger(localOptions.spacing) ?
-       JSON.stringify(output, undefined, options.spacing) : JSON.stringify(output);
-   }
-
-   /**
-    * Formats a project result as JSON / checkstyle.
-    *
-    * @param {ProjectResult}  result - A project result.
-    *
-    * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {{info: number, warning: number, error: number}} cyclomatic - A hash of name / number thresholds.
-    * @property {{info: number, warning: number, error: number}} halstead - A hash of name / number thresholds.
-    *
-    * @returns {string}
-    */
-   formatProject(result, options = {})
-   {
-      let localOptions = Object.assign({}, this._thresholds);
-      localOptions = Object.assign(localOptions, options);
-
-      const reportsAvailable = result.getSetting('serializeReports', false);
-
-      const output = { version: '7.0', file: [] };
-
-      result.reports.forEach((report) =>
-      {
-         output.file.push(this._formatModule(report, reportsAvailable, localOptions));
-      });
-
-      return typeof localOptions === 'object' && Number.isInteger(localOptions.spacing) ?
-       JSON.stringify(output, undefined, localOptions.spacing) : JSON.stringify(output);
+       JSON.stringify(output, void 0, localOptions.spacing) : JSON.stringify(output);
    }
 
    /**
@@ -174,14 +137,14 @@ export default class FormatJSONCheckstyle
       {
          if (typeof options.moduleReport === 'object')
          {
-            this._parseErrors(`Module: ${output.name}`, report, options.moduleReport, output.error);
+            this._parseErrors(report, options.moduleReport, output.error);
          }
 
          for (let cntr = 0; cntr < report.methods.length; cntr++)
          {
             if (typeof options.methodReport === 'object')
             {
-               this._parseErrors('Module method: ', report.methods[cntr], options.methodReport, output.error);
+               this._parseErrors(report.methods[cntr], options.methodReport, output.error);
             }
          }
 
@@ -191,15 +154,14 @@ export default class FormatJSONCheckstyle
 
             if (typeof options.classReport === 'object')
             {
-               this._parseErrors(`Class: `, classReport, options.classReport, output.error);
+               this._parseErrors(classReport, options.classReport, output.error);
             }
 
             for (let cntr2 = 0; cntr2 < classReport.methods.length; cntr2++)
             {
                if (typeof options.methodReport === 'object')
                {
-                  this._parseErrors(`Class (${classReport.name}) / method: `, classReport.methods[cntr2],
-                   options.methodReport, output.error);
+                  this._parseErrors(classReport.methods[cntr2], options.methodReport, output.error);
                }
             }
          }
@@ -208,7 +170,7 @@ export default class FormatJSONCheckstyle
       return output;
    }
 
-   _parseErrors(sourceObjectType, sourceObject, options, errors)
+   _parseErrors(sourceObject, options, errors)
    {
       for (const key in options)
       {
@@ -273,12 +235,14 @@ export default class FormatJSONCheckstyle
 
             if (typeof severity === 'string')
             {
+               const sourceName = sourceObject.getName();
+
                errors.push(
                {
                   line: sourceObject.lineStart,
                   severity,
                   message: `${key}: ${sourceObjectValue}${testSign}${mapEntryValue}`,
-                  source: `${sourceObjectType}${typeof sourceObject.name === 'string' ? sourceObject.name : ''}`
+                  source: `${sourceObject.type.description} ${sourceName !== '' ? `- ${sourceName}` : ''}`
                });
             }
          }

@@ -53,6 +53,11 @@ export default class TransformFormat
          throw new TypeError(`addFormat error: 'format.formatReport' is not a 'function'.`);
       }
 
+      if (typeof format.isSupported !== 'function')
+      {
+         throw new TypeError(`addFormat error: 'format.isSupported' is not a 'function'.`);
+      }
+
       s_FORMATTERS.set(format.name, format);
    }
 
