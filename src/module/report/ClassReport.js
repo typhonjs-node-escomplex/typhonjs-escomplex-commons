@@ -5,6 +5,7 @@ import ClassMethodReport   from './ClassMethodReport';
 import MethodAverage       from './averages/MethodAverage';
 
 import ReportType          from '../../types/ReportType';
+import TransformFormat     from '../../transform/TransformFormat';
 
 /**
  * Provides the class report object which stores data pertaining to a single ES6 class.
@@ -15,7 +16,7 @@ export default class ClassReport extends AbstractReport
 {
    /**
     * Returns the enum for the report type.
-    * @returns {CLASS}
+    * @returns {ReportType}
     */
    get type() { return ReportType.CLASS; }
 
@@ -112,6 +113,16 @@ export default class ClassReport extends AbstractReport
       }
 
       return errors;
+   }
+
+   /**
+    * Returns the supported transform formats.
+    *
+    * @returns {Object[]}
+    */
+   static getFormats()
+   {
+      return TransformFormat.getFormats(ReportType.CLASS);
    }
 
    /**

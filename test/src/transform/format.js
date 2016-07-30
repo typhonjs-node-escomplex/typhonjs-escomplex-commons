@@ -37,7 +37,7 @@ function runTests()
                         const output = format.formatReport(moduleReport);
 
                         const original = fs.readFileSync(
-                         `./test/fixture/files/large-module/report-${formatName}.${format.extension}`, 'utf8');
+                         `./test/fixture/files/large-module/module/module-${formatName}.${format.extension}`, 'utf8');
 
                         assert.strictEqual(output, original);
                      });
@@ -61,8 +61,8 @@ function runTests()
                         const output = format.formatReport(projectResult);
 
                         const original = fs.readFileSync(
-                         `./test/fixture/files/large-project/results-no-reports-${formatName}.${format.extension}`,
-                          'utf8');
+                         `./test/fixture/files/large-project/project-no-modules/project-${formatName}.${
+                          format.extension}`, 'utf8');
 
                         assert.strictEqual(output, original);
                      });
@@ -86,7 +86,7 @@ function runTests()
                      const output = moduleReport.toFormat(format.name);
 
                      const original = fs.readFileSync(
-                      `./test/fixture/files/large-module/report-${format.name}.${format.extension}`, 'utf8');
+                      `./test/fixture/files/large-module/module/module-${format.name}.${format.extension}`, 'utf8');
 
                      assert.strictEqual(output, original);
                   });
@@ -107,7 +107,7 @@ function runTests()
                      const output = moduleReport.toFormat(format.name);
 
                      const original = fs.readFileSync(
-                      `./test/fixture/files/large-module/report-with-errors-${format.name}.${format.extension}`,
+                      `./test/fixture/files/large-module/module-with-errors/module-${format.name}.${format.extension}`,
                        'utf8');
 
                      assert.strictEqual(output, original);
@@ -131,7 +131,7 @@ function runTests()
                      const output = projectResult.toFormat(format.name);
 
                      const original = fs.readFileSync(
-                      `./test/fixture/files/large-project/result-${format.name}.${format.extension}`, 'utf8');
+                      `./test/fixture/files/large-project/project/project-${format.name}.${format.extension}`, 'utf8');
 
                      assert.strictEqual(output, original);
                   });
@@ -152,8 +152,8 @@ function runTests()
                      const output = projectResult.toFormat(format.name);
 
                      const original = fs.readFileSync(
-                      `./test/fixture/files/large-project/results-no-reports-${format.name}.${format.extension}`,
-                       'utf8');
+                      `./test/fixture/files/large-project/project-no-modules/project-${format.name}.${
+                       format.extension}`, 'utf8');
 
                      assert.strictEqual(output, original);
                   });
@@ -174,8 +174,8 @@ function runTests()
                      const output = projectResult.toFormat(format.name);
 
                      const original = fs.readFileSync(
-                      `./test/fixture/files/large-project/results-with-errors-${format.name}.${format.extension}`,
-                       'utf8');
+                      `./test/fixture/files/large-project/project-with-errors/project-${format.name}.${
+                       format.extension}`, 'utf8');
 
                      assert.strictEqual(output, original);
                   });
@@ -189,12 +189,15 @@ function runTests()
 /**
  * Generates the original module report / project result test data.
  */
-/*
+//*
 function generateFormatData()
 {
    // Empty formatted result / report matching test data.
-   fs.emptyDirSync('./test/fixture/files/large-module');
-   fs.emptyDirSync('./test/fixture/files/large-project');
+   fs.emptyDirSync('./test/fixture/files/large-module/module');
+   fs.emptyDirSync('./test/fixture/files/large-module/module-with-errors');
+   fs.emptyDirSync('./test/fixture/files/large-project/project');
+   fs.emptyDirSync('./test/fixture/files/large-project/project-no-modules');
+   fs.emptyDirSync('./test/fixture/files/large-project/project-with-errors');
 
    // Generate project result formatted test data.
 
@@ -208,7 +211,7 @@ function generateFormatData()
          const output = format.formatReport(moduleReport);
 
          fs.writeFileSync(
-          `./test/fixture/files/large-module/report-${format.name}.${format.extension}`, output, 'utf8');
+          `./test/fixture/files/large-module/module/module-${format.name}.${format.extension}`, output, 'utf8');
       });
    });
 
@@ -222,7 +225,8 @@ function generateFormatData()
          const output = format.formatReport(moduleReport2);
 
          fs.writeFileSync(
-          `./test/fixture/files/large-module/report-with-errors-${format.name}.${format.extension}`, output, 'utf8');
+          `./test/fixture/files/large-module/module-with-errors/module-${format.name}.${format.extension}`, output,
+           'utf8');
       });
    });
 
@@ -238,7 +242,7 @@ function generateFormatData()
          const output = format.formatReport(projectResult);
 
          fs.writeFileSync(
-          `./test/fixture/files/large-project/result-${format.name}.${format.extension}`, output, 'utf8');
+          `./test/fixture/files/large-project/project/project-${format.name}.${format.extension}`, output, 'utf8');
       });
    });
 
@@ -252,7 +256,8 @@ function generateFormatData()
          const output = format.formatReport(projectResult2);
 
          fs.writeFileSync(
-          `./test/fixture/files/large-project/results-no-reports-${format.name}.${format.extension}`, output, 'utf8');
+          `./test/fixture/files/large-project/project-no-modules/project-${format.name}.${format.extension}`, output,
+           'utf8');
       });
    });
 
@@ -266,8 +271,9 @@ function generateFormatData()
          const output = format.formatReport(projectResult3);
 
          fs.writeFileSync(
-          `./test/fixture/files/large-project/results-with-errors-${format.name}.${format.extension}`, output, 'utf8');
+          `./test/fixture/files/large-project/project-with-errors/project-${format.name}.${format.extension}`, output,
+           'utf8');
       });
    });
 }
-*/
+//*/

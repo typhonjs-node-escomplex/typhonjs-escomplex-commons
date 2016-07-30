@@ -119,10 +119,7 @@ export default class TransformFormat
    {
       const formatter = s_FORMATTERS.get(name);
 
-      if (typeof formatter === 'undefined')
-      {
-         throw new Error(`format error: unknown formatter name '${name}'.`);
-      }
+      if (typeof formatter === 'undefined') { throw new Error(`format error: unknown formatter name '${name}'.`); }
 
       switch (report.type)
       {
@@ -134,7 +131,7 @@ export default class TransformFormat
             return formatter.formatReport(report, options);
 
          default:
-            throw new TypeError('format error: Unknown report type.');
+            throw new TypeError(`format error: unknown report type '${report.type}'.`);
       }
    }
 

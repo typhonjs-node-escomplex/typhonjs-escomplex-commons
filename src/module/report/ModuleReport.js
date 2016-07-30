@@ -7,9 +7,8 @@ import MethodAverage       from './averages/MethodAverage';
 import ModuleMethodReport  from './ModuleMethodReport';
 
 import MathUtil            from '../../utils/MathUtil';
-import TransformFormat     from '../../transform/TransformFormat';
-
 import ReportType          from '../../types/ReportType';
+import TransformFormat     from '../../transform/TransformFormat';
 
 /**
  * Provides the module report object which stores data pertaining to a single file / module being processed.
@@ -475,19 +474,5 @@ export default class ModuleReport extends AbstractReport
       }
 
       return false;
-   }
-
-   /**
-    * Formats this ModuleReport given the type.
-    *
-    * @param {string}   name - The name of formatter to use.
-    *
-    * @param {object}   options - (Optional) One or more optional parameters to pass to the formatter.
-    *
-    * @returns {string}
-    */
-   toFormat(name, options = undefined)
-   {
-      return TransformFormat.format(this, name, options);
    }
 }

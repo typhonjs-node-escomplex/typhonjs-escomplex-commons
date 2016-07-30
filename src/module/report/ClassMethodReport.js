@@ -1,6 +1,7 @@
-import MethodReport  from './MethodReport';
+import MethodReport     from './MethodReport';
 
-import ReportType    from '../../types/ReportType';
+import ReportType       from '../../types/ReportType';
+import TransformFormat  from '../../transform/TransformFormat';
 
 /**
  * Provides the class method report object which stores data pertaining to a single method / function.
@@ -12,6 +13,16 @@ export default class ClassMethodReport extends MethodReport
     * @returns {CLASS_METHOD}
     */
    get type() { return ReportType.CLASS_METHOD; }
+
+   /**
+    * Returns the supported transform formats.
+    *
+    * @returns {Object[]}
+    */
+   static getFormats()
+   {
+      return TransformFormat.getFormats(ReportType.CLASS_METHOD);
+   }
 
    /**
     * Deserializes a JSON object representing a ClassMethodReport.
