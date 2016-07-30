@@ -227,24 +227,36 @@ export default class FormatJSONMinimal
    }
 
    /**
-    * Formats a project result with minimal metrics.
+    * Formats a project report with minimal metrics.
     *
-    * @param {ProjectResult}  result - A project result.
+    * @param {ProjectResult}     report - A project report.
     *
-    * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {string}      classReport - An entry key found in the class report to output.
-    * @property {string}      methodReport - An entry key found in the method report to output.
-    * @property {string}      moduleReport - An entry key found in the module report to output.
+    * @param {object}            options - (Optional) One or more optional parameters passed to the formatter.
+    * @property {Array<string>}  classReport - An array of entry keys found in the class report to output.
+    * @property {Array<string>}  methodReport - An array of entry keys found in the method report to output.
+    * @property {Array<string>}  moduleReport - An array of entry keys found in the module report to output.
+    * @property {Array<string>}  projectReport - An array of entry keys found in the project report to output.
     *
     * @returns {object}
     */
-   _formatProject(result, options)
+   _formatProject(report, options)
    {
-      const output = { modules: [] };
+      const output = {};
 
-      const reportsAvailable = result.getSetting('serializeReports', false);
+      if (Array.isArray(options.projectReport))
+      {
+         options.projectReport.forEach((projectEntry) =>
+         {
+            const entryValue = ObjectUtil.safeAccess(report, projectEntry);
+            if (entryValue) { ObjectUtil.safeSet(output, projectEntry, entryValue); }
+         });
+      }
 
-      result.reports.forEach((report) =>
+      output.modules = [];
+
+      const reportsAvailable = report.getSetting('serializeReports', false);
+
+      report.reports.forEach((report) =>
       {
          output.modules.push(this._formatModule(report, reportsAvailable, options));
       });
@@ -262,7 +274,8 @@ export default class FormatJSONMinimal
  */
 const s_DEFAULT_KEYS =
 {
-   classReport: ['maintainability'],
-   methodReport: ['cyclomatic', 'halstead.difficulty'],
-   moduleReport: ['maintainability']
+   classReport: ['maintainability', 'errors'],
+   methodReport: ['cyclomatic', 'halstead.difficulty', 'errors'],
+   moduleReport: ['maintainability', 'errors'],
+   projectReport: ['changeCost', 'errors']
 };
