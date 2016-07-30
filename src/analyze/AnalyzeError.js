@@ -77,7 +77,7 @@ export default class AnalyzeError
     */
    toString()
    {
-      return `${this.severity}: ${this.message} @ ${this.type.description} ${this.name !== '' ? `- ${this.name} ` :
+      return `(${this.severity}) ${this.message} @ ${this.type.description} ${this.name !== '' ? `- ${this.name} ` :
        ''}(${this.lineStart} - ${this.lineEnd})`;
    }
 }

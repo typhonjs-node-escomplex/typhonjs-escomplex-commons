@@ -57,6 +57,8 @@ const s_DEFAULT_HEADERS =
 
    entryPrepend: '* ',
 
+   entryTemplateTag: StringUtil.tagEscapeHTML,
+
    moduleMethod:
    [
       ['* Module method: **', 'name', 0, '', StringUtil.tagEscapeHTML],

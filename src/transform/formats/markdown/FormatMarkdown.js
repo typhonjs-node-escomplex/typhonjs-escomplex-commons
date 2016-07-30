@@ -36,7 +36,7 @@ export default class FormatMarkdown extends FormatText
 
 /**
  * Defines the default headers as text which are inserted via spread into `StringUtil.safeStringsObject`.
- * @type {{classMethod: *[], classReport: *[], entryPrepend: string, moduleMethod: *[], moduleReport: *[], projectResult: string[]}}
+ * @type {{classMethod: *[], classReport: *[], entryPrepend: string, entryTemplateTag: function, moduleMethod: *[], moduleReport: *[], projectResult: string[]}}
  * @ignore
  */
 const s_DEFAULT_HEADERS =
@@ -54,6 +54,8 @@ const s_DEFAULT_HEADERS =
    ],
 
    entryPrepend: '* ',
+
+   entryTemplateTag: StringUtil.tagEscapeHTML,
 
    moduleMethod:
    [

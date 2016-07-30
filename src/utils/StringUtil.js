@@ -62,7 +62,7 @@ export default class StringUtil
    {
       const value = ObjectUtil.safeAccess(object, accessor);
 
-      if (typeof value === 'undefined') { return ''; }
+      if (typeof value === 'undefined' || (Array.isArray(value) && value.length === 0)) { return ''; }
 
       let end = '\n';
 
@@ -186,7 +186,7 @@ export default class StringUtil
    {
       return values.reduce((previous, value, index) =>
       {
-         return previous + String(value).replace('<', '&lt;').replace('>', '&gt;') + literal[index + 1];
+         return previous + String(value).replace(/</g, '&lt;').replace(/>/g, '&gt;') + literal[index + 1];
       }, literal[0]);
    }
 }

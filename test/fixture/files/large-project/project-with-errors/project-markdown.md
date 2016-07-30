@@ -23,6 +23,7 @@
    * Average per-function halstead difficulty: 7.458
    * Average per-function halstead volume: 227.131
    * Average per-function halstead effort: 2653.64
+   * Error: (info) maintainability: 110.612 &lt; 115 @ Module - ./src/ESComplexProject.js (1 - 241)
    
    * Class: **ESComplexProject**
       * Line start: 11
@@ -34,6 +35,7 @@
       * Average per-function halstead difficulty: 7.458
       * Average per-function halstead volume: 227.131
       * Average per-function halstead effort: 2653.64
+      * Error: (info) maintainability: 110.612 &lt; 115 @ Class - ESComplexProject (11 - 240)
       
       * Class method: **constructor**
          * Line start: 44
@@ -46,6 +48,7 @@
          * Halstead volume: 503.659
          * Halstead effort: 3719.327
          * Parameter count: 2
+         * Error: (warning) cyclomatic: 8 &gt; 7 @ Class Method - constructor (44 - 103)
       
       * Class method: **analyze**
          * Line start: 115
@@ -58,6 +61,8 @@
          * Halstead volume: 410.343
          * Halstead effort: 5471.235
          * Parameter count: 2
+         * Error: (info) cyclomatic: 4 &gt; 3 @ Class Method - analyze (115 - 162)
+         * Error: (warning) halstead.difficulty: 13.333 &gt; 13 @ Class Method - analyze (115 - 162)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 126
@@ -70,6 +75,7 @@
          * Halstead volume: 343.482
          * Halstead effort: 5121.928
          * Parameter count: 1
+         * Error: (warning) halstead.difficulty: 14.912 &gt; 13 @ Class Method - &lt;anonymous&gt; (126 - 153)
       
       * Class method: **processResults**
          * Line start: 174
@@ -82,6 +88,8 @@
          * Halstead volume: 420.601
          * Halstead effort: 6624.469
          * Parameter count: 2
+         * Error: (info) cyclomatic: 5 &gt; 3 @ Class Method - processResults (174 - 201)
+         * Error: (warning) halstead.difficulty: 15.75 &gt; 13 @ Class Method - processResults (174 - 201)
       
       * Class method: **analyzeAsync**
          * Line start: 215
@@ -181,6 +189,7 @@
          * Halstead volume: 123.19
          * Halstead effort: 1101.01
          * Parameter count: 1
+         * Error: (info) halstead.difficulty: 8.938 &gt; 8 @ Class Method - constructor (23 - 37)
       
       * Class method: **onConfigure**
          * Line start: 47
@@ -193,6 +202,8 @@
          * Halstead volume: 333.731
          * Halstead effort: 4772.356
          * Parameter count: 1
+         * Error: (info) cyclomatic: 5 &gt; 3 @ Class Method - onConfigure (47 - 64)
+         * Error: (warning) halstead.difficulty: 14.3 &gt; 13 @ Class Method - onConfigure (47 - 64)
       
       * Class method: **onProjectStart**
          * Line start: 73
@@ -368,6 +379,8 @@
       * Halstead volume: 176.419
       * Halstead effort: 2064.101
       * Parameter count: 1
+      * Error: (info) cyclomatic: 4 &gt; 3 @ Module Method - &lt;anonymous&gt; (33 - 44)
+      * Error: (info) halstead.difficulty: 11.7 &gt; 8 @ Module Method - &lt;anonymous&gt; (33 - 44)
    
    * Module method: **&lt;anonymous&gt;**
       * Line start: 39
@@ -403,6 +416,8 @@
          * Halstead volume: 199.037
          * Halstead effort: 2006.954
          * Parameter count: 1
+         * Error: (info) cyclomatic: 4 &gt; 3 @ Class Method - onLoadSyntax (13 - 22)
+         * Error: (info) halstead.difficulty: 10.083 &gt; 8 @ Class Method - onLoadSyntax (13 - 22)
 
 * Module 8:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
@@ -575,6 +590,7 @@
    * Average per-function halstead difficulty: 5.077
    * Average per-function halstead volume: 232.985
    * Average per-function halstead effort: 1182.849
+   * Error: (info) maintainability: 105.249 &lt; 115 @ Module - typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js (1 - 68)
    
    * Class: **HalsteadAverage**
       * Line start: 5
@@ -586,6 +602,7 @@
       * Average per-function halstead difficulty: 5.077
       * Average per-function halstead volume: 232.985
       * Average per-function halstead effort: 1182.849
+      * Error: (info) maintainability: 105.249 &lt; 115 @ Class - HalsteadAverage (5 - 67)
       
       * Class method: **constructor**
          * Line start: 10
@@ -769,6 +786,8 @@
          * Halstead volume: 278.631
          * Halstead effort: 3729.374
          * Parameter count: 1
+         * Error: (info) cyclomatic: 4 &gt; 3 @ Class Method - parse (103 - 121)
+         * Error: (warning) halstead.difficulty: 13.385 &gt; 13 @ Class Method - parse (103 - 121)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 112
@@ -807,6 +826,7 @@
    * Average per-function halstead difficulty: 6.292
    * Average per-function halstead volume: 165.899
    * Average per-function halstead effort: 1137.029
+   * Error: (info) maintainability: 110.635 &lt; 115 @ Module - typhonjs-escomplex-commons/src/module/report/HalsteadData.js (1 - 88)
    
    * Class: **HalsteadData**
       * Line start: 5
@@ -818,6 +838,7 @@
       * Average per-function halstead difficulty: 6.292
       * Average per-function halstead volume: 165.899
       * Average per-function halstead effort: 1137.029
+      * Error: (info) maintainability: 110.635 &lt; 115 @ Class - HalsteadData (5 - 87)
       
       * Class method: **constructor**
          * Line start: 10
@@ -842,6 +863,7 @@
          * Halstead volume: 188.87
          * Halstead effort: 1558.175
          * Parameter count: 1
+         * Error: (info) halstead.difficulty: 8.25 &gt; 8 @ Class Method - reset (75 - 86)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 77
@@ -927,6 +949,7 @@
          * Halstead volume: 187.983
          * Halstead effort: 1879.835
          * Parameter count: 1
+         * Error: (info) halstead.difficulty: 10 &gt; 8 @ Class Method - parse (77 - 90)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 86
@@ -976,6 +999,7 @@
          * Halstead volume: 451.434
          * Halstead effort: 5304.349
          * Parameter count: 3
+         * Error: (info) halstead.difficulty: 11.75 &gt; 8 @ Class Method - constructor (30 - 120)
       
       * Class method: **addDependencies**
          * Line start: 127
@@ -1036,6 +1060,8 @@
          * Halstead volume: 514.297
          * Halstead effort: 8850.192
          * Parameter count: 5
+         * Error: (info) cyclomatic: 4 &gt; 3 @ Class Method - createScope (163 - 206)
+         * Error: (warning) halstead.difficulty: 17.208 &gt; 13 @ Class Method - createScope (163 - 206)
       
       * Class method: **finalize**
          * Line start: 213
@@ -1156,6 +1182,8 @@
          * Halstead volume: 173.918
          * Halstead effort: 1739.178
          * Parameter count: 2
+         * Error: (info) cyclomatic: 5 &gt; 3 @ Class Method - getSetting (300 - 310)
+         * Error: (info) halstead.difficulty: 10 &gt; 8 @ Class Method - getSetting (300 - 310)
       
       * Class method: **halsteadItemEncountered**
          * Line start: 319
@@ -1204,6 +1232,8 @@
          * Halstead volume: 371.335
          * Halstead effort: 6047.451
          * Parameter count: 1
+         * Error: (info) cyclomatic: 5 &gt; 3 @ Class Method - parse (371 - 394)
+         * Error: (warning) halstead.difficulty: 16.286 &gt; 13 @ Class Method - parse (371 - 394)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 380
@@ -1288,6 +1318,7 @@
          * Halstead volume: 140.554
          * Halstead effort: 1086.1
          * Parameter count: 2
+         * Error: (info) cyclomatic: 4 &gt; 3 @ Class Method - setSetting (441 - 456)
       
       * Class method: **toFormat**
          * Line start: 467
@@ -1314,6 +1345,7 @@
    * Average per-function halstead difficulty: 5.921
    * Average per-function halstead volume: 293.438
    * Average per-function halstead effort: 1737.459
+   * Error: (info) maintainability: 111.799 &lt; 115 @ Module - typhonjs-escomplex-commons/src/module/traits/actualize.js (1 - 32)
    
    * Module method: **&lt;anonymous&gt;**
       * Line start: 19
@@ -1375,6 +1407,7 @@
          * Halstead volume: 83.762
          * Halstead effort: 904.628
          * Parameter count: 1
+         * Error: (info) halstead.difficulty: 10.8 &gt; 8 @ Class Method - &lt;anonymous&gt; (28 - 32)
       
       * Class method: **forEach**
          * Line start: 48
@@ -1509,6 +1542,7 @@
       * Halstead volume: 77.709
       * Halstead effort: 621.674
       * Parameter count: 1
+      * Error: (info) cyclomatic: 4 &gt; 3 @ Module Method - &lt;anonymous&gt; (8 - 11)
 
 * Module 20:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/traits/safeName.js`
@@ -1535,6 +1569,8 @@
       * Halstead volume: 164.089
       * Halstead effort: 1507.571
       * Parameter count: 2
+      * Error: (info) cyclomatic: 7 &gt; 3 @ Module Method - &lt;anonymous&gt; (9 - 19)
+      * Error: (info) halstead.difficulty: 9.188 &gt; 8 @ Module Method - &lt;anonymous&gt; (9 - 19)
 
 * Module 21:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/traits/Trait.js`
@@ -1608,6 +1644,7 @@
          * Halstead volume: 143.061
          * Halstead effort: 1634.985
          * Parameter count: 1
+         * Error: (info) halstead.difficulty: 11.429 &gt; 8 @ Class Method - valueOf (56 - 64)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 60
@@ -1657,6 +1694,8 @@
          * Halstead volume: 402.365
          * Halstead effort: 4542.489
          * Parameter count: 2
+         * Error: (warning) cyclomatic: 8 &gt; 7 @ Class Method - constructor (13 - 61)
+         * Error: (info) halstead.difficulty: 11.289 &gt; 8 @ Class Method - constructor (13 - 61)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 24
@@ -1717,6 +1756,7 @@
          * Halstead volume: 187.647
          * Halstead effort: 2462.862
          * Parameter count: 1
+         * Error: (warning) halstead.difficulty: 13.125 &gt; 13 @ Class Method - valueOf (100 - 111)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 104
@@ -1766,6 +1806,7 @@
          * Halstead volume: 376.519
          * Halstead effort: 4637.128
          * Parameter count: 2
+         * Error: (info) halstead.difficulty: 12.316 &gt; 8 @ Class Method - constructor (25 - 90)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 80
@@ -1814,6 +1855,8 @@
          * Halstead volume: 400
          * Halstead effort: 6066.667
          * Parameter count: 1
+         * Error: (info) cyclomatic: 5 &gt; 3 @ Class Method - finalize (119 - 152)
+         * Error: (warning) halstead.difficulty: 15.167 &gt; 13 @ Class Method - finalize (119 - 152)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 132
@@ -1838,6 +1881,7 @@
          * Halstead volume: 148.462
          * Halstead effort: 1363.993
          * Parameter count: 1
+         * Error: (info) halstead.difficulty: 9.188 &gt; 8 @ Class Method - &lt;anonymous&gt; (136 - 148)
       
       * Class method: **getErrors**
          * Line start: 161
@@ -1910,6 +1954,8 @@
          * Halstead volume: 173.918
          * Halstead effort: 1739.178
          * Parameter count: 2
+         * Error: (info) cyclomatic: 5 &gt; 3 @ Class Method - getSetting (211 - 221)
+         * Error: (info) halstead.difficulty: 10 &gt; 8 @ Class Method - getSetting (211 - 221)
       
       * Class method: **parse**
          * Line start: 230
@@ -1922,6 +1968,7 @@
          * Halstead volume: 187.983
          * Halstead effort: 1879.835
          * Parameter count: 1
+         * Error: (info) halstead.difficulty: 10 &gt; 8 @ Class Method - parse (230 - 243)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 239
@@ -1946,6 +1993,7 @@
          * Halstead volume: 140.554
          * Halstead effort: 1086.1
          * Parameter count: 2
+         * Error: (info) cyclomatic: 4 &gt; 3 @ Class Method - setSetting (253 - 268)
       
       * Class method: **toFormat**
          * Line start: 279
@@ -2057,6 +2105,7 @@
    * Average per-function halstead difficulty: 9.659
    * Average per-function halstead volume: 310.797
    * Average per-function halstead effort: 7522.501
+   * Error: (info) maintainability: 103.409 &lt; 115 @ Module - typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js (1 - 272)
    
    * Class: **FormatJSONCheckstyle**
       * Line start: 17
@@ -2068,6 +2117,7 @@
       * Average per-function halstead difficulty: 9.659
       * Average per-function halstead volume: 310.797
       * Average per-function halstead effort: 7522.501
+      * Error: (info) maintainability: 103.409 &lt; 115 @ Class - FormatJSONCheckstyle (17 - 240)
       
       * Class method: **constructor**
          * Line start: 19
@@ -2092,6 +2142,7 @@
          * Halstead volume: 371.385
          * Halstead effort: 4483.145
          * Parameter count: 2
+         * Error: (info) halstead.difficulty: 12.071 &gt; 8 @ Class Method - formatReport (35 - 46)
       
       * Class method: **formatResult**
          * Line start: 59
@@ -2104,6 +2155,7 @@
          * Halstead volume: 398.842
          * Halstead effort: 4536.833
          * Parameter count: 2
+         * Error: (info) halstead.difficulty: 11.375 &gt; 8 @ Class Method - formatResult (59 - 75)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 68
@@ -2164,6 +2216,8 @@
          * Halstead volume: 899.406
          * Halstead effort: 25093.423
          * Parameter count: 3
+         * Error: (warning) cyclomatic: 10 &gt; 7 @ Class Method - _formatModule (118 - 162)
+         * Error: (error) halstead.difficulty: 27.9 &gt; 20 @ Class Method - _formatModule (118 - 162)
       
       * Class method: **_parseErrors**
          * Line start: 164
@@ -2176,6 +2230,8 @@
          * Halstead volume: 1056.939
          * Halstead effort: 33511.171
          * Parameter count: 4
+         * Error: (error) cyclomatic: 14 &gt; 12 @ Class Method - _parseErrors (164 - 239)
+         * Error: (error) halstead.difficulty: 31.706 &gt; 20 @ Class Method - _parseErrors (164 - 239)
 
 * Module 26:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
@@ -2225,6 +2281,7 @@
          * Halstead volume: 288.441
          * Halstead effort: 3079.535
          * Parameter count: 2
+         * Error: (info) halstead.difficulty: 10.676 &gt; 8 @ Class Method - formatReport (26 - 35)
       
       * Class method: **formatResult**
          * Line start: 49
@@ -2237,6 +2294,7 @@
          * Halstead volume: 377.405
          * Halstead effort: 4443.081
          * Parameter count: 2
+         * Error: (info) halstead.difficulty: 11.773 &gt; 8 @ Class Method - formatResult (49 - 65)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 58
@@ -2309,6 +2367,8 @@
          * Halstead volume: 254.994
          * Halstead effort: 2128.217
          * Parameter count: 1
+         * Error: (info) cyclomatic: 4 &gt; 3 @ Class Method - &lt;anonymous&gt; (112 - 131)
+         * Error: (info) halstead.difficulty: 8.346 &gt; 8 @ Class Method - &lt;anonymous&gt; (112 - 131)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 121
@@ -2345,6 +2405,8 @@
          * Halstead volume: 192.111
          * Halstead effort: 1613.73
          * Parameter count: 1
+         * Error: (info) cyclomatic: 4 &gt; 3 @ Class Method - &lt;anonymous&gt; (150 - 167)
+         * Error: (info) halstead.difficulty: 8.4 &gt; 8 @ Class Method - &lt;anonymous&gt; (150 - 167)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 159
@@ -2369,6 +2431,8 @@
          * Halstead volume: 596.956
          * Halstead effort: 12498.763
          * Parameter count: 3
+         * Error: (warning) cyclomatic: 9 &gt; 7 @ Class Method - _formatModule (186 - 219)
+         * Error: (error) halstead.difficulty: 20.938 &gt; 20 @ Class Method - _formatModule (186 - 219)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 198
@@ -2418,6 +2482,8 @@
          * Halstead volume: 311.777
          * Halstead effort: 4748.61
          * Parameter count: 2
+         * Error: (info) cyclomatic: 6 &gt; 3 @ Class Method - formatReport (18 - 28)
+         * Error: (warning) halstead.difficulty: 15.231 &gt; 13 @ Class Method - formatReport (18 - 28)
       
       * Class method: **formatResult**
          * Line start: 40
@@ -2430,6 +2496,7 @@
          * Halstead volume: 211.52
          * Halstead effort: 2326.718
          * Parameter count: 2
+         * Error: (info) halstead.difficulty: 11 &gt; 8 @ Class Method - formatResult (40 - 57)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 44
@@ -2442,6 +2509,8 @@
          * Halstead volume: 171.331
          * Halstead effort: 1541.979
          * Parameter count: 1
+         * Error: (info) cyclomatic: 4 &gt; 3 @ Class Method - &lt;anonymous&gt; (44 - 53)
+         * Error: (info) halstead.difficulty: 9 &gt; 8 @ Class Method - &lt;anonymous&gt; (44 - 53)
       
       * Class method: **extension**
          * Line start: 64
@@ -2868,6 +2937,8 @@
          * Halstead volume: 416.152
          * Halstead effort: 6045.162
          * Parameter count: 3
+         * Error: (info) cyclomatic: 6 &gt; 3 @ Class Method - _formatClass (113 - 124)
+         * Error: (warning) halstead.difficulty: 14.526 &gt; 13 @ Class Method - _formatClass (113 - 124)
       
       * Class method: **_formatClasses**
          * Line start: 140
@@ -2904,6 +2975,7 @@
          * Halstead volume: 192.568
          * Halstead effort: 2021.968
          * Parameter count: 3
+         * Error: (info) halstead.difficulty: 10.5 &gt; 8 @ Class Method - _formatEntries (162 - 187)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 170
@@ -2916,6 +2988,8 @@
          * Halstead volume: 244.423
          * Halstead effort: 2367.847
          * Parameter count: 1
+         * Error: (info) cyclomatic: 5 &gt; 3 @ Class Method - &lt;anonymous&gt; (170 - 184)
+         * Error: (info) halstead.difficulty: 9.688 &gt; 8 @ Class Method - &lt;anonymous&gt; (170 - 184)
       
       * Class method: **_formatMethod**
          * Line start: 204
@@ -2928,6 +3002,8 @@
          * Halstead volume: 381.473
          * Halstead effort: 5785.676
          * Parameter count: 4
+         * Error: (info) cyclomatic: 6 &gt; 3 @ Class Method - _formatMethod (204 - 215)
+         * Error: (warning) halstead.difficulty: 15.167 &gt; 13 @ Class Method - _formatMethod (204 - 215)
       
       * Class method: **_formatMethods**
          * Line start: 232
@@ -2964,6 +3040,8 @@
          * Halstead volume: 445
          * Halstead effort: 7459.605
          * Parameter count: 3
+         * Error: (info) cyclomatic: 5 &gt; 3 @ Class Method - _formatModule (257 - 277)
+         * Error: (warning) halstead.difficulty: 16.763 &gt; 13 @ Class Method - _formatModule (257 - 277)
       
       * Class method: **_formatProject**
          * Line start: 290
@@ -2976,6 +3054,8 @@
          * Halstead volume: 250.768
          * Halstead effort: 3240.697
          * Parameter count: 2
+         * Error: (info) cyclomatic: 4 &gt; 3 @ Class Method - _formatProject (290 - 301)
+         * Error: (info) halstead.difficulty: 12.923 &gt; 8 @ Class Method - _formatProject (290 - 301)
 
 * Module 34:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
@@ -3037,6 +3117,8 @@
          * Halstead volume: 636.293
          * Halstead effort: 10781.639
          * Parameter count: 2
+         * Error: (info) cyclomatic: 6 &gt; 3 @ Class Method - formatResult (50 - 89)
+         * Error: (warning) halstead.difficulty: 16.944 &gt; 13 @ Class Method - formatResult (50 - 89)
       
       * Class method: **_formatMatrixList**
          * Line start: 106
@@ -3049,6 +3131,8 @@
          * Halstead volume: 304.227
          * Halstead effort: 2818.105
          * Parameter count: 3
+         * Error: (info) cyclomatic: 5 &gt; 3 @ Class Method - _formatMatrixList (106 - 131)
+         * Error: (info) halstead.difficulty: 9.263 &gt; 8 @ Class Method - _formatMatrixList (106 - 131)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 116
@@ -3122,6 +3206,8 @@
          * Halstead volume: 529.661
          * Halstead effort: 9984.117
          * Parameter count: 2
+         * Error: (info) cyclomatic: 7 &gt; 3 @ Class Method - formatResult (31 - 54)
+         * Error: (warning) halstead.difficulty: 18.85 &gt; 13 @ Class Method - formatResult (31 - 54)
       
       * Class method: **extension**
          * Line start: 61
@@ -3487,6 +3573,7 @@
          * Halstead volume: 339.002
          * Halstead effort: 2307.094
          * Parameter count: 1
+         * Error: (info) cyclomatic: 7 &gt; 3 @ Class Method - addFormat (33 - 63)
       
       * Class method: **forEach**
          * Line start: 71
@@ -3535,6 +3622,8 @@
          * Halstead volume: 284.6
          * Halstead effort: 3482.16
          * Parameter count: 3
+         * Error: (info) cyclomatic: 6 &gt; 3 @ Class Method - format (119 - 142)
+         * Error: (info) halstead.difficulty: 12.235 &gt; 8 @ Class Method - format (119 - 142)
       
       * Class method: **getFileExtensions**
          * Line start: 149
@@ -3692,6 +3781,8 @@
          * Halstead volume: 228.898
          * Halstead effort: 3991.407
          * Parameter count: 2
+         * Error: (info) cyclomatic: 4 &gt; 3 @ Class Method - create2DArray (43 - 55)
+         * Error: (warning) halstead.difficulty: 17.438 &gt; 13 @ Class Method - create2DArray (43 - 55)
       
       * Class method: **getMedian**
          * Line start: 65
@@ -3704,6 +3795,7 @@
          * Halstead volume: 159.909
          * Halstead effort: 3022.278
          * Parameter count: 1
+         * Error: (warning) halstead.difficulty: 18.9 &gt; 13 @ Class Method - getMedian (65 - 74)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 68
@@ -3752,6 +3844,7 @@
          * Halstead volume: 98.099
          * Halstead effort: 840.849
          * Parameter count: 1
+         * Error: (info) halstead.difficulty: 8.571 &gt; 8 @ Class Method - toFixed (111 - 114)
 
 * Module 42:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
@@ -3766,6 +3859,7 @@
    * Average per-function halstead difficulty: 14.767
    * Average per-function halstead volume: 266.575
    * Average per-function halstead effort: 6803.483
+   * Error: (info) maintainability: 102.252 &lt; 115 @ Module - typhonjs-escomplex-commons/src/utils/ObjectUtil.js (1 - 199)
    
    * Module method: **_depthTraverse**
       * Line start: 146
@@ -3778,6 +3872,8 @@
       * Halstead volume: 297.207
       * Halstead effort: 6430.474
       * Parameter count: 2
+      * Error: (info) cyclomatic: 5 &gt; 3 @ Module Method - _depthTraverse (146 - 162)
+      * Error: (error) halstead.difficulty: 21.636 &gt; 20 @ Module Method - _depthTraverse (146 - 162)
    
    * Module method: **_getAccessorList**
       * Line start: 173
@@ -3790,6 +3886,7 @@
       * Halstead volume: 188.87
       * Halstead effort: 2518.262
       * Parameter count: 1
+      * Error: (warning) halstead.difficulty: 13.333 &gt; 13 @ Module Method - _getAccessorList (173 - 198)
    
    * Module method: **&lt;anonymous&gt;**
       * Line start: 185
@@ -3813,6 +3910,7 @@
       * Average per-function halstead difficulty: 16.517
       * Average per-function halstead volume: 326.167
       * Average per-function halstead effort: 9624.995
+      * Error: (warning) maintainability: 98.302 &lt; 100 @ Class - ObjectUtil (4 - 132)
       
       * Class method: **depthTraverse**
          * Line start: 15
@@ -3849,6 +3947,8 @@
          * Halstead volume: 317.285
          * Halstead effort: 5393.852
          * Parameter count: 3
+         * Error: (info) cyclomatic: 6 &gt; 3 @ Class Method - safeAccess (51 - 68)
+         * Error: (warning) halstead.difficulty: 17 &gt; 13 @ Class Method - safeAccess (51 - 68)
       
       * Class method: **safeSet**
          * Line start: 83
@@ -3861,6 +3961,8 @@
          * Halstead volume: 839.519
          * Halstead effort: 32304.689
          * Parameter count: 4
+         * Error: (error) cyclomatic: 13 &gt; 12 @ Class Method - safeSet (83 - 131)
+         * Error: (error) halstead.difficulty: 38.48 &gt; 20 @ Class Method - safeSet (83 - 131)
 
 * Module 43:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/utils/StringUtil.js`
@@ -3875,6 +3977,7 @@
    * Average per-function halstead difficulty: 9.819
    * Average per-function halstead volume: 220.56
    * Average per-function halstead effort: 7198.907
+   * Error: (info) maintainability: 113.509 &lt; 115 @ Module - typhonjs-escomplex-commons/src/utils/StringUtil.js (1 - 192)
    
    * Class: **StringUtil**
       * Line start: 6
@@ -3886,6 +3989,7 @@
       * Average per-function halstead difficulty: 9.819
       * Average per-function halstead volume: 220.56
       * Average per-function halstead effort: 7198.907
+      * Error: (info) maintainability: 113.509 &lt; 115 @ Class - StringUtil (6 - 192)
       
       * Class method: **compare**
          * Line start: 16
@@ -3934,6 +4038,8 @@
          * Halstead volume: 322.841
          * Halstead effort: 5380.687
          * Parameter count: 6
+         * Error: (info) cyclomatic: 5 &gt; 3 @ Class Method - safeStringObject (61 - 74)
+         * Error: (warning) halstead.difficulty: 16.667 &gt; 13 @ Class Method - safeStringObject (61 - 74)
       
       * Class method: **safeStringsObject**
          * Line start: 96
@@ -3958,6 +4064,8 @@
          * Halstead volume: 1156.732
          * Halstead effort: 51358.918
          * Parameter count: 3
+         * Error: (error) cyclomatic: 13 &gt; 12 @ Class Method - safeStringsPrependObject (124 - 175)
+         * Error: (error) halstead.difficulty: 44.4 &gt; 20 @ Class Method - safeStringsPrependObject (124 - 175)
       
       * Class method: **tagEscapeHTML**
          * Line start: 185
@@ -4031,6 +4139,8 @@
          * Halstead volume: 434.274
          * Halstead effort: 5665.298
          * Parameter count: 2
+         * Error: (info) cyclomatic: 4 &gt; 3 @ Class Method - analyze (40 - 66)
+         * Error: (warning) halstead.difficulty: 13.045 &gt; 13 @ Class Method - analyze (40 - 66)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 59
@@ -4131,6 +4241,7 @@
          * Halstead volume: 159.911
          * Halstead effort: 1661.301
          * Parameter count: 1
+         * Error: (info) halstead.difficulty: 10.389 &gt; 8 @ Class Method - constructor (27 - 42)
       
       * Class method: **onConfigure**
          * Line start: 52

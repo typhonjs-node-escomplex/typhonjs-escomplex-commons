@@ -119,16 +119,17 @@ export default class FormatText extends AbstractFormatText
  */
 const s_SHARED_METHOD_DATA =
 [
-   ['Line start: ',                          'lineStart'],
-   ['Line end: ',                            'lineEnd'],
-   ['Physical LOC: ',                        'sloc.physical'],
-   ['Logical LOC: ',                         'sloc.logical'],
-   ['Cyclomatic complexity: ',               'cyclomatic'],
-   ['Cyclomatic complexity density: ',       'cyclomaticDensity', 1, '%'],
-   ['Halstead difficulty: ',                 'halstead.difficulty'],
-   ['Halstead volume: ',                     'halstead.volume'],
-   ['Halstead effort: ',                     'halstead.effort'],
-   ['Parameter count: ',                     'params']
+   ['Line start: ',                    'lineStart'],
+   ['Line end: ',                      'lineEnd'],
+   ['Physical LOC: ',                  'sloc.physical'],
+   ['Logical LOC: ',                   'sloc.logical'],
+   ['Cyclomatic complexity: ',         'cyclomatic'],
+   ['Cyclomatic complexity density: ', 'cyclomaticDensity', 1, '%'],
+   ['Halstead difficulty: ',           'halstead.difficulty'],
+   ['Halstead volume: ',               'halstead.volume'],
+   ['Halstead effort: ',               'halstead.effort'],
+   ['Parameter count: ',               'params'],
+   ['Error: ',                         'errors']
 ];
 
 /**
@@ -163,7 +164,8 @@ const s_DEFAULT_KEYS =
    [
       ['Line start: ',                 'lineStart'],
       ['Line end: ',                   'lineEnd'],
-      ...s_SHARED_METHOD_AVERAGE_DATA
+      ...s_SHARED_METHOD_AVERAGE_DATA,
+      ['Error: ',                      'errors']
    ],
 
    methodReport:
@@ -176,7 +178,8 @@ const s_DEFAULT_KEYS =
       ['Total lines: ',                'lineEnd'],
       ['Maintainability index: ',      'maintainability'],
       ['Dependency count: ',           'dependencies.length'],
-      ...s_SHARED_METHOD_AVERAGE_DATA
+      ...s_SHARED_METHOD_AVERAGE_DATA,
+      ['Error: ',                      'errors']
    ],
 
    projectResult:
@@ -190,7 +193,8 @@ const s_DEFAULT_KEYS =
       ['Average per-function parameter count: ',         'moduleAverage.methodAverage.params'],
       ['Average per-function cyclomatic complexity: ',   'moduleAverage.methodAverage.cyclomatic'],
       ['Average per-function halstead difficulty: ',     'moduleAverage.methodAverage.halstead.difficulty'],
-      ['Average per-function halstead effort: ',         'moduleAverage.methodAverage.halstead.effort']
+      ['Average per-function halstead effort: ',         'moduleAverage.methodAverage.halstead.effort'],
+      ['Error: ',                                        'errors']
    ]
 };
 

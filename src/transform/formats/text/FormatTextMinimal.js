@@ -76,10 +76,10 @@ export default class FormatTextMinimal extends AbstractFormatTest
  */
 const s_DEFAULT_KEYS =
 {
-   classReport: ['maintainability'],
-   methodReport: ['cyclomatic', 'halstead.difficulty'],
-   moduleReport: ['maintainability'],
-   projectResult: ['moduleAverage.maintainability']
+   classReport: ['maintainability', 'errors'],
+   methodReport: ['cyclomatic', 'halstead.difficulty', 'errors'],
+   moduleReport: ['maintainability', 'errors'],
+   projectResult: ['moduleAverage.maintainability', 'errors']
 };
 
 /**

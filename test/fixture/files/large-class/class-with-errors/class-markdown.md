@@ -8,6 +8,7 @@
    * Average per-function halstead difficulty: 7.108
    * Average per-function halstead volume: 264.965
    * Average per-function halstead effort: 8875.587
+   * Error: (info) maintainability: 106.722 &lt; 115 @ Class - Collection (90 - 945)
       
       * Class method: **constructor**
          * Line start: 105
@@ -20,6 +21,8 @@
          * Halstead volume: 615.221
          * Halstead effort: 11353.625
          * Parameter count: 2
+         * Error: (warning) cyclomatic: 11 &gt; 7 @ Class Method - constructor (105 - 145)
+         * Error: (warning) halstead.difficulty: 18.455 &gt; 13 @ Class Method - constructor (105 - 145)
       
       * Class method: **add**
          * Line start: 175
@@ -68,6 +71,8 @@
          * Halstead volume: 293.438
          * Halstead effort: 3563.171
          * Parameter count: 2
+         * Error: (info) cyclomatic: 4 &gt; 3 @ Class Method - create (241 - 262)
+         * Error: (info) halstead.difficulty: 12.143 &gt; 8 @ Class Method - create (241 - 262)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 253
@@ -128,6 +133,8 @@
          * Halstead volume: 231.89
          * Halstead effort: 2167.284
          * Parameter count: 1
+         * Error: (info) cyclomatic: 6 &gt; 3 @ Class Method - get (345 - 354)
+         * Error: (info) halstead.difficulty: 9.346 &gt; 8 @ Class Method - get (345 - 354)
       
       * Class method: **has**
          * Line start: 362
@@ -212,6 +219,8 @@
          * Halstead volume: 374.065
          * Halstead effort: 4331.274
          * Parameter count: 2
+         * Error: (info) cyclomatic: 5 &gt; 3 @ Class Method - _prepareModel (488 - 509)
+         * Error: (info) halstead.difficulty: 11.579 &gt; 8 @ Class Method - _prepareModel (488 - 509)
       
       * Class method: **push**
          * Line start: 520
@@ -236,6 +245,8 @@
          * Halstead volume: 358.203
          * Halstead effort: 4656.639
          * Parameter count: 2
+         * Error: (info) cyclomatic: 5 &gt; 3 @ Class Method - remove (537 - 551)
+         * Error: (info) halstead.difficulty: 13 &gt; 8 @ Class Method - remove (537 - 551)
       
       * Class method: **_reset**
          * Line start: 557
@@ -260,6 +271,8 @@
          * Halstead volume: 368.017
          * Halstead effort: 5909.917
          * Parameter count: 2
+         * Error: (info) cyclomatic: 4 &gt; 3 @ Class Method - reset (597 - 612)
+         * Error: (warning) halstead.difficulty: 16.059 &gt; 13 @ Class Method - reset (597 - 612)
       
       * Class method: **set**
          * Line start: 637
@@ -272,6 +285,8 @@
          * Halstead volume: 4238.78
          * Halstead effort: 231571.258
          * Parameter count: 2
+         * Error: (error) cyclomatic: 45 &gt; 12 @ Class Method - set (637 - 805)
+         * Error: (error) halstead.difficulty: 54.632 &gt; 20 @ Class Method - set (637 - 805)
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 749
@@ -320,6 +335,8 @@
          * Halstead volume: 376.519
          * Halstead effort: 6201.488
          * Parameter count: 1
+         * Error: (info) cyclomatic: 6 &gt; 3 @ Class Method - sort (843 - 866)
+         * Error: (warning) halstead.difficulty: 16.471 &gt; 13 @ Class Method - sort (843 - 866)
       
       * Class method: **sync**
          * Line start: 875

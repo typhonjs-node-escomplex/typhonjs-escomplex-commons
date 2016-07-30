@@ -48,7 +48,7 @@ export default class ObjectUtil
     *
     * @returns {*}
     */
-   static safeAccess(data, accessor, defaultValue = undefined)
+   static safeAccess(data, accessor, defaultValue = void 0)
    {
       if (typeof data !== 'object') { return defaultValue; }
       if (typeof accessor !== 'string') { return defaultValue; }

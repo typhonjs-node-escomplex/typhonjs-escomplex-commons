@@ -9,3 +9,5 @@
    * Halstead volume: 755.424
    * Halstead effort: 13278.939
    * Parameter count: 3
+   * Error: (info) cyclomatic: 5 &gt; 3 @ Module Method - &lt;anonymous&gt; (1041 - 1078)
+   * Error: (warning) halstead.difficulty: 17.578 &gt; 13 @ Module Method - &lt;anonymous&gt; (1041 - 1078)

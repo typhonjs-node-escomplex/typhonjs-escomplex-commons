@@ -1,3 +1,4 @@
+import ObjectUtil from '../../../utils/ObjectUtil';
 import StringUtil from '../../../utils/StringUtil';
 import ReportType from '../../../types/ReportType';
 
@@ -118,39 +119,72 @@ export default class AbstractFormatText
    }
 
    /**
-    * Formats a class report.
+    * Formats entries for a given report.
     *
     * @param {object}         report - A class / method report.
     *
-    * @param {Array<string>}  entries - (Optional) One or more optional entries to format.
+    * @param {Array<string>|Array<string>}  entries - (Optional) One or more optional entries to format.
     *
     * @param {string}         prepend - (Optional) A string to prepend; default: `''`.
+    *
+    * @param {string}         parentPrepend - (Optional) The parent prepend string used for entries that are arrays with
+    *                                         more than one entry; default: `''`.
     *
     * @returns {string|Array<string>}
     * @private
     */
-   _formatEntries(report, entries, prepend = '')
+   _formatEntries(report, entries, prepend = '', parentPrepend = '')
    {
       if (!Array.isArray(entries)) { return ''; }
 
       const entryPrepend = typeof this._headers.entryPrepend === 'string' ? this._headers.entryPrepend : '';
 
+      const entryTag = typeof this._headers.entryTemplateTag === 'function' ? this._headers.entryTemplateTag : void 0;
+
       const output = [];
 
+      // Admittedly the following block is a bit obtuse.
       entries.forEach((entry) =>
       {
-         let value;
+         const accessor = Array.isArray(entry) ? entry[1] : entry;
+         let value = ObjectUtil.safeAccess(report, accessor);
 
-         if (Array.isArray(entry))
+         if (typeof value === 'undefined') { return; }
+
+         // Convert all values to an array.
+         value = Array.isArray(value) ? value : [value];
+
+         let result = '';
+
+         // Skip any arrays that have no entries.
+         if (value.length > 0)
          {
-            value = StringUtil.safeStringsPrependObject(`${prepend}${entryPrepend}`, report, entry);
-         }
-         else if (typeof entry === 'string')
-         {
-            value = StringUtil.safeStringObject(`${prepend}${entryPrepend}${entry}: `, report, entry, 1);
+            // Provides a temporary object to store each array entry via the given accessor.
+            const temp = {};
+
+            value.forEach((valueEntry, index) =>
+            {
+               // An array with more than one entry must add the parent prepend string to maintain alignment.
+               if (index > 0) { result += parentPrepend; }
+
+               if (Array.isArray(entry))
+               {
+                  // Store the entry via the given accessor.
+                  ObjectUtil.safeSet(temp, accessor, valueEntry);
+
+                  result += StringUtil.safeStringsPrependObject(`${prepend}${entryPrepend}`, temp, entry);
+               }
+               else if (typeof entry === 'string')
+               {
+                  result += `${prepend}${entryPrepend}${entry}: ${valueEntry}\n`;
+               }
+            });
          }
 
-         if (typeof value === 'string' && value !== '') { output.push(value); }
+         // Apply entry template tag if it is defined.
+         result = entryTag ? entryTag`${result}` : result;
+
+         if (result !== '') { output.push(result); }
       });
 
       return output;
@@ -180,7 +214,7 @@ export default class AbstractFormatText
 
       return StringUtil.safeStringsPrependObject(prepend, methodReport,
          ...(isModule ? this._headers.moduleMethod : this._headers.classMethod),
-         ...this._formatEntries(methodReport, options.methodReport, indent)
+         ...this._formatEntries(methodReport, options.methodReport, indent, prepend)
       );
    }
 
