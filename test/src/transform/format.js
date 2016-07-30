@@ -189,7 +189,7 @@ function runTests()
 /**
  * Generates the original module report / project result test data.
  */
-//*
+/*
 function generateFormatData()
 {
    // Empty formatted result / report matching test data.
@@ -276,4 +276,4 @@ function generateFormatData()
       });
    });
 }
-//*/
+*/
