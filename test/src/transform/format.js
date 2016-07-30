@@ -22,9 +22,9 @@ function runTests()
       {
          suite('TransformFormat:', () =>
          {
-            suite('forEach / formatModule (large-module/report):', () =>
+            suite('forEach / formatReport (large-module/module):', () =>
             {
-               const largeModuleJSON = require('typhonjs-escomplex-test-data/files/large-module/report/report');
+               const largeModuleJSON = require('typhonjs-escomplex-test-data/files/large-module/json/module');
 
                const moduleReport = ModuleReport.parse(largeModuleJSON);
 
@@ -45,10 +45,10 @@ function runTests()
                });
             });
 
-            suite('forEach / formatProject (large-project/results):', () =>
+            suite('forEach / formatReport (large-project/project-no-modules):', () =>
             {
                const largeProjectJSON = require(
-                'typhonjs-escomplex-test-data/files/large-project/results/results-no-reports');
+                'typhonjs-escomplex-test-data/files/large-project/json/project-no-modules');
 
                const projectResult = ProjectResult.parse(largeProjectJSON);
 
@@ -73,9 +73,9 @@ function runTests()
 
          suite('ModuleReport:', () =>
          {
-            suite('toFormat (large-module/report):', () =>
+            suite('toFormat (large-module/module):', () =>
             {
-               const largeModuleJSON = require('typhonjs-escomplex-test-data/files/large-module/report/report');
+               const largeModuleJSON = require('typhonjs-escomplex-test-data/files/large-module/json/module');
 
                const moduleReport = ModuleReport.parse(largeModuleJSON);
 
@@ -93,10 +93,10 @@ function runTests()
                });
             });
 
-            suite('toFormat (large-module/report-with-errors):', () =>
+            suite('toFormat (large-module/module-with-errors):', () =>
             {
                const largeModuleJSON = require(
-                'typhonjs-escomplex-test-data/files/large-module/report/report-with-errors');
+                'typhonjs-escomplex-test-data/files/large-module/json/module-with-errors');
 
                const moduleReport = ModuleReport.parse(largeModuleJSON);
 
@@ -118,9 +118,9 @@ function runTests()
 
          suite('ProjectResult:', () =>
          {
-            suite('toFormat (large-project/results):', () =>
+            suite('toFormat (large-project/project):', () =>
             {
-               const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/results/results');
+               const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/json/project');
 
                const projectResult = ProjectResult.parse(largeProjectJSON);
 
@@ -138,10 +138,10 @@ function runTests()
                });
             });
 
-            suite('toFormat (large-project/results-no-reports):', () =>
+            suite('toFormat (large-project/project-no-modules):', () =>
             {
                const largeProjectJSON = require(
-                'typhonjs-escomplex-test-data/files/large-project/results/results-no-reports');
+                'typhonjs-escomplex-test-data/files/large-project/json/project-no-modules');
 
                const projectResult = ProjectResult.parse(largeProjectJSON);
 
@@ -160,10 +160,10 @@ function runTests()
                });
             });
 
-            suite('toFormat (large-project/results-with-errors):', () =>
+            suite('toFormat (large-project/project-with-errors):', () =>
             {
                const largeProjectJSON = require(
-                'typhonjs-escomplex-test-data/files/large-project/results/results-with-errors');
+                'typhonjs-escomplex-test-data/files/large-project/json/project-with-errors');
 
                const projectResult = ProjectResult.parse(largeProjectJSON);
 

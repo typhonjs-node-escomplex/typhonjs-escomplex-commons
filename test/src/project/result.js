@@ -92,7 +92,7 @@ if (testconfig.modules['projectResult'])
 
          suite('large project parsing performance', () =>
          {
-            const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/results/results');
+            const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/json/project');
 
             test('deserialize JSON object should be sufficiently fast', function()
             {
