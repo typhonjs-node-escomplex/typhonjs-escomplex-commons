@@ -52,11 +52,9 @@ export default class FormatJSON
    /**
     * Returns whether a given ReportType is supported by this format transform.
     *
-    * @param {ReportType}  reportType - A given report type.
-    *
     * @returns {boolean}
     */
-   isSupported(reportType)
+   isSupported()
    {
       return true;
    }

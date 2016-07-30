@@ -1,6 +1,3 @@
-import ModuleReport              from '../module/report/ModuleReport';
-import ProjectResult             from '../project/result/ProjectResult';
-
 import FormatJSON                from './formats/json/FormatJSON';
 import FormatJSONCheckstyle      from './formats/json/FormatJSONCheckstyle';
 import FormatJSONMinimal         from './formats/json/FormatJSONMinimal';
