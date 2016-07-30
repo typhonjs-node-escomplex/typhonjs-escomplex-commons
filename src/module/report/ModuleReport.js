@@ -23,7 +23,7 @@ export default class ModuleReport extends AbstractReport
 {
    /**
     * Returns the enum for the report type.
-    * @returns {MODULE}
+    * @returns {ReportType}
     */
    get type() { return ReportType.MODULE; }
 
@@ -293,33 +293,13 @@ export default class ModuleReport extends AbstractReport
    }
 
    /**
-    * Returns the supported format file extension types.
+    * Returns the supported transform formats.
     *
-    * @returns {string[]}
+    * @returns {Object[]}
     */
-   static getFormatFileExtensions()
+   static getFormats()
    {
-      return TransformFormat.getFileExtensions();
-   }
-
-   /**
-    * Returns the supported format names.
-    *
-    * @returns {string[]}
-    */
-   static getFormatNames()
-   {
-      return TransformFormat.getNames();
-   }
-
-   /**
-    * Returns the supported format types.
-    *
-    * @returns {string[]}
-    */
-   static getFormatTypes()
-   {
-      return TransformFormat.getTypes();
+      return TransformFormat.getFormats(ReportType.MODULE);
    }
 
    /**

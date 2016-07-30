@@ -1,4 +1,5 @@
 import ObjectUtil from '../../../utils/ObjectUtil';
+import ReportType from '../../../types/ReportType';
 
 /**
  * Provides a format transform for ESComplex ModuleReport / ProjectResult instances converting them to JSON with
@@ -12,6 +13,39 @@ export default class FormatJSONMinimal
    }
 
    /**
+    * Formats a report as a JSON string with minimal metrics.
+    *
+    * @param {ClassReport|MethodReport|ModuleReport|ProjectResult} report - A report to format.
+    *
+    * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
+    * @property {number}      spacing - (Optional) An integer defining the JSON output spacing.
+    *
+    * @returns {string}
+    */
+   formatReport(report, options = {})
+   {
+      switch (report.type)
+      {
+         case ReportType.CLASS:
+            break;
+
+         case ReportType.CLASS_METHOD:
+         case ReportType.MODULE_METHOD:
+            break;
+
+         case ReportType.MODULE:
+            return this.formatModule(report, options);
+
+         case ReportType.PROJECT:
+            return this.formatProject(report, options);
+
+         default:
+            console.warn(`formatReport '${this.name}' warning: unsupported report type '${report.type}'.`);
+            return '';
+      }
+   }
+
+   /**
     * Formats a module report as a JSON string.
     *
     * @param {ModuleReport}   report - A module report.
@@ -21,9 +55,9 @@ export default class FormatJSONMinimal
     * @property {string}      methodReport - An entry key found in the method report to output.
     * @property {string}      moduleReport - An entry key found in the module report to output.
     *
-    * @returns {object}
+    * @returns {string}
     */
-   formatReport(report, options = {})
+   formatModule(report, options = {})
    {
       let localOptions = Object.assign({}, this._keys);
       localOptions = Object.assign(localOptions, options);
@@ -46,7 +80,7 @@ export default class FormatJSONMinimal
     *
     * @returns {string}
     */
-   formatResult(result, options = {})
+   formatProject(result, options = {})
    {
       let localOptions = Object.assign({}, this._keys);
       localOptions = Object.assign(localOptions, options);
@@ -92,6 +126,29 @@ export default class FormatJSONMinimal
    get type()
    {
       return 'minimal';
+   }
+
+   /**
+    * Returns whether a given ReportType is supported by this format transform.
+    *
+    * @param {ReportType}  reportType - A given report type.
+    *
+    * @returns {boolean}
+    */
+   isSupported(reportType)
+   {
+      switch (reportType)
+      {
+         case ReportType.CLASS:
+         case ReportType.CLASS_METHOD:
+         case ReportType.MODULE_METHOD:
+         case ReportType.MODULE:
+         case ReportType.PROJECT:
+            return true;
+
+         default:
+            return false;
+      }
    }
 
    /**

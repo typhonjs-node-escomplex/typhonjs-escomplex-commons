@@ -1,4 +1,5 @@
 import StringUtil from '../../../utils/StringUtil';
+import ReportType from '../../../types/ReportType';
 
 /**
  * Provides the base text format transform for ModuleReport / ProjectResult instances.
@@ -19,6 +20,61 @@ export default class AbstractFormatText
    }
 
    /**
+    * Formats a report as plain text.
+    *
+    * @param {ClassReport|MethodReport|ModuleReport|ProjectResult} report - A report to format.
+    *
+    * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
+    * @property {number}      spacing - (Optional) An integer defining the JSON output spacing.
+    *
+    * @returns {string}
+    */
+   formatReport(report, options = {})
+   {
+      switch (report.type)
+      {
+         case ReportType.CLASS:
+         case ReportType.CLASS_METHOD:
+         case ReportType.MODULE_METHOD:
+            console.warn(`formatReport warning: unsupported report type '${report.type}'.`);
+            return '';
+
+         case ReportType.MODULE:
+            return this.formatModule(report, options);
+
+         case ReportType.PROJECT:
+            return this.formatProject(report, options);
+
+         default:
+            console.warn(`formatReport '${this.name}' warning: unsupported report type '${report.type}'.`);
+            return '';
+      }
+   }
+
+   /**
+    * Returns whether a given ReportType is supported by this format transform.
+    *
+    * @param {ReportType}  reportType - A given report type.
+    *
+    * @returns {boolean}
+    */
+   isSupported(reportType)
+   {
+      switch (reportType)
+      {
+         case ReportType.CLASS:
+         case ReportType.CLASS_METHOD:
+         case ReportType.MODULE_METHOD:
+         case ReportType.MODULE:
+         case ReportType.PROJECT:
+            return true;
+
+         default:
+            return false;
+      }
+   }
+
+   /**
     * Formats a module report as plain text.
     *
     * @param {ModuleReport}   report - A module report.
@@ -30,7 +86,7 @@ export default class AbstractFormatText
     *
     * @returns {string}
     */
-   formatReport(report, options = {})
+   formatModule(report, options = {})
    {
       let localOptions = Object.assign({}, this._keys);
       localOptions = Object.assign(localOptions, options);
@@ -67,7 +123,7 @@ export default class AbstractFormatText
     *
     * @returns {string}
     */
-   formatResult(result, options = {})
+   formatProject(result, options = {})
    {
       let localOptions = Object.assign({}, this._keys);
       localOptions = Object.assign(localOptions, options);

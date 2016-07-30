@@ -1,4 +1,5 @@
 import ObjectUtil from '../../../utils/ObjectUtil';
+import ReportType from '../../../types/ReportType';
 
 /**
  * Provides the base text format transform for ProjectResult matrix list entries.
@@ -23,6 +24,47 @@ export default class AbstractTextMatrix
       this._headers = headers;
       this._keys = keys;
    }
+   /**
+    * Formats a report as plain text.
+    *
+    * @param {ClassReport|MethodReport|ModuleReport|ProjectResult} report - A report to format.
+    *
+    * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
+    * @property {number}      spacing - (Optional) An integer defining the JSON output spacing.
+    *
+    * @returns {string}
+    */
+   formatReport(report, options = {})
+   {
+      switch (report.type)
+      {
+         case ReportType.PROJECT:
+            return this.formatProject(report, options);
+
+         default:
+            console.warn(`formatReport '${this.name}' warning: unsupported report type '${report.type}'.`);
+            return '';
+      }
+   }
+
+   /**
+    * Returns whether a given ReportType is supported by this format transform.
+    *
+    * @param {ReportType}  reportType - A given report type.
+    *
+    * @returns {boolean}
+    */
+   isSupported(reportType)
+   {
+      switch (reportType)
+      {
+         case ReportType.PROJECT:
+            return true;
+
+         default:
+            return false;
+      }
+   }
 
    /**
     * Currently there are no matrix lists stored in modules, but the implementation is complete in case a ModuleReport
@@ -30,7 +72,7 @@ export default class AbstractTextMatrix
     *
     * @returns {string}
     */
-   formatReport()
+   formatModule()
    {
       return '';
    }
@@ -47,7 +89,7 @@ export default class AbstractTextMatrix
     *
     * @returns {string}
     */
-   formatResult(result, options = {})
+   formatProject(result, options = {})
    {
       let localOptions = Object.assign({}, this._keys);
       localOptions = Object.assign(localOptions, options);
@@ -57,25 +99,25 @@ export default class AbstractTextMatrix
       /* istanbul ignore if */
       if (!Array.isArray(matrixList))
       {
-         throw new TypeError(`formatResult error: could not locate matrixList '${localOptions.matrixList}'.`);
+         throw new TypeError(`formatProject error: could not locate matrixList '${localOptions.matrixList}'.`);
       }
 
       /* istanbul ignore if */
       if (!Array.isArray(result.reports))
       {
-         throw new TypeError(`formatResult error: could not locate 'result.reports'.`);
+         throw new TypeError(`formatProject error: could not locate 'result.reports'.`);
       }
 
       /* istanbul ignore if */
       if (typeof this._headers.entryPrepend !== 'string')
       {
-         throw new TypeError(`formatResult error: 'this._headers.entryPrepend' is not a 'string'.`);
+         throw new TypeError(`formatProject error: 'this._headers.entryPrepend' is not a 'string'.`);
       }
 
       /* istanbul ignore if */
       if (typeof this._headers.entryWrapper !== 'string')
       {
-         throw new TypeError(`formatResult error: 'this._headers.entryWrapper' is not a 'string'.`);
+         throw new TypeError(`formatProject error: 'this._headers.entryWrapper' is not a 'string'.`);
       }
 
       let output = '';

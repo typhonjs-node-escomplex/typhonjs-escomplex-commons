@@ -16,6 +16,8 @@ import FormatTextMinimal         from './formats/text/FormatTextMinimal';
 import FormatTextModules         from './formats/text/FormatTextModules';
 import FormatTextVisibility      from './formats/text/FormatTextVisibility';
 
+import ReportType                from '../types/ReportType';
+
 /**
  * Stores all transform formats.
  * @type {Map<string>, object}
@@ -54,11 +56,6 @@ export default class TransformFormat
          throw new TypeError(`addFormat error: 'format.formatReport' is not a 'function'.`);
       }
 
-      if (typeof format.formatResult !== 'function')
-      {
-         throw new TypeError(`addFormat error: 'format.formatResult' is not a 'function'.`);
-      }
-
       s_FORMATTERS.set(format.name, format);
    }
 
@@ -68,7 +65,7 @@ export default class TransformFormat
     * @param {function} callback - A callback function.
     * @param {object}   thisArg - (Optional) this context.
     */
-   static forEach(callback, thisArg)
+   static forEach(callback, thisArg = void 0)
    {
       s_FORMATTERS.forEach(callback, thisArg);
    }
@@ -81,7 +78,7 @@ export default class TransformFormat
     * @param {function} callback - A callback function.
     * @param {object}   thisArg - (Optional) this context.
     */
-   static forEachExt(extension, callback, thisArg = undefined)
+   static forEachExt(extension, callback, thisArg = void 0)
    {
       for (const format of s_FORMATTERS.values())
       {
@@ -97,7 +94,7 @@ export default class TransformFormat
     * @param {function} callback - A callback function.
     * @param {object}   thisArg - (Optional) this context.
     */
-   static forEachType(type, callback, thisArg = undefined)
+   static forEachType(type, callback, thisArg = void 0)
    {
       for (const format of s_FORMATTERS.values())
       {
@@ -108,7 +105,7 @@ export default class TransformFormat
    /**
     * Formats a given ModuleReport or ProjectResult via the formatter of the requested type.
     *
-    * @param {ModuleReport|ProjectResult} resultOrReport - A ModuleReport or ProjectResult to format.
+    * @param {ClassReport|MethodReport|ModuleReport|ProjectResult} report - A report to format.
     *
     * @param {string}                     name - The name of formatter to invoke.
     *
@@ -116,13 +113,8 @@ export default class TransformFormat
     *
     * @returns {string}
     */
-   static format(resultOrReport, name, options = undefined)
+   static format(report, name, options = void 0)
    {
-      if (!(resultOrReport instanceof ModuleReport || resultOrReport instanceof ProjectResult))
-      {
-         throw new TypeError(`format error: 'resultOrReport' is not a 'ModuleReport' or a 'ProjectResult'.`);
-      }
-
       const formatter = s_FORMATTERS.get(name);
 
       if (typeof formatter === 'undefined')
@@ -130,45 +122,42 @@ export default class TransformFormat
          throw new Error(`format error: unknown formatter name '${name}'.`);
       }
 
-      if (resultOrReport instanceof ModuleReport)
+      switch (report.type)
       {
-         return formatter.formatReport(resultOrReport, options);
-      }
+         case ReportType.CLASS:
+         case ReportType.CLASS_METHOD:
+         case ReportType.MODULE_METHOD:
+         case ReportType.MODULE:
+         case ReportType.PROJECT:
+            return formatter.formatReport(report, options);
 
-      if (resultOrReport instanceof ProjectResult)
-      {
-         return formatter.formatResult(resultOrReport, options);
+         default:
+            throw new TypeError('format error: Unknown report type.');
       }
    }
 
    /**
     * Returns the supported format file extension types.
     *
-    * @returns {string[]}
-    */
-   static getFileExtensions()
-   {
-      return Array.from(s_FORMATTERS.values()).map((format) => { return format.extension; });
-   }
-
-   /**
-    * Returns the format names supported.
+    * @param {ReportType}  reportType - (Optional) A ReportType to filter supported formats.
     *
     * @returns {string[]}
     */
-   static getNames()
+   static getFormats(reportType = void 0)
    {
-      return Array.from(s_FORMATTERS.keys());
-   }
+      // Return all file extensions
+      if (typeof reportType === 'undefined')
+      {
+         return Array.from(s_FORMATTERS.values());
+      }
 
-   /**
-    * Returns the format types supported.
-    *
-    * @returns {string[]}
-    */
-   static getTypes()
-   {
-      return Array.from(s_FORMATTERS.values()).map((format) => { return format.type; });
+      if (!(reportType instanceof ReportType))
+      {
+         throw new TypeError(`getFormats error: 'reportType' is not an instance of 'ReportType'.`);
+      }
+
+      // Return a filtered array of formats that are supported by the given ReportType.
+      return Array.from(s_FORMATTERS.values()).filter((format) => format.isSupported(reportType));
    }
 
    /**
@@ -181,6 +170,22 @@ export default class TransformFormat
    static isFormat(name)
    {
       return s_FORMATTERS.has(name);
+   }
+
+   /**
+    * Returns whether a given formatter by name is supports a given report.
+    *
+    * @param {string}      name - The name of the formatter: `format.name`.
+    *
+    * @param {ReportType}  reportType - A ReportType to check for support.
+    *
+    * @returns {boolean}
+    */
+   static isSupported(name, reportType)
+   {
+      if (!s_FORMATTERS.has(name)) { return false; }
+
+      return s_FORMATTERS.get(name).isSupported(reportType);
    }
 
    /**

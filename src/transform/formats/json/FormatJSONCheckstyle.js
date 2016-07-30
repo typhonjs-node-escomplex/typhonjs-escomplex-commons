@@ -1,4 +1,5 @@
 import ObjectUtil from '../../../utils/ObjectUtil';
+import ReportType from '../../../types/ReportType';
 
 /**
  * Provides a format transform for ESComplex ModuleReport / ProjectResult instances converting them to JSON that
@@ -22,6 +23,32 @@ export default class FormatJSONCheckstyle
    }
 
    /**
+    * Formats a report as a JSON string with minimal metrics.
+    *
+    * @param {ClassReport|MethodReport|ModuleReport|ProjectResult} report - A report to format.
+    *
+    * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
+    * @property {number}      spacing - (Optional) An integer defining the JSON output spacing.
+    *
+    * @returns {string}
+    */
+   formatReport(report, options = {})
+   {
+      switch (report.type)
+      {
+         case ReportType.MODULE:
+            return this.formatModule(report, options);
+
+         case ReportType.PROJECT:
+            return this.formatProject(report, options);
+
+         default:
+            console.warn(`formatReport '${this.name}' warning: unsupported report type '${report.type}'.`);
+            return '';
+      }
+   }
+
+   /**
     * Formats a module report as JSON / checkstyle.
     *
     * @param {ModuleReport}   report - A module report.
@@ -32,7 +59,7 @@ export default class FormatJSONCheckstyle
     *
     * @returns {string}
     */
-   formatReport(report, options = {})
+   formatModule(report, options = {})
    {
       let localOptions = Object.assign({}, this._thresholds);
       localOptions = Object.assign(localOptions, options);
@@ -56,7 +83,7 @@ export default class FormatJSONCheckstyle
     *
     * @returns {string}
     */
-   formatResult(result, options = {})
+   formatProject(result, options = {})
    {
       let localOptions = Object.assign({}, this._thresholds);
       localOptions = Object.assign(localOptions, options);
@@ -102,6 +129,26 @@ export default class FormatJSONCheckstyle
    get type()
    {
       return 'checkstyle';
+   }
+
+   /**
+    * Returns whether a given ReportType is supported by this format transform.
+    *
+    * @param {ReportType}  reportType - A given report type.
+    *
+    * @returns {boolean}
+    */
+   isSupported(reportType)
+   {
+      switch (reportType)
+      {
+         case ReportType.MODULE:
+         case ReportType.PROJECT:
+            return true;
+
+         default:
+            return false;
+      }
    }
 
    /**

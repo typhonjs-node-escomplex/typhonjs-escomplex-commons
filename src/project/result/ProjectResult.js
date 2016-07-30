@@ -18,7 +18,7 @@ export default class ProjectResult
 {
    /**
     * Returns the enum for the report type.
-    * @returns {PROJECT}
+    * @returns {ReportType}
     */
    get type() { return ReportType.PROJECT; }
 
@@ -196,33 +196,13 @@ export default class ProjectResult
    }
 
    /**
-    * Returns the supported format file extension types.
+    * Returns the supported transform formats.
     *
-    * @returns {string[]}
+    * @returns {Object[]}
     */
-   static getFormatFileExtensions()
+   static getFormats()
    {
-      return TransformFormat.getFileExtensions();
-   }
-
-   /**
-    * Returns the supported format names.
-    *
-    * @returns {string[]}
-    */
-   static getFormatNames()
-   {
-      return TransformFormat.getNames();
-   }
-
-   /**
-    * Returns the supported format types.
-    *
-    * @returns {string[]}
-    */
-   static getFormatTypes()
-   {
-      return TransformFormat.getTypes();
+      return TransformFormat.getFormats(ReportType.PROJECT);
    }
 
    /**
@@ -259,12 +239,18 @@ export default class ProjectResult
     *
     * @param {object}   object - A JSON object of a ProjectResult that was previously serialized.
     *
+    * @param {object}   options - Optional parameters.
+    * @property {boolean}  skipFinalize - If true then automatic finalization is skipped where applicable.
+    *
     * @returns {ProjectResult}
     */
-   static parse(object)
+   static parse(object, options = { skipFinalize: false })
    {
       /* istanbul ignore if */
       if (typeof object !== 'object') { throw new TypeError(`parse error: 'object' is not an 'object'.`); }
+
+      /* istanbul ignore if */
+      if (typeof options !== 'object') { throw new TypeError(`parse error: 'options' is not an 'object'.`); }
 
       const result = Object.assign(new ProjectResult(), object);
 
@@ -272,6 +258,9 @@ export default class ProjectResult
       {
          result.reports = result.reports.map((report) => ModuleReport.parse(report));
       }
+
+      // Must automatically finalize if serializeReports is false.
+      if (!options.skipFinalize && !result.getSetting('serializeReports', true)) { result.finalize(); }
 
       return result;
    }
