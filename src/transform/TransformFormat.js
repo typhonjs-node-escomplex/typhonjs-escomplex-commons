@@ -33,29 +33,29 @@ export default class TransformFormat
    {
       if (typeof format !== 'object') { throw new TypeError(`addFormat error: 'format' is not an 'object'.`); }
 
-      if (typeof format.extension !== 'string')
-      {
-         throw new TypeError(`addFormat error: 'format.extension' is not a 'string'.`);
-      }
-
       if (typeof format.name !== 'string')
       {
          throw new TypeError(`addFormat error: 'format.name' is not a 'string'.`);
       }
 
+      if (typeof format.extension !== 'string')
+      {
+         throw new TypeError(`addFormat error: 'format.extension' is not a 'string' for '${format.name}'.`);
+      }
+
       if (typeof format.type !== 'string')
       {
-         throw new TypeError(`addFormat error: 'format.type' is not a 'string'.`);
+         throw new TypeError(`addFormat error: 'format.type' is not a 'string' for '${format.name}'.`);
       }
 
       if (typeof format.formatReport !== 'function')
       {
-         throw new TypeError(`addFormat error: 'format.formatReport' is not a 'function'.`);
+         throw new TypeError(`addFormat error: 'format.formatReport' is not a 'function' for '${format.name}'.`);
       }
 
       if (typeof format.isSupported !== 'function')
       {
-         throw new TypeError(`addFormat error: 'format.isSupported' is not a 'function'.`);
+         throw new TypeError(`addFormat error: 'format.isSupported' is not a 'function' for '${format.name}'.`);
       }
 
       s_FORMATTERS.set(format.name, format);

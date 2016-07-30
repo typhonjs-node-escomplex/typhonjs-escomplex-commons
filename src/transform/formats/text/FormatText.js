@@ -1,4 +1,6 @@
 import AbstractFormatText  from './AbstractFormatText';
+
+import ReportType          from '../../../types/ReportType';
 import TransformFormat     from '../../TransformFormat';
 
 /**
@@ -14,6 +16,59 @@ export default class FormatText extends AbstractFormatText
 
       this._adjacencyFormatName = adjacencyFormatName;
       this._visibilityFormatName = visibilityFormatName;
+   }
+
+   /**
+    * Gets the file extension.
+    *
+    * @returns {string}
+    */
+   get extension()
+   {
+      return 'txt';
+   }
+
+   /**
+    * Gets the format name.
+    *
+    * @returns {string}
+    */
+   get name()
+   {
+      return 'text';
+   }
+
+   /**
+    * Gets the format type.
+    *
+    * @returns {string}
+    */
+   get type()
+   {
+      return 'full';
+   }
+
+   /**
+    * Returns whether a given ReportType is supported by this format transform.
+    *
+    * @param {ReportType}  reportType - A given report type.
+    *
+    * @returns {boolean}
+    */
+   isSupported(reportType)
+   {
+      switch (reportType)
+      {
+         case ReportType.CLASS:
+         case ReportType.CLASS_METHOD:
+         case ReportType.MODULE_METHOD:
+         case ReportType.MODULE:
+         case ReportType.PROJECT:
+            return true;
+
+         default:
+            return false;
+      }
    }
 
    /**
@@ -53,35 +108,6 @@ export default class FormatText extends AbstractFormatText
       return output;
    }
 
-   /**
-    * Gets the file extension.
-    *
-    * @returns {string}
-    */
-   get extension()
-   {
-      return 'txt';
-   }
-
-   /**
-    * Gets the format name.
-    *
-    * @returns {string}
-    */
-   get name()
-   {
-      return 'text';
-   }
-
-   /**
-    * Gets the format type.
-    *
-    * @returns {string}
-    */
-   get type()
-   {
-      return 'full';
-   }
 }
 
 // Module private ---------------------------------------------------------------------------------------------------

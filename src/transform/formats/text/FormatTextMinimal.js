@@ -1,4 +1,5 @@
 import AbstractFormatTest  from './AbstractFormatText';
+import ReportType          from '../../../types/ReportType';
 
 /**
  * Provides a format transform for ModuleReport / ProjectResult instances converting them to plain text with just
@@ -40,6 +41,29 @@ export default class FormatTextMinimal extends AbstractFormatTest
    get type()
    {
       return 'minimal';
+   }
+
+   /**
+    * Returns whether a given ReportType is supported by this format transform.
+    *
+    * @param {ReportType}  reportType - A given report type.
+    *
+    * @returns {boolean}
+    */
+   isSupported(reportType)
+   {
+      switch (reportType)
+      {
+         case ReportType.CLASS:
+         case ReportType.CLASS_METHOD:
+         case ReportType.MODULE_METHOD:
+         case ReportType.MODULE:
+         case ReportType.PROJECT:
+            return true;
+
+         default:
+            return false;
+      }
    }
 }
 

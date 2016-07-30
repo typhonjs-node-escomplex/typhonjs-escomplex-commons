@@ -34,48 +34,36 @@ export default class AbstractFormatText
       let localOptions = Object.assign({}, this._keys);
       localOptions = Object.assign(localOptions, options);
 
+      let output;
+
       switch (report.type)
       {
          case ReportType.CLASS:
-            return this._formatClass(report, localOptions);
+            output = this._formatClass(report, localOptions).replace(/^[\n]/, '');
+            break;
 
          case ReportType.CLASS_METHOD:
+            output = this._formatMethod(report, localOptions, '', false).replace(/^[\n]/, '');
+            break;
+
          case ReportType.MODULE_METHOD:
-            return this._formatMethod(report, localOptions);
+            output = this._formatMethod(report, localOptions).replace(/^[\n]/, '');
+            break;
 
          case ReportType.MODULE:
-            return this._formatModule(report, localOptions);
+            output = this._formatModule(report, localOptions);
+            break;
 
          case ReportType.PROJECT:
-            return this._formatProject(report, localOptions);
+            output = this._formatProject(report, localOptions);
+            break;
 
          default:
             console.warn(`formatReport '${this.name}' warning: unsupported report type '${report.type}'.`);
             return '';
       }
-   }
 
-   /**
-    * Returns whether a given ReportType is supported by this format transform.
-    *
-    * @param {ReportType}  reportType - A given report type.
-    *
-    * @returns {boolean}
-    */
-   isSupported(reportType)
-   {
-      switch (reportType)
-      {
-         case ReportType.CLASS:
-         case ReportType.CLASS_METHOD:
-         case ReportType.MODULE_METHOD:
-         case ReportType.MODULE:
-         case ReportType.PROJECT:
-            return true;
-
-         default:
-            return false;
-      }
+      return output;
    }
 
    /**
