@@ -263,13 +263,13 @@ export default class ModuleReport extends AbstractReport
     *
     * @param {object}   options - Optional parameters.
     * @property {boolean}  includeChildren - If false then module errors are not included; default (true).
-    * @property {boolean}  includeObject - If true then results will be an array of object hashes containing `source`
+    * @property {boolean}  includeReports - If true then results will be an array of object hashes containing `source`
     *                                      (the source report object of the error) and `error`
     *                                      (an AnalyzeError instance) keys; default (false).
     *
     * @returns {Array<AnalyzeError|{error: AnalyzeError, source: *}>}
     */
-   getErrors(options = { includeChildren: true, includeObject: false })
+   getErrors(options = { includeChildren: true, includeReports: false })
    {
       /* istanbul ignore if */
       if (typeof options !== 'object') { throw new TypeError(`getErrors error: 'options' is not an 'object'.`); }
@@ -278,14 +278,31 @@ export default class ModuleReport extends AbstractReport
       /* istanbul ignore if */
       if (typeof options.includeChildren !== 'boolean') { options.includeChildren = true; }
 
-      // If `includeObject` is true then return an object hash with the source and error otherwise return the error.
-      const errors = options.includeObject ? this.errors.map((entry) => { return { error: entry, source: this }; }) :
+      // If `includeReports` is true then return an object hash with the source and error otherwise return the error.
+      const errors = options.includeReports ? this.errors.map((entry) => { return { error: entry, source: this }; }) :
        [].concat(...this.errors);
 
       if (options.includeChildren)
       {
-         this.methods.forEach((report) => { errors.push(...report.getErrors(options)); });
-         this.classes.forEach((report) => { errors.push(...report.getErrors(options)); });
+         // Add module to all children errors.
+         if (options.includeReports)
+         {
+            const childErrors = [];
+
+            this.methods.forEach((report) => { childErrors.push(...report.getErrors(options)); });
+            this.classes.forEach((report) => { childErrors.push(...report.getErrors(options)); });
+
+            // Add module to object hash.
+            childErrors.forEach((error) => { error.module = this; });
+
+            // Push to all module errors.
+            errors.push(...childErrors);
+         }
+         else
+         {
+            this.methods.forEach((report) => { errors.push(...report.getErrors(options)); });
+            this.classes.forEach((report) => { errors.push(...report.getErrors(options)); });
+         }
       }
 
       return errors;

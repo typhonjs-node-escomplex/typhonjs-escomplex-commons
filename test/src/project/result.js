@@ -90,6 +90,34 @@ if (testconfig.modules['projectResult'])
             });
          });
 
+         suite('project with errors', () =>
+         {
+            /*
+            const largeProjectJSON = require(
+             'typhonjs-escomplex-test-data/files/large-project/json/project-with-errors');
+
+            let projectReport;
+
+            setup(() => { projectReport = ProjectResult.parse(largeProjectJSON); });
+
+            teardown(() => { projectReport = void 0; });
+
+            test('getErrors', () =>
+            {
+               const errors = projectReport.getErrors({ includeReports: true });
+
+               errors.forEach((error) =>
+               {
+                  // console.log('!!! - result error: ' + JSON.stringify(error));
+                  console.log('\n!!! - result error: ' + error.error);
+                  console.log('!!! - result source: ' + (typeof error.source !== 'undefined' ? error.source.getName() : 'undefined'));
+                  console.log('!!! - result class: ' + (typeof error.class !== 'undefined' ? error.class.getName() : 'undefined'));
+                  console.log('!!! - result module: ' + (typeof error.module !== 'undefined' ? error.module.getName() : 'undefined'));
+               });
+            });
+            */
+         });
+
          suite('large project parsing performance', () =>
          {
             const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/json/project');
