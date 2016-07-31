@@ -1,6 +1,7 @@
 import AbstractFormatText  from './AbstractFormatText';
 
 import ReportType          from '../../../types/ReportType';
+import SU                  from '../../../utils/StringUtil';
 import TransformFormat     from '../../TransformFormat';
 
 /**
@@ -119,17 +120,17 @@ export default class FormatText extends AbstractFormatText
  */
 const s_SHARED_METHOD_DATA =
 [
-   ['Line start: ',                    'lineStart'],
-   ['Line end: ',                      'lineEnd'],
-   ['Physical LOC: ',                  'sloc.physical'],
-   ['Logical LOC: ',                   'sloc.logical'],
-   ['Cyclomatic complexity: ',         'cyclomatic'],
-   ['Cyclomatic complexity density: ', 'cyclomaticDensity', 1, '%'],
-   ['Halstead difficulty: ',           'halstead.difficulty'],
-   ['Halstead volume: ',               'halstead.volume'],
-   ['Halstead effort: ',               'halstead.effort'],
-   ['Parameter count: ',               'params'],
-   ['Error: ',                         'errors']
+   new SU.SafeEntry('Line start: ',                    'lineStart'),
+   new SU.SafeEntry('Line end: ',                      'lineEnd'),
+   new SU.SafeEntry('Physical LOC: ',                  'sloc.physical'),
+   new SU.SafeEntry('Logical LOC: ',                   'sloc.logical'),
+   new SU.SafeEntry('Cyclomatic complexity: ',         'cyclomatic'),
+   new SU.SafeEntry('Cyclomatic complexity density: ', 'cyclomaticDensity', 1, '%'),
+   new SU.SafeEntry('Halstead difficulty: ',           'halstead.difficulty'),
+   new SU.SafeEntry('Halstead volume: ',               'halstead.volume'),
+   new SU.SafeEntry('Halstead effort: ',               'halstead.effort'),
+   new SU.SafeEntry('Parameter count: ',               'params'),
+   new SU.SafeEntry('Error: ',                         'errors')
 ];
 
 /**
@@ -139,13 +140,13 @@ const s_SHARED_METHOD_DATA =
  */
 const s_SHARED_METHOD_AVERAGE_DATA =
 [
-   ['Average per-function physical LOC: ',            'methodAverage.sloc.physical'],
-   ['Average per-function logical LOC: ',             'methodAverage.sloc.logical'],
-   ['Average per-function cyclomatic complexity: ',   'methodAverage.cyclomatic'],
-   ['Average per-function cyclomatic density: ',      'methodAverage.cyclomaticDensity', 1, '%'],
-   ['Average per-function halstead difficulty: ',     'methodAverage.halstead.difficulty'],
-   ['Average per-function halstead volume: ',         'methodAverage.halstead.volume'],
-   ['Average per-function halstead effort: ',         'methodAverage.halstead.effort']
+   new SU.SafeEntry('Average per-function physical LOC: ',          'methodAverage.sloc.physical'),
+   new SU.SafeEntry('Average per-function logical LOC: ',           'methodAverage.sloc.logical'),
+   new SU.SafeEntry('Average per-function cyclomatic complexity: ', 'methodAverage.cyclomatic'),
+   new SU.SafeEntry('Average per-function cyclomatic density: ',    'methodAverage.cyclomaticDensity', 1, '%'),
+   new SU.SafeEntry('Average per-function halstead difficulty: ',   'methodAverage.halstead.difficulty'),
+   new SU.SafeEntry('Average per-function halstead volume: ',       'methodAverage.halstead.volume'),
+   new SU.SafeEntry('Average per-function halstead effort: ',       'methodAverage.halstead.effort')
 ];
 
 /**
@@ -162,10 +163,10 @@ const s_DEFAULT_KEYS =
 
    classReport:
    [
-      ['Line start: ',                 'lineStart'],
-      ['Line end: ',                   'lineEnd'],
+      new SU.SafeEntry('Line start: ',  'lineStart'),
+      new SU.SafeEntry('Line end: ',    'lineEnd'),
       ...s_SHARED_METHOD_AVERAGE_DATA,
-      ['Error: ',                      'errors']
+      new SU.SafeEntry('Error: ',       'errors')
    ],
 
    methodReport:
@@ -175,26 +176,26 @@ const s_DEFAULT_KEYS =
 
    moduleReport:
    [
-      ['Total lines: ',                'lineEnd'],
-      ['Maintainability index: ',      'maintainability'],
-      ['Dependency count: ',           'dependencies.length'],
+      new SU.SafeEntry('Total lines: ',                'lineEnd'),
+      new SU.SafeEntry('Maintainability index: ',      'maintainability'),
+      new SU.SafeEntry('Dependency count: ',           'dependencies.length'),
       ...s_SHARED_METHOD_AVERAGE_DATA,
-      ['Error: ',                      'errors']
+      new SU.SafeEntry('Error: ',                      'errors')
    ],
 
    projectResult:
    [
-      ['First-order density: ',                          'firstOrderDensity', 1, '%'],
-      ['Change cost: ',                                  'changeCost', 1, '%'],
-      ['Core size: ',                                    'coreSize', 1, '%'],
-      ['Average per-module maintainability index: ',     'moduleAverage.maintainability'],
-      ['Average per-function physical LOC: ',            'moduleAverage.methodAverage.sloc.physical'],
-      ['Average per-function logical LOC: ',             'moduleAverage.methodAverage.sloc.logical'],
-      ['Average per-function parameter count: ',         'moduleAverage.methodAverage.params'],
-      ['Average per-function cyclomatic complexity: ',   'moduleAverage.methodAverage.cyclomatic'],
-      ['Average per-function halstead difficulty: ',     'moduleAverage.methodAverage.halstead.difficulty'],
-      ['Average per-function halstead effort: ',         'moduleAverage.methodAverage.halstead.effort'],
-      ['Error: ',                                        'errors']
+      new SU.SafeEntry('First-order density: ',                        'firstOrderDensity', 1, '%'),
+      new SU.SafeEntry('Change cost: ',                                'changeCost', 1, '%'),
+      new SU.SafeEntry('Core size: ',                                  'coreSize', 1, '%'),
+      new SU.SafeEntry('Average per-module maintainability index: ',   'moduleAverage.maintainability'),
+      new SU.SafeEntry('Average per-function physical LOC: ',          'moduleAverage.methodAverage.sloc.physical'),
+      new SU.SafeEntry('Average per-function logical LOC: ',           'moduleAverage.methodAverage.sloc.logical'),
+      new SU.SafeEntry('Average per-function parameter count: ',       'moduleAverage.methodAverage.params'),
+      new SU.SafeEntry('Average per-function cyclomatic complexity: ', 'moduleAverage.methodAverage.cyclomatic'),
+      new SU.SafeEntry('Average per-function halstead difficulty: ',   'moduleAverage.methodAverage.halstead.difficulty'),
+      new SU.SafeEntry('Average per-function halstead effort: ',       'moduleAverage.methodAverage.halstead.effort'),
+      new SU.SafeEntry('Error: ',                                      'errors')
    ]
 };
 
@@ -208,13 +209,13 @@ const s_DEFAULT_HEADERS =
    classMethod:
    [
       '\n',
-      ['Class method: ', 'name']
+      new SU.SafeEntry('Class method: ', 'name')
    ],
 
    classReport:
    [
       '\n',
-      ['Class: ', 'name']
+      new SU.SafeEntry('Class: ', 'name')
    ],
 
    entryPrepend: '',
@@ -222,16 +223,16 @@ const s_DEFAULT_HEADERS =
    moduleMethod:
    [
       '\n',
-      ['Module method: ', 'name']
+      new SU.SafeEntry('Module method: ', 'name')
    ],
 
    moduleReport:
    [
       '\n',
-      ['Module ', '___modulecntrplus1___', 1, ':'],
-      ['   File path: ',       'filePath'],
-      ['   Source path: ',     'srcPath'],
-      ['   Source alias: ',    'srcPathAlias']
+      new SU.SafeEntry('Module ',             '___modulecntrplus1___', 1, ':'),
+      new SU.SafeEntry('   File path: ',      'filePath'),
+      new SU.SafeEntry('   Source path: ',    'srcPath'),
+      new SU.SafeEntry('   Source alias: ',   'srcPathAlias')
    ],
 
    projectResult:

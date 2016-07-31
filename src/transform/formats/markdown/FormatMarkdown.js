@@ -1,5 +1,5 @@
 import FormatText from '../text/FormatText';
-import StringUtil from '../../../utils/StringUtil';
+import SU         from '../../../utils/StringUtil';
 
 /**
  * Provides a format transform for ModuleReport / ProjectResult instances converting them to a markdown string.
@@ -44,32 +44,32 @@ const s_DEFAULT_HEADERS =
    classMethod:
    [
       '\n',
-      ['* Class method: **', 'name', 1, '**', StringUtil.tagEscapeHTML]
+      new SU.SafeEntry('* Class method: **', 'name', 1, '**', SU.tagEscapeHTML)
    ],
 
    classReport:
    [
       '\n',
-      ['* Class: **', 'name', 1, '**', StringUtil.tagEscapeHTML]
+      new SU.SafeEntry('* Class: **', 'name', 1, '**', SU.tagEscapeHTML)
    ],
 
    entryPrepend: '* ',
 
-   entryTemplateTag: StringUtil.tagEscapeHTML,
+   entryTemplateTag: SU.tagEscapeHTML,
 
    moduleMethod:
    [
       '\n',
-      ['* Module method: **', 'name', 1, '**', StringUtil.tagEscapeHTML]
+      new SU.SafeEntry('* Module method: **', 'name', 1, '**', SU.tagEscapeHTML)
    ],
 
    moduleReport:
    [
       '\n',
-      ['* Module ', '___modulecntrplus1___', 1, ':'],
-      ['   * File path: `',       'filePath', 1, '`'],
-      ['   * Source path: `',     'srcPath', 1, '`'],
-      ['   * Source alias: `',    'srcPathAlias', 1, '`']
+      new SU.SafeEntry('* Module ',             '___modulecntrplus1___', 1, ':'),
+      new SU.SafeEntry('   * File path: `',     'filePath', 1, '`'),
+      new SU.SafeEntry('   * Source path: `',   'srcPath', 1, '`'),
+      new SU.SafeEntry('   * Source alias: `',  'srcPathAlias', 1, '`')
    ],
 
    projectResult:

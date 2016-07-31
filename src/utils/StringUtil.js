@@ -45,6 +45,13 @@ export default class StringUtil
    }
 
    /**
+    * Returns the SafeEntry constructor which is used by
+    *
+    * @returns {SafeEntry}
+    */
+   static get SafeEntry() { return SafeEntry; }
+
+   /**
     * Provides a way to output a given string value with concatenated data from safely accessing an objects data /
     * entries given an accessor string which describes the entries to walk. To access deeper entries into the object
     * format the accessor string with `.` between entries to walk.
@@ -78,18 +85,11 @@ export default class StringUtil
     *
     * @param {object}         object - An object to access entry data.
     *
-    * @param {string|Array<string|number|function>}  entries -
-    *                                  Multiple arrays or strings. If the entry is not an array it will simply
-    *                                  be appended. If the entry is an array then entries in this array correspond
-    *                                  to the following parameters which are forwarded onto `safeStringObject`.
-    *                                  The indexes correspond to the following:
-    * ```
-    * [0] (string) - The string to prepend.
-    * [1] (string) - The accessor string describing the lookup operation.
-    * [2] (number) - (Optional) The number of newlines characters to append.
-    * [3] (string) - (Optional) A string to append to the end.
-    * [4] (function) - (Optional) A template tag function to apply.
-    * ```
+    * @param {string|SafeEntry|Array<string|SafeEntry>} entries -
+    *                                  Multiple arrays or strings. If an entry is not a SafeEntry it will
+    *                                  simply be appended. If the entry is an array then entries in this array
+    *                                  correspond to the following parameters which are forwarded onto
+    *                                  `safeStringObject`.
     *
     * @returns {string}
     */
@@ -106,18 +106,11 @@ export default class StringUtil
     *
     * @param {object}         object - An object to access entry data.
     *
-    * @param {string|Array<string|number|function>}  entries -
-    *                                  Multiple arrays or strings. If the entry is not an array it will simply
-    *                                  be appended. If the entry is an array then entries in this array correspond
-    *                                  to the following parameters which are forwarded onto `safeStringObject`.
-    *                                  The indexes correspond to the following:
-    * ```
-    * [0] (string) - The string to prepend.
-    * [1] (string) - The accessor string describing the lookup operation.
-    * [2] (number) - (Optional) The number of newlines characters to append.
-    * [3] (string) - (Optional) A string to append to the end.
-    * [4] (function) - (Optional) A template tag function to apply.
-    * ```
+    * @param {string|SafeEntry|Array<string|SafeEntry>} entries -
+    *                                  Multiple arrays or strings. If an entry is not a SafeEntry it will
+    *                                  simply be appended. If the entry is an array then entries in this array
+    *                                  correspond to the following parameters which are forwarded onto
+    *                                  `safeStringObject`.
     *
     * @returns {string}
     */
@@ -135,39 +128,27 @@ export default class StringUtil
 
          // Skip prepend action if last entry did not include a new line.
          const prepend = skipPrepend ? '' : origPrepend;
-         skipPrepend = Array.isArray(entry) && typeof entry[2] === 'number' && entry[2] === 0;
 
          // Process an array entry otherwise simply append `entry` to output if it is a string.
-         if (Array.isArray(entry))
+         if (entry instanceof SafeEntry)
          {
-            switch (entry.length)
-            {
-               case 2:
-                  output.push(StringUtil.safeStringObject(`${prepend}${entry[0]}`, object, entry[1]));
-                  break;
+            skipPrepend = entry.newLine === 0;
 
-               case 3:
-                  output.push(StringUtil.safeStringObject(`${prepend}${entry[0]}`, object, entry[1], entry[2]));
-                  break;
-
-               case 4:
-                  output.push(
-                   StringUtil.safeStringObject(`${prepend}${entry[0]}`, object, entry[1], entry[2], entry[3]));
-                  break;
-
-               case 5:
-                  output.push(StringUtil.safeStringObject(`${prepend}${entry[0]}`,
-                   object, entry[1], entry[2], entry[3], entry[4]));
-                  break;
-
-               default:
-                  throw new Error(
-                   `safeStringsPrependObject error: entry at '${cntr}' has the wrong length '${entry.length}'.`);
-            }
+            output.push(StringUtil.safeStringObject(`${prepend}${entry.prependString}`,
+             object, entry.accessor, entry.newLine, entry.appendString, entry.tagFunction));
          }
          else if (typeof entry === 'string' && entry !== '')
          {
             output.push(`${prepend}${entry}`);
+         }
+         else if (typeof entry.toString === 'function')
+         {
+            const stringValue = entry.toString();
+
+            if (stringValue !== '')
+            {
+               output.push(`${prepend}${stringValue}`);
+            }
          }
       }
 
@@ -189,4 +170,103 @@ export default class StringUtil
          return previous + String(value).replace(/</g, '&lt;').replace(/>/g, '&gt;') + literal[index + 1];
       }, literal[0]);
    }
+}
+
+/**
+ * Defines the parameters for a safe string object lookup. If the accessor resolves against a given object then
+ * a string is created by combining the prepend / append strings between the value with optional new lines appended
+ * at the end. If a template tag function is defined it is applied to the template string.
+ */
+class SafeEntry
+{
+   /**
+    * Initializes SafeEntry instance.
+    *
+    * @param {string}   prependString - The string to prepend.
+    * @param {string}   accessor - The accessor string describing the lookup operation.
+    * @param {number}   newLine - (Optional) The number of newlines characters to append.
+    * @param {string}   appendString - (Optional) A string to append to the end.
+    * @param {function} tagFunction - (Optional) A template tag function to apply.
+    */
+   constructor(prependString, accessor, newLine = 1, appendString = '', tagFunction = void 0)
+   {
+      if (typeof prependString !== 'string') { throw new TypeError(`ctor error: 'prependString' is not a 'string'.`); }
+      if (typeof accessor !== 'string') { throw new TypeError(`ctor error: 'accessor' is not a 'string'.`); }
+      if (typeof appendString !== 'string') { throw new TypeError(`ctor error: 'appendString' is not a 'string'.`); }
+
+      if (typeof tagFunction !== 'function' && typeof tagFunction !== 'undefined')
+      {
+         throw new TypeError(`ctor error: 'tagFunction' is not a 'function' or 'undefined'.`);
+      }
+
+      if (Number.isInteger(newLine) && newLine < 0)
+      {
+         throw new TypeError(`ctor error: 'newLine' is not a positive 'integer' (${newLine}).`);
+      }
+
+      /**
+       * The string to prepend.
+       * @type {string}
+       * @private
+       */
+      this._prependString = prependString;
+
+      /**
+       * The accessor string describing the lookup operation.
+       * @type {string}
+       * @private
+       */
+      this._accessor = accessor;
+
+      /**
+       * The number of newlines characters to append.
+       * @type {number}
+       * @private
+       */
+      this._newLine = newLine;
+
+      /**
+       * A string to append to the end.
+       * @type {string}
+       * @private
+       */
+      this._appendString = appendString;
+
+      /**
+       * A template tag function to apply.
+       * @type {Function}
+       * @private
+       */
+      this._tagFunction = tagFunction;
+   }
+
+   /**
+    * Returns the accessor string describing the lookup operation.
+    * @returns {string}
+    */
+   get accessor() { return this._accessor; }
+
+   /**
+    * Returns a string to append to the end if any.
+    * @returns {string}
+    */
+   get appendString() { return this._appendString; }
+
+   /**
+    * Returns the new line count.
+    * @returns {number}
+    */
+   get newLine() { return this._newLine; }
+
+   /**
+    * Returns the string to prepend.
+    * @returns {string}
+    */
+   get prependString() { return this._prependString; }
+
+   /**
+    * Returns a template tag function to apply if any.
+    * @returns {Function}
+    */
+   get tagFunction() { return this._tagFunction; }
 }

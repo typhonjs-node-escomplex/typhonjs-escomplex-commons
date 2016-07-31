@@ -61,15 +61,29 @@ if (testconfig.modules['utilString'])
 
          suite('safeStringsObject:', () =>
          {
-            test('output is correct', () =>
+            test('output is correct (individual entries)', () =>
             {
                const output = StringUtil.safeStringsObject(s_TEST_OBJECT,
-                  ['Line start: ',        'lineStart', 2],
-                  ['Line end: ',          'lineEnd'],
-                  ['Physical LOC: ',      'sloc.physical'],
-                  ['Logical LOC: ',       'sloc.logical'],
-                  ['Parameter count: ',   'sloc.params']
+                  new StringUtil.SafeEntry('Line start: ',        'lineStart', 2),
+                  new StringUtil.SafeEntry('Line end: ',          'lineEnd'),
+                  new StringUtil.SafeEntry('Physical LOC: ',      'sloc.physical'),
+                  new StringUtil.SafeEntry('Logical LOC: ',       'sloc.logical'),
+                  new StringUtil.SafeEntry('Parameter count: ',   'sloc.params')
                );
+
+               assert.strictEqual(output, s_TEST_CONFIRM);
+            });
+
+            test('output is correct (spread array of entries)', () =>
+            {
+               const output = StringUtil.safeStringsObject(s_TEST_OBJECT,
+               ...[
+                  new StringUtil.SafeEntry('Line start: ',        'lineStart', 2),
+                  new StringUtil.SafeEntry('Line end: ',          'lineEnd'),
+                  new StringUtil.SafeEntry('Physical LOC: ',      'sloc.physical'),
+                  new StringUtil.SafeEntry('Logical LOC: ',       'sloc.logical'),
+                  new StringUtil.SafeEntry('Parameter count: ',   'sloc.params')
+               ]);
 
                assert.strictEqual(output, s_TEST_CONFIRM);
             });

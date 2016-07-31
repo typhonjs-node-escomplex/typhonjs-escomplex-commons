@@ -1,6 +1,7 @@
 import AbstractFormatTest  from './AbstractFormatText';
 
 import ReportType          from '../../../types/ReportType';
+import SU                  from '../../../utils/StringUtil';
 
 /**
  * Provides a format transform for ModuleReport / ProjectResult instances converting them to plain text with just
@@ -75,10 +76,10 @@ const s_DEFAULT_HEADERS =
 {
    moduleReport:
    [
-      ['Module ', '___modulecntrplus1___', 1, ':'],
-      ['filePath: ', 'filePath'],
-      ['srcPath: ', 'srcPath'],
-      ['srcPathAlias: ', 'srcPathAlias'],
+      new SU.SafeEntry('Module ', '___modulecntrplus1___', 1, ':'),
+      new SU.SafeEntry('filePath: ', 'filePath'),
+      new SU.SafeEntry('srcPath: ', 'srcPath'),
+      new SU.SafeEntry('srcPathAlias: ', 'srcPathAlias'),
       '\n'
    ]
 };

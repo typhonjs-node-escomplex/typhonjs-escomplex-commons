@@ -1,4 +1,6 @@
-import FormatTextModules  from '../text/FormatTextModules';
+import FormatTextModules   from '../text/FormatTextModules';
+
+import SU                  from '../../../utils/StringUtil';
 
 /**
  * Provides a format transform for ModuleReport / ProjectResult instances converting them to markdown with just modules.
@@ -42,10 +44,10 @@ const s_DEFAULT_HEADERS =
 {
    moduleReport:
    [
-      ['* Module ', '___modulecntrplus1___', 1, ':'],
-      ['   * filePath: `', 'filePath', 1, '`'],
-      ['   * srcPath: `', 'srcPath', 1, '`'],
-      ['   * srcPathAlias: `', 'srcPathAlias', 1, '`'],
+      new SU.SafeEntry('* Module ',             '___modulecntrplus1___', 1, ':'),
+      new SU.SafeEntry('   * filePath: `',      'filePath', 1, '`'),
+      new SU.SafeEntry('   * srcPath: `',       'srcPath', 1, '`'),
+      new SU.SafeEntry('   * srcPathAlias: `',  'srcPathAlias', 1, '`'),
       '\n'
    ]
 };

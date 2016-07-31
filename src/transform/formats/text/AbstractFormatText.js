@@ -1,6 +1,6 @@
 import ObjectUtil from '../../../utils/ObjectUtil';
-import StringUtil from '../../../utils/StringUtil';
 import ReportType from '../../../types/ReportType';
+import StringUtil from '../../../utils/StringUtil';
 
 /**
  * Provides the base text format transform for ModuleReport / ProjectResult instances.
@@ -119,11 +119,12 @@ export default class AbstractFormatText
    }
 
    /**
-    * Formats entries for a given report.
+    * Formats entries for a given report based on an array of accessor entries.
     *
     * @param {object}         report - A class / method report.
     *
-    * @param {Array<string>|Array<string>}  entries - (Optional) One or more optional entries to format.
+    * @param {Array<string>|Array<string|StringUtil.SafeEntry>}  entries - (Optional) One or more optional entries to
+    *                                                                      format.
     *
     * @param {string}         prepend - (Optional) A string to prepend; default: `''`.
     *
@@ -146,9 +147,13 @@ export default class AbstractFormatText
       // Admittedly the following block is a bit obtuse.
       entries.forEach((entry) =>
       {
-         const accessor = Array.isArray(entry) ? entry[1] : entry;
+         // Obtain the accessor field for SafeEntry or accept the bare entry.
+         const accessor = entry instanceof StringUtil.SafeEntry ? entry.accessor : entry;
+
+         // Use the accessor to access to value in the report. If accessor is not a string `undefined` is returned.
          let value = ObjectUtil.safeAccess(report, accessor);
 
+         // Early out if the value is not retrieved.
          if (typeof value === 'undefined') { return; }
 
          // Convert all values to an array.
@@ -167,16 +172,18 @@ export default class AbstractFormatText
                // An array with more than one entry must add the parent prepend string to maintain alignment.
                if (index > 0) { result += parentPrepend; }
 
-               if (Array.isArray(entry))
+               // The abbreviated / minimal transform formats will only contain strings defining the accessor lookup
+               // so this accessor key is used as the description.
+               if (typeof entry === 'string')
                {
-                  // Store the entry via the given accessor.
+                  result += `${prepend}${entryPrepend}${entry}: ${valueEntry}\n`;
+               }
+               else
+               {
+                  // Store the entry via the given accessor which is then dereferenced by `safeStringsPrependObject`.
                   ObjectUtil.safeSet(temp, accessor, valueEntry);
 
                   result += StringUtil.safeStringsPrependObject(`${prepend}${entryPrepend}`, temp, entry);
-               }
-               else if (typeof entry === 'string')
-               {
-                  result += `${prepend}${entryPrepend}${entry}: ${valueEntry}\n`;
                }
             });
          }
