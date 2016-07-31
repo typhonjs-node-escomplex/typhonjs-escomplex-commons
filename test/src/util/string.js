@@ -76,8 +76,7 @@ if (testconfig.modules['utilString'])
 
             test('output is correct (spread array of entries)', () =>
             {
-               const output = StringUtil.safeStringsObject(s_TEST_OBJECT,
-               ...[
+               const output = StringUtil.safeStringsObject(s_TEST_OBJECT, ...[
                   new StringUtil.SafeEntry('Line start: ',        'lineStart', 2),
                   new StringUtil.SafeEntry('Line end: ',          'lineEnd'),
                   new StringUtil.SafeEntry('Physical LOC: ',      'sloc.physical'),
