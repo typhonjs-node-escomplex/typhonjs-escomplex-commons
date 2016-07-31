@@ -81,7 +81,7 @@ export default class StringUtil
    }
 
    /**
-    * Provides a convenience method producing a block of safeStringObject results.
+    * Provides a convenience method producing a block of `safeStringObject` results.
     *
     * @param {object}         object - An object to access entry data.
     *
@@ -99,7 +99,7 @@ export default class StringUtil
    }
 
    /**
-    * Provides a convenience method producing a block of safeStringObject results with the option to prepend a
+    * Provides a convenience method producing a block of `safeStringObject` results with the option to prepend a
     * given string.
     *
     * @param {*}              origPrepend - An additional value to prepend to all results.

@@ -10,7 +10,7 @@ export default class AnalyzeError
     *
     * @param {string}   severity - Provides the severity level.
     * @param {string}   message - Provides the error message.
-    * @param {ClassMethodReport|ClassReport|ModuleMethodReport|ModuleReport|ProjectResult} sourceReport -
+    * @param {ClassMethodReport|ClassReport|ModuleMethodReport|ModuleReport|ProjectReport} sourceReport -
     *                   The source report of the error.
     */
    constructor(severity = '<unknown>', message = '', sourceReport = void 0)
