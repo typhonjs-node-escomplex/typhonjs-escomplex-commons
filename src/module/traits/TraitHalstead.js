@@ -101,10 +101,7 @@ export default class TraitHalstead
    {
       if (Array.isArray(this._data.identifier))
       {
-         return this._data.identifier.map((entry) =>
-         {
-            return typeof entry === 'function' ? entry(...params) : entry;
-         });
+         return this._data.identifier.map((entry) => typeof entry === 'function' ? entry(...params) : entry);
       }
 
       return typeof this._data.identifier === 'function' ? this._data.identifier(...params) : this._data.identifier;

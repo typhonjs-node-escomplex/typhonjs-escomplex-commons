@@ -25,11 +25,8 @@ export default class HalsteadArray
        * @type {Array<TraitHalstead>}
        * @private
        */
-      this._data = data.map((property) =>
-      {
-         return property && typeof property.identifier !== 'undefined' ? new TraitHalstead(metric, property) :
-          new TraitHalstead(metric, { identifier: property });
-      });
+      this._data = data.map((property) => property && typeof property.identifier !== 'undefined' ?
+       new TraitHalstead(metric, property) : new TraitHalstead(metric, { identifier: property }));
 
       /**
        * Stores the Halstead metric type.

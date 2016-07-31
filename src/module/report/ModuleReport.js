@@ -1,11 +1,11 @@
 import AbstractReport      from './AbstractReport';
 import AggregateReport     from './AggregateReport';
-import AnalyzeError        from '../../analyze/AnalyzeError';
 import ClassMethodReport   from './ClassMethodReport';
 import ClassReport         from './ClassReport';
 import MethodAverage       from './averages/MethodAverage';
 import ModuleMethodReport  from './ModuleMethodReport';
 
+import AnalyzeError        from '../../analyze/AnalyzeError';
 import MathUtil            from '../../utils/MathUtil';
 import ReportType          from '../../types/ReportType';
 import TransformFormat     from '../../transform/TransformFormat';
