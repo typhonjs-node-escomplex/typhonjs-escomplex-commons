@@ -1,11 +1,11 @@
-import AbstractReport      from './AbstractReport';
-import AnalyzeError        from '../../analyze/AnalyzeError';
-import AggregateReport     from './AggregateReport';
-import ClassMethodReport   from './ClassMethodReport';
-import MethodAverage       from './averages/MethodAverage';
+import AbstractReport         from './AbstractReport';
+import AggregateMethodReport  from './AggregateMethodReport';
+import ClassMethodReport      from './ClassMethodReport';
+import MethodAverage          from './averages/MethodAverage';
 
-import ReportType          from '../../types/ReportType';
-import TransformFormat     from '../../transform/TransformFormat';
+import AnalyzeError           from '../../analyze/AnalyzeError';
+import ReportType             from '../../types/ReportType';
+import TransformFormat        from '../../transform/TransformFormat';
 
 /**
  * Provides the class report object which stores data pertaining to a single ES6 class.
@@ -29,7 +29,7 @@ export default class ClassReport extends AbstractReport
     */
    constructor(name = '', lineStart = 0, lineEnd = 0)
    {
-      super(new AggregateReport(lineStart, lineEnd));
+      super(new AggregateMethodReport(lineStart, lineEnd));
 
       /**
        * Stores any analysis errors.

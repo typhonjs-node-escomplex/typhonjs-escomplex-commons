@@ -1,14 +1,14 @@
-import AbstractReport      from './AbstractReport';
-import AggregateReport     from './AggregateReport';
-import ClassMethodReport   from './ClassMethodReport';
-import ClassReport         from './ClassReport';
-import MethodAverage       from './averages/MethodAverage';
-import ModuleMethodReport  from './ModuleMethodReport';
+import AbstractReport         from './AbstractReport';
+import AggregateMethodReport  from './AggregateMethodReport';
+import ClassMethodReport      from './ClassMethodReport';
+import ClassReport            from './ClassReport';
+import MethodAverage          from './averages/MethodAverage';
+import ModuleMethodReport     from './ModuleMethodReport';
 
-import AnalyzeError        from '../../analyze/AnalyzeError';
-import MathUtil            from '../../utils/MathUtil';
-import ReportType          from '../../types/ReportType';
-import TransformFormat     from '../../transform/TransformFormat';
+import AnalyzeError           from '../../analyze/AnalyzeError';
+import MathUtil               from '../../utils/MathUtil';
+import ReportType             from '../../types/ReportType';
+import TransformFormat        from '../../transform/TransformFormat';
 
 /**
  * Provides the module report object which stores data pertaining to a single file / module being processed.
@@ -37,7 +37,7 @@ export default class ModuleReport extends AbstractReport
     */
    constructor(lineStart = 0, lineEnd = 0, settings = {})
    {
-      super(new AggregateReport(lineStart, lineEnd));
+      super(new AggregateMethodReport(lineStart, lineEnd));
 
       /**
        * Stores the settings used to generate the module report.

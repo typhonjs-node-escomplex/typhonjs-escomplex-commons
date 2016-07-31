@@ -1,10 +1,11 @@
-import AggregateReport  from './AggregateReport';
-import AnalyzeError     from '../../analyze/AnalyzeError';
+import AggregateMethodReport  from './AggregateMethodReport';
+
+import AnalyzeError           from '../../analyze/AnalyzeError';
 
 /**
  * Provides the method report object which stores data pertaining to a single method / function.
  */
-export default class MethodReport extends AggregateReport
+export default class MethodReport extends AggregateMethodReport
 {
    /**
     * Initializes method report.

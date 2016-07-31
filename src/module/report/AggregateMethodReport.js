@@ -5,7 +5,7 @@ import HalsteadData     from './HalsteadData';
  * Provides the aggregate report object which stores base data pertaining to a single method / function or cumulative
  * aggregate data for a ModuleReport / ClassReport.
  */
-export default class AggregateReport extends AbstractReport
+export default class AggregateMethodReport extends AbstractReport
 {
    /**
     * Initializes aggregate report.
