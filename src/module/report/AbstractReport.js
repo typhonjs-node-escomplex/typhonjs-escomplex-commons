@@ -10,20 +10,20 @@ export default class AbstractReport
     * If given assigns the method report to an internal variable. This is used by `ClassReport` and `ModuleReport`
     * which stores a `AggregateMethodReport` respectively in `this.aggregate`.
     *
-    * @param {AggregateMethodReport}   aggregateReport - An AggregateMethodReport to associate with this report.
+    * @param {AggregateMethodReport}   aggregateMethodReport - An AggregateMethodReport to associate with this report.
     */
-   constructor(aggregateReport = void 0)
+   constructor(aggregateMethodReport = void 0)
    {
       /**
        * Stores any associated `AggregateMethodReport`.
        * @type {AggregateMethodReport}
        */
-      this.aggregate = aggregateReport;
+      this.aggregate = aggregateMethodReport;
    }
 
    /**
     * Returns the associated `AggregateMethodReport` or `this`. Both ClassReport and ModuleReport have an
-    * `aggregateMethod` AggregateMethodReport.
+    * `methodAggregate` AggregateMethodReport.
     *
     * @returns {AggregateMethodReport}
     */
