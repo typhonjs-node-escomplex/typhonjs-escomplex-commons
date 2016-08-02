@@ -68,6 +68,38 @@ export default class ObjectUtil
    }
 
    /**
+    * Compares a source object and values of entries against a target object. If the entries in the source object match
+    * the target object then `true` is returned otherwise `false`. If either object is undefined or null then false
+    * is returned.
+    *
+    * @param {object}   source - Source object.
+    * @param {object}   target - Target object.
+    *
+    * @returns {boolean}
+    */
+   static safeEqual(source, target)
+   {
+      if (typeof source === 'undefined' || source === null || typeof target === 'undefined' || target === null)
+      {
+         return false;
+      }
+
+      const sourceAccessors = ObjectUtil.getAccessorList(source);
+
+      for (let cntr = 0; cntr < sourceAccessors.length; cntr++)
+      {
+         const accessor = sourceAccessors[cntr];
+
+         const sourceObjectValue = ObjectUtil.safeAccess(source, accessor);
+         const targetObjectValue = ObjectUtil.safeAccess(target, accessor);
+
+         if (sourceObjectValue !== targetObjectValue) { return false; }
+      }
+
+      return true;
+   }
+
+   /**
     * Provides a way to safely set an objects data / entries given an accessor string which describes the
     * entries to walk. To access deeper entries into the object format the accessor string with `.` between entries
     * to walk.

@@ -3,7 +3,7 @@ import FormatTextModules   from '../text/FormatTextModules';
 import SU                  from '../../../utils/StringUtil';
 
 /**
- * Provides a format transform for ModuleReport / ProjectResult instances converting them to markdown with just modules.
+ * Provides a format transform for ModuleReport / ProjectReport instances converting them to markdown with just modules.
  */
 export default class FormatMarkdownModules extends FormatTextModules
 {

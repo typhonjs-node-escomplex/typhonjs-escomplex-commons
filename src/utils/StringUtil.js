@@ -45,7 +45,7 @@ export default class StringUtil
    }
 
    /**
-    * Returns the SafeEntry constructor which is used by
+    * Returns the SafeEntry constructor which is used by `safeStringsObject` and `safeStringsPrependObject`.
     *
     * @returns {SafeEntry}
     */

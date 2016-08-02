@@ -5,7 +5,7 @@ import SU                  from '../../../utils/StringUtil';
 import TransformFormat     from '../../TransformFormat';
 
 /**
- * Provides a format transform for ModuleReport / ProjectResult instances converting them to plain text.
+ * Provides a format transform for ModuleReport / ProjectReport instances converting them to plain text.
  */
 export default class FormatText extends AbstractFormatText
 {
@@ -73,9 +73,9 @@ export default class FormatText extends AbstractFormatText
    }
 
    /**
-    * Formats a project result as plain text.
+    * Formats a project report as plain text.
     *
-    * @param {ProjectResult}  result - A project result.
+    * @param {ProjectReport}  projectReport - A project report.
     *
     * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
     * @property {string}      classReport - An entry key found in the class report to output.
@@ -84,9 +84,9 @@ export default class FormatText extends AbstractFormatText
     *
     * @returns {string}
     */
-   _formatProject(result, options = {})
+   _formatProject(projectReport, options = {})
    {
-      let output = super._formatProject(result, options);
+      let output = super._formatProject(projectReport, options);
 
       let localOptions = Object.assign({}, this._keys);
       localOptions = Object.assign(localOptions, options);
@@ -97,13 +97,13 @@ export default class FormatText extends AbstractFormatText
       // Add adjacency matrix output
       if (adjacency && TransformFormat.isFormat(this._adjacencyFormatName))
       {
-         output += `\n\n${TransformFormat.format(result, this._adjacencyFormatName, options)}`;
+         output += `\n\n${TransformFormat.format(projectReport, this._adjacencyFormatName, options)}`;
       }
 
       // Add visibility matrix output
       if (visibility && TransformFormat.isFormat(this._visibilityFormatName))
       {
-         output += `\n\n${TransformFormat.format(result, this._visibilityFormatName, options)}`;
+         output += `\n\n${TransformFormat.format(projectReport, this._visibilityFormatName, options)}`;
       }
 
       return output;
@@ -151,7 +151,7 @@ const s_SHARED_METHOD_AVERAGE_DATA =
 
 /**
  * Defines the default headers as text which are inserted via spread into `StringUtil.safeStringsObject`.
- * @type {{classMethod: Array, classReport: Array, methodReport: *[], moduleReport: *[], projectResult: *[]}}
+ * @type {{classMethod: Array, classReport: Array, methodReport: *[], moduleReport: *[], projectReport: *[]}}
  * @ignore
  */
 const s_DEFAULT_KEYS =
@@ -183,7 +183,7 @@ const s_DEFAULT_KEYS =
       new SU.SafeEntry('Error: ',                      'errors')
    ],
 
-   projectResult:
+   projectReport:
    [
       new SU.SafeEntry('First-order density: ',                        'firstOrderDensity', 1, '%'),
       new SU.SafeEntry('Change cost: ',                                'changeCost', 1, '%'),
@@ -201,7 +201,7 @@ const s_DEFAULT_KEYS =
 
 /**
  * Defines the default headers as text which are inserted via spread into `StringUtil.safeStringsObject`.
- * @type {{classMethod: *[], classReport: *[], entryPrepend: string, moduleMethod: *[], moduleReport: string[], projectResult: string[]}}
+ * @type {{classMethod: *[], classReport: *[], entryPrepend: string, moduleMethod: *[], moduleReport: string[], projectReport: string[]}}
  * @ignore
  */
 const s_DEFAULT_HEADERS =
@@ -235,7 +235,7 @@ const s_DEFAULT_HEADERS =
       new SU.SafeEntry('   Source alias: ',   'srcPathAlias')
    ],
 
-   projectResult:
+   projectReport:
    [
       'Project: \n'
    ]

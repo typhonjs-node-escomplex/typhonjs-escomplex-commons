@@ -1,7 +1,7 @@
 import FormatTextVisibility from '../text/FormatTextVisibility';
 
 /**
- * Provides a format transform for ModuleReport / ProjectResult instances converting a matrix list into markdown.
+ * Provides a format transform for ModuleReport / ProjectReport instances converting a matrix list into markdown.
  */
 export default class FormatMarkdownVisibility extends FormatTextVisibility
 {
@@ -42,5 +42,5 @@ const s_DEFAULT_HEADERS =
 {
    entryPrepend: '* ',
    entryWrapper: '`',
-   textHeader: '* Visibility (reverse dependents / numerical indices correspond to ProjectResult modules / reports):\n'
+   textHeader: '* Visibility (reverse dependents / numerical indices correspond to ProjectReport modules / reports):\n'
 };

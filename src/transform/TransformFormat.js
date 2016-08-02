@@ -105,9 +105,9 @@ export default class TransformFormat
    }
 
    /**
-    * Formats a given ModuleReport or ProjectResult via the formatter of the requested type.
+    * Formats a given ModuleReport or ProjectReport via the formatter of the requested type.
     *
-    * @param {ClassReport|MethodReport|ModuleReport|ProjectResult} report - A report to format.
+    * @param {ClassReport|MethodReport|ModuleReport|ProjectReport} report - A report to format.
     *
     * @param {string}                     name - The name of formatter to invoke.
     *

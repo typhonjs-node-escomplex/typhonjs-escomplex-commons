@@ -7,6 +7,7 @@ import ModuleMethodReport     from './ModuleMethodReport';
 
 import AnalyzeError           from '../../analyze/AnalyzeError';
 import MathUtil               from '../../utils/MathUtil';
+import ObjectUtil             from '../../utils/ObjectUtil';
 import ReportType             from '../../types/ReportType';
 import TransformFormat        from '../../transform/TransformFormat';
 
@@ -279,9 +280,10 @@ export default class ModuleReport extends AbstractReport
       if (typeof options.includeChildren !== 'boolean') { options.includeChildren = true; }
 
       // If `includeReports` is true then return an object hash with the source and error otherwise return the error.
-      const errors = options.includeReports ? this.errors.map((entry) => { return { error: entry, source: this }; }) :
+      let errors = options.includeReports ? this.errors.map((entry) => { return { error: entry, source: this }; }) :
        [].concat(...this.errors);
 
+      // If `includeChildren` is true then traverse all children reports for errors.
       if (options.includeChildren)
       {
          // Add module to all children errors.
@@ -303,6 +305,12 @@ export default class ModuleReport extends AbstractReport
             this.methods.forEach((report) => { errors.push(...report.getErrors(options)); });
             this.classes.forEach((report) => { errors.push(...report.getErrors(options)); });
          }
+      }
+
+      // If `options.query` is defined then filter errors against the query object.
+      if (typeof options.query === 'object')
+      {
+         errors = errors.filter((error) => ObjectUtil.safeEqual(options.query, error));
       }
 
       return errors;
@@ -376,9 +384,9 @@ export default class ModuleReport extends AbstractReport
       const currentClassReport = this.getCurrentClassReport();
       const currentMethodReport = this.getCurrentMethodReport();
 
-      this.aggregate.cyclomatic += amount;
+      this.methodAggregate.cyclomatic += amount;
 
-      if (currentClassReport) { currentClassReport.aggregate.cyclomatic += amount; }
+      if (currentClassReport) { currentClassReport.methodAggregate.cyclomatic += amount; }
       if (currentMethodReport) { currentMethodReport.cyclomatic += amount; }
    }
 
@@ -393,9 +401,9 @@ export default class ModuleReport extends AbstractReport
       const currentClassReport = this.getCurrentClassReport();
       const currentMethodReport = this.getCurrentMethodReport();
 
-      this.aggregate.sloc.logical += amount;
+      this.methodAggregate.sloc.logical += amount;
 
-      if (currentClassReport) { currentClassReport.aggregate.sloc.logical += amount; }
+      if (currentClassReport) { currentClassReport.methodAggregate.sloc.logical += amount; }
       if (currentMethodReport) { currentMethodReport.sloc.logical += amount; }
    }
 

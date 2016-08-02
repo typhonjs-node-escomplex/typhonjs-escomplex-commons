@@ -2,7 +2,7 @@ import ObjectUtil from '../../../utils/ObjectUtil';
 import ReportType from '../../../types/ReportType';
 
 /**
- * Provides a format transform for ESComplex ModuleReport / ProjectResult instances converting them to JSON that
+ * Provides a format transform for ESComplex ModuleReport / ProjectReport instances converting them to JSON that
  * corresponds to the XML checkstyle format.
  *
  * The checkstyle XML format outputs error elements for each file / module. This format depends on the output of
@@ -25,7 +25,7 @@ export default class FormatJSONCheckstyle
    /**
     * Formats a module report as JSON / checkstyle.
     *
-    * @param {ModuleReport|ProjectResult} report - A module or project report to format.
+    * @param {ModuleReport|ProjectReport} report - A module or project report to format.
     *
     * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
     * @property {number}      spacing - (Optional) An integer defining the JSON output spacing.
@@ -44,8 +44,8 @@ export default class FormatJSONCheckstyle
             break;
 
          case ReportType.PROJECT:
-            reports = report.reports;
-            reportsAvailable = report.getSetting('serializeReports', false);
+            reports = report.modules;
+            reportsAvailable = report.getSetting('serializeModules', false);
             break;
 
          default:

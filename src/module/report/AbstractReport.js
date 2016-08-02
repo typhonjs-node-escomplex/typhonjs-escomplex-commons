@@ -1,14 +1,14 @@
 import TransformFormat  from '../../transform/TransformFormat';
 
 /**
- * Provides several helper methods to work with method oriented data stored as `this.aggregate` in `ClassReport` /
+ * Provides several helper methods to work with method oriented data stored as `this.methodAggregate` in `ClassReport` /
  * `ModuleReport` and directly in `ClassMethodReport` / `ModuleMethodReport`.
  */
 export default class AbstractReport
 {
    /**
     * If given assigns the method report to an internal variable. This is used by `ClassReport` and `ModuleReport`
-    * which stores a `AggregateMethodReport` respectively in `this.aggregate`.
+    * which stores a `AggregateMethodReport` respectively in `this.methodAggregate`.
     *
     * @param {AggregateMethodReport}   aggregateMethodReport - An AggregateMethodReport to associate with this report.
     */
@@ -18,7 +18,7 @@ export default class AbstractReport
        * Stores any associated `AggregateMethodReport`.
        * @type {AggregateMethodReport}
        */
-      this.aggregate = aggregateMethodReport;
+      this.methodAggregate = aggregateMethodReport;
    }
 
    /**
@@ -27,7 +27,7 @@ export default class AbstractReport
     *
     * @returns {AggregateMethodReport}
     */
-   get aggregateReport() { return typeof this.aggregate !== 'undefined' ? this.aggregate : this; }
+   get aggregateMethodReport() { return typeof this.methodAggregate !== 'undefined' ? this.methodAggregate : this; }
 
    /**
     * Increments the associated aggregate report HalsteadData for distinct identifiers.
@@ -39,7 +39,7 @@ export default class AbstractReport
    {
       if (this.isHalsteadMetricDistinct(metric, identifier))
       {
-         this.aggregateReport.halstead[metric].identifiers.push(identifier);
+         this.aggregateMethodReport.halstead[metric].identifiers.push(identifier);
 
          this.incrementHalsteadMetric(metric, 'distinct');
       }
@@ -67,7 +67,7 @@ export default class AbstractReport
     */
    incrementHalsteadMetric(metric, type)
    {
-      this.aggregateReport.halstead[metric][type] += 1;
+      this.aggregateMethodReport.halstead[metric][type] += 1;
    }
 
    /**
@@ -77,7 +77,7 @@ export default class AbstractReport
     */
    incrementParams(count)
    {
-      this.aggregateReport.params += count;
+      this.aggregateMethodReport.params += count;
    }
 
    /**
@@ -90,7 +90,7 @@ export default class AbstractReport
     */
    isHalsteadMetricDistinct(metric, identifier)
    {
-      return this.aggregateReport.halstead[metric].identifiers.indexOf(identifier) === -1;
+      return this.aggregateMethodReport.halstead[metric].identifiers.indexOf(identifier) === -1;
    }
 
    /**

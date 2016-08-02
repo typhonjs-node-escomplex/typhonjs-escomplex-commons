@@ -1,20 +1,22 @@
-import TransformFormat  from  '../../transform/TransformFormat';
+import TransformFormat  from '../../transform/TransformFormat';
 
-import ModuleAverage    from  '../../module/report/averages/ModuleAverage';
-import ModuleReport     from  '../../module/report/ModuleReport';
-import MathUtil         from  '../../utils/MathUtil';
-import StringUtil       from  '../../utils/StringUtil';
+import ModuleAverage    from '../../module/report/averages/ModuleAverage';
+import ModuleReport     from '../../module/report/ModuleReport';
 
 import ReportType       from '../../types/ReportType';
+
+import MathUtil         from '../../utils/MathUtil';
+import ObjectUtil       from '../../utils/ObjectUtil';
+import StringUtil       from '../../utils/StringUtil';
 
 /**
  * Provides the default project report object which stores data pertaining to all modules / files contained.
  *
- * All module / file reports are stored in the `reports` member variable as ModuleReports.
+ * All modules are stored in the `modules` member variable as ModuleReports.
  *
  * Various helper methods found in ModuleReport and AbstractReport help increment associated data during collection.
  */
-export default class ProjectResult
+export default class ProjectReport
 {
    /**
     * Returns the enum for the report type.
@@ -30,13 +32,13 @@ export default class ProjectResult
     * @param {object}               settings - An object hash of the settings used in generating this report via
     *                                          ESComplexProject.
     */
-   constructor(moduleReports = void 0, settings = { serializeReports: true })
+   constructor(moduleReports = void 0, settings = { serializeModules: true })
    {
       /**
        * Stores the settings used to generate the project report.
        * @type {object}
        */
-      this.settings = typeof settings === 'object' ? settings : { serializeReports: true };
+      this.settings = typeof settings === 'object' ? settings : { serializeModules: true };
 
       /**
        * Stores a compacted form of the adjacency matrix. Each row index corresponds to the same report index.
@@ -84,7 +86,7 @@ export default class ProjectResult
        * Stores all ModuleReport data for the project sorted by the module / files `srcPath`.
        * @type {Array<ModuleReport>}
        */
-      this.reports = Array.isArray(moduleReports) ?
+      this.modules = Array.isArray(moduleReports) ?
        moduleReports.sort((lhs, rhs) => { return StringUtil.compare(lhs.srcPath, rhs.srcPath); }) : [];
 
       /**
@@ -109,54 +111,37 @@ export default class ProjectResult
 
       if (clearChildren)
       {
-         this.reports.forEach((report) => { report.clearErrors(); });
+         this.modules.forEach((report) => { report.clearErrors(); });
       }
    }
 
    /**
-    * Finalizes the ProjectResult. If `settings.serializeReports` is false output just `filePath`, `srcPath` &
-    * `srcPathAlias` entries of reports.
+    * Finalizes the ProjectReport. If `settings.serializeModules` is false output just `filePath`, `srcPath` &
+    * `srcPathAlias` entries of modules.
     *
     * @param {object}      options - (Optional) Allows overriding of ModuleReport serialization.
-    * @property {boolean}  serializeReports - Allows overriding of ModuleReport serialization; default: true.
-    * @property {boolean}  serializeReportAverages - If serializeReports is false and serializeReportAverages is true
-    *                                                then module averages will also be added to a reduced project
-    *                                                result; default: false.
+    * @property {boolean}  serializeModules - Allows overriding of ModuleReport serialization; default: true.
     *
-    * @returns {ProjectResult}
+    * @returns {ProjectReport}
     */
    finalize(options = {})
    {
       if (typeof options !== 'object') { throw new TypeError(`finalize error: 'options' is not an 'object'.`); }
 
-      let serializeReports = this.getSetting('serializeReports', true);
-      let serializeReportAverages = this.getSetting('serializeReportAverages', false);
+      let serializeModules = this.getSetting('serializeModules', true);
 
       // Allow an override opportunity.
-      if (typeof options.serializeReports === 'boolean') { serializeReports = options.serializeReports; }
-      if (typeof options.serializeReportAverages === 'boolean')
-      {
-         serializeReportAverages = options.serializeReportAverages;
-      }
+      if (typeof options.serializeModules === 'boolean') { serializeModules = options.serializeModules; }
 
-      if (serializeReports)
+      if (serializeModules)
       {
-         this.reports.forEach((report) => { report.finalize(); });
+         this.modules.forEach((report) => { report.finalize(); });
       }
       else
       {
-         this.reports = this.reports.map((report) =>
+         this.modules = this.modules.map((report) =>
          {
-            const modReport = { filePath: report.filePath, srcPath: report.srcPath, srcPathAlias: report.srcPathAlias };
-
-            // Potentially add module averages
-            if (serializeReportAverages)
-            {
-               modReport.maintainability = report.maintainability;
-               modReport.methodAverage = report.methodAverage;
-            }
-
-            return modReport;
+            return { filePath: report.filePath, srcPath: report.srcPath, srcPathAlias: report.srcPathAlias };
          });
       }
 
@@ -168,9 +153,10 @@ export default class ProjectResult
     *
     * @param {object}   options - Optional parameters.
     * @property {boolean}  includeChildren - If false then module errors are not included; default (true).
-    * @property {boolean}  includeReports - If true then results will be an array of object hashes containing `source`
-    *                                      (the source report object of the error) and `error`
-    *                                      (an AnalyzeError instance) keys; default (false).
+    * @property {boolean}  includeReports - If true then the result will be an array of object hashes containing
+    *                                       `source` (the source report object of the error) and `error`
+    *                                       (an AnalyzeError instance) keys and related `module`, `class` entries as;
+    *                                       default (false).
     *
     * @returns {Array<AnalyzeError|{error: AnalyzeError, source: *}>}
     */
@@ -179,17 +165,24 @@ export default class ProjectResult
       /* istanbul ignore if */
       if (typeof options !== 'object') { throw new TypeError(`getErrors error: 'options' is not an 'object'.`); }
 
-      // By default set includeChildren to true.
+      // By default set includeChildren to true if not already defined.
       /* istanbul ignore if */
       if (typeof options.includeChildren !== 'boolean') { options.includeChildren = true; }
 
       // If `includeReports` is true then return an object hash with the source and error otherwise return the error.
-      const errors = options.includeReports ? this.errors.map((entry) => { return { error: entry, source: this }; }) :
+      let errors = options.includeReports ? this.errors.map((entry) => { return { error: entry, source: this }; }) :
        [].concat(...this.errors);
 
+      // If `includeChildren` is true then traverse all children reports for errors.
       if (options.includeChildren)
       {
-         this.reports.forEach((report) => { errors.push(...report.getErrors(options)); });
+         this.modules.forEach((report) => { errors.push(...report.getErrors(options)); });
+      }
+
+      // If `options.query` is defined then filter errors against the query object.
+      if (typeof options.query === 'object')
+      {
+         errors = errors.filter((error) => ObjectUtil.safeEqual(options.query, error));
       }
 
       return errors;
@@ -235,14 +228,14 @@ export default class ProjectResult
    }
 
    /**
-    * Deserializes a JSON object representing a ProjectResult.
+    * Deserializes a JSON object representing a ProjectReport.
     *
-    * @param {object}   object - A JSON object of a ProjectResult that was previously serialized.
+    * @param {object}   object - A JSON object of a ProjectReport that was previously serialized.
     *
     * @param {object}   options - Optional parameters.
     * @property {boolean}  skipFinalize - If true then automatic finalization is skipped where applicable.
     *
-    * @returns {ProjectResult}
+    * @returns {ProjectReport}
     */
    static parse(object, options = { skipFinalize: false })
    {
@@ -252,17 +245,17 @@ export default class ProjectResult
       /* istanbul ignore if */
       if (typeof options !== 'object') { throw new TypeError(`parse error: 'options' is not an 'object'.`); }
 
-      const result = Object.assign(new ProjectResult(), object);
+      const projectReport = Object.assign(new ProjectReport(), object);
 
-      if (result.reports.length > 0)
+      if (projectReport.modules.length > 0)
       {
-         result.reports = result.reports.map((report) => ModuleReport.parse(report));
+         projectReport.modules = projectReport.modules.map((report) => ModuleReport.parse(report));
       }
 
-      // Must automatically finalize if serializeReports is false.
-      if (!options.skipFinalize && !result.getSetting('serializeReports', true)) { result.finalize(); }
+      // Must automatically finalize if serializeModules is false.
+      if (!options.skipFinalize && !projectReport.getSetting('serializeModules', true)) { projectReport.finalize(); }
 
-      return result;
+      return projectReport;
    }
 
    /**
@@ -291,7 +284,7 @@ export default class ProjectResult
    }
 
    /**
-    * Formats this ProjectResult given the type.
+    * Formats this ProjectReport given the type.
     *
     * @param {string}   name - The name of formatter to use.
     *

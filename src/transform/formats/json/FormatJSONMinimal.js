@@ -2,7 +2,7 @@ import ObjectUtil from '../../../utils/ObjectUtil';
 import ReportType from '../../../types/ReportType';
 
 /**
- * Provides a format transform for ESComplex ModuleReport / ProjectResult instances converting them to JSON with
+ * Provides a format transform for ESComplex ModuleReport / ProjectReport instances converting them to JSON with
  * minimal metrics.
  */
 export default class FormatJSONMinimal
@@ -15,7 +15,7 @@ export default class FormatJSONMinimal
    /**
     * Formats a report as a JSON string with minimal metrics.
     *
-    * @param {ClassReport|MethodReport|ModuleReport|ProjectResult} report - A report to format.
+    * @param {ClassReport|MethodReport|ModuleReport|ProjectReport} report - A report to format.
     *
     * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
     * @property {number}      spacing - (Optional) An integer defining the JSON output spacing.
@@ -229,7 +229,7 @@ export default class FormatJSONMinimal
    /**
     * Formats a project report with minimal metrics.
     *
-    * @param {ProjectResult}     report - A project report.
+    * @param {ProjectReport}     report - A project report.
     *
     * @param {object}            options - (Optional) One or more optional parameters passed to the formatter.
     * @property {Array<string>}  classReport - An array of entry keys found in the class report to output.
@@ -254,9 +254,9 @@ export default class FormatJSONMinimal
 
       output.modules = [];
 
-      const reportsAvailable = report.getSetting('serializeReports', false);
+      const reportsAvailable = report.getSetting('serializeModules', false);
 
-      report.reports.forEach((report) =>
+      report.modules.forEach((report) =>
       {
          output.modules.push(this._formatModule(report, reportsAvailable, options));
       });
@@ -268,7 +268,8 @@ export default class FormatJSONMinimal
 // Module private ---------------------------------------------------------------------------------------------------
 
 /**
- * Defines the default keys to include in a minimal JSON representation of module / project results.
+ * Defines the default keys to include in a minimal JSON representation of class / class method/ module method /
+ * module / project reports.
  * @type {{classReport: string[], methodReport: string[], moduleReport: string[]}}
  * @ignore
  */

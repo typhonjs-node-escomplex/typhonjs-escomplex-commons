@@ -1,7 +1,7 @@
 import AbstractTextMatrix  from './AbstractTextMatrix';
 
 /**
- * Provides a format transform for ModuleReport / ProjectResult instances converting a matrix list into plain text.
+ * Provides a format transform for ModuleReport / ProjectReport instances converting a matrix list into plain text.
  */
 export default class FormatTextAdjacency extends AbstractTextMatrix
 {
@@ -63,5 +63,5 @@ const s_DEFAULT_HEADERS =
 {
    entryPrepend: '',
    entryWrapper: '',
-   textHeader: 'Adjacency (dependencies / numerical indices correspond to ProjectResult modules / reports):\n'
+   textHeader: 'Adjacency (dependencies / numerical indices correspond to ProjectReport modules / reports):\n'
 };

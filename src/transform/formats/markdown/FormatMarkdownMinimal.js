@@ -3,7 +3,7 @@ import FormatTextMinimal   from '../text/FormatTextMinimal';
 import SU                  from '../../../utils/StringUtil';
 
 /**
- * Provides a format transform for ModuleReport / ProjectResult instances converting them to markdown with
+ * Provides a format transform for ModuleReport / ProjectReport instances converting them to markdown with
  * minimal metrics.
  */
 export default class FormatMarkdownMinimal extends FormatTextMinimal
@@ -38,7 +38,7 @@ export default class FormatMarkdownMinimal extends FormatTextMinimal
 
 /**
  * Defines the default headers as markdown which are inserted via spread into `StringUtil.safeStringsObject`.
- * @type {{classMethod: *[], classReport: *[], entryPrepend: string, moduleMethod: *[], moduleReport: *[], projectResult: string[]}}
+ * @type {{classMethod: *[], classReport: *[], entryPrepend: string, moduleMethod: *[], moduleReport: *[], projectReport: string[]}}
  * @ignore
  */
 const s_DEFAULT_HEADERS =
@@ -74,7 +74,7 @@ const s_DEFAULT_HEADERS =
       new SU.SafeEntry('   * srcPathAlias: `',  'srcPathAlias', 1, '`')
    ],
 
-   projectResult:
+   projectReport:
    [
       '* Project:\n'
    ]

@@ -3,7 +3,7 @@ import ReportType from '../../../types/ReportType';
 import StringUtil from '../../../utils/StringUtil';
 
 /**
- * Provides the base text format transform for ModuleReport / ProjectResult instances.
+ * Provides the base text format transform for ModuleReport / ProjectReport instances.
  */
 export default class AbstractFormatText
 {
@@ -23,7 +23,7 @@ export default class AbstractFormatText
    /**
     * Formats a report as plain text.
     *
-    * @param {ClassReport|MethodReport|ModuleReport|ProjectResult} report - A report to format.
+    * @param {ClassReport|MethodReport|ModuleReport|ProjectReport} report - A report to format.
     *
     * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
     * @property {number}      spacing - (Optional) An integer defining the JSON output spacing.
@@ -324,9 +324,9 @@ export default class AbstractFormatText
    }
 
    /**
-    * Formats a project result as plain text.
+    * Formats a project report as plain text.
     *
-    * @param {ProjectResult}  result - A project result.
+    * @param {ProjectReport}  projectReport - A project report.
     *
     * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
     * @property {string}      classReport - An entry key found in the class report to output.
@@ -336,11 +336,11 @@ export default class AbstractFormatText
     * @returns {string}
     * @protected
     */
-   _formatProject(result, options)
+   _formatProject(projectReport, options)
    {
-      const reportsAvailable = result.getSetting('serializeReports', false);
+      const reportsAvailable = projectReport.getSetting('serializeModules', false);
 
-      return result.reports.reduce((formatted, moduleReport, index) =>
+      return projectReport.modules.reduce((formatted, moduleReport, index) =>
       {
          let current = '';
 
@@ -359,30 +359,30 @@ export default class AbstractFormatText
          }
 
          return current;
-      }, `${this._formatProjectReport(result, options)}`);
+      }, `${this._formatProjectReport(projectReport, options)}`);
    }
 
    /**
-    * Formats a project result.
+    * Formats a project report.
     *
-    * @param {ProjectResult}  projectResult - A project result.
+    * @param {ProjectReport}  projectReport - A project report.
     *
     * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
-    * @property {string}      projectResult - Entry keys found in the ProjectReport to output.
+    * @property {string}      projectReport - Entry keys found in the ProjectReport to output.
     *
     * @returns {string}
     * @private
     */
-   _formatProjectReport(projectResult, options)
+   _formatProjectReport(projectReport, options)
    {
       // Skip processing if there are no headers.
-      if (!Array.isArray(this._headers.projectResult)) { return ''; }
+      if (!Array.isArray(this._headers.projectReport)) { return ''; }
 
       const indent = typeof options.indent === 'boolean' && !options.indent ? '' : '   ';
 
-      return StringUtil.safeStringsObject(projectResult,
-         ...this._headers.projectResult,
-         ...this._formatEntries(projectResult, options.projectResult, indent)
+      return StringUtil.safeStringsObject(projectReport,
+         ...this._headers.projectReport,
+         ...this._formatEntries(projectReport, options.projectReport, indent)
       );
    }
 }

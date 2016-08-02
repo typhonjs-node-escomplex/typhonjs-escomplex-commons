@@ -1,7 +1,7 @@
 import ReportType from '../../../types/ReportType';
 
 /**
- * Provides a format transform for ESComplex ModuleReport / ProjectResult instances converting them to JSON that
+ * Provides a format transform for ESComplex ModuleReport / ProjectReport instances converting them to JSON that
  * includes only the `filePath`, `srcPath`, and / or `srcPathAlias` of module report entries.
  */
 export default class FormatJSONModules
@@ -9,7 +9,7 @@ export default class FormatJSONModules
    /**
     * Formats a report as a JSON string with just module data.
     *
-    * @param {ClassReport|MethodReport|ModuleReport|ProjectResult} report - A report to format.
+    * @param {ClassReport|MethodReport|ModuleReport|ProjectReport} report - A report to format.
     *
     * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
     * @property {number}      spacing - (Optional) An integer defining the JSON output spacing.
@@ -91,7 +91,7 @@ export default class FormatJSONModules
 
    /**
     * Formats a module report as a JSON string. Please note that the exported JSON only contains data for ModuleReport
-    * instances contained in a ProjectResult.
+    * instances contained in a ProjectReport.
     *
     * @param {ModuleReport}   moduleReport - A module report.
 
@@ -111,7 +111,7 @@ export default class FormatJSONModules
    /**
     * Formats a project report modules as a JSON string.
     *
-    * @param {ProjectResult}  projectReport - A project report.
+    * @param {ProjectReport}  projectReport - A project report.
     *
     * @returns {object}
     */
@@ -119,7 +119,7 @@ export default class FormatJSONModules
    {
       const output = { modules: [] };
 
-      projectReport.reports.forEach((moduleReport) => { output.modules.push(this._formatModule(moduleReport)); });
+      projectReport.modules.forEach((moduleReport) => { output.modules.push(this._formatModule(moduleReport)); });
 
       return output;
    }

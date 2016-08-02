@@ -2,7 +2,7 @@ import ObjectUtil from '../../../utils/ObjectUtil';
 import ReportType from '../../../types/ReportType';
 
 /**
- * Provides the base text format transform for ProjectResult matrix list entries.
+ * Provides the base text format transform for ProjectReport matrix list entries.
  */
 export default class AbstractTextMatrix
 {
@@ -16,7 +16,7 @@ export default class AbstractTextMatrix
     *
     * @param {object}      keys - An object hash containing the following entries.
     * @property {boolean}  matrixFilePath - If true the module `filePath` is serialized.
-    * @property {string}   matrixList - An entry key to lookup a given matrix list in a ProjectResult.
+    * @property {string}   matrixList - An entry key to lookup a given matrix list in a ProjectReport.
     * @property {boolean}  zeroIndex - If true module report indexes are zero indexed.
     */
    constructor(headers = {}, keys = {})
@@ -28,7 +28,7 @@ export default class AbstractTextMatrix
    /**
     * Formats a report as plain text.
     *
-    * @param {ClassReport|MethodReport|ModuleReport|ProjectResult} report - A report to format.
+    * @param {ClassReport|MethodReport|ModuleReport|ProjectReport} report - A report to format.
     *
     * @param {object}         options - (Optional) One or more optional parameters passed to the formatter.
     * @property {number}      spacing - (Optional) An integer defining the JSON output spacing.
@@ -68,13 +68,13 @@ export default class AbstractTextMatrix
    }
 
    /**
-    * Formats a matrix list stored in a ProjectResult.
+    * Formats a matrix list stored in a ProjectReport.
     *
-    * @param {ProjectResult}  projectReport - A project report.
+    * @param {ProjectReport}  projectReport - A project report.
     *
     * @param {object}      options - (Optional) An object hash containing the following entries.
     * @property {boolean}  matrixFilePath - If true the module `filePath` is serialized.
-    * @property {string}   matrixList - An entry key to lookup a given matrix list in a ProjectResult.
+    * @property {string}   matrixList - An entry key to lookup a given matrix list in a ProjectReport.
     * @property {boolean}  zeroIndex - If true module report indexes are zero indexed.
     *
     * @returns {string}
@@ -94,9 +94,9 @@ export default class AbstractTextMatrix
       }
 
       /* istanbul ignore if */
-      if (!Array.isArray(projectReport.reports))
+      if (!Array.isArray(projectReport.modules))
       {
-         throw new TypeError(`formatProject error: could not locate 'projectReport.reports'.`);
+         throw new TypeError(`formatProject error: could not locate 'projectReport.modules'.`);
       }
 
       /* istanbul ignore if */
@@ -125,7 +125,7 @@ export default class AbstractTextMatrix
     * Returns a string representing the adjacency relationships by printing out the report index followed by
     * dependent ModuleReport indices / `srcPaths`.
     *
-    * @param {ProjectResult}                          projectReport - A project report containing the matrix list.
+    * @param {ProjectReport}                          projectReport - A project report containing the matrix list.
     *
     * @param {Array<{row: number, cols: number[]}>}   matrixList - The matrix list to be serialized.
     *
@@ -149,12 +149,12 @@ export default class AbstractTextMatrix
       matrixList.forEach((entry) =>
       {
          output += `${entryPrepend}${entry.row + plus1}:\t${entryWrapper}${ObjectUtil.safeAccess(
-          projectReport.reports[entry.row], path, 'unknown')}${entryWrapper}\n`;
+          projectReport.modules[entry.row], path, 'unknown')}${entryWrapper}\n`;
 
          entry.cols.forEach((colIndex) =>
          {
             output += `\t${entryPrepend}${colIndex + plus1}:\t${entryWrapper}${ObjectUtil.safeAccess(
-             projectReport.reports[colIndex], path, 'unknown')}${entryWrapper}\n`;
+             projectReport.modules[colIndex], path, 'unknown')}${entryWrapper}\n`;
          });
 
          output += '\n';

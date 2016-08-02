@@ -1,7 +1,7 @@
 import FormatTextAdjacency from '../text/FormatTextAdjacency';
 
 /**
- * Provides a format transform for ModuleReport / ProjectResult instances converting a matrix list into markdown.
+ * Provides a format transform for ModuleReport / ProjectReport instances converting a matrix list into markdown.
  */
 export default class FormatMarkdownAdjacency extends FormatTextAdjacency
 {
@@ -42,5 +42,5 @@ const s_DEFAULT_HEADERS =
 {
    entryPrepend: '* ',
    entryWrapper: '`',
-   textHeader: '* Adjacency (dependencies / numerical indices correspond to ProjectResult modules / reports):\n'
+   textHeader: '* Adjacency (dependencies / numerical indices correspond to ProjectReport modules / reports):\n'
 };

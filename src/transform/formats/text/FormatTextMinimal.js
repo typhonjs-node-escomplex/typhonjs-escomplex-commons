@@ -4,7 +4,7 @@ import ReportType          from '../../../types/ReportType';
 import SU                  from '../../../utils/StringUtil';
 
 /**
- * Provides a format transform for ModuleReport / ProjectResult instances converting them to plain text with just
+ * Provides a format transform for ModuleReport / ProjectReport instances converting them to plain text with just
  * modules.
  */
 export default class FormatTextMinimal extends AbstractFormatTest
@@ -72,8 +72,9 @@ export default class FormatTextMinimal extends AbstractFormatTest
 // Module private ---------------------------------------------------------------------------------------------------
 
 /**
- * Defines the default keys to include in a minimal text representation of module / project results.
- * @type {{classReport: string[], methodReport: string[], moduleReport: string[], projectResult: string[]}}
+ * Defines the default keys to include in a minimal text representation of class, class method, module method, module,
+ * project reports.
+ * @type {{classReport: string[], methodReport: string[], moduleReport: string[], projectReport: string[]}}
  * @ignore
  */
 const s_DEFAULT_KEYS =
@@ -81,12 +82,12 @@ const s_DEFAULT_KEYS =
    classReport: ['maintainability', 'errors'],
    methodReport: ['cyclomatic', 'halstead.difficulty', 'errors'],
    moduleReport: ['maintainability', 'errors'],
-   projectResult: ['moduleAverage.maintainability', 'errors']
+   projectReport: ['moduleAverage.maintainability', 'errors']
 };
 
 /**
  * Defines the default headers as text which are inserted via spread into `StringUtil.safeStringsObject`.
- * @type {{classMethod: *[], classReport: *[], entryPrepend: string, moduleMethod: *[], moduleReport: *[], projectResult: string[]}}
+ * @type {{classMethod: *[], classReport: *[], entryPrepend: string, moduleMethod: *[], moduleReport: *[], projectReport: string[]}}
  * @ignore
  */
 const s_DEFAULT_HEADERS =
@@ -120,7 +121,7 @@ const s_DEFAULT_HEADERS =
       new SU.SafeEntry('   srcPathAlias: ', 'srcPathAlias', 1)
    ],
 
-   projectResult:
+   projectReport:
    [
       'Project:\n'
    ]

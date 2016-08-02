@@ -5,6 +5,7 @@ import MethodAverage          from './averages/MethodAverage';
 
 import AnalyzeError           from '../../analyze/AnalyzeError';
 import ReportType             from '../../types/ReportType';
+import ObjectUtil             from '../../utils/ObjectUtil';
 import TransformFormat        from '../../transform/TransformFormat';
 
 /**
@@ -104,9 +105,10 @@ export default class ClassReport extends AbstractReport
       if (typeof options.includeChildren !== 'boolean') { options.includeChildren = true; }
 
       // If `includeReports` is true then return an object hash with the source and error otherwise return the error.
-      const errors = options.includeReports ? this.errors.map((entry) => { return { error: entry, source: this }; }) :
+      let errors = options.includeReports ? this.errors.map((entry) => { return { error: entry, source: this }; }) :
        [].concat(...this.errors);
 
+      // If `includeChildren` is true then traverse all children reports for errors.
       if (options.includeChildren)
       {
          // Add class to all children errors.
@@ -126,6 +128,12 @@ export default class ClassReport extends AbstractReport
          {
             this.methods.forEach((report) => { errors.push(...report.getErrors(options)); });
          }
+      }
+
+      // If `options.query` is defined then filter errors against the query object.
+      if (typeof options.query === 'object')
+      {
+         errors = errors.filter((error) => ObjectUtil.safeEqual(options.query, error));
       }
 
       return errors;
