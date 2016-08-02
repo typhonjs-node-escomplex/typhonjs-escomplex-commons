@@ -8,7 +8,7 @@ export const modules =
    modulePlugin: true,
    moduleReport: true,
    moduleTraits: true,
-   projectResult: true,
+   projectReport: true,
    transformFormat: true,
    utilMath: true,
    utilObject: true,

@@ -1,15 +1,15 @@
 import { assert }       from 'chai';
 
 import ModuleReport     from '../../../src/module/report/ModuleReport';
-import ProjectResult    from '../../../src/project/result/ProjectResult';
+import ProjectReport    from '../../../src/project/report/ProjectReport';
 
 import * as testconfig  from '../testconfig';
 
-if (testconfig.modules['projectResult'])
+if (testconfig.modules['projectReport'])
 {
    suite('result:', () =>
    {
-      suite('ProjectResult:', () =>
+      suite('ProjectReport:', () =>
       {
          suite('instantiation:', () =>
          {
@@ -32,7 +32,7 @@ if (testconfig.modules['projectResult'])
                report.popScope('method');
                report.popScope('class');
 
-               result = new ProjectResult([report, report2, report3]);
+               result = new ProjectReport([report, report2, report3]);
 
                // Fake the adjacency / visibility lists; a depends on b / b depends on a / c depends on a & b
                result.adjacencyList = [{ row: 0, cols: [1] }, { row: 1, cols: [0] }, { row: 2, cols: [0, 1] }];
@@ -43,68 +43,72 @@ if (testconfig.modules['projectResult'])
 
             test('result has correct number of reports', () =>
             {
-               assert.lengthOf(result.reports, 3);
+               assert.lengthOf(result.modules, 3);
             });
 
             test('result has correct report `srcPath` order', () =>
             {
-               assert.strictEqual(result.reports[0].srcPath, './a.js');
-               assert.strictEqual(result.reports[1].srcPath, './b.js');
-               assert.strictEqual(result.reports[2].srcPath, './c.js');
+               assert.strictEqual(result.modules[0].srcPath, './a.js');
+               assert.strictEqual(result.modules[1].srcPath, './b.js');
+               assert.strictEqual(result.modules[2].srcPath, './c.js');
             });
 
             test('finalize removes private data', () =>
             {
-               assert.isArray(result.reports[2]._scopeStackClass);
-               assert.isArray(result.reports[2]._scopeStackMethod);
+               assert.isArray(result.modules[2]._scopeStackClass);
+               assert.isArray(result.modules[2]._scopeStackMethod);
 
                result.finalize();
 
-               assert.isUndefined(result.reports[2]._scopeStackClass);
-               assert.isUndefined(result.reports[2]._scopeStackMethod);
+               assert.isUndefined(result.modules[2]._scopeStackClass);
+               assert.isUndefined(result.modules[2]._scopeStackMethod);
             });
 
-            test('finalize w/ serializeReports === false is correct', () =>
+            test('finalize w/ serializeModules === false is correct', () =>
             {
                const report = new ModuleReport(10, 100);
                report.srcPath = './a.js';
-               result = new ProjectResult([report], { serializeReports: false });
+               result = new ProjectReport([report], { serializeModules: false });
 
-               assert.isNotArray(result.reports[0]._scopeStackClass);
-               assert.isNotArray(result.reports[0]._scopeStackMethod);
+               assert.isNotArray(result.modules[0]._scopeStackClass);
+               assert.isNotArray(result.modules[0]._scopeStackMethod);
 
                result.finalize();
 
-               assert.isObject(result.reports[0]);
+               assert.isObject(result.modules[0]);
 
-               const reportKeys = Object.keys(result.reports[0]);
+               const reportKeys = Object.keys(result.modules[0]);
 
                assert.lengthOf(reportKeys, 3);
                assert.strictEqual(reportKeys[0], 'filePath');
                assert.strictEqual(reportKeys[1], 'srcPath');
                assert.strictEqual(reportKeys[2], 'srcPathAlias');
 
-               assert.isUndefined(result.reports[0].filePath);
-               assert.strictEqual(result.reports[0].srcPath, './a.js');
-               assert.isUndefined(result.reports[0].srcPathAlias);
+               assert.isUndefined(result.modules[0].filePath);
+               assert.strictEqual(result.modules[0].srcPath, './a.js');
+               assert.isUndefined(result.modules[0].srcPathAlias);
             });
          });
 
          suite('project with errors', () =>
          {
-            /*
             const largeProjectJSON = require(
              'typhonjs-escomplex-test-data/files/large-project/json/project-with-errors');
 
             let projectReport;
 
-            setup(() => { projectReport = ProjectResult.parse(largeProjectJSON); });
+            setup(() => { projectReport = ProjectReport.parse(largeProjectJSON); });
 
             teardown(() => { projectReport = void 0; });
 
-            test('getErrors', () =>
+            test('getErrors count is correct', () =>
             {
-               const errors = projectReport.getErrors({ includeReports: true });
+               const errors = projectReport.getErrors();
+
+               assert.lengthOf(errors, 141);
+
+/*
+               console.log('!!!! getErrors - errors: ' + JSON.stringify(errors));
 
                errors.forEach((error) =>
                {
@@ -114,8 +118,28 @@ if (testconfig.modules['projectResult'])
                   console.log('!!! - result class: ' + (typeof error.class !== 'undefined' ? error.class.getName() : 'undefined'));
                   console.log('!!! - result module: ' + (typeof error.module !== 'undefined' ? error.module.getName() : 'undefined'));
                });
+*/
             });
-            */
+
+            test('getErrors (only warnings) count is correct', () =>
+            {
+               const errors = projectReport.getErrors({ query: { severity: 'warning' } });
+
+               assert.lengthOf(errors, 33);
+
+/*
+               console.log('!!!! getErrors - errors: ' + JSON.stringify(errors));
+
+               errors.forEach((error) =>
+               {
+                  // console.log('!!! - result error: ' + JSON.stringify(error));
+                  console.log('\n!!! - result error: ' + error.error);
+                  console.log('!!! - result source: ' + (typeof error.source !== 'undefined' ? error.source.getName() : 'undefined'));
+                  console.log('!!! - result class: ' + (typeof error.class !== 'undefined' ? error.class.getName() : 'undefined'));
+                  console.log('!!! - result module: ' + (typeof error.module !== 'undefined' ? error.module.getName() : 'undefined'));
+               });
+*/
+            });
          });
 
          suite('large project parsing performance', () =>
@@ -125,7 +149,7 @@ if (testconfig.modules['projectResult'])
             test('deserialize JSON object should be sufficiently fast', function()
             {
                this.timeout(75);
-               ProjectResult.parse(largeProjectJSON);
+               ProjectReport.parse(largeProjectJSON);
             });
          });
       });

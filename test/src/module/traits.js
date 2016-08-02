@@ -316,11 +316,11 @@ if (testconfig.modules['moduleTraits'])
 
                report.finalize();
 
-               assert.lengthOf(report.aggregate.halstead.operators.identifiers, 4);
-               assert.strictEqual(report.aggregate.halstead.operators.identifiers[0], 'foo');
-               assert.strictEqual(report.aggregate.halstead.operators.identifiers[1], 'bar');
-               assert.strictEqual(report.aggregate.halstead.operators.identifiers[2], 'baz');
-               assert.strictEqual(report.aggregate.halstead.operators.identifiers[3], 'biz');
+               assert.lengthOf(report.methodAggregate.halstead.operators.identifiers, 4);
+               assert.strictEqual(report.methodAggregate.halstead.operators.identifiers[0], 'foo');
+               assert.strictEqual(report.methodAggregate.halstead.operators.identifiers[1], 'bar');
+               assert.strictEqual(report.methodAggregate.halstead.operators.identifiers[2], 'baz');
+               assert.strictEqual(report.methodAggregate.halstead.operators.identifiers[3], 'biz');
             });
          });
 

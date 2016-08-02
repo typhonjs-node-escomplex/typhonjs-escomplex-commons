@@ -1,14 +1,14 @@
 * Project: 
-   * First-order density: 3.403%
-   * Change cost: 21.125%
-   * Core size: 28.261%
-   * Average per-module maintainability index: 135.211
-   * Average per-function physical LOC: 10.9
-   * Average per-function logical LOC: 3.585
-   * Average per-function parameter count: 1.154
-   * Average per-function cyclomatic complexity: 1.946
-   * Average per-function halstead difficulty: 4.801
-   * Average per-function halstead effort: 1201.925
+   * First-order density: 3.993%
+   * Change cost: 22.96%
+   * Core size: 27.083%
+   * Average per-module maintainability index: 132.733
+   * Average per-function physical LOC: 11.491
+   * Average per-function logical LOC: 4.041
+   * Average per-function parameter count: 1.13
+   * Average per-function cyclomatic complexity: 2.013
+   * Average per-function halstead difficulty: 4.884
+   * Average per-function halstead effort: 1174.866
 
 * Module 1:
    * File path: `./src/ESComplexProject.js`
@@ -148,27 +148,27 @@
 * Module 3:
    * File path: `./src/Plugins.js`
    * Source path: `./src/Plugins.js`
-   * Total lines: 92
-   * Maintainability index: 120.055
+   * Total lines: 90
+   * Maintainability index: 121.725
    * Dependency count: 2
-   * Average per-function physical LOC: 10.5
-   * Average per-function logical LOC: 4.75
-   * Average per-function cyclomatic complexity: 2.75
-   * Average per-function cyclomatic density: 55.208%
-   * Average per-function halstead difficulty: 8.199
-   * Average per-function halstead volume: 156.919
-   * Average per-function halstead effort: 1715.375
+   * Average per-function physical LOC: 9.75
+   * Average per-function logical LOC: 4.5
+   * Average per-function cyclomatic complexity: 2.5
+   * Average per-function cyclomatic density: 53.869%
+   * Average per-function halstead difficulty: 7.767
+   * Average per-function halstead volume: 140.823
+   * Average per-function halstead effort: 1368.795
    
    * Class: **Plugins**
       * Line start: 12
-      * Line end: 91
-      * Average per-function physical LOC: 10.5
-      * Average per-function logical LOC: 4.75
-      * Average per-function cyclomatic complexity: 2.75
-      * Average per-function cyclomatic density: 55.208%
-      * Average per-function halstead difficulty: 8.199
-      * Average per-function halstead volume: 156.919
-      * Average per-function halstead effort: 1715.375
+      * Line end: 89
+      * Average per-function physical LOC: 9.75
+      * Average per-function logical LOC: 4.5
+      * Average per-function cyclomatic complexity: 2.5
+      * Average per-function cyclomatic density: 53.869%
+      * Average per-function halstead difficulty: 7.767
+      * Average per-function halstead volume: 140.823
+      * Average per-function halstead effort: 1368.795
       
       * Class method: **constructor**
          * Line start: 23
@@ -184,19 +184,19 @@
       
       * Class method: **onConfigure**
          * Line start: 47
-         * Line end: 64
-         * Physical LOC: 18
-         * Logical LOC: 8
-         * Cyclomatic complexity: 5
-         * Cyclomatic complexity density: 62.5%
-         * Halstead difficulty: 14.3
-         * Halstead volume: 333.731
-         * Halstead effort: 4772.356
+         * Line end: 61
+         * Physical LOC: 15
+         * Logical LOC: 7
+         * Cyclomatic complexity: 4
+         * Cyclomatic complexity density: 57.143%
+         * Halstead difficulty: 12.571
+         * Halstead volume: 269.344
+         * Halstead effort: 3386.035
          * Parameter count: 1
       
       * Class method: **onProjectStart**
-         * Line start: 73
-         * Line end: 76
+         * Line start: 70
+         * Line end: 73
          * Physical LOC: 4
          * Logical LOC: 3
          * Cyclomatic complexity: 1
@@ -207,8 +207,8 @@
          * Parameter count: 2
       
       * Class method: **onProjectEnd**
-         * Line start: 86
-         * Line end: 90
+         * Line start: 84
+         * Line end: 88
          * Physical LOC: 5
          * Logical LOC: 4
          * Cyclomatic complexity: 2
@@ -249,98 +249,62 @@
 * Module 6:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
    * Source path: `typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
-   * Total lines: 78
-   * Maintainability index: 151.191
-   * Dependency count: 0
-   * Average per-function physical LOC: 6.333
-   * Average per-function logical LOC: 1.5
-   * Average per-function cyclomatic complexity: 1
-   * Average per-function cyclomatic density: 87.5%
-   * Average per-function halstead difficulty: 1.167
-   * Average per-function halstead volume: 32.903
-   * Average per-function halstead effort: 48.015
+   * Total lines: 83
+   * Maintainability index: 122.921
+   * Dependency count: 1
+   * Average per-function physical LOC: 18
+   * Average per-function logical LOC: 4
+   * Average per-function cyclomatic complexity: 3
+   * Average per-function cyclomatic density: 107.778%
+   * Average per-function halstead difficulty: 7.173
+   * Average per-function halstead volume: 207.616
+   * Average per-function halstead effort: 1664.975
    
    * Class: **AnalyzeError**
-      * Line start: 4
-      * Line end: 77
-      * Average per-function physical LOC: 6.333
-      * Average per-function logical LOC: 1.5
-      * Average per-function cyclomatic complexity: 1
-      * Average per-function cyclomatic density: 87.5%
-      * Average per-function halstead difficulty: 1.167
-      * Average per-function halstead volume: 32.903
-      * Average per-function halstead effort: 48.015
+      * Line start: 6
+      * Line end: 83
+      * Average per-function physical LOC: 18
+      * Average per-function logical LOC: 4
+      * Average per-function cyclomatic complexity: 3
+      * Average per-function cyclomatic density: 107.778%
+      * Average per-function halstead difficulty: 7.173
+      * Average per-function halstead volume: 207.616
+      * Average per-function halstead effort: 1664.975
       
       * Class method: **constructor**
-         * Line start: 14
-         * Line end: 43
-         * Physical LOC: 30
-         * Logical LOC: 4
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 25%
-         * Halstead difficulty: 1.667
-         * Halstead volume: 106.606
-         * Halstead effort: 177.677
-         * Parameter count: 4
+         * Line start: 16
+         * Line end: 52
+         * Physical LOC: 37
+         * Logical LOC: 6
+         * Cyclomatic complexity: 5
+         * Cyclomatic complexity density: 83.333%
+         * Halstead difficulty: 10.769
+         * Halstead volume: 306.857
+         * Halstead effort: 3304.613
+         * Parameter count: 3
       
-      * Class method: **line**
-         * Line start: 49
-         * Line end: 49
-         * Physical LOC: 1
-         * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 1
-         * Halstead volume: 8
-         * Halstead effort: 8
-         * Parameter count: 0
-      
-      * Class method: **message**
-         * Line start: 55
-         * Line end: 55
-         * Physical LOC: 1
-         * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 1
-         * Halstead volume: 8
-         * Halstead effort: 8
-         * Parameter count: 0
-      
-      * Class method: **severity**
+      * Class method: **parse**
          * Line start: 61
-         * Line end: 61
-         * Physical LOC: 1
-         * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 1
-         * Halstead volume: 8
-         * Halstead effort: 8
-         * Parameter count: 0
-      
-      * Class method: **source**
-         * Line start: 67
-         * Line end: 67
-         * Physical LOC: 1
-         * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 1
-         * Halstead volume: 8
-         * Halstead effort: 8
-         * Parameter count: 0
+         * Line end: 72
+         * Physical LOC: 12
+         * Logical LOC: 5
+         * Cyclomatic complexity: 2
+         * Cyclomatic complexity density: 40%
+         * Halstead difficulty: 7.5
+         * Halstead volume: 156.08
+         * Halstead effort: 1170.601
+         * Parameter count: 1
       
       * Class method: **toString**
-         * Line start: 73
-         * Line end: 76
-         * Physical LOC: 4
+         * Line start: 78
+         * Line end: 82
+         * Physical LOC: 5
          * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 1.333
-         * Halstead volume: 58.81
-         * Halstead effort: 78.414
+         * Cyclomatic complexity: 2
+         * Cyclomatic complexity density: 200%
+         * Halstead difficulty: 3.25
+         * Halstead volume: 159.911
+         * Halstead effort: 519.712
          * Parameter count: 0
 
 * Module 7:
@@ -407,31 +371,31 @@
 * Module 8:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
    * Source path: `typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
-   * Total lines: 94
-   * Maintainability index: 148.735
-   * Dependency count: 0
-   * Average per-function physical LOC: 5.286
-   * Average per-function logical LOC: 1.429
-   * Average per-function cyclomatic complexity: 1.286
-   * Average per-function cyclomatic density: 102.381%
-   * Average per-function halstead difficulty: 2.4
-   * Average per-function halstead volume: 47.723
-   * Average per-function halstead effort: 121.984
+   * Total lines: 110
+   * Maintainability index: 149.416
+   * Dependency count: 1
+   * Average per-function physical LOC: 5.125
+   * Average per-function logical LOC: 1.375
+   * Average per-function cyclomatic complexity: 1.25
+   * Average per-function cyclomatic density: 102.083%
+   * Average per-function halstead difficulty: 2.433
+   * Average per-function halstead volume: 46.74
+   * Average per-function halstead effort: 120.023
    
    * Class: **AbstractReport**
-      * Line start: 5
-      * Line end: 93
-      * Average per-function physical LOC: 5.286
-      * Average per-function logical LOC: 1.429
-      * Average per-function cyclomatic complexity: 1.286
-      * Average per-function cyclomatic density: 102.381%
-      * Average per-function halstead difficulty: 2.4
-      * Average per-function halstead volume: 47.723
-      * Average per-function halstead effort: 121.984
+      * Line start: 7
+      * Line end: 109
+      * Average per-function physical LOC: 5.125
+      * Average per-function logical LOC: 1.375
+      * Average per-function cyclomatic complexity: 1.25
+      * Average per-function cyclomatic density: 102.083%
+      * Average per-function halstead difficulty: 2.433
+      * Average per-function halstead volume: 46.74
+      * Average per-function halstead effort: 120.023
       
       * Class method: **constructor**
-         * Line start: 13
-         * Line end: 20
+         * Line start: 15
+         * Line end: 22
          * Physical LOC: 8
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -441,9 +405,9 @@
          * Halstead effort: 42.11
          * Parameter count: 1
       
-      * Class method: **aggregateReport**
-         * Line start: 28
-         * Line end: 28
+      * Class method: **aggregateMethodReport**
+         * Line start: 30
+         * Line end: 30
          * Physical LOC: 1
          * Logical LOC: 1
          * Cyclomatic complexity: 2
@@ -454,8 +418,8 @@
          * Parameter count: 0
       
       * Class method: **incrementDistinctHalsteadItems**
-         * Line start: 36
-         * Line end: 44
+         * Line start: 38
+         * Line end: 46
          * Physical LOC: 9
          * Logical LOC: 3
          * Cyclomatic complexity: 2
@@ -466,8 +430,8 @@
          * Parameter count: 2
       
       * Class method: **incrementHalsteadItems**
-         * Line start: 52
-         * Line end: 58
+         * Line start: 54
+         * Line end: 60
          * Physical LOC: 7
          * Logical LOC: 2
          * Cyclomatic complexity: 1
@@ -478,8 +442,8 @@
          * Parameter count: 2
       
       * Class method: **incrementHalsteadMetric**
-         * Line start: 66
-         * Line end: 69
+         * Line start: 68
+         * Line end: 71
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -490,8 +454,8 @@
          * Parameter count: 2
       
       * Class method: **incrementParams**
-         * Line start: 76
-         * Line end: 79
+         * Line start: 78
+         * Line end: 81
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -502,8 +466,8 @@
          * Parameter count: 1
       
       * Class method: **isHalsteadMetricDistinct**
-         * Line start: 89
-         * Line end: 92
+         * Line start: 91
+         * Line end: 94
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -512,31 +476,43 @@
          * Halstead volume: 70.308
          * Halstead effort: 219.714
          * Parameter count: 2
+      
+      * Class method: **toFormat**
+         * Line start: 105
+         * Line end: 108
+         * Physical LOC: 4
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 2.667
+         * Halstead volume: 39.863
+         * Halstead effort: 106.302
+         * Parameter count: 2
 
 * Module 9:
-   * File path: `./node_modules/typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
-   * Source path: `typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
-   * Total lines: 66
-   * Maintainability index: 120.222
+   * File path: `./node_modules/typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js`
+   * Source path: `typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js`
+   * Total lines: 51
+   * Maintainability index: 112.693
    * Dependency count: 2
-   * Average per-function physical LOC: 20.5
-   * Average per-function logical LOC: 5.5
-   * Average per-function cyclomatic complexity: 1.5
-   * Average per-function cyclomatic density: 39.583%
-   * Average per-function halstead difficulty: 6.143
-   * Average per-function halstead volume: 128.81
-   * Average per-function halstead effort: 849.748
+   * Average per-function physical LOC: 34
+   * Average per-function logical LOC: 8
+   * Average per-function cyclomatic complexity: 1
+   * Average per-function cyclomatic density: 12.5%
+   * Average per-function halstead difficulty: 7.143
+   * Average per-function halstead volume: 187.296
+   * Average per-function halstead effort: 1337.829
    
-   * Class: **AggregateReport**
+   * Class: **AggregateMethodReport**
       * Line start: 8
-      * Line end: 65
-      * Average per-function physical LOC: 20.5
-      * Average per-function logical LOC: 5.5
-      * Average per-function cyclomatic complexity: 1.5
-      * Average per-function cyclomatic density: 39.583%
-      * Average per-function halstead difficulty: 6.143
-      * Average per-function halstead volume: 128.81
-      * Average per-function halstead effort: 849.748
+      * Line end: 50
+      * Average per-function physical LOC: 34
+      * Average per-function logical LOC: 8
+      * Average per-function cyclomatic complexity: 1
+      * Average per-function cyclomatic density: 12.5%
+      * Average per-function halstead difficulty: 7.143
+      * Average per-function halstead volume: 187.296
+      * Average per-function halstead effort: 1337.829
       
       * Class method: **constructor**
          * Line start: 16
@@ -549,18 +525,6 @@
          * Halstead volume: 187.296
          * Halstead effort: 1337.829
          * Parameter count: 2
-      
-      * Class method: **parse**
-         * Line start: 58
-         * Line end: 64
-         * Physical LOC: 7
-         * Logical LOC: 3
-         * Cyclomatic complexity: 2
-         * Cyclomatic complexity density: 66.667%
-         * Halstead difficulty: 5.143
-         * Halstead volume: 70.324
-         * Halstead effort: 361.666
-         * Parameter count: 1
 
 * Module 10:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js`
@@ -676,31 +640,43 @@
 * Module 13:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/report/ClassReport.js`
    * Source path: `typhonjs-escomplex-commons/src/module/report/ClassReport.js`
-   * Total lines: 123
-   * Maintainability index: 128.681
-   * Dependency count: 5
-   * Average per-function physical LOC: 10.375
-   * Average per-function logical LOC: 3.375
-   * Average per-function cyclomatic complexity: 1.625
-   * Average per-function cyclomatic density: 71.369%
-   * Average per-function halstead difficulty: 4.718
-   * Average per-function halstead volume: 86.365
-   * Average per-function halstead effort: 720.129
+   * Total lines: 188
+   * Maintainability index: 128.099
+   * Dependency count: 8
+   * Average per-function physical LOC: 8.533
+   * Average per-function logical LOC: 3.133
+   * Average per-function cyclomatic complexity: 1.667
+   * Average per-function cyclomatic density: 60.075%
+   * Average per-function halstead difficulty: 4.132
+   * Average per-function halstead volume: 84.638
+   * Average per-function halstead effort: 1211.801
    
    * Class: **ClassReport**
-      * Line start: 12
-      * Line end: 122
-      * Average per-function physical LOC: 10.375
-      * Average per-function logical LOC: 3.375
-      * Average per-function cyclomatic complexity: 1.625
-      * Average per-function cyclomatic density: 71.369%
-      * Average per-function halstead difficulty: 4.718
-      * Average per-function halstead volume: 86.365
-      * Average per-function halstead effort: 720.129
+      * Line start: 16
+      * Line end: 187
+      * Average per-function physical LOC: 8.533
+      * Average per-function logical LOC: 3.133
+      * Average per-function cyclomatic complexity: 1.667
+      * Average per-function cyclomatic density: 60.075%
+      * Average per-function halstead difficulty: 4.132
+      * Average per-function halstead volume: 84.638
+      * Average per-function halstead effort: 1211.801
+      
+      * Class method: **type**
+         * Line start: 22
+         * Line end: 22
+         * Physical LOC: 1
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1
+         * Halstead volume: 8
+         * Halstead effort: 8
+         * Parameter count: 0
       
       * Class method: **constructor**
-         * Line start: 21
-         * Line end: 60
+         * Line start: 31
+         * Line end: 70
          * Physical LOC: 40
          * Logical LOC: 7
          * Cyclomatic complexity: 1
@@ -711,8 +687,8 @@
          * Parameter count: 3
       
       * Class method: **clearErrors**
-         * Line start: 67
-         * Line end: 75
+         * Line start: 77
+         * Line end: 85
          * Physical LOC: 9
          * Logical LOC: 3
          * Cyclomatic complexity: 2
@@ -723,8 +699,8 @@
          * Parameter count: 1
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 73
-         * Line end: 73
+         * Line start: 83
+         * Line end: 83
          * Physical LOC: 1
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -735,32 +711,104 @@
          * Parameter count: 1
       
       * Class method: **getErrors**
-         * Line start: 84
-         * Line end: 94
-         * Physical LOC: 11
-         * Logical LOC: 5
-         * Cyclomatic complexity: 2
-         * Cyclomatic complexity density: 40%
-         * Halstead difficulty: 7.071
-         * Halstead volume: 96
-         * Halstead effort: 678.857
+         * Line start: 98
+         * Line end: 140
+         * Physical LOC: 43
+         * Logical LOC: 19
+         * Cyclomatic complexity: 7
+         * Cyclomatic complexity density: 36.842%
+         * Halstead difficulty: 23.5
+         * Halstead volume: 551.032
+         * Halstead effort: 12949.261
          * Parameter count: 1
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 90
-         * Line end: 90
+         * Line start: 108
+         * Line end: 108
+         * Physical LOC: 1
+         * Logical LOC: 3
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 33.333%
+         * Halstead difficulty: 1.875
+         * Halstead volume: 25.266
+         * Halstead effort: 47.374
+         * Parameter count: 1
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 119
+         * Line end: 119
          * Physical LOC: 1
          * Logical LOC: 1
          * Cyclomatic complexity: 1
          * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 1.875
-         * Halstead volume: 28.074
-         * Halstead effort: 52.638
+         * Halstead difficulty: 1.8
+         * Halstead volume: 33
+         * Halstead effort: 59.4
          * Parameter count: 1
       
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 122
+         * Line end: 122
+         * Physical LOC: 1
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1.333
+         * Halstead volume: 13.932
+         * Halstead effort: 18.575
+         * Parameter count: 1
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 129
+         * Line end: 129
+         * Physical LOC: 1
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1.8
+         * Halstead volume: 33
+         * Halstead effort: 59.4
+         * Parameter count: 1
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 136
+         * Line end: 136
+         * Physical LOC: 1
+         * Logical LOC: 0
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 0%
+         * Halstead difficulty: 1.2
+         * Halstead volume: 25.266
+         * Halstead effort: 30.319
+         * Parameter count: 1
+      
+      * Class method: **getFormats**
+         * Line start: 147
+         * Line end: 150
+         * Physical LOC: 4
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1.5
+         * Halstead volume: 22.459
+         * Halstead effort: 33.688
+         * Parameter count: 0
+      
+      * Class method: **getName**
+         * Line start: 156
+         * Line end: 159
+         * Physical LOC: 4
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1
+         * Halstead volume: 8
+         * Halstead effort: 8
+         * Parameter count: 0
+      
       * Class method: **parse**
-         * Line start: 103
-         * Line end: 121
+         * Line start: 168
+         * Line end: 186
          * Physical LOC: 19
          * Logical LOC: 8
          * Cyclomatic complexity: 4
@@ -771,27 +819,27 @@
          * Parameter count: 1
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 112
-         * Line end: 112
+         * Line start: 177
+         * Line end: 177
          * Physical LOC: 1
-         * Logical LOC: 1
+         * Logical LOC: 0
          * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 2.5
-         * Halstead volume: 27
-         * Halstead effort: 67.5
+         * Cyclomatic complexity density: 0%
+         * Halstead difficulty: 1.333
+         * Halstead volume: 13.932
+         * Halstead effort: 18.575
          * Parameter count: 1
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 117
-         * Line end: 117
+         * Line start: 182
+         * Line end: 182
          * Physical LOC: 1
-         * Logical LOC: 1
+         * Logical LOC: 0
          * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 2
-         * Halstead volume: 18.095
-         * Halstead effort: 36.189
+         * Cyclomatic complexity density: 0%
+         * Halstead difficulty: 1.333
+         * Halstead volume: 13.932
+         * Halstead effort: 18.575
          * Parameter count: 1
 
 * Module 14:
@@ -858,31 +906,31 @@
 * Module 15:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/report/MethodReport.js`
    * Source path: `typhonjs-escomplex-commons/src/module/report/MethodReport.js`
-   * Total lines: 92
-   * Maintainability index: 130.447
+   * Total lines: 120
+   * Maintainability index: 127.184
    * Dependency count: 2
-   * Average per-function physical LOC: 11.4
-   * Average per-function logical LOC: 3.2
-   * Average per-function cyclomatic complexity: 1.4
-   * Average per-function cyclomatic density: 63.333%
-   * Average per-function halstead difficulty: 4.411
-   * Average per-function halstead volume: 78.102
-   * Average per-function halstead effort: 558.579
+   * Average per-function physical LOC: 10.143
+   * Average per-function logical LOC: 3.571
+   * Average per-function cyclomatic complexity: 1.714
+   * Average per-function cyclomatic density: 50%
+   * Average per-function halstead difficulty: 5.005
+   * Average per-function halstead volume: 88.467
+   * Average per-function halstead effort: 850.22
    
    * Class: **MethodReport**
-      * Line start: 7
-      * Line end: 91
-      * Average per-function physical LOC: 11.4
-      * Average per-function logical LOC: 3.2
-      * Average per-function cyclomatic complexity: 1.4
-      * Average per-function cyclomatic density: 63.333%
-      * Average per-function halstead difficulty: 4.411
-      * Average per-function halstead volume: 78.102
-      * Average per-function halstead effort: 558.579
+      * Line start: 8
+      * Line end: 119
+      * Average per-function physical LOC: 10.143
+      * Average per-function logical LOC: 3.571
+      * Average per-function cyclomatic complexity: 1.714
+      * Average per-function cyclomatic density: 50%
+      * Average per-function halstead difficulty: 5.005
+      * Average per-function halstead volume: 88.467
+      * Average per-function halstead effort: 850.22
       
       * Class method: **constructor**
-         * Line start: 17
-         * Line end: 50
+         * Line start: 18
+         * Line end: 51
          * Physical LOC: 34
          * Logical LOC: 6
          * Cyclomatic complexity: 1
@@ -893,8 +941,8 @@
          * Parameter count: 4
       
       * Class method: **clearErrors**
-         * Line start: 55
-         * Line end: 58
+         * Line start: 56
+         * Line end: 59
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -905,81 +953,117 @@
          * Parameter count: 0
       
       * Class method: **getErrors**
-         * Line start: 65
-         * Line end: 68
-         * Physical LOC: 4
-         * Logical LOC: 2
-         * Cyclomatic complexity: 1
+         * Line start: 72
+         * Line end: 84
+         * Physical LOC: 13
+         * Logical LOC: 8
+         * Cyclomatic complexity: 4
          * Cyclomatic complexity density: 50%
-         * Halstead difficulty: 2.5
-         * Halstead volume: 27
-         * Halstead effort: 67.5
+         * Halstead difficulty: 13.269
+         * Halstead volume: 235.56
+         * Halstead effort: 3125.705
+         * Parameter count: 1
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 82
+         * Line end: 82
+         * Physical LOC: 1
+         * Logical LOC: 3
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 33.333%
+         * Halstead difficulty: 1.875
+         * Halstead volume: 25.266
+         * Halstead effort: 47.374
+         * Parameter count: 1
+      
+      * Class method: **getName**
+         * Line start: 90
+         * Line end: 93
+         * Physical LOC: 4
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1
+         * Halstead volume: 8
+         * Halstead effort: 8
          * Parameter count: 0
       
-      * Class method: **parse**
-         * Line start: 77
-         * Line end: 90
+      * Class method: **_parse**
+         * Line start: 105
+         * Line end: 118
          * Physical LOC: 14
          * Logical LOC: 6
          * Cyclomatic complexity: 3
          * Cyclomatic complexity density: 50%
-         * Halstead difficulty: 10
+         * Halstead difficulty: 10.5
          * Halstead volume: 187.983
-         * Halstead effort: 1879.835
-         * Parameter count: 1
+         * Halstead effort: 1973.826
+         * Parameter count: 2
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 86
-         * Line end: 86
+         * Line start: 114
+         * Line end: 114
          * Physical LOC: 1
-         * Logical LOC: 1
+         * Logical LOC: 0
          * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 2.5
-         * Halstead volume: 27
-         * Halstead effort: 67.5
+         * Cyclomatic complexity density: 0%
+         * Halstead difficulty: 1.333
+         * Halstead volume: 13.932
+         * Halstead effort: 18.575
          * Parameter count: 1
 
 * Module 16:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
    * Source path: `typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
-   * Total lines: 472
-   * Maintainability index: 123.988
-   * Dependency count: 8
-   * Average per-function physical LOC: 11.107
-   * Average per-function logical LOC: 4.107
-   * Average per-function cyclomatic complexity: 2.036
-   * Average per-function cyclomatic density: 87.296%
-   * Average per-function halstead difficulty: 5.343
-   * Average per-function halstead volume: 107.253
-   * Average per-function halstead effort: 1103.937
+   * Total lines: 504
+   * Maintainability index: 120.966
+   * Dependency count: 11
+   * Average per-function physical LOC: 11.063
+   * Average per-function logical LOC: 4.469
+   * Average per-function cyclomatic complexity: 2.281
+   * Average per-function cyclomatic density: 71.68%
+   * Average per-function halstead difficulty: 5.87
+   * Average per-function halstead volume: 126.41
+   * Average per-function halstead effort: 1776.986
    
    * Class: **ModuleReport**
-      * Line start: 19
-      * Line end: 471
-      * Average per-function physical LOC: 11.107
-      * Average per-function logical LOC: 4.107
-      * Average per-function cyclomatic complexity: 2.036
-      * Average per-function cyclomatic density: 87.296%
-      * Average per-function halstead difficulty: 5.343
-      * Average per-function halstead volume: 107.253
-      * Average per-function halstead effort: 1103.937
+      * Line start: 22
+      * Line end: 503
+      * Average per-function physical LOC: 11.063
+      * Average per-function logical LOC: 4.469
+      * Average per-function cyclomatic complexity: 2.281
+      * Average per-function cyclomatic density: 71.68%
+      * Average per-function halstead difficulty: 5.87
+      * Average per-function halstead volume: 126.41
+      * Average per-function halstead effort: 1776.986
+      
+      * Class method: **type**
+         * Line start: 28
+         * Line end: 28
+         * Physical LOC: 1
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1
+         * Halstead volume: 8
+         * Halstead effort: 8
+         * Parameter count: 0
       
       * Class method: **constructor**
-         * Line start: 30
-         * Line end: 120
+         * Line start: 39
+         * Line end: 129
          * Physical LOC: 91
          * Logical LOC: 15
          * Cyclomatic complexity: 2
          * Cyclomatic complexity density: 13.333%
-         * Halstead difficulty: 11.75
-         * Halstead volume: 451.434
-         * Halstead effort: 5304.349
+         * Halstead difficulty: 12.25
+         * Halstead volume: 461.248
+         * Halstead effort: 5650.285
          * Parameter count: 3
       
       * Class method: **addDependencies**
-         * Line start: 127
-         * Line end: 133
+         * Line start: 136
+         * Line end: 142
          * Physical LOC: 7
          * Logical LOC: 2
          * Cyclomatic complexity: 3
@@ -990,8 +1074,8 @@
          * Parameter count: 1
       
       * Class method: **clearErrors**
-         * Line start: 141
-         * Line end: 150
+         * Line start: 150
+         * Line end: 159
          * Physical LOC: 10
          * Logical LOC: 4
          * Cyclomatic complexity: 2
@@ -1002,8 +1086,8 @@
          * Parameter count: 1
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 147
-         * Line end: 147
+         * Line start: 156
+         * Line end: 156
          * Physical LOC: 1
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -1014,8 +1098,8 @@
          * Parameter count: 1
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 148
-         * Line end: 148
+         * Line start: 157
+         * Line end: 157
          * Physical LOC: 1
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -1026,20 +1110,20 @@
          * Parameter count: 1
       
       * Class method: **createScope**
-         * Line start: 163
-         * Line end: 206
-         * Physical LOC: 44
-         * Logical LOC: 21
-         * Cyclomatic complexity: 4
-         * Cyclomatic complexity density: 19.048%
-         * Halstead difficulty: 17.208
-         * Halstead volume: 514.297
-         * Halstead effort: 8850.192
+         * Line start: 172
+         * Line end: 225
+         * Physical LOC: 54
+         * Logical LOC: 26
+         * Cyclomatic complexity: 6
+         * Cyclomatic complexity density: 23.077%
+         * Halstead difficulty: 22.815
+         * Halstead volume: 727.119
+         * Halstead effort: 16589.096
          * Parameter count: 5
       
       * Class method: **finalize**
-         * Line start: 213
-         * Line end: 219
+         * Line start: 232
+         * Line end: 238
          * Physical LOC: 7
          * Logical LOC: 3
          * Cyclomatic complexity: 1
@@ -1050,104 +1134,152 @@
          * Parameter count: 0
       
       * Class method: **getCurrentClassReport**
-         * Line start: 226
-         * Line end: 229
-         * Physical LOC: 4
-         * Logical LOC: 1
-         * Cyclomatic complexity: 2
-         * Cyclomatic complexity density: 200%
-         * Halstead difficulty: 6.6
-         * Halstead volume: 76.107
-         * Halstead effort: 502.309
+         * Line start: 245
+         * Line end: 249
+         * Physical LOC: 5
+         * Logical LOC: 3
+         * Cyclomatic complexity: 3
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 10.286
+         * Halstead volume: 136
+         * Halstead effort: 1398.857
          * Parameter count: 0
       
       * Class method: **getCurrentMethodReport**
-         * Line start: 236
-         * Line end: 239
+         * Line start: 256
+         * Line end: 260
+         * Physical LOC: 5
+         * Logical LOC: 3
+         * Cyclomatic complexity: 3
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 10.286
+         * Halstead volume: 136
+         * Halstead effort: 1398.857
+         * Parameter count: 0
+      
+      * Class method: **getErrors**
+         * Line start: 273
+         * Line end: 317
+         * Physical LOC: 45
+         * Logical LOC: 21
+         * Cyclomatic complexity: 7
+         * Cyclomatic complexity density: 33.333%
+         * Halstead difficulty: 25.175
+         * Halstead volume: 628.963
+         * Halstead effort: 15834.14
+         * Parameter count: 1
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 283
+         * Line end: 283
+         * Physical LOC: 1
+         * Logical LOC: 3
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 33.333%
+         * Halstead difficulty: 1.875
+         * Halstead volume: 25.266
+         * Halstead effort: 47.374
+         * Parameter count: 1
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 294
+         * Line end: 294
+         * Physical LOC: 1
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1.8
+         * Halstead volume: 33
+         * Halstead effort: 59.4
+         * Parameter count: 1
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 295
+         * Line end: 295
+         * Physical LOC: 1
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1.8
+         * Halstead volume: 33
+         * Halstead effort: 59.4
+         * Parameter count: 1
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 298
+         * Line end: 298
+         * Physical LOC: 1
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1.333
+         * Halstead volume: 13.932
+         * Halstead effort: 18.575
+         * Parameter count: 1
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 305
+         * Line end: 305
+         * Physical LOC: 1
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1.8
+         * Halstead volume: 33
+         * Halstead effort: 59.4
+         * Parameter count: 1
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 306
+         * Line end: 306
+         * Physical LOC: 1
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1.8
+         * Halstead volume: 33
+         * Halstead effort: 59.4
+         * Parameter count: 1
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 313
+         * Line end: 313
+         * Physical LOC: 1
+         * Logical LOC: 0
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 0%
+         * Halstead difficulty: 1.2
+         * Halstead volume: 25.266
+         * Halstead effort: 30.319
+         * Parameter count: 1
+      
+      * Class method: **getFormats**
+         * Line start: 324
+         * Line end: 327
+         * Physical LOC: 4
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1.5
+         * Halstead volume: 22.459
+         * Halstead effort: 33.688
+         * Parameter count: 0
+      
+      * Class method: **getName**
+         * Line start: 333
+         * Line end: 336
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 2
          * Cyclomatic complexity density: 200%
-         * Halstead difficulty: 6.6
-         * Halstead volume: 76.107
-         * Halstead effort: 502.309
-         * Parameter count: 0
-      
-      * Class method: **getErrors**
-         * Line start: 249
-         * Line end: 260
-         * Physical LOC: 12
-         * Logical LOC: 6
-         * Cyclomatic complexity: 2
-         * Cyclomatic complexity density: 33.333%
-         * Halstead difficulty: 7.875
-         * Halstead volume: 126.711
-         * Halstead effort: 997.852
-         * Parameter count: 1
-      
-      * Class method: **&lt;anonymous&gt;**
-         * Line start: 255
-         * Line end: 255
-         * Physical LOC: 1
-         * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 1.875
-         * Halstead volume: 28.074
-         * Halstead effort: 52.638
-         * Parameter count: 1
-      
-      * Class method: **&lt;anonymous&gt;**
-         * Line start: 256
-         * Line end: 256
-         * Physical LOC: 1
-         * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 1.875
-         * Halstead volume: 28.074
-         * Halstead effort: 52.638
-         * Parameter count: 1
-      
-      * Class method: **getFormatFileExtensions**
-         * Line start: 267
-         * Line end: 270
-         * Physical LOC: 4
-         * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 1.5
-         * Halstead volume: 11.61
-         * Halstead effort: 17.414
-         * Parameter count: 0
-      
-      * Class method: **getFormatNames**
-         * Line start: 277
-         * Line end: 280
-         * Physical LOC: 4
-         * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 1.5
-         * Halstead volume: 11.61
-         * Halstead effort: 17.414
-         * Parameter count: 0
-      
-      * Class method: **getFormatTypes**
-         * Line start: 287
-         * Line end: 290
-         * Physical LOC: 4
-         * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 1.5
-         * Halstead volume: 11.61
-         * Halstead effort: 17.414
+         * Halstead difficulty: 3.75
+         * Halstead volume: 38.039
+         * Halstead effort: 142.647
          * Parameter count: 0
       
       * Class method: **getSetting**
-         * Line start: 300
-         * Line end: 310
+         * Line start: 346
+         * Line end: 356
          * Physical LOC: 11
          * Logical LOC: 3
          * Cyclomatic complexity: 5
@@ -1158,8 +1290,8 @@
          * Parameter count: 2
       
       * Class method: **halsteadItemEncountered**
-         * Line start: 319
-         * Line end: 329
+         * Line start: 365
+         * Line end: 375
          * Physical LOC: 11
          * Logical LOC: 7
          * Cyclomatic complexity: 3
@@ -1170,8 +1302,8 @@
          * Parameter count: 2
       
       * Class method: **incrementCyclomatic**
-         * Line start: 336
-         * Line end: 345
+         * Line start: 382
+         * Line end: 391
          * Physical LOC: 10
          * Logical LOC: 7
          * Cyclomatic complexity: 3
@@ -1182,8 +1314,8 @@
          * Parameter count: 1
       
       * Class method: **incrementLogicalSloc**
-         * Line start: 353
-         * Line end: 362
+         * Line start: 399
+         * Line end: 408
          * Physical LOC: 10
          * Logical LOC: 7
          * Cyclomatic complexity: 3
@@ -1194,8 +1326,8 @@
          * Parameter count: 1
       
       * Class method: **parse**
-         * Line start: 371
-         * Line end: 394
+         * Line start: 417
+         * Line end: 440
          * Physical LOC: 24
          * Logical LOC: 10
          * Cyclomatic complexity: 5
@@ -1206,56 +1338,56 @@
          * Parameter count: 1
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 380
-         * Line end: 380
+         * Line start: 426
+         * Line end: 426
          * Physical LOC: 1
-         * Logical LOC: 1
+         * Logical LOC: 0
          * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 2
-         * Halstead volume: 18.095
-         * Halstead effort: 36.189
+         * Cyclomatic complexity density: 0%
+         * Halstead difficulty: 1.333
+         * Halstead volume: 13.932
+         * Halstead effort: 18.575
          * Parameter count: 1
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 385
-         * Line end: 385
+         * Line start: 431
+         * Line end: 431
          * Physical LOC: 1
-         * Logical LOC: 1
+         * Logical LOC: 0
          * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 2.5
-         * Halstead volume: 27
-         * Halstead effort: 67.5
+         * Cyclomatic complexity density: 0%
+         * Halstead difficulty: 1.333
+         * Halstead volume: 13.932
+         * Halstead effort: 18.575
          * Parameter count: 1
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 390
-         * Line end: 390
+         * Line start: 436
+         * Line end: 436
          * Physical LOC: 1
-         * Logical LOC: 1
+         * Logical LOC: 0
          * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 2
-         * Halstead volume: 18.095
-         * Halstead effort: 36.189
+         * Cyclomatic complexity density: 0%
+         * Halstead difficulty: 1.333
+         * Halstead volume: 13.932
+         * Halstead effort: 18.575
          * Parameter count: 1
       
       * Class method: **popScope**
-         * Line start: 402
-         * Line end: 417
+         * Line start: 448
+         * Line end: 463
          * Physical LOC: 16
-         * Logical LOC: 9
-         * Cyclomatic complexity: 3
-         * Cyclomatic complexity density: 33.333%
-         * Halstead difficulty: 6
-         * Halstead volume: 155.589
-         * Halstead effort: 933.536
+         * Logical LOC: 11
+         * Cyclomatic complexity: 5
+         * Cyclomatic complexity density: 45.455%
+         * Halstead difficulty: 8.357
+         * Halstead volume: 235.225
+         * Halstead effort: 1965.811
          * Parameter count: 1
       
       * Class method: **processHalsteadItems**
-         * Line start: 425
-         * Line end: 431
+         * Line start: 471
+         * Line end: 477
          * Physical LOC: 7
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -1266,8 +1398,8 @@
          * Parameter count: 2
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 427
-         * Line end: 430
+         * Line start: 473
+         * Line end: 476
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -1278,8 +1410,8 @@
          * Parameter count: 1
       
       * Class method: **setSetting**
-         * Line start: 441
-         * Line end: 456
+         * Line start: 487
+         * Line end: 502
          * Physical LOC: 16
          * Logical LOC: 6
          * Cyclomatic complexity: 4
@@ -1287,18 +1419,6 @@
          * Halstead difficulty: 7.727
          * Halstead volume: 140.554
          * Halstead effort: 1086.1
-         * Parameter count: 2
-      
-      * Class method: **toFormat**
-         * Line start: 467
-         * Line end: 470
-         * Physical LOC: 4
-         * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 2
-         * Halstead volume: 34.869
-         * Halstead effort: 69.738
          * Parameter count: 2
 
 * Module 17:
@@ -1330,32 +1450,32 @@
 * Module 18:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js`
    * Source path: `typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js`
-   * Total lines: 123
-   * Maintainability index: 140.17
+   * Total lines: 120
+   * Maintainability index: 141.096
    * Dependency count: 1
-   * Average per-function physical LOC: 8.091
-   * Average per-function logical LOC: 1.909
+   * Average per-function physical LOC: 7.545
+   * Average per-function logical LOC: 1.818
    * Average per-function cyclomatic complexity: 1.636
-   * Average per-function cyclomatic density: 91.667%
-   * Average per-function halstead difficulty: 4.154
-   * Average per-function halstead volume: 56.658
-   * Average per-function halstead effort: 371.857
+   * Average per-function cyclomatic density: 105.303%
+   * Average per-function halstead difficulty: 4.045
+   * Average per-function halstead volume: 56.108
+   * Average per-function halstead effort: 357.437
    
    * Class: **HalsteadArray**
       * Line start: 7
-      * Line end: 122
-      * Average per-function physical LOC: 8.091
-      * Average per-function logical LOC: 1.909
+      * Line end: 119
+      * Average per-function physical LOC: 7.545
+      * Average per-function logical LOC: 1.818
       * Average per-function cyclomatic complexity: 1.636
-      * Average per-function cyclomatic density: 91.667%
-      * Average per-function halstead difficulty: 4.154
-      * Average per-function halstead volume: 56.658
-      * Average per-function halstead effort: 371.857
+      * Average per-function cyclomatic density: 105.303%
+      * Average per-function halstead difficulty: 4.045
+      * Average per-function halstead volume: 56.108
+      * Average per-function halstead effort: 357.437
       
       * Class method: **constructor**
          * Line start: 15
-         * Line end: 40
-         * Physical LOC: 26
+         * Line end: 37
+         * Physical LOC: 23
          * Logical LOC: 6
          * Cyclomatic complexity: 3
          * Cyclomatic complexity density: 50%
@@ -1366,19 +1486,19 @@
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 28
-         * Line end: 32
-         * Physical LOC: 5
-         * Logical LOC: 2
+         * Line end: 29
+         * Physical LOC: 2
+         * Logical LOC: 1
          * Cyclomatic complexity: 3
-         * Cyclomatic complexity density: 150%
-         * Halstead difficulty: 10.8
-         * Halstead volume: 83.762
-         * Halstead effort: 904.628
+         * Cyclomatic complexity density: 300%
+         * Halstead difficulty: 9.6
+         * Halstead volume: 77.709
+         * Halstead effort: 746.009
          * Parameter count: 1
       
       * Class method: **forEach**
-         * Line start: 48
-         * Line end: 51
+         * Line start: 45
+         * Line end: 48
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -1389,8 +1509,8 @@
          * Parameter count: 2
       
       * Class method: **get**
-         * Line start: 60
-         * Line end: 63
+         * Line start: 57
+         * Line end: 60
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -1401,8 +1521,8 @@
          * Parameter count: 1
       
       * Class method: **length**
-         * Line start: 70
-         * Line end: 70
+         * Line start: 67
+         * Line end: 67
          * Physical LOC: 1
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -1413,8 +1533,8 @@
          * Parameter count: 0
       
       * Class method: **metric**
-         * Line start: 77
-         * Line end: 77
+         * Line start: 74
+         * Line end: 74
          * Physical LOC: 1
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -1425,8 +1545,8 @@
          * Parameter count: 0
       
       * Class method: **type**
-         * Line start: 84
-         * Line end: 84
+         * Line start: 81
+         * Line end: 81
          * Physical LOC: 1
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -1437,8 +1557,8 @@
          * Parameter count: 0
       
       * Class method: **valueOf**
-         * Line start: 96
-         * Line end: 121
+         * Line start: 93
+         * Line end: 118
          * Physical LOC: 26
          * Logical LOC: 3
          * Cyclomatic complexity: 1
@@ -1449,8 +1569,8 @@
          * Parameter count: 1
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 98
-         * Line end: 101
+         * Line start: 95
+         * Line end: 98
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 2
@@ -1461,8 +1581,8 @@
          * Parameter count: 1
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 105
-         * Line end: 105
+         * Line start: 102
+         * Line end: 102
          * Physical LOC: 1
          * Logical LOC: 0
          * Cyclomatic complexity: 1
@@ -1473,8 +1593,8 @@
          * Parameter count: 1
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 105
-         * Line end: 120
+         * Line start: 102
+         * Line end: 117
          * Physical LOC: 16
          * Logical LOC: 4
          * Cyclomatic complexity: 3
@@ -1540,26 +1660,26 @@
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/traits/Trait.js`
    * Source path: `typhonjs-escomplex-commons/src/module/traits/Trait.js`
    * Total lines: 66
-   * Maintainability index: 138.638
+   * Maintainability index: 140.44
    * Dependency count: 0
    * Average per-function physical LOC: 6.2
-   * Average per-function logical LOC: 2
+   * Average per-function logical LOC: 1.8
    * Average per-function cyclomatic complexity: 1.8
-   * Average per-function cyclomatic density: 110%
-   * Average per-function halstead difficulty: 5.036
-   * Average per-function halstead volume: 56.551
-   * Average per-function halstead effort: 463.874
+   * Average per-function cyclomatic density: 70%
+   * Average per-function halstead difficulty: 4.836
+   * Average per-function halstead volume: 55.543
+   * Average per-function halstead effort: 451.227
    
    * Class: **Trait**
       * Line start: 4
       * Line end: 65
       * Average per-function physical LOC: 6.2
-      * Average per-function logical LOC: 2
+      * Average per-function logical LOC: 1.8
       * Average per-function cyclomatic complexity: 1.8
-      * Average per-function cyclomatic density: 110%
-      * Average per-function halstead difficulty: 5.036
-      * Average per-function halstead volume: 56.551
-      * Average per-function halstead effort: 463.874
+      * Average per-function cyclomatic density: 70%
+      * Average per-function halstead difficulty: 4.836
+      * Average per-function halstead volume: 55.543
+      * Average per-function halstead effort: 451.227
       
       * Class method: **constructor**
          * Line start: 12
@@ -1613,38 +1733,38 @@
          * Line start: 60
          * Line end: 60
          * Physical LOC: 1
-         * Logical LOC: 1
+         * Logical LOC: 0
          * Cyclomatic complexity: 2
-         * Cyclomatic complexity density: 200%
-         * Halstead difficulty: 6
-         * Halstead volume: 38.039
-         * Halstead effort: 228.235
+         * Cyclomatic complexity density: 0%
+         * Halstead difficulty: 5
+         * Halstead volume: 33
+         * Halstead effort: 165
          * Parameter count: 1
 
 * Module 22:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js`
    * Source path: `typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js`
-   * Total lines: 113
-   * Maintainability index: 128.1
+   * Total lines: 110
+   * Maintainability index: 128.881
    * Dependency count: 0
-   * Average per-function physical LOC: 11.286
-   * Average per-function logical LOC: 3.143
+   * Average per-function physical LOC: 10.429
+   * Average per-function logical LOC: 3
    * Average per-function cyclomatic complexity: 2.857
-   * Average per-function cyclomatic density: 130.22%
-   * Average per-function halstead difficulty: 6.267
-   * Average per-function halstead volume: 112.932
-   * Average per-function halstead effort: 1151.662
+   * Average per-function cyclomatic density: 101.648%
+   * Average per-function halstead difficulty: 6.124
+   * Average per-function halstead volume: 112.212
+   * Average per-function halstead effort: 1142.628
    
    * Class: **TraitHalstead**
       * Line start: 5
-      * Line end: 112
-      * Average per-function physical LOC: 11.286
-      * Average per-function logical LOC: 3.143
+      * Line end: 109
+      * Average per-function physical LOC: 10.429
+      * Average per-function logical LOC: 3
       * Average per-function cyclomatic complexity: 2.857
-      * Average per-function cyclomatic density: 130.22%
-      * Average per-function halstead difficulty: 6.267
-      * Average per-function halstead volume: 112.932
-      * Average per-function halstead effort: 1151.662
+      * Average per-function cyclomatic density: 101.648%
+      * Average per-function halstead difficulty: 6.124
+      * Average per-function halstead volume: 112.212
+      * Average per-function halstead effort: 1142.628
       
       * Class method: **constructor**
          * Line start: 13
@@ -1708,8 +1828,8 @@
       
       * Class method: **valueOf**
          * Line start: 100
-         * Line end: 111
-         * Physical LOC: 12
+         * Line end: 108
+         * Physical LOC: 9
          * Logical LOC: 3
          * Cyclomatic complexity: 3
          * Cyclomatic complexity density: 100%
@@ -1720,44 +1840,56 @@
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 104
-         * Line end: 107
-         * Physical LOC: 4
-         * Logical LOC: 1
+         * Line end: 104
+         * Physical LOC: 1
+         * Logical LOC: 0
          * Cyclomatic complexity: 2
-         * Cyclomatic complexity density: 200%
-         * Halstead difficulty: 6
-         * Halstead volume: 38.039
-         * Halstead effort: 228.235
+         * Cyclomatic complexity density: 0%
+         * Halstead difficulty: 5
+         * Halstead volume: 33
+         * Halstead effort: 165
          * Parameter count: 1
 
 * Module 23:
-   * File path: `./node_modules/typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
-   * Source path: `typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
-   * Total lines: 284
-   * Maintainability index: 125.535
-   * Dependency count: 5
-   * Average per-function physical LOC: 11.471
-   * Average per-function logical LOC: 3.765
-   * Average per-function cyclomatic complexity: 2.059
-   * Average per-function cyclomatic density: 81.22%
-   * Average per-function halstead difficulty: 5.367
-   * Average per-function halstead volume: 103.274
-   * Average per-function halstead effort: 1059.741
+   * File path: `./node_modules/typhonjs-escomplex-commons/src/project/report/ProjectReport.js`
+   * Source path: `typhonjs-escomplex-commons/src/project/report/ProjectReport.js`
+   * Total lines: 300
+   * Maintainability index: 124.748
+   * Dependency count: 7
+   * Average per-function physical LOC: 10.316
+   * Average per-function logical LOC: 3.789
+   * Average per-function cyclomatic complexity: 2.211
+   * Average per-function cyclomatic density: 69.806%
+   * Average per-function halstead difficulty: 5.301
+   * Average per-function halstead volume: 109.569
+   * Average per-function halstead effort: 1286.99
    
-   * Class: **ProjectResult**
-      * Line start: 15
-      * Line end: 283
-      * Average per-function physical LOC: 11.471
-      * Average per-function logical LOC: 3.765
-      * Average per-function cyclomatic complexity: 2.059
-      * Average per-function cyclomatic density: 81.22%
-      * Average per-function halstead difficulty: 5.367
-      * Average per-function halstead volume: 103.274
-      * Average per-function halstead effort: 1059.741
+   * Class: **ProjectReport**
+      * Line start: 19
+      * Line end: 299
+      * Average per-function physical LOC: 10.316
+      * Average per-function logical LOC: 3.789
+      * Average per-function cyclomatic complexity: 2.211
+      * Average per-function cyclomatic density: 69.806%
+      * Average per-function halstead difficulty: 5.301
+      * Average per-function halstead volume: 109.569
+      * Average per-function halstead effort: 1286.99
+      
+      * Class method: **type**
+         * Line start: 25
+         * Line end: 25
+         * Physical LOC: 1
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1
+         * Halstead volume: 8
+         * Halstead effort: 8
+         * Parameter count: 0
       
       * Class method: **constructor**
-         * Line start: 25
-         * Line end: 90
+         * Line start: 35
+         * Line end: 100
          * Physical LOC: 66
          * Logical LOC: 11
          * Cyclomatic complexity: 3
@@ -1768,8 +1900,8 @@
          * Parameter count: 2
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 80
-         * Line end: 80
+         * Line start: 90
+         * Line end: 90
          * Physical LOC: 1
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -1780,8 +1912,8 @@
          * Parameter count: 2
       
       * Class method: **clearErrors**
-         * Line start: 98
-         * Line end: 106
+         * Line start: 108
+         * Line end: 116
          * Physical LOC: 9
          * Logical LOC: 3
          * Cyclomatic complexity: 2
@@ -1792,8 +1924,8 @@
          * Parameter count: 1
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 104
-         * Line end: 104
+         * Line start: 114
+         * Line end: 114
          * Physical LOC: 1
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -1804,20 +1936,20 @@
          * Parameter count: 1
       
       * Class method: **finalize**
-         * Line start: 119
-         * Line end: 152
-         * Physical LOC: 34
-         * Logical LOC: 13
-         * Cyclomatic complexity: 5
-         * Cyclomatic complexity density: 38.462%
-         * Halstead difficulty: 15.167
-         * Halstead volume: 400
-         * Halstead effort: 6066.667
+         * Line start: 127
+         * Line end: 149
+         * Physical LOC: 23
+         * Logical LOC: 10
+         * Cyclomatic complexity: 4
+         * Cyclomatic complexity density: 40%
+         * Halstead difficulty: 13.067
+         * Halstead volume: 286.621
+         * Halstead effort: 3745.179
          * Parameter count: 1
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 132
-         * Line end: 132
+         * Line start: 138
+         * Line end: 138
          * Physical LOC: 1
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -1828,80 +1960,92 @@
          * Parameter count: 1
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 136
-         * Line end: 148
-         * Physical LOC: 13
-         * Logical LOC: 8
-         * Cyclomatic complexity: 2
+         * Line start: 142
+         * Line end: 145
+         * Physical LOC: 4
+         * Logical LOC: 4
+         * Cyclomatic complexity: 1
          * Cyclomatic complexity density: 25%
-         * Halstead difficulty: 9.188
-         * Halstead volume: 148.462
-         * Halstead effort: 1363.993
+         * Halstead difficulty: 5
+         * Halstead volume: 54
+         * Halstead effort: 270
          * Parameter count: 1
       
       * Class method: **getErrors**
-         * Line start: 161
-         * Line end: 171
-         * Physical LOC: 11
-         * Logical LOC: 5
-         * Cyclomatic complexity: 2
-         * Cyclomatic complexity density: 40%
-         * Halstead difficulty: 7.071
-         * Halstead volume: 96
-         * Halstead effort: 678.857
+         * Line start: 163
+         * Line end: 189
+         * Physical LOC: 27
+         * Logical LOC: 13
+         * Cyclomatic complexity: 6
+         * Cyclomatic complexity density: 46.154%
+         * Halstead difficulty: 18
+         * Halstead volume: 396.822
+         * Halstead effort: 7142.798
          * Parameter count: 1
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 167
-         * Line end: 167
+         * Line start: 173
+         * Line end: 173
+         * Physical LOC: 1
+         * Logical LOC: 3
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 33.333%
+         * Halstead difficulty: 1.875
+         * Halstead volume: 25.266
+         * Halstead effort: 47.374
+         * Parameter count: 1
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 179
+         * Line end: 179
          * Physical LOC: 1
          * Logical LOC: 1
          * Cyclomatic complexity: 1
          * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 1.875
-         * Halstead volume: 28.074
-         * Halstead effort: 52.638
+         * Halstead difficulty: 1.8
+         * Halstead volume: 33
+         * Halstead effort: 59.4
          * Parameter count: 1
       
-      * Class method: **getFormatFileExtensions**
-         * Line start: 178
-         * Line end: 181
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 185
+         * Line end: 185
+         * Physical LOC: 1
+         * Logical LOC: 0
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 0%
+         * Halstead difficulty: 1.2
+         * Halstead volume: 25.266
+         * Halstead effort: 30.319
+         * Parameter count: 1
+      
+      * Class method: **getFormats**
+         * Line start: 196
+         * Line end: 199
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
          * Cyclomatic complexity density: 100%
          * Halstead difficulty: 1.5
-         * Halstead volume: 11.61
-         * Halstead effort: 17.414
+         * Halstead volume: 22.459
+         * Halstead effort: 33.688
          * Parameter count: 0
       
-      * Class method: **getFormatNames**
-         * Line start: 188
-         * Line end: 191
+      * Class method: **getName**
+         * Line start: 205
+         * Line end: 208
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
          * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 1.5
-         * Halstead volume: 11.61
-         * Halstead effort: 17.414
-         * Parameter count: 0
-      
-      * Class method: **getFormatTypes**
-         * Line start: 198
-         * Line end: 201
-         * Physical LOC: 4
-         * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 1.5
-         * Halstead volume: 11.61
-         * Halstead effort: 17.414
+         * Halstead difficulty: 0.5
+         * Halstead volume: 2
+         * Halstead effort: 1
          * Parameter count: 0
       
       * Class method: **getSetting**
-         * Line start: 211
-         * Line end: 221
+         * Line start: 218
+         * Line end: 228
          * Physical LOC: 11
          * Logical LOC: 3
          * Cyclomatic complexity: 5
@@ -1912,32 +2056,32 @@
          * Parameter count: 2
       
       * Class method: **parse**
-         * Line start: 230
-         * Line end: 243
-         * Physical LOC: 14
-         * Logical LOC: 6
-         * Cyclomatic complexity: 3
-         * Cyclomatic complexity density: 50%
-         * Halstead difficulty: 10
-         * Halstead volume: 187.983
-         * Halstead effort: 1879.835
-         * Parameter count: 1
+         * Line start: 240
+         * Line end: 259
+         * Physical LOC: 20
+         * Logical LOC: 11
+         * Cyclomatic complexity: 6
+         * Cyclomatic complexity density: 54.545%
+         * Halstead difficulty: 14
+         * Halstead volume: 372.235
+         * Halstead effort: 5211.284
+         * Parameter count: 2
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 239
-         * Line end: 239
+         * Line start: 252
+         * Line end: 252
          * Physical LOC: 1
-         * Logical LOC: 1
+         * Logical LOC: 0
          * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 2
-         * Halstead volume: 18.095
-         * Halstead effort: 36.189
+         * Cyclomatic complexity density: 0%
+         * Halstead difficulty: 1.333
+         * Halstead volume: 13.932
+         * Halstead effort: 18.575
          * Parameter count: 1
       
       * Class method: **setSetting**
-         * Line start: 253
-         * Line end: 268
+         * Line start: 269
+         * Line end: 284
          * Physical LOC: 16
          * Logical LOC: 6
          * Cyclomatic complexity: 4
@@ -1948,8 +2092,8 @@
          * Parameter count: 2
       
       * Class method: **toFormat**
-         * Line start: 279
-         * Line end: 282
+         * Line start: 295
+         * Line end: 298
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -1962,27 +2106,27 @@
 * Module 24:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
    * Source path: `typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
-   * Total lines: 66
-   * Maintainability index: 150.518
+   * Total lines: 61
+   * Maintainability index: 152.36
    * Dependency count: 0
-   * Average per-function physical LOC: 4.4
+   * Average per-function physical LOC: 4.2
    * Average per-function logical LOC: 1
-   * Average per-function cyclomatic complexity: 1.8
-   * Average per-function cyclomatic density: 180%
-   * Average per-function halstead difficulty: 3.322
-   * Average per-function halstead volume: 51.885
-   * Average per-function halstead effort: 383.55
+   * Average per-function cyclomatic complexity: 1.4
+   * Average per-function cyclomatic density: 140%
+   * Average per-function halstead difficulty: 2.1
+   * Average per-function halstead volume: 28.288
+   * Average per-function halstead effort: 227.644
    
    * Class: **FormatJSON**
       * Line start: 4
-      * Line end: 66
-      * Average per-function physical LOC: 4.4
+      * Line end: 61
+      * Average per-function physical LOC: 4.2
       * Average per-function logical LOC: 1
-      * Average per-function cyclomatic complexity: 1.8
-      * Average per-function cyclomatic density: 180%
-      * Average per-function halstead difficulty: 3.322
-      * Average per-function halstead volume: 51.885
-      * Average per-function halstead effort: 383.55
+      * Average per-function cyclomatic complexity: 1.4
+      * Average per-function cyclomatic density: 140%
+      * Average per-function halstead difficulty: 2.1
+      * Average per-function halstead volume: 28.288
+      * Average per-function halstead effort: 227.644
       
       * Class method: **formatReport**
          * Line start: 16
@@ -1991,26 +2135,14 @@
          * Logical LOC: 1
          * Cyclomatic complexity: 3
          * Cyclomatic complexity density: 300%
-         * Halstead difficulty: 7.556
-         * Halstead volume: 126.711
-         * Halstead effort: 957.375
-         * Parameter count: 2
-      
-      * Class method: **formatResult**
-         * Line start: 31
-         * Line end: 35
-         * Physical LOC: 5
-         * Logical LOC: 1
-         * Cyclomatic complexity: 3
-         * Cyclomatic complexity density: 300%
-         * Halstead difficulty: 7.556
-         * Halstead volume: 126.711
-         * Halstead effort: 957.375
+         * Halstead difficulty: 8.5
+         * Halstead volume: 133.438
+         * Halstead effort: 1134.22
          * Parameter count: 2
       
       * Class method: **extension**
-         * Line start: 42
-         * Line end: 45
+         * Line start: 27
+         * Line end: 30
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -2021,8 +2153,8 @@
          * Parameter count: 0
       
       * Class method: **name**
-         * Line start: 52
-         * Line end: 55
+         * Line start: 37
+         * Line end: 40
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -2033,8 +2165,20 @@
          * Parameter count: 0
       
       * Class method: **type**
-         * Line start: 62
-         * Line end: 65
+         * Line start: 47
+         * Line end: 50
+         * Physical LOC: 4
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 0.5
+         * Halstead volume: 2
+         * Halstead effort: 1
+         * Parameter count: 0
+      
+      * Class method: **isSupported**
+         * Line start: 57
+         * Line end: 60
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -2047,31 +2191,31 @@
 * Module 25:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
    * Source path: `typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
-   * Total lines: 272
-   * Maintainability index: 103.409
-   * Dependency count: 1
-   * Average per-function physical LOC: 18.889
-   * Average per-function logical LOC: 9.667
-   * Average per-function cyclomatic complexity: 3.889
-   * Average per-function cyclomatic density: 73.349%
-   * Average per-function halstead difficulty: 9.659
-   * Average per-function halstead volume: 310.797
-   * Average per-function halstead effort: 7522.501
+   * Total lines: 283
+   * Maintainability index: 100.95
+   * Dependency count: 2
+   * Average per-function physical LOC: 20.222
+   * Average per-function logical LOC: 11.111
+   * Average per-function cyclomatic complexity: 4.111
+   * Average per-function cyclomatic density: 72.553%
+   * Average per-function halstead difficulty: 9.528
+   * Average per-function halstead volume: 305.374
+   * Average per-function halstead effort: 7952.244
    
    * Class: **FormatJSONCheckstyle**
-      * Line start: 17
-      * Line end: 240
-      * Average per-function physical LOC: 18.889
-      * Average per-function logical LOC: 9.667
-      * Average per-function cyclomatic complexity: 3.889
-      * Average per-function cyclomatic density: 73.349%
-      * Average per-function halstead difficulty: 9.659
-      * Average per-function halstead volume: 310.797
-      * Average per-function halstead effort: 7522.501
+      * Line start: 18
+      * Line end: 251
+      * Average per-function physical LOC: 20.222
+      * Average per-function logical LOC: 11.111
+      * Average per-function cyclomatic complexity: 4.111
+      * Average per-function cyclomatic density: 72.553%
+      * Average per-function halstead difficulty: 9.528
+      * Average per-function halstead volume: 305.374
+      * Average per-function halstead effort: 7952.244
       
       * Class method: **constructor**
-         * Line start: 19
-         * Line end: 22
+         * Line start: 20
+         * Line end: 23
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -2083,165 +2227,20 @@
       
       * Class method: **formatReport**
          * Line start: 35
-         * Line end: 46
-         * Physical LOC: 12
-         * Logical LOC: 7
-         * Cyclomatic complexity: 3
-         * Cyclomatic complexity density: 42.857%
-         * Halstead difficulty: 12.071
-         * Halstead volume: 371.385
-         * Halstead effort: 4483.145
-         * Parameter count: 2
-      
-      * Class method: **formatResult**
-         * Line start: 59
-         * Line end: 75
-         * Physical LOC: 17
-         * Logical LOC: 8
-         * Cyclomatic complexity: 3
-         * Cyclomatic complexity density: 37.5%
-         * Halstead difficulty: 11.375
-         * Halstead volume: 398.842
-         * Halstead effort: 4536.833
-         * Parameter count: 2
-      
-      * Class method: **&lt;anonymous&gt;**
-         * Line start: 68
-         * Line end: 71
-         * Physical LOC: 4
-         * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 1.125
-         * Halstead volume: 46.507
-         * Halstead effort: 52.32
-         * Parameter count: 1
-      
-      * Class method: **extension**
-         * Line start: 82
-         * Line end: 85
-         * Physical LOC: 4
-         * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 0.5
-         * Halstead volume: 2
-         * Halstead effort: 1
-         * Parameter count: 0
-      
-      * Class method: **name**
-         * Line start: 92
-         * Line end: 95
-         * Physical LOC: 4
-         * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 0.5
-         * Halstead volume: 2
-         * Halstead effort: 1
-         * Parameter count: 0
-      
-      * Class method: **type**
-         * Line start: 102
-         * Line end: 105
-         * Physical LOC: 4
-         * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 0.5
-         * Halstead volume: 2
-         * Halstead effort: 1
-         * Parameter count: 0
-      
-      * Class method: **_formatModule**
-         * Line start: 118
-         * Line end: 162
-         * Physical LOC: 45
-         * Logical LOC: 20
-         * Cyclomatic complexity: 10
-         * Cyclomatic complexity density: 50%
-         * Halstead difficulty: 27.9
-         * Halstead volume: 899.406
-         * Halstead effort: 25093.423
-         * Parameter count: 3
-      
-      * Class method: **_parseErrors**
-         * Line start: 164
-         * Line end: 239
-         * Physical LOC: 76
-         * Logical LOC: 47
-         * Cyclomatic complexity: 14
-         * Cyclomatic complexity density: 29.787%
-         * Halstead difficulty: 31.706
-         * Halstead volume: 1056.939
-         * Halstead effort: 33511.171
-         * Parameter count: 4
-
-* Module 26:
-   * File path: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
-   * Source path: `typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
-   * Total lines: 235
-   * Maintainability index: 120.465
-   * Dependency count: 1
-   * Average per-function physical LOC: 12.4
-   * Average per-function logical LOC: 4.667
-   * Average per-function cyclomatic complexity: 2.4
-   * Average per-function cyclomatic density: 67.992%
-   * Average per-function halstead difficulty: 5.801
-   * Average per-function halstead volume: 136.459
-   * Average per-function halstead effort: 1669.907
-   
-   * Class: **FormatJSONMinimal**
-      * Line start: 7
-      * Line end: 220
-      * Average per-function physical LOC: 12.4
-      * Average per-function logical LOC: 4.667
-      * Average per-function cyclomatic complexity: 2.4
-      * Average per-function cyclomatic density: 67.992%
-      * Average per-function halstead difficulty: 5.801
-      * Average per-function halstead volume: 136.459
-      * Average per-function halstead effort: 1669.907
-      
-      * Class method: **constructor**
-         * Line start: 9
-         * Line end: 12
-         * Physical LOC: 4
-         * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 1.25
-         * Halstead volume: 18.095
-         * Halstead effort: 22.618
-         * Parameter count: 1
-      
-      * Class method: **formatReport**
-         * Line start: 26
-         * Line end: 35
-         * Physical LOC: 10
-         * Logical LOC: 4
-         * Cyclomatic complexity: 3
-         * Cyclomatic complexity density: 75%
-         * Halstead difficulty: 10.676
-         * Halstead volume: 288.441
-         * Halstead effort: 3079.535
-         * Parameter count: 2
-      
-      * Class method: **formatResult**
-         * Line start: 49
          * Line end: 65
-         * Physical LOC: 17
-         * Logical LOC: 7
-         * Cyclomatic complexity: 3
-         * Cyclomatic complexity density: 42.857%
-         * Halstead difficulty: 11.773
-         * Halstead volume: 377.405
-         * Halstead effort: 4443.081
+         * Physical LOC: 31
+         * Logical LOC: 21
+         * Cyclomatic complexity: 5
+         * Cyclomatic complexity density: 23.81%
+         * Halstead difficulty: 16.176
+         * Halstead volume: 691.075
+         * Halstead effort: 11178.609
          * Parameter count: 2
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 58
+         * Line start: 61
          * Line end: 61
-         * Physical LOC: 4
+         * Physical LOC: 1
          * Logical LOC: 1
          * Cyclomatic complexity: 1
          * Cyclomatic complexity density: 100%
@@ -2286,166 +2285,94 @@
          * Halstead effort: 1
          * Parameter count: 0
       
-      * Class method: **_formatClasses**
-         * Line start: 108
-         * Line end: 134
-         * Physical LOC: 27
-         * Logical LOC: 3
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 33.333%
-         * Halstead difficulty: 5.25
-         * Halstead volume: 44.973
-         * Halstead effort: 236.106
-         * Parameter count: 2
-      
-      * Class method: **&lt;anonymous&gt;**
-         * Line start: 112
-         * Line end: 131
-         * Physical LOC: 20
-         * Logical LOC: 9
-         * Cyclomatic complexity: 4
-         * Cyclomatic complexity density: 44.444%
-         * Halstead difficulty: 8.346
-         * Halstead volume: 254.994
-         * Halstead effort: 2128.217
-         * Parameter count: 1
-      
-      * Class method: **&lt;anonymous&gt;**
-         * Line start: 121
-         * Line end: 125
-         * Physical LOC: 5
-         * Logical LOC: 3
-         * Cyclomatic complexity: 2
-         * Cyclomatic complexity density: 66.667%
-         * Halstead difficulty: 4.167
-         * Halstead volume: 58.81
-         * Halstead effort: 245.043
-         * Parameter count: 1
-      
-      * Class method: **_formatMethods**
-         * Line start: 146
-         * Line end: 170
-         * Physical LOC: 25
-         * Logical LOC: 3
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 33.333%
-         * Halstead difficulty: 5.25
-         * Halstead volume: 44.973
-         * Halstead effort: 236.106
-         * Parameter count: 2
-      
-      * Class method: **&lt;anonymous&gt;**
-         * Line start: 150
-         * Line end: 167
-         * Physical LOC: 18
-         * Logical LOC: 8
-         * Cyclomatic complexity: 4
+      * Class method: **isSupported**
+         * Line start: 104
+         * Line end: 115
+         * Physical LOC: 12
+         * Logical LOC: 6
+         * Cyclomatic complexity: 3
          * Cyclomatic complexity density: 50%
-         * Halstead difficulty: 8.4
-         * Halstead volume: 192.111
-         * Halstead effort: 1613.73
-         * Parameter count: 1
-      
-      * Class method: **&lt;anonymous&gt;**
-         * Line start: 159
-         * Line end: 163
-         * Physical LOC: 5
-         * Logical LOC: 3
-         * Cyclomatic complexity: 2
-         * Cyclomatic complexity density: 66.667%
-         * Halstead difficulty: 4.167
-         * Halstead volume: 58.81
-         * Halstead effort: 245.043
+         * Halstead difficulty: 3.333
+         * Halstead volume: 55.351
+         * Halstead effort: 184.503
          * Parameter count: 1
       
       * Class method: **_formatModule**
-         * Line start: 186
-         * Line end: 219
-         * Physical LOC: 34
-         * Logical LOC: 22
-         * Cyclomatic complexity: 9
-         * Cyclomatic complexity density: 40.909%
-         * Halstead difficulty: 20.938
-         * Halstead volume: 596.956
-         * Halstead effort: 12498.763
+         * Line start: 128
+         * Line end: 171
+         * Physical LOC: 44
+         * Logical LOC: 20
+         * Cyclomatic complexity: 10
+         * Cyclomatic complexity density: 50%
+         * Halstead difficulty: 31.5
+         * Halstead volume: 810.427
+         * Halstead effort: 25528.442
          * Parameter count: 3
       
-      * Class method: **&lt;anonymous&gt;**
-         * Line start: 198
-         * Line end: 202
-         * Physical LOC: 5
-         * Logical LOC: 3
-         * Cyclomatic complexity: 2
-         * Cyclomatic complexity density: 66.667%
-         * Halstead difficulty: 4.167
-         * Halstead volume: 58.81
-         * Halstead effort: 245.043
-         * Parameter count: 1
+      * Class method: **_parseErrors**
+         * Line start: 173
+         * Line end: 250
+         * Physical LOC: 78
+         * Logical LOC: 48
+         * Cyclomatic complexity: 14
+         * Cyclomatic complexity density: 29.167%
+         * Halstead difficulty: 30.868
+         * Halstead volume: 1120.909
+         * Halstead effort: 34600.702
+         * Parameter count: 3
 
-* Module 27:
-   * File path: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js`
-   * Source path: `typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js`
-   * Total lines: 88
-   * Maintainability index: 124.142
-   * Dependency count: 0
-   * Average per-function physical LOC: 8.5
-   * Average per-function logical LOC: 3.833
-   * Average per-function cyclomatic complexity: 2.667
-   * Average per-function cyclomatic density: 83.333%
-   * Average per-function halstead difficulty: 6.122
-   * Average per-function halstead volume: 116.771
-   * Average per-function halstead effort: 1436.718
+* Module 26:
+   * File path: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
+   * Source path: `typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
+   * Total lines: 283
+   * Maintainability index: 115.59
+   * Dependency count: 2
+   * Average per-function physical LOC: 10.778
+   * Average per-function logical LOC: 5.833
+   * Average per-function cyclomatic complexity: 3.056
+   * Average per-function cyclomatic density: 57.71%
+   * Average per-function halstead difficulty: 5.813
+   * Average per-function halstead volume: 151.945
+   * Average per-function halstead effort: 2374.879
    
-   * Class: **FormatJSONModules**
-      * Line start: 5
-      * Line end: 88
-      * Average per-function physical LOC: 8.5
-      * Average per-function logical LOC: 3.833
-      * Average per-function cyclomatic complexity: 2.667
-      * Average per-function cyclomatic density: 83.333%
-      * Average per-function halstead difficulty: 6.122
-      * Average per-function halstead volume: 116.771
-      * Average per-function halstead effort: 1436.718
+   * Class: **FormatJSONMinimal**
+      * Line start: 8
+      * Line end: 266
+      * Average per-function physical LOC: 10.778
+      * Average per-function logical LOC: 5.833
+      * Average per-function cyclomatic complexity: 3.056
+      * Average per-function cyclomatic density: 57.71%
+      * Average per-function halstead difficulty: 5.813
+      * Average per-function halstead volume: 151.945
+      * Average per-function halstead effort: 2374.879
+      
+      * Class method: **constructor**
+         * Line start: 10
+         * Line end: 13
+         * Physical LOC: 4
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1.25
+         * Halstead volume: 18.095
+         * Halstead effort: 22.618
+         * Parameter count: 1
       
       * Class method: **formatReport**
-         * Line start: 18
-         * Line end: 28
-         * Physical LOC: 11
-         * Logical LOC: 8
-         * Cyclomatic complexity: 6
-         * Cyclomatic complexity density: 75%
-         * Halstead difficulty: 15.231
-         * Halstead volume: 311.777
-         * Halstead effort: 4748.61
+         * Line start: 25
+         * Line end: 58
+         * Physical LOC: 34
+         * Logical LOC: 21
+         * Cyclomatic complexity: 8
+         * Cyclomatic complexity density: 38.095%
+         * Halstead difficulty: 15.662
+         * Halstead volume: 729.912
+         * Halstead effort: 11431.714
          * Parameter count: 2
-      
-      * Class method: **formatResult**
-         * Line start: 40
-         * Line end: 57
-         * Physical LOC: 18
-         * Logical LOC: 4
-         * Cyclomatic complexity: 3
-         * Cyclomatic complexity density: 75%
-         * Halstead difficulty: 11
-         * Halstead volume: 211.52
-         * Halstead effort: 2326.718
-         * Parameter count: 2
-      
-      * Class method: **&lt;anonymous&gt;**
-         * Line start: 44
-         * Line end: 53
-         * Physical LOC: 10
-         * Logical LOC: 8
-         * Cyclomatic complexity: 4
-         * Cyclomatic complexity density: 50%
-         * Halstead difficulty: 9
-         * Halstead volume: 171.331
-         * Halstead effort: 1541.979
-         * Parameter count: 1
       
       * Class method: **extension**
-         * Line start: 64
-         * Line end: 67
+         * Line start: 65
+         * Line end: 68
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -2456,8 +2383,8 @@
          * Parameter count: 0
       
       * Class method: **name**
-         * Line start: 74
-         * Line end: 77
+         * Line start: 75
+         * Line end: 78
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -2468,8 +2395,8 @@
          * Parameter count: 0
       
       * Class method: **type**
-         * Line start: 84
-         * Line end: 87
+         * Line start: 85
+         * Line end: 88
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -2478,11 +2405,288 @@
          * Halstead volume: 2
          * Halstead effort: 1
          * Parameter count: 0
+      
+      * Class method: **isSupported**
+         * Line start: 97
+         * Line end: 111
+         * Physical LOC: 15
+         * Logical LOC: 9
+         * Cyclomatic complexity: 6
+         * Cyclomatic complexity density: 66.667%
+         * Halstead difficulty: 3.889
+         * Halstead volume: 106.606
+         * Halstead effort: 414.579
+         * Parameter count: 1
+      
+      * Class method: **_formatClass**
+         * Line start: 124
+         * Line end: 144
+         * Physical LOC: 21
+         * Logical LOC: 11
+         * Cyclomatic complexity: 5
+         * Cyclomatic complexity density: 45.455%
+         * Halstead difficulty: 12.364
+         * Halstead volume: 284.611
+         * Halstead effort: 3518.829
+         * Parameter count: 2
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 134
+         * Line end: 138
+         * Physical LOC: 5
+         * Logical LOC: 3
+         * Cyclomatic complexity: 2
+         * Cyclomatic complexity density: 66.667%
+         * Halstead difficulty: 4.286
+         * Halstead volume: 68.114
+         * Halstead effort: 291.918
+         * Parameter count: 1
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 141
+         * Line end: 141
+         * Physical LOC: 1
+         * Logical LOC: 0
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 0%
+         * Halstead difficulty: 1.25
+         * Halstead volume: 18.095
+         * Halstead effort: 22.618
+         * Parameter count: 1
+      
+      * Class method: **_formatMethod**
+         * Line start: 156
+         * Line end: 174
+         * Physical LOC: 19
+         * Logical LOC: 10
+         * Cyclomatic complexity: 5
+         * Cyclomatic complexity density: 50%
+         * Halstead difficulty: 12.889
+         * Halstead volume: 228.898
+         * Halstead effort: 2950.24
+         * Parameter count: 2
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 166
+         * Line end: 170
+         * Physical LOC: 5
+         * Logical LOC: 3
+         * Cyclomatic complexity: 2
+         * Cyclomatic complexity density: 66.667%
+         * Halstead difficulty: 4.286
+         * Halstead volume: 68.114
+         * Halstead effort: 291.918
+         * Parameter count: 1
+      
+      * Class method: **_formatModule**
+         * Line start: 190
+         * Line end: 227
+         * Physical LOC: 38
+         * Logical LOC: 30
+         * Cyclomatic complexity: 13
+         * Cyclomatic complexity density: 43.333%
+         * Halstead difficulty: 27.188
+         * Halstead volume: 794.374
+         * Halstead effort: 21597.052
+         * Parameter count: 3
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 204
+         * Line end: 208
+         * Physical LOC: 5
+         * Logical LOC: 3
+         * Cyclomatic complexity: 2
+         * Cyclomatic complexity density: 66.667%
+         * Halstead difficulty: 4.286
+         * Halstead volume: 68.114
+         * Halstead effort: 291.918
+         * Parameter count: 1
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 211
+         * Line end: 211
+         * Physical LOC: 1
+         * Logical LOC: 0
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 0%
+         * Halstead difficulty: 1.25
+         * Halstead volume: 18.095
+         * Halstead effort: 22.618
+         * Parameter count: 1
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 212
+         * Line end: 212
+         * Physical LOC: 1
+         * Logical LOC: 0
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 0%
+         * Halstead difficulty: 1.25
+         * Halstead volume: 18.095
+         * Halstead effort: 22.618
+         * Parameter count: 1
+      
+      * Class method: **_formatProject**
+         * Line start: 242
+         * Line end: 265
+         * Physical LOC: 24
+         * Logical LOC: 7
+         * Cyclomatic complexity: 2
+         * Cyclomatic complexity density: 28.571%
+         * Halstead difficulty: 7.875
+         * Halstead volume: 193.262
+         * Halstead effort: 1521.938
+         * Parameter count: 2
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 248
+         * Line end: 252
+         * Physical LOC: 5
+         * Logical LOC: 3
+         * Cyclomatic complexity: 2
+         * Cyclomatic complexity density: 66.667%
+         * Halstead difficulty: 4.286
+         * Halstead volume: 68.114
+         * Halstead effort: 291.918
+         * Parameter count: 1
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 259
+         * Line end: 262
+         * Physical LOC: 4
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1.125
+         * Halstead volume: 46.507
+         * Halstead effort: 52.32
+         * Parameter count: 1
+
+* Module 27:
+   * File path: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js`
+   * Source path: `typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js`
+   * Total lines: 126
+   * Maintainability index: 123.814
+   * Dependency count: 1
+   * Average per-function physical LOC: 8.125
+   * Average per-function logical LOC: 4.25
+   * Average per-function cyclomatic complexity: 2.125
+   * Average per-function cyclomatic density: 70.833%
+   * Average per-function halstead difficulty: 4.95
+   * Average per-function halstead volume: 88.862
+   * Average per-function halstead effort: 984.923
+   
+   * Class: **FormatJSONModules**
+      * Line start: 7
+      * Line end: 126
+      * Average per-function physical LOC: 8.125
+      * Average per-function logical LOC: 4.25
+      * Average per-function cyclomatic complexity: 2.125
+      * Average per-function cyclomatic density: 70.833%
+      * Average per-function halstead difficulty: 4.95
+      * Average per-function halstead volume: 88.862
+      * Average per-function halstead effort: 984.923
+      
+      * Class method: **formatReport**
+         * Line start: 19
+         * Line end: 40
+         * Physical LOC: 22
+         * Logical LOC: 12
+         * Cyclomatic complexity: 5
+         * Cyclomatic complexity density: 41.667%
+         * Halstead difficulty: 13.125
+         * Halstead volume: 412.261
+         * Halstead effort: 5410.931
+         * Parameter count: 2
+      
+      * Class method: **extension**
+         * Line start: 47
+         * Line end: 50
+         * Physical LOC: 4
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 0.5
+         * Halstead volume: 2
+         * Halstead effort: 1
+         * Parameter count: 0
+      
+      * Class method: **name**
+         * Line start: 57
+         * Line end: 60
+         * Physical LOC: 4
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 0.5
+         * Halstead volume: 2
+         * Halstead effort: 1
+         * Parameter count: 0
+      
+      * Class method: **type**
+         * Line start: 67
+         * Line end: 70
+         * Physical LOC: 4
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 0.5
+         * Halstead volume: 2
+         * Halstead effort: 1
+         * Parameter count: 0
+      
+      * Class method: **isSupported**
+         * Line start: 79
+         * Line end: 90
+         * Physical LOC: 12
+         * Logical LOC: 6
+         * Cyclomatic complexity: 3
+         * Cyclomatic complexity density: 50%
+         * Halstead difficulty: 3.333
+         * Halstead volume: 55.351
+         * Halstead effort: 184.503
+         * Parameter count: 1
+      
+      * Class method: **_formatModule**
+         * Line start: 100
+         * Line end: 109
+         * Physical LOC: 10
+         * Logical LOC: 8
+         * Cyclomatic complexity: 4
+         * Cyclomatic complexity density: 50%
+         * Halstead difficulty: 12.6
+         * Halstead volume: 138.377
+         * Halstead effort: 1743.554
+         * Parameter count: 1
+      
+      * Class method: **_formatProject**
+         * Line start: 118
+         * Line end: 125
+         * Physical LOC: 8
+         * Logical LOC: 4
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 25%
+         * Halstead difficulty: 7.875
+         * Halstead volume: 62.907
+         * Halstead effort: 495.396
+         * Parameter count: 1
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 122
+         * Line end: 122
+         * Physical LOC: 1
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1.167
+         * Halstead volume: 36
+         * Halstead effort: 42
+         * Parameter count: 1
 
 * Module 28:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js`
    * Source path: `typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js`
-   * Total lines: 77
+   * Total lines: 79
    * Maintainability index: 156.387
    * Dependency count: 2
    * Average per-function physical LOC: 4.667
@@ -2604,7 +2808,7 @@
 * Module 30:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js`
    * Source path: `typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js`
-   * Total lines: 80
+   * Total lines: 82
    * Maintainability index: 157.745
    * Dependency count: 2
    * Average per-function physical LOC: 4
@@ -2665,9 +2869,9 @@
 * Module 31:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js`
    * Source path: `typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js`
-   * Total lines: 52
+   * Total lines: 54
    * Maintainability index: 157.745
-   * Dependency count: 1
+   * Dependency count: 2
    * Average per-function physical LOC: 4
    * Average per-function logical LOC: 1
    * Average per-function cyclomatic complexity: 1
@@ -2677,8 +2881,8 @@
    * Average per-function halstead effort: 48.216
    
    * Class: **FormatMarkdownModules**
-      * Line start: 6
-      * Line end: 32
+      * Line start: 8
+      * Line end: 34
       * Average per-function physical LOC: 4
       * Average per-function logical LOC: 1
       * Average per-function cyclomatic complexity: 1
@@ -2688,8 +2892,8 @@
       * Average per-function halstead effort: 48.216
       
       * Class method: **constructor**
-         * Line start: 8
-         * Line end: 11
+         * Line start: 10
+         * Line end: 13
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -2700,8 +2904,8 @@
          * Parameter count: 2
       
       * Class method: **extension**
-         * Line start: 18
-         * Line end: 21
+         * Line start: 20
+         * Line end: 23
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -2712,8 +2916,8 @@
          * Parameter count: 0
       
       * Class method: **name**
-         * Line start: 28
-         * Line end: 31
+         * Line start: 30
+         * Line end: 33
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -2787,31 +2991,31 @@
 * Module 33:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
    * Source path: `typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
-   * Total lines: 302
-   * Maintainability index: 119.155
-   * Dependency count: 1
-   * Average per-function physical LOC: 14.357
-   * Average per-function logical LOC: 4.714
-   * Average per-function cyclomatic complexity: 2.786
-   * Average per-function cyclomatic density: 70.34%
-   * Average per-function halstead difficulty: 8.287
-   * Average per-function halstead volume: 202.879
-   * Average per-function halstead effort: 2310.863
+   * Total lines: 388
+   * Maintainability index: 114.353
+   * Dependency count: 3
+   * Average per-function physical LOC: 19.938
+   * Average per-function logical LOC: 6.063
+   * Average per-function cyclomatic complexity: 3.188
+   * Average per-function cyclomatic density: 67.761%
+   * Average per-function halstead difficulty: 8.661
+   * Average per-function halstead volume: 233.873
+   * Average per-function halstead effort: 2832.711
    
    * Class: **AbstractFormatText**
-      * Line start: 6
-      * Line end: 302
-      * Average per-function physical LOC: 14.357
-      * Average per-function logical LOC: 4.714
-      * Average per-function cyclomatic complexity: 2.786
-      * Average per-function cyclomatic density: 70.34%
-      * Average per-function halstead difficulty: 8.287
-      * Average per-function halstead volume: 202.879
-      * Average per-function halstead effort: 2310.863
+      * Line start: 8
+      * Line end: 388
+      * Average per-function physical LOC: 19.938
+      * Average per-function logical LOC: 6.063
+      * Average per-function cyclomatic complexity: 3.188
+      * Average per-function cyclomatic density: 67.761%
+      * Average per-function halstead difficulty: 8.661
+      * Average per-function halstead volume: 233.873
+      * Average per-function halstead effort: 2832.711
       
       * Class method: **constructor**
-         * Line start: 15
-         * Line end: 19
+         * Line start: 17
+         * Line end: 21
          * Physical LOC: 5
          * Logical LOC: 2
          * Cyclomatic complexity: 1
@@ -2823,43 +3027,19 @@
       
       * Class method: **formatReport**
          * Line start: 33
-         * Line end: 56
-         * Physical LOC: 24
-         * Logical LOC: 10
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 10%
-         * Halstead difficulty: 7.219
-         * Halstead volume: 266.89
-         * Halstead effort: 1926.613
+         * Line end: 68
+         * Physical LOC: 36
+         * Logical LOC: 23
+         * Cyclomatic complexity: 6
+         * Cyclomatic complexity density: 26.087%
+         * Halstead difficulty: 12.321
+         * Halstead volume: 655.991
+         * Halstead effort: 8082.746
          * Parameter count: 2
-      
-      * Class method: **formatResult**
-         * Line start: 70
-         * Line end: 97
-         * Physical LOC: 28
-         * Logical LOC: 4
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 25%
-         * Halstead difficulty: 6.857
-         * Halstead volume: 200.674
-         * Halstead effort: 1376.053
-         * Parameter count: 2
-      
-      * Class method: **&lt;anonymous&gt;**
-         * Line start: 77
-         * Line end: 96
-         * Physical LOC: 20
-         * Logical LOC: 8
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 12.5%
-         * Halstead difficulty: 7
-         * Halstead volume: 165.669
-         * Halstead effort: 1159.684
-         * Parameter count: 3
       
       * Class method: **_formatClass**
-         * Line start: 113
-         * Line end: 124
+         * Line start: 84
+         * Line end: 95
          * Physical LOC: 12
          * Logical LOC: 5
          * Cyclomatic complexity: 6
@@ -2870,8 +3050,8 @@
          * Parameter count: 3
       
       * Class method: **_formatClasses**
-         * Line start: 140
-         * Line end: 148
+         * Line start: 111
+         * Line end: 119
          * Physical LOC: 9
          * Logical LOC: 3
          * Cyclomatic complexity: 2
@@ -2882,8 +3062,8 @@
          * Parameter count: 3
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 144
-         * Line end: 147
+         * Line start: 115
+         * Line end: 118
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -2894,44 +3074,56 @@
          * Parameter count: 2
       
       * Class method: **_formatEntries**
-         * Line start: 162
-         * Line end: 187
-         * Physical LOC: 26
-         * Logical LOC: 6
-         * Cyclomatic complexity: 3
-         * Cyclomatic complexity density: 50%
-         * Halstead difficulty: 10.5
-         * Halstead volume: 192.568
-         * Halstead effort: 2021.968
-         * Parameter count: 3
+         * Line start: 137
+         * Line end: 198
+         * Physical LOC: 62
+         * Logical LOC: 7
+         * Cyclomatic complexity: 4
+         * Cyclomatic complexity density: 57.143%
+         * Halstead difficulty: 12.235
+         * Halstead volume: 309.134
+         * Halstead effort: 3782.347
+         * Parameter count: 4
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 148
+         * Line end: 195
+         * Physical LOC: 48
+         * Logical LOC: 12
+         * Cyclomatic complexity: 7
+         * Cyclomatic complexity density: 58.333%
+         * Halstead difficulty: 15.6
+         * Halstead volume: 387.744
+         * Halstead effort: 6048.812
+         * Parameter count: 1
       
       * Class method: **&lt;anonymous&gt;**
          * Line start: 170
-         * Line end: 184
-         * Physical LOC: 15
-         * Logical LOC: 8
-         * Cyclomatic complexity: 5
-         * Cyclomatic complexity density: 62.5%
-         * Halstead difficulty: 9.688
-         * Halstead volume: 244.423
-         * Halstead effort: 2367.847
-         * Parameter count: 1
+         * Line end: 188
+         * Physical LOC: 19
+         * Logical LOC: 7
+         * Cyclomatic complexity: 3
+         * Cyclomatic complexity density: 42.857%
+         * Halstead difficulty: 6.353
+         * Halstead volume: 185.754
+         * Halstead effort: 1180.086
+         * Parameter count: 2
       
       * Class method: **_formatMethod**
-         * Line start: 204
-         * Line end: 215
+         * Line start: 215
+         * Line end: 226
          * Physical LOC: 12
          * Logical LOC: 4
          * Cyclomatic complexity: 6
          * Cyclomatic complexity density: 150%
-         * Halstead difficulty: 15.167
-         * Halstead volume: 381.473
-         * Halstead effort: 5785.676
+         * Halstead difficulty: 15.528
+         * Halstead volume: 386.427
+         * Halstead effort: 6000.357
          * Parameter count: 4
       
       * Class method: **_formatMethods**
-         * Line start: 232
-         * Line end: 240
+         * Line start: 244
+         * Line end: 252
          * Physical LOC: 9
          * Logical LOC: 3
          * Cyclomatic complexity: 2
@@ -2942,8 +3134,8 @@
          * Parameter count: 4
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 236
-         * Line end: 239
+         * Line start: 248
+         * Line end: 251
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -2954,8 +3146,20 @@
          * Parameter count: 2
       
       * Class method: **_formatModule**
-         * Line start: 257
-         * Line end: 277
+         * Line start: 267
+         * Line end: 287
+         * Physical LOC: 21
+         * Logical LOC: 8
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 12.5%
+         * Halstead difficulty: 5.75
+         * Halstead volume: 162.627
+         * Halstead effort: 935.106
+         * Parameter count: 2
+      
+      * Class method: **_formatModuleReport**
+         * Line start: 304
+         * Line end: 324
          * Physical LOC: 21
          * Logical LOC: 7
          * Cyclomatic complexity: 5
@@ -2966,8 +3170,32 @@
          * Parameter count: 3
       
       * Class method: **_formatProject**
-         * Line start: 290
-         * Line end: 301
+         * Line start: 339
+         * Line end: 363
+         * Physical LOC: 25
+         * Logical LOC: 2
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 50%
+         * Halstead difficulty: 4.2
+         * Halstead volume: 100
+         * Halstead effort: 420
+         * Parameter count: 2
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 343
+         * Line end: 362
+         * Physical LOC: 20
+         * Logical LOC: 8
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 12.5%
+         * Halstead difficulty: 7
+         * Halstead volume: 165.669
+         * Halstead effort: 1159.684
+         * Parameter count: 3
+      
+      * Class method: **_formatProjectReport**
+         * Line start: 376
+         * Line end: 387
          * Physical LOC: 12
          * Logical LOC: 4
          * Cyclomatic complexity: 4
@@ -2980,31 +3208,31 @@
 * Module 34:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
    * Source path: `typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
-   * Total lines: 132
-   * Maintainability index: 118.079
-   * Dependency count: 1
-   * Average per-function physical LOC: 15.5
-   * Average per-function logical LOC: 5
-   * Average per-function cyclomatic complexity: 2.5
-   * Average per-function cyclomatic density: 65.377%
-   * Average per-function halstead difficulty: 5.82
-   * Average per-function halstead volume: 206.828
-   * Average per-function halstead effort: 2412.911
+   * Total lines: 165
+   * Maintainability index: 116.238
+   * Dependency count: 2
+   * Average per-function physical LOC: 16
+   * Average per-function logical LOC: 5.714
+   * Average per-function cyclomatic complexity: 2.571
+   * Average per-function cyclomatic density: 52.228%
+   * Average per-function halstead difficulty: 6.06
+   * Average per-function halstead volume: 204.024
+   * Average per-function halstead effort: 2191.821
    
    * Class: **AbstractTextMatrix**
-      * Line start: 6
-      * Line end: 132
-      * Average per-function physical LOC: 15.5
-      * Average per-function logical LOC: 5
-      * Average per-function cyclomatic complexity: 2.5
-      * Average per-function cyclomatic density: 65.377%
-      * Average per-function halstead difficulty: 5.82
-      * Average per-function halstead volume: 206.828
-      * Average per-function halstead effort: 2412.911
+      * Line start: 7
+      * Line end: 165
+      * Average per-function physical LOC: 16
+      * Average per-function logical LOC: 5.714
+      * Average per-function cyclomatic complexity: 2.571
+      * Average per-function cyclomatic density: 52.228%
+      * Average per-function halstead difficulty: 6.06
+      * Average per-function halstead volume: 204.024
+      * Average per-function halstead effort: 2191.821
       
       * Class method: **constructor**
-         * Line start: 21
-         * Line end: 25
+         * Line start: 22
+         * Line end: 26
          * Physical LOC: 5
          * Logical LOC: 2
          * Cyclomatic complexity: 1
@@ -3015,20 +3243,32 @@
          * Parameter count: 2
       
       * Class method: **formatReport**
-         * Line start: 33
-         * Line end: 36
-         * Physical LOC: 4
-         * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 0.5
-         * Halstead volume: 2
-         * Halstead effort: 1
-         * Parameter count: 0
+         * Line start: 38
+         * Line end: 49
+         * Physical LOC: 12
+         * Logical LOC: 6
+         * Cyclomatic complexity: 2
+         * Cyclomatic complexity density: 33.333%
+         * Halstead difficulty: 5
+         * Halstead volume: 149.339
+         * Halstead effort: 746.694
+         * Parameter count: 2
       
-      * Class method: **formatResult**
-         * Line start: 50
-         * Line end: 89
+      * Class method: **isSupported**
+         * Line start: 58
+         * Line end: 68
+         * Physical LOC: 11
+         * Logical LOC: 5
+         * Cyclomatic complexity: 2
+         * Cyclomatic complexity density: 40%
+         * Halstead difficulty: 3
+         * Halstead volume: 39.863
+         * Halstead effort: 119.589
+         * Parameter count: 1
+      
+      * Class method: **_formatProject**
+         * Line start: 83
+         * Line end: 122
          * Physical LOC: 40
          * Logical LOC: 16
          * Cyclomatic complexity: 6
@@ -3039,8 +3279,8 @@
          * Parameter count: 2
       
       * Class method: **_formatMatrixList**
-         * Line start: 106
-         * Line end: 131
+         * Line start: 139
+         * Line end: 164
          * Physical LOC: 26
          * Logical LOC: 7
          * Cyclomatic complexity: 5
@@ -3051,8 +3291,8 @@
          * Parameter count: 3
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 116
-         * Line end: 128
+         * Line start: 149
+         * Line end: 161
          * Physical LOC: 13
          * Logical LOC: 3
          * Cyclomatic complexity: 1
@@ -3063,8 +3303,8 @@
          * Parameter count: 1
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 121
-         * Line end: 125
+         * Line start: 154
+         * Line end: 158
          * Physical LOC: 5
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -3077,31 +3317,31 @@
 * Module 35:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js`
    * Source path: `typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js`
-   * Total lines: 211
-   * Maintainability index: 125.777
-   * Dependency count: 2
-   * Average per-function physical LOC: 9
-   * Average per-function logical LOC: 3.2
-   * Average per-function cyclomatic complexity: 2.2
-   * Average per-function cyclomatic density: 80.667%
-   * Average per-function halstead difficulty: 4.784
-   * Average per-function halstead volume: 142.16
-   * Average per-function halstead effort: 2122.521
+   * Total lines: 242
+   * Maintainability index: 121.935
+   * Dependency count: 4
+   * Average per-function physical LOC: 10
+   * Average per-function logical LOC: 4.167
+   * Average per-function cyclomatic complexity: 2.833
+   * Average per-function cyclomatic density: 78.333%
+   * Average per-function halstead difficulty: 4.635
+   * Average per-function halstead volume: 136.234
+   * Average per-function halstead effort: 1837.864
    
    * Class: **FormatText**
-      * Line start: 7
-      * Line end: 85
-      * Average per-function physical LOC: 9
-      * Average per-function logical LOC: 3.2
-      * Average per-function cyclomatic complexity: 2.2
-      * Average per-function cyclomatic density: 80.667%
-      * Average per-function halstead difficulty: 4.784
-      * Average per-function halstead volume: 142.16
-      * Average per-function halstead effort: 2122.521
+      * Line start: 10
+      * Line end: 112
+      * Average per-function physical LOC: 10
+      * Average per-function logical LOC: 4.167
+      * Average per-function cyclomatic complexity: 2.833
+      * Average per-function cyclomatic density: 78.333%
+      * Average per-function halstead difficulty: 4.635
+      * Average per-function halstead volume: 136.234
+      * Average per-function halstead effort: 1837.864
       
       * Class method: **constructor**
-         * Line start: 9
-         * Line end: 17
+         * Line start: 12
+         * Line end: 20
          * Physical LOC: 9
          * Logical LOC: 3
          * Cyclomatic complexity: 1
@@ -3111,21 +3351,9 @@
          * Halstead effort: 625.489
          * Parameter count: 4
       
-      * Class method: **formatResult**
-         * Line start: 31
-         * Line end: 54
-         * Physical LOC: 24
-         * Logical LOC: 10
-         * Cyclomatic complexity: 7
-         * Cyclomatic complexity density: 70%
-         * Halstead difficulty: 18.85
-         * Halstead volume: 529.661
-         * Halstead effort: 9984.117
-         * Parameter count: 2
-      
       * Class method: **extension**
-         * Line start: 61
-         * Line end: 64
+         * Line start: 27
+         * Line end: 30
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -3136,8 +3364,8 @@
          * Parameter count: 0
       
       * Class method: **name**
-         * Line start: 71
-         * Line end: 74
+         * Line start: 37
+         * Line end: 40
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -3148,8 +3376,8 @@
          * Parameter count: 0
       
       * Class method: **type**
-         * Line start: 81
-         * Line end: 84
+         * Line start: 47
+         * Line end: 50
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -3158,6 +3386,30 @@
          * Halstead volume: 2
          * Halstead effort: 1
          * Parameter count: 0
+      
+      * Class method: **isSupported**
+         * Line start: 59
+         * Line end: 73
+         * Physical LOC: 15
+         * Logical LOC: 9
+         * Cyclomatic complexity: 6
+         * Cyclomatic complexity density: 66.667%
+         * Halstead difficulty: 3.889
+         * Halstead volume: 106.606
+         * Halstead effort: 414.579
+         * Parameter count: 1
+      
+      * Class method: **_formatProject**
+         * Line start: 87
+         * Line end: 110
+         * Physical LOC: 24
+         * Logical LOC: 10
+         * Cyclomatic complexity: 7
+         * Cyclomatic complexity density: 70%
+         * Halstead difficulty: 18.85
+         * Halstead volume: 529.661
+         * Halstead effort: 9984.117
+         * Parameter count: 2
 
 * Module 36:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js`
@@ -3235,31 +3487,31 @@
 * Module 37:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js`
    * Source path: `typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js`
-   * Total lines: 102
-   * Maintainability index: 156.212
-   * Dependency count: 1
-   * Average per-function physical LOC: 4.25
-   * Average per-function logical LOC: 1
-   * Average per-function cyclomatic complexity: 1
-   * Average per-function cyclomatic density: 100%
-   * Average per-function halstead difficulty: 1.179
-   * Average per-function halstead volume: 24.753
-   * Average per-function halstead effort: 75.493
+   * Total lines: 129
+   * Maintainability index: 138.381
+   * Dependency count: 3
+   * Average per-function physical LOC: 6.4
+   * Average per-function logical LOC: 2.6
+   * Average per-function cyclomatic complexity: 2
+   * Average per-function cyclomatic density: 93.333%
+   * Average per-function halstead difficulty: 1.721
+   * Average per-function halstead volume: 41.124
+   * Average per-function halstead effort: 143.31
    
    * Class: **FormatTextMinimal**
-      * Line start: 7
-      * Line end: 44
-      * Average per-function physical LOC: 4.25
-      * Average per-function logical LOC: 1
-      * Average per-function cyclomatic complexity: 1
-      * Average per-function cyclomatic density: 100%
-      * Average per-function halstead difficulty: 1.179
-      * Average per-function halstead volume: 24.753
-      * Average per-function halstead effort: 75.493
+      * Line start: 10
+      * Line end: 70
+      * Average per-function physical LOC: 6.4
+      * Average per-function logical LOC: 2.6
+      * Average per-function cyclomatic complexity: 2
+      * Average per-function cyclomatic density: 93.333%
+      * Average per-function halstead difficulty: 1.721
+      * Average per-function halstead volume: 41.124
+      * Average per-function halstead effort: 143.31
       
       * Class method: **constructor**
-         * Line start: 9
-         * Line end: 13
+         * Line start: 12
+         * Line end: 16
          * Physical LOC: 5
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -3270,8 +3522,8 @@
          * Parameter count: 2
       
       * Class method: **extension**
-         * Line start: 20
-         * Line end: 23
+         * Line start: 23
+         * Line end: 26
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -3282,8 +3534,8 @@
          * Parameter count: 0
       
       * Class method: **name**
-         * Line start: 30
-         * Line end: 33
+         * Line start: 33
+         * Line end: 36
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -3294,8 +3546,8 @@
          * Parameter count: 0
       
       * Class method: **type**
-         * Line start: 40
-         * Line end: 43
+         * Line start: 43
+         * Line end: 46
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -3304,35 +3556,47 @@
          * Halstead volume: 2
          * Halstead effort: 1
          * Parameter count: 0
+      
+      * Class method: **isSupported**
+         * Line start: 55
+         * Line end: 69
+         * Physical LOC: 15
+         * Logical LOC: 9
+         * Cyclomatic complexity: 6
+         * Cyclomatic complexity density: 66.667%
+         * Halstead difficulty: 3.889
+         * Halstead volume: 106.606
+         * Halstead effort: 414.579
+         * Parameter count: 1
 
 * Module 38:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
    * Source path: `typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
-   * Total lines: 62
-   * Maintainability index: 158.705
-   * Dependency count: 1
-   * Average per-function physical LOC: 4
-   * Average per-function logical LOC: 1
-   * Average per-function cyclomatic complexity: 1
-   * Average per-function cyclomatic density: 100%
-   * Average per-function halstead difficulty: 1
-   * Average per-function halstead volume: 15.765
-   * Average per-function halstead effort: 36.412
+   * Total lines: 85
+   * Maintainability index: 145.363
+   * Dependency count: 3
+   * Average per-function physical LOC: 5.6
+   * Average per-function logical LOC: 2
+   * Average per-function cyclomatic complexity: 1.4
+   * Average per-function cyclomatic density: 90%
+   * Average per-function halstead difficulty: 1.467
+   * Average per-function halstead volume: 23.682
+   * Average per-function halstead effort: 66.03
    
    * Class: **FormatTextModules**
-      * Line start: 7
-      * Line end: 43
-      * Average per-function physical LOC: 4
-      * Average per-function logical LOC: 1
-      * Average per-function cyclomatic complexity: 1
-      * Average per-function cyclomatic density: 100%
-      * Average per-function halstead difficulty: 1
-      * Average per-function halstead volume: 15.765
-      * Average per-function halstead effort: 36.412
+      * Line start: 10
+      * Line end: 66
+      * Average per-function physical LOC: 5.6
+      * Average per-function logical LOC: 2
+      * Average per-function cyclomatic complexity: 1.4
+      * Average per-function cyclomatic density: 90%
+      * Average per-function halstead difficulty: 1.467
+      * Average per-function halstead volume: 23.682
+      * Average per-function halstead effort: 66.03
       
       * Class method: **constructor**
-         * Line start: 9
-         * Line end: 12
+         * Line start: 12
+         * Line end: 15
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -3343,8 +3607,8 @@
          * Parameter count: 2
       
       * Class method: **extension**
-         * Line start: 19
-         * Line end: 22
+         * Line start: 22
+         * Line end: 25
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -3355,8 +3619,8 @@
          * Parameter count: 0
       
       * Class method: **name**
-         * Line start: 29
-         * Line end: 32
+         * Line start: 32
+         * Line end: 35
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -3367,8 +3631,8 @@
          * Parameter count: 0
       
       * Class method: **type**
-         * Line start: 39
-         * Line end: 42
+         * Line start: 42
+         * Line end: 45
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -3377,6 +3641,18 @@
          * Halstead volume: 2
          * Halstead effort: 1
          * Parameter count: 0
+      
+      * Class method: **isSupported**
+         * Line start: 54
+         * Line end: 65
+         * Physical LOC: 12
+         * Logical LOC: 6
+         * Cyclomatic complexity: 3
+         * Cyclomatic complexity density: 50%
+         * Halstead difficulty: 3.333
+         * Halstead volume: 55.351
+         * Halstead effort: 184.503
+         * Parameter count: 1
 
 * Module 39:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
@@ -3454,151 +3730,115 @@
 * Module 40:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/transform/TransformFormat.js`
    * Source path: `typhonjs-escomplex-commons/src/transform/TransformFormat.js`
-   * Total lines: 214
-   * Maintainability index: 130.284
-   * Dependency count: 16
-   * Average per-function physical LOC: 7.917
-   * Average per-function logical LOC: 3.167
-   * Average per-function cyclomatic complexity: 2.083
-   * Average per-function cyclomatic density: 85.043%
-   * Average per-function halstead difficulty: 3.587
-   * Average per-function halstead volume: 83.929
-   * Average per-function halstead effort: 599.274
+   * Total lines: 218
+   * Maintainability index: 122.862
+   * Dependency count: 15
+   * Average per-function physical LOC: 9.9
+   * Average per-function logical LOC: 4.4
+   * Average per-function cyclomatic complexity: 2.7
+   * Average per-function cyclomatic density: 63.885%
+   * Average per-function halstead difficulty: 5.274
+   * Average per-function halstead volume: 129.027
+   * Average per-function halstead effort: 1086.379
    
    * Class: **TransformFormat**
-      * Line start: 26
-      * Line end: 195
-      * Average per-function physical LOC: 7.917
-      * Average per-function logical LOC: 3.167
-      * Average per-function cyclomatic complexity: 2.083
-      * Average per-function cyclomatic density: 85.043%
-      * Average per-function halstead difficulty: 3.587
-      * Average per-function halstead volume: 83.929
-      * Average per-function halstead effort: 599.274
+      * Line start: 25
+      * Line end: 199
+      * Average per-function physical LOC: 9.9
+      * Average per-function logical LOC: 4.4
+      * Average per-function cyclomatic complexity: 2.7
+      * Average per-function cyclomatic density: 63.885%
+      * Average per-function halstead difficulty: 5.274
+      * Average per-function halstead volume: 129.027
+      * Average per-function halstead effort: 1086.379
       
       * Class method: **addFormat**
-         * Line start: 33
-         * Line end: 63
+         * Line start: 32
+         * Line end: 62
          * Physical LOC: 31
          * Logical LOC: 13
          * Cyclomatic complexity: 7
          * Cyclomatic complexity density: 53.846%
-         * Halstead difficulty: 6.806
-         * Halstead volume: 339.002
-         * Halstead effort: 2307.094
+         * Halstead difficulty: 8.658
+         * Halstead volume: 418.339
+         * Halstead effort: 3621.936
          * Parameter count: 1
       
       * Class method: **forEach**
-         * Line start: 71
-         * Line end: 74
+         * Line start: 70
+         * Line end: 73
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
          * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 1.5
-         * Halstead volume: 20.68
-         * Halstead effort: 31.02
+         * Halstead difficulty: 2.1
+         * Halstead volume: 30
+         * Halstead effort: 63
          * Parameter count: 2
       
       * Class method: **forEachExt**
-         * Line start: 84
-         * Line end: 90
+         * Line start: 83
+         * Line end: 89
          * Physical LOC: 7
          * Logical LOC: 4
          * Cyclomatic complexity: 2
          * Cyclomatic complexity density: 50%
-         * Halstead difficulty: 5.333
-         * Halstead volume: 101.579
-         * Halstead effort: 541.755
+         * Halstead difficulty: 6.222
+         * Halstead volume: 108
+         * Halstead effort: 672
          * Parameter count: 3
       
       * Class method: **forEachType**
-         * Line start: 100
-         * Line end: 106
+         * Line start: 99
+         * Line end: 105
          * Physical LOC: 7
          * Logical LOC: 4
          * Cyclomatic complexity: 2
          * Cyclomatic complexity density: 50%
-         * Halstead difficulty: 5.333
-         * Halstead volume: 101.579
-         * Halstead effort: 541.755
+         * Halstead difficulty: 6.222
+         * Halstead volume: 108
+         * Halstead effort: 672
          * Parameter count: 3
       
       * Class method: **format**
-         * Line start: 119
-         * Line end: 142
-         * Physical LOC: 24
-         * Logical LOC: 9
-         * Cyclomatic complexity: 6
-         * Cyclomatic complexity density: 66.667%
-         * Halstead difficulty: 12.235
-         * Halstead volume: 284.6
-         * Halstead effort: 3482.16
+         * Line start: 118
+         * Line end: 136
+         * Physical LOC: 19
+         * Logical LOC: 12
+         * Cyclomatic complexity: 7
+         * Cyclomatic complexity density: 58.333%
+         * Halstead difficulty: 11.667
+         * Halstead volume: 328.274
+         * Halstead effort: 3829.865
          * Parameter count: 3
       
-      * Class method: **getFileExtensions**
-         * Line start: 149
-         * Line end: 152
-         * Physical LOC: 4
-         * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 2
-         * Halstead volume: 41.209
-         * Halstead effort: 82.418
-         * Parameter count: 0
-      
-      * Class method: **&lt;anonymous&gt;**
-         * Line start: 151
-         * Line end: 151
-         * Physical LOC: 1
-         * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 1.5
-         * Halstead volume: 10
-         * Halstead effort: 15
+      * Class method: **getFormats**
+         * Line start: 145
+         * Line end: 160
+         * Physical LOC: 16
+         * Logical LOC: 5
+         * Cyclomatic complexity: 3
+         * Cyclomatic complexity density: 60%
+         * Halstead difficulty: 9.273
+         * Halstead volume: 176.419
+         * Halstead effort: 1635.884
          * Parameter count: 1
       
-      * Class method: **getNames**
-         * Line start: 159
-         * Line end: 162
-         * Physical LOC: 4
-         * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 1.5
-         * Halstead volume: 25.266
-         * Halstead effort: 37.899
-         * Parameter count: 0
-      
-      * Class method: **getTypes**
-         * Line start: 169
-         * Line end: 172
-         * Physical LOC: 4
-         * Logical LOC: 1
-         * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 2
-         * Halstead volume: 41.209
-         * Halstead effort: 82.418
-         * Parameter count: 0
-      
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 171
-         * Line end: 171
+         * Line start: 159
+         * Line end: 159
          * Physical LOC: 1
-         * Logical LOC: 1
+         * Logical LOC: 0
          * Cyclomatic complexity: 1
-         * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 1.5
-         * Halstead volume: 10
-         * Halstead effort: 15
+         * Cyclomatic complexity density: 0%
+         * Halstead difficulty: 1.333
+         * Halstead volume: 13.932
+         * Halstead effort: 18.575
          * Parameter count: 1
       
       * Class method: **isFormat**
-         * Line start: 181
-         * Line end: 184
+         * Line start: 169
+         * Line end: 172
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -3608,9 +3848,21 @@
          * Halstead effort: 36.189
          * Parameter count: 1
       
+      * Class method: **isSupported**
+         * Line start: 183
+         * Line end: 188
+         * Physical LOC: 6
+         * Logical LOC: 3
+         * Cyclomatic complexity: 2
+         * Cyclomatic complexity density: 66.667%
+         * Halstead difficulty: 3.929
+         * Halstead volume: 75.284
+         * Halstead effort: 295.759
+         * Parameter count: 2
+      
       * Class method: **removeFormat**
-         * Line start: 191
-         * Line end: 194
+         * Line start: 195
+         * Line end: 198
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -3621,6 +3873,176 @@
          * Parameter count: 1
 
 * Module 41:
+   * File path: `./node_modules/typhonjs-escomplex-commons/src/types/ReportType.js`
+   * Source path: `typhonjs-escomplex-commons/src/types/ReportType.js`
+   * Total lines: 13
+   * Maintainability index: 106.3
+   * Dependency count: 1
+   * Average per-function physical LOC: 13
+   * Average per-function logical LOC: 12
+   * Average per-function cyclomatic complexity: 1
+   * Average per-function cyclomatic density: 8.333%
+   * Average per-function halstead difficulty: 6.3
+   * Average per-function halstead volume: 201.738
+   * Average per-function halstead effort: 1270.952
+   
+   * Class: **ReportType**
+      * Line start: 3
+      * Line end: 3
+      * Average per-function physical LOC: 1
+      * Average per-function logical LOC: 0
+      * Average per-function cyclomatic complexity: 1
+      * Average per-function cyclomatic density: 0%
+      * Average per-function halstead difficulty: 0
+      * Average per-function halstead volume: 2
+      * Average per-function halstead effort: 0
+
+* Module 42:
+   * File path: `./node_modules/typhonjs-escomplex-commons/src/utils/Enum.js`
+   * Source path: `typhonjs-escomplex-commons/src/utils/Enum.js`
+   * Total lines: 157
+   * Maintainability index: 127.178
+   * Dependency count: 0
+   * Average per-function physical LOC: 8.8
+   * Average per-function logical LOC: 4
+   * Average per-function cyclomatic complexity: 1.4
+   * Average per-function cyclomatic density: 48.75%
+   * Average per-function halstead difficulty: 4.224
+   * Average per-function halstead volume: 88.412
+   * Average per-function halstead effort: 504.796
+   
+   * Module method: **s_COPY_PROPERTIES**
+      * Line start: 147
+      * Line end: 157
+      * Physical LOC: 11
+      * Logical LOC: 5
+      * Cyclomatic complexity: 1
+      * Cyclomatic complexity density: 20%
+      * Halstead difficulty: 6.375
+      * Halstead volume: 106.606
+      * Halstead effort: 679.613
+      * Parameter count: 2
+   
+   * Class: **Enum**
+      * Line start: 8
+      * Line end: 127
+      * Average per-function physical LOC: 8.556
+      * Average per-function logical LOC: 3.889
+      * Average per-function cyclomatic complexity: 1.444
+      * Average per-function cyclomatic density: 51.944%
+      * Average per-function halstead difficulty: 3.985
+      * Average per-function halstead volume: 86.391
+      * Average per-function halstead effort: 485.372
+      
+      * Class method: **constructor**
+         * Line start: 18
+         * Line end: 30
+         * Physical LOC: 13
+         * Logical LOC: 5
+         * Cyclomatic complexity: 4
+         * Cyclomatic complexity density: 80%
+         * Halstead difficulty: 7.333
+         * Halstead volume: 140.23
+         * Halstead effort: 1028.356
+         * Parameter count: 1
+      
+      * Class method: **initEnum**
+         * Line start: 41
+         * Line end: 64
+         * Physical LOC: 24
+         * Logical LOC: 12
+         * Cyclomatic complexity: 2
+         * Cyclomatic complexity density: 16.667%
+         * Halstead difficulty: 7.25
+         * Halstead volume: 242.499
+         * Halstead effort: 1758.12
+         * Parameter count: 1
+      
+      * Class method: **_enumValuesFromArray**
+         * Line start: 66
+         * Line end: 69
+         * Physical LOC: 4
+         * Logical LOC: 3
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 33.333%
+         * Halstead difficulty: 4.375
+         * Halstead volume: 38.039
+         * Halstead effort: 166.421
+         * Parameter count: 1
+      
+      * Class method: **_enumValuesFromObject**
+         * Line start: 71
+         * Line end: 78
+         * Physical LOC: 8
+         * Logical LOC: 4
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 25%
+         * Halstead difficulty: 5.571
+         * Halstead volume: 85.11
+         * Halstead effort: 474.185
+         * Parameter count: 1
+      
+      * Class method: **_pushEnumValue**
+         * Line start: 80
+         * Line end: 94
+         * Physical LOC: 15
+         * Logical LOC: 8
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 12.5%
+         * Halstead difficulty: 4.333
+         * Halstead volume: 181.521
+         * Halstead effort: 786.591
+         * Parameter count: 2
+      
+      * Class method: **enumValueOf**
+         * Line start: 103
+         * Line end: 106
+         * Physical LOC: 4
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 2
+         * Halstead volume: 27
+         * Halstead effort: 54
+         * Parameter count: 1
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 105
+         * Line end: 105
+         * Physical LOC: 1
+         * Logical LOC: 0
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 0%
+         * Halstead difficulty: 2
+         * Halstead volume: 12
+         * Halstead effort: 24
+         * Parameter count: 1
+      
+      * Class method: **&lt;anonymous&gt;**
+         * Line start: 113
+         * Line end: 116
+         * Physical LOC: 4
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1.5
+         * Halstead volume: 25.266
+         * Halstead effort: 37.899
+         * Parameter count: 0
+      
+      * Class method: **toString**
+         * Line start: 123
+         * Line end: 126
+         * Physical LOC: 4
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1.5
+         * Halstead volume: 25.85
+         * Halstead effort: 38.774
+         * Parameter count: 0
+
+* Module 43:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/utils/MathUtil.js`
    * Source path: `typhonjs-escomplex-commons/src/utils/MathUtil.js`
    * Total lines: 115
@@ -3753,23 +4175,23 @@
          * Halstead effort: 840.849
          * Parameter count: 1
 
-* Module 42:
+* Module 44:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
    * Source path: `typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
-   * Total lines: 199
-   * Maintainability index: 102.252
+   * Total lines: 231
+   * Maintainability index: 102.148
    * Dependency count: 0
-   * Average per-function physical LOC: 18.571
-   * Average per-function logical LOC: 10.571
-   * Average per-function cyclomatic complexity: 4.857
-   * Average per-function cyclomatic density: 70.23%
-   * Average per-function halstead difficulty: 14.767
-   * Average per-function halstead volume: 266.575
-   * Average per-function halstead effort: 6803.483
+   * Average per-function physical LOC: 18.875
+   * Average per-function logical LOC: 10.625
+   * Average per-function cyclomatic complexity: 5.125
+   * Average per-function cyclomatic density: 69.406%
+   * Average per-function halstead difficulty: 15.326
+   * Average per-function halstead volume: 279.243
+   * Average per-function halstead effort: 6823.151
    
    * Module method: **_depthTraverse**
-      * Line start: 146
-      * Line end: 162
+      * Line start: 178
+      * Line end: 194
       * Physical LOC: 17
       * Logical LOC: 13
       * Cyclomatic complexity: 5
@@ -3780,8 +4202,8 @@
       * Parameter count: 2
    
    * Module method: **_getAccessorList**
-      * Line start: 173
-      * Line end: 198
+      * Line start: 205
+      * Line end: 230
       * Physical LOC: 26
       * Logical LOC: 10
       * Cyclomatic complexity: 3
@@ -3792,8 +4214,8 @@
       * Parameter count: 1
    
    * Module method: **&lt;anonymous&gt;**
-      * Line start: 185
-      * Line end: 188
+      * Line start: 217
+      * Line end: 220
       * Physical LOC: 4
       * Logical LOC: 1
       * Cyclomatic complexity: 2
@@ -3805,14 +4227,14 @@
    
    * Class: **ObjectUtil**
       * Line start: 4
-      * Line end: 132
-      * Average per-function physical LOC: 20.75
-      * Average per-function logical LOC: 12.5
-      * Average per-function cyclomatic complexity: 6
-      * Average per-function cyclomatic density: 55.787%
-      * Average per-function halstead difficulty: 16.517
-      * Average per-function halstead volume: 326.167
-      * Average per-function halstead effort: 9624.995
+      * Line end: 164
+      * Average per-function physical LOC: 20.8
+      * Average per-function logical LOC: 12.2
+      * Average per-function cyclomatic complexity: 6.2
+      * Average per-function cyclomatic density: 57.357%
+      * Average per-function halstead difficulty: 17.062
+      * Average per-function halstead volume: 334.517
+      * Average per-function halstead effort: 9092.161
       
       * Class method: **depthTraverse**
          * Line start: 15
@@ -3845,14 +4267,26 @@
          * Logical LOC: 11
          * Cyclomatic complexity: 6
          * Cyclomatic complexity density: 54.545%
-         * Halstead difficulty: 17
-         * Halstead volume: 317.285
-         * Halstead effort: 5393.852
+         * Halstead difficulty: 19.615
+         * Halstead volume: 322.093
+         * Halstead effort: 6317.974
          * Parameter count: 3
       
+      * Class method: **safeEqual**
+         * Line start: 80
+         * Line end: 100
+         * Physical LOC: 21
+         * Logical LOC: 11
+         * Cyclomatic complexity: 7
+         * Cyclomatic complexity density: 63.636%
+         * Halstead difficulty: 16.625
+         * Halstead volume: 363.11
+         * Halstead effort: 6036.702
+         * Parameter count: 2
+      
       * Class method: **safeSet**
-         * Line start: 83
-         * Line end: 131
+         * Line start: 115
+         * Line end: 163
          * Physical LOC: 49
          * Logical LOC: 31
          * Cyclomatic complexity: 13
@@ -3862,30 +4296,30 @@
          * Halstead effort: 32304.689
          * Parameter count: 4
 
-* Module 43:
+* Module 45:
    * File path: `./node_modules/typhonjs-escomplex-commons/src/utils/StringUtil.js`
    * Source path: `typhonjs-escomplex-commons/src/utils/StringUtil.js`
-   * Total lines: 192
-   * Maintainability index: 113.509
+   * Total lines: 272
+   * Maintainability index: 124.092
    * Dependency count: 1
-   * Average per-function physical LOC: 11.625
-   * Average per-function logical LOC: 5.25
-   * Average per-function cyclomatic complexity: 3
-   * Average per-function cyclomatic density: 89.532%
-   * Average per-function halstead difficulty: 9.819
-   * Average per-function halstead volume: 220.56
-   * Average per-function halstead effort: 7198.907
+   * Average per-function physical LOC: 9.2
+   * Average per-function logical LOC: 3.6
+   * Average per-function cyclomatic complexity: 2.4
+   * Average per-function cyclomatic density: 93.222%
+   * Average per-function halstead difficulty: 5.046
+   * Average per-function halstead volume: 125.521
+   * Average per-function halstead effort: 1976.86
    
    * Class: **StringUtil**
       * Line start: 6
-      * Line end: 192
-      * Average per-function physical LOC: 11.625
-      * Average per-function logical LOC: 5.25
-      * Average per-function cyclomatic complexity: 3
-      * Average per-function cyclomatic density: 89.532%
-      * Average per-function halstead difficulty: 9.819
-      * Average per-function halstead volume: 220.56
-      * Average per-function halstead effort: 7198.907
+      * Line end: 173
+      * Average per-function physical LOC: 9.111
+      * Average per-function logical LOC: 3.778
+      * Average per-function cyclomatic complexity: 2.556
+      * Average per-function cyclomatic density: 93.889%
+      * Average per-function halstead difficulty: 6.68
+      * Average per-function halstead volume: 152.083
+      * Average per-function halstead effort: 2733.2
       
       * Class method: **compare**
          * Line start: 16
@@ -3923,16 +4357,28 @@
          * Halstead effort: 172.846
          * Parameter count: 2
       
+      * Class method: **SafeEntry**
+         * Line start: 52
+         * Line end: 52
+         * Physical LOC: 1
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 0.5
+         * Halstead volume: 2
+         * Halstead effort: 1
+         * Parameter count: 0
+      
       * Class method: **safeStringObject**
-         * Line start: 61
-         * Line end: 74
+         * Line start: 68
+         * Line end: 81
          * Physical LOC: 14
          * Logical LOC: 7
-         * Cyclomatic complexity: 5
-         * Cyclomatic complexity density: 71.429%
-         * Halstead difficulty: 16.667
-         * Halstead volume: 322.841
-         * Halstead effort: 5380.687
+         * Cyclomatic complexity: 7
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 18.4
+         * Halstead volume: 392.914
+         * Halstead effort: 7229.623
          * Parameter count: 6
       
       * Class method: **safeStringsObject**
@@ -3948,20 +4394,20 @@
          * Parameter count: 2
       
       * Class method: **safeStringsPrependObject**
-         * Line start: 124
-         * Line end: 175
-         * Physical LOC: 52
-         * Logical LOC: 29
-         * Cyclomatic complexity: 13
-         * Cyclomatic complexity density: 44.828%
-         * Halstead difficulty: 44.4
-         * Halstead volume: 1156.732
-         * Halstead effort: 51358.918
+         * Line start: 117
+         * Line end: 156
+         * Physical LOC: 40
+         * Logical LOC: 20
+         * Cyclomatic complexity: 9
+         * Cyclomatic complexity density: 45%
+         * Halstead difficulty: 23.574
+         * Halstead volume: 701.492
+         * Halstead effort: 16537.033
          * Parameter count: 3
       
       * Class method: **tagEscapeHTML**
-         * Line start: 185
-         * Line end: 191
+         * Line start: 166
+         * Line end: 172
          * Physical LOC: 7
          * Logical LOC: 1
          * Cyclomatic complexity: 1
@@ -3972,18 +4418,101 @@
          * Parameter count: 2
       
       * Class method: **&lt;anonymous&gt;**
-         * Line start: 187
-         * Line end: 190
+         * Line start: 168
+         * Line end: 171
          * Physical LOC: 4
          * Logical LOC: 1
          * Cyclomatic complexity: 1
          * Cyclomatic complexity density: 100%
-         * Halstead difficulty: 2.727
-         * Halstead volume: 97.672
-         * Halstead effort: 266.379
+         * Halstead difficulty: 2.889
+         * Halstead volume: 85.11
+         * Halstead effort: 245.874
          * Parameter count: 3
+   
+   * Class: **SafeEntry**
+      * Line start: 180
+      * Line end: 272
+      * Average per-function physical LOC: 9.333
+      * Average per-function logical LOC: 3.333
+      * Average per-function cyclomatic complexity: 2.167
+      * Average per-function cyclomatic density: 92.222%
+      * Average per-function halstead difficulty: 2.596
+      * Average per-function halstead volume: 85.677
+      * Average per-function halstead effort: 842.35
+      
+      * Class method: **constructor**
+         * Line start: 191
+         * Line end: 241
+         * Physical LOC: 51
+         * Logical LOC: 15
+         * Cyclomatic complexity: 8
+         * Cyclomatic complexity density: 53.333%
+         * Halstead difficulty: 10.577
+         * Halstead volume: 474.06
+         * Halstead effort: 5014.099
+         * Parameter count: 5
+      
+      * Class method: **accessor**
+         * Line start: 247
+         * Line end: 247
+         * Physical LOC: 1
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1
+         * Halstead volume: 8
+         * Halstead effort: 8
+         * Parameter count: 0
+      
+      * Class method: **appendString**
+         * Line start: 253
+         * Line end: 253
+         * Physical LOC: 1
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1
+         * Halstead volume: 8
+         * Halstead effort: 8
+         * Parameter count: 0
+      
+      * Class method: **newLine**
+         * Line start: 259
+         * Line end: 259
+         * Physical LOC: 1
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1
+         * Halstead volume: 8
+         * Halstead effort: 8
+         * Parameter count: 0
+      
+      * Class method: **prependString**
+         * Line start: 265
+         * Line end: 265
+         * Physical LOC: 1
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1
+         * Halstead volume: 8
+         * Halstead effort: 8
+         * Parameter count: 0
+      
+      * Class method: **tagFunction**
+         * Line start: 271
+         * Line end: 271
+         * Physical LOC: 1
+         * Logical LOC: 1
+         * Cyclomatic complexity: 1
+         * Cyclomatic complexity density: 100%
+         * Halstead difficulty: 1
+         * Halstead volume: 8
+         * Halstead effort: 8
+         * Parameter count: 0
 
-* Module 44:
+* Module 46:
    * File path: `./node_modules/typhonjs-escomplex-module/src/ESComplexModule.js`
    * Source path: `typhonjs-escomplex-module/src/ESComplexModule.js`
    * Total lines: 87
@@ -4080,7 +4609,7 @@
          * Halstead effort: 106.776
          * Parameter count: 2
 
-* Module 45:
+* Module 47:
    * File path: `./node_modules/typhonjs-escomplex-module/src/index.js`
    * Source path: `typhonjs-escomplex-module/src/index.js`
    * Source alias: `typhonjs-escomplex-module`
@@ -4095,7 +4624,7 @@
    * Average per-function halstead volume: 22.459
    * Average per-function halstead effort: 84.221
 
-* Module 46:
+* Module 48:
    * File path: `./node_modules/typhonjs-escomplex-module/src/Plugins.js`
    * Source path: `typhonjs-escomplex-module/src/Plugins.js`
    * Total lines: 131
@@ -4205,20 +4734,26 @@
          * Parameter count: 1
 
 
-* Adjacency (dependencies / numerical indices correspond to ProjectResult modules / reports):
+* Adjacency (dependencies / numerical indices correspond to ProjectReport modules / reports):
 * 1:	`./src/ESComplexProject.js`
 	* 3:	`./src/Plugins.js`
 	* 16:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
-	* 23:	`typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
-	* 44:	`typhonjs-escomplex-module/src/ESComplexModule.js`
+	* 23:	`typhonjs-escomplex-commons/src/project/report/ProjectReport.js`
+	* 46:	`typhonjs-escomplex-module/src/ESComplexModule.js`
 
 * 2:	`./src/index.js`
 	* 1:	`./src/ESComplexProject.js`
 
 * 4:	`./test/fixture/testImportNPMAlias.js`
-	* 45:	`typhonjs-escomplex-module/src/index.js`
+	* 47:	`typhonjs-escomplex-module/src/index.js`
 
-* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
+* 6:	`typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+
+* 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
+	* 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
+
+* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js`
 	* 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
 	* 14:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
 
@@ -4231,23 +4766,26 @@
 * 13:	`typhonjs-escomplex-commons/src/module/report/ClassReport.js`
 	* 6:	`typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
 	* 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
-	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
+	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js`
 	* 11:	`typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js`
-	* 15:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
+	* 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
 
 * 15:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
 	* 6:	`typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
-	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
+	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js`
 
 * 16:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
 	* 6:	`typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
 	* 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
-	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
+	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js`
 	* 11:	`typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js`
 	* 13:	`typhonjs-escomplex-commons/src/module/report/ClassReport.js`
-	* 15:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
 	* 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
-	* 41:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 43:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
 
 * 17:	`typhonjs-escomplex-commons/src/module/traits/actualize.js`
 	* 18:	`typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js`
@@ -4257,61 +4795,76 @@
 * 18:	`typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js`
 	* 22:	`typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js`
 
-* 23:	`typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
+* 23:	`typhonjs-escomplex-commons/src/project/report/ProjectReport.js`
 	* 12:	`typhonjs-escomplex-commons/src/module/report/averages/ModuleAverage.js`
 	* 16:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
 	* 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
-	* 41:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
-	* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 43:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
 * 25:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
 
 * 26:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+
+* 27:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
 
 * 28:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js`
 	* 35:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js`
-	* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
 * 29:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js`
 	* 36:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js`
 
 * 30:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js`
 	* 37:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js`
-	* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
 * 31:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js`
 	* 38:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
 * 32:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js`
 	* 39:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
 
 * 33:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
-	* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
 * 34:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
 
 * 35:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js`
 	* 33:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
 	* 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
 * 36:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js`
 	* 34:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
 
 * 37:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js`
 	* 33:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
 * 38:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
 	* 33:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
 * 39:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
 	* 34:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
 
 * 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
-	* 16:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
-	* 23:	`typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
 	* 24:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
 	* 25:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
 	* 26:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
@@ -4326,39 +4879,42 @@
 	* 37:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js`
 	* 38:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
 	* 39:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
 
-* 41:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
 
-* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+* 43:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
 
-* 44:	`typhonjs-escomplex-module/src/ESComplexModule.js`
-	* 46:	`typhonjs-escomplex-module/src/Plugins.js`
+* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
 
-* 45:	`typhonjs-escomplex-module/src/index.js`
-	* 44:	`typhonjs-escomplex-module/src/ESComplexModule.js`
+* 46:	`typhonjs-escomplex-module/src/ESComplexModule.js`
+	* 48:	`typhonjs-escomplex-module/src/Plugins.js`
 
-* 46:	`typhonjs-escomplex-module/src/Plugins.js`
+* 47:	`typhonjs-escomplex-module/src/index.js`
+	* 46:	`typhonjs-escomplex-module/src/ESComplexModule.js`
+
+* 48:	`typhonjs-escomplex-module/src/Plugins.js`
 	* 16:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
 
 
 
-* Visibility (reverse dependents / numerical indices correspond to ProjectResult modules / reports):
+* Visibility (reverse dependents / numerical indices correspond to ProjectReport modules / reports):
 * 1:	`./src/ESComplexProject.js`
 	* 1:	`./src/ESComplexProject.js`
 	* 3:	`./src/Plugins.js`
 	* 6:	`typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
 	* 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
-	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
+	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js`
 	* 10:	`typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js`
 	* 11:	`typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js`
 	* 12:	`typhonjs-escomplex-commons/src/module/report/averages/ModuleAverage.js`
 	* 13:	`typhonjs-escomplex-commons/src/module/report/ClassReport.js`
 	* 14:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
-	* 15:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
 	* 16:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
-	* 23:	`typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
+	* 23:	`typhonjs-escomplex-commons/src/project/report/ProjectReport.js`
 	* 24:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
 	* 25:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
 	* 26:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
@@ -4376,11 +4932,13 @@
 	* 38:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
 	* 39:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
 	* 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
-	* 41:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
-	* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
-	* 44:	`typhonjs-escomplex-module/src/ESComplexModule.js`
-	* 46:	`typhonjs-escomplex-module/src/Plugins.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 43:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 46:	`typhonjs-escomplex-module/src/ESComplexModule.js`
+	* 48:	`typhonjs-escomplex-module/src/Plugins.js`
 
 * 2:	`./src/index.js`
 	* 1:	`./src/ESComplexProject.js`
@@ -4388,15 +4946,14 @@
 	* 3:	`./src/Plugins.js`
 	* 6:	`typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
 	* 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
-	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
+	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js`
 	* 10:	`typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js`
 	* 11:	`typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js`
 	* 12:	`typhonjs-escomplex-commons/src/module/report/averages/ModuleAverage.js`
 	* 13:	`typhonjs-escomplex-commons/src/module/report/ClassReport.js`
 	* 14:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
-	* 15:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
 	* 16:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
-	* 23:	`typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
+	* 23:	`typhonjs-escomplex-commons/src/project/report/ProjectReport.js`
 	* 24:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
 	* 25:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
 	* 26:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
@@ -4414,11 +4971,13 @@
 	* 38:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
 	* 39:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
 	* 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
-	* 41:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
-	* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
-	* 44:	`typhonjs-escomplex-module/src/ESComplexModule.js`
-	* 46:	`typhonjs-escomplex-module/src/Plugins.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 43:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 46:	`typhonjs-escomplex-module/src/ESComplexModule.js`
+	* 48:	`typhonjs-escomplex-module/src/Plugins.js`
 
 * 3:	`./src/Plugins.js`
 	* 3:	`./src/Plugins.js`
@@ -4427,15 +4986,12 @@
 	* 4:	`./test/fixture/testImportNPMAlias.js`
 	* 6:	`typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
 	* 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
-	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
+	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js`
 	* 10:	`typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js`
 	* 11:	`typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js`
-	* 12:	`typhonjs-escomplex-commons/src/module/report/averages/ModuleAverage.js`
 	* 13:	`typhonjs-escomplex-commons/src/module/report/ClassReport.js`
 	* 14:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
-	* 15:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
 	* 16:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
-	* 23:	`typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
 	* 24:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
 	* 25:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
 	* 26:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
@@ -4453,29 +5009,75 @@
 	* 38:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
 	* 39:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
 	* 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
-	* 41:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
-	* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
-	* 44:	`typhonjs-escomplex-module/src/ESComplexModule.js`
-	* 45:	`typhonjs-escomplex-module/src/index.js`
-	* 46:	`typhonjs-escomplex-module/src/Plugins.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 43:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 46:	`typhonjs-escomplex-module/src/ESComplexModule.js`
+	* 47:	`typhonjs-escomplex-module/src/index.js`
+	* 48:	`typhonjs-escomplex-module/src/Plugins.js`
 
 * 5:	`./test/fixture/testRequireNPMAlias.js`
 	* 5:	`./test/fixture/testRequireNPMAlias.js`
 
 * 6:	`typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
 	* 6:	`typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
 
 * 7:	`typhonjs-escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js`
 	* 7:	`typhonjs-escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js`
 
 * 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
 	* 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
+	* 24:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
+	* 25:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
+	* 26:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
+	* 27:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js`
+	* 28:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js`
+	* 29:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js`
+	* 30:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js`
+	* 31:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js`
+	* 32:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js`
+	* 33:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
+	* 34:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
+	* 35:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js`
+	* 36:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js`
+	* 37:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js`
+	* 38:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
+	* 39:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
+	* 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
-* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
+* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js`
 	* 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
-	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
+	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js`
 	* 14:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
+	* 24:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
+	* 25:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
+	* 26:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
+	* 27:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js`
+	* 28:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js`
+	* 29:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js`
+	* 30:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js`
+	* 31:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js`
+	* 32:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js`
+	* 33:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
+	* 34:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
+	* 35:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js`
+	* 36:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js`
+	* 37:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js`
+	* 38:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
+	* 39:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
+	* 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
 * 10:	`typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js`
 	* 10:	`typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js`
@@ -4492,35 +5094,11 @@
 * 13:	`typhonjs-escomplex-commons/src/module/report/ClassReport.js`
 	* 6:	`typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
 	* 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
-	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
+	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js`
 	* 10:	`typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js`
 	* 11:	`typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js`
 	* 13:	`typhonjs-escomplex-commons/src/module/report/ClassReport.js`
 	* 14:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
-	* 15:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
-
-* 14:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
-	* 14:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
-
-* 15:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
-	* 6:	`typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
-	* 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
-	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
-	* 14:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
-	* 15:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
-
-* 16:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
-	* 6:	`typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
-	* 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
-	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
-	* 10:	`typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js`
-	* 11:	`typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js`
-	* 12:	`typhonjs-escomplex-commons/src/module/report/averages/ModuleAverage.js`
-	* 13:	`typhonjs-escomplex-commons/src/module/report/ClassReport.js`
-	* 14:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
-	* 15:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
-	* 16:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
-	* 23:	`typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
 	* 24:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
 	* 25:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
 	* 26:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
@@ -4538,9 +5116,73 @@
 	* 38:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
 	* 39:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
 	* 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
-	* 41:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
-	* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+
+* 14:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
+	* 14:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
+
+* 15:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
+	* 6:	`typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
+	* 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
+	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js`
+	* 14:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
+	* 15:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
+	* 24:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
+	* 25:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
+	* 26:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
+	* 27:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js`
+	* 28:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js`
+	* 29:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js`
+	* 30:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js`
+	* 31:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js`
+	* 32:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js`
+	* 33:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
+	* 34:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
+	* 35:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js`
+	* 36:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js`
+	* 37:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js`
+	* 38:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
+	* 39:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
+	* 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+
+* 16:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
+	* 6:	`typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
+	* 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
+	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js`
+	* 10:	`typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js`
+	* 11:	`typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js`
+	* 13:	`typhonjs-escomplex-commons/src/module/report/ClassReport.js`
+	* 14:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
+	* 16:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
+	* 24:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
+	* 25:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
+	* 26:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
+	* 27:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js`
+	* 28:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js`
+	* 29:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js`
+	* 30:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js`
+	* 31:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js`
+	* 32:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js`
+	* 33:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
+	* 34:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
+	* 35:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js`
+	* 36:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js`
+	* 37:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js`
+	* 38:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
+	* 39:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
+	* 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 43:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
 * 17:	`typhonjs-escomplex-commons/src/module/traits/actualize.js`
 	* 17:	`typhonjs-escomplex-commons/src/module/traits/actualize.js`
@@ -4565,18 +5207,17 @@
 * 22:	`typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js`
 	* 22:	`typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js`
 
-* 23:	`typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
+* 23:	`typhonjs-escomplex-commons/src/project/report/ProjectReport.js`
 	* 6:	`typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
 	* 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
-	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
+	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js`
 	* 10:	`typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js`
 	* 11:	`typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js`
 	* 12:	`typhonjs-escomplex-commons/src/module/report/averages/ModuleAverage.js`
 	* 13:	`typhonjs-escomplex-commons/src/module/report/ClassReport.js`
 	* 14:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
-	* 15:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
 	* 16:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
-	* 23:	`typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
+	* 23:	`typhonjs-escomplex-commons/src/project/report/ProjectReport.js`
 	* 24:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
 	* 25:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
 	* 26:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
@@ -4594,36 +5235,33 @@
 	* 38:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
 	* 39:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
 	* 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
-	* 41:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
-	* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 43:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
 * 24:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
 	* 24:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
 
 * 25:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
 	* 25:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
 
 * 26:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
 	* 26:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
 
 * 27:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js`
 	* 27:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
 
 * 28:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js`
-	* 6:	`typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
-	* 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
-	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
-	* 10:	`typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js`
-	* 11:	`typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js`
-	* 12:	`typhonjs-escomplex-commons/src/module/report/averages/ModuleAverage.js`
-	* 13:	`typhonjs-escomplex-commons/src/module/report/ClassReport.js`
-	* 14:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
-	* 15:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
-	* 16:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
-	* 23:	`typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
 	* 24:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
 	* 25:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
 	* 26:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
@@ -4641,57 +5279,59 @@
 	* 38:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
 	* 39:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
 	* 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
-	* 41:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
-	* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
 * 29:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js`
 	* 29:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js`
 	* 34:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
 	* 36:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
 
 * 30:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js`
 	* 30:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js`
 	* 33:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
 	* 37:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
-	* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
 * 31:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js`
 	* 31:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js`
 	* 33:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
 	* 38:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
-	* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
 * 32:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js`
 	* 32:	`typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js`
 	* 34:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
 	* 39:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
 
 * 33:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
 	* 33:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
-	* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
 * 34:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
 	* 34:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
 
 * 35:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js`
-	* 6:	`typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
-	* 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
-	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
-	* 10:	`typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js`
-	* 11:	`typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js`
-	* 12:	`typhonjs-escomplex-commons/src/module/report/averages/ModuleAverage.js`
-	* 13:	`typhonjs-escomplex-commons/src/module/report/ClassReport.js`
-	* 14:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
-	* 15:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
-	* 16:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
-	* 23:	`typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
 	* 24:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
 	* 25:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
 	* 26:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
@@ -4709,44 +5349,42 @@
 	* 38:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
 	* 39:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
 	* 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
-	* 41:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
-	* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
 * 36:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js`
 	* 34:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
 	* 36:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
 
 * 37:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js`
 	* 33:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
 	* 37:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
-	* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
 * 38:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
 	* 33:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
 	* 38:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
-	* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
 * 39:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
 	* 34:	`typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
 	* 39:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
 
 * 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
-	* 6:	`typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
-	* 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
-	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
-	* 10:	`typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js`
-	* 11:	`typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js`
-	* 12:	`typhonjs-escomplex-commons/src/module/report/averages/ModuleAverage.js`
-	* 13:	`typhonjs-escomplex-commons/src/module/report/ClassReport.js`
-	* 14:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
-	* 15:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
-	* 16:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
-	* 23:	`typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
 	* 24:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
 	* 25:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
 	* 26:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
@@ -4764,33 +5402,38 @@
 	* 38:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
 	* 39:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
 	* 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
-	* 41:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
-	* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
 
-* 41:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
-	* 41:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
 
-* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
 
-* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
-	* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+* 43:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
+	* 43:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
 
-* 44:	`typhonjs-escomplex-module/src/ESComplexModule.js`
+* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+
+* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+
+* 46:	`typhonjs-escomplex-module/src/ESComplexModule.js`
 	* 6:	`typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
 	* 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
-	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
+	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js`
 	* 10:	`typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js`
 	* 11:	`typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js`
-	* 12:	`typhonjs-escomplex-commons/src/module/report/averages/ModuleAverage.js`
 	* 13:	`typhonjs-escomplex-commons/src/module/report/ClassReport.js`
 	* 14:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
-	* 15:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
 	* 16:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
-	* 23:	`typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
 	* 24:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
 	* 25:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
 	* 26:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
@@ -4808,24 +5451,23 @@
 	* 38:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
 	* 39:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
 	* 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
-	* 41:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
-	* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
-	* 44:	`typhonjs-escomplex-module/src/ESComplexModule.js`
-	* 46:	`typhonjs-escomplex-module/src/Plugins.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 43:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 46:	`typhonjs-escomplex-module/src/ESComplexModule.js`
+	* 48:	`typhonjs-escomplex-module/src/Plugins.js`
 
-* 45:	`typhonjs-escomplex-module/src/index.js`
+* 47:	`typhonjs-escomplex-module/src/index.js`
 	* 6:	`typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
 	* 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
-	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
+	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js`
 	* 10:	`typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js`
 	* 11:	`typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js`
-	* 12:	`typhonjs-escomplex-commons/src/module/report/averages/ModuleAverage.js`
 	* 13:	`typhonjs-escomplex-commons/src/module/report/ClassReport.js`
 	* 14:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
-	* 15:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
 	* 16:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
-	* 23:	`typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
 	* 24:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
 	* 25:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
 	* 26:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
@@ -4843,25 +5485,24 @@
 	* 38:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
 	* 39:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
 	* 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
-	* 41:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
-	* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
-	* 44:	`typhonjs-escomplex-module/src/ESComplexModule.js`
-	* 45:	`typhonjs-escomplex-module/src/index.js`
-	* 46:	`typhonjs-escomplex-module/src/Plugins.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 43:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 46:	`typhonjs-escomplex-module/src/ESComplexModule.js`
+	* 47:	`typhonjs-escomplex-module/src/index.js`
+	* 48:	`typhonjs-escomplex-module/src/Plugins.js`
 
-* 46:	`typhonjs-escomplex-module/src/Plugins.js`
+* 48:	`typhonjs-escomplex-module/src/Plugins.js`
 	* 6:	`typhonjs-escomplex-commons/src/analyze/AnalyzeError.js`
 	* 8:	`typhonjs-escomplex-commons/src/module/report/AbstractReport.js`
-	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateReport.js`
+	* 9:	`typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js`
 	* 10:	`typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js`
 	* 11:	`typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js`
-	* 12:	`typhonjs-escomplex-commons/src/module/report/averages/ModuleAverage.js`
 	* 13:	`typhonjs-escomplex-commons/src/module/report/ClassReport.js`
 	* 14:	`typhonjs-escomplex-commons/src/module/report/HalsteadData.js`
-	* 15:	`typhonjs-escomplex-commons/src/module/report/MethodReport.js`
 	* 16:	`typhonjs-escomplex-commons/src/module/report/ModuleReport.js`
-	* 23:	`typhonjs-escomplex-commons/src/project/result/ProjectResult.js`
 	* 24:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
 	* 25:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
 	* 26:	`typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
@@ -4879,8 +5520,10 @@
 	* 38:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
 	* 39:	`typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
 	* 40:	`typhonjs-escomplex-commons/src/transform/TransformFormat.js`
-	* 41:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
-	* 42:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
-	* 43:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
-	* 46:	`typhonjs-escomplex-module/src/Plugins.js`
+	* 41:	`typhonjs-escomplex-commons/src/types/ReportType.js`
+	* 42:	`typhonjs-escomplex-commons/src/utils/Enum.js`
+	* 43:	`typhonjs-escomplex-commons/src/utils/MathUtil.js`
+	* 44:	`typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
+	* 45:	`typhonjs-escomplex-commons/src/utils/StringUtil.js`
+	* 48:	`typhonjs-escomplex-module/src/Plugins.js`
 

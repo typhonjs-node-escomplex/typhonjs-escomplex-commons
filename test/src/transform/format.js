@@ -5,7 +5,7 @@ import ClassReport         from '../../../src/module/report/ClassReport';
 import ClassMethodReport   from '../../../src/module/report/ClassMethodReport';
 import ModuleMethodReport  from '../../../src/module/report/ModuleMethodReport';
 import ModuleReport        from '../../../src/module/report/ModuleReport';
-import ProjectResult       from '../../../src/project/result/ProjectResult';
+import ProjectReport       from '../../../src/project/report/ProjectReport';
 
 import TransformFormat     from '../../../src/transform/TransformFormat';
 
@@ -54,7 +54,7 @@ function runTests()
                const largeProjectJSON = require(
                 'typhonjs-escomplex-test-data/files/large-project/json/project-no-modules');
 
-               const projectResult = ProjectResult.parse(largeProjectJSON);
+               const projectResult = ProjectReport.parse(largeProjectJSON);
 
                TransformFormat.forEach((format, formatName) =>
                {
@@ -254,15 +254,15 @@ function runTests()
             });
          });
 
-         suite('ProjectResult:', () =>
+         suite('ProjectReport:', () =>
          {
             suite('toFormat (large-project/project):', () =>
             {
                const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/json/project');
 
-               const projectResult = ProjectResult.parse(largeProjectJSON);
+               const projectResult = ProjectReport.parse(largeProjectJSON);
 
-               ProjectResult.getFormats().forEach((format) =>
+               ProjectReport.getFormats().forEach((format) =>
                {
                   test(`formatName: ${format.name}`, () =>
                   {
@@ -281,9 +281,9 @@ function runTests()
                const largeProjectJSON = require(
                 'typhonjs-escomplex-test-data/files/large-project/json/project-no-modules');
 
-               const projectResult = ProjectResult.parse(largeProjectJSON);
+               const projectResult = ProjectReport.parse(largeProjectJSON);
 
-               ProjectResult.getFormats().forEach((format) =>
+               ProjectReport.getFormats().forEach((format) =>
                {
                   test(`formatName: ${format.name}`, () =>
                   {
@@ -303,9 +303,9 @@ function runTests()
                const largeProjectJSON = require(
                 'typhonjs-escomplex-test-data/files/large-project/json/project-with-errors');
 
-               const projectResult = ProjectResult.parse(largeProjectJSON);
+               const projectResult = ProjectReport.parse(largeProjectJSON);
 
-               ProjectResult.getFormats().forEach((format) =>
+               ProjectReport.getFormats().forEach((format) =>
                {
                   test(`formatName: ${format.name}`, () =>
                   {
@@ -468,9 +468,9 @@ function generateFormatData()
    // Generate module report formatted test data.
 
    const largeProjectJSON = require('typhonjs-escomplex-test-data/files/large-project/json/project');
-   const projectResult = ProjectResult.parse(largeProjectJSON);
+   const projectResult = ProjectReport.parse(largeProjectJSON);
 
-   ProjectResult.getFormats().forEach((format) =>
+   ProjectReport.getFormats().forEach((format) =>
    {
       test(`generate formatName: ${format.name}`, () =>
       {
@@ -482,9 +482,9 @@ function generateFormatData()
    });
 
    const largeProjectJSON2 = require('typhonjs-escomplex-test-data/files/large-project/json/project-no-modules');
-   const projectResult2 = ProjectResult.parse(largeProjectJSON2);
+   const projectResult2 = ProjectReport.parse(largeProjectJSON2);
 
-   ProjectResult.getFormats().forEach((format) =>
+   ProjectReport.getFormats().forEach((format) =>
    {
       test(`generate formatName: ${format.name}`, () =>
       {
@@ -497,9 +497,9 @@ function generateFormatData()
    });
 
    const largeProjectJSON3 = require('typhonjs-escomplex-test-data/files/large-project/json/project-with-errors');
-   const projectResult3 = ProjectResult.parse(largeProjectJSON3);
+   const projectResult3 = ProjectReport.parse(largeProjectJSON3);
 
-   ProjectResult.getFormats().forEach((format) =>
+   ProjectReport.getFormats().forEach((format) =>
    {
       test(`generate formatName: ${format.name}`, () =>
       {

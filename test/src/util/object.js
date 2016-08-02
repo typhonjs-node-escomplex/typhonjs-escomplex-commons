@@ -24,6 +24,25 @@ if (testconfig.modules['utilObject'])
                assert.strictEqual(JSON.stringify(result), s_TEST_CONFIRM);
             });
          });
+
+         suite('safeEqual:', () =>
+         {
+            test('safeEqual matches', () =>
+            {
+               const source = { severity: 'info', test: { severity: 'info' } };
+               const targetTrue = { severity: 'info', test: { severity: 'info' }, value: 123 };
+
+               assert.strictEqual(ObjectUtil.safeEqual(source, targetTrue), true);
+            });
+
+            test('safeEqual does not match', () =>
+            {
+               const source = { severity: 'info', test: { severity: 'info' } };
+               const targetFalse = { severity: 'info', test: { severity: 'error' }, value: 123 };
+
+               assert.strictEqual(ObjectUtil.safeEqual(source, targetFalse), false);
+            });
+         });
       });
    });
 }

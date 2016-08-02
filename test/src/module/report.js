@@ -157,8 +157,8 @@ if (testconfig.modules['moduleReport'])
 
                report.halsteadItemEncountered('operators', 'test');
 
-               assert.strictEqual(report.aggregate.halstead.operators.identifiers[0], 'test');
-               assert.strictEqual(report.classes[0].aggregate.halstead.operators.identifiers[0], 'test');
+               assert.strictEqual(report.methodAggregate.halstead.operators.identifiers[0], 'test');
+               assert.strictEqual(report.classes[0].methodAggregate.halstead.operators.identifiers[0], 'test');
                assert.strictEqual(report.classes[0].methods[0].halstead.operators.identifiers[0], 'test');
             });
          });
@@ -177,8 +177,8 @@ if (testconfig.modules['moduleReport'])
 
                report.incrementCyclomatic(50);
 
-               assert.strictEqual(report.aggregate.cyclomatic, 51);
-               assert.strictEqual(report.classes[0].aggregate.cyclomatic, 51);
+               assert.strictEqual(report.methodAggregate.cyclomatic, 51);
+               assert.strictEqual(report.classes[0].methodAggregate.cyclomatic, 51);
                assert.strictEqual(report.classes[0].methods[0].cyclomatic, 51);
             });
          });
@@ -197,8 +197,8 @@ if (testconfig.modules['moduleReport'])
 
                report.incrementLogicalSloc(50);
 
-               assert.strictEqual(report.aggregate.sloc.logical, 50);
-               assert.strictEqual(report.classes[0].aggregate.sloc.logical, 50);
+               assert.strictEqual(report.methodAggregate.sloc.logical, 50);
+               assert.strictEqual(report.classes[0].methodAggregate.sloc.logical, 50);
                assert.strictEqual(report.classes[0].methods[0].sloc.logical, 50);
             });
          });
@@ -211,10 +211,10 @@ if (testconfig.modules['moduleReport'])
          setup(() => { report = new ModuleReport(10, 100); });
          teardown(() => { report = undefined; });
 
-         test('report aggregate has correct params count', () =>
+         test('report methodAggregate has correct params count', () =>
          {
             report.incrementParams(20);
-            assert.strictEqual(report.aggregate.params, 20);
+            assert.strictEqual(report.methodAggregate.params, 20);
          });
       });
 
@@ -225,15 +225,15 @@ if (testconfig.modules['moduleReport'])
          setup(() => { report = new ModuleReport(10, 100); });
          teardown(() => { report = undefined; });
 
-         test('report aggregate halstead data is reset', () =>
+         test('report methodAggregate halstead data is reset', () =>
          {
-            report.aggregate.halstead.bugs = 1000;
-            report.aggregate.halstead.operands.distinct = 1000;
-            report.aggregate.halstead.operands.identifiers.push('test');
-            report.aggregate.halstead.reset(true);
-            assert.strictEqual(report.aggregate.halstead.bugs, 0);
-            assert.strictEqual(report.aggregate.halstead.operands.distinct, 0);
-            assert.lengthOf(report.aggregate.halstead.operands.identifiers, 0);
+            report.methodAggregate.halstead.bugs = 1000;
+            report.methodAggregate.halstead.operands.distinct = 1000;
+            report.methodAggregate.halstead.operands.identifiers.push('test');
+            report.methodAggregate.halstead.reset(true);
+            assert.strictEqual(report.methodAggregate.halstead.bugs, 0);
+            assert.strictEqual(report.methodAggregate.halstead.operands.distinct, 0);
+            assert.lengthOf(report.methodAggregate.halstead.operands.identifiers, 0);
          });
       });
    });
