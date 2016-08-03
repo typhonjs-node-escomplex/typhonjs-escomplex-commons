@@ -105,7 +105,7 @@ if (testconfig.modules['projectReport'])
             {
                const errors = projectReport.getErrors();
 
-               assert.lengthOf(errors, 141);
+               assert.lengthOf(errors, 154);
 
 /*
                console.log('!!!! getErrors - errors: ' + JSON.stringify(errors));
@@ -125,7 +125,7 @@ if (testconfig.modules['projectReport'])
             {
                const errors = projectReport.getErrors({ query: { severity: 'warning' } });
 
-               assert.lengthOf(errors, 33);
+               assert.lengthOf(errors, 38);
 
 /*
                console.log('!!!! getErrors - errors: ' + JSON.stringify(errors));

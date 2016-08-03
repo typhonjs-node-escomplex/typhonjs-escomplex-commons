@@ -1,28 +1,28 @@
 Project: 
-   First-order density: 3.993%
-   Change cost: 22.96%
-   Core size: 27.083%
-   Average per-module maintainability index: 132.733
-   Average per-function physical LOC: 11.491
-   Average per-function logical LOC: 4.041
-   Average per-function parameter count: 1.13
-   Average per-function cyclomatic complexity: 2.013
-   Average per-function halstead difficulty: 4.884
-   Average per-function halstead effort: 1174.866
+   First-order density: 4.165%
+   Change cost: 23.902%
+   Core size: 27.66%
+   Average per-module maintainability index: 132.078
+   Average per-function physical LOC: 11.876
+   Average per-function logical LOC: 4.179
+   Average per-function parameter count: 1.129
+   Average per-function cyclomatic complexity: 2.001
+   Average per-function halstead difficulty: 4.968
+   Average per-function halstead effort: 1311.535
 
 Module 1:
    File path: ./src/ESComplexProject.js
    Source path: ./src/ESComplexProject.js
    Total lines: 241
-   Maintainability index: 110.612
+   Maintainability index: 110.513
    Dependency count: 4
    Average per-function physical LOC: 23.75
    Average per-function logical LOC: 7.75
    Average per-function cyclomatic complexity: 3
    Average per-function cyclomatic density: 50.106%
-   Average per-function halstead difficulty: 7.458
-   Average per-function halstead volume: 227.131
-   Average per-function halstead effort: 2653.64
+   Average per-function halstead difficulty: 7.78
+   Average per-function halstead volume: 229.544
+   Average per-function halstead effort: 2732.323
    
    Class: ESComplexProject
       Line start: 11
@@ -31,9 +31,9 @@ Module 1:
       Average per-function logical LOC: 7.75
       Average per-function cyclomatic complexity: 3
       Average per-function cyclomatic density: 50.106%
-      Average per-function halstead difficulty: 7.458
-      Average per-function halstead volume: 227.131
-      Average per-function halstead effort: 2653.64
+      Average per-function halstead difficulty: 7.78
+      Average per-function halstead volume: 229.544
+      Average per-function halstead effort: 2732.323
       
       Class method: constructor
          Line start: 44
@@ -66,12 +66,12 @@ Module 1:
          Logical LOC: 12
          Cyclomatic complexity: 3
          Cyclomatic complexity density: 25%
-         Halstead difficulty: 14.912
-         Halstead volume: 343.482
-         Halstead effort: 5121.928
+         Halstead difficulty: 16.059
+         Halstead volume: 351.748
+         Halstead effort: 5648.658
          Parameter count: 1
       
-      Class method: processResults
+      Class method: process
          Line start: 174
          Line end: 201
          Physical LOC: 28
@@ -102,12 +102,12 @@ Module 1:
          Logical LOC: 4
          Cyclomatic complexity: 1
          Cyclomatic complexity density: 25%
-         Halstead difficulty: 2.143
-         Halstead volume: 49.829
-         Halstead effort: 106.776
+         Halstead difficulty: 2.857
+         Halstead volume: 55.351
+         Halstead effort: 158.145
          Parameter count: 2
       
-      Class method: processResultsAsync
+      Class method: processAsync
          Line start: 232
          Line end: 239
          Physical LOC: 8
@@ -126,9 +126,9 @@ Module 1:
          Logical LOC: 4
          Cyclomatic complexity: 1
          Cyclomatic complexity density: 25%
-         Halstead difficulty: 2.143
-         Halstead volume: 49.829
-         Halstead effort: 106.776
+         Halstead difficulty: 2.857
+         Halstead volume: 55.351
+         Halstead effort: 158.145
          Parameter count: 2
 
 Module 2:
@@ -1424,27 +1424,27 @@ Module 16:
 Module 17:
    File path: ./node_modules/typhonjs-escomplex-commons/src/module/traits/actualize.js
    Source path: typhonjs-escomplex-commons/src/module/traits/actualize.js
-   Total lines: 32
-   Maintainability index: 111.799
+   Total lines: 31
+   Maintainability index: 110.739
    Dependency count: 3
    Average per-function physical LOC: 13
    Average per-function logical LOC: 8
    Average per-function cyclomatic complexity: 1
    Average per-function cyclomatic density: 12.5%
-   Average per-function halstead difficulty: 5.921
-   Average per-function halstead volume: 293.438
-   Average per-function halstead effort: 1737.459
+   Average per-function halstead difficulty: 7.2
+   Average per-function halstead volume: 329.031
+   Average per-function halstead effort: 2369.022
    
    Module method: <anonymous>
-      Line start: 19
-      Line end: 31
+      Line start: 18
+      Line end: 30
       Physical LOC: 13
       Logical LOC: 8
       Cyclomatic complexity: 1
       Cyclomatic complexity density: 12.5%
-      Halstead difficulty: 5.921
-      Halstead volume: 293.438
-      Halstead effort: 1737.459
+      Halstead difficulty: 7.2
+      Halstead volume: 329.031
+      Halstead effort: 2369.022
       Parameter count: 7
 
 Module 18:
@@ -1605,58 +1605,6 @@ Module 18:
          Parameter count: 1
 
 Module 19:
-   File path: ./node_modules/typhonjs-escomplex-commons/src/module/traits/safeArray.js
-   Source path: typhonjs-escomplex-commons/src/module/traits/safeArray.js
-   Total lines: 12
-   Maintainability index: 148.682
-   Dependency count: 0
-   Average per-function physical LOC: 4
-   Average per-function logical LOC: 1
-   Average per-function cyclomatic complexity: 4
-   Average per-function cyclomatic density: 400%
-   Average per-function halstead difficulty: 8
-   Average per-function halstead volume: 77.709
-   Average per-function halstead effort: 621.674
-   
-   Module method: <anonymous>
-      Line start: 8
-      Line end: 11
-      Physical LOC: 4
-      Logical LOC: 1
-      Cyclomatic complexity: 4
-      Cyclomatic complexity density: 400%
-      Halstead difficulty: 8
-      Halstead volume: 77.709
-      Halstead effort: 621.674
-      Parameter count: 1
-
-Module 20:
-   File path: ./node_modules/typhonjs-escomplex-commons/src/module/traits/safeName.js
-   Source path: typhonjs-escomplex-commons/src/module/traits/safeName.js
-   Total lines: 20
-   Maintainability index: 119.451
-   Dependency count: 0
-   Average per-function physical LOC: 11
-   Average per-function logical LOC: 5
-   Average per-function cyclomatic complexity: 7
-   Average per-function cyclomatic density: 140%
-   Average per-function halstead difficulty: 9.188
-   Average per-function halstead volume: 164.089
-   Average per-function halstead effort: 1507.571
-   
-   Module method: <anonymous>
-      Line start: 9
-      Line end: 19
-      Physical LOC: 11
-      Logical LOC: 5
-      Cyclomatic complexity: 7
-      Cyclomatic complexity density: 140%
-      Halstead difficulty: 9.188
-      Halstead volume: 164.089
-      Halstead effort: 1507.571
-      Parameter count: 2
-
-Module 21:
    File path: ./node_modules/typhonjs-escomplex-commons/src/module/traits/Trait.js
    Source path: typhonjs-escomplex-commons/src/module/traits/Trait.js
    Total lines: 66
@@ -1741,7 +1689,7 @@ Module 21:
          Halstead effort: 165
          Parameter count: 1
 
-Module 22:
+Module 20:
    File path: ./node_modules/typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js
    Source path: typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js
    Total lines: 110
@@ -1850,7 +1798,116 @@ Module 22:
          Halstead effort: 165
          Parameter count: 1
 
-Module 23:
+Module 21:
+   File path: ./node_modules/typhonjs-escomplex-commons/src/module/traits/TraitUtil.js
+   Source path: typhonjs-escomplex-commons/src/module/traits/TraitUtil.js
+   Total lines: 236
+   Maintainability index: 105.897
+   Dependency count: 1
+   Average per-function physical LOC: 21.571
+   Average per-function logical LOC: 8.429
+   Average per-function cyclomatic complexity: 8.429
+   Average per-function cyclomatic density: 153.078%
+   Average per-function halstead difficulty: 14.303
+   Average per-function halstead volume: 351.173
+   Average per-function halstead effort: 6603.732
+   
+   Class: TraitUtil
+      Line start: 3
+      Line end: 235
+      Average per-function physical LOC: 21.571
+      Average per-function logical LOC: 8.429
+      Average per-function cyclomatic complexity: 8.429
+      Average per-function cyclomatic density: 153.078%
+      Average per-function halstead difficulty: 14.303
+      Average per-function halstead volume: 351.173
+      Average per-function halstead effort: 6603.732
+      
+      Class method: safeArray
+         Line start: 12
+         Line end: 15
+         Physical LOC: 4
+         Logical LOC: 1
+         Cyclomatic complexity: 4
+         Cyclomatic complexity density: 400%
+         Halstead difficulty: 8
+         Halstead volume: 77.709
+         Halstead effort: 621.674
+         Parameter count: 1
+      
+      Class method: safeComputedName
+         Line start: 30
+         Line end: 71
+         Physical LOC: 42
+         Logical LOC: 14
+         Cyclomatic complexity: 12
+         Cyclomatic complexity density: 85.714%
+         Halstead difficulty: 22.286
+         Halstead volume: 691.895
+         Halstead effort: 15419.373
+         Parameter count: 2
+      
+      Class method: safeComputedOperands
+         Line start: 86
+         Line end: 138
+         Physical LOC: 53
+         Logical LOC: 20
+         Cyclomatic complexity: 12
+         Cyclomatic complexity density: 60%
+         Halstead difficulty: 24.143
+         Halstead volume: 798.732
+         Halstead effort: 19283.665
+         Parameter count: 2
+      
+      Class method: safeComputedOperators
+         Line start: 153
+         Line end: 170
+         Physical LOC: 18
+         Logical LOC: 6
+         Cyclomatic complexity: 8
+         Cyclomatic complexity density: 133.333%
+         Halstead difficulty: 16.042
+         Halstead volume: 325.696
+         Halstead effort: 5224.714
+         Parameter count: 2
+      
+      Class method: safeName
+         Line start: 180
+         Line end: 190
+         Physical LOC: 11
+         Logical LOC: 5
+         Cyclomatic complexity: 7
+         Cyclomatic complexity density: 140%
+         Halstead difficulty: 9.188
+         Halstead volume: 164.089
+         Halstead effort: 1507.571
+         Parameter count: 2
+      
+      Class method: safeNameOrValue
+         Line start: 203
+         Line end: 214
+         Physical LOC: 12
+         Logical LOC: 8
+         Cyclomatic complexity: 9
+         Cyclomatic complexity density: 112.5%
+         Halstead difficulty: 11.278
+         Halstead volume: 236
+         Halstead effort: 2661.556
+         Parameter count: 2
+      
+      Class method: safeValue
+         Line start: 224
+         Line end: 234
+         Physical LOC: 11
+         Logical LOC: 5
+         Cyclomatic complexity: 7
+         Cyclomatic complexity density: 140%
+         Halstead difficulty: 9.188
+         Halstead volume: 164.089
+         Halstead effort: 1507.571
+         Parameter count: 2
+
+Module 22:
    File path: ./node_modules/typhonjs-escomplex-commons/src/project/report/ProjectReport.js
    Source path: typhonjs-escomplex-commons/src/project/report/ProjectReport.js
    Total lines: 300
@@ -2103,7 +2160,7 @@ Module 23:
          Halstead effort: 69.738
          Parameter count: 2
 
-Module 24:
+Module 23:
    File path: ./node_modules/typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
    Source path: typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
    Total lines: 61
@@ -2188,7 +2245,7 @@ Module 24:
          Halstead effort: 1
          Parameter count: 0
 
-Module 25:
+Module 24:
    File path: ./node_modules/typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
    Source path: typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
    Total lines: 283
@@ -2321,7 +2378,7 @@ Module 25:
          Halstead effort: 34600.702
          Parameter count: 3
 
-Module 26:
+Module 25:
    File path: ./node_modules/typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
    Source path: typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
    Total lines: 283
@@ -2562,7 +2619,7 @@ Module 26:
          Halstead effort: 52.32
          Parameter count: 1
 
-Module 27:
+Module 26:
    File path: ./node_modules/typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
    Source path: typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
    Total lines: 126
@@ -2683,7 +2740,7 @@ Module 27:
          Halstead effort: 42
          Parameter count: 1
 
-Module 28:
+Module 27:
    File path: ./node_modules/typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
    Source path: typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
    Total lines: 79
@@ -2744,7 +2801,7 @@ Module 28:
          Halstead effort: 1
          Parameter count: 0
 
-Module 29:
+Module 28:
    File path: ./node_modules/typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
    Source path: typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
    Total lines: 47
@@ -2805,7 +2862,7 @@ Module 29:
          Halstead effort: 1
          Parameter count: 0
 
-Module 30:
+Module 29:
    File path: ./node_modules/typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
    Source path: typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
    Total lines: 82
@@ -2866,7 +2923,7 @@ Module 30:
          Halstead effort: 1
          Parameter count: 0
 
-Module 31:
+Module 30:
    File path: ./node_modules/typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
    Source path: typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
    Total lines: 54
@@ -2927,7 +2984,7 @@ Module 31:
          Halstead effort: 1
          Parameter count: 0
 
-Module 32:
+Module 31:
    File path: ./node_modules/typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
    Source path: typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
    Total lines: 47
@@ -2988,19 +3045,19 @@ Module 32:
          Halstead effort: 1
          Parameter count: 0
 
-Module 33:
+Module 32:
    File path: ./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
    Source path: typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
    Total lines: 388
-   Maintainability index: 114.353
+   Maintainability index: 114.287
    Dependency count: 3
    Average per-function physical LOC: 19.938
    Average per-function logical LOC: 6.063
    Average per-function cyclomatic complexity: 3.188
    Average per-function cyclomatic density: 67.761%
-   Average per-function halstead difficulty: 8.661
-   Average per-function halstead volume: 233.873
-   Average per-function halstead effort: 2832.711
+   Average per-function halstead difficulty: 8.906
+   Average per-function halstead volume: 235.684
+   Average per-function halstead effort: 2887.992
    
    Class: AbstractFormatText
       Line start: 8
@@ -3009,9 +3066,9 @@ Module 33:
       Average per-function logical LOC: 6.063
       Average per-function cyclomatic complexity: 3.188
       Average per-function cyclomatic density: 67.761%
-      Average per-function halstead difficulty: 8.661
-      Average per-function halstead volume: 233.873
-      Average per-function halstead effort: 2832.711
+      Average per-function halstead difficulty: 8.906
+      Average per-function halstead volume: 235.684
+      Average per-function halstead effort: 2887.992
       
       Class method: constructor
          Line start: 17
@@ -3152,9 +3209,9 @@ Module 33:
          Logical LOC: 8
          Cyclomatic complexity: 1
          Cyclomatic complexity density: 12.5%
-         Halstead difficulty: 5.75
-         Halstead volume: 162.627
-         Halstead effort: 935.106
+         Halstead difficulty: 7.667
+         Halstead volume: 177.199
+         Halstead effort: 1358.526
          Parameter count: 2
       
       Class method: _formatModuleReport
@@ -3188,9 +3245,9 @@ Module 33:
          Logical LOC: 8
          Cyclomatic complexity: 1
          Cyclomatic complexity density: 12.5%
-         Halstead difficulty: 7
-         Halstead volume: 165.669
-         Halstead effort: 1159.684
+         Halstead difficulty: 9
+         Halstead volume: 180.085
+         Halstead effort: 1620.765
          Parameter count: 3
       
       Class method: _formatProjectReport
@@ -3205,7 +3262,7 @@ Module 33:
          Halstead effort: 3240.697
          Parameter count: 2
 
-Module 34:
+Module 33:
    File path: ./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
    Source path: typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
    Total lines: 165
@@ -3314,7 +3371,7 @@ Module 34:
          Halstead effort: 232.92
          Parameter count: 1
 
-Module 35:
+Module 34:
    File path: ./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
    Source path: typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
    Total lines: 242
@@ -3411,7 +3468,7 @@ Module 35:
          Halstead effort: 9984.117
          Parameter count: 2
 
-Module 36:
+Module 35:
    File path: ./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
    Source path: typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
    Total lines: 68
@@ -3484,7 +3541,7 @@ Module 36:
          Halstead effort: 1
          Parameter count: 0
 
-Module 37:
+Module 36:
    File path: ./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
    Source path: typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
    Total lines: 129
@@ -3569,7 +3626,7 @@ Module 37:
          Halstead effort: 414.579
          Parameter count: 1
 
-Module 38:
+Module 37:
    File path: ./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
    Source path: typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
    Total lines: 85
@@ -3654,7 +3711,7 @@ Module 38:
          Halstead effort: 184.503
          Parameter count: 1
 
-Module 39:
+Module 38:
    File path: ./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
    Source path: typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
    Total lines: 68
@@ -3727,7 +3784,7 @@ Module 39:
          Halstead effort: 1
          Parameter count: 0
 
-Module 40:
+Module 39:
    File path: ./node_modules/typhonjs-escomplex-commons/src/transform/TransformFormat.js
    Source path: typhonjs-escomplex-commons/src/transform/TransformFormat.js
    Total lines: 218
@@ -3872,7 +3929,7 @@ Module 40:
          Halstead effort: 18.575
          Parameter count: 1
 
-Module 41:
+Module 40:
    File path: ./node_modules/typhonjs-escomplex-commons/src/types/ReportType.js
    Source path: typhonjs-escomplex-commons/src/types/ReportType.js
    Total lines: 13
@@ -3897,7 +3954,7 @@ Module 41:
       Average per-function halstead volume: 2
       Average per-function halstead effort: 0
 
-Module 42:
+Module 41:
    File path: ./node_modules/typhonjs-escomplex-commons/src/utils/Enum.js
    Source path: typhonjs-escomplex-commons/src/utils/Enum.js
    Total lines: 157
@@ -4018,7 +4075,7 @@ Module 42:
          Halstead effort: 24
          Parameter count: 1
       
-      Class method: <anonymous>
+      Class method: <computed~Symbol.iterator>
          Line start: 113
          Line end: 116
          Physical LOC: 4
@@ -4042,7 +4099,7 @@ Module 42:
          Halstead effort: 38.774
          Parameter count: 0
 
-Module 43:
+Module 42:
    File path: ./node_modules/typhonjs-escomplex-commons/src/utils/MathUtil.js
    Source path: typhonjs-escomplex-commons/src/utils/MathUtil.js
    Total lines: 115
@@ -4175,7 +4232,7 @@ Module 43:
          Halstead effort: 840.849
          Parameter count: 1
 
-Module 44:
+Module 43:
    File path: ./node_modules/typhonjs-escomplex-commons/src/utils/ObjectUtil.js
    Source path: typhonjs-escomplex-commons/src/utils/ObjectUtil.js
    Total lines: 231
@@ -4296,7 +4353,7 @@ Module 44:
          Halstead effort: 32304.689
          Parameter count: 4
 
-Module 45:
+Module 44:
    File path: ./node_modules/typhonjs-escomplex-commons/src/utils/StringUtil.js
    Source path: typhonjs-escomplex-commons/src/utils/StringUtil.js
    Total lines: 272
@@ -4512,19 +4569,19 @@ Module 45:
          Halstead effort: 8
          Parameter count: 0
 
-Module 46:
+Module 45:
    File path: ./node_modules/typhonjs-escomplex-module/src/ESComplexModule.js
    Source path: typhonjs-escomplex-module/src/ESComplexModule.js
    Total lines: 87
-   Maintainability index: 126.029
+   Maintainability index: 126.001
    Dependency count: 2
    Average per-function physical LOC: 9
    Average per-function logical LOC: 3.667
    Average per-function cyclomatic complexity: 1.667
    Average per-function cyclomatic density: 70.833%
-   Average per-function halstead difficulty: 4.389
-   Average per-function halstead volume: 108.359
-   Average per-function halstead effort: 1054.2
+   Average per-function halstead difficulty: 4.508
+   Average per-function halstead volume: 109.28
+   Average per-function halstead effort: 1062.762
    
    Class: ESComplexModule
       Line start: 8
@@ -4533,9 +4590,9 @@ Module 46:
       Average per-function logical LOC: 3.667
       Average per-function cyclomatic complexity: 1.667
       Average per-function cyclomatic density: 70.833%
-      Average per-function halstead difficulty: 4.389
-      Average per-function halstead volume: 108.359
-      Average per-function halstead effort: 1054.2
+      Average per-function halstead difficulty: 4.508
+      Average per-function halstead volume: 109.28
+      Average per-function halstead effort: 1062.762
       
       Class method: constructor
          Line start: 19
@@ -4604,12 +4661,12 @@ Module 46:
          Logical LOC: 4
          Cyclomatic complexity: 1
          Cyclomatic complexity density: 25%
-         Halstead difficulty: 2.143
-         Halstead volume: 49.829
-         Halstead effort: 106.776
+         Halstead difficulty: 2.857
+         Halstead volume: 55.351
+         Halstead effort: 158.145
          Parameter count: 2
 
-Module 47:
+Module 46:
    File path: ./node_modules/typhonjs-escomplex-module/src/index.js
    Source path: typhonjs-escomplex-module/src/index.js
    Source alias: typhonjs-escomplex-module
@@ -4624,7 +4681,7 @@ Module 47:
    Average per-function halstead volume: 22.459
    Average per-function halstead effort: 84.221
 
-Module 48:
+Module 47:
    File path: ./node_modules/typhonjs-escomplex-module/src/Plugins.js
    Source path: typhonjs-escomplex-module/src/Plugins.js
    Total lines: 131
@@ -4738,20 +4795,20 @@ Adjacency (dependencies / numerical indices correspond to ProjectReport modules 
 1:	./src/ESComplexProject.js
 	3:	./src/Plugins.js
 	16:	typhonjs-escomplex-commons/src/module/report/ModuleReport.js
-	23:	typhonjs-escomplex-commons/src/project/report/ProjectReport.js
-	46:	typhonjs-escomplex-module/src/ESComplexModule.js
+	22:	typhonjs-escomplex-commons/src/project/report/ProjectReport.js
+	45:	typhonjs-escomplex-module/src/ESComplexModule.js
 
 2:	./src/index.js
 	1:	./src/ESComplexProject.js
 
 4:	./test/fixture/testImportNPMAlias.js
-	47:	typhonjs-escomplex-module/src/index.js
+	46:	typhonjs-escomplex-module/src/index.js
 
 6:	typhonjs-escomplex-commons/src/analyze/AnalyzeError.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
 
 8:	typhonjs-escomplex-commons/src/module/report/AbstractReport.js
-	40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
 
 9:	typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js
 	8:	typhonjs-escomplex-commons/src/module/report/AbstractReport.js
@@ -4768,9 +4825,9 @@ Adjacency (dependencies / numerical indices correspond to ProjectReport modules 
 	8:	typhonjs-escomplex-commons/src/module/report/AbstractReport.js
 	9:	typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js
 	11:	typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js
-	40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
 
 15:	typhonjs-escomplex-commons/src/module/report/MethodReport.js
 	6:	typhonjs-escomplex-commons/src/analyze/AnalyzeError.js
@@ -4782,121 +4839,121 @@ Adjacency (dependencies / numerical indices correspond to ProjectReport modules 
 	9:	typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js
 	11:	typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js
 	13:	typhonjs-escomplex-commons/src/module/report/ClassReport.js
-	40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	43:	typhonjs-escomplex-commons/src/utils/MathUtil.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	42:	typhonjs-escomplex-commons/src/utils/MathUtil.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
 
 17:	typhonjs-escomplex-commons/src/module/traits/actualize.js
 	18:	typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js
-	19:	typhonjs-escomplex-commons/src/module/traits/safeArray.js
-	21:	typhonjs-escomplex-commons/src/module/traits/Trait.js
+	19:	typhonjs-escomplex-commons/src/module/traits/Trait.js
+	21:	typhonjs-escomplex-commons/src/module/traits/TraitUtil.js
 
 18:	typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js
-	22:	typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js
+	20:	typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js
 
-23:	typhonjs-escomplex-commons/src/project/report/ProjectReport.js
+22:	typhonjs-escomplex-commons/src/project/report/ProjectReport.js
 	12:	typhonjs-escomplex-commons/src/module/report/averages/ModuleAverage.js
 	16:	typhonjs-escomplex-commons/src/module/report/ModuleReport.js
-	40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	43:	typhonjs-escomplex-commons/src/utils/MathUtil.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+	39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	42:	typhonjs-escomplex-commons/src/utils/MathUtil.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
-25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
 
-26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
 
-27:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
+26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
 
-28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
-	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+27:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
+	34:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
-29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
-	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
+28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
+	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
 
-30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
-	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
+	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
-31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
-	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
+	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
-32:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
-	39:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
+31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
+	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
 
-33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
-34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
 
-35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+34:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
-36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
 
-37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
-38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
-39:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
 
-40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
-	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
-	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
-	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
-	27:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
-	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
-	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
-	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
-	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
-	32:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
-	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
-	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
-	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
-	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
-	39:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
+39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	23:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
+	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
+	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
+	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
+	27:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
+	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
+	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
+	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
+	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
+	34:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
+	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
+	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
+	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
+	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
 
-41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
+40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
 
-43:	typhonjs-escomplex-commons/src/utils/MathUtil.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+42:	typhonjs-escomplex-commons/src/utils/MathUtil.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
 
-45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
 
-46:	typhonjs-escomplex-module/src/ESComplexModule.js
-	48:	typhonjs-escomplex-module/src/Plugins.js
+45:	typhonjs-escomplex-module/src/ESComplexModule.js
+	47:	typhonjs-escomplex-module/src/Plugins.js
 
-47:	typhonjs-escomplex-module/src/index.js
-	46:	typhonjs-escomplex-module/src/ESComplexModule.js
+46:	typhonjs-escomplex-module/src/index.js
+	45:	typhonjs-escomplex-module/src/ESComplexModule.js
 
-48:	typhonjs-escomplex-module/src/Plugins.js
+47:	typhonjs-escomplex-module/src/Plugins.js
 	16:	typhonjs-escomplex-commons/src/module/report/ModuleReport.js
 
 
@@ -4914,31 +4971,31 @@ Visibility (reverse dependents / numerical indices correspond to ProjectReport m
 	13:	typhonjs-escomplex-commons/src/module/report/ClassReport.js
 	14:	typhonjs-escomplex-commons/src/module/report/HalsteadData.js
 	16:	typhonjs-escomplex-commons/src/module/report/ModuleReport.js
-	23:	typhonjs-escomplex-commons/src/project/report/ProjectReport.js
-	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
-	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
-	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
-	27:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
-	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
-	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
-	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
-	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
-	32:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
-	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
-	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
-	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
-	39:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
-	40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	43:	typhonjs-escomplex-commons/src/utils/MathUtil.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
-	46:	typhonjs-escomplex-module/src/ESComplexModule.js
-	48:	typhonjs-escomplex-module/src/Plugins.js
+	22:	typhonjs-escomplex-commons/src/project/report/ProjectReport.js
+	23:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
+	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
+	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
+	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
+	27:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
+	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
+	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
+	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
+	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	34:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
+	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
+	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
+	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
+	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
+	39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	42:	typhonjs-escomplex-commons/src/utils/MathUtil.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+	45:	typhonjs-escomplex-module/src/ESComplexModule.js
+	47:	typhonjs-escomplex-module/src/Plugins.js
 
 2:	./src/index.js
 	1:	./src/ESComplexProject.js
@@ -4953,31 +5010,31 @@ Visibility (reverse dependents / numerical indices correspond to ProjectReport m
 	13:	typhonjs-escomplex-commons/src/module/report/ClassReport.js
 	14:	typhonjs-escomplex-commons/src/module/report/HalsteadData.js
 	16:	typhonjs-escomplex-commons/src/module/report/ModuleReport.js
-	23:	typhonjs-escomplex-commons/src/project/report/ProjectReport.js
-	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
-	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
-	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
-	27:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
-	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
-	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
-	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
-	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
-	32:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
-	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
-	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
-	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
-	39:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
-	40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	43:	typhonjs-escomplex-commons/src/utils/MathUtil.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
-	46:	typhonjs-escomplex-module/src/ESComplexModule.js
-	48:	typhonjs-escomplex-module/src/Plugins.js
+	22:	typhonjs-escomplex-commons/src/project/report/ProjectReport.js
+	23:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
+	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
+	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
+	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
+	27:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
+	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
+	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
+	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
+	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	34:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
+	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
+	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
+	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
+	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
+	39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	42:	typhonjs-escomplex-commons/src/utils/MathUtil.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+	45:	typhonjs-escomplex-module/src/ESComplexModule.js
+	47:	typhonjs-escomplex-module/src/Plugins.js
 
 3:	./src/Plugins.js
 	3:	./src/Plugins.js
@@ -4992,92 +5049,92 @@ Visibility (reverse dependents / numerical indices correspond to ProjectReport m
 	13:	typhonjs-escomplex-commons/src/module/report/ClassReport.js
 	14:	typhonjs-escomplex-commons/src/module/report/HalsteadData.js
 	16:	typhonjs-escomplex-commons/src/module/report/ModuleReport.js
-	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
-	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
-	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
-	27:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
-	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
-	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
-	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
-	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
-	32:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
-	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
-	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
-	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
-	39:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
-	40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	43:	typhonjs-escomplex-commons/src/utils/MathUtil.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
-	46:	typhonjs-escomplex-module/src/ESComplexModule.js
-	47:	typhonjs-escomplex-module/src/index.js
-	48:	typhonjs-escomplex-module/src/Plugins.js
+	23:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
+	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
+	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
+	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
+	27:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
+	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
+	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
+	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
+	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	34:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
+	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
+	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
+	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
+	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
+	39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	42:	typhonjs-escomplex-commons/src/utils/MathUtil.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+	45:	typhonjs-escomplex-module/src/ESComplexModule.js
+	46:	typhonjs-escomplex-module/src/index.js
+	47:	typhonjs-escomplex-module/src/Plugins.js
 
 5:	./test/fixture/testRequireNPMAlias.js
 	5:	./test/fixture/testRequireNPMAlias.js
 
 6:	typhonjs-escomplex-commons/src/analyze/AnalyzeError.js
 	6:	typhonjs-escomplex-commons/src/analyze/AnalyzeError.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
 
 7:	typhonjs-escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js
 	7:	typhonjs-escomplex-commons/src/module/plugin/syntax/AbstractSyntaxLoader.js
 
 8:	typhonjs-escomplex-commons/src/module/report/AbstractReport.js
 	8:	typhonjs-escomplex-commons/src/module/report/AbstractReport.js
-	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
-	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
-	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
-	27:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
-	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
-	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
-	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
-	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
-	32:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
-	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
-	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
-	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
-	39:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
-	40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+	23:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
+	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
+	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
+	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
+	27:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
+	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
+	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
+	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
+	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	34:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
+	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
+	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
+	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
+	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
+	39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
 9:	typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js
 	8:	typhonjs-escomplex-commons/src/module/report/AbstractReport.js
 	9:	typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js
 	14:	typhonjs-escomplex-commons/src/module/report/HalsteadData.js
-	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
-	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
-	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
-	27:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
-	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
-	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
-	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
-	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
-	32:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
-	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
-	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
-	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
-	39:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
-	40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+	23:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
+	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
+	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
+	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
+	27:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
+	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
+	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
+	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
+	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	34:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
+	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
+	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
+	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
+	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
+	39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
 10:	typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js
 	10:	typhonjs-escomplex-commons/src/module/report/averages/HalsteadAverage.js
@@ -5099,27 +5156,27 @@ Visibility (reverse dependents / numerical indices correspond to ProjectReport m
 	11:	typhonjs-escomplex-commons/src/module/report/averages/MethodAverage.js
 	13:	typhonjs-escomplex-commons/src/module/report/ClassReport.js
 	14:	typhonjs-escomplex-commons/src/module/report/HalsteadData.js
-	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
-	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
-	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
-	27:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
-	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
-	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
-	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
-	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
-	32:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
-	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
-	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
-	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
-	39:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
-	40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+	23:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
+	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
+	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
+	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
+	27:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
+	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
+	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
+	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
+	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	34:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
+	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
+	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
+	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
+	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
+	39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
 14:	typhonjs-escomplex-commons/src/module/report/HalsteadData.js
 	14:	typhonjs-escomplex-commons/src/module/report/HalsteadData.js
@@ -5130,27 +5187,27 @@ Visibility (reverse dependents / numerical indices correspond to ProjectReport m
 	9:	typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js
 	14:	typhonjs-escomplex-commons/src/module/report/HalsteadData.js
 	15:	typhonjs-escomplex-commons/src/module/report/MethodReport.js
-	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
-	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
-	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
-	27:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
-	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
-	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
-	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
-	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
-	32:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
-	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
-	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
-	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
-	39:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
-	40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+	23:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
+	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
+	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
+	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
+	27:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
+	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
+	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
+	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
+	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	34:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
+	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
+	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
+	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
+	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
+	39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
 16:	typhonjs-escomplex-commons/src/module/report/ModuleReport.js
 	6:	typhonjs-escomplex-commons/src/analyze/AnalyzeError.js
@@ -5161,53 +5218,50 @@ Visibility (reverse dependents / numerical indices correspond to ProjectReport m
 	13:	typhonjs-escomplex-commons/src/module/report/ClassReport.js
 	14:	typhonjs-escomplex-commons/src/module/report/HalsteadData.js
 	16:	typhonjs-escomplex-commons/src/module/report/ModuleReport.js
-	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
-	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
-	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
-	27:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
-	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
-	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
-	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
-	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
-	32:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
-	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
-	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
-	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
-	39:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
-	40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	43:	typhonjs-escomplex-commons/src/utils/MathUtil.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+	23:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
+	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
+	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
+	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
+	27:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
+	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
+	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
+	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
+	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	34:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
+	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
+	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
+	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
+	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
+	39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	42:	typhonjs-escomplex-commons/src/utils/MathUtil.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
 17:	typhonjs-escomplex-commons/src/module/traits/actualize.js
 	17:	typhonjs-escomplex-commons/src/module/traits/actualize.js
 	18:	typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js
-	19:	typhonjs-escomplex-commons/src/module/traits/safeArray.js
-	21:	typhonjs-escomplex-commons/src/module/traits/Trait.js
-	22:	typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js
+	19:	typhonjs-escomplex-commons/src/module/traits/Trait.js
+	20:	typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js
+	21:	typhonjs-escomplex-commons/src/module/traits/TraitUtil.js
 
 18:	typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js
 	18:	typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js
-	22:	typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js
+	20:	typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js
 
-19:	typhonjs-escomplex-commons/src/module/traits/safeArray.js
-	19:	typhonjs-escomplex-commons/src/module/traits/safeArray.js
+19:	typhonjs-escomplex-commons/src/module/traits/Trait.js
+	19:	typhonjs-escomplex-commons/src/module/traits/Trait.js
 
-20:	typhonjs-escomplex-commons/src/module/traits/safeName.js
-	20:	typhonjs-escomplex-commons/src/module/traits/safeName.js
+20:	typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js
+	20:	typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js
 
-21:	typhonjs-escomplex-commons/src/module/traits/Trait.js
-	21:	typhonjs-escomplex-commons/src/module/traits/Trait.js
+21:	typhonjs-escomplex-commons/src/module/traits/TraitUtil.js
+	21:	typhonjs-escomplex-commons/src/module/traits/TraitUtil.js
 
-22:	typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js
-	22:	typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js
-
-23:	typhonjs-escomplex-commons/src/project/report/ProjectReport.js
+22:	typhonjs-escomplex-commons/src/project/report/ProjectReport.js
 	6:	typhonjs-escomplex-commons/src/analyze/AnalyzeError.js
 	8:	typhonjs-escomplex-commons/src/module/report/AbstractReport.js
 	9:	typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js
@@ -5217,215 +5271,215 @@ Visibility (reverse dependents / numerical indices correspond to ProjectReport m
 	13:	typhonjs-escomplex-commons/src/module/report/ClassReport.js
 	14:	typhonjs-escomplex-commons/src/module/report/HalsteadData.js
 	16:	typhonjs-escomplex-commons/src/module/report/ModuleReport.js
-	23:	typhonjs-escomplex-commons/src/project/report/ProjectReport.js
-	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
-	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
-	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
-	27:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
-	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
-	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
-	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
-	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
-	32:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
-	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
-	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
-	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
-	39:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
-	40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	43:	typhonjs-escomplex-commons/src/utils/MathUtil.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+	22:	typhonjs-escomplex-commons/src/project/report/ProjectReport.js
+	23:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
+	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
+	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
+	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
+	27:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
+	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
+	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
+	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
+	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	34:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
+	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
+	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
+	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
+	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
+	39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	42:	typhonjs-escomplex-commons/src/utils/MathUtil.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
-24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
-	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
+23:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
+	23:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
 
-25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
-	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
+	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
 
-26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
-	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
+	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
 
-27:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
-	27:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
+26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
+	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
 
-28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
-	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
-	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
-	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
-	27:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
-	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
-	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
-	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
-	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
-	32:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
-	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
-	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
-	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
-	39:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
-	40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+27:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
+	23:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
+	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
+	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
+	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
+	27:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
+	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
+	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
+	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
+	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	34:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
+	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
+	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
+	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
+	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
+	39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
-29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
-	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
+	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
 
-30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
-	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
+	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
-31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
-	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
+	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
-32:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
-	32:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	39:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
+	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
 
-33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
-34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
 
-35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
-	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
-	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
-	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
-	27:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
-	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
-	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
-	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
-	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
-	32:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
-	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
-	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
-	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
-	39:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
-	40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+34:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
+	23:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
+	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
+	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
+	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
+	27:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
+	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
+	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
+	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
+	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	34:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
+	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
+	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
+	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
+	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
+	39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
-36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
 
-37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
-38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
-39:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	39:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
 
-40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
-	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
-	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
-	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
-	27:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
-	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
-	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
-	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
-	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
-	32:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
-	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
-	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
-	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
-	39:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
-	40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	23:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
+	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
+	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
+	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
+	27:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
+	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
+	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
+	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
+	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	34:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
+	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
+	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
+	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
+	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
+	39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
-41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
+40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
 
-42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
+41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
 
-43:	typhonjs-escomplex-commons/src/utils/MathUtil.js
-	43:	typhonjs-escomplex-commons/src/utils/MathUtil.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+42:	typhonjs-escomplex-commons/src/utils/MathUtil.js
+	42:	typhonjs-escomplex-commons/src/utils/MathUtil.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
 
-44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
 
-45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
 
-46:	typhonjs-escomplex-module/src/ESComplexModule.js
+45:	typhonjs-escomplex-module/src/ESComplexModule.js
 	6:	typhonjs-escomplex-commons/src/analyze/AnalyzeError.js
 	8:	typhonjs-escomplex-commons/src/module/report/AbstractReport.js
 	9:	typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js
@@ -5434,32 +5488,32 @@ Visibility (reverse dependents / numerical indices correspond to ProjectReport m
 	13:	typhonjs-escomplex-commons/src/module/report/ClassReport.js
 	14:	typhonjs-escomplex-commons/src/module/report/HalsteadData.js
 	16:	typhonjs-escomplex-commons/src/module/report/ModuleReport.js
-	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
-	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
-	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
-	27:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
-	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
-	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
-	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
-	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
-	32:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
-	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
-	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
-	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
-	39:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
-	40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	43:	typhonjs-escomplex-commons/src/utils/MathUtil.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
-	46:	typhonjs-escomplex-module/src/ESComplexModule.js
-	48:	typhonjs-escomplex-module/src/Plugins.js
+	23:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
+	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
+	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
+	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
+	27:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
+	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
+	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
+	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
+	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	34:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
+	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
+	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
+	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
+	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
+	39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	42:	typhonjs-escomplex-commons/src/utils/MathUtil.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+	45:	typhonjs-escomplex-module/src/ESComplexModule.js
+	47:	typhonjs-escomplex-module/src/Plugins.js
 
-47:	typhonjs-escomplex-module/src/index.js
+46:	typhonjs-escomplex-module/src/index.js
 	6:	typhonjs-escomplex-commons/src/analyze/AnalyzeError.js
 	8:	typhonjs-escomplex-commons/src/module/report/AbstractReport.js
 	9:	typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js
@@ -5468,33 +5522,33 @@ Visibility (reverse dependents / numerical indices correspond to ProjectReport m
 	13:	typhonjs-escomplex-commons/src/module/report/ClassReport.js
 	14:	typhonjs-escomplex-commons/src/module/report/HalsteadData.js
 	16:	typhonjs-escomplex-commons/src/module/report/ModuleReport.js
-	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
-	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
-	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
-	27:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
-	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
-	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
-	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
-	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
-	32:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
-	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
-	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
-	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
-	39:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
-	40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	43:	typhonjs-escomplex-commons/src/utils/MathUtil.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
-	46:	typhonjs-escomplex-module/src/ESComplexModule.js
-	47:	typhonjs-escomplex-module/src/index.js
-	48:	typhonjs-escomplex-module/src/Plugins.js
+	23:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
+	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
+	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
+	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
+	27:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
+	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
+	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
+	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
+	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	34:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
+	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
+	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
+	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
+	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
+	39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	42:	typhonjs-escomplex-commons/src/utils/MathUtil.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+	45:	typhonjs-escomplex-module/src/ESComplexModule.js
+	46:	typhonjs-escomplex-module/src/index.js
+	47:	typhonjs-escomplex-module/src/Plugins.js
 
-48:	typhonjs-escomplex-module/src/Plugins.js
+47:	typhonjs-escomplex-module/src/Plugins.js
 	6:	typhonjs-escomplex-commons/src/analyze/AnalyzeError.js
 	8:	typhonjs-escomplex-commons/src/module/report/AbstractReport.js
 	9:	typhonjs-escomplex-commons/src/module/report/AggregateMethodReport.js
@@ -5503,27 +5557,27 @@ Visibility (reverse dependents / numerical indices correspond to ProjectReport m
 	13:	typhonjs-escomplex-commons/src/module/report/ClassReport.js
 	14:	typhonjs-escomplex-commons/src/module/report/HalsteadData.js
 	16:	typhonjs-escomplex-commons/src/module/report/ModuleReport.js
-	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
-	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
-	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
-	27:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
-	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
-	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
-	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
-	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
-	32:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
-	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
-	34:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
-	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
-	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
-	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
-	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
-	39:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
-	40:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
-	41:	typhonjs-escomplex-commons/src/types/ReportType.js
-	42:	typhonjs-escomplex-commons/src/utils/Enum.js
-	43:	typhonjs-escomplex-commons/src/utils/MathUtil.js
-	44:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
-	45:	typhonjs-escomplex-commons/src/utils/StringUtil.js
-	48:	typhonjs-escomplex-module/src/Plugins.js
+	23:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js
+	24:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js
+	25:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js
+	26:	typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js
+	27:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js
+	28:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js
+	29:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js
+	30:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js
+	31:	typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js
+	32:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js
+	33:	typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js
+	34:	typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js
+	35:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js
+	36:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js
+	37:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js
+	38:	typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js
+	39:	typhonjs-escomplex-commons/src/transform/TransformFormat.js
+	40:	typhonjs-escomplex-commons/src/types/ReportType.js
+	41:	typhonjs-escomplex-commons/src/utils/Enum.js
+	42:	typhonjs-escomplex-commons/src/utils/MathUtil.js
+	43:	typhonjs-escomplex-commons/src/utils/ObjectUtil.js
+	44:	typhonjs-escomplex-commons/src/utils/StringUtil.js
+	47:	typhonjs-escomplex-module/src/Plugins.js
 

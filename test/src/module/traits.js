@@ -5,8 +5,9 @@ import ModuleReport     from '../../../src/module/report/ModuleReport';
 import Trait            from '../../../src/module/traits/Trait';
 import TraitHalstead    from '../../../src/module/traits/TraitHalstead';
 
+import TraitUtil        from '../../../src/module/traits/TraitUtil';
+
 import actualize        from '../../../src/module/traits/actualize';
-import safeName         from '../../../src/module/traits/safeName';
 
 import * as testconfig  from '../testconfig';
 
@@ -146,25 +147,25 @@ if (testconfig.modules['moduleTraits'])
          });
       });
 
-      suite('safeName:', () =>
+      suite('TraitUtil:', () =>
       {
-         suite('parsing is correct:', () =>
+         suite('safeName:', () =>
          {
             test('result with no parameters return `<anonymous>`', () =>
             {
-               const result = safeName();
+               const result = TraitUtil.safeName();
                assert.strictEqual(result, '<anonymous>');
             });
 
             test('result with null data and default value', () =>
             {
-               const result = safeName(null, 'default');
+               const result = TraitUtil.safeName(null, 'default');
                assert.strictEqual(result, 'default');
             });
 
             test('result with `object.name`', () =>
             {
-               const result = safeName({ name: 'safe!' }, 'default');
+               const result = TraitUtil.safeName({ name: 'safe!' }, 'default');
                assert.strictEqual(result, 'safe!');
             });
          });

@@ -1,12 +1,12 @@
 * Project:
-   * moduleAverage.maintainability: 132.733
+   * moduleAverage.maintainability: 132.078
 
 * Module 1:
    * filePath: `./src/ESComplexProject.js`
    * srcPath: `./src/ESComplexProject.js`
-   * maintainability: 110.612
+   * maintainability: 110.513
    * Class: **ESComplexProject** (11)
-      * maintainability: 110.612
+      * maintainability: 110.513
       * Class method: **constructor** (44)
          * cyclomatic: 8
          * halstead.difficulty: 7.385
@@ -15,8 +15,8 @@
          * halstead.difficulty: 13.333
       * Class method: **&lt;anonymous&gt;** (126)
          * cyclomatic: 3
-         * halstead.difficulty: 14.912
-      * Class method: **processResults** (174)
+         * halstead.difficulty: 16.059
+      * Class method: **process** (174)
          * cyclomatic: 5
          * halstead.difficulty: 15.75
       * Class method: **analyzeAsync** (215)
@@ -24,13 +24,13 @@
          * halstead.difficulty: 2
       * Class method: **&lt;anonymous&gt;** (217)
          * cyclomatic: 1
-         * halstead.difficulty: 2.143
-      * Class method: **processResultsAsync** (232)
+         * halstead.difficulty: 2.857
+      * Class method: **processAsync** (232)
          * cyclomatic: 1
          * halstead.difficulty: 2
       * Class method: **&lt;anonymous&gt;** (234)
          * cyclomatic: 1
-         * halstead.difficulty: 2.143
+         * halstead.difficulty: 2.857
 
 * Module 2:
    * filePath: `./src/index.js`
@@ -371,10 +371,10 @@
 * Module 17:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/traits/actualize.js`
    * srcPath: `typhonjs-escomplex-commons/src/module/traits/actualize.js`
-   * maintainability: 111.799
-   * Module method: **&lt;anonymous&gt;** (19)
+   * maintainability: 110.739
+   * Module method: **&lt;anonymous&gt;** (18)
       * cyclomatic: 1
-      * halstead.difficulty: 5.921
+      * halstead.difficulty: 7.2
 
 * Module 18:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/traits/HalsteadArray.js`
@@ -417,22 +417,6 @@
          * halstead.difficulty: 7.778
 
 * Module 19:
-   * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/traits/safeArray.js`
-   * srcPath: `typhonjs-escomplex-commons/src/module/traits/safeArray.js`
-   * maintainability: 148.682
-   * Module method: **&lt;anonymous&gt;** (8)
-      * cyclomatic: 4
-      * halstead.difficulty: 8
-
-* Module 20:
-   * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/traits/safeName.js`
-   * srcPath: `typhonjs-escomplex-commons/src/module/traits/safeName.js`
-   * maintainability: 119.451
-   * Module method: **&lt;anonymous&gt;** (9)
-      * cyclomatic: 7
-      * halstead.difficulty: 9.188
-
-* Module 21:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/traits/Trait.js`
    * srcPath: `typhonjs-escomplex-commons/src/module/traits/Trait.js`
    * maintainability: 140.44
@@ -454,7 +438,7 @@
          * cyclomatic: 2
          * halstead.difficulty: 5
 
-* Module 22:
+* Module 20:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js`
    * srcPath: `typhonjs-escomplex-commons/src/module/traits/TraitHalstead.js`
    * maintainability: 128.881
@@ -482,7 +466,35 @@
          * cyclomatic: 2
          * halstead.difficulty: 5
 
-* Module 23:
+* Module 21:
+   * filePath: `./node_modules/typhonjs-escomplex-commons/src/module/traits/TraitUtil.js`
+   * srcPath: `typhonjs-escomplex-commons/src/module/traits/TraitUtil.js`
+   * maintainability: 105.897
+   * Class: **TraitUtil** (3)
+      * maintainability: 105.897
+      * Class method: **safeArray** (12)
+         * cyclomatic: 4
+         * halstead.difficulty: 8
+      * Class method: **safeComputedName** (30)
+         * cyclomatic: 12
+         * halstead.difficulty: 22.286
+      * Class method: **safeComputedOperands** (86)
+         * cyclomatic: 12
+         * halstead.difficulty: 24.143
+      * Class method: **safeComputedOperators** (153)
+         * cyclomatic: 8
+         * halstead.difficulty: 16.042
+      * Class method: **safeName** (180)
+         * cyclomatic: 7
+         * halstead.difficulty: 9.188
+      * Class method: **safeNameOrValue** (203)
+         * cyclomatic: 9
+         * halstead.difficulty: 11.278
+      * Class method: **safeValue** (224)
+         * cyclomatic: 7
+         * halstead.difficulty: 9.188
+
+* Module 22:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/project/report/ProjectReport.js`
    * srcPath: `typhonjs-escomplex-commons/src/project/report/ProjectReport.js`
    * maintainability: 124.748
@@ -546,7 +558,7 @@
          * cyclomatic: 1
          * halstead.difficulty: 2
 
-* Module 24:
+* Module 23:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/json/FormatJSON.js`
    * maintainability: 152.36
@@ -568,7 +580,7 @@
          * cyclomatic: 1
          * halstead.difficulty: 0.5
 
-* Module 25:
+* Module 24:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONCheckstyle.js`
    * maintainability: 100.95
@@ -602,7 +614,7 @@
          * cyclomatic: 14
          * halstead.difficulty: 30.868
 
-* Module 26:
+* Module 25:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONMinimal.js`
    * maintainability: 115.59
@@ -663,7 +675,7 @@
          * cyclomatic: 1
          * halstead.difficulty: 1.125
 
-* Module 27:
+* Module 26:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/json/FormatJSONModules.js`
    * maintainability: 123.814
@@ -694,7 +706,7 @@
          * cyclomatic: 1
          * halstead.difficulty: 1.167
 
-* Module 28:
+* Module 27:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdown.js`
    * maintainability: 156.387
@@ -710,7 +722,7 @@
          * cyclomatic: 1
          * halstead.difficulty: 0.5
 
-* Module 29:
+* Module 28:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownAdjacency.js`
    * maintainability: 157.745
@@ -726,7 +738,7 @@
          * cyclomatic: 1
          * halstead.difficulty: 0.5
 
-* Module 30:
+* Module 29:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownMinimal.js`
    * maintainability: 157.745
@@ -742,7 +754,7 @@
          * cyclomatic: 1
          * halstead.difficulty: 0.5
 
-* Module 31:
+* Module 30:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownModules.js`
    * maintainability: 157.745
@@ -758,7 +770,7 @@
          * cyclomatic: 1
          * halstead.difficulty: 0.5
 
-* Module 32:
+* Module 31:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/markdown/FormatMarkdownVisibility.js`
    * maintainability: 157.745
@@ -774,12 +786,12 @@
          * cyclomatic: 1
          * halstead.difficulty: 0.5
 
-* Module 33:
+* Module 32:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/text/AbstractFormatText.js`
-   * maintainability: 114.353
+   * maintainability: 114.287
    * Class: **AbstractFormatText** (8)
-      * maintainability: 114.353
+      * maintainability: 114.287
       * Class method: **constructor** (17)
          * cyclomatic: 1
          * halstead.difficulty: 2.4
@@ -815,7 +827,7 @@
          * halstead.difficulty: 1.929
       * Class method: **_formatModule** (267)
          * cyclomatic: 1
-         * halstead.difficulty: 5.75
+         * halstead.difficulty: 7.667
       * Class method: **_formatModuleReport** (304)
          * cyclomatic: 5
          * halstead.difficulty: 16.763
@@ -824,12 +836,12 @@
          * halstead.difficulty: 4.2
       * Class method: **&lt;anonymous&gt;** (343)
          * cyclomatic: 1
-         * halstead.difficulty: 7
+         * halstead.difficulty: 9
       * Class method: **_formatProjectReport** (376)
          * cyclomatic: 4
          * halstead.difficulty: 12.923
 
-* Module 34:
+* Module 33:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/text/AbstractTextMatrix.js`
    * maintainability: 116.238
@@ -857,7 +869,7 @@
          * cyclomatic: 1
          * halstead.difficulty: 2.429
 
-* Module 35:
+* Module 34:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/text/FormatText.js`
    * maintainability: 121.935
@@ -882,7 +894,7 @@
          * cyclomatic: 7
          * halstead.difficulty: 18.85
 
-* Module 36:
+* Module 35:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/text/FormatTextAdjacency.js`
    * maintainability: 156.212
@@ -901,7 +913,7 @@
          * cyclomatic: 1
          * halstead.difficulty: 0.5
 
-* Module 37:
+* Module 36:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/text/FormatTextMinimal.js`
    * maintainability: 138.381
@@ -923,7 +935,7 @@
          * cyclomatic: 6
          * halstead.difficulty: 3.889
 
-* Module 38:
+* Module 37:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/text/FormatTextModules.js`
    * maintainability: 145.363
@@ -945,7 +957,7 @@
          * cyclomatic: 3
          * halstead.difficulty: 3.333
 
-* Module 39:
+* Module 38:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/formats/text/FormatTextVisibility.js`
    * maintainability: 156.212
@@ -964,7 +976,7 @@
          * cyclomatic: 1
          * halstead.difficulty: 0.5
 
-* Module 40:
+* Module 39:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/transform/TransformFormat.js`
    * srcPath: `typhonjs-escomplex-commons/src/transform/TransformFormat.js`
    * maintainability: 122.862
@@ -1001,14 +1013,14 @@
          * cyclomatic: 1
          * halstead.difficulty: 1.333
 
-* Module 41:
+* Module 40:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/types/ReportType.js`
    * srcPath: `typhonjs-escomplex-commons/src/types/ReportType.js`
    * maintainability: 106.3
    * Class: **ReportType** (3)
       * maintainability: 171
 
-* Module 42:
+* Module 41:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/utils/Enum.js`
    * srcPath: `typhonjs-escomplex-commons/src/utils/Enum.js`
    * maintainability: 127.178
@@ -1038,14 +1050,14 @@
       * Class method: **&lt;anonymous&gt;** (105)
          * cyclomatic: 1
          * halstead.difficulty: 2
-      * Class method: **&lt;anonymous&gt;** (113)
+      * Class method: **&lt;computed~Symbol.iterator&gt;** (113)
          * cyclomatic: 1
          * halstead.difficulty: 1.5
       * Class method: **toString** (123)
          * cyclomatic: 1
          * halstead.difficulty: 1.5
 
-* Module 43:
+* Module 42:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/utils/MathUtil.js`
    * srcPath: `typhonjs-escomplex-commons/src/utils/MathUtil.js`
    * maintainability: 128.142
@@ -1079,7 +1091,7 @@
          * cyclomatic: 3
          * halstead.difficulty: 8.571
 
-* Module 44:
+* Module 43:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
    * srcPath: `typhonjs-escomplex-commons/src/utils/ObjectUtil.js`
    * maintainability: 102.148
@@ -1110,7 +1122,7 @@
          * cyclomatic: 13
          * halstead.difficulty: 38.48
 
-* Module 45:
+* Module 44:
    * filePath: `./node_modules/typhonjs-escomplex-commons/src/utils/StringUtil.js`
    * srcPath: `typhonjs-escomplex-commons/src/utils/StringUtil.js`
    * maintainability: 124.092
@@ -1164,12 +1176,12 @@
          * cyclomatic: 1
          * halstead.difficulty: 1
 
-* Module 46:
+* Module 45:
    * filePath: `./node_modules/typhonjs-escomplex-module/src/ESComplexModule.js`
    * srcPath: `typhonjs-escomplex-module/src/ESComplexModule.js`
-   * maintainability: 126.029
+   * maintainability: 126.001
    * Class: **ESComplexModule** (8)
-      * maintainability: 126.029
+      * maintainability: 126.001
       * Class method: **constructor** (19)
          * cyclomatic: 2
          * halstead.difficulty: 5.143
@@ -1187,15 +1199,15 @@
          * halstead.difficulty: 2
       * Class method: **&lt;anonymous&gt;** (80)
          * cyclomatic: 1
-         * halstead.difficulty: 2.143
+         * halstead.difficulty: 2.857
 
-* Module 47:
+* Module 46:
    * filePath: `./node_modules/typhonjs-escomplex-module/src/index.js`
    * srcPath: `typhonjs-escomplex-module/src/index.js`
    * srcPathAlias: `typhonjs-escomplex-module`
    * maintainability: 171
 
-* Module 48:
+* Module 47:
    * filePath: `./node_modules/typhonjs-escomplex-module/src/Plugins.js`
    * srcPath: `typhonjs-escomplex-module/src/Plugins.js`
    * maintainability: 122.046
