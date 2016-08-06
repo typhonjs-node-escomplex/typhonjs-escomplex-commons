@@ -12,8 +12,7 @@ export default class FormatText extends AbstractFormatText
    constructor(headers = {}, keys = {}, adjacencyFormatName = 'text-adjacency',
     visibilityFormatName = 'text-visibility')
    {
-      super(Object.assign(Object.assign({}, s_DEFAULT_HEADERS), headers),
-       Object.assign(Object.assign({}, s_DEFAULT_KEYS), keys));
+      super(Object.assign({}, s_DEFAULT_HEADERS, headers), Object.assign({}, s_DEFAULT_KEYS, keys));
 
       this._adjacencyFormatName = adjacencyFormatName;
       this._visibilityFormatName = visibilityFormatName;
@@ -88,8 +87,7 @@ export default class FormatText extends AbstractFormatText
    {
       let output = super._formatProject(projectReport, options);
 
-      let localOptions = Object.assign({}, this._keys);
-      localOptions = Object.assign(localOptions, options);
+      const localOptions = Object.assign({}, this._keys, options);
 
       const adjacency = typeof localOptions.adjacency === 'boolean' ? localOptions.adjacency : true;
       const visibility = typeof localOptions.visibility === 'boolean' ? localOptions.visibility : true;

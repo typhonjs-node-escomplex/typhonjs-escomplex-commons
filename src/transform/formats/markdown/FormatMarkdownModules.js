@@ -9,7 +9,7 @@ export default class FormatMarkdownModules extends FormatTextModules
 {
    constructor(headers = {}, keys = {})
    {
-      super(Object.assign(Object.assign({}, s_DEFAULT_HEADERS), headers), keys);
+      super(Object.assign({}, s_DEFAULT_HEADERS, headers), keys);
    }
 
    /**

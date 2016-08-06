@@ -9,8 +9,7 @@ export default class FormatMarkdown extends FormatText
    constructor(headers = {}, keys = {}, adjacencyFormatName = 'markdown-adjacency',
     visibilityFormatName = 'markdown-visibility')
    {
-      super(Object.assign(Object.assign({}, s_DEFAULT_HEADERS), headers), keys, adjacencyFormatName,
-       visibilityFormatName);
+      super(Object.assign({}, s_DEFAULT_HEADERS, headers), keys, adjacencyFormatName, visibilityFormatName);
    }
 
    /**

@@ -7,8 +7,7 @@ export default class FormatTextVisibility extends AbstractTextMatrix
 {
    constructor(headers = {}, keys = {})
    {
-      super(Object.assign(Object.assign({}, s_DEFAULT_HEADERS), headers),
-       Object.assign(Object.assign({}, s_DEFAULT_KEYS), keys));
+      super(Object.assign({}, s_DEFAULT_HEADERS, headers), Object.assign({}, s_DEFAULT_KEYS, keys));
    }
 
    /**

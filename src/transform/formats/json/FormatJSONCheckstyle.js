@@ -53,8 +53,7 @@ export default class FormatJSONCheckstyle
             return '';
       }
 
-      let localOptions = Object.assign({}, this._thresholds);
-      localOptions = Object.assign(localOptions, options);
+      const localOptions = Object.assign({}, this._thresholds, options);
 
       const output = { version: '7.0', file: [] };
 

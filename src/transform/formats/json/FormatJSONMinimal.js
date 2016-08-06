@@ -24,8 +24,7 @@ export default class FormatJSONMinimal
     */
    formatReport(report, options = {})
    {
-      let localOptions = Object.assign({}, this._keys);
-      localOptions = Object.assign(localOptions, options);
+      const localOptions = Object.assign({}, this._keys, options);
 
       let output;
 

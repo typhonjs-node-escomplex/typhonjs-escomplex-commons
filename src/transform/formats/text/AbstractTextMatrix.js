@@ -82,8 +82,7 @@ export default class AbstractTextMatrix
     */
    _formatProject(projectReport, options = {})
    {
-      let localOptions = Object.assign({}, this._keys);
-      localOptions = Object.assign(localOptions, options);
+      const localOptions = Object.assign({}, this._keys, options);
 
       const matrixList = ObjectUtil.safeAccess(projectReport, localOptions.matrixList);
 

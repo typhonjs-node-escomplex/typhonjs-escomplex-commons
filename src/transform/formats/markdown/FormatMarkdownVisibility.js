@@ -7,7 +7,7 @@ export default class FormatMarkdownVisibility extends FormatTextVisibility
 {
    constructor(headers = {}, keys = {})
    {
-      super(Object.assign(Object.assign({}, s_DEFAULT_HEADERS), headers), keys);
+      super(Object.assign({}, s_DEFAULT_HEADERS, headers), keys);
    }
 
    /**
