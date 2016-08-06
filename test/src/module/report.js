@@ -52,7 +52,7 @@ if (testconfig.modules['moduleReport'])
             {
                assert.isUndefined(report.getCurrentClassReport());
 
-               let classReport = report.createScope('class', 100, 200);
+               let classReport = report.createScope({ type: 'class', name: 'aclass', lineStart: 100, lineEnd: 200 });
                let classReport2 = report.getCurrentClassReport();
 
                assert.instanceOf(classReport, ClassReport);
@@ -62,7 +62,7 @@ if (testconfig.modules['moduleReport'])
 
                assert.strictEqual(classReport, classReport2);
 
-               classReport = report.popScope('class');
+               classReport = report.popScope({ type: 'class' });
                classReport2 = report.getCurrentClassReport();
 
                assert.isUndefined(classReport);
@@ -73,7 +73,9 @@ if (testconfig.modules['moduleReport'])
             {
                assert.isUndefined(report.getCurrentMethodReport());
 
-               let methodReport = report.createScope('method', 100, 200);
+               let methodReport = report.createScope(
+                { type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 0 });
+
                let methodReport2 = report.getCurrentMethodReport();
 
                assert.instanceOf(methodReport, MethodReport);
@@ -83,7 +85,7 @@ if (testconfig.modules['moduleReport'])
 
                assert.strictEqual(methodReport, methodReport2);
 
-               methodReport = report.popScope('method');
+               methodReport = report.popScope({ type: 'method' });
                methodReport2 = report.getCurrentMethodReport();
 
                assert.isUndefined(methodReport);
@@ -92,8 +94,8 @@ if (testconfig.modules['moduleReport'])
 
             test('report has correct class w/ method scope', () =>
             {
-               report.createScope('class', 100, 200);
-               report.createScope('method', 100, 200, 4);
+               report.createScope({ type: 'class', name: 'aclass', lineStart: 100, lineEnd: 200 });
+               report.createScope({ type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 4 });
 
                assert.lengthOf(report.classes, 1);
                assert.lengthOf(report.classes[0].methods, 1);
@@ -103,7 +105,17 @@ if (testconfig.modules['moduleReport'])
 
             test('error thrown for unknown scope type', () =>
             {
-               assert.throws(() => { report.createScope('unknown', 100, 200); });
+               assert.throws(() =>
+               {
+                  report.createScope({ type: 'unknown', name: '?', lineStart: 100, lineEnd: 200 });
+               });
+
+               assert.throws(() => { report.createScope(); });
+
+               assert.throws(() => { report.createScope('unknown'); });
+
+               assert.throws(() => { report.popScope(); });
+
                assert.throws(() => { report.popScope('unknown'); });
             });
 
@@ -118,7 +130,7 @@ if (testconfig.modules['moduleReport'])
 
             test('class scope stack created / finalized', () =>
             {
-               report.createScope('class', 100, 200);
+               report.createScope({ type: 'class', name: 'aclass', lineStart: 100, lineEnd: 200 });
 
                assert.isArray(report._scopeStackClass);
                assert.isNotArray(report._scopeStackMethod);
@@ -131,7 +143,7 @@ if (testconfig.modules['moduleReport'])
 
             test('method scope stack created / finalized', () =>
             {
-               report.createScope('method', 100, 200, 4);
+               report.createScope({ type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 4 });
 
                assert.isNotArray(report._scopeStackClass);
                assert.isArray(report._scopeStackMethod);
@@ -152,8 +164,8 @@ if (testconfig.modules['moduleReport'])
 
             test('report has correct class w/ method halstead metrics', () =>
             {
-               report.createScope('class', 100, 200);
-               report.createScope('method', 100, 200, 0);
+               report.createScope({ type: 'class', name: 'aclass', lineStart: 100, lineEnd: 200 });
+               report.createScope({ type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 0 });
 
                report.halsteadItemEncountered('operators', 'test');
 
@@ -172,8 +184,8 @@ if (testconfig.modules['moduleReport'])
 
             test('report has correct class w/ method cyclomatic metrics', () =>
             {
-               report.createScope('class', 100, 200);
-               report.createScope('method', 100, 200, 0);
+               report.createScope({ type: 'class', name: 'aclass', lineStart: 100, lineEnd: 200 });
+               report.createScope({ type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 0 });
 
                report.incrementCyclomatic(50);
 
@@ -192,8 +204,8 @@ if (testconfig.modules['moduleReport'])
 
             test('report has correct class w/ method sloc metrics', () =>
             {
-               report.createScope('class', 100, 200);
-               report.createScope('method', 100, 200, 0);
+               report.createScope({ type: 'class', name: 'aclass', lineStart: 100, lineEnd: 200 });
+               report.createScope({ type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 0 });
 
                report.incrementLogicalSloc(50);
 

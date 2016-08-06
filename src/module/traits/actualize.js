@@ -10,13 +10,13 @@ import TraitUtil     from './TraitUtil';
  * @param {function|string|Array}   operators - An operator carries out an action.
  * @param {function|string|Array}   operands - An operand participates in such an action (operator).
  * @param {function|string|Array}   ignoreKeys - Provides a list of AST node children keys to skip traversal.
- * @param {function|string}         newScope - Creates a new `class` or `method` scope for report generation.
+ * @param {function|object}         newScope - Creates a new `class` or `method` scope for report generation.
  * @param {function|object|Array}   dependencies - An import / require dependency.
  *
  * @returns {{lloc: Trait, cyclomatic: Trait, operators: HalsteadArray, operands: HalsteadArray, ignoreKeys: Trait, newScope: Trait, dependencies: Trait}}
  */
-export default function(lloc = 0, cyclomatic = 0, operators = undefined, operands = undefined,
- ignoreKeys = undefined, newScope = undefined, dependencies = undefined)
+export default function(lloc = 0, cyclomatic = 0, operators = void 0, operands = void 0, ignoreKeys = void 0,
+ newScope = void 0, dependencies = void 0)
 {
    return {
       lloc: new Trait('lloc', lloc),

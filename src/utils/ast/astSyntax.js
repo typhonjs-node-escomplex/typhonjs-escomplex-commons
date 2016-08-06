@@ -8,8 +8,8 @@ let ArrayExpression, BinaryExpression, ForInStatement, FunctionDeclaration;
 export default {
    Program(node, state)
    {
-      const indent = state.indent.repeat(state.indentLevel);
       const { lineEnd, output } = state;
+      const indent = state.indent.repeat(state.indentLevel);
       const statements = node.body;
 
       for (let i = 0; i < statements.length; i++)
@@ -26,8 +26,8 @@ export default {
 
    BlockStatement(node, state)
    {
-      const indent = state.indent.repeat(state.indentLevel++);
       const { lineEnd, output } = state;
+      const indent = state.indent.repeat(state.indentLevel++);
       const statementIndent = indent + state.indent;
 
       output.write('{');
@@ -62,21 +62,22 @@ export default {
 
    ExpressionStatement(node, state)
    {
+      const { output } = state;
       const precedence = expressionPrecedence[node.expression.type];
 
       if (precedence === 17 || (precedence === 3 && node.expression.left.type[0] === 'O'))
       {
          // Should always have parentheses or is an AssignmentExpression to an ObjectPattern
-         state.output.write('(');
+         output.write('(');
          this[node.expression.type](node.expression, state);
-         state.output.write(')');
+         output.write(')');
       }
       else
       {
          this[node.expression.type](node.expression, state);
       }
 
-      state.output.write(';');
+      output.write(';');
    },
 
    IfStatement(node, state)
@@ -155,8 +156,8 @@ export default {
 
    SwitchStatement(node, state)
    {
-      const indent = state.indent.repeat(state.indentLevel++);
       const { lineEnd, output } = state;
+      const indent = state.indent.repeat(state.indentLevel++);
 
       state.indentLevel++;
 
@@ -413,12 +414,14 @@ export default {
 
    VariableDeclarator(node, state)
    {
+      const { output } = state;
+
       this[node.id.type](node.id, state);
 
       if (node.init != null)
       {
-         state.output.write(' = ');
-         state.output.operators.push('=');
+         output.write(' = ');
+         output.operators.push('=');
 
          this[node.init.type](node.init, state);
       }
@@ -704,6 +707,7 @@ export default {
    {
       state.output.write('...');
       state.output.operators.push('... (spread)');
+
       this[node.argument.type](node.argument, state);
    },
 
@@ -788,8 +792,8 @@ export default {
 
    ObjectExpression(node, state)
    {
-      const indent = state.indent.repeat(state.indentLevel++);
       const { lineEnd, output } = state;
+      const indent = state.indent.repeat(state.indentLevel++);
       const propertyIndent = indent + state.indent;
 
       output.operators.push('{}');

@@ -25,12 +25,12 @@ if (testconfig.modules['projectReport'])
                report2.srcPath = './a.js';
                report3.srcPath = './b.js';
 
-               report.createScope('method', 100, 200);
-               report.popScope('method');
-               report.createScope('class', 100, 200);
-               report.createScope('method', 100, 200);
-               report.popScope('method');
-               report.popScope('class');
+               report.createScope({ type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 0 });
+               report.popScope({ type: 'method' });
+               report.createScope({ type: 'class', name: 'aclass', lineStart: 100, lineEnd: 200 });
+               report.createScope({ type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 0 });
+               report.popScope({ type: 'method' });
+               report.popScope({ type: 'class' });
 
                result = new ProjectReport([report, report2, report3]);
 

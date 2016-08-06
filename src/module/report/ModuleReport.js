@@ -161,22 +161,47 @@ export default class ModuleReport extends AbstractReport
    /**
     * Creates a report scope when a class or method is entered.
     *
-    * @param {string}   type - Type of report to create.
-    * @param {string}   name - Name of the class or method.
-    * @param {number}   lineStart - Start line of method.
-    * @param {number}   lineEnd - End line of method.
-    * @param {number}   params - Number of parameters for method.
+    * @param {object}   newScope - An object hash defining the new scope including:
+    * ```
+    * (string) type - Type of report to create.
+    * (string) name - Name of the class or method.
+    * (number) lineStart - Start line of method.
+    * (number) lineEnd - End line of method.
+    * (number) paramCount - (For method scopes) Number of parameters for method.
+    * ```
     *
     * @return {object}
     */
-   createScope(type, name = '', lineStart = 0, lineEnd = 0, params = 0)
+   createScope(newScope)
    {
       let report;
 
-      switch (type)
+      if (typeof newScope !== 'object') { throw new TypeError(`createScope error: 'newScope' is not an 'object'.`); }
+
+      if (typeof newScope.type !== 'string')
+      {
+         throw new TypeError(`createScope error: 'newScope.type' is not a 'string'.`);
+      }
+
+      if (typeof newScope.name !== 'string')
+      {
+         throw new TypeError(`createScope error: 'newScope.name' is not a 'string'.`);
+      }
+
+      if (!Number.isInteger(newScope.lineStart))
+      {
+         throw new TypeError(`createScope error: 'newScope.lineStart' is not an 'integer'.`);
+      }
+
+      if (!Number.isInteger(newScope.lineEnd))
+      {
+         throw new TypeError(`createScope error: 'newScope.lineEnd' is not an 'integer'.`);
+      }
+
+      switch (newScope.type)
       {
          case 'class':
-            report = new ClassReport(name, lineStart, lineEnd);
+            report = new ClassReport(newScope.name, newScope.lineStart, newScope.lineEnd);
             this.classes.push(report);
 
             // Lazily create class scope stack if not currently initialized.
@@ -188,22 +213,28 @@ export default class ModuleReport extends AbstractReport
 
          case 'method':
          {
+            if (!Number.isInteger(newScope.paramCount))
+            {
+               throw new TypeError(`createScope error: 'newScope.paramCount' is not an 'integer'.`);
+            }
+
             // Increment aggregate method report params.
-            this.incrementParams(params);
+            this.incrementParams(newScope.paramCount);
 
             // If an existing class report / scope exists also push the method to the class report.
             const classReport = this.getCurrentClassReport();
 
             if (classReport)
             {
-               report = new ClassMethodReport(name, lineStart, lineEnd, params);
+               report = new ClassMethodReport(newScope.name, newScope.lineStart, newScope.lineEnd, newScope.paramCount);
 
-               classReport.incrementParams(params);
+               classReport.incrementParams(newScope.paramCount);
                classReport.methods.push(report);
             }
             else
             {
-               report = new ModuleMethodReport(name, lineStart, lineEnd, params);
+               report = new ModuleMethodReport(newScope.name, newScope.lineStart, newScope.lineEnd,
+                newScope.paramCount);
 
                // Add this report to the module methods as there is no current class report.
                this.methods.push(report);
@@ -218,7 +249,7 @@ export default class ModuleReport extends AbstractReport
          }
 
          default:
-            throw new Error(`createScope error: Unknown scope type (${type}).`);
+            throw new Error(`createScope error: Unknown scope type (${newScope.type}).`);
       }
 
       return report;
@@ -442,12 +473,23 @@ export default class ModuleReport extends AbstractReport
    /**
     * Pops a report scope.
     *
-    * @param {string} type - The report scope `class` or `method` to pop off the given stack.
+    * @param {object}   scope - An object hash defining the scope including:
+    * ```
+    * (string) type - Type of report scope to pop off the stack.
+    * ```
+    *
     * @returns {*}
     */
-   popScope(type)
+   popScope(scope)
    {
-      switch (type)
+      if (typeof scope !== 'object') { throw new TypeError(`popScope error: 'scope' is not an 'object'.`); }
+
+      if (typeof scope.type !== 'string')
+      {
+         throw new TypeError(`popScope error: 'scope.type' is not a 'string'.`);
+      }
+
+      switch (scope.type)
       {
          case 'class':
             if (Array.isArray(this._scopeStackClass)) { this._scopeStackClass.pop(); }
@@ -458,7 +500,7 @@ export default class ModuleReport extends AbstractReport
             return this.getCurrentMethodReport();
 
          default:
-            throw new Error(`popScope error: Unknown scope type (${type}).`);
+            throw new Error(`popScope error: Unknown scope type (${scope.type}).`);
       }
    }
 
