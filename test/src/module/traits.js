@@ -1,7 +1,6 @@
 import { assert }       from 'chai';
 
 import HalsteadArray    from '../../../src/module/traits/HalsteadArray';
-import ModuleReport     from '../../../src/module/report/ModuleReport';
 import Trait            from '../../../src/module/traits/Trait';
 import TraitHalstead    from '../../../src/module/traits/TraitHalstead';
 

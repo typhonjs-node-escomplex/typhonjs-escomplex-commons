@@ -99,7 +99,7 @@ export default class ModuleScopeControl
          }
 
          default:
-            throw new Error(`createScope error: Unknown scope type (${type}).`);
+            throw new Error(`createScope error: Unknown scope type (${newScope.type}).`);
       }
 
       return report;
@@ -134,8 +134,6 @@ export default class ModuleScopeControl
     * ```
     * (string) type - Type of report scope to pop off the stack.
     * ```
-    *
-    * @returns {*}
     */
    popScope(scope)
    {
