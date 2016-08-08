@@ -1,10 +1,11 @@
-import { assert }       from 'chai';
+import { assert }          from 'chai';
 
-import ClassReport      from '../../../src/module/report/ClassReport';
-import MethodReport     from '../../../src/module/report/MethodReport';
-import ModuleReport     from '../../../src/module/report/ModuleReport';
+import ClassReport         from '../../../src/module/report/ClassReport';
+import MethodReport        from '../../../src/module/report/MethodReport';
+import ModuleReport        from '../../../src/module/report/ModuleReport';
+import ModuleScopeControl  from '../../../src/module/report/control/ModuleScopeControl';
 
-import * as testconfig  from '../testconfig';
+import * as testconfig     from '../testconfig';
 
 if (testconfig.modules['moduleReport'])
 {
@@ -26,34 +27,28 @@ if (testconfig.modules['moduleReport'])
             });
          });
 
-         suite('addDependencies:', () =>
-         {
-            let report;
-
-            setup(() => { report = new ModuleReport(10, 100); });
-            teardown(() => { report = undefined; });
-
-            test('report has correct dependencies', () =>
-            {
-               report.addDependencies({ type: 'esm' });
-
-               assert.lengthOf(report.dependencies, 1);
-            });
-         });
-
          suite('createScope / popScope:', () =>
          {
-            let report;
+            let report, scopeControl;
 
-            setup(() => { report = new ModuleReport(10, 100); });
-            teardown(() => { report = undefined; });
+            setup(() =>
+            {
+               report = new ModuleReport(10, 100);
+               scopeControl = new ModuleScopeControl(report);
+            });
+
+            teardown(() =>
+            {
+               report = void 0;
+            });
 
             test('report has correct class scope', () =>
             {
-               assert.isUndefined(report.getCurrentClassReport());
+               assert.isUndefined(scopeControl.getCurrentClassReport());
 
-               let classReport = report.createScope({ type: 'class', name: 'aclass', lineStart: 100, lineEnd: 200 });
-               let classReport2 = report.getCurrentClassReport();
+               let classReport = scopeControl.createScope(
+                { type: 'class', name: 'aclass', lineStart: 100, lineEnd: 200 });
+               let classReport2 = scopeControl.getCurrentClassReport();
 
                assert.instanceOf(classReport, ClassReport);
                assert.instanceOf(classReport2, ClassReport);
@@ -62,8 +57,8 @@ if (testconfig.modules['moduleReport'])
 
                assert.strictEqual(classReport, classReport2);
 
-               classReport = report.popScope({ type: 'class' });
-               classReport2 = report.getCurrentClassReport();
+               classReport = scopeControl.popScope({ type: 'class' });
+               classReport2 = scopeControl.getCurrentClassReport();
 
                assert.isUndefined(classReport);
                assert.isUndefined(classReport2);
@@ -71,12 +66,12 @@ if (testconfig.modules['moduleReport'])
 
             test('report has correct method scope', () =>
             {
-               assert.isUndefined(report.getCurrentMethodReport());
+               assert.isUndefined(scopeControl.getCurrentMethodReport());
 
-               let methodReport = report.createScope(
+               let methodReport = scopeControl.createScope(
                 { type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 0 });
 
-               let methodReport2 = report.getCurrentMethodReport();
+               let methodReport2 = scopeControl.getCurrentMethodReport();
 
                assert.instanceOf(methodReport, MethodReport);
                assert.instanceOf(methodReport2, MethodReport);
@@ -85,8 +80,8 @@ if (testconfig.modules['moduleReport'])
 
                assert.strictEqual(methodReport, methodReport2);
 
-               methodReport = report.popScope({ type: 'method' });
-               methodReport2 = report.getCurrentMethodReport();
+               methodReport = scopeControl.popScope({ type: 'method' });
+               methodReport2 = scopeControl.getCurrentMethodReport();
 
                assert.isUndefined(methodReport);
                assert.isUndefined(methodReport2);
@@ -94,8 +89,9 @@ if (testconfig.modules['moduleReport'])
 
             test('report has correct class w/ method scope', () =>
             {
-               report.createScope({ type: 'class', name: 'aclass', lineStart: 100, lineEnd: 200 });
-               report.createScope({ type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 4 });
+               scopeControl.createScope({ type: 'class', name: 'aclass', lineStart: 100, lineEnd: 200 });
+               scopeControl.createScope(
+                { type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 4 });
 
                assert.lengthOf(report.classes, 1);
                assert.lengthOf(report.classes[0].methods, 1);
@@ -110,123 +106,14 @@ if (testconfig.modules['moduleReport'])
                   report.createScope({ type: 'unknown', name: '?', lineStart: 100, lineEnd: 200 });
                });
 
-               assert.throws(() => { report.createScope(); });
+               assert.throws(() => { scopeControl.createScope(); });
 
-               assert.throws(() => { report.createScope('unknown'); });
+               assert.throws(() => { scopeControl.createScope('unknown'); });
 
-               assert.throws(() => { report.popScope(); });
+               assert.throws(() => { scopeControl.popScope(); });
 
-               assert.throws(() => { report.popScope('unknown'); });
+               assert.throws(() => { scopeControl.popScope('unknown'); });
             });
-
-            test('scope stacks are not defined', () =>
-            {
-               assert.isNotArray(report._scopeStackClass);
-               assert.isNotArray(report._scopeStackMethod);
-               report.finalize();
-               assert.isNotArray(report._scopeStackClass);
-               assert.isNotArray(report._scopeStackMethod);
-            });
-
-            test('class scope stack created / finalized', () =>
-            {
-               report.createScope({ type: 'class', name: 'aclass', lineStart: 100, lineEnd: 200 });
-
-               assert.isArray(report._scopeStackClass);
-               assert.isNotArray(report._scopeStackMethod);
-
-               report.finalize();
-
-               assert.isNotArray(report._scopeStackClass);
-               assert.isNotArray(report._scopeStackMethod);
-            });
-
-            test('method scope stack created / finalized', () =>
-            {
-               report.createScope({ type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 4 });
-
-               assert.isNotArray(report._scopeStackClass);
-               assert.isArray(report._scopeStackMethod);
-
-               report.finalize();
-
-               assert.isNotArray(report._scopeStackClass);
-               assert.isNotArray(report._scopeStackMethod);
-            });
-         });
-
-         suite('halsteadItemEncountered:', () =>
-         {
-            let report;
-
-            setup(() => { report = new ModuleReport(10, 100); });
-            teardown(() => { report = undefined; });
-
-            test('report has correct class w/ method halstead metrics', () =>
-            {
-               report.createScope({ type: 'class', name: 'aclass', lineStart: 100, lineEnd: 200 });
-               report.createScope({ type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 0 });
-
-               report.halsteadItemEncountered('operators', 'test');
-
-               assert.strictEqual(report.methodAggregate.halstead.operators.identifiers[0], 'test');
-               assert.strictEqual(report.classes[0].methodAggregate.halstead.operators.identifiers[0], 'test');
-               assert.strictEqual(report.classes[0].methods[0].halstead.operators.identifiers[0], 'test');
-            });
-         });
-
-         suite('incrementCyclomatic:', () =>
-         {
-            let report;
-
-            setup(() => { report = new ModuleReport(10, 100); });
-            teardown(() => { report = undefined; });
-
-            test('report has correct class w/ method cyclomatic metrics', () =>
-            {
-               report.createScope({ type: 'class', name: 'aclass', lineStart: 100, lineEnd: 200 });
-               report.createScope({ type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 0 });
-
-               report.incrementCyclomatic(50);
-
-               assert.strictEqual(report.methodAggregate.cyclomatic, 51);
-               assert.strictEqual(report.classes[0].methodAggregate.cyclomatic, 51);
-               assert.strictEqual(report.classes[0].methods[0].cyclomatic, 51);
-            });
-         });
-
-         suite('incrementLogicalSloc:', () =>
-         {
-            let report;
-
-            setup(() => { report = new ModuleReport(10, 100); });
-            teardown(() => { report = undefined; });
-
-            test('report has correct class w/ method sloc metrics', () =>
-            {
-               report.createScope({ type: 'class', name: 'aclass', lineStart: 100, lineEnd: 200 });
-               report.createScope({ type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 0 });
-
-               report.incrementLogicalSloc(50);
-
-               assert.strictEqual(report.methodAggregate.sloc.logical, 50);
-               assert.strictEqual(report.classes[0].methodAggregate.sloc.logical, 50);
-               assert.strictEqual(report.classes[0].methods[0].sloc.logical, 50);
-            });
-         });
-      });
-
-      suite('AbstractReport:', () =>
-      {
-         let report;
-
-         setup(() => { report = new ModuleReport(10, 100); });
-         teardown(() => { report = undefined; });
-
-         test('report methodAggregate has correct params count', () =>
-         {
-            report.incrementParams(20);
-            assert.strictEqual(report.methodAggregate.params, 20);
          });
       });
 

@@ -234,6 +234,24 @@ if (testconfig.modules['moduleTraits'])
                assert.strictEqual(result.get(0).valueOf(), 'bar');
             });
 
+            suite('filter and array entries are correct:', () =>
+            {
+               test('contains correct operator identifiers', () =>
+               {
+                  // Note the 3rd identifier has a filter method to skip processing.
+                  const halsteadArray = new HalsteadArray('operators',
+                   ['foo', 'bar', ['baz', 'biz'], { identifier: 'ignored', filter: () => { return false; } }]);
+
+                  const values = halsteadArray.valueOf('unused');
+
+                  assert.lengthOf(values, 4);
+                  assert.strictEqual(values[0], 'foo');
+                  assert.strictEqual(values[1], 'bar');
+                  assert.strictEqual(values[2], 'baz');
+                  assert.strictEqual(values[3], 'biz');
+               });
+            });
+
             test('second item was correct', () =>
             {
                assert.instanceOf(result.get(1), TraitHalstead);
@@ -300,28 +318,6 @@ if (testconfig.modules['moduleTraits'])
                assert.strictEqual(halsteadItems[2], 'foo');
                assert.strictEqual(halsteadItems[3], 'undefined');
                assert.strictEqual(halsteadItems[4], 'true');
-            });
-         });
-
-         suite('process report:', () =>
-         {
-            test('report contains correct operator identifiers', () =>
-            {
-               // Note the 3rd identifier has a filter method to skip processing.
-               const halsteadArray = new HalsteadArray('operators',
-                ['foo', 'bar', ['baz', 'biz'], { identifier: 'ignored', filter: () => { return false; } }]);
-
-               const report = new ModuleReport(0, 0);
-
-               report.processHalsteadItems('operators', halsteadArray.valueOf('unused'));
-
-               report.finalize();
-
-               assert.lengthOf(report.methodAggregate.halstead.operators.identifiers, 4);
-               assert.strictEqual(report.methodAggregate.halstead.operators.identifiers[0], 'foo');
-               assert.strictEqual(report.methodAggregate.halstead.operators.identifiers[1], 'bar');
-               assert.strictEqual(report.methodAggregate.halstead.operators.identifiers[2], 'baz');
-               assert.strictEqual(report.methodAggregate.halstead.operators.identifiers[3], 'biz');
             });
          });
 

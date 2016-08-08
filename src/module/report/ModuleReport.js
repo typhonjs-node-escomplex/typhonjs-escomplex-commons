@@ -1,6 +1,5 @@
 import AbstractReport         from './AbstractReport';
 import AggregateMethodReport  from './AggregateMethodReport';
-import ClassMethodReport      from './ClassMethodReport';
 import ClassReport            from './ClassReport';
 import MethodAverage          from './averages/MethodAverage';
 import ModuleMethodReport     from './ModuleMethodReport';
@@ -101,18 +100,6 @@ export default class ModuleReport extends AbstractReport
       this.methodAverage = new MethodAverage();
 
       /**
-       * Stores the current class report scope stack which is lazily created in `createScope`.
-       * @type {Array<ClassReport>}
-       */
-      this._scopeStackClass = void 0;
-
-      /**
-       * Stores the current method report scope stack which is lazily created in `createScope`.
-       * @type {Array<ClassMethodReport|ModuleMethodReport>}
-       */
-      this._scopeStackMethod = void 0;
-
-      /**
        * Stores the active source path of the module / file. This path is respective of how the file is referenced in
        * the source code itself. `srcPath` is only defined as supplied when processing projects.
        * @type {string}
@@ -126,19 +113,6 @@ export default class ModuleReport extends AbstractReport
        * @type {string}
        */
       this.srcPathAlias = void 0;
-   }
-
-   /**
-    * Potentially adds given dependencies for tracking.
-    *
-    * @param {object|Array}   dependencies - Dependencies to add.
-    */
-   addDependencies(dependencies)
-   {
-      if (typeof dependencies === 'object' || Array.isArray(dependencies))
-      {
-         this.dependencies = this.dependencies.concat(dependencies);
-      }
    }
 
    /**
@@ -159,135 +133,13 @@ export default class ModuleReport extends AbstractReport
    }
 
    /**
-    * Creates a report scope when a class or method is entered.
-    *
-    * @param {object}   newScope - An object hash defining the new scope including:
-    * ```
-    * (string) type - Type of report to create.
-    * (string) name - Name of the class or method.
-    * (number) lineStart - Start line of method.
-    * (number) lineEnd - End line of method.
-    * (number) paramCount - (For method scopes) Number of parameters for method.
-    * ```
-    *
-    * @return {object}
-    */
-   createScope(newScope)
-   {
-      let report;
-
-      if (typeof newScope !== 'object') { throw new TypeError(`createScope error: 'newScope' is not an 'object'.`); }
-
-      if (typeof newScope.type !== 'string')
-      {
-         throw new TypeError(`createScope error: 'newScope.type' is not a 'string'.`);
-      }
-
-      if (typeof newScope.name !== 'string')
-      {
-         throw new TypeError(`createScope error: 'newScope.name' is not a 'string'.`);
-      }
-
-      if (!Number.isInteger(newScope.lineStart))
-      {
-         throw new TypeError(`createScope error: 'newScope.lineStart' is not an 'integer'.`);
-      }
-
-      if (!Number.isInteger(newScope.lineEnd))
-      {
-         throw new TypeError(`createScope error: 'newScope.lineEnd' is not an 'integer'.`);
-      }
-
-      switch (newScope.type)
-      {
-         case 'class':
-            report = new ClassReport(newScope.name, newScope.lineStart, newScope.lineEnd);
-            this.classes.push(report);
-
-            // Lazily create class scope stack if not currently initialized.
-            if (!Array.isArray(this._scopeStackClass)) { this._scopeStackClass = []; }
-
-            this._scopeStackClass.push(report);
-
-            break;
-
-         case 'method':
-         {
-            if (!Number.isInteger(newScope.paramCount))
-            {
-               throw new TypeError(`createScope error: 'newScope.paramCount' is not an 'integer'.`);
-            }
-
-            // Increment aggregate method report params.
-            this.incrementParams(newScope.paramCount);
-
-            // If an existing class report / scope exists also push the method to the class report.
-            const classReport = this.getCurrentClassReport();
-
-            if (classReport)
-            {
-               report = new ClassMethodReport(newScope.name, newScope.lineStart, newScope.lineEnd, newScope.paramCount);
-
-               classReport.incrementParams(newScope.paramCount);
-               classReport.methods.push(report);
-            }
-            else
-            {
-               report = new ModuleMethodReport(newScope.name, newScope.lineStart, newScope.lineEnd,
-                newScope.paramCount);
-
-               // Add this report to the module methods as there is no current class report.
-               this.methods.push(report);
-            }
-
-            // Lazily create method scope stack if not currently initialized.
-            if (!Array.isArray(this._scopeStackMethod)) { this._scopeStackMethod = []; }
-
-            this._scopeStackMethod.push(report);
-
-            break;
-         }
-
-         default:
-            throw new Error(`createScope error: Unknown scope type (${newScope.type}).`);
-      }
-
-      return report;
-   }
-
-   /**
     * Cleans up any house keeping member variables.
     *
     * @returns {ModuleReport}
     */
    finalize()
    {
-      delete this._scopeStackClass;
-      delete this._scopeStackMethod;
-
       return MathUtil.toFixedTraverse(this);
-   }
-
-   /**
-    * Returns the current class report.
-    *
-    * @returns {ClassReport}
-    */
-   getCurrentClassReport()
-   {
-      if (!Array.isArray(this._scopeStackClass)) { return void 0; }
-      return this._scopeStackClass.length > 0 ? this._scopeStackClass[this._scopeStackClass.length - 1] : void 0;
-   }
-
-   /**
-    * Returns the current method report.
-    *
-    * @returns {ClassMethodReport|ModuleMethodReport}
-    */
-   getCurrentMethodReport()
-   {
-      if (!Array.isArray(this._scopeStackMethod)) { return void 0; }
-      return this._scopeStackMethod.length > 0 ? this._scopeStackMethod[this._scopeStackMethod.length - 1] : void 0;
    }
 
    /**
@@ -387,58 +239,6 @@ export default class ModuleReport extends AbstractReport
    }
 
    /**
-    * Increments the Halstead `metric` for the given `identifier` for the ModuleReport and any current class or method
-    * report being tracked.
-    *
-    * @param {string}   metric - A Halstead metric name.
-    * @param {string}   identifier - A Halstead identifier name.
-    */
-   halsteadItemEncountered(metric, identifier)
-   {
-      const currentClassReport = this.getCurrentClassReport();
-      const currentMethodReport = this.getCurrentMethodReport();
-
-      this.incrementHalsteadItems(metric, identifier);
-
-      if (currentClassReport) { currentClassReport.incrementHalsteadItems(metric, identifier); }
-
-      if (currentMethodReport) { currentMethodReport.incrementHalsteadItems(metric, identifier); }
-   }
-
-   /**
-    * Increments the cyclomatic metric for the ModuleReport and any current class or method report being tracked.
-    *
-    * @param {number}   amount - Amount to increment.
-    */
-   incrementCyclomatic(amount)
-   {
-      const currentClassReport = this.getCurrentClassReport();
-      const currentMethodReport = this.getCurrentMethodReport();
-
-      this.methodAggregate.cyclomatic += amount;
-
-      if (currentClassReport) { currentClassReport.methodAggregate.cyclomatic += amount; }
-      if (currentMethodReport) { currentMethodReport.cyclomatic += amount; }
-   }
-
-   /**
-    * Increments the logical SLOC (source lines of code) metric for the ModuleReport and any current class or method
-    * report being tracked.
-    *
-    * @param {number}   amount - Amount to increment.
-    */
-   incrementLogicalSloc(amount)
-   {
-      const currentClassReport = this.getCurrentClassReport();
-      const currentMethodReport = this.getCurrentMethodReport();
-
-      this.methodAggregate.sloc.logical += amount;
-
-      if (currentClassReport) { currentClassReport.methodAggregate.sloc.logical += amount; }
-      if (currentMethodReport) { currentMethodReport.sloc.logical += amount; }
-   }
-
-   /**
     * Deserializes a JSON object representing a ModuleReport.
     *
     * @param {object}   object - A JSON object of a ModuleReport that was previously serialized.
@@ -468,54 +268,6 @@ export default class ModuleReport extends AbstractReport
       }
 
       return report;
-   }
-
-   /**
-    * Pops a report scope.
-    *
-    * @param {object}   scope - An object hash defining the scope including:
-    * ```
-    * (string) type - Type of report scope to pop off the stack.
-    * ```
-    *
-    * @returns {*}
-    */
-   popScope(scope)
-   {
-      if (typeof scope !== 'object') { throw new TypeError(`popScope error: 'scope' is not an 'object'.`); }
-
-      if (typeof scope.type !== 'string')
-      {
-         throw new TypeError(`popScope error: 'scope.type' is not a 'string'.`);
-      }
-
-      switch (scope.type)
-      {
-         case 'class':
-            if (Array.isArray(this._scopeStackClass)) { this._scopeStackClass.pop(); }
-            return this.getCurrentClassReport();
-
-         case 'method':
-            if (Array.isArray(this._scopeStackMethod)) { this._scopeStackMethod.pop(); }
-            return this.getCurrentMethodReport();
-
-         default:
-            throw new Error(`popScope error: Unknown scope type (${scope.type}).`);
-      }
-   }
-
-   /**
-    * Processes all TraitHalstead identifier data.
-    *
-    * @param {string}         metric - The Halstead metric being processed.
-    * @param {Array<string>}  identifiers - An array of Halstead identifiers.
-    */
-   processHalsteadItems(metric, identifiers)
-   {
-      identifiers.forEach((identifier) =>
-      {
-         this.halsteadItemEncountered(metric, identifier);
-      });
    }
 
    /**

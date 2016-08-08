@@ -1,9 +1,11 @@
-import { assert }       from 'chai';
+import { assert }          from 'chai';
 
-import ModuleReport     from '../../../src/module/report/ModuleReport';
-import ProjectReport    from '../../../src/project/report/ProjectReport';
+import ModuleReport        from '../../../src/module/report/ModuleReport';
+import ProjectReport       from '../../../src/project/report/ProjectReport';
 
-import * as testconfig  from '../testconfig';
+import ModuleScopeControl  from '../../../src/module/report/control/ModuleScopeControl';
+
+import * as testconfig     from '../testconfig';
 
 if (testconfig.modules['projectReport'])
 {
@@ -20,17 +22,20 @@ if (testconfig.modules['projectReport'])
                const report = new ModuleReport(10, 100);
                const report2 = new ModuleReport(10, 100);
                const report3 = new ModuleReport(10, 100);
+               const scopeControl = new ModuleScopeControl(report);
 
                report.srcPath = './c.js';
                report2.srcPath = './a.js';
                report3.srcPath = './b.js';
 
-               report.createScope({ type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 0 });
-               report.popScope({ type: 'method' });
-               report.createScope({ type: 'class', name: 'aclass', lineStart: 100, lineEnd: 200 });
-               report.createScope({ type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 0 });
-               report.popScope({ type: 'method' });
-               report.popScope({ type: 'class' });
+               scopeControl.createScope(
+                { type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 0 });
+               scopeControl.popScope({ type: 'method' });
+               scopeControl.createScope({ type: 'class', name: 'aclass', lineStart: 100, lineEnd: 200 });
+               scopeControl.createScope(
+                { type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 0 });
+               scopeControl.popScope({ type: 'method' });
+               scopeControl.popScope({ type: 'class' });
 
                result = new ProjectReport([report, report2, report3]);
 
@@ -51,17 +56,6 @@ if (testconfig.modules['projectReport'])
                assert.strictEqual(result.modules[0].srcPath, './a.js');
                assert.strictEqual(result.modules[1].srcPath, './b.js');
                assert.strictEqual(result.modules[2].srcPath, './c.js');
-            });
-
-            test('finalize removes private data', () =>
-            {
-               assert.isArray(result.modules[2]._scopeStackClass);
-               assert.isArray(result.modules[2]._scopeStackMethod);
-
-               result.finalize();
-
-               assert.isUndefined(result.modules[2]._scopeStackClass);
-               assert.isUndefined(result.modules[2]._scopeStackMethod);
             });
 
             test('finalize w/ serializeModules === false is correct', () =>
