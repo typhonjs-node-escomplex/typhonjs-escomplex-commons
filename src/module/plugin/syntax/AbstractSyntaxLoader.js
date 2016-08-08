@@ -6,7 +6,7 @@
 export default class AbstractSyntaxLoader
 {
    /**
-    * Loads all member methods including from child classes that are not `constructor` or `onConfigure`.
+    * Loads all member methods including from child classes that do not start with a lowercase letter.
     *
     * @param {object}   ev - escomplex plugin event data.
     */
@@ -14,10 +14,17 @@ export default class AbstractSyntaxLoader
    {
       for (const name of s_GET_ALL_PROPERTY_NAMES(Object.getPrototypeOf(this)))
       {
-         // Skip constructor and onConfigure method.
-         if (!(this[name] instanceof Function) || name === 'constructor' || name === 'onConfigure') { continue; }
+         const first = name.charAt(0);
 
-         ev.data.syntaxes[name] = this[name](ev.data.settings);
+         // Skip any names that are not a function or are lowercase.
+         if (!(this[name] instanceof Function) || (first === first.toLowerCase() && first !== first.toUpperCase()))
+         {
+            continue;
+         }
+
+         // If an existing syntax exists for the given name then combine the results.
+         ev.data.syntaxes[name] = Object.assign(typeof ev.data.syntaxes[name] === 'object' ?
+          ev.data.syntaxes[name] : {}, this[name](ev.data.settings));
       }
    }
 }
