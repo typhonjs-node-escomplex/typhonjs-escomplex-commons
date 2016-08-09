@@ -38,7 +38,7 @@ export default class ProjectReport
        * Stores the settings used to generate the project report.
        * @type {object}
        */
-      this.settings = typeof settings === 'object' ? settings : { serializeModules: true };
+      this.settings = typeof settings === 'object' ? Object.assign({}, settings) : { serializeModules: true };
 
       /**
        * Stores a compacted form of the adjacency matrix. Each row index corresponds to the same report index.

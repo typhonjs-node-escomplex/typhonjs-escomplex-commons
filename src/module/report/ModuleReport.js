@@ -43,7 +43,7 @@ export default class ModuleReport extends AbstractReport
        * Stores the settings used to generate the module report.
        * @type {object}
        */
-      this.settings = typeof settings === 'object' ? settings : {};
+      this.settings = typeof settings === 'object' ? Object.assign({}, settings) : {};
 
       /**
        * Stores all ClassReport data for the module.
