@@ -18,12 +18,16 @@ import TraitUtil     from './TraitUtil';
 export default function(lloc = 0, cyclomatic = 0, operators = void 0, operands = void 0, ignoreKeys = void 0,
  newScope = void 0, dependencies = void 0)
 {
+   // Do not wrap ignoreKeys in an array if it is `null` or a `function`. For functions this allows Trait evaluation
+   // via `Trait->valueOf` to return `null` and not `null` wrapped in an `array`.
+   const ignoreKeysPassthru = ignoreKeys === null || typeof ignoreKeys === 'function';
+
    return {
       lloc: new Trait('lloc', lloc),
       cyclomatic: new Trait('cyclomatic', cyclomatic),
       operators: new HalsteadArray('operators', TraitUtil.safeArray(operators)),
       operands: new HalsteadArray('operands', TraitUtil.safeArray(operands)),
-      ignoreKeys: new Trait('ignoreKeys', TraitUtil.safeArray(ignoreKeys)),
+      ignoreKeys: new Trait('ignoreKeys', ignoreKeysPassthru ? ignoreKeys : TraitUtil.safeArray(ignoreKeys)),
       newScope: new Trait('newScope', newScope),
       dependencies: new Trait('dependencies', dependencies)
    };

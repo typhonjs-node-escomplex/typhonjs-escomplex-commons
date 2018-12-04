@@ -12,16 +12,18 @@ export default class AggregateMethodReport extends AbstractReport
     *
     * @param {number}   lineStart - Start line of method.
     * @param {number}   lineEnd - End line of method.
+    * @param {number}   baseCyclomatic - The initial base cyclomatic complexity of the report. Module and class reports
+    *                                    start at 0.
     */
-   constructor(lineStart = 0, lineEnd = 0)
+   constructor(lineStart = 0, lineEnd = 0, baseCyclomatic = 1)
    {
       super();
 
       /**
-       * The cyclomatic complexity of the method.
+       * The cyclomatic complexity of the method / report.
        * @type {number}
        */
-      this.cyclomatic = 1;
+      this.cyclomatic = baseCyclomatic;
 
       /**
        * The cyclomatic density of the method.
@@ -39,7 +41,7 @@ export default class AggregateMethodReport extends AbstractReport
        * The number of parameters for the method or aggregate report.
        * @type {number}
        */
-      this.params = 0;
+      this.paramCount = 0;
 
       /**
        * The source lines of code for the method.

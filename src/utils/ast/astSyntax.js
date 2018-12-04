@@ -776,10 +776,15 @@ export default {
             if (++i < length)
             {
                output.write(', ');
+               output.operators.push(',');
             }
             else
             {
-               if (element == null) { output.write(', '); }
+               if (element == null)
+               {
+                  output.write(', ');
+                  output.operators.push(',');
+               }
                break;
             }
          }
@@ -836,7 +841,7 @@ export default {
 
    Property(node, state)
    {
-      if (node.method || node.kind[0] !== 'i')
+      if (node.method || (node.kind && node.kind[0] !== 'i'))
       {
          this.MethodDefinition(node, state); // Either a method or of kind `set` or `get` (not `init`)
       }
@@ -1164,13 +1169,13 @@ export default {
    BooleanLiteral(node, state)
    {
       state.output.write(node.value);
-      state.output.operands.push(node.value);
+      state.output.operands.push(JSON.stringify(node.value));
    },
 
    DirectiveLiteral(node, state)
    {
       state.output.write(node.value);
-      state.output.operands.push(node.value);
+      state.output.operands.push(JSON.stringify(node.value));
    },
 
    NullLiteral(node, state)
@@ -1182,7 +1187,7 @@ export default {
    NumericLiteral(node, state)
    {
       state.output.write(node.value);
-      state.output.operands.push(node.value);
+      state.output.operands.push(JSON.stringify(node.value));
    },
 
    StringLiteral(node, state)

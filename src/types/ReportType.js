@@ -8,5 +8,6 @@ ReportType.initEnum(
    CLASS_METHOD: { description: 'Class Method' },
    MODULE_METHOD: { description: 'Module Method' },
    MODULE: { description: 'Module' },
+   NESTED_METHOD: { description: 'Nested Method' },
    PROJECT: { description: 'Project' }
 });

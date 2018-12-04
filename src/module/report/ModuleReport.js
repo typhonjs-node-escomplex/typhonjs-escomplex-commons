@@ -82,7 +82,7 @@ export default class ModuleReport extends AbstractReport
       this.lineStart = lineStart;
 
       /**
-       * Measures the average method maintainability index for the module / file.
+       * Measures the average maintainability index for the module / file.
        * @type {number}
        */
       this.maintainability = 0;
@@ -94,7 +94,13 @@ export default class ModuleReport extends AbstractReport
       this.methods = [];
 
       /**
-       * Stores the average method metric data.
+       * Stores the average module / class aggregate & method metric data.
+       * @type {MethodAverage}
+       */
+      this.methodAggregateAverage = new MethodAverage();
+
+      /**
+       * Stores just the average method metric data.
        * @type {MethodAverage}
        */
       this.methodAverage = new MethodAverage();

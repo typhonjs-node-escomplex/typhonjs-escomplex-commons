@@ -25,12 +25,13 @@ export default class ClassReport extends AbstractReport
     * Initializes class report.
     *
     * @param {string}   name - Name of the class.
+    * @param {string}   superClassName - Name of any associated super class.
     * @param {number}   lineStart - Start line of class.
     * @param {number}   lineEnd - End line of class.
     */
-   constructor(name = '', lineStart = 0, lineEnd = 0)
+   constructor(name = void 0, superClassName = void 0, lineStart = 0, lineEnd = 0)
    {
-      super(new AggregateMethodReport(lineStart, lineEnd));
+      super(new AggregateMethodReport(lineStart, lineEnd, 0));
 
       /**
        * Stores any analysis errors.
@@ -57,8 +58,14 @@ export default class ClassReport extends AbstractReport
       this.methods = [];
 
       /**
+       * Stores the average class aggregate & method metric data.
+       * @type {MethodAverage}
+       */
+      this.methodAggregateAverage = new MethodAverage();
+
+      /**
        * Stores the average method metric data.
-       * @type {HalsteadAverage}
+       * @type {MethodAverage}
        */
       this.methodAverage = new MethodAverage();
 
@@ -67,6 +74,12 @@ export default class ClassReport extends AbstractReport
        * @type {string}
        */
       this.name = name;
+
+      /**
+       * The name of any associated super class.
+       * @type {string}
+       */
+      this.superClassName = superClassName;
    }
 
    /**

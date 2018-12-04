@@ -8,6 +8,10 @@ export default class ModuleScopeControl
    {
       this._report = moduleReport;
 
+      this._anonClassCntr = 1;
+
+      this._anonMethodCntr = 1;
+
       /**
        * Stores the current class report scope stack which is lazily created in `createScope`.
        * @type {Array<ClassReport>}
@@ -19,6 +23,12 @@ export default class ModuleScopeControl
        * @type {Array<ClassMethodReport|ModuleMethodReport>}
        */
       this._scopeStackMethod = [];
+
+      /**
+       * Stores the current nested method report scope stack which is lazily created in `createScope`.
+       * @type {Array<ClassMethodReport|ModuleMethodReport>}
+       */
+      this._scopeStackNestedMethod = [];
    }
 
    /**
@@ -30,7 +40,7 @@ export default class ModuleScopeControl
     * (string) name - Name of the class or method.
     * (number) lineStart - Start line of method.
     * (number) lineEnd - End line of method.
-    * (number) paramCount - (For method scopes) Number of parameters for method.
+    * (Array<string>) paramNames - (For method scopes) An array of parameters names for method.
     * ```
     *
     * @return {object}
@@ -64,30 +74,41 @@ export default class ModuleScopeControl
       switch (newScope.type)
       {
          case 'class':
-            report = new ClassReport(newScope.name, newScope.lineStart, newScope.lineEnd);
+         {
+            // Create a specific anonymous class name if applicable.
+            const className = newScope.name !== '<anonymous>' ? newScope.name : `<anon class-${this._anonClassCntr++}>`;
+
+            const superClassName = newScope.superClassName !== '<anonymous>' ? newScope.superClassName :
+             `<anon class-${this._anonClassCntr++}>`;
+
+            report = new ClassReport(className, superClassName, newScope.lineStart, newScope.lineEnd);
             this._report.classes.push(report);
             this._scopeStackClass.push(report);
             break;
+         }
 
          case 'method':
          {
-            if (!Number.isInteger(newScope.paramCount))
+            if (!Array.isArray(newScope.paramNames))
             {
-               throw new TypeError(`createScope error: 'newScope.paramCount' is not an 'integer'.`);
+               throw new TypeError(`createScope error: 'newScope.paramNames' is not an 'array'.`);
             }
+
+            // Create a specific anonymous method name if applicable.
+            const methodName = newScope.name !== '<anonymous>' ? newScope.name :
+             `<anon method-${this._anonMethodCntr++}>`;
 
             // If an existing class report / scope exists also push the method to the class report.
             const classReport = this.getCurrentClassReport();
 
             if (classReport)
             {
-               report = new ClassMethodReport(newScope.name, newScope.lineStart, newScope.lineEnd, newScope.paramCount);
+               report = new ClassMethodReport(methodName, newScope.paramNames, newScope.lineStart, newScope.lineEnd);
                classReport.methods.push(report);
             }
             else
             {
-               report = new ModuleMethodReport(newScope.name, newScope.lineStart, newScope.lineEnd,
-                newScope.paramCount);
+               report = new ModuleMethodReport(methodName, newScope.paramNames, newScope.lineStart, newScope.lineEnd);
 
                // Add this report to the module methods as there is no current class report.
                this._report.methods.push(report);

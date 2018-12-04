@@ -97,7 +97,7 @@ export default class MathUtil
     */
    static toFixedTraverse(data)
    {
-      return ObjectUtil.depthTraverse(data, MathUtil.toFixed);
+      return ObjectUtil.depthTraverse(data, MathUtil.toFixed, true);
    }
 
    /**

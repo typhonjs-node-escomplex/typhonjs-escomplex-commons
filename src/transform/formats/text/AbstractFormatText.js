@@ -54,6 +54,10 @@ export default class AbstractFormatText
             output = this._formatModule(report, localOptions);
             break;
 
+         case ReportType.NESTED_METHOD:
+            output = this._formatMethod(report, localOptions, '', false).replace(/^[\n]/, '');
+            break;
+
          case ReportType.PROJECT:
             output = this._formatProject(report, localOptions);
             break;

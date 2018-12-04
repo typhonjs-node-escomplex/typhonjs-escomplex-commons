@@ -59,6 +59,7 @@ export default class FormatTextMinimal extends AbstractFormatTest
          case ReportType.CLASS_METHOD:
          case ReportType.MODULE_METHOD:
          case ReportType.MODULE:
+         case ReportType.NESTED_METHOD:
          case ReportType.PROJECT:
             return true;
 

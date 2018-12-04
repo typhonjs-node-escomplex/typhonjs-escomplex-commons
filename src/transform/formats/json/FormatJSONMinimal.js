@@ -36,6 +36,7 @@ export default class FormatJSONMinimal
 
          case ReportType.CLASS_METHOD:
          case ReportType.MODULE_METHOD:
+         case ReportType.NESTED_METHOD:
             output = this._formatMethod(report, localOptions);
             break;
 
@@ -101,6 +102,7 @@ export default class FormatJSONMinimal
          case ReportType.CLASS_METHOD:
          case ReportType.MODULE_METHOD:
          case ReportType.MODULE:
+         case ReportType.NESTED_METHOD:
          case ReportType.PROJECT:
             return true;
 

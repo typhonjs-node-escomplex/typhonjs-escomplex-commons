@@ -8,6 +8,23 @@ import TransformFormat  from '../../transform/TransformFormat';
  */
 export default class ModuleMethodReport extends MethodReport
 {
+   constructor(name, paramNames, lineStart, lineEnd)
+   {
+      super(name, paramNames, lineStart, lineEnd);
+
+      /**
+       * Stores the max nested method depth.
+       * @type {number}
+       */
+      this.maxNestedMethodDepth = 0;
+
+      /**
+       * Stores all nested method data.
+       * @type {Array<NestedMethodReport>}
+       */
+      this.nestedMethods = [];
+   }
+
    /**
     * Returns the enum for the report type.
     * @returns {ReportType}

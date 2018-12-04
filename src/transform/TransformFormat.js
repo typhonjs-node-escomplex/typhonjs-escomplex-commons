@@ -127,6 +127,7 @@ export default class TransformFormat
          case ReportType.CLASS_METHOD:
          case ReportType.MODULE_METHOD:
          case ReportType.MODULE:
+         case ReportType.NESTED_METHOD:
          case ReportType.PROJECT:
             return formatter.formatReport(report, options);
 
