@@ -7,7 +7,7 @@ import * as testconfig  from '../testconfig';
 
 const s_TEST_OBJECT = new MethodAverage();
 
-const s_TEST_CONFIRM = '["cyclomatic","cyclomaticDensity","halstead.bugs","halstead.difficulty","halstead.effort","halstead.length","halstead.time","halstead.vocabulary","halstead.volume","halstead.operands.distinct","halstead.operands.total","halstead.operators.distinct","halstead.operators.total","params","sloc.logical","sloc.physical"]';
+const s_TEST_CONFIRM = '["cyclomatic","cyclomaticDensity","halstead.bugs","halstead.difficulty","halstead.effort","halstead.length","halstead.time","halstead.vocabulary","halstead.volume","halstead.operands.distinct","halstead.operands.total","halstead.operators.distinct","halstead.operators.total","paramCount","sloc.logical","sloc.physical"]';
 
 if (testconfig.modules['utilObject'])
 {

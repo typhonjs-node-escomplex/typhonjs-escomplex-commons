@@ -68,8 +68,14 @@ if (testconfig.modules['moduleReport'])
             {
                assert.isUndefined(scopeControl.getCurrentMethodReport());
 
-               let methodReport = scopeControl.createScope(
-                { type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 0 });
+               let methodReport = scopeControl.createScope({
+                  type: 'method',
+                  name: 'amethod',
+                  lineStart: 100,
+                  lineEnd: 200,
+                  paramCount: 1,
+                  paramNames: ['aParam']
+               });
 
                let methodReport2 = scopeControl.getCurrentMethodReport();
 
@@ -91,7 +97,7 @@ if (testconfig.modules['moduleReport'])
             {
                scopeControl.createScope({ type: 'class', name: 'aclass', lineStart: 100, lineEnd: 200 });
                scopeControl.createScope(
-                { type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 4 });
+                { type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 0, paramNames: [] });
 
                assert.lengthOf(report.classes, 1);
                assert.lengthOf(report.classes[0].methods, 1);

@@ -4,16 +4,44 @@ import AbstractSyntaxLoader   from '../../../src/module/plugin/syntax/AbstractSy
 
 import * as testconfig        from '../testconfig';
 
+/**
+ *  Parent
+ */
 class Parent extends AbstractSyntaxLoader
 {
+   /**
+    * @returns {{}}
+    * @constructor
+    */
    ParentOne() { return {}; }
+
+   /**
+    * @returns {{}}
+    * @constructor
+    */
    ParentTwo() { return {}; }
 }
 
+/**
+ * Child
+ */
 class Child extends Parent
 {
+   /**
+    * @returns {{}}
+    */
    onConfigure() { return {}; } // This is ignored by AbstractSyntaxLoader.
+
+   /**
+    * @returns {{}}
+    * @constructor
+    */
    ChildThree() { return {}; }
+
+   /**
+    * @returns {{}}
+    * @constructor
+    */
    ChildFour() { return {}; }
 }
 

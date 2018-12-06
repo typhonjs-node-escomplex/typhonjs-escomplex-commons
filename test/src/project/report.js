@@ -29,11 +29,11 @@ if (testconfig.modules['projectReport'])
                report3.srcPath = './b.js';
 
                scopeControl.createScope(
-                { type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 0 });
+                { type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 0, paramNames: [] });
                scopeControl.popScope({ type: 'method' });
                scopeControl.createScope({ type: 'class', name: 'aclass', lineStart: 100, lineEnd: 200 });
                scopeControl.createScope(
-                { type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 0 });
+                { type: 'method', name: 'amethod', lineStart: 100, lineEnd: 200, paramCount: 0, paramNames: [] });
                scopeControl.popScope({ type: 'method' });
                scopeControl.popScope({ type: 'class' });
 
