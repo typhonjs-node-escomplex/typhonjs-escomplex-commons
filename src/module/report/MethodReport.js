@@ -1,7 +1,7 @@
 import AggregateMethodReport  from './AggregateMethodReport';
 import AnalyzeError           from '../../analyze/AnalyzeError';
 
-import NestedMethodReport     from './NestedMethodReport';
+// import NestedMethodReport     from './NestedMethodReport';
 
 import ObjectUtil             from '../../utils/ObjectUtil';
 
@@ -186,10 +186,10 @@ export default class MethodReport extends AggregateMethodReport
          methodReport.errors = methodReport.errors.map((error) => AnalyzeError.parse(error));
       }
 
-      if (methodReport.nestedMethods.length > 0)
-      {
-         methodReport.nestedMethods = methodReport.nestedMethods.map((method) => NestedMethodReport.parse(method));
-      }
+      // if (methodReport.nestedMethods.length > 0)
+      // {
+      //    methodReport.nestedMethods = methodReport.nestedMethods.map((method) => NestedMethodReport.parse(method));
+      // }
 
       return methodReport;
    }
