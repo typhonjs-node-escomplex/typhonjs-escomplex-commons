@@ -2,8 +2,16 @@ import ClassReport         from '../ClassReport';
 import ClassMethodReport   from '../ClassMethodReport';
 import ModuleMethodReport  from '../ModuleMethodReport';
 
+/**
+ * ModuleScopeControl
+ */
 export default class ModuleScopeControl
 {
+   /**
+    * Creates ModuleScopeControl instance with given ModuleReport.
+    *
+    * @param {ModuleReport} moduleReport - An associated module report.
+    */
    constructor(moduleReport)
    {
       this._report = moduleReport;

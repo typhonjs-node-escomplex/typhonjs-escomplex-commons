@@ -6,6 +6,14 @@ import SU         from '../../../utils/StringUtil';
  */
 export default class FormatMarkdown extends FormatText
 {
+   /**
+    * Initializes markdown format.
+    *
+    * @param {object} headers -
+    * @param {object} keys -
+    * @param {string} adjacencyFormatName -
+    * @param {string} visibilityFormatName -
+    */
    constructor(headers = {}, keys = {}, adjacencyFormatName = 'markdown-adjacency',
     visibilityFormatName = 'markdown-visibility')
    {

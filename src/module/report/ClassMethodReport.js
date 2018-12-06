@@ -8,6 +8,14 @@ import TransformFormat  from '../../transform/TransformFormat';
  */
 export default class ClassMethodReport extends MethodReport
 {
+   /**
+    * Initializes class module method report.
+    *
+    * @param {string}   name - Name of the method.
+    * @param {number}   paramNames - Array of any associated parameter names.
+    * @param {number}   lineStart - Start line of method.
+    * @param {number}   lineEnd - End line of method.
+    */
    constructor(name, paramNames, lineStart, lineEnd)
    {
       super(name, paramNames, lineStart, lineEnd);

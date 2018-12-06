@@ -9,6 +9,12 @@ import SU                  from '../../../utils/StringUtil';
  */
 export default class FormatTextMinimal extends AbstractFormatTest
 {
+   /**
+    * Initializes minimal text format.
+    *
+    * @param {object} headers -
+    * @param {object} keys -
+    */
    constructor(headers = {}, keys = {})
    {
       super(Object.assign({}, s_DEFAULT_HEADERS, headers), Object.assign({}, s_DEFAULT_KEYS, keys));

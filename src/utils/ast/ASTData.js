@@ -3,6 +3,9 @@
  */
 export default class ASTData
 {
+   /**
+    * Initializes ASTData
+    */
    constructor()
    {
       this.source = '';
@@ -10,11 +13,21 @@ export default class ASTData
       this.operators = [];
    }
 
+   /**
+    * Appends a string.
+    *
+    * @param {string} string - A string to append.
+    */
    write(string)
    {
       this.source += string;
    }
 
+   /**
+    * Convert to string
+    *
+    * @returns {string|*|string}
+    */
    toString()
    {
       return this.source;

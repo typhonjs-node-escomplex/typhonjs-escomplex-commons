@@ -1,5 +1,8 @@
 import Enum from '../utils/Enum';
 
+/**
+ * Defines ReportType enum.
+ */
 export default class ReportType extends Enum {}
 
 ReportType.initEnum(

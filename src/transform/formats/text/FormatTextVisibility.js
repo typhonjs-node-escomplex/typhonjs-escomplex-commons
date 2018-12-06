@@ -5,6 +5,12 @@ import AbstractTextMatrix  from './AbstractTextMatrix';
  */
 export default class FormatTextVisibility extends AbstractTextMatrix
 {
+   /**
+    * Initializes text visibility format.
+    *
+    * @param {object} headers -
+    * @param {object} keys -
+    */
    constructor(headers = {}, keys = {})
    {
       super(Object.assign({}, s_DEFAULT_HEADERS, headers), Object.assign({}, s_DEFAULT_KEYS, keys));

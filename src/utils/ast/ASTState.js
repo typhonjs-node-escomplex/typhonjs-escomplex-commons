@@ -2,6 +2,9 @@ import ASTData    from './ASTData';
 
 import astSyntax  from './astSyntax';
 
+/**
+ * ASTState
+ */
 export default class ASTState
 {
    /**

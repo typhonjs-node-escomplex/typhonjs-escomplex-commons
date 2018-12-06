@@ -41,7 +41,7 @@ export default class ASTGenerator
       }
       else
       {
-         throw new TypeError(`parse error: 'node' is not an 'object' or an 'array'.`)
+         throw new TypeError(`parse error: 'node' is not an 'object' or an 'array'.`);
       }
 
       return state.output;
@@ -79,7 +79,7 @@ export default class ASTGenerator
          }
          else
          {
-            throw new TypeError(`parse error: 'node' is not an 'object' or an 'array'.`)
+            throw new TypeError(`parse error: 'node' is not an 'object' or an 'array'.`);
          }
       });
 

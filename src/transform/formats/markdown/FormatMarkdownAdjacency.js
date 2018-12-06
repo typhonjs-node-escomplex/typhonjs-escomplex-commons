@@ -5,6 +5,12 @@ import FormatTextAdjacency from '../text/FormatTextAdjacency';
  */
 export default class FormatMarkdownAdjacency extends FormatTextAdjacency
 {
+   /**
+    * Initializes markdown adjacency format.
+    *
+    * @param {object} headers -
+    * @param {object} keys -
+    */
    constructor(headers = {}, keys = {})
    {
       super(Object.assign({}, s_DEFAULT_HEADERS, headers), keys);

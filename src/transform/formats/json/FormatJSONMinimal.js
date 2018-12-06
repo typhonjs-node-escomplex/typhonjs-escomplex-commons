@@ -7,6 +7,12 @@ import ReportType from '../../../types/ReportType';
  */
 export default class FormatJSONMinimal
 {
+   /**
+    * Initializes format.
+    *
+    * @param {object}   keys - Defines the keys to include in a minimal JSON representation of class / class method /
+    *                          module method / module / project reports.
+    */
    constructor(keys = s_DEFAULT_KEYS)
    {
       this._keys = keys;

@@ -63,11 +63,23 @@ export default class Enum
       return this;
    }
 
+   /**
+    * Extracts enum values from an array.
+    *
+    * @param {Array} arr -
+    * @private
+    */
    static _enumValuesFromArray(arr)
    {
       for (const key of arr) { this._pushEnumValue(new this(), key); }
    }
 
+   /**
+    * Extracts enum values from an object.
+    *
+    * @param {object}   obj -
+    * @private
+    */
    static _enumValuesFromObject(obj)
    {
       for (const key of Object.keys(obj))
@@ -77,6 +89,13 @@ export default class Enum
       }
    }
 
+   /**
+    * Pushes enum value.
+    *
+    * @param {object} enumValue -
+    * @param {string} name -
+    * @private
+    */
    static _pushEnumValue(enumValue, name)
    {
       enumValue.name = name;

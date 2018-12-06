@@ -9,6 +9,14 @@ import TransformFormat     from '../../TransformFormat';
  */
 export default class FormatText extends AbstractFormatText
 {
+   /**
+    * Initializes text format.
+    *
+    * @param {object} headers -
+    * @param {object} keys -
+    * @param {string} adjacencyFormatName -
+    * @param {string} visibilityFormatName -
+    */
    constructor(headers = {}, keys = {}, adjacencyFormatName = 'text-adjacency',
     visibilityFormatName = 'text-visibility')
    {

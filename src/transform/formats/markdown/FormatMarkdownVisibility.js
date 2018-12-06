@@ -5,6 +5,12 @@ import FormatTextVisibility from '../text/FormatTextVisibility';
  */
 export default class FormatMarkdownVisibility extends FormatTextVisibility
 {
+   /**
+    * Initializes visibility markdown format.
+    *
+    * @param {object} headers -
+    * @param {object} keys -
+    */
    constructor(headers = {}, keys = {})
    {
       super(Object.assign({}, s_DEFAULT_HEADERS, headers), keys);

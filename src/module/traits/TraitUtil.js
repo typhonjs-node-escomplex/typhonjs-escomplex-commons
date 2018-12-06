@@ -1,3 +1,6 @@
+/**
+ * TraitUtil
+ */
 export default class TraitUtil
 {
    /**

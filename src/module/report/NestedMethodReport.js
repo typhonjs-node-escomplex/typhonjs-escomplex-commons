@@ -8,6 +8,15 @@ import TransformFormat  from '../../transform/TransformFormat';
  */
 export default class NestedMethodReport extends MethodReport
 {
+   /**
+    * Initializes nested method report.
+    *
+    * @param {string}   name - Name of the method.
+    * @param {number}   paramNames - Array of any associated parameter names.
+    * @param {number}   lineStart - Start line of method.
+    * @param {number}   lineEnd - End line of method.
+    * @param {number}   nestedDepth - Depth of nested methods
+    */
    constructor(name, paramNames, lineStart, lineEnd, nestedDepth = 0)
    {
       super(name, paramNames, lineStart, lineEnd);

@@ -22,6 +22,9 @@ import ReportType                from '../types/ReportType';
  */
 const s_FORMATTERS = new Map();
 
+/**
+ * TransformFormat
+ */
 export default class TransformFormat
 {
    /**

@@ -7,6 +7,12 @@ import SU                  from '../../../utils/StringUtil';
  */
 export default class FormatMarkdownModules extends FormatTextModules
 {
+   /**
+    * Initializes minimal markdown modules format.
+    *
+    * @param {object} headers -
+    * @param {object} keys -
+    */
    constructor(headers = {}, keys = {})
    {
       super(Object.assign({}, s_DEFAULT_HEADERS, headers), keys);

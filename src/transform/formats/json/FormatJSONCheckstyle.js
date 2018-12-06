@@ -17,6 +17,11 @@ import ReportType from '../../../types/ReportType';
  */
 export default class FormatJSONCheckstyle
 {
+   /**
+    * Initializes
+    *
+    * @param {object} thresholds - Defines thresholds.
+    */
    constructor(thresholds = s_DEFAULT_THRESHOLDS)
    {
       this._thresholds = thresholds;
@@ -169,6 +174,14 @@ export default class FormatJSONCheckstyle
       return output;
    }
 
+   /**
+    * Parses errors from report
+    *
+    * @param {object}   sourceObject - A report object
+    * @param {object}   options - Options
+    * @param {Array}    errors - An array to accumulate errors.
+    * @private
+    */
    _parseErrors(sourceObject, options, errors)
    {
       for (const key in options)

@@ -1,6 +1,9 @@
 import expressionPrecedence   from './expressionPrecedence';
 import operatorPrecedence     from './operatorPrecedence';
 
+/**
+ * ASTUTil
+ */
 export default class ASTUtil
 {
    /**
