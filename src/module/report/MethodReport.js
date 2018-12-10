@@ -186,6 +186,7 @@ export default class MethodReport extends AggregateMethodReport
          methodReport.errors = methodReport.errors.map((error) => AnalyzeError.parse(error));
       }
 
+      // TODO unimplemented yet!
       // if (methodReport.nestedMethods.length > 0)
       // {
       //    methodReport.nestedMethods = methodReport.nestedMethods.map((method) => NestedMethodReport.parse(method));
