@@ -1,5 +1,5 @@
 import AbstractReport         from './AbstractReport';
-import AggregateMethodReport  from './AggregateMethodReport';
+import AggregateReport        from './AggregateReport';
 import ClassReport            from './ClassReport';
 import MethodAverage          from './averages/MethodAverage';
 import ModuleMethodReport     from './ModuleMethodReport';
@@ -37,7 +37,7 @@ export default class ModuleReport extends AbstractReport
     */
    constructor(lineStart = 0, lineEnd = 0, settings = {})
    {
-      super(new AggregateMethodReport(lineStart, lineEnd));
+      super(new AggregateReport(lineStart, lineEnd));
 
       /**
        * Stores the settings used to generate the module report.

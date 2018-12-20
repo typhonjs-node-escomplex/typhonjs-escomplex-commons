@@ -1,5 +1,5 @@
 import AbstractReport         from './AbstractReport';
-import AggregateMethodReport  from './AggregateMethodReport';
+import AggregateReport        from './AggregateReport';
 import ClassMethodReport      from './ClassMethodReport';
 import MethodAverage          from './averages/MethodAverage';
 
@@ -31,7 +31,7 @@ export default class ClassReport extends AbstractReport
     */
    constructor(name = void 0, superClassName = void 0, lineStart = 0, lineEnd = 0)
    {
-      super(new AggregateMethodReport(lineStart, lineEnd, 0));
+      super(new AggregateReport(lineStart, lineEnd, 0));
 
       /**
        * Stores any analysis errors.
