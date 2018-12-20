@@ -61,7 +61,7 @@ export default class ClassReport extends AbstractReport
        * Stores the average class aggregate & method metric data.
        * @type {MethodAverage}
        */
-      this.methodAggregateAverage = new MethodAverage();
+      this.aggregateAverage = new MethodAverage();
 
       /**
        * Stores the average method metric data.

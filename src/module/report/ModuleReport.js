@@ -97,7 +97,7 @@ export default class ModuleReport extends AbstractReport
        * Stores the average module / class aggregate & method metric data.
        * @type {MethodAverage}
        */
-      this.methodAggregateAverage = new MethodAverage();
+      this.aggregateAverage = new MethodAverage();
 
       /**
        * Stores just the average method metric data.

@@ -1,14 +1,14 @@
 import TransformFormat  from '../../transform/TransformFormat';
 
 /**
- * Provides several helper methods to work with method oriented data stored as `this.methodAggregate` in `ClassReport` /
+ * Provides several helper methods to work with method oriented data stored as `this.aggregate` in `ClassReport` /
  * `ModuleReport` and directly in `ClassMethodReport` / `ModuleMethodReport`.
  */
 export default class AbstractReport
 {
    /**
     * If given assigns the method report to an internal variable. This is used by `ClassReport` and `ModuleReport`
-    * which stores a `AggregateMethodReport` respectively in `this.methodAggregate`.
+    * which stores a `AggregateMethodReport` respectively in `this.aggregate`.
     *
     * @param {AggregateMethodReport}   aggregateMethodReport - An AggregateMethodReport to associate with this report.
     */
@@ -18,7 +18,7 @@ export default class AbstractReport
        * Stores any associated `AggregateMethodReport`.
        * @type {AggregateMethodReport}
        */
-      this.methodAggregate = aggregateMethodReport;
+      this.aggregate = aggregateMethodReport;
    }
 
    /**
@@ -27,7 +27,7 @@ export default class AbstractReport
     *
     * @returns {AggregateMethodReport}
     */
-   get aggregateMethodReport() { return typeof this.methodAggregate !== 'undefined' ? this.methodAggregate : this; }
+   get aggregateReport() { return typeof this.aggregate !== 'undefined' ? this.aggregate : this; }
 
    /**
     * Formats this report given the type.
