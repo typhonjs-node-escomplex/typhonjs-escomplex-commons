@@ -130,15 +130,15 @@ if (testconfig.modules['moduleReport'])
          setup(() => { report = new ModuleReport(10, 100); });
          teardown(() => { report = undefined; });
 
-         test('report methodAggregate halstead data is reset', () =>
+         test('report aggregate halstead data is reset', () =>
          {
-            report.methodAggregate.halstead.bugs = 1000;
-            report.methodAggregate.halstead.operands.distinct = 1000;
-            report.methodAggregate.halstead.operands.identifiers.push('test');
-            report.methodAggregate.halstead.reset(true);
-            assert.strictEqual(report.methodAggregate.halstead.bugs, 0);
-            assert.strictEqual(report.methodAggregate.halstead.operands.distinct, 0);
-            assert.lengthOf(report.methodAggregate.halstead.operands.identifiers, 0);
+            report.aggregate.halstead.bugs = 1000;
+            report.aggregate.halstead.operands.distinct = 1000;
+            report.aggregate.halstead.operands.identifiers.push('test');
+            report.aggregate.halstead.reset(true);
+            assert.strictEqual(report.aggregate.halstead.bugs, 0);
+            assert.strictEqual(report.aggregate.halstead.operands.distinct, 0);
+            assert.lengthOf(report.aggregate.halstead.operands.identifiers, 0);
          });
       });
    });
