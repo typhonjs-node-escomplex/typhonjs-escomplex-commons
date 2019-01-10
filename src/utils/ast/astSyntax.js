@@ -3,7 +3,7 @@ import ASTUtil                from './ASTUtil';
 
 import expressionPrecedence   from './expressionPrecedence';
 
-let ArrayExpression, BinaryExpression, ForInStatement, FunctionDeclaration;
+let ArrayExpression, BinaryExpression, ForInStatement, FunctionDeclaration, Property, RestElement;
 
 export default {
    Program(node, state)
@@ -695,7 +695,7 @@ export default {
       state.output.operators.push('super');
    },
 
-   RestElement(node, state)
+   RestElement: RestElement = function(node, state)
    {
       state.output.write('...');
       state.output.operators.push('... (rest)');
@@ -839,7 +839,7 @@ export default {
       state.indentLevel--;
    },
 
-   Property(node, state)
+   Property: Property = function(node, state)
    {
       if (node.method || (node.kind && node.kind[0] !== 'i'))
       {
@@ -886,7 +886,7 @@ export default {
 
          for (let i = 0; ;)
          {
-            this.Property(properties[i], state);
+            this[properties[i].type](properties[i], state);
 
             if (++i < length)
             {
@@ -1165,6 +1165,10 @@ export default {
    },
 
    // Babylon AST nodes ---------------------------------------------------------------------------------------------
+
+   ObjectProperty: Property,
+
+   RestProperty: RestElement,
 
    BooleanLiteral(node, state)
    {
